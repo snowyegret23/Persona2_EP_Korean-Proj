@@ -1,5 +1,7 @@
 # Persona 2: Eternal Punishment 한국어 번역 프로젝트
 
+[![Video Label](http://img.youtube.com/vi/cTqGIsIDrPA/0.jpg)](https://youtu.be/cTqGIsIDrPA)
+
 본 저장소는 **PSP판 Persona 2: Eternal Punishment(일본판)**의 한국어 번역 작업을 위한 데이터/스크립트와 빌드 도구를 제공합니다.
 
 ---
