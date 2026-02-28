@@ -1,0 +1,7 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんな悠長な事をしていて宜しいのですか？
+ ここは、戦場ですよ…
+[sync][wait]
+[end]

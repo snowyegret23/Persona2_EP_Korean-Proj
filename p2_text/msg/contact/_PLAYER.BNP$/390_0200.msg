@@ -1,0 +1,76 @@
+
+msg_0:
+[color(yellow)][tatsuya][color(white)]
+ 兄さんとは、ガキの頃よく喧嘩した…
+ 些細な理由ばっかりだった…
+ 向こう側の話だが…
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]克哉[color(white)]
+ そうだったな、思い出したよ…
+ こっちでも、そうだった…
+[wait][clear][end]
+
+msg_2:
+[color(yellow)][tatsuya][color(white)]
+ 昔、俺が熱を出した時、兄さん横で泣いてたな…
+ あんたもそうなのか…
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]克哉[color(white)]
+ どうかな…？
+ そんな昔の事は忘れたよ…
+[wait][clear][end]
+
+msg_4:
+[load_sound(sndeff_2c)][sync][color(yellow)][tatsuya][color(white)]
+ 子供の日に、柱に傷つけて
+ 兄さんと背比べしたな…
+ [play_sound(sndeff_2c)][sync]こっちの家の柱にも傷はあるか？[sync]
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]克哉[color(white)]
+ ああ、残ってる…
+ 残っているともさ…
+[wait][clear][end]
+
+msg_6:
+[color(yellow)][tatsuya][color(white)]
+ 目をそらすな…
+[wait][clear][end]
+
+msg_7:
+[color(yellow)][tatsuya][color(white)]
+ …………
+[wait][clear][end]
+
+msg_8:
+[load_sound(sndeff_2a)][sync][color(yellow)][tatsuya][color(white)]
+ [play_sound(sndeff_2a)][sync]言葉はいらない…[sync]
+[wait][clear][end]
+
+msg_9:
+[color(yellow)][tatsuya][color(white)]
+ 二人とも下がっていてくれ…
+[wait][clear][end]
+
+msg_10:
+[color(yellow)]克哉[color(white)]
+ [tatsuya]…
+[wait][clear][end]
+
+msg_11:
+[color(yellow)][tatsuya][color(white)]
+ うららさん…
+ 兄さんと話がある…
+[wait][clear][end]
+
+msg_12:
+[color(yellow)]うらら[color(white)]
+ わかってるって！
+ でも良いわねぇ、男兄弟って…
+ 羨ましいわ…
+[wait][clear][end]

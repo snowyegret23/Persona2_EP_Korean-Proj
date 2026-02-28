@@ -1,0 +1,885 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_11);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_6);
+    b(label_8);
+  label_6:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_8);
+  label_8:
+    sndUnkCF(90);
+    cameraSet(northeast, 1220, 0, -250);
+    ref_a = spriteLoad(sprite_0);
+    wait(ref_a);
+    ref_c = spriteLoad(sprite_2);
+    wait(ref_c);
+    ref_e = spriteLoad(sprite_6);
+    wait(ref_e);
+    ref_10 = spriteLoad(sprite_d);
+    wait(ref_10);
+    ref_12 = spriteLoad(sprite_13);
+    wait(ref_12);
+    ref_14 = spriteLoad(sprite_da);
+    wait(ref_14);
+    bitGet(var_1, EBIT_E0040);
+    bez(var_1, label_1d);
+    bitGet(var_1, EBIT_HANGOROSI);
+    bez(var_1, label_20);
+    ref_1a = call(FREE2);
+    wait(ref_1a);
+    b(label_22);
+  label_1d:
+    ref_1d = call(FREE1);
+    wait(ref_1d);
+    b(label_22);
+  label_20:
+    ref_20 = call(KYOUSEI);
+    wait(ref_20);
+  label_22:
+}
+
+function KYOUSEI()
+{
+    cameraSet(south, 350, 0, -240);
+    unitIdleOffAll();
+    unitSpawn(maya, sprite_0, 200, 0, -200, north, none);
+    unitFace(maya, south);
+    unitSpawn(ulala, sprite_6, 398, 0, -80, north, none);
+    unitFace(ulala, north);
+    unitSpawn(baofu, sprite_13, 325, 0, -160, north, none);
+    unitFace(baofu, east);
+    unitSpawn(katsuya, sprite_d, 230, 0, -80, north, none);
+    unitFace(katsuya, west);
+    unitSpawn(enemy1, sprite_da, 200, 0, -585, north, none);
+    unitFace(enemy1, east);
+    unitAnimationPlay(enemy1, animation_16, 1);
+    unitWait(enemy1);
+    unitAnimationStop(enemy1);
+    unitSpawn(enemy2, sprite_da, 120, 0, -420, north, none);
+    unitPalette(enemy2, 1);
+    unitFace(enemy2, west);
+    unitAnimationPlay(enemy2, animation_16, 1);
+    unitWait(enemy2);
+    unitAnimationStop(enemy2);
+    unitTriggerSet(ulala, URARA2, 255, 1);
+    unitTriggerSet(katsuya, KATUYA2, 255, 1);
+    unitTriggerSet(baofu, PAOFU2, 255, 1);
+    envTriggerSet(EXIT, 56, 1, line, coll_23);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    ref_43 = bustupLoad(bustup_2c);
+    bustupWait(ref_43);
+    ref_45 = bustupAlloc(ref_43, left, rgb(0,0,0));
+    bustupFade(ref_45, rgb(128,0,0), 30);
+    ref_47 = dialogAlloc();
+    ref_48 = msgShow(msg_0);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]お前さん達はここで待ってな…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_14, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(baofu, animation_1f, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_48);
+    dialogFree(ref_47);
+    ref_54 = bustupFade(ref_45, rgb(0,0,0), 10);
+    bustupWait(ref_54);
+    bustupFree(ref_45);
+    unitMove(baofu, 490, -165, face_west, fast);
+    unitWait(baofu);
+    unitMove(baofu, 490, -500, face_north, fast);
+    unitWait(baofu);
+    unitMove(baofu, 340, -500, face_east, fast);
+    unitWait(baofu);
+    unitFace(baofu, east);
+    unitWait(baofu);
+    delayClear();
+    delayWait(60);
+    ref_61 = dialogAlloc();
+    ref_62 = msgShow(msg_1);
+/***************************************
+[color(yellow)]パオフゥの声[color(white)]
+[tab]你坦白吧…我生气了。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_62);
+    dialogFree(ref_61);
+    ref_66 = dialogAlloc();
+    ref_67 = msgShow(msg_2);
+/***************************************
+[color(yellow)]マフィアの声[color(white)]
+[tab]干什么！？[tab]不行！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_67);
+    dialogFree(ref_66);
+    sndMusicPlay(sound_313d, 127);
+    ref_6c = call(JISIN);
+    unitFace(maya, north);
+    unitWait(maya);
+    unitAnimationHold(maya, animation_21, -1);
+    unitAnimationHold(katsuya, animation_21, -1);
+    unitAnimationHold(ulala, animation_21, -1);
+    wait(ref_6c);
+    delayClear();
+    delayWait(30);
+    unitAnimationStop(maya);
+    unitAnimationStop(katsuya);
+    unitAnimationStop(ulala);
+    ref_78 = cameraRotateTo(7, 1);
+    cameraMoveTo(277, 0, -376, 1);
+    call(URARAMOVE);
+    call(KATUYAMOVE);
+    ref_7c = call(MAYAMOVE);
+    wait(ref_7c);
+    wait(ref_78);
+    unitAnimationPlay(baofu, animation_1, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(7);
+    unitFace(baofu, north);
+    unitWait(baofu);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(baofu, animation_1, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(baofu, animation_2, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(30);
+    ref_91 = bustupLoad(bustup_31);
+    bustupWait(ref_91);
+    ref_93 = bustupAlloc(ref_91, left, rgb(0,0,0));
+    bustupFade(ref_93, rgb(128,0,0), 30);
+    ref_95 = dialogAlloc();
+    ref_96 = msgShow(msg_3);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]殺されないだけ、感謝しな…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_96);
+    ref_99 = msgShow(msg_4);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]合言葉は「[color(green)]Ｐａｎｔｈｅｒ[color(white)]」だとよ…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1, 1);
+    delayClear();
+    delayWait(8);
+    unitAnimationPlay(baofu, animation_0, 1);
+    delayClear();
+    delayWait(8);
+    unitAnimationPlay(baofu, animation_3, 1);
+    delayClear();
+    delayWait(8);
+    unitAnimationPlay(baofu, animation_4, 1);
+    sync();
+    wait(ref_99);
+    dialogFree(ref_95);
+    ref_a7 = bustupFade(ref_93, rgb(0,0,0), 10);
+    bustupWait(ref_a7);
+    bustupFree(ref_93);
+    delayClear();
+    delayWait(30);
+    ref_ac = bustupLoad(bustup_21);
+    bustupWait(ref_ac);
+    ref_ae = bustupAlloc(ref_ac, left, rgb(0,0,0));
+    bustupFade(ref_ae, rgb(128,0,0), 30);
+    ref_b0 = dialogAlloc();
+    ref_b1 = msgShow(msg_5);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]おい、やり過ぎだぞ！？
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1b, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_b1);
+    dialogFree(ref_b0);
+    ref_b9 = bustupFade(ref_ae, rgb(0,0,0), 10);
+    bustupWait(ref_b9);
+    bustupFree(ref_ae);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(60);
+    ref_c0 = bustupLoad(bustup_31);
+    bustupWait(ref_c0);
+    ref_c2 = bustupAlloc(ref_c0, left, rgb(0,0,0));
+    bustupFade(ref_c2, rgb(128,0,0), 30);
+    ref_c4 = dialogAlloc();
+    ref_c5 = msgShow(msg_6);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]じゃあ俺をしょっ引くか？
+[tab]てめぇが独断で捜査してんのもバレんだぜ…？
+[tab]それでも良けりゃ好きにしな…
+[sync][wait][clear]
+***************************************/
+    delayClear();
+    delayWait(20);
+    unitFace(baofu, west);
+    unitWait(baofu);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(baofu, animation_2d, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_c5);
+    dialogFree(ref_c4);
+    ref_d4 = bustupFade(ref_c2, rgb(0,0,0), 10);
+    bustupWait(ref_d4);
+    bustupFree(ref_c2);
+    unitAnimationPlay(baofu, animation_a, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(30);
+    ref_db = bustupLoad(bustup_1a);
+    bustupWait(ref_db);
+    ref_dd = bustupAlloc(ref_db, left, rgb(0,0,0));
+    bustupFade(ref_dd, rgb(128,0,0), 30);
+    ref_df = dialogAlloc();
+    ref_e0 = msgShow(msg_7);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]ちょっと止めてよぉ…
+[tab]合言葉わかったんでしょ？
+[tab]こんなこと早く終わりにしようよ！！
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_e0);
+    dialogFree(ref_df);
+    ref_e7 = bustupFade(ref_dd, rgb(0,0,0), 10);
+    bustupWait(ref_e7);
+    bustupFree(ref_dd);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(60);
+    bitSet(EBIT_HANGOROSI);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitDespawn(enemy1, none);
+    unitDespawn(enemy2, none);
+    unitSpawn(ulala, sprite_6, 500, 0, -60, north, none);
+    unitFace(ulala, north);
+    unitSpawn(baofu, sprite_13, 140, 0, -585, north, none);
+    unitFace(baofu, west);
+    unitSpawn(katsuya, sprite_d, 577, 0, -203, north, none);
+    unitFace(katsuya, north);
+    ref_fd = cameraLookAtUnit(maya, 0, 30);
+    wait(ref_fd);
+    unitDespawn(maya, none);
+    playerInit(east);
+    controlDisable();
+    delayClear();
+    delayWait(120);
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenEffectUnknown();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function FREE1()
+{
+    unitSpawn(ulala, sprite_6, 437, 0, -332, north, none);
+    unitFace(ulala, north);
+    unitSpawn(baofu, sprite_13, 544, 0, -494, north, none);
+    unitFace(baofu, east);
+    unitSpawn(katsuya, sprite_d, 577, 0, -203, north, none);
+    unitFace(katsuya, north);
+    unitSpawn(enemy1, sprite_da, 200, 0, -585, north, none);
+    unitFace(enemy1, west);
+    unitSpawn(enemy2, sprite_da, 120, 0, -420, north, none);
+    unitPalette(enemy2, 1);
+    unitFace(enemy2, west);
+    unitIdleOnAll();
+    unitTriggerSet(katsuya, KATUYA1, 255, 1);
+    unitTriggerSet(ulala, URARA1, 255, 1);
+    unitTriggerSet(baofu, PAOFU1, 255, 1);
+    unitTriggerSet(enemy1, ENEMY1, 255, 1);
+    unitTriggerSet(enemy2, ENEMY2, 255, 1);
+    envTriggerSet(EXIT, 56, 1, line, coll_23);
+    cameraSetNorth(north);
+    cameraSet(northwest, 300, 0, -60);
+    playerInit(north);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function FREE2()
+{
+    unitSpawn(ulala, sprite_6, 437, 0, -332, north, none);
+    unitFace(ulala, north);
+    unitSpawn(baofu, sprite_13, 544, 0, -494, north, none);
+    unitFace(baofu, east);
+    unitSpawn(katsuya, sprite_d, 577, 0, -203, north, none);
+    unitFace(katsuya, north);
+    unitIdleOnAll();
+    unitTriggerSet(katsuya, KATUYA2, 255, 1);
+    unitTriggerSet(ulala, URARA2, 255, 1);
+    unitTriggerSet(baofu, PAOFU2, 255, 1);
+    envTriggerSet(EXIT, 56, 1, line, coll_23);
+    cameraSetNorth(north);
+    cameraSet(northwest, 300, 0, -60);
+    playerInit(north);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function ENEMY1()
+{
+    controlDisable();
+    unitFacePlayer(enemy1);
+    ref_141 = dialogAlloc();
+    ref_142 = msgShow(msg_8);
+/***************************************
+[color(yellow)]マフィア[color(white)]
+[tab]アナタ、ここ入るダメね。
+[tab]ここ立ち入り禁止よ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(enemy1, animation_1, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_2, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_1, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_3, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_4, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_3, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_1, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_2, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_1, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_3, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_4, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_3, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_19, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_142);
+    dialogFree(ref_141);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(30);
+    unitRestoreFacing(enemy1);
+    controlEnable();
+}
+
+function ENEMY2()
+{
+    controlDisable();
+    unitFacePlayer(enemy2);
+    ref_193 = dialogAlloc();
+    ref_194 = msgShow(msg_9);
+/***************************************
+[color(yellow)]マフィア[color(white)]
+[tab]早く出て行くね！
+[tab]カジノもっと奥！
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(enemy2, animation_26, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_194);
+    dialogFree(ref_193);
+    unitAnimationPlay(enemy2, animation_0, 1);
+    unitWait(enemy2);
+    unitRestoreFacing(enemy2);
+    controlEnable();
+}
+
+function PAOFU1()
+{
+    controlDisable();
+    unitFacePlayer(baofu);
+    ref_1a2 = bustupLoad(bustup_2c);
+    bustupWait(ref_1a2);
+    ref_1a4 = bustupAlloc(ref_1a2, left, rgb(0,0,0));
+    bustupFade(ref_1a4, rgb(128,0,0), 30);
+    ref_1a6 = dialogAlloc();
+    ref_1a7 = msgShow(msg_10);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]こんな悪党どものことなんざ、
+[tab]カタギの連中は知らなくていい事だ…
+[tab]一生知らずに済むんなら、越したこたねぇ…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_1a7);
+    dialogFree(ref_1a6);
+    ref_1ae = bustupFade(ref_1a4, rgb(0,0,0), 10);
+    bustupWait(ref_1ae);
+    bustupFree(ref_1a4);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitWait(baofu);
+    unitRestoreFacing(baofu);
+    controlEnable();
+}
+
+function KATUYA1()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    ref_1b8 = bustupLoad(bustup_21);
+    bustupWait(ref_1b8);
+    ref_1ba = bustupAlloc(ref_1b8, left, rgb(0,0,0));
+    bustupFade(ref_1ba, rgb(128,0,0), 30);
+    ref_1bc = dialogAlloc();
+    ref_1bd = msgShow(msg_11);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]昼の街並み、夜の街並み、表通りに裏通り…
+[tab]都会にはいくつもの顔があるものさ。
+[tab]街にもペルソナがある…そういうことだ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_1bd);
+    dialogFree(ref_1bc);
+    ref_1c4 = bustupFade(ref_1ba, rgb(0,0,0), 10);
+    bustupWait(ref_1c4);
+    bustupFree(ref_1ba);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+    unitRestoreFacing(katsuya);
+    controlEnable();
+}
+
+function URARA1()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_1ce = bustupLoad(bustup_1a);
+    bustupWait(ref_1ce);
+    ref_1d0 = bustupAlloc(ref_1ce, left, rgb(0,0,0));
+    bustupFade(ref_1d0, rgb(128,0,0), 30);
+    ref_1d2 = dialogAlloc();
+    ref_1d3 = msgShow(msg_12);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]私らさぁ、今まで世の中のほんの一部しか
+[tab]知らなかったのね…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_1d3);
+    ref_1d9 = msgShow(msg_13);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]普通に暮らしてた街なのにさ…
+[tab]裏には色んな怖い事があるんだ…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1d9);
+    dialogFree(ref_1d2);
+    ref_1dd = bustupFade(ref_1d0, rgb(0,0,0), 10);
+    bustupWait(ref_1dd);
+    bustupFree(ref_1d0);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function PAOFU2()
+{
+    controlDisable();
+    unitFacePlayer(baofu);
+    ref_1e7 = bustupLoad(bustup_2c);
+    bustupWait(ref_1e7);
+    ref_1e9 = bustupAlloc(ref_1e7, left, rgb(0,0,0));
+    bustupFade(ref_1e9, rgb(128,0,0), 30);
+    ref_1eb = dialogAlloc();
+    ref_1ec = msgShow(msg_14);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]合言葉は「[color(green)]Ｐａｎｔｈｅｒ[color(white)]」だとよ…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_14, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_1ec);
+    dialogFree(ref_1eb);
+    ref_1f4 = bustupFade(ref_1e9, rgb(0,0,0), 10);
+    bustupWait(ref_1f4);
+    bustupFree(ref_1e9);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitWait(baofu);
+    unitRestoreFacing(baofu);
+    controlEnable();
+}
+
+function URARA2()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_1fe = bustupLoad(bustup_1a);
+    bustupWait(ref_1fe);
+    ref_200 = bustupAlloc(ref_1fe, left, rgb(0,0,0));
+    bustupFade(ref_200, rgb(128,0,0), 30);
+    ref_202 = dialogAlloc();
+    ref_203 = msgShow(msg_15);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]パオフゥ…怖いよ。
+[tab]どうしちゃったわけ？
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(ulala, animation_1f, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_203);
+    dialogFree(ref_202);
+    ref_20f = bustupFade(ref_200, rgb(0,0,0), 10);
+    bustupWait(ref_20f);
+    bustupFree(ref_200);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function KATUYA2()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    ref_219 = bustupLoad(bustup_21);
+    bustupWait(ref_219);
+    ref_21b = bustupAlloc(ref_219, left, rgb(0,0,0));
+    bustupFade(ref_21b, rgb(128,0,0), 30);
+    ref_21d = dialogAlloc();
+    ref_21e = msgShow(msg_16);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]相当深い根がありそうだな…あいつ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_14, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(katsuya, animation_24, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(20);
+    sync();
+    wait(ref_21e);
+    dialogFree(ref_21d);
+    ref_22a = bustupFade(ref_21b, rgb(0,0,0), 10);
+    bustupWait(ref_22a);
+    bustupFree(ref_21b);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+    unitRestoreFacing(katsuya);
+    controlEnable();
+}
+
+function URARAMOVE()
+{
+    unitMove(ulala, 515, -80, face_west, fast);
+    unitWait(ulala);
+    unitMove(ulala, 515, -565, face_north, fast);
+    unitWait(ulala);
+    unitFace(ulala, east);
+    unitWait(ulala);
+    unitAnimationHold(ulala, animation_21, 60);
+    unitWait(ulala);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+}
+
+function KATUYAMOVE()
+{
+    unitMove(katsuya, 515, -80, face_west, fast);
+    unitWait(katsuya);
+    unitMove(katsuya, 515, -465, face_north, fast);
+    unitWait(katsuya);
+    unitFace(katsuya, east);
+    unitWait(katsuya);
+    unitAnimationHold(katsuya, animation_21, 60);
+    unitWait(katsuya);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+}
+
+function MAYAMOVE()
+{
+    unitMove(maya, 450, -200, face_west, fast);
+    unitWait(maya);
+    unitMove(maya, 450, -400, face_north, fast);
+    unitWait(maya);
+    unitFace(maya, east);
+    unitWait(maya);
+    unitAnimationHold(maya, animation_21, 60);
+    unitWait(maya);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitWait(maya);
+}
+
+function EXIT()
+{
+    controlDisable();
+    objAnimRotate(obj_5, 0, -80, 0, 60, 0);
+    sndMusicPlay(sound_313c, 127);
+    objAnimWait(obj_5);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    cameraSetNorth(north);
+    bitGet(var_0, MBIT_KE_ZODI2F);
+    bne(var_0, 0, label_262);
+    dngLoad2(zodiac1-7);
+    b(label_265);
+  label_262:
+    bne(var_0, 1, label_265);
+    dngLoad2(zodiac2-14);
+    b(label_265);
+  label_265:
+}
+
+function CHECK()
+{
+    controlDisable();
+    ref_267 = dialogAlloc();
+    ref_268 = msgShow(msg_17);
+/***************************************
+[color(yellow)]チェック用[color(white)]
+[tab]合言葉を入手しました。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_268);
+    dialogFree(ref_267);
+    bitSet(EBIT_E0040);
+    controlEnable();
+}
+
+function JISIN()
+{
+    ref_26f = cameraMoveTo(350, 0, -248, 2);
+    wait(ref_26f);
+    ref_271 = cameraMoveTo(350, 0, -232, 2);
+    wait(ref_271);
+    ref_273 = cameraMoveTo(350, 0, -247, 2);
+    wait(ref_273);
+    ref_275 = cameraMoveTo(350, 0, -233, 2);
+    wait(ref_275);
+    ref_277 = cameraMoveTo(350, 0, -246, 2);
+    wait(ref_277);
+    ref_279 = cameraMoveTo(350, 0, -234, 2);
+    wait(ref_279);
+    ref_27b = cameraMoveTo(350, 0, -245, 2);
+    wait(ref_27b);
+    screenFlash(255, 255, 255);
+    ref_27e = cameraMoveTo(350, 0, -235, 2);
+    wait(ref_27e);
+    ref_280 = cameraMoveTo(350, 0, -244, 2);
+    wait(ref_280);
+    screenFlash(255, 255, 255);
+    ref_283 = cameraMoveTo(350, 0, -236, 2);
+    wait(ref_283);
+    ref_285 = cameraMoveTo(350, 0, -243, 2);
+    wait(ref_285);
+    ref_287 = cameraMoveTo(350, 0, -237, 2);
+    wait(ref_287);
+    ref_289 = cameraMoveTo(350, 0, -242, 2);
+    wait(ref_289);
+    ref_28b = cameraMoveTo(350, 0, -238, 2);
+    wait(ref_28b);
+    ref_28d = cameraMoveTo(350, 0, -241, 2);
+    wait(ref_28d);
+    ref_28f = cameraMoveTo(350, 0, -239, 2);
+    wait(ref_28f);
+    ref_291 = cameraMoveTo(350, 0, -240, 2);
+    wait(ref_291);
+    delayClear();
+    delayWait(10);
+    ref_295 = cameraMoveTo(350, 0, -244, 2);
+    wait(ref_295);
+    ref_297 = cameraMoveTo(350, 0, -236, 2);
+    wait(ref_297);
+    screenFlash(255, 255, 255);
+    ref_29a = cameraMoveTo(350, 0, -243, 2);
+    wait(ref_29a);
+    ref_29c = cameraMoveTo(350, 0, -237, 2);
+    wait(ref_29c);
+    ref_29e = cameraMoveTo(350, 0, -242, 2);
+    wait(ref_29e);
+    ref_2a0 = cameraMoveTo(350, 0, -238, 2);
+    wait(ref_2a0);
+    ref_2a2 = cameraMoveTo(350, 0, -241, 2);
+    wait(ref_2a2);
+    ref_2a4 = cameraMoveTo(350, 0, -239, 2);
+    wait(ref_2a4);
+    ref_2a6 = cameraMoveTo(350, 0, -240, 2);
+    wait(ref_2a6);
+    delayClear();
+    delayWait(10);
+    ref_2aa = cameraMoveTo(350, 0, -248, 2);
+    wait(ref_2aa);
+    ref_2ac = cameraMoveTo(350, 0, -232, 2);
+    wait(ref_2ac);
+    screenFlash(255, 255, 255);
+    ref_2af = cameraMoveTo(350, 0, -247, 2);
+    wait(ref_2af);
+    ref_2b1 = cameraMoveTo(350, 0, -233, 2);
+    wait(ref_2b1);
+    screenFlash(255, 255, 255);
+    ref_2b4 = cameraMoveTo(350, 0, -246, 2);
+    wait(ref_2b4);
+    ref_2b6 = cameraMoveTo(350, 0, -234, 2);
+    wait(ref_2b6);
+    ref_2b8 = cameraMoveTo(350, 0, -245, 2);
+    wait(ref_2b8);
+    ref_2ba = cameraMoveTo(350, 0, -235, 2);
+    wait(ref_2ba);
+    ref_2bc = cameraMoveTo(350, 0, -244, 2);
+    wait(ref_2bc);
+    ref_2be = cameraMoveTo(350, 0, -236, 2);
+    wait(ref_2be);
+    ref_2c0 = cameraMoveTo(350, 0, -243, 2);
+    wait(ref_2c0);
+    ref_2c2 = cameraMoveTo(350, 0, -237, 2);
+    wait(ref_2c2);
+    screenFlash(255, 255, 255);
+    ref_2c5 = cameraMoveTo(350, 0, -242, 2);
+    wait(ref_2c5);
+    ref_2c7 = cameraMoveTo(350, 0, -238, 2);
+    wait(ref_2c7);
+    ref_2c9 = cameraMoveTo(350, 0, -241, 2);
+    wait(ref_2c9);
+    ref_2cb = cameraMoveTo(350, 0, -239, 2);
+    wait(ref_2cb);
+    ref_2cd = cameraMoveTo(350, 0, -240, 2);
+    wait(ref_2cd);
+    delayClear();
+    delayWait(10);
+}

@@ -1,0 +1,446 @@
+function START()
+{
+    op_107();
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_10);
+    bitGet(var_0, MBIT_TORI2VEL);
+    bne(var_0, 0, label_24);
+    unknownVar2(var_0);
+    bne(var_0, 1, label_22);
+    unknownVar1(var_0);
+    bne(var_0, 513, label_d);
+    dngRoomSet(273);
+    dngRoomDraw();
+    b(label_21);
+  label_d:
+    bne(var_0, 2049, label_11);
+    dngRoomSet(277);
+    dngRoomDraw();
+    b(label_21);
+  label_11:
+    bne(var_0, 2571, label_15);
+    dngRoomSet(279);
+    dngRoomDraw();
+    b(label_21);
+  label_15:
+    bne(var_0, 3339, label_19);
+    dngRoomSet(283);
+    dngRoomDraw();
+    b(label_21);
+  label_19:
+    bne(var_0, 3617, label_1d);
+    dngRoomSet(297);
+    dngRoomDraw();
+    b(label_21);
+  label_1d:
+    bne(var_0, 4872, label_21);
+    dngRoomSet(289);
+    dngRoomDraw();
+    b(label_21);
+  label_21:
+    b(label_23);
+  label_22:
+    b(label_23);
+  label_23:
+    b(label_28);
+  label_24:
+    bne(var_0, 1, label_28);
+    dngRoomSet(287);
+    dngRoomDraw();
+    b(label_28);
+  label_28:
+    objVisible(obj_29, false);
+    objVisible(obj_2a, false);
+    ref_2a = todLoad(tod_e);
+    wait(ref_2a);
+    todRun(tod_e, 1);
+    envTriggerSet(DOORBOX, 14, 1, line, coll_20);
+    envTriggerSet(DOORBOX, 14, 1, collision_5, coll_2);
+    envTriggerSet(HIDARI, 56, 1, collision_5, coll_0);
+    envTriggerSet(MIGI, 131, 1, collision_5, coll_1);
+    ref_31 = spriteLoad(sprite_a4);
+    wait(ref_31);
+    unitSpawn(shopkeeper, sprite_a4, 1088, -60, -968, north, none);
+    envTriggerSet(IGORU, 56, 1, collision_5, coll_3);
+    ref_35 = spriteLoad(sprite_a6);
+    wait(ref_35);
+    unitSpawn(npc1, sprite_a6, 1269, -60, -695, north, none);
+    unitTriggerSet(npc1, BERADONNA, 255, 1);
+    ref_39 = spriteLoad(sprite_a5);
+    wait(ref_39);
+    unitSpawn(npc2, sprite_a5, 1028, -60, -740, north, none);
+    ref_3c = spriteLoad(sprite_a7);
+    wait(ref_3c);
+    unitSpawn(unit_76, sprite_a7, 750, -60, -1250, north, none);
+    unitTriggerSet(unit_76, ESI, 255, 1);
+    cameraSet(northwest, 111, 0, -996);
+    call(KYOUSEIBOX);
+}
+
+function KYOUSEIBOX()
+{
+    sndMusicPlay(sound_3001, 127);
+    ref_44 = cameraMoveTo(-414, 0, -918, 5);
+    wait(ref_44);
+    unitSpawn(unit_76, sprite_a7, 890, -60, -1218, north, none);
+    unitFace(unit_76, south);
+    unitAnimationPlay(unit_76, animation_4, 1);
+    unitAnimationPlay(shopkeeper, animation_1, 1);
+    unitAnimationPlay(npc1, animation_7, 1);
+    unitAnimationPlay(npc2, animation_0, 1);
+    cameraMoveTo(194, 0, -936, 180);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    delayClear();
+    delayWait(120);
+    ref_52 = spriteLoad(sprite_0);
+    wait(ref_52);
+    objAnimRotate(obj_0, 0, -70, 0, 30, 0);
+    sndMusicPlay(sound_3006, 127);
+    objAnimWait(obj_0);
+    delayClear();
+    delayWait(30);
+    unitSpawn(maya, sprite_0, -15, 0, -989, north, fade);
+    unitMove(maya, 125, -996, face_west, medium);
+    unitWait(maya);
+    delayClear();
+    delayWait(60);
+    unitAnimationHold(maya, animation_21, -1);
+    delayClear();
+    delayWait(30);
+    ref_61 = cameraMoveTo(1041, 0, -907, 180);
+    delayClear();
+    delayWait(60);
+    unitMove(maya, 1092, -1103, face_south, medium);
+    call(ESIKUBI);
+    call(IGOKUBI);
+    unitWait(maya);
+    wait(ref_61);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(shopkeeper, animation_7, 1);
+    delayClear();
+    delayWait(30);
+    objAnimRotate(obj_0, 0, 70, 0, 30, 0);
+    ref_6f = bustupLoad(bustup_e0);
+    bustupWait(ref_6f);
+    ref_71 = bustupAlloc(ref_6f, right, rgb(0,0,0));
+    bustupFade(ref_71, rgb(128,0,0), 30);
+    ref_73 = dialogAlloc();
+    ref_74 = msgShow(msg_0);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ようこそ、ベルベットルームへ。
+[tab]ここは、人の心の様々なる形を呼び覚ます部屋…
+[wait][clear]
+***************************************/
+    wait(ref_74);
+    ref_76 = msgShow(msg_1);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]我らが主、フィレモン様の命により、
+[tab]貴方がたをお待ちしておりました。
+[tab]我が名は、イゴールと申します。[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(shopkeeper, animation_9, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_76);
+    dialogFree(ref_73);
+    ref_87 = bustupFade(ref_71, rgb(0,0,0), 10);
+    bustupWait(ref_87);
+    bustupFree(ref_71);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_8b = cameraMoveTo(1107, 0, -692, 60);
+    wait(ref_8b);
+    unitAnimationPlay(maya, animation_1, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc1, animation_6, 1);
+    delayClear();
+    delayWait(20);
+    ref_93 = bustupLoad(bustup_e2);
+    bustupWait(ref_93);
+    ref_95 = bustupAlloc(ref_93, right, rgb(0,0,0));
+    bustupFade(ref_95, rgb(128,0,0), 30);
+    ref_97 = dialogAlloc();
+    ref_98 = msgShow(msg_2);
+/***************************************
+[color(yellow)]ベラドンナ[color(white)]
+[tab]私はベラドンナ～𝅘𝅥𝅮[delay(30)]
+[tab]己という魔物に挑む、もののふ称える歌歌い～𝅘𝅥𝅮[wait][clear]
+***************************************/
+    wait(ref_98);
+    dialogFree(ref_97);
+    ref_9b = bustupFade(ref_95, rgb(0,0,0), 10);
+    bustupWait(ref_9b);
+    bustupFree(ref_95);
+    unitAnimationPlay(npc1, animation_7, 1);
+    ref_9f = cameraMoveTo(935, 0, -679, 60);
+    wait(ref_9f);
+    unitAnimationPlay(maya, animation_a, 1);
+    unitAnimationPlay(npc2, animation_3, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc2, animation_4, 1);
+    delayClear();
+    delayWait(30);
+    ref_a8 = bustupLoad(bustup_e1);
+    bustupWait(ref_a8);
+    ref_aa = bustupAlloc(ref_a8, right, rgb(0,0,0));
+    bustupFade(ref_aa, rgb(128,0,0), 30);
+    ref_ac = dialogAlloc();
+    ref_ad = msgShow(msg_3);
+/***************************************
+[color(yellow)]ナナシ[color(white)]
+[tab]俺はナナシ…[delay(30)]
+[tab]閉ざされし、心の扉を開くピアノ弾き…[wait][clear]
+***************************************/
+    wait(ref_ad);
+    dialogFree(ref_ac);
+    ref_b0 = bustupFade(ref_aa, rgb(0,0,0), 10);
+    bustupWait(ref_b0);
+    bustupFree(ref_aa);
+    call(NANAMODORI);
+    ref_b4 = cameraMoveTo(877, 0, -1001, 60);
+    wait(ref_b4);
+    unitFaceUnit(unit_76, maya);
+    unitFaceUnit(maya, unit_76);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(unit_76, animation_6, 1);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    ref_c3 = bustupLoad(bustup_e3);
+    bustupWait(ref_c3);
+    ref_c5 = bustupAlloc(ref_c3, right, rgb(0,0,0));
+    bustupFade(ref_c5, rgb(128,0,0), 30);
+    ref_c7 = dialogAlloc();
+    ref_c8 = msgShow(msg_4);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]僕は悪魔絵師。[delay(30)]
+[tab]人の内に住まう、神と悪魔を描く絵師。[wait][clear]
+***************************************/
+    unitAnimationPlay(unit_76, animation_8, 1);
+    wait(ref_c8);
+    dialogFree(ref_c7);
+    ref_cc = bustupFade(ref_c5, rgb(0,0,0), 10);
+    bustupWait(ref_cc);
+    bustupFree(ref_c5);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(unit_76, animation_9, 1);
+    ref_d3 = cameraMoveTo(1041, 0, -907, 60);
+    unitFaceUnit(maya, shopkeeper);
+    wait(ref_d3);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    delayClear();
+    delayWait(20);
+    ref_de = bustupLoad(bustup_e0);
+    bustupWait(ref_de);
+    ref_e0 = bustupAlloc(ref_de, right, rgb(0,0,0));
+    bustupFade(ref_e0, rgb(128,0,0), 30);
+    ref_e2 = dialogAlloc();
+    ref_e3 = msgShow(msg_5);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]我ら４人、貴方がたの新たな心、
+[tab]新たなペルソナの目覚めをお助けするよう、
+[tab]仰せつかっております。以後、お見知りおきを…[wait][clear]
+***************************************/
+    wait(ref_e3);
+    dialogFree(ref_e2);
+    ref_e6 = bustupFade(ref_e0, rgb(0,0,0), 10);
+    bustupWait(ref_e6);
+    bustupFree(ref_e0);
+    unitAnimationPlay(shopkeeper, animation_7, 1);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(shopkeeper, animation_9, 1);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitSpawn(unit_76, sprite_a7, 750, -60, -1250, north, none);
+    ref_f4 = cameraLookAtUnit(maya, 0, 5);
+    wait(ref_f4);
+    unitDespawn(maya, none);
+    bitSet(LBIT_0001);
+    bitSet(MBIT_BEL_ISATU);
+    bitSet(MBIT_BEL_BERADONNA);
+    bitSet(MBIT_BEL_NANASI);
+    bitSet(MBIT_BEL_IGOUL);
+    bitSet(MBIT_BEL_ESI);
+    bitSet(LBIT_0000);
+    eventLoad(event_67);
+}
+
+function FREEBOX()
+{
+}
+
+function EIKITIBOX()
+{
+}
+
+function B_URARATI()
+{
+}
+
+function B_KATUYYY()
+{
+}
+
+function B_PAO()
+{
+}
+
+function B_NANJ()
+{
+}
+
+function B_ERI()
+{
+}
+
+function B_TATU()
+{
+}
+
+function IGORU()
+{
+}
+
+function HA_SHOP_TALK_0()
+{
+}
+
+function HA_SHOP_END_0()
+{
+}
+
+function BERADONNA()
+{
+}
+
+function NANASI()
+{
+}
+
+function ESI()
+{
+}
+
+function HA_SHOP_RESTART_1()
+{
+}
+
+function HA_SHOP_TALK_1()
+{
+}
+
+function HA_SHOP_END_1()
+{
+}
+
+function DOORBOX()
+{
+}
+
+function EXITBOX()
+{
+}
+
+function warp1()
+{
+}
+
+function ESIKUBI()
+{
+    delayClear();
+    delayWait(100);
+    unitAnimationPlay(unit_76, animation_3, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(unit_76, animation_1, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(unit_76, animation_2, 1);
+    delayClear();
+    delayWait(60);
+    unitFace(unit_76, west);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(unit_76, animation_9, 1);
+}
+
+function NANAMODORI()
+{
+    unitAnimationPlay(npc2, animation_3, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc2, animation_0, 1);
+}
+
+function IGOKUBI()
+{
+    delayClear();
+    delayWait(120);
+    unitAnimationPlay(shopkeeper, animation_1, 1);
+    delayClear();
+    delayWait(40);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(shopkeeper, animation_6, 1);
+}
+
+function HIDARI()
+{
+    call(NANASI);
+    unitAnimationPlay(npc2, animation_3, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc2, animation_4, 1);
+}
+
+function MIGI()
+{
+    call(NANASI);
+    unitAnimationPlay(npc2, animation_1, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc2, animation_2, 1);
+}

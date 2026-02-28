@@ -1,0 +1,97 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_5);
+    b(label_7);
+  label_5:
+    sndVolumeFadeTo(var_0, 1, 60);
+    b(label_7);
+  label_7:
+    sndMusicPlay(sound_308f, 1);
+    envTriggerSet(warp1, 131, 1, line, coll_0);
+    cameraSet(southwest, 864, 0, -2428);
+    cameraSetNorth(south);
+    ref_b = spriteLoad(sprite_0);
+    wait(ref_b);
+    ref_d = spriteLoad(sprite_2);
+    wait(ref_d);
+    playerInit(south);
+    controlDisable();
+    ref_11 = spriteLoad(sprite_6);
+    wait(ref_11);
+    unitSpawn(ulala, sprite_6, 1242, 0, -1903, south, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+    sndVolumeFadeTo(sound_308f, 127, 60);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    bitGet(var_0, LBIT_0000);
+    bnz(var_0, label_30);
+    ref_21 = bustupLoad(bustup_17);
+    bustupWait(ref_21);
+    ref_23 = bustupAlloc(ref_21, left, rgb(0,0,0));
+    bustupFade(ref_23, rgb(128,0,0), 30);
+    ref_25 = dialogAlloc();
+    ref_26 = msgShow(msg_0);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]そっか…
+[tab]自転車通学ＯＫかここは。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1a, 1);
+    wait(ref_26);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_25);
+    ref_2b = bustupFade(ref_23, rgb(0,0,0), 10);
+    bustupWait(ref_2b);
+    bustupFree(ref_23);
+    bitSet(LBIT_0000);
+    b(label_3f);
+  label_30:
+    unitFacePlayer(ulala);
+    ref_31 = bustupLoad(bustup_17);
+    bustupWait(ref_31);
+    ref_33 = bustupAlloc(ref_31, left, rgb(0,0,0));
+    bustupFade(ref_33, rgb(128,0,0), 30);
+    ref_35 = dialogAlloc();
+    ref_36 = msgShow(msg_1);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]ここには誰も居ないみたいよ。
+[tab]他の場所に行ってみない？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_36);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_35);
+    ref_3b = bustupFade(ref_33, rgb(0,0,0), 10);
+    bustupWait(ref_3b);
+    bustupFree(ref_33);
+    unitRestoreFacing(ulala);
+  label_3f:
+    controlEnable();
+}
+
+function warp1()
+{
+    controlDisable();
+    objAnimRotate(obj_1d, 0, -90, 0, 30, 0);
+    sndMusicPlay(sound_308e, 127);
+    sndVolumeFadeTo(sound_308f, 0, 30);
+    objAnimWait(obj_1d);
+    sndVolumeFadeTo(sound_1000, 127, 60);
+    dngLoad2(seven_sisters_high_empty-9);
+}

@@ -1,0 +1,7 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ フン！
+ 大地の怒りを知りなさいっ！
+[sync][wait]
+[end]

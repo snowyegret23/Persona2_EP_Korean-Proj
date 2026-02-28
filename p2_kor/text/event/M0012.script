@@ -1,0 +1,1439 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    sndMusicPlay(sound_304d, 127);
+    envTriggerSet(DOORBOX, 131, 1, line, coll_14);
+    levelFootstepSet(sfx_15);
+    bitGet(var_0, MBIT_HSATOMI_HATURAITEN);
+    bnz(var_0, label_9);
+    cameraSet(southeast, 1001, 0, -1427);
+    b(label_a);
+  label_9:
+    cameraSet(northeast, 1125, 0, -505);
+  label_a:
+    li(var_0, 0);
+    li(var_1, 0);
+    partyMemberCheck(var_0, ulala);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, katsuya);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, baofu);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, nanjo);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, elly);
+    add(var_1, var_1, var_0);
+    boutrange(var_1, 0, 4, label_19);
+    li(var_0, 0);
+    b(label_1e);
+  label_19:
+    ref_19 = dialogAlloc();
+    ref_1a = msgShow(msg_0);
+/***************************************
+There are more than 4 people in the party.
+[tab]This will cause the game to hang.
+[tab]Please contact Kaneda and Kataoka.
+[wait][clear]
+***************************************/
+    wait(ref_1a);
+    dialogFree(ref_19);
+    b(label_1e);
+  label_1e:
+    bitGet(var_0, EBIT_E0046);
+    bez(var_0, label_2c);
+    partyMemberCheck(var_0, nanjo);
+    bez(var_0, label_26);
+    ref_22 = spriteLoad(sprite_1f);
+    wait(ref_22);
+    unitSpawn(nanjo, sprite_1f, 725, 0, -1450, north, none);
+    unitTriggerSet(nanjo, B_NANJ, 255, 1);
+  label_26:
+    partyMemberCheck(var_0, elly);
+    bez(var_0, label_2c);
+    ref_28 = spriteLoad(sprite_23);
+    wait(ref_28);
+    unitSpawn(elly, sprite_23, 360, 0, -450, west, none);
+    unitTriggerSet(elly, B_ERI, 255, 1);
+  label_2c:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_34);
+    bitGet(var_0, EBIT_E0038);
+    bez(var_0, label_34);
+    ref_30 = spriteLoad(sprite_6a);
+    wait(ref_30);
+    unitSpawn(makimura, sprite_6a, 1250, 0, -730, east, none);
+    unitTriggerSet(makimura, SAGIBOX, 255, 1);
+  label_34:
+    partyMemberCheck(var_0, ulala);
+    bez(var_0, label_3a);
+    ref_36 = spriteLoad(sprite_6);
+    wait(ref_36);
+    unitSpawn(ulala, sprite_6, 950, 0, -1150, east, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+  label_3a:
+    partyMemberCheck(var_0, katsuya);
+    bez(var_0, label_40);
+    ref_3c = spriteLoad(sprite_d);
+    wait(ref_3c);
+    unitSpawn(katsuya, sprite_d, 650, 0, -760, south, none);
+    unitTriggerSet(katsuya, B_KATUYYY, 255, 1);
+  label_40:
+    partyMemberCheck(var_0, baofu);
+    bez(var_0, label_46);
+    ref_42 = spriteLoad(sprite_13);
+    wait(ref_42);
+    unitSpawn(baofu, sprite_13, 50, 0, -610, east, none);
+    unitTriggerSet(baofu, B_PAO, 255, 1);
+  label_46:
+    ref_46 = spriteLoad(sprite_8f);
+    wait(ref_46);
+    unitSpawn(shopkeeper, sprite_8f, 1179, 0, -268, north, none);
+    envTriggerSet(SHOP, 224, 1, line, coll_0);
+    envTriggerSet(SHOP, 224, 1, line, coll_1);
+    envTriggerSet(SHOP, 112, 1, line, coll_2);
+    envTriggerSet(SHOP, 112, 1, line, coll_3);
+    envTriggerSet(SHOP, 56, 1, line, coll_4);
+    envTriggerSet(SHOP, 56, 1, line, coll_5);
+    ref_4f = spriteLoad(sprite_c8);
+    wait(ref_4f);
+    unitSpawn(npc1, sprite_c8, 540, 0, -990, east, none);
+    unitPalette(npc1, 1);
+    unitTriggerSet(npc1, SARARII, 255, 1);
+    ref_54 = spriteLoad(sprite_bb);
+    wait(ref_54);
+    unitSpawn(npc2, sprite_bb, 830, 0, -50, north, none);
+    unitPalette(npc2, 1);
+    unitTriggerSet(npc2, KAOIRO, 255, 1);
+    ref_59 = spriteLoad(sprite_0);
+    wait(ref_59);
+    ref_5b = spriteLoad(sprite_2);
+    wait(ref_5b);
+    playerInit(south);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_8c);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_7c);
+    unitFacePlayer(ulala);
+    ref_6d = bustupLoad(bustup_17);
+    bustupWait(ref_6d);
+    ref_6f = bustupAlloc(ref_6d, left, rgb(0,0,0));
+    bustupFade(ref_6f, rgb(128,0,0), 30);
+    ref_71 = dialogAlloc();
+    ref_72 = msgShow(msg_1);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Discount drugstores are very nice. They have
+[tab]good prices and selection. But I’m a little
+[tab]worried. Do they really know about drugs?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_72);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_71);
+    ref_77 = bustupFade(ref_6f, rgb(0,0,0), 10);
+    bustupWait(ref_77);
+    bustupFree(ref_6f);
+    unitRestoreFacing(ulala);
+    b(label_9c);
+  label_7c:
+    unitFacePlayer(ulala);
+    ref_7d = bustupLoad(bustup_1d);
+    bustupWait(ref_7d);
+    ref_7f = bustupAlloc(ref_7d, left, rgb(0,0,0));
+    bustupFade(ref_7f, rgb(128,0,0), 30);
+    ref_81 = dialogAlloc();
+    ref_82 = msgShow(msg_2);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]So weird... Doesn’t my life seem to be
+[tab]running backwards on life’s highway?
+[tab]...I used to be just a regular office lady, why?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_82);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_81);
+    ref_87 = bustupFade(ref_7f, rgb(0,0,0), 10);
+    bustupWait(ref_87);
+    bustupFree(ref_7f);
+    unitRestoreFacing(ulala);
+    b(label_9c);
+  label_8c:
+    unitFacePlayer(ulala);
+    ref_8d = bustupLoad(bustup_18);
+    bustupWait(ref_8d);
+    ref_8f = bustupAlloc(ref_8d, left, rgb(0,0,0));
+    bustupFade(ref_8f, rgb(128,0,0), 30);
+    ref_91 = dialogAlloc();
+    ref_92 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Original theme songs are kind of cool.
+[tab]Let’s start making our own, with our names!
+[tab]Woo-lala, U-lala... Whatcha think?[delay(10)] ...Hey!!
+[wait][clear]
+***************************************/
+    unitAnimationHold(ulala, animation_18, -1);
+    wait(ref_92);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_91);
+    ref_97 = bustupFade(ref_8f, rgb(0,0,0), 10);
+    bustupWait(ref_97);
+    bustupFree(ref_8f);
+    unitRestoreFacing(ulala);
+    b(label_9c);
+  label_9c:
+    controlEnable();
+}
+
+function B_KATUYYY()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_e7);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_d7);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_c7);
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_b7);
+    unitFacePlayer(katsuya);
+    ref_a8 = bustupLoad(bustup_28);
+    bustupWait(ref_a8);
+    ref_aa = bustupAlloc(ref_a8, left, rgb(0,0,0));
+    bustupFade(ref_aa, rgb(128,0,0), 30);
+    ref_ac = dialogAlloc();
+    ref_ad = msgShow(msg_4);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Lately men tend to like sweet stuff too!
+[tab]There are actually more male dessert chefs.
+[tab]Ah, Amano-kun, do you like making desserts?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_ad);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_ac);
+    ref_b2 = bustupFade(ref_aa, rgb(0,0,0), 10);
+    bustupWait(ref_b2);
+    bustupFree(ref_aa);
+    unitRestoreFacing(katsuya);
+    b(label_f7);
+  label_b7:
+    unitFacePlayer(katsuya);
+    ref_b8 = bustupLoad(bustup_21);
+    bustupWait(ref_b8);
+    ref_ba = bustupAlloc(ref_b8, left, rgb(0,0,0));
+    bustupFade(ref_ba, rgb(128,0,0), 30);
+    ref_bc = dialogAlloc();
+    ref_bd = msgShow(msg_5);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Most people can’t distinguish twins...
+[tab]But familiar people, such as family members, 
+[tab]can tell right away. Even the 7 Satomi sisters.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_bd);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_bc);
+    ref_c2 = bustupFade(ref_ba, rgb(0,0,0), 10);
+    bustupWait(ref_c2);
+    bustupFree(ref_ba);
+    unitRestoreFacing(katsuya);
+    b(label_f7);
+  label_c7:
+    unitFacePlayer(katsuya);
+    ref_c8 = bustupLoad(bustup_27);
+    bustupWait(ref_c8);
+    ref_ca = bustupAlloc(ref_c8, left, rgb(0,0,0));
+    bustupFade(ref_ca, rgb(128,0,0), 30);
+    ref_cc = dialogAlloc();
+    ref_cd = msgShow(msg_6);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Does this place require all employees to earn
+[tab]a pharmacy license like some other drugstore
+[tab]chains? [delay(10)]A Farmer license?[delay(10)]... A, [delay(5)]Amano-kun...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_25, 1);
+    wait(ref_cd);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_cc);
+    ref_d2 = bustupFade(ref_ca, rgb(0,0,0), 10);
+    bustupWait(ref_d2);
+    bustupFree(ref_ca);
+    unitRestoreFacing(katsuya);
+    b(label_f7);
+  label_d7:
+    unitFacePlayer(katsuya);
+    ref_d8 = bustupLoad(bustup_21);
+    bustupWait(ref_d8);
+    ref_da = bustupAlloc(ref_d8, left, rgb(0,0,0));
+    bustupFade(ref_da, rgb(128,0,0), 30);
+    ref_dc = dialogAlloc();
+    ref_dd = msgShow(msg_7);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I can’t blame you for not trusting the police.
+[tab]Just don’t misunderstand... There are still
+[tab]police that won’t abuse the law.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_dd);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_dc);
+    ref_e2 = bustupFade(ref_da, rgb(0,0,0), 10);
+    bustupWait(ref_e2);
+    bustupFree(ref_da);
+    unitRestoreFacing(katsuya);
+    b(label_f7);
+  label_e7:
+    unitFacePlayer(katsuya);
+    ref_e8 = bustupLoad(bustup_21);
+    bustupWait(ref_e8);
+    ref_ea = bustupAlloc(ref_e8, left, rgb(0,0,0));
+    bustupFade(ref_ea, rgb(128,0,0), 30);
+    ref_ec = dialogAlloc();
+    ref_ed = msgShow(msg_8);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]There have been claims that this song has
+[tab]brainwashing effects. Maybe it needs to be
+[tab]investigated? But there’s no time now.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_ed);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_ec);
+    ref_f2 = bustupFade(ref_ea, rgb(0,0,0), 10);
+    bustupWait(ref_f2);
+    bustupFree(ref_ea);
+    unitRestoreFacing(katsuya);
+    b(label_f7);
+  label_f7:
+    controlEnable();
+}
+
+function B_PAO()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_154);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_144);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_134);
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_124);
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_114);
+    unitFacePlayer(baofu);
+    ref_105 = bustupLoad(bustup_31);
+    bustupWait(ref_105);
+    ref_107 = bustupAlloc(ref_105, left, rgb(0,0,0));
+    bustupFade(ref_107, rgb(128,0,0), 30);
+    ref_109 = dialogAlloc();
+    ref_10a = msgShow(msg_9);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I’m not supposed to be here.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    wait(ref_10a);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_109);
+    ref_10f = bustupFade(ref_107, rgb(0,0,0), 10);
+    bustupWait(ref_10f);
+    bustupFree(ref_107);
+    unitRestoreFacing(baofu);
+    b(label_163);
+  label_114:
+    unitFacePlayer(baofu);
+    ref_115 = bustupLoad(bustup_31);
+    bustupWait(ref_115);
+    ref_117 = bustupAlloc(ref_115, left, rgb(0,0,0));
+    bustupFade(ref_117, rgb(128,0,0), 30);
+    ref_119 = dialogAlloc();
+    ref_11a = msgShow(msg_10);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Look at all these diet products! You guys rely
+[tab]too much on drugs! Everyone’s too easy on
+[tab]themselves. What the heck, girls like it easy?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_11a);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_119);
+    ref_11f = bustupFade(ref_117, rgb(0,0,0), 10);
+    bustupWait(ref_11f);
+    bustupFree(ref_117);
+    unitRestoreFacing(baofu);
+    b(label_163);
+  label_124:
+    unitFacePlayer(baofu);
+    ref_125 = bustupLoad(bustup_2d);
+    bustupWait(ref_125);
+    ref_127 = bustupAlloc(ref_125, left, rgb(0,0,0));
+    bustupFade(ref_127, rgb(128,0,0), 30);
+    ref_129 = dialogAlloc();
+    ref_12a = msgShow(msg_11);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]The difference in relatives who look alike...
+[tab]is like wine, such as grapes from different
+[tab]fields or seasons which labels can’t tell apart.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_12a);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_129);
+    ref_12f = bustupFade(ref_127, rgb(0,0,0), 10);
+    bustupWait(ref_12f);
+    bustupFree(ref_127);
+    unitRestoreFacing(baofu);
+    b(label_163);
+  label_134:
+    unitFacePlayer(baofu);
+    ref_135 = bustupLoad(bustup_2d);
+    bustupWait(ref_135);
+    ref_137 = bustupAlloc(ref_135, left, rgb(0,0,0));
+    bustupFade(ref_137, rgb(128,0,0), 30);
+    ref_139 = dialogAlloc();
+    ref_13a = msgShow(msg_12);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]In company wars, what’s your weapon? 
+[tab]Those are prices and trust. If prices are the same,
+[tab]everyone will go to the store that they trust.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_13a);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_139);
+    ref_13f = bustupFade(ref_137, rgb(0,0,0), 10);
+    bustupWait(ref_13f);
+    bustupFree(ref_137);
+    unitRestoreFacing(baofu);
+    b(label_163);
+  label_144:
+    unitFacePlayer(baofu);
+    ref_145 = bustupLoad(bustup_2d);
+    bustupWait(ref_145);
+    ref_147 = bustupAlloc(ref_145, left, rgb(0,0,0));
+    bustupFade(ref_147, rgb(128,0,0), 30);
+    ref_149 = dialogAlloc();
+    ref_14a = msgShow(msg_13);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]When you believe in the media and police, 
+[tab]you turn blind to things you normally see. 
+[tab]If you notice, there’s a big case going on.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2e, 1);
+    wait(ref_14a);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_149);
+    ref_14f = bustupFade(ref_147, rgb(0,0,0), 10);
+    bustupWait(ref_14f);
+    bustupFree(ref_147);
+    unitRestoreFacing(baofu);
+    b(label_163);
+  label_154:
+    unitFacePlayer(baofu);
+    ref_155 = bustupLoad(bustup_2d);
+    bustupWait(ref_155);
+    ref_157 = bustupAlloc(ref_155, left, rgb(0,0,0));
+    bustupFade(ref_157, rgb(128,0,0), 30);
+    ref_159 = dialogAlloc();
+    ref_15a = msgShow(msg_14);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]They say liquor and songs are inseparable...
+[tab]But I still can’t get into Karaoke.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_15a);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_159);
+    ref_15f = bustupFade(ref_157, rgb(0,0,0), 10);
+    bustupWait(ref_15f);
+    bustupFree(ref_157);
+    unitRestoreFacing(baofu);
+  label_163:
+    controlEnable();
+}
+
+function B_NANJ()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_178);
+    unitFacePlayer(nanjo);
+    ref_169 = bustupLoad(bustup_36);
+    bustupWait(ref_169);
+    ref_16b = bustupAlloc(ref_169, left, rgb(0,0,0));
+    bustupFade(ref_16b, rgb(128,0,0), 30);
+    ref_16d = dialogAlloc();
+    ref_16e = msgShow(msg_15);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Rumors coming true, it’s still unbelievable.
+[tab]Living in a reality like that, it would be
+[tab]impossible to realize that...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_16e);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_16d);
+    ref_173 = bustupFade(ref_16b, rgb(0,0,0), 10);
+    bustupWait(ref_173);
+    bustupFree(ref_16b);
+    unitRestoreFacing(nanjo);
+    b(label_187);
+  label_178:
+    unitFacePlayer(nanjo);
+    ref_179 = bustupLoad(bustup_37);
+    bustupWait(ref_179);
+    ref_17b = bustupAlloc(ref_179, left, rgb(0,0,0));
+    bustupFade(ref_17b, rgb(128,0,0), 30);
+    ref_17d = dialogAlloc();
+    ref_17e = msgShow(msg_16);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Again... that chain store’s music is... Ahh!
+[tab]That song is stuck in my head! ...Amano-san,
+[tab]do you have songs that stay in your head?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_17e);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_17d);
+    ref_183 = bustupFade(ref_17b, rgb(0,0,0), 10);
+    bustupWait(ref_183);
+    bustupFree(ref_17b);
+    unitRestoreFacing(nanjo);
+  label_187:
+    controlEnable();
+}
+
+function B_ERI()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_19c);
+    unitFacePlayer(elly);
+    ref_18d = bustupLoad(bustup_3d);
+    bustupWait(ref_18d);
+    ref_18f = bustupAlloc(ref_18d, left, rgb(0,0,0));
+    bustupFade(ref_18f, rgb(128,0,0), 30);
+    ref_191 = dialogAlloc();
+    ref_192 = msgShow(msg_17);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]So there were many accidents happening
+[tab]that Kei and I didn’t know about.
+[tab]I am sorry everyone for the inconvenience.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_192);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_191);
+    ref_197 = bustupFade(ref_18f, rgb(0,0,0), 10);
+    bustupWait(ref_197);
+    bustupFree(ref_18f);
+    unitRestoreFacing(elly);
+    b(label_1ac);
+  label_19c:
+    unitFacePlayer(elly);
+    ref_19d = bustupLoad(bustup_3e);
+    bustupWait(ref_19d);
+    ref_19f = bustupAlloc(ref_19d, left, rgb(0,0,0));
+    bustupFade(ref_19f, rgb(128,0,0), 30);
+    ref_1a1 = dialogAlloc();
+    ref_1a2 = msgShow(msg_18);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Speaking of Satomi Tadashi...
+[tab]Kei seems to like their song very much.
+[tab]He is always singing it.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_23, 1);
+    wait(ref_1a2);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_1a1);
+    ref_1a7 = bustupFade(ref_19f, rgb(0,0,0), 10);
+    bustupWait(ref_1a7);
+    bustupFree(ref_19f);
+    unitRestoreFacing(elly);
+    b(label_1ac);
+  label_1ac:
+    controlEnable();
+}
+
+function B_TATU()
+{
+}
+
+function SARARII()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_1c6);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_1bd);
+    unitFacePlayer(npc1);
+    ref_1b5 = dialogAlloc();
+    ref_1b6 = msgShow(msg_19);
+/***************************************
+[color(yellow)]Businessman[color(white)]
+[tab]ChaLALALA♪[delay(30)]
+[tab]Hah!? I’ve heard this song before!?
+[tab]ChaLALALALA-LalanLanLan...♪
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_27, 1);
+    wait(ref_1b6);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_1b5);
+    unitRestoreFacing(npc1);
+    b(label_1cf);
+  label_1bd:
+    unitFacePlayer(npc1);
+    ref_1be = dialogAlloc();
+    ref_1bf = msgShow(msg_20);
+/***************************************
+[color(yellow)]Businessman[color(white)]
+[tab]Nooo! The song is running through my brain!
+[tab]I’ll be free if I leave the store but...
+[tab]I can’t do thaaaat! I can’t say whyyyy!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_26, 1);
+    wait(ref_1bf);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_1be);
+    unitRestoreFacing(npc1);
+    b(label_1cf);
+  label_1c6:
+    unitFacePlayer(npc1);
+    ref_1c7 = dialogAlloc();
+    ref_1c8 = msgShow(msg_21);
+/***************************************
+[color(yellow)]Businessman[color(white)]
+[tab]Ahh! [delay(15)]I can’t stand this music any longer![delay(15)]
+[tab]How long do I have to keep on listening to
+[tab]this song?[delay(15)]... Forever!? Nooooo!!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_25, 1);
+    wait(ref_1c8);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_1c7);
+    unitRestoreFacing(npc1);
+    b(label_1cf);
+  label_1cf:
+    controlEnable();
+}
+
+function KAOIRO()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_1e8);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_1df);
+    unitFacePlayer(npc2);
+    ref_1d7 = dialogAlloc();
+    ref_1d8 = msgShow(msg_22);
+/***************************************
+[color(yellow)]Man with a pale face[color(white)]
+[tab]Ah, are you an addict too? So am I...
+[tab]But lately I’m addicted to the pop group...
+[tab]"Muses".
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_1d8);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_1d7);
+    unitRestoreFacing(npc2);
+    b(label_1f1);
+  label_1df:
+    unitFacePlayer(npc2);
+    ref_1e0 = dialogAlloc();
+    ref_1e1 = msgShow(msg_23);
+/***************************************
+[color(yellow)]Man with a pale face[color(white)]
+[tab]Was I using bad junk... You have to use
+[tab]it correctly... Ha-Hurl... I feel sick...
+[tab]Joker curse? I’m not interested.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_1e1);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_1e0);
+    unitRestoreFacing(npc2);
+    b(label_1f1);
+  label_1e8:
+    unitFacePlayer(npc2);
+    ref_1e9 = dialogAlloc();
+    ref_1ea = msgShow(msg_24);
+/***************************************
+[color(yellow)]Man with a pale face[color(white)]
+[tab]Ahh, my body feels so relieved, and so does
+[tab]my heart... I must’ve had Kegare in me...
+[tab]Good bye drugs... Hello positive future...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_27, 1);
+    wait(ref_1ea);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_1e9);
+    unitRestoreFacing(npc2);
+    b(label_1f1);
+  label_1f1:
+    controlEnable();
+}
+
+function SAGIBOX()
+{
+    controlDisable();
+    unitFacePlayer(makimura);
+    ref_1f5 = bustupLoad(bustup_d4);
+    bustupWait(ref_1f5);
+    ref_1f7 = bustupAlloc(ref_1f5, right, rgb(0,0,0));
+    bustupFade(ref_1f7, rgb(128,0,0), 30);
+    ref_1f9 = dialogAlloc();
+    ref_1fa = msgShow(msg_25);
+/***************************************
+[color(yellow)]Makimura[color(white)]
+[tab]Did you know?
+[tab]These cashier ladies are 7 sisters!
+[tab]And they all have the same face.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(makimura, animation_24, 1);
+    wait(ref_1fa);
+    unitAnimationPlay(makimura, animation_0, 1);
+    dialogFree(ref_1f9);
+    ref_1ff = bustupFade(ref_1f7, rgb(0,0,0), 10);
+    bustupWait(ref_1ff);
+    bustupFree(ref_1f7);
+    unitRestoreFacing(makimura);
+    controlEnable();
+}
+
+function SHOP()
+{
+    controlDisable();
+    ref_206 = shopOverlayInit();
+    unitFacePlayer(shopkeeper);
+    bitGet(var_0, MBIT_AIS_67);
+    bne(var_0, 0, label_20c);
+    b(label_215);
+    b(label_215);
+  label_20c:
+    bne(var_0, 1, label_215);
+    bitGet(var_0, MBIT_HSATOMI_HATURAITEN);
+    bne(var_0, 0, label_211);
+    b(label_226);
+    b(label_214);
+  label_211:
+    bne(var_0, 1, label_214);
+    b(label_237);
+    b(label_214);
+  label_214:
+    b(label_215);
+  label_215:
+    ref_215 = bustupLoad(bustup_fd);
+    bustupWait(ref_215);
+    ref_217 = bustupAlloc(ref_215, right, rgb(0,0,0));
+    bustupFade(ref_217, rgb(128,0,0), 30);
+    ref_219 = dialogAlloc();
+    ref_21a = msgShow(msg_26);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]Yes yes, Welcome!!
+[tab]We conquer the nation every day!
+[tab]So, what do you need?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_21a);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_219);
+    ref_21f = bustupFade(ref_217, rgb(0,0,0), 10);
+    bustupWait(ref_21f);
+    bustupFree(ref_217);
+    wait(ref_206);
+    shopInventory(9, shopInventory_0);
+    shopRate(100);
+    b(label_248);
+  label_226:
+    ref_226 = bustupLoad(bustup_fd);
+    bustupWait(ref_226);
+    ref_228 = bustupAlloc(ref_226, right, rgb(0,0,0));
+    bustupFade(ref_228, rgb(128,0,0), 30);
+    ref_22a = dialogAlloc();
+    ref_22b = msgShow(msg_27);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]Yes yes, Welcome!!
+[tab]Is this your first time? Uhyohyohyo!!
+
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_22b);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_22a);
+    ref_230 = bustupFade(ref_228, rgb(0,0,0), 10);
+    bustupWait(ref_230);
+    bustupFree(ref_228);
+    wait(ref_206);
+    shopInventory(9, shopInventory_0);
+    shopRate(80);
+    b(label_248);
+  label_237:
+    ref_237 = bustupLoad(bustup_fd);
+    bustupWait(ref_237);
+    ref_239 = bustupAlloc(ref_237, right, rgb(0,0,0));
+    bustupFade(ref_239, rgb(128,0,0), 30);
+    ref_23b = dialogAlloc();
+    ref_23c = msgShow(msg_28);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]Welco... Oh hey!!
+[tab]Thank you all the time! Uhyohyohyo!!
+
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_23c);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_23b);
+    ref_241 = bustupFade(ref_239, rgb(0,0,0), 10);
+    bustupWait(ref_241);
+    bustupFree(ref_239);
+    wait(ref_206);
+    shopInventory(9, shopInventory_0);
+    shopRate(80);
+    b(label_248);
+  label_248:
+    ref_248 = bustupLoad(bustup_fd);
+    bustupWait(ref_248);
+    ref_24a = bustupAlloc(ref_248, right, rgb(0,0,0));
+    bustupFade(ref_24a, rgb(128,0,0), 30);
+    choiceSetResult(4);
+    op_105(3);
+    ref_24e = dialogAlloc();
+    ref_24f = msgShow(msg_29);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]I’ll give you discounts, so buy a lot!
+[choice(6)]Buy items
+Sell items
+Talk to Sister #5
+[if_all(EBIT_SINARIOFF)]Check items
+Never mind
+Leave the store
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_24f);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_258);
+    li(var_5, 0);
+    b(label_27d);
+  label_258:
+    bne(var_0, 1, label_264);
+    choiceSetResult(0);
+    op_105(0);
+    ref_25b = msgShow(msg_30);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]So, what would you like to sell?
+[choice(7)][dbl_tab][if_all(EBIT_SINARIOFF)]Hidden items
+[dbl_tab]Sell items
+[dbl_tab]Sell weapons
+[dbl_tab][if_all(EBIT_SINARIOFF)]Sell helmets
+[dbl_tab]Sell armor
+[dbl_tab][if_all(EBIT_SINARIOFF)]Sell leggings
+[dbl_tab]Sell accessories
+[end_choice][clear]
+***************************************/
+    wait(ref_25b);
+    choiceGetResult(var_5);
+    bne(var_5, 0, label_261);
+    li(var_5, 1000);
+    b(label_263);
+  label_261:
+    add(var_5, var_5, 10);
+    b(label_263);
+  label_263:
+    b(label_27d);
+  label_264:
+    bne(var_0, 2, label_274);
+    choiceSetResult(2);
+    op_105(2);
+    ref_267 = msgShow(msg_31);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]So what do you want to talk about?
+[choice(3)]Make small talk
+Ask about shopping
+[if_all(EBIT_SINARIOFF)]Hidden items
+[end_choice][clear]
+***************************************/
+    wait(ref_267);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_26d);
+    li(var_5, 2);
+    b(label_273);
+  label_26d:
+    bne(var_0, 1, label_270);
+    li(var_5, 2000);
+    b(label_273);
+  label_270:
+    bne(var_0, 2, label_273);
+    li(var_5, 1000);
+    b(label_273);
+  label_273:
+    b(label_27d);
+  label_274:
+    bne(var_0, 3, label_277);
+    li(var_5, 4);
+    b(label_27d);
+  label_277:
+    bne(var_0, 4, label_27a);
+    li(var_5, 4);
+    b(label_27d);
+  label_27a:
+    bne(var_0, 5, label_27d);
+    li(var_5, 5);
+    b(label_27d);
+  label_27d:
+    dialogFree(ref_24e);
+    ref_27e = bustupFade(ref_24a, rgb(0,0,0), 10);
+    bustupWait(ref_27e);
+    bustupFree(ref_24a);
+    ref_281 = shopOpen(5);
+    wait(ref_281);
+}
+
+function HA_SHOP_RESTART_0()
+{
+    choiceSetResult(4);
+    op_105(3);
+    ref_286 = bustupLoad(bustup_fd);
+    bustupWait(ref_286);
+    ref_288 = bustupAlloc(ref_286, right, rgb(0,0,0));
+    bustupFade(ref_288, rgb(128,0,0), 30);
+    ref_28a = dialogAlloc();
+    ref_28b = msgShow(msg_32);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]Uhyohyohyo!![delay(10)]
+[tab]Yes Yes.
+[tab]Is there anything else?
+[choice(6)]Buy items
+Sell items
+Talk to Sister #5
+[if_all(EBIT_SINARIOFF)]Check items
+Never mind
+Leave the store
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_28b);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_294);
+    li(var_5, 0);
+    b(label_2b9);
+  label_294:
+    bne(var_0, 1, label_2a0);
+    choiceSetResult(0);
+    op_105(0);
+    ref_297 = msgShow(msg_33);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]So, what would you like to sell?
+[choice(7)][dbl_tab][if_all(EBIT_SINARIOFF)]Hidden items
+[dbl_tab]Sell items
+[dbl_tab]Sell weapons
+[dbl_tab][if_all(EBIT_SINARIOFF)]Sell helmets
+[dbl_tab]Sell armor
+[dbl_tab][if_all(EBIT_SINARIOFF)]Sell leggings
+[dbl_tab]Sell accessories
+[end_choice][clear]
+***************************************/
+    wait(ref_297);
+    choiceGetResult(var_5);
+    bne(var_5, 0, label_29d);
+    li(var_5, 1000);
+    b(label_29f);
+  label_29d:
+    add(var_5, var_5, 10);
+    b(label_29f);
+  label_29f:
+    b(label_2b9);
+  label_2a0:
+    bne(var_0, 2, label_2b0);
+    choiceSetResult(2);
+    op_105(2);
+    ref_2a3 = msgShow(msg_34);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]So what do you want to talk about?
+[choice(3)]Make small talk
+Ask about shopping
+[if_all(EBIT_SINARIOFF)]Hidden items
+[end_choice][clear]
+***************************************/
+    wait(ref_2a3);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2a9);
+    li(var_5, 2);
+    b(label_2af);
+  label_2a9:
+    bne(var_0, 1, label_2ac);
+    li(var_5, 2000);
+    b(label_2af);
+  label_2ac:
+    bne(var_0, 2, label_2af);
+    li(var_5, 1000);
+    b(label_2af);
+  label_2af:
+    b(label_2b9);
+  label_2b0:
+    bne(var_0, 3, label_2b3);
+    li(var_5, 4);
+    b(label_2b9);
+  label_2b3:
+    bne(var_0, 4, label_2b6);
+    li(var_5, 4);
+    b(label_2b9);
+  label_2b6:
+    bne(var_0, 5, label_2b9);
+    li(var_5, 5);
+    b(label_2b9);
+  label_2b9:
+    dialogFree(ref_28a);
+    ref_2ba = bustupFade(ref_288, rgb(0,0,0), 10);
+    bustupWait(ref_2ba);
+    bustupFree(ref_288);
+}
+
+function HA_SHOP_TALK_0()
+{
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_2de);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_2d0);
+    ref_2c2 = bustupLoad(bustup_fd);
+    bustupWait(ref_2c2);
+    ref_2c4 = bustupAlloc(ref_2c2, right, rgb(0,0,0));
+    bustupFade(ref_2c4, rgb(128,0,0), 30);
+    ref_2c6 = dialogAlloc();
+    ref_2c7 = msgShow(msg_35);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]Uhyohyohyo! Drugstore Satomi Tadashi has
+[tab]finally started to conquer the nation!!
+[tab]First will be this Sumaru city!!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2c7);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_2c6);
+    ref_2cc = bustupFade(ref_2c4, rgb(0,0,0), 10);
+    bustupWait(ref_2cc);
+    bustupFree(ref_2c4);
+    b(label_2eb);
+  label_2d0:
+    ref_2d0 = bustupLoad(bustup_fd);
+    bustupWait(ref_2d0);
+    ref_2d2 = bustupAlloc(ref_2d0, right, rgb(0,0,0));
+    bustupFade(ref_2d2, rgb(128,0,0), 30);
+    ref_2d4 = dialogAlloc();
+    ref_2d5 = msgShow(msg_36);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]We’re brainwashing? Uhyohyohyo!!
+[tab]That is nonsense!
+[tab]Don’t make a fool of the 7 Satomi sisters...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2d5);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_2d4);
+    ref_2da = bustupFade(ref_2d2, rgb(0,0,0), 10);
+    bustupWait(ref_2da);
+    bustupFree(ref_2d2);
+    b(label_2eb);
+  label_2de:
+    ref_2de = bustupLoad(bustup_fd);
+    bustupWait(ref_2de);
+    ref_2e0 = bustupAlloc(ref_2de, right, rgb(0,0,0));
+    bustupFade(ref_2e0, rgb(128,0,0), 30);
+    ref_2e2 = dialogAlloc();
+    ref_2e3 = msgShow(msg_37);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]I hear the purification seminars are very
+[tab]popular... What can a celebrity do?!
+[tab]They would share some customers! Daaaang!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2e3);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_2e2);
+    ref_2e8 = bustupFade(ref_2e0, rgb(0,0,0), 10);
+    bustupWait(ref_2e8);
+    bustupFree(ref_2e0);
+  label_2eb:
+}
+
+function HA_SHOP_END_0()
+{
+    ref_2ec = bustupLoad(bustup_fd);
+    bustupWait(ref_2ec);
+    ref_2ee = bustupAlloc(ref_2ec, right, rgb(0,0,0));
+    bustupFade(ref_2ee, rgb(128,0,0), 30);
+    ref_2f0 = dialogAlloc();
+    ref_2f1 = msgShow(msg_38);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]Satomi Tadashi is open all year!
+[tab]Come again!
+[tab]Uhyohyohyohyo!!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2f1);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    shopOverlayInit();
+    dialogFree(ref_2f0);
+    ref_2f7 = bustupFade(ref_2ee, rgb(0,0,0), 10);
+    bustupWait(ref_2f7);
+    bustupFree(ref_2ee);
+    delayClear();
+    delayWait(10);
+    bitSet(MBIT_HSATOMI_HATURAITEN);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_302);
+    unitRestoreFacing(shopkeeper);
+    controlEnable();
+    b(label_305);
+  label_302:
+    bne(var_0, 1, label_305);
+    call(GOOUT);
+    b(label_305);
+  label_305:
+}
+
+function DANBOORU()
+{
+    bitGet(var_0, MBIT_AIS_67);
+    bnz(var_0, label_30e);
+    bitSet(MBIT_AIS_67);
+    ref_309 = dialogAlloc();
+    ref_30a = msgShow(msg_39);
+/***************************************
+MBIT[tab]AIS[tab]67
+相性占いの
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_30a);
+    dialogFree(ref_309);
+    b(label_33e);
+  label_30e:
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_316);
+    bitSet(EBIT_E0037);
+    ref_311 = dialogAlloc();
+    ref_312 = msgShow(msg_40);
+/***************************************
+EBIT[tab]E0037
+警察署[half_tab]受付、終了
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_312);
+    dialogFree(ref_311);
+    b(label_33e);
+  label_316:
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_31e);
+    bitSet(EBIT_E0038);
+    ref_319 = dialogAlloc();
+    ref_31a = msgShow(msg_41);
+/***************************************
+EBIT[tab]E0038
+「詐欺男を確保」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_31a);
+    dialogFree(ref_319);
+    b(label_33e);
+  label_31e:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_326);
+    bitSet(EBIT_E003E);
+    ref_321 = dialogAlloc();
+    ref_322 = msgShow(msg_42);
+/***************************************
+EBIT[tab]E003E
+「ゴールドクリア」「Ulala編入」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_322);
+    dialogFree(ref_321);
+    b(label_33e);
+  label_326:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_32e);
+    bitSet(EBIT_E0043);
+    ref_329 = dialogAlloc();
+    ref_32a = msgShow(msg_43);
+/***************************************
+EBIT[tab]E0043
+「クラブクリア」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_32a);
+    dialogFree(ref_329);
+    b(label_33e);
+  label_32e:
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_336);
+    bitSet(EBIT_E0046);
+    ref_331 = dialogAlloc();
+    ref_332 = msgShow(msg_44);
+/***************************************
+EBIT[tab]E0046
+「南条orエリー編入」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_332);
+    dialogFree(ref_331);
+    b(label_33e);
+  label_336:
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_33e);
+    bitSet(EBIT_E006F);
+    ref_339 = dialogAlloc();
+    ref_33a = msgShow(msg_45);
+/***************************************
+EBIT[tab]E006F
+「研究施設・TV局クリア」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_33a);
+    dialogFree(ref_339);
+    b(label_33e);
+  label_33e:
+}
+
+function DOORBOX()
+{
+    controlDisable();
+    sndMusicPlay(sound_306b, 127);
+    objAnimTranslate(obj_6, 80, 0, 0, 30);
+    objAnimTranslate(obj_7, -80, 0, 0, 30);
+    objAnimWait(obj_6);
+    objAnimWait(obj_7);
+    call(GOOUT);
+}
+
+function GOOUT()
+{
+    bitClear(MBIT_EXITBIT);
+    mapLoad(rengedai, 0, 0);
+}
+
+function warp1()
+{
+    call(DOORBOX);
+}
+
+function HA_SHOP_EXPLAIN_0()
+{
+    ref_34c = dialogAlloc();
+    ref_34d = msgShow(msg_46);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]Uhyohyohyo!
+[tab]Okay, I’ll tell you a little about shopping.
+[wait][clear][color(yellow)]Satomi Sister #5[color(white)]
+[tab]First, buying things. 
+[tab]If you select "Buy items" here
+[tab]you can choose from our sundries.
+[wait][clear][color(yellow)]Satomi Sister #5[color(white)]
+[tab]Oh, and there’s a limit to how many of the
+[tab]same item you can carry.
+[wait][clear][color(yellow)]Satomi Sister #5[color(white)]
+[tab]Next, selling.
+[tab]Select "Sell items" first, and then
+[tab]choose which type of item to sell. 
+[wait][clear][color(yellow)]Satomi Sister #5[color(white)]
+[tab]Then pick a particular item to sell us.
+[tab]Our resale prices are around half the original
+[tab]price. You can’t sell anything you have equipped,
+[wait][clear][color(yellow)]Satomi Sister #5[color(white)]
+[tab]and some special items are off-limits too.
+[tab]That’s about it.
+[tab]Uhyohyohyo!
+[wait][clear]
+***************************************/
+    wait(ref_34d);
+    dialogFree(ref_34c);
+}
+
+function NOITEM()
+{
+    unitFacePlayer(shopkeeper);
+    ref_352 = bustupLoad(bustup_fd);
+    bustupWait(ref_352);
+    ref_354 = bustupAlloc(ref_352, right, rgb(0,0,0));
+    bustupFade(ref_354, rgb(128,0,0), 30);
+    ref_356 = dialogAlloc();
+    ref_357 = msgShow(msg_47);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]Oh, but you don’t have anything you can sell.[wait][clear]
+***************************************/
+    wait(ref_357);
+    dialogFree(ref_356);
+    ref_35a = bustupFade(ref_354, rgb(0,0,0), 10);
+    bustupWait(ref_35a);
+    bustupFree(ref_354);
+    li(var_5, 20);
+}
+
+function DECIDE_BUY()
+{
+    msgVar_Number(msgvar_0, var_6);
+    unitFacePlayer(shopkeeper);
+    ref_361 = bustupLoad(bustup_fd);
+    bustupWait(ref_361);
+    ref_363 = bustupAlloc(ref_361, left, rgb(0,0,0));
+    bustupFade(ref_363, rgb(128,0,0), 30);
+    ref_365 = dialogAlloc();
+    choiceSetResult(1);
+    op_105(1);
+    ref_368 = msgShow(msg_48);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]The total comes to ¥[var(msg_var_0)]. 
+[tab]Is that all right?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_368);
+    choiceGetResult(var_7);
+    bne(var_7, 0, label_36f);
+    sndMusicPlay(sound_3037, 127);
+    li(var_7, 1);
+    b(label_372);
+  label_36f:
+    bne(var_7, 1, label_372);
+    li(var_7, 0);
+    b(label_372);
+  label_372:
+    wait(ref_368);
+    dialogFree(ref_365);
+    ref_374 = bustupFade(ref_363, rgb(0,0,0), 10);
+    bustupWait(ref_374);
+    bustupFree(ref_363);
+    li(var_5, 20);
+}
+
+function DECIDE_SELL()
+{
+    choiceSetResult(1);
+    op_105(1);
+    msgVar_Number(msgvar_0, var_6);
+    unitFacePlayer(shopkeeper);
+    ref_37d = bustupLoad(bustup_fd);
+    bustupWait(ref_37d);
+    ref_37f = bustupAlloc(ref_37d, left, rgb(0,0,0));
+    bustupFade(ref_37f, rgb(128,0,0), 30);
+    ref_381 = dialogAlloc();
+    choiceSetResult(1);
+    op_105(1);
+    ref_384 = msgShow(msg_49);
+/***************************************
+[color(yellow)]Satomi Sister #5[color(white)]
+[tab]The total comes to ¥[var(msg_var_0)].
+[tab]Is that all right?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_384);
+    choiceGetResult(var_7);
+    bne(var_7, 0, label_38b);
+    sndMusicPlay(sound_3037, 127);
+    li(var_7, 1);
+    b(label_38e);
+  label_38b:
+    bne(var_7, 1, label_38e);
+    li(var_7, 0);
+    b(label_38e);
+  label_38e:
+    wait(ref_384);
+    ref_38f = bustupFade(ref_37f, rgb(0,0,0), 10);
+    bustupWait(ref_38f);
+    bustupFree(ref_37f);
+    dialogFree(ref_381);
+    li(var_5, 20);
+}

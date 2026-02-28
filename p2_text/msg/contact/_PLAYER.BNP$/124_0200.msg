@@ -1,0 +1,78 @@
+
+msg_0:
+[color(yellow)]パオフゥ[color(white)]
+ いいから聞きなよ。
+ あんまり調子乗ってっと、コイツばら撒くぜ…？
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]パオフゥ[color(white)]
+ どうだ、このテープ？
+ 良く録れてるだろうが？
+ 都合…悪いんじゃねぇのかい？
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]パオフゥ[color(white)]
+ おっと、ちょいと待ちな…
+ コイツをよ～く聞いてみなよ…
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]パオフゥ[color(white)]
+ 全く…あんたも隅に置けないねぇ…
+ おっと、勘違いすんなよ！
+ こいつぁ取引だぜ…
+[wait][clear][end]
+
+msg_4:
+[color(yellow)]パオフゥ[color(white)]
+ おっと、まだ手ぇ出しちゃイケねぇぜ…
+ その前に、こいつを聞いてもらおうか…
+[wait][clear][end]
+
+msg_5:
+[load_sound(sndeff_18)][sync][color(yellow)]パオフゥ[color(white)]
+ こんな面白ぇ事、[play_sound(sndeff_18)][sync]秘密にしておくにゃ
+ ちょいと勿体ねぇ…[sync]
+ コイツをばら撒かせてもらっても良いかい？
+[wait][clear][end]
+
+msg_6:
+[color(yellow)]パオフゥ[color(white)]
+ 馬鹿野郎が…
+ あっさり死んじまいやがって…
+[wait][clear][end]
+
+msg_7:
+[color(yellow)]パオフゥ[color(white)]
+ 弔い酒なんてな、旨かねぇ…
+ さっさと目ぇ覚ましな…
+[wait][clear][end]
+
+msg_8:
+[color(yellow)]パオフゥ[color(white)]
+ いいぜ…しばらくこうしてようや…
+ お前さんが冥土に着くまで…な…
+[wait][clear][end]
+
+msg_9:
+[color(yellow)]パオフゥ[color(white)]
+ お嬢ちゃんにゃ、こんな危険なマネ
+ させられねぇな…
+ ここは、俺に任せときな…
+[wait][clear][end]
+
+msg_10:
+[color(yellow)]エリー[color(white)]
+ 意外とＧｅｎｔｌｅｍａｎですわね！
+ ここは、お言葉に甘えさせていただきますわ！
+[wait][clear][end]
+
+msg_11:
+[load_sound(sndeff_33)][sync][sync]
+[end]
+
+msg_12:
+[play_sound(sndeff_33)][sync][sync]
+[end]

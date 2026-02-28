@@ -1,0 +1,5 @@
+
+msg_0:
+[color(yellow)]克哉[color(white)]
+[tab]天野君、先に須藤の病室を調べよう。
+[sync][wait][clear][end]

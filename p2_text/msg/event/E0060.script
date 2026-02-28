@@ -1,0 +1,244 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    objVisible(obj_b, false);
+    cameraSetNorth(south);
+    bitGet(var_0, EBIT_GATE2_MISS);
+    bnz(var_0, label_b);
+    bitSet(EBIT_GATE2_MISS);
+    bitSet(DBIT_TV_URAGAKUYA);
+    bitClear(DBIT_TV_ST2DR);
+    dngLoad2(sumaru_tv2-26);
+    b(label_43);
+  label_b:
+    bitGet(var_0, EBIT_E0063);
+    bez(var_0, label_41);
+    bitClear(DBIT_TV_ST2DR);
+    ref_e = spriteLoad(sprite_0);
+    wait(ref_e);
+    ref_10 = spriteLoad(sprite_2);
+    wait(ref_10);
+    ref_12 = spriteLoad(sprite_6);
+    wait(ref_12);
+    ref_14 = spriteLoad(sprite_d);
+    wait(ref_14);
+    ref_16 = spriteLoad(sprite_13);
+    wait(ref_16);
+    ref_18 = spriteLoad(sprite_23);
+    wait(ref_18);
+    cameraSetNorth(south);
+    cameraSet(southeast, 850, 0, -1750);
+    unitSpawn(ulala, sprite_6, 530, 0, -1190, east, none);
+    unitSpawn(katsuya, sprite_d, 980, 0, -1650, south, none);
+    unitSpawn(baofu, sprite_13, 815, 0, -1190, south, none);
+    unitSpawn(elly, sprite_23, 520, 0, -1430, north, none);
+    unitTriggerSet(katsuya, KATUYA, 255, 1);
+    unitTriggerSet(baofu, PAOFU, 255, 1);
+    unitTriggerSet(ulala, URARA, 255, 1);
+    unitTriggerSet(elly, ERI, 255, 1);
+    envTriggerSet(EXIT, 131, 1, line, coll_6);
+    envTriggerSet(EXIT2, 131, 1, line, coll_5);
+    playerInit(south);
+    controlDisable();
+    unitIdleOn(katsuya);
+    delayClear();
+    delayWait(13);
+    unitIdleOn(elly);
+    delayClear();
+    delayWait(13);
+    unitIdleOn(baofu);
+    delayClear();
+    delayWait(13);
+    unitIdleOn(ulala);
+    delayClear();
+    delayWait(13);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_37);
+    b(label_39);
+  label_37:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_39);
+  label_39:
+    sndUnkCF(90);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+    b(label_43);
+  label_41:
+    dngLoad2(sumaru_tv2-9);
+    b(label_43);
+  label_43:
+}
+
+function ERI()
+{
+    controlDisable();
+    unitFacePlayer(elly);
+    ref_46 = bustupLoad(bustup_40);
+    bustupWait(ref_46);
+    ref_48 = bustupAlloc(ref_46, left, rgb(0,0,0));
+    bustupFade(ref_48, rgb(128,0,0), 30);
+    ref_4a = dialogAlloc();
+    ref_4b = msgShow(msg_0);
+/***************************************
+[color(yellow)]エリー[color(white)]
+[tab]彼、どこにもいません…？
+[tab]本当に…もう大丈夫なのかしら…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_28, 1);
+    unitWait(elly);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(elly, animation_14, 1);
+    unitWait(elly);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_4b);
+    dialogFree(ref_4a);
+    ref_57 = bustupFade(ref_48, rgb(0,0,0), 10);
+    bustupWait(ref_57);
+    bustupFree(ref_48);
+    unitAnimationPlay(elly, animation_a, 1);
+    unitRestoreFacing(elly);
+    controlEnable();
+}
+
+function URARA()
+{
+    controlDisable();
+    unitFaceUnit(ulala, elly);
+    unitFaceUnit(elly, ulala);
+    ref_61 = bustupLoad(bustup_17);
+    bustupWait(ref_61);
+    ref_63 = bustupAlloc(ref_61, left, rgb(0,0,0));
+    bustupFade(ref_63, rgb(128,0,0), 30);
+    ref_65 = dialogAlloc();
+    ref_66 = msgShow(msg_1);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]安心しなって、エリーちゃん。
+[tab]たとえもう一回出てきても、
+[tab]私がパンツ脱がして逆さづりにしてやるからさ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_66);
+    dialogFree(ref_65);
+    ref_6d = bustupFade(ref_63, rgb(0,0,0), 10);
+    bustupWait(ref_6d);
+    bustupFree(ref_63);
+    unitAnimationPlay(ulala, animation_a, 1);
+    unitAnimationPlay(elly, animation_24, 1);
+    unitWait(elly);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(elly, animation_a, 1);
+    unitRestoreFacing(ulala);
+    unitRestoreFacing(elly);
+    controlEnable();
+}
+
+function PAOFU()
+{
+    controlDisable();
+    unitLookAtUnit(baofu, ulala);
+    ref_7c = bustupLoad(bustup_2d);
+    bustupWait(ref_7c);
+    ref_7e = bustupAlloc(ref_7c, left, rgb(0,0,0));
+    bustupFade(ref_7e, rgb(128,0,0), 30);
+    ref_80 = dialogAlloc();
+    ref_81 = msgShow(msg_2);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]しっかし下品な女だねぇ…
+[tab]あのクソ野郎と同レベルで争ってやがる。
+[tab]ま、見てて飽きねぇがな…
+[sync][wait][clear]
+***************************************/
+    delayClear();
+    delayWait(40);
+    unitAnimationPlay(baofu, animation_a, 1);
+    unitFacePlayer(baofu);
+    unitAnimationPlay(baofu, animation_2d, 1);
+    sync();
+    wait(ref_81);
+    dialogFree(ref_80);
+    ref_8a = bustupFade(ref_7e, rgb(0,0,0), 10);
+    bustupWait(ref_8a);
+    bustupFree(ref_7e);
+    unitAnimationPlay(baofu, animation_a, 1);
+    unitRestoreFacing(baofu);
+    controlEnable();
+}
+
+function KATUYA()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    ref_93 = bustupLoad(bustup_21);
+    bustupWait(ref_93);
+    ref_95 = bustupAlloc(ref_93, left, rgb(0,0,0));
+    bustupFade(ref_95, rgb(128,0,0), 30);
+    ref_97 = dialogAlloc();
+    ref_98 = msgShow(msg_3);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]流石に手錠をはめられたら、
+[tab]目が覚めても何もできないさ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_98);
+    dialogFree(ref_97);
+    ref_9f = bustupFade(ref_95, rgb(0,0,0), 10);
+    bustupWait(ref_9f);
+    bustupFree(ref_95);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    unitRestoreFacing(katsuya);
+    controlEnable();
+}
+
+function EXIT()
+{
+    controlDisable();
+    objAnimRotate(obj_a, 0, -80, 0, 60, 0);
+    sndMusicPlay(sound_31a7, 127);
+    objAnimWait(obj_a);
+    bitSet(EBIT_E0064);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    cameraSetNorth(south);
+    dngLoad2(sumaru_tv2-9);
+}
+
+function EXIT2()
+{
+    controlDisable();
+    ref_b5 = dialogAlloc();
+    ref_b6 = msgShow(msg_4);
+/***************************************
+[color(yellow)]モニター室のドア[color(green)]
+[tab]ここには入れない。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_b6);
+    dialogFree(ref_b5);
+    controlEnable();
+}

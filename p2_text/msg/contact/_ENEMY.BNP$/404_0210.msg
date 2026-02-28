@@ -1,0 +1,7 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 一人で生きるの疲れるでしょ？
+ ずーっと誰かに寄っ掛かってればいいのよ…
+[sync][wait]
+[end]

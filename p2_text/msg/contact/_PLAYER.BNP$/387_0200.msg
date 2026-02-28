@@ -1,0 +1,34 @@
+
+msg_0:
+[color(yellow)][tatsuya][color(white)]
+ この女には、指一本触れさせない…
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]パオフゥ[color(white)]
+ 健気だねぇ…
+ じゃあ、任せたぜ。
+[wait][clear][end]
+
+msg_2:
+[color(yellow)][tatsuya][color(white)]
+ 俺は、あんたを守る為にここに来た…
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]パオフゥ[color(white)]
+ ごくろうなこった…
+ 後悔しねぇように、しっかりやんな…
+[wait][clear][end]
+
+msg_4:
+[load_sound(sndeff_2b)][sync][color(yellow)][tatsuya][color(white)]
+ どうしてもやる気か…？
+ [play_sound(sndeff_2b)][sync]なら…死ぬ気で来い。[sync]
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]パオフゥ[color(white)]
+ こいつは伊達に修羅場くぐってねぇぜ？
+ ガキと侮りゃ、あっという間にあの世行きだ。
+[wait][clear][end]

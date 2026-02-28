@@ -1,0 +1,2252 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_15);
+    sndMusicPlay(sound_3023, 127);
+    envTriggerSet(DOORBOX, 131, 1, line, coll_22);
+    envTriggerSet(CDBOX, 224, 1, line, coll_25);
+    li(var_0, 0);
+    partyMemberCheck(var_0, ulala);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_10);
+    ref_a = spriteLoad(sprite_6);
+    wait(ref_a);
+    unitSpawn(ulala, sprite_6, 282, 0, -347, north, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+    envTriggerSet(URARAIKARI, 14, 1, line, coll_21);
+    b(label_11);
+  label_10:
+    envTriggerSet(KAGIGA, 14, 1, line, coll_21);
+  label_11:
+    partyMemberCheck(var_0, katsuya);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_18);
+    ref_14 = spriteLoad(sprite_d);
+    wait(ref_14);
+    unitSpawn(katsuya, sprite_d, 748, 0, -714, east, none);
+    unitTriggerSet(katsuya, B_KATUYYY, 255, 1);
+  label_18:
+    partyMemberCheck(var_0, baofu);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_1f);
+    ref_1b = spriteLoad(sprite_13);
+    wait(ref_1b);
+    unitSpawn(baofu, sprite_13, 500, 0, -979, west, none);
+    unitTriggerSet(baofu, B_PAO, 255, 1);
+  label_1f:
+    partyMemberCheck(var_0, nanjo);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_26);
+    ref_22 = spriteLoad(sprite_1f);
+    wait(ref_22);
+    unitSpawn(nanjo, sprite_1f, 216, 0, -776, north, none);
+    unitTriggerSet(nanjo, B_NANJ, 255, 1);
+  label_26:
+    partyMemberCheck(var_0, elly);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_2d);
+    ref_29 = spriteLoad(sprite_23);
+    wait(ref_29);
+    unitSpawn(elly, sprite_23, 469, 0, -342, south, none);
+    unitTriggerSet(elly, B_ERI, 255, 1);
+  label_2d:
+    partyMemberCheck(var_0, tatsuya);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_35);
+    ref_30 = spriteLoad(sprite_18);
+    wait(ref_30);
+    unitSpawn(tatsuya, sprite_18, 711, 0, -861, west, none);
+    unitTriggerSet(tatsuya, B_TATU, 255, 1);
+    b(label_3e);
+  label_35:
+    bitGet(var_0, EBIT_E008C);
+    bne(var_0, 0, label_38);
+    b(label_3e);
+  label_38:
+    bne(var_0, 1, label_3e);
+    ref_39 = spriteLoad(sprite_18);
+    wait(ref_39);
+    unitSpawn(tatsuya, sprite_18, 711, 0, -861, west, none);
+    unitTriggerSet(tatsuya, B_TATU, 255, 1);
+    b(label_3e);
+  label_3e:
+    boutrange(var_5, 0, 4, label_41);
+    li(var_0, 0);
+    b(label_46);
+  label_41:
+    ref_41 = dialogAlloc();
+    ref_42 = msgShow(msg_0);
+/***************************************
+There are more than 4 people in your party.
+[tab]Contact Kaneda or Kataoka.
+[wait][clear]
+***************************************/
+    wait(ref_42);
+    dialogFree(ref_41);
+    b(label_46);
+  label_46:
+    cameraSet(southeast, 650, 0, -1150);
+    ref_47 = spriteLoad(sprite_0);
+    wait(ref_47);
+    ref_49 = spriteLoad(sprite_2);
+    wait(ref_49);
+    playerInit(south);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    bitGet(var_0, MBIT_CNT_URARA);
+    bez(var_0, label_f2);
+    bitGet(var_0, MBIT_GAT_URARA_02);
+    bez(var_0, label_77);
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_e2);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_cf);
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_bf);
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_98);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_88);
+    unitFacePlayer(ulala);
+    ref_65 = bustupLoad(bustup_1f);
+    bustupWait(ref_65);
+    ref_67 = bustupAlloc(ref_65, left, rgb(0,0,0));
+    bustupFade(ref_67, rgb(128,0,0), 30);
+    ref_69 = dialogAlloc();
+    ref_6a = msgShow(msg_1);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab](sigh)...
+[tab]And I just took out the trash...
+
+***************************************/
+    unitAnimationPlay(ulala, animation_6, 1);
+    wait(ref_6a);
+    ref_6d = msgShow(msg_2);
+/***************************************
+[tab]It’s not easy separating the recyclables!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1b, 1);
+    wait(ref_6d);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_69);
+    ref_72 = bustupFade(ref_67, rgb(0,0,0), 10);
+    bustupWait(ref_72);
+    bustupFree(ref_67);
+    unitRestoreFacing(ulala);
+    b(label_102);
+  label_77:
+    unitFacePlayer(ulala);
+    ref_78 = bustupLoad(bustup_1f);
+    bustupWait(ref_78);
+    ref_7a = bustupAlloc(ref_78, left, rgb(0,0,0));
+    bustupFade(ref_7a, rgb(128,0,0), 30);
+    ref_7c = dialogAlloc();
+    ref_7d = msgShow(msg_3);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Come to think of it, how many years has
+[tab]it been since we began rooming together?
+[tab]Really, what a rough life...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_7d);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_7c);
+    ref_82 = bustupFade(ref_7a, rgb(0,0,0), 10);
+    bustupWait(ref_82);
+    bustupFree(ref_7a);
+    unitRestoreFacing(ulala);
+    bitSet(MBIT_GAT_URARA_02);
+    b(label_102);
+  label_88:
+    unitFacePlayer(ulala);
+    ref_89 = bustupLoad(bustup_17);
+    bustupWait(ref_89);
+    ref_8b = bustupAlloc(ref_89, left, rgb(0,0,0));
+    bustupFade(ref_8b, rgb(128,0,0), 30);
+    ref_8d = dialogAlloc();
+    ref_8e = msgShow(msg_4);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]It doesn’t really matter, 
+[tab]but the walls are too thin.
+[tab]I can hear next door.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_8e);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_8d);
+    ref_93 = bustupFade(ref_8b, rgb(0,0,0), 10);
+    bustupWait(ref_93);
+    bustupFree(ref_8b);
+    unitRestoreFacing(ulala);
+    b(label_102);
+  label_98:
+    bitGet(var_0, EBIT_E0096);
+    bne(var_0, 0, label_ad);
+    unitFacePlayer(ulala);
+    ref_9b = bustupLoad(bustup_1b);
+    bustupWait(ref_9b);
+    ref_9d = bustupAlloc(ref_9b, left, rgb(0,0,0));
+    bustupFade(ref_9d, rgb(128,0,0), 30);
+    ref_9f = dialogAlloc();
+    ref_a0 = msgShow(msg_5);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Hey Ma-ya, have you ever let [tatsuya]-kun in
+[tab]your room before now? You haven’t, right?
+
+***************************************/
+    unitAnimationPlay(ulala, animation_2c, 1);
+    wait(ref_a0);
+    ref_a3 = msgShow(msg_6);
+/***************************************
+[tab]How is he so familiar with your room...?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1a, 1);
+    wait(ref_a3);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_9f);
+    ref_a8 = bustupFade(ref_9d, rgb(0,0,0), 10);
+    bustupWait(ref_a8);
+    bustupFree(ref_9d);
+    unitRestoreFacing(ulala);
+    b(label_be);
+  label_ad:
+    bne(var_0, 1, label_be);
+    unitFacePlayer(ulala);
+    unitAnimationPlay(ulala, animation_1f, 1);
+    ref_b0 = bustupLoad(bustup_1a);
+    bustupWait(ref_b0);
+    ref_b2 = bustupAlloc(ref_b0, left, rgb(0,0,0));
+    bustupFade(ref_b2, rgb(128,0,0), 30);
+    ref_b4 = dialogAlloc();
+    ref_b5 = msgShow(msg_7);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]The room [tatsuya]-kun knows about...
+[tab]is from the "Other Side"...?
+[tab]That means you were...
+[wait][clear]
+***************************************/
+    wait(ref_b5);
+    dialogFree(ref_b4);
+    ref_b8 = bustupFade(ref_b2, rgb(0,0,0), 10);
+    bustupWait(ref_b8);
+    bustupFree(ref_b2);
+    unitAnimationPlay(ulala, animation_a, 1);
+    unitRestoreFacing(ulala);
+    b(label_be);
+  label_be:
+    b(label_102);
+  label_bf:
+    unitFacePlayer(ulala);
+    ref_c0 = bustupLoad(bustup_19);
+    bustupWait(ref_c0);
+    ref_c2 = bustupAlloc(ref_c0, left, rgb(0,0,0));
+    bustupFade(ref_c2, rgb(128,0,0), 30);
+    ref_c4 = dialogAlloc();
+    ref_c5 = msgShow(msg_8);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Come to think of it Ma-ya, you
+[tab]haven’t cleaned the entryway, yet...! 
+[tab]And you’re the one who suggested taking turns!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2f, 1);
+    wait(ref_c5);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_c4);
+    ref_ca = bustupFade(ref_c2, rgb(0,0,0), 10);
+    bustupWait(ref_ca);
+    bustupFree(ref_c2);
+    unitRestoreFacing(ulala);
+    b(label_102);
+  label_cf:
+    unitFacePlayer(ulala);
+    ref_d0 = bustupLoad(bustup_17);
+    bustupWait(ref_d0);
+    ref_d2 = bustupAlloc(ref_d0, left, rgb(0,0,0));
+    bustupFade(ref_d2, rgb(128,0,0), 30);
+    ref_d4 = dialogAlloc();
+    ref_d5 = msgShow(msg_9);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab](sigh)...
+[tab]I’m glad this room’s safe...
+
+***************************************/
+    unitAnimationPlay(ulala, animation_6, 1);
+    wait(ref_d5);
+    ref_d8 = msgShow(msg_10);
+/***************************************
+[tab]I’d hate it if we lost a home to return to.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1d, 1);
+    wait(ref_d8);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_d4);
+    ref_dd = bustupFade(ref_d2, rgb(0,0,0), 10);
+    bustupWait(ref_dd);
+    bustupFree(ref_d2);
+    unitRestoreFacing(ulala);
+    b(label_102);
+  label_e2:
+    unitFacePlayer(ulala);
+    ref_e3 = bustupLoad(bustup_17);
+    bustupWait(ref_e3);
+    ref_e5 = bustupAlloc(ref_e3, left, rgb(0,0,0));
+    bustupFade(ref_e5, rgb(128,0,0), 30);
+    ref_e7 = dialogAlloc();
+    ref_e8 = msgShow(msg_11);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]I wonder if I can come back to this room...
+[tab](giggle)... That’s not like me.
+[tab]It’s not like I’m going there to die.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_28, 1);
+    wait(ref_e8);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_e7);
+    ref_ed = bustupFade(ref_e5, rgb(0,0,0), 10);
+    bustupWait(ref_ed);
+    bustupFree(ref_e5);
+    unitRestoreFacing(ulala);
+    b(label_102);
+  label_f2:
+    unitFacePlayer(ulala);
+    ref_f3 = bustupLoad(bustup_18);
+    bustupWait(ref_f3);
+    ref_f5 = bustupAlloc(ref_f3, left, rgb(0,0,0));
+    bustupFade(ref_f5, rgb(128,0,0), 30);
+    ref_f7 = dialogAlloc();
+    ref_f8 = msgShow(msg_12);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Oh, yeah, I didn’t tell you, but recently
+[tab]I’ve started to learn the flamenco dance.
+[tab]Wanna see it later? I’m really good♥...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_30, 1);
+    wait(ref_f8);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_f7);
+    ref_fd = bustupFade(ref_f5, rgb(0,0,0), 10);
+    bustupWait(ref_fd);
+    bustupFree(ref_f5);
+    unitRestoreFacing(ulala);
+    bitSet(MBIT_CNT_URARA);
+  label_102:
+    controlEnable();
+}
+
+function B_KATUYYY()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_15f);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_14f);
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_13f);
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_12f);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_11f);
+    unitFacePlayer(katsuya);
+    ref_110 = bustupLoad(bustup_21);
+    bustupWait(ref_110);
+    ref_112 = bustupAlloc(ref_110, left, rgb(0,0,0));
+    bustupFade(ref_112, rgb(128,0,0), 30);
+    ref_114 = dialogAlloc();
+    ref_115 = msgShow(msg_13);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I understand you’re into your work, 
+[tab]but think about what you’re willing to give up.
+[tab]You don’t live to work.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_115);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_114);
+    ref_11a = bustupFade(ref_112, rgb(0,0,0), 10);
+    bustupWait(ref_11a);
+    bustupFree(ref_112);
+    unitRestoreFacing(katsuya);
+    b(label_171);
+  label_11f:
+    unitFacePlayer(katsuya);
+    ref_120 = bustupLoad(bustup_21);
+    bustupWait(ref_120);
+    ref_122 = bustupAlloc(ref_120, left, rgb(0,0,0));
+    bustupFade(ref_122, rgb(128,0,0), 30);
+    ref_124 = dialogAlloc();
+    ref_125 = msgShow(msg_14);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I’m sorry, but I read that... piece...
+[tab]"The Dream of the Rumored Student"...
+[tab]I wonder what dream he had...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_24, 1);
+    wait(ref_125);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_124);
+    ref_12a = bustupFade(ref_122, rgb(0,0,0), 10);
+    bustupWait(ref_12a);
+    bustupFree(ref_122);
+    unitRestoreFacing(katsuya);
+    b(label_171);
+  label_12f:
+    unitFacePlayer(katsuya);
+    ref_130 = bustupLoad(bustup_21);
+    bustupWait(ref_130);
+    ref_132 = bustupAlloc(ref_130, left, rgb(0,0,0));
+    bustupFade(ref_132, rgb(128,0,0), 30);
+    ref_134 = dialogAlloc();
+    ref_135 = msgShow(msg_15);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]What’s wrong with [tatsuya]...?
+[tab]He hasn’t been saying anything...
+[tab]Does he feel alright?
+[wait][clear]
+***************************************/
+    unitLookAtUnit(katsuya, tatsuya);
+    wait(ref_135);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_134);
+    ref_13a = bustupFade(ref_132, rgb(0,0,0), 10);
+    bustupWait(ref_13a);
+    bustupFree(ref_132);
+    unitRestoreFacing(katsuya);
+    b(label_171);
+  label_13f:
+    unitFacePlayer(katsuya);
+    ref_140 = bustupLoad(bustup_21);
+    bustupWait(ref_140);
+    ref_142 = bustupAlloc(ref_140, left, rgb(0,0,0));
+    bustupFade(ref_142, rgb(128,0,0), 30);
+    ref_144 = dialogAlloc();
+    ref_145 = msgShow(msg_16);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]It seems that on the "Other Side",
+[tab]this room is the same...
+[tab]Just look at [tatsuya].
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_6, 1);
+    wait(ref_145);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_144);
+    ref_14a = bustupFade(ref_142, rgb(0,0,0), 10);
+    bustupWait(ref_14a);
+    bustupFree(ref_142);
+    unitRestoreFacing(katsuya);
+    b(label_171);
+  label_14f:
+    unitFacePlayer(katsuya);
+    ref_150 = bustupLoad(bustup_23);
+    bustupWait(ref_150);
+    ref_152 = bustupAlloc(ref_150, left, rgb(0,0,0));
+    bustupFade(ref_152, rgb(128,0,0), 30);
+    ref_154 = dialogAlloc();
+    ref_155 = msgShow(msg_17);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]It’s impossible to even imagine the damage
+[tab]the Torifune’s rising did to everyone...
+[tab]...What does he think human lives are!?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2f, 1);
+    wait(ref_155);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_154);
+    ref_15a = bustupFade(ref_152, rgb(0,0,0), 10);
+    bustupWait(ref_15a);
+    bustupFree(ref_152);
+    unitRestoreFacing(katsuya);
+    b(label_171);
+  label_15f:
+    unitFacePlayer(katsuya);
+    ref_160 = bustupLoad(bustup_21);
+    bustupWait(ref_160);
+    ref_162 = bustupAlloc(ref_160, left, rgb(0,0,0));
+    bustupFade(ref_162, rgb(128,0,0), 30);
+    ref_164 = dialogAlloc();
+    ref_165 = msgShow(msg_18);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I looked up to my father. I admired his
+[tab]stature, protecting others even at the
+[tab]expense of his own well being.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_6, 1);
+    wait(ref_165);
+    ref_168 = msgShow(msg_19);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I won’t let you die...
+[tab]Not one, not in front of me... EVER...
+[tab]By the name of my father...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_168);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_164);
+    ref_16d = bustupFade(ref_162, rgb(0,0,0), 10);
+    bustupWait(ref_16d);
+    bustupFree(ref_162);
+    unitRestoreFacing(katsuya);
+  label_171:
+    controlEnable();
+}
+
+function B_PAO()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_1ce);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_1be);
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_1ae);
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_19e);
+    bitGet(var_0, EBIT_E007F);
+    bnz(var_0, label_190);
+    ref_17e = bustupLoad(bustup_2d);
+    bustupWait(ref_17e);
+    ref_180 = bustupAlloc(ref_17e, left, rgb(0,0,0));
+    bustupFade(ref_180, rgb(128,0,0), 30);
+    ref_182 = dialogAlloc();
+    ref_183 = msgShow(msg_20);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]It seems that there are no taps here...
+
+***************************************/
+    unitAnimationPlay(baofu, animation_28, 1);
+    wait(ref_183);
+    ref_186 = msgShow(msg_21);
+/***************************************
+[tab]...Hmm? ...What am I doing...?
+[tab]Force of habit, I guess...
+[wait][clear]
+***************************************/
+    unitAnimationHold(baofu, animation_21, -1);
+    wait(ref_186);
+    unitAnimationStop(baofu);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_182);
+    ref_18c = bustupFade(ref_180, rgb(0,0,0), 10);
+    bustupWait(ref_18c);
+    bustupFree(ref_180);
+    b(label_1dd);
+  label_190:
+    ref_190 = bustupLoad(bustup_31);
+    bustupWait(ref_190);
+    ref_192 = bustupAlloc(ref_190, left, rgb(0,0,0));
+    bustupFade(ref_192, rgb(128,0,0), 30);
+    ref_194 = dialogAlloc();
+    ref_195 = msgShow(msg_22);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]I wonder what she would say if she saw me now... 
+[tab]Hmph... She’d bellow at me at how conceited I am. 
+[tab]I know she would...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_6, 1);
+    wait(ref_195);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_194);
+    ref_19a = bustupFade(ref_192, rgb(0,0,0), 10);
+    bustupWait(ref_19a);
+    bustupFree(ref_192);
+    b(label_1dd);
+  label_19e:
+    unitFacePlayer(baofu);
+    ref_19f = bustupLoad(bustup_2e);
+    bustupWait(ref_19f);
+    ref_1a1 = bustupAlloc(ref_19f, left, rgb(0,0,0));
+    bustupFade(ref_1a1, rgb(128,0,0), 30);
+    ref_1a3 = dialogAlloc();
+    ref_1a4 = msgShow(msg_23);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]That Serizawa... telling me that there’s
+[tab]no smoking in this room... what’s up with
+[tab]that when she’s the one smoking in the room.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2f, 1);
+    wait(ref_1a4);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1a3);
+    ref_1a9 = bustupFade(ref_1a1, rgb(0,0,0), 10);
+    bustupWait(ref_1a9);
+    bustupFree(ref_1a1);
+    unitRestoreFacing(baofu);
+    b(label_1dd);
+  label_1ae:
+    unitFacePlayer(baofu);
+    ref_1af = bustupLoad(bustup_2f);
+    bustupWait(ref_1af);
+    ref_1b1 = bustupAlloc(ref_1af, left, rgb(0,0,0));
+    bustupFade(ref_1b1, rgb(128,0,0), 30);
+    ref_1b3 = dialogAlloc();
+    ref_1b4 = msgShow(msg_24);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]What’s with the mountain of canned crab in
+[tab]the fridge? You gonna eat all that?
+[tab]...Hmm? ...Whaddaya mean, "don’t look"?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    wait(ref_1b4);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1b3);
+    ref_1b9 = bustupFade(ref_1b1, rgb(0,0,0), 10);
+    bustupWait(ref_1b9);
+    bustupFree(ref_1b1);
+    unitRestoreFacing(baofu);
+    b(label_1dd);
+  label_1be:
+    unitFacePlayer(baofu);
+    ref_1bf = bustupLoad(bustup_2d);
+    bustupWait(ref_1bf);
+    ref_1c1 = bustupAlloc(ref_1bf, left, rgb(0,0,0));
+    bustupFade(ref_1c1, rgb(128,0,0), 30);
+    ref_1c3 = dialogAlloc();
+    ref_1c4 = msgShow(msg_25);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]If the ritual’s done, it’s not a matter of
+[tab]damage anymore. In order for his wish to
+[tab]be granted, the human race must die out...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_1c4);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1c3);
+    ref_1c9 = bustupFade(ref_1c1, rgb(0,0,0), 10);
+    bustupWait(ref_1c9);
+    bustupFree(ref_1c1);
+    unitRestoreFacing(baofu);
+    b(label_1dd);
+  label_1ce:
+    unitFacePlayer(baofu);
+    ref_1cf = bustupLoad(bustup_2d);
+    bustupWait(ref_1cf);
+    ref_1d1 = bustupAlloc(ref_1cf, left, rgb(0,0,0));
+    bustupFade(ref_1d1, rgb(128,0,0), 30);
+    ref_1d3 = dialogAlloc();
+    ref_1d4 = msgShow(msg_26);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Why do you think humans die? Because they
+[tab]have the power to change. Those who can die
+[tab]are a lot stronger than those who cannot.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    wait(ref_1d4);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1d3);
+    ref_1d9 = bustupFade(ref_1d1, rgb(0,0,0), 10);
+    bustupWait(ref_1d9);
+    bustupFree(ref_1d1);
+    unitRestoreFacing(baofu);
+  label_1dd:
+    controlEnable();
+}
+
+function B_NANJ()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_207);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_1f4);
+    unitFacePlayer(nanjo);
+    ref_1e5 = bustupLoad(bustup_36);
+    bustupWait(ref_1e5);
+    ref_1e7 = bustupAlloc(ref_1e5, left, rgb(0,0,0));
+    bustupFade(ref_1e7, rgb(128,0,0), 30);
+    ref_1e9 = dialogAlloc();
+    ref_1ea = msgShow(msg_27);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Ms. Serizawa was grumbling that
+[tab]she always has to clean the house.
+[tab]...Is that true?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_2d, 1);
+    wait(ref_1ea);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_1e9);
+    ref_1ef = bustupFade(ref_1e7, rgb(0,0,0), 10);
+    bustupWait(ref_1ef);
+    bustupFree(ref_1e7);
+    unitRestoreFacing(nanjo);
+    b(label_22a);
+  label_1f4:
+    unitFacePlayer(nanjo);
+    ref_1f5 = bustupLoad(bustup_36);
+    bustupWait(ref_1f5);
+    ref_1f7 = bustupAlloc(ref_1f5, left, rgb(0,0,0));
+    bustupFade(ref_1f7, rgb(128,0,0), 30);
+    ref_1f9 = dialogAlloc();
+    ref_1fa = msgShow(msg_28);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]The veranda is beautiful...
+[tab]Why don’t you try gardening?
+[tab]Be...(cough)... more domestic...
+***************************************/
+    unitAnimationPlay(nanjo, animation_2d, 1);
+    wait(ref_1fa);
+    ref_1fd = msgShow(msg_29);
+/***************************************
+[tab](cough)
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_24, 1);
+    wait(ref_1fd);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_1f9);
+    ref_202 = bustupFade(ref_1f7, rgb(0,0,0), 10);
+    bustupWait(ref_202);
+    bustupFree(ref_1f7);
+    unitRestoreFacing(nanjo);
+    b(label_22a);
+  label_207:
+    bitGet(var_0, EBIT_E0096);
+    bne(var_0, 0, label_219);
+    unitFacePlayer(nanjo);
+    ref_20a = bustupLoad(bustup_36);
+    bustupWait(ref_20a);
+    ref_20c = bustupAlloc(ref_20a, left, rgb(0,0,0));
+    bustupFade(ref_20c, rgb(128,0,0), 30);
+    ref_20e = dialogAlloc();
+    ref_20f = msgShow(msg_30);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]That young lad is speechless...
+[tab]Was this room just
+[tab]too much for him?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_2d, 1);
+    wait(ref_20f);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_20e);
+    ref_214 = bustupFade(ref_20c, rgb(0,0,0), 10);
+    bustupWait(ref_214);
+    bustupFree(ref_20c);
+    unitRestoreFacing(nanjo);
+    b(label_22a);
+  label_219:
+    bne(var_0, 1, label_22a);
+    unitFacePlayer(nanjo);
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    ref_21c = bustupLoad(bustup_3b);
+    bustupWait(ref_21c);
+    ref_21e = bustupAlloc(ref_21c, left, rgb(0,0,0));
+    bustupFade(ref_21e, rgb(128,0,0), 30);
+    ref_220 = dialogAlloc();
+    ref_221 = msgShow(msg_31);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Knowing a room before he steps into it...
+[tab]Well then, the "Other Side" must really exist...
+[wait][clear]
+***************************************/
+    wait(ref_221);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_220);
+    ref_225 = bustupFade(ref_21e, rgb(0,0,0), 10);
+    bustupWait(ref_225);
+    bustupFree(ref_21e);
+    unitRestoreFacing(nanjo);
+    b(label_22a);
+  label_22a:
+    controlEnable();
+}
+
+function B_ERI()
+{
+    controlDisable();
+    bitGet(var_0, MBIT_CNT_URARA);
+    bne(var_0, 0, label_230);
+    b(label_23d);
+  label_230:
+    bne(var_0, 1, label_23d);
+    bitGet(var_0, MBIT_CNT_KATUYA);
+    bne(var_0, 0, label_234);
+    b(label_23c);
+  label_234:
+    bne(var_0, 1, label_23c);
+    bitGet(var_0, MBIT_CNT_ERI);
+    bne(var_0, 0, label_239);
+    b(label_285);
+    b(label_23b);
+  label_239:
+    bne(var_0, 1, label_23b);
+    b(label_23b);
+  label_23b:
+    b(label_23c);
+  label_23c:
+    b(label_23d);
+  label_23d:
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_261);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_251);
+    unitFacePlayer(elly);
+    ref_242 = bustupLoad(bustup_3d);
+    bustupWait(ref_242);
+    ref_244 = bustupAlloc(ref_242, left, rgb(0,0,0));
+    bustupFade(ref_244, rgb(128,0,0), 30);
+    ref_246 = dialogAlloc();
+    ref_247 = msgShow(msg_32);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Ms. Ulala complained about having to
+[tab]clean the house all the time...
+[tab]Is that true?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_247);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_246);
+    ref_24c = bustupFade(ref_244, rgb(0,0,0), 10);
+    bustupWait(ref_24c);
+    bustupFree(ref_244);
+    unitRestoreFacing(elly);
+    b(label_298);
+  label_251:
+    unitFacePlayer(elly);
+    ref_252 = bustupLoad(bustup_3d);
+    bustupWait(ref_252);
+    ref_254 = bustupAlloc(ref_252, left, rgb(0,0,0));
+    bustupFade(ref_254, rgb(128,0,0), 30);
+    ref_256 = dialogAlloc();
+    ref_257 = msgShow(msg_33);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]You should try some aromatherapy...
+[tab]It will change the atmosphere of
+[tab]this room.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_24, 1);
+    wait(ref_257);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_256);
+    ref_25c = bustupFade(ref_254, rgb(0,0,0), 10);
+    bustupWait(ref_25c);
+    bustupFree(ref_254);
+    unitRestoreFacing(elly);
+    b(label_298);
+  label_261:
+    bitGet(var_0, EBIT_E0096);
+    bne(var_0, 0, label_273);
+    unitFacePlayer(elly);
+    ref_264 = bustupLoad(bustup_3d);
+    bustupWait(ref_264);
+    ref_266 = bustupAlloc(ref_264, left, rgb(0,0,0));
+    bustupFade(ref_266, rgb(128,0,0), 30);
+    ref_268 = dialogAlloc();
+    ref_269 = msgShow(msg_34);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab][tatsuya]... He is at a loss for words.
+[tab]Was this room just
+[tab]too much for him?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_269);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_268);
+    ref_26e = bustupFade(ref_266, rgb(0,0,0), 10);
+    bustupWait(ref_26e);
+    bustupFree(ref_266);
+    unitRestoreFacing(elly);
+    b(label_284);
+  label_273:
+    bne(var_0, 1, label_284);
+    unitFacePlayer(elly);
+    unitAnimationPlay(elly, animation_28, 1);
+    ref_276 = bustupLoad(bustup_40);
+    bustupWait(ref_276);
+    ref_278 = bustupAlloc(ref_276, left, rgb(0,0,0));
+    bustupFade(ref_278, rgb(128,0,0), 30);
+    ref_27a = dialogAlloc();
+    ref_27b = msgShow(msg_35);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]He knew the condition of a room which he
+[tab]had never been too...
+[tab]Then, the "Other Side" must really exist...
+[wait][clear]
+***************************************/
+    wait(ref_27b);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_27a);
+    ref_27f = bustupFade(ref_278, rgb(0,0,0), 10);
+    bustupWait(ref_27f);
+    bustupFree(ref_278);
+    unitRestoreFacing(elly);
+    b(label_284);
+  label_284:
+    b(label_298);
+  label_285:
+    unitFacePlayer(elly);
+    ref_286 = bustupLoad(bustup_3e);
+    bustupWait(ref_286);
+    ref_288 = bustupAlloc(ref_286, left, rgb(0,0,0));
+    bustupFade(ref_288, rgb(128,0,0), 30);
+    ref_28a = dialogAlloc();
+    ref_28b = msgShow(msg_36);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Ms. Ulala says that she is
+[tab]learning the flamenco dance.
+[tab]Actually I know a little, too.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_28b);
+    ref_28e = msgShow(msg_37);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Ms. Ulala or I, who’s better...?
+[tab]We’ll find out sometime...
+[tab]Look forward to it.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_30, 1);
+    wait(ref_28e);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_28a);
+    ref_293 = bustupFade(ref_288, rgb(0,0,0), 10);
+    bustupWait(ref_293);
+    bustupFree(ref_288);
+    bitSet(MBIT_CNT_ERI);
+    unitRestoreFacing(elly);
+  label_298:
+    controlEnable();
+}
+
+function B_TATU()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_2e7);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_2d7);
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_2c7);
+    bitGet(var_0, EBIT_E0096);
+    bne(var_0, 0, label_2b4);
+    unitFacePlayer(tatsuya);
+    ref_2a4 = bustupLoad(bustup_10);
+    bustupWait(ref_2a4);
+    ref_2a6 = bustupAlloc(ref_2a4, right, rgb(0,0,0));
+    bustupFade(ref_2a6, rgb(128,0,0), 30);
+    bustupFlip(ref_2a6, true);
+    ref_2a9 = dialogAlloc();
+    ref_2aa = msgShow(msg_38);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]It’s the same in this world...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    wait(ref_2aa);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_2a9);
+    ref_2af = bustupFade(ref_2a6, rgb(0,0,0), 10);
+    bustupWait(ref_2af);
+    bustupFree(ref_2a6);
+    unitRestoreFacing(tatsuya);
+    b(label_2c6);
+  label_2b4:
+    bne(var_0, 1, label_2c6);
+    unitFacePlayer(tatsuya);
+    ref_2b6 = bustupLoad(bustup_10);
+    bustupWait(ref_2b6);
+    ref_2b8 = bustupAlloc(ref_2b6, right, rgb(0,0,0));
+    bustupFade(ref_2b8, rgb(128,0,0), 30);
+    bustupFlip(ref_2b8, true);
+    ref_2bb = dialogAlloc();
+    ref_2bc = msgShow(msg_39);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]I know this room...
+[tab]Even on "This Side", it hasn’t changed...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    wait(ref_2bc);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_2bb);
+    ref_2c1 = bustupFade(ref_2b8, rgb(0,0,0), 10);
+    bustupWait(ref_2c1);
+    bustupFree(ref_2b8);
+    unitRestoreFacing(tatsuya);
+    b(label_2c6);
+  label_2c6:
+    b(label_2f6);
+  label_2c7:
+    unitFacePlayer(tatsuya);
+    ref_2c8 = bustupLoad(bustup_b);
+    bustupWait(ref_2c8);
+    ref_2ca = bustupAlloc(ref_2c8, left, rgb(0,0,0));
+    bustupFade(ref_2ca, rgb(128,0,0), 30);
+    ref_2cc = dialogAlloc();
+    ref_2cd = msgShow(msg_40);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]...Actually,
+[tab]I never planned to come back here again...
+[tab]...EVER...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_28, 1);
+    wait(ref_2cd);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_2cc);
+    ref_2d2 = bustupFade(ref_2ca, rgb(0,0,0), 10);
+    bustupWait(ref_2d2);
+    bustupFree(ref_2ca);
+    unitRestoreFacing(tatsuya);
+    b(label_2f6);
+  label_2d7:
+    unitFacePlayer(tatsuya);
+    ref_2d8 = bustupLoad(bustup_b);
+    bustupWait(ref_2d8);
+    ref_2da = bustupAlloc(ref_2d8, left, rgb(0,0,0));
+    bustupFade(ref_2da, rgb(128,0,0), 30);
+    ref_2dc = dialogAlloc();
+    ref_2dd = msgShow(msg_41);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]Xibalba...
+[tab]Ameno Torifune...
+[tab]To see you again like this...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    wait(ref_2dd);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_2dc);
+    ref_2e2 = bustupFade(ref_2da, rgb(0,0,0), 10);
+    bustupWait(ref_2e2);
+    bustupFree(ref_2da);
+    unitRestoreFacing(tatsuya);
+    b(label_2f6);
+  label_2e7:
+    unitFacePlayer(tatsuya);
+    ref_2e8 = bustupLoad(bustup_b);
+    bustupWait(ref_2e8);
+    ref_2ea = bustupAlloc(ref_2e8, left, rgb(0,0,0));
+    bustupFade(ref_2ea, rgb(128,0,0), 30);
+    ref_2ec = dialogAlloc();
+    ref_2ed = msgShow(msg_42);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]This time,
+[tab]I will keep my promise to everyone...
+[tab]And... this time...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_14, 1);
+    wait(ref_2ed);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_2ec);
+    ref_2f2 = bustupFade(ref_2ea, rgb(0,0,0), 10);
+    bustupWait(ref_2f2);
+    bustupFree(ref_2ea);
+    unitRestoreFacing(tatsuya);
+  label_2f6:
+    controlEnable();
+}
+
+function KAGIGA()
+{
+    controlDisable();
+    ref_2f9 = dialogAlloc();
+    ref_2fa = msgShow(msg_43);
+/***************************************
+[color(green)]The door is locked.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_2fa);
+    dialogFree(ref_2f9);
+    controlEnable();
+}
+
+function URARAIKARI()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_301 = bustupLoad(bustup_19);
+    bustupWait(ref_301);
+    ref_303 = bustupAlloc(ref_301, left, rgb(0,0,0));
+    bustupFade(ref_303, rgb(128,0,0), 30);
+    ref_305 = dialogAlloc();
+    ref_306 = msgShow(msg_44);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Hey Ma-ya...!!
+[tab]Don’t try to go into someone else’s room!
+[tab]From there on is my sacred domain...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1b, 1);
+    wait(ref_306);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_305);
+    ref_30b = bustupFade(ref_303, rgb(0,0,0), 10);
+    bustupWait(ref_30b);
+    bustupFree(ref_303);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function CDBOX()
+{
+    controlDisable();
+    li(var_b, 0);
+    bitGet(var_0, MBIT_CD_CD01);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD02);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD03);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD04);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD05);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD06);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD07);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD08);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD09);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD10);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD11);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD12);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD13);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD14);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD15);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD16);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD17);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_CD18);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_KACD01);
+    bnz(var_0, label_341);
+    bitGet(var_0, MBIT_CD_KACD02);
+    bnz(var_0, label_341);
+    ref_33b = dialogAlloc();
+    ref_33c = msgShow(msg_45);
+/***************************************
+[color(yellow)]Stereo[color(white)]
+[tab][color(green)]The latest stereo system...
+[tab]This is the only thing still clean.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_33c);
+    dialogFree(ref_33b);
+    controlEnable();
+    b(label_542);
+  label_341:
+    li(var_5, 0);
+    ref_342 = shopOverlayInit();
+    wait(ref_342);
+    ref_344 = shopOpen(24);
+    wait(ref_344);
+    b(label_542);
+    choiceSetResult(1);
+    op_105(1);
+    ref_349 = bustupLoad(bustup_1);
+    bustupWait(ref_349);
+    ref_34b = bustupAlloc(ref_349, center, rgb(0,0,0));
+    bustupFade(ref_34b, rgb(128,0,0), 30);
+    ref_34d = dialogChoiceAlloc();
+    ref_34e = msgShow(msg_46);
+/***************************************
+[color(green)]Will you listen to a CD?[color(white)]
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_34e);
+    dialogFree(ref_34d);
+    ref_351 = bustupFade(ref_34b, rgb(0,0,0), 10);
+    bustupWait(ref_351);
+    bustupFree(ref_34b);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_358);
+    b(label_35b);
+    b(label_35b);
+  label_358:
+    bne(var_0, 1, label_35b);
+    b(label_53a);
+    b(label_35b);
+  label_35b:
+    choiceSetResult(8);
+    op_105(8);
+    ref_35d = bustupLoad(bustup_1);
+    bustupWait(ref_35d);
+    ref_35f = bustupAlloc(ref_35d, center, rgb(0,0,0));
+    bustupFade(ref_35f, rgb(128,0,0), 30);
+    ref_361 = dialogChoiceAlloc();
+    ref_362 = msgShow(msg_47);
+/***************************************
+[color(green)]Select a band.[color(white)]
+[choice(9)][if_any(MBIT_CD_CD01, MBIT_CD_CD02, MBIT_CD_CD03, MBIT_CD_CD04, MBIT_CD_KACD01)]Erste
+[if_all(!MBIT_CD_CD01, !MBIT_CD_CD02, !MBIT_CD_CD03, !MBIT_CD_CD04, !MBIT_CD_KACD01)][color(gray)]N/A[color(white)]
+[if_any(MBIT_CD_CD05, MBIT_CD_CD06, MBIT_CD_CD07, MBIT_CD_CD08, MBIT_CD_KACD02)]Zweit
+[if_all(!MBIT_CD_CD05, !MBIT_CD_CD06, !MBIT_CD_CD07, !MBIT_CD_CD08, !MBIT_CD_KACD02)][color(gray)]N/A[color(white)]
+[if_any(MBIT_CD_CD09, MBIT_CD_CD10, MBIT_CD_CD11, MBIT_CD_CD12, MBIT_CD_CD13)]Dritte
+[if_all(!MBIT_CD_CD09, !MBIT_CD_CD10, !MBIT_CD_CD11, !MBIT_CD_CD12, !MBIT_CD_CD13)][color(gray)]N/A[color(white)]
+[if_any(MBIT_CD_CD14, MBIT_CD_CD15, MBIT_CD_CD16, MBIT_CD_CD17, MBIT_CD_CD18)]Vierter
+[if_all(!MBIT_CD_CD14, !MBIT_CD_CD15, !MBIT_CD_CD16, !MBIT_CD_CD17, !MBIT_CD_CD18)][color(gray)]N/A[color(white)]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_362);
+    dialogFree(ref_361);
+    ref_365 = bustupFade(ref_35f, rgb(0,0,0), 10);
+    bustupWait(ref_365);
+    bustupFree(ref_35f);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_36c);
+    b(label_389);
+    b(label_384);
+  label_36c:
+    bne(var_0, 1, label_36f);
+    b(label_384);
+    b(label_384);
+  label_36f:
+    bne(var_0, 2, label_372);
+    b(label_3c2);
+    b(label_384);
+  label_372:
+    bne(var_0, 3, label_375);
+    b(label_384);
+    b(label_384);
+  label_375:
+    bne(var_0, 4, label_378);
+    b(label_3fb);
+    b(label_384);
+  label_378:
+    bne(var_0, 5, label_37b);
+    b(label_384);
+    b(label_384);
+  label_37b:
+    bne(var_0, 6, label_37e);
+    b(label_434);
+    b(label_384);
+  label_37e:
+    bne(var_0, 7, label_381);
+    b(label_384);
+    b(label_384);
+  label_381:
+    bne(var_0, 8, label_384);
+    b(label_53a);
+    b(label_384);
+  label_384:
+    ref_384 = dialogAlloc();
+    ref_385 = msgShow(msg_48);
+/***************************************
+[color(green)]You haven’t bought any
+of this group’s CDs yet.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_385);
+    dialogFree(ref_384);
+    b(label_35b);
+  label_389:
+    choiceSetResult(10);
+    op_105(10);
+    ref_38b = bustupLoad(bustup_1);
+    bustupWait(ref_38b);
+    ref_38d = bustupAlloc(ref_38b, center, rgb(0,0,0));
+    bustupFade(ref_38d, rgb(128,0,0), 30);
+    ref_38f = dialogChoiceAlloc();
+    ref_390 = msgShow(msg_49);
+/***************************************
+[color(green)]Pick a CD.[color(white)]
+[choice(11)][if_all(MBIT_CD_CD01)]CD 1
+[if_all(!MBIT_CD_CD01)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD02)]CD 2
+[if_all(!MBIT_CD_CD02)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD03)]CD 3
+[if_all(!MBIT_CD_CD03)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD04)]CD 4
+[if_all(!MBIT_CD_CD04)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_KACD01)]Secret CD 1
+[if_all(!MBIT_CD_KACD01)][color(gray)]N/A[color(white)]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_390);
+    dialogFree(ref_38f);
+    ref_393 = bustupFade(ref_38d, rgb(0,0,0), 10);
+    bustupWait(ref_393);
+    bustupFree(ref_38d);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_39b);
+    li(var_a, 1);
+    b(label_46d);
+    b(label_3bd);
+  label_39b:
+    bne(var_0, 1, label_39e);
+    b(label_3bd);
+    b(label_3bd);
+  label_39e:
+    bne(var_0, 2, label_3a2);
+    li(var_a, 2);
+    b(label_46d);
+    b(label_3bd);
+  label_3a2:
+    bne(var_0, 3, label_3a5);
+    b(label_3bd);
+    b(label_3bd);
+  label_3a5:
+    bne(var_0, 4, label_3a9);
+    li(var_a, 3);
+    b(label_46d);
+    b(label_3bd);
+  label_3a9:
+    bne(var_0, 5, label_3ac);
+    b(label_3bd);
+    b(label_3bd);
+  label_3ac:
+    bne(var_0, 6, label_3b0);
+    li(var_a, 4);
+    b(label_46d);
+    b(label_3bd);
+  label_3b0:
+    bne(var_0, 7, label_3b3);
+    b(label_3bd);
+    b(label_3bd);
+  label_3b3:
+    bne(var_0, 8, label_3b7);
+    li(var_a, 5);
+    b(label_46d);
+    b(label_3bd);
+  label_3b7:
+    bne(var_0, 9, label_3ba);
+    b(label_3bd);
+    b(label_3bd);
+  label_3ba:
+    bne(var_0, 10, label_3bd);
+    b(label_35b);
+    b(label_3bd);
+  label_3bd:
+    ref_3bd = dialogAlloc();
+    ref_3be = msgShow(msg_50);
+/***************************************
+[color(green)]You have not bought
+this CD yet.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_3be);
+    dialogFree(ref_3bd);
+    b(label_389);
+  label_3c2:
+    choiceSetResult(10);
+    op_105(10);
+    ref_3c4 = bustupLoad(bustup_1);
+    bustupWait(ref_3c4);
+    ref_3c6 = bustupAlloc(ref_3c4, center, rgb(0,0,0));
+    bustupFade(ref_3c6, rgb(128,0,0), 30);
+    ref_3c8 = dialogChoiceAlloc();
+    ref_3c9 = msgShow(msg_51);
+/***************************************
+[color(green)]Pick a CD.[color(white)]
+[choice(11)][if_all(MBIT_CD_CD05)]CD 5
+[if_all(!MBIT_CD_CD05)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD06)]CD 6
+[if_all(!MBIT_CD_CD06)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD07)]CD 7
+[if_all(!MBIT_CD_CD07)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD08)]CD 8
+[if_all(!MBIT_CD_CD08)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_KACD02)]Secret CD 2
+[if_all(!MBIT_CD_KACD02)][color(gray)]N/A[color(white)]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_3c9);
+    dialogFree(ref_3c8);
+    ref_3cc = bustupFade(ref_3c6, rgb(0,0,0), 10);
+    bustupWait(ref_3cc);
+    bustupFree(ref_3c6);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_3d4);
+    li(var_a, 11);
+    b(label_46d);
+    b(label_3f6);
+  label_3d4:
+    bne(var_0, 1, label_3d7);
+    b(label_3f6);
+    b(label_3f6);
+  label_3d7:
+    bne(var_0, 2, label_3db);
+    li(var_a, 12);
+    b(label_46d);
+    b(label_3f6);
+  label_3db:
+    bne(var_0, 3, label_3de);
+    b(label_3f6);
+    b(label_3f6);
+  label_3de:
+    bne(var_0, 4, label_3e2);
+    li(var_a, 13);
+    b(label_46d);
+    b(label_3f6);
+  label_3e2:
+    bne(var_0, 5, label_3e5);
+    b(label_3f6);
+    b(label_3f6);
+  label_3e5:
+    bne(var_0, 6, label_3e9);
+    li(var_a, 14);
+    b(label_46d);
+    b(label_3f6);
+  label_3e9:
+    bne(var_0, 7, label_3ec);
+    b(label_3f6);
+    b(label_3f6);
+  label_3ec:
+    bne(var_0, 8, label_3f0);
+    li(var_a, 15);
+    b(label_46d);
+    b(label_3f6);
+  label_3f0:
+    bne(var_0, 9, label_3f3);
+    b(label_3f6);
+    b(label_3f6);
+  label_3f3:
+    bne(var_0, 10, label_3f6);
+    b(label_35b);
+    b(label_3f6);
+  label_3f6:
+    ref_3f6 = dialogAlloc();
+    ref_3f7 = msgShow(msg_52);
+/***************************************
+[color(green)]You have not bought
+this CD yet.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_3f7);
+    dialogFree(ref_3f6);
+    b(label_3c2);
+  label_3fb:
+    choiceSetResult(10);
+    op_105(10);
+    ref_3fd = bustupLoad(bustup_1);
+    bustupWait(ref_3fd);
+    ref_3ff = bustupAlloc(ref_3fd, center, rgb(0,0,0));
+    bustupFade(ref_3ff, rgb(128,0,0), 30);
+    ref_401 = dialogChoiceAlloc();
+    ref_402 = msgShow(msg_53);
+/***************************************
+[color(green)]Pick a CD.[color(white)]
+[choice(11)][if_all(MBIT_CD_CD09)]CD 9
+[if_all(!MBIT_CD_CD09)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD10)]CD 10
+[if_all(!MBIT_CD_CD10)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD11)]CD 11
+[if_all(!MBIT_CD_CD11)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD12)]CD 12
+[if_all(!MBIT_CD_CD12)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD13)]CD 13
+[if_all(!MBIT_CD_CD13)][color(gray)]N/A[color(white)]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_402);
+    dialogFree(ref_401);
+    ref_405 = bustupFade(ref_3ff, rgb(0,0,0), 10);
+    bustupWait(ref_405);
+    bustupFree(ref_3ff);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_40d);
+    li(var_a, 21);
+    b(label_46d);
+    b(label_42f);
+  label_40d:
+    bne(var_0, 1, label_410);
+    b(label_42f);
+    b(label_42f);
+  label_410:
+    bne(var_0, 2, label_414);
+    li(var_a, 22);
+    b(label_46d);
+    b(label_42f);
+  label_414:
+    bne(var_0, 3, label_417);
+    b(label_42f);
+    b(label_42f);
+  label_417:
+    bne(var_0, 4, label_41b);
+    li(var_a, 23);
+    b(label_46d);
+    b(label_42f);
+  label_41b:
+    bne(var_0, 5, label_41e);
+    b(label_42f);
+    b(label_42f);
+  label_41e:
+    bne(var_0, 6, label_422);
+    li(var_a, 24);
+    b(label_46d);
+    b(label_42f);
+  label_422:
+    bne(var_0, 7, label_425);
+    b(label_42f);
+    b(label_42f);
+  label_425:
+    bne(var_0, 8, label_429);
+    li(var_a, 25);
+    b(label_46d);
+    b(label_42f);
+  label_429:
+    bne(var_0, 9, label_42c);
+    b(label_42f);
+    b(label_42f);
+  label_42c:
+    bne(var_0, 10, label_42f);
+    b(label_35b);
+    b(label_42f);
+  label_42f:
+    ref_42f = dialogAlloc();
+    ref_430 = msgShow(msg_54);
+/***************************************
+[color(green)]You have not bought
+this CD yet.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_430);
+    dialogFree(ref_42f);
+    b(label_3fb);
+  label_434:
+    choiceSetResult(10);
+    op_105(10);
+    ref_436 = bustupLoad(bustup_1);
+    bustupWait(ref_436);
+    ref_438 = bustupAlloc(ref_436, center, rgb(0,0,0));
+    bustupFade(ref_438, rgb(128,0,0), 30);
+    ref_43a = dialogChoiceAlloc();
+    ref_43b = msgShow(msg_55);
+/***************************************
+[color(green)]Pick a CD.[color(white)]
+[choice(11)][if_all(MBIT_CD_CD14)]CD 14
+[if_all(!MBIT_CD_CD14)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD15)]CD 15
+[if_all(!MBIT_CD_CD15)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD16)]CD 16
+[if_all(!MBIT_CD_CD16)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD17)]CD 17
+[if_all(!MBIT_CD_CD17)][color(gray)]N/A[color(white)]
+[if_all(MBIT_CD_CD18)]CD 18
+[if_all(!MBIT_CD_CD18)][color(gray)]N/A[color(white)]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_43b);
+    dialogFree(ref_43a);
+    ref_43e = bustupFade(ref_438, rgb(0,0,0), 10);
+    bustupWait(ref_43e);
+    bustupFree(ref_438);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_446);
+    li(var_a, 31);
+    b(label_46d);
+    b(label_468);
+  label_446:
+    bne(var_0, 1, label_449);
+    b(label_468);
+    b(label_468);
+  label_449:
+    bne(var_0, 2, label_44d);
+    li(var_a, 32);
+    b(label_46d);
+    b(label_468);
+  label_44d:
+    bne(var_0, 3, label_450);
+    b(label_468);
+    b(label_468);
+  label_450:
+    bne(var_0, 4, label_454);
+    li(var_a, 33);
+    b(label_46d);
+    b(label_468);
+  label_454:
+    bne(var_0, 5, label_457);
+    b(label_468);
+    b(label_468);
+  label_457:
+    bne(var_0, 6, label_45b);
+    li(var_a, 34);
+    b(label_46d);
+    b(label_468);
+  label_45b:
+    bne(var_0, 7, label_45e);
+    b(label_468);
+    b(label_468);
+  label_45e:
+    bne(var_0, 8, label_462);
+    li(var_a, 35);
+    b(label_46d);
+    b(label_468);
+  label_462:
+    bne(var_0, 9, label_465);
+    b(label_468);
+    b(label_468);
+  label_465:
+    bne(var_0, 10, label_468);
+    b(label_35b);
+    b(label_468);
+  label_468:
+    ref_468 = dialogAlloc();
+    ref_469 = msgShow(msg_56);
+/***************************************
+[color(green)]You have not bought
+this CD yet.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_469);
+    dialogFree(ref_468);
+    b(label_434);
+  label_46d:
+    ref_46d = dialogAlloc();
+    sndVolumeFadeTo(sound_3023, 0, 30);
+    li(var_b, 1);
+    bne(var_a, 1, label_477);
+    ref_471 = msgShow(msg_57);
+/***************************************
+[color(green)]Now playing CD 1...[color(white)]
+
+***************************************/
+    ref_472 = sndLoad(sound_1020);
+    wait(ref_472);
+    sndMusicPlay(sound_1020, 127);
+    wait(ref_471);
+    b(label_4fa);
+  label_477:
+    bne(var_a, 2, label_47e);
+    ref_478 = msgShow(msg_58);
+/***************************************
+[color(green)]Now playing CD 2...[color(white)]
+
+***************************************/
+    ref_479 = sndLoad(sound_1040);
+    wait(ref_479);
+    sndMusicPlay(sound_1040, 127);
+    wait(ref_478);
+    b(label_4fa);
+  label_47e:
+    bne(var_a, 3, label_485);
+    ref_47f = msgShow(msg_59);
+/***************************************
+[color(green)]Now playing CD 3...[color(white)]
+
+***************************************/
+    ref_480 = sndLoad(sound_3007);
+    wait(ref_480);
+    sndMusicPlay(sound_3007, 127);
+    wait(ref_47f);
+    b(label_4fa);
+  label_485:
+    bne(var_a, 4, label_48c);
+    ref_486 = msgShow(msg_60);
+/***************************************
+[color(green)]Now playing CD 4...[color(white)]
+
+***************************************/
+    ref_487 = sndLoad(sound_3008);
+    wait(ref_487);
+    sndMusicPlay(sound_3008, 127);
+    wait(ref_486);
+    b(label_4fa);
+  label_48c:
+    bne(var_a, 5, label_492);
+    ref_48d = msgShow(msg_61);
+/***************************************
+[color(green)]Now playing Secret CD 1...[color(white)]
+
+***************************************/
+    sndVoicePlay(sound_cd, 127);
+    sndWaitStart();
+    wait(ref_48d);
+    b(label_4fa);
+  label_492:
+    bne(var_a, 11, label_499);
+    ref_493 = msgShow(msg_62);
+/***************************************
+[color(green)]Now playing CD 5...[color(white)]
+
+***************************************/
+    ref_494 = sndLoad(sound_10a0);
+    wait(ref_494);
+    sndMusicPlay(sound_10a0, 127);
+    wait(ref_493);
+    b(label_4fa);
+  label_499:
+    bne(var_a, 12, label_4a0);
+    ref_49a = msgShow(msg_63);
+/***************************************
+[color(green)]Now playing CD 6...[color(white)]
+
+***************************************/
+    ref_49b = sndLoad(sound_1100);
+    wait(ref_49b);
+    sndMusicPlay(sound_1100, 127);
+    wait(ref_49a);
+    b(label_4fa);
+  label_4a0:
+    bne(var_a, 13, label_4a7);
+    ref_4a1 = msgShow(msg_64);
+/***************************************
+[color(green)]Now playing CD 7...[color(white)]
+
+***************************************/
+    ref_4a2 = sndLoad(sound_1120);
+    wait(ref_4a2);
+    sndMusicPlay(sound_1120, 127);
+    wait(ref_4a1);
+    b(label_4fa);
+  label_4a7:
+    bne(var_a, 14, label_4ae);
+    ref_4a8 = msgShow(msg_65);
+/***************************************
+[color(green)]Now playing CD 8...[color(white)]
+
+***************************************/
+    ref_4a9 = sndLoad(sound_1140);
+    wait(ref_4a9);
+    sndMusicPlay(sound_1140, 127);
+    wait(ref_4a8);
+    b(label_4fa);
+  label_4ae:
+    bne(var_a, 15, label_4b4);
+    ref_4af = msgShow(msg_66);
+/***************************************
+[color(green)]Now playing Secret CD 2...[color(white)]
+
+***************************************/
+    sndVoicePlay(sound_cc, 127);
+    sndWaitStart();
+    wait(ref_4af);
+    b(label_4fa);
+  label_4b4:
+    bne(var_a, 21, label_4bb);
+    ref_4b5 = msgShow(msg_67);
+/***************************************
+[color(green)]Now playing CD 9...[color(white)]
+
+***************************************/
+    ref_4b6 = sndLoad(sound_1180);
+    wait(ref_4b6);
+    sndMusicPlay(sound_1180, 127);
+    wait(ref_4b5);
+    b(label_4fa);
+  label_4bb:
+    bne(var_a, 22, label_4c2);
+    ref_4bc = msgShow(msg_68);
+/***************************************
+[color(green)]Now playing CD 10...[color(white)]
+
+***************************************/
+    ref_4bd = sndLoad(sound_11a0);
+    wait(ref_4bd);
+    sndMusicPlay(sound_11a0, 127);
+    wait(ref_4bc);
+    b(label_4fa);
+  label_4c2:
+    bne(var_a, 23, label_4c9);
+    ref_4c3 = msgShow(msg_69);
+/***************************************
+[color(green)]Now playing CD 11...[color(white)]
+
+***************************************/
+    ref_4c4 = sndLoad(sound_11c0);
+    wait(ref_4c4);
+    sndMusicPlay(sound_11c0, 127);
+    wait(ref_4c3);
+    b(label_4fa);
+  label_4c9:
+    bne(var_a, 24, label_4d0);
+    ref_4ca = msgShow(msg_70);
+/***************************************
+[color(green)]Now playing CD 12...[color(white)]
+
+***************************************/
+    ref_4cb = sndLoad(sound_1200);
+    wait(ref_4cb);
+    sndMusicPlay(sound_1200, 127);
+    wait(ref_4ca);
+    b(label_4fa);
+  label_4d0:
+    bne(var_a, 25, label_4d7);
+    ref_4d1 = msgShow(msg_71);
+/***************************************
+[color(green)]Now playing CD 13...[color(white)]
+
+***************************************/
+    ref_4d2 = sndLoad(sound_3014);
+    wait(ref_4d2);
+    sndMusicPlay(sound_3014, 127);
+    wait(ref_4d1);
+    b(label_4fa);
+  label_4d7:
+    bne(var_a, 31, label_4de);
+    ref_4d8 = msgShow(msg_72);
+/***************************************
+[color(green)]Now playing CD 14...[color(white)]
+
+***************************************/
+    ref_4d9 = sndLoad(sound_1220);
+    wait(ref_4d9);
+    sndMusicPlay(sound_1220, 127);
+    wait(ref_4d8);
+    b(label_4fa);
+  label_4de:
+    bne(var_a, 32, label_4e5);
+    ref_4df = msgShow(msg_73);
+/***************************************
+[color(green)]Now playing CD 15...[color(white)]
+
+***************************************/
+    ref_4e0 = sndLoad(sound_1240);
+    wait(ref_4e0);
+    sndMusicPlay(sound_1240, 127);
+    wait(ref_4df);
+    b(label_4fa);
+  label_4e5:
+    bne(var_a, 33, label_4ec);
+    ref_4e6 = msgShow(msg_74);
+/***************************************
+[color(green)]Now playing CD 16...[color(white)]
+
+***************************************/
+    ref_4e7 = sndLoad(sound_1260);
+    wait(ref_4e7);
+    sndMusicPlay(sound_1260, 127);
+    wait(ref_4e6);
+    b(label_4fa);
+  label_4ec:
+    bne(var_a, 34, label_4f3);
+    ref_4ed = msgShow(msg_75);
+/***************************************
+[color(green)]Now playing CD 17...[color(white)]
+
+***************************************/
+    ref_4ee = sndLoad(sound_300a);
+    wait(ref_4ee);
+    sndMusicPlay(sound_300a, 127);
+    wait(ref_4ed);
+    b(label_4fa);
+  label_4f3:
+    bne(var_a, 35, label_4fa);
+    ref_4f4 = msgShow(msg_76);
+/***************************************
+[color(green)]Now playing CD 18...[color(white)]
+
+***************************************/
+    ref_4f5 = sndLoad(sound_300c);
+    wait(ref_4f5);
+    sndMusicPlay(sound_300c, 127);
+    wait(ref_4f4);
+    b(label_4fa);
+  label_4fa:
+    ref_4fa = msgShow(msg_77);
+/***************************************
+[color(green)]♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪
+[tab]Push × or ○ button to stop the music.
+[tab]♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_4fa);
+    dialogFree(ref_46d);
+    bne(var_a, 1, label_500);
+    sndStop(sound_1020);
+    b(label_539);
+  label_500:
+    bne(var_a, 2, label_503);
+    sndStop(sound_1040);
+    b(label_539);
+  label_503:
+    bne(var_a, 3, label_506);
+    sndStop(sound_3007);
+    b(label_539);
+  label_506:
+    bne(var_a, 4, label_509);
+    sndStop(sound_3008);
+    b(label_539);
+  label_509:
+    bne(var_a, 5, label_50c);
+    sndMusicFree();
+    b(label_539);
+  label_50c:
+    bne(var_a, 11, label_50f);
+    sndStop(sound_10a0);
+    b(label_539);
+  label_50f:
+    bne(var_a, 12, label_512);
+    sndStop(sound_1100);
+    b(label_539);
+  label_512:
+    bne(var_a, 13, label_515);
+    sndStop(sound_1120);
+    b(label_539);
+  label_515:
+    bne(var_a, 14, label_518);
+    sndStop(sound_1140);
+    b(label_539);
+  label_518:
+    bne(var_a, 15, label_51b);
+    sndMusicFree();
+    b(label_539);
+  label_51b:
+    bne(var_a, 21, label_51e);
+    sndStop(sound_1180);
+    b(label_539);
+  label_51e:
+    bne(var_a, 22, label_521);
+    sndStop(sound_11a0);
+    b(label_539);
+  label_521:
+    bne(var_a, 23, label_524);
+    sndStop(sound_11c0);
+    b(label_539);
+  label_524:
+    bne(var_a, 24, label_527);
+    sndStop(sound_1200);
+    b(label_539);
+  label_527:
+    bne(var_a, 25, label_52a);
+    sndStop(sound_3014);
+    b(label_539);
+  label_52a:
+    bne(var_a, 31, label_52d);
+    sndStop(sound_1220);
+    b(label_539);
+  label_52d:
+    bne(var_a, 32, label_530);
+    sndStop(sound_1240);
+    b(label_539);
+  label_530:
+    bne(var_a, 33, label_533);
+    sndStop(sound_1260);
+    b(label_539);
+  label_533:
+    bne(var_a, 34, label_536);
+    sndStop(sound_300a);
+    b(label_539);
+  label_536:
+    bne(var_a, 35, label_539);
+    sndStop(sound_300c);
+    b(label_539);
+  label_539:
+    b(label_35b);
+  label_53a:
+    bne(var_b, 0, label_53c);
+    b(label_541);
+  label_53c:
+    bne(var_b, 1, label_541);
+    ref_53d = sndLoad(sound_3023);
+    wait(ref_53d);
+    sndMusicPlay(sound_3023, 127);
+    b(label_541);
+  label_541:
+    controlEnable();
+  label_542:
+}
+
+function DOORBOX()
+{
+    controlDisable();
+    objAnimRotate(obj_1e, 0, 80, 0, 30, 0);
+    sndMusicPlay(sound_307d, 127);
+    objAnimWait(obj_1e);
+    mapLoad(kounan, 10, 6);
+}
+
+function CD_PLAY()
+{
+    bne(var_1, 1, label_54e);
+    ref_54a = sndLoad(sound_1020);
+    wait(ref_54a);
+    sndMusicPlay(sound_1020, 127);
+    b(label_5a9);
+  label_54e:
+    bne(var_1, 2, label_553);
+    ref_54f = sndLoad(sound_1040);
+    wait(ref_54f);
+    sndMusicPlay(sound_1040, 127);
+    b(label_5a9);
+  label_553:
+    bne(var_1, 3, label_558);
+    ref_554 = sndLoad(sound_3007);
+    wait(ref_554);
+    sndMusicPlay(sound_3007, 127);
+    b(label_5a9);
+  label_558:
+    bne(var_1, 4, label_55d);
+    ref_559 = sndLoad(sound_3008);
+    wait(ref_559);
+    sndMusicPlay(sound_3008, 127);
+    b(label_5a9);
+  label_55d:
+    bne(var_1, 5, label_560);
+    sndMusicPlay(sound_40ad, 127);
+    b(label_5a9);
+  label_560:
+    bne(var_1, 6, label_565);
+    ref_561 = sndLoad(sound_10a0);
+    wait(ref_561);
+    sndMusicPlay(sound_10a0, 127);
+    b(label_5a9);
+  label_565:
+    bne(var_1, 7, label_56a);
+    ref_566 = sndLoad(sound_1100);
+    wait(ref_566);
+    sndMusicPlay(sound_1100, 127);
+    b(label_5a9);
+  label_56a:
+    bne(var_1, 8, label_56f);
+    ref_56b = sndLoad(sound_1120);
+    wait(ref_56b);
+    sndMusicPlay(sound_1120, 127);
+    b(label_5a9);
+  label_56f:
+    bne(var_1, 9, label_574);
+    ref_570 = sndLoad(sound_1140);
+    wait(ref_570);
+    sndMusicPlay(sound_1140, 127);
+    b(label_5a9);
+  label_574:
+    bne(var_1, 10, label_577);
+    sndMusicPlay(sound_40ae, 127);
+    b(label_5a9);
+  label_577:
+    bne(var_1, 11, label_57c);
+    ref_578 = sndLoad(sound_1180);
+    wait(ref_578);
+    sndMusicPlay(sound_1180, 127);
+    b(label_5a9);
+  label_57c:
+    bne(var_1, 12, label_581);
+    ref_57d = sndLoad(sound_11a0);
+    wait(ref_57d);
+    sndMusicPlay(sound_11a0, 127);
+    b(label_5a9);
+  label_581:
+    bne(var_1, 13, label_586);
+    ref_582 = sndLoad(sound_11c0);
+    wait(ref_582);
+    sndMusicPlay(sound_11c0, 127);
+    b(label_5a9);
+  label_586:
+    bne(var_1, 14, label_58b);
+    ref_587 = sndLoad(sound_1200);
+    wait(ref_587);
+    sndMusicPlay(sound_1200, 127);
+    b(label_5a9);
+  label_58b:
+    bne(var_1, 15, label_590);
+    ref_58c = sndLoad(sound_3014);
+    wait(ref_58c);
+    sndMusicPlay(sound_3014, 127);
+    b(label_5a9);
+  label_590:
+    bne(var_1, 16, label_595);
+    ref_591 = sndLoad(sound_1220);
+    wait(ref_591);
+    sndMusicPlay(sound_1220, 127);
+    b(label_5a9);
+  label_595:
+    bne(var_1, 17, label_59a);
+    ref_596 = sndLoad(sound_1240);
+    wait(ref_596);
+    sndMusicPlay(sound_1240, 127);
+    b(label_5a9);
+  label_59a:
+    bne(var_1, 18, label_59f);
+    ref_59b = sndLoad(sound_1260);
+    wait(ref_59b);
+    sndMusicPlay(sound_1260, 127);
+    b(label_5a9);
+  label_59f:
+    bne(var_1, 19, label_5a4);
+    ref_5a0 = sndLoad(sound_300a);
+    wait(ref_5a0);
+    sndMusicPlay(sound_300a, 127);
+    b(label_5a9);
+  label_5a4:
+    bne(var_1, 20, label_5a9);
+    ref_5a5 = sndLoad(sound_300c);
+    wait(ref_5a5);
+    sndMusicPlay(sound_300c, 127);
+    b(label_5a9);
+  label_5a9:
+}
+
+function CD_STOP()
+{
+    bne(var_1, 1, label_5ad);
+    sndStop(sound_1020);
+    b(label_5e6);
+  label_5ad:
+    bne(var_1, 2, label_5b0);
+    sndStop(sound_1040);
+    b(label_5e6);
+  label_5b0:
+    bne(var_1, 3, label_5b3);
+    sndStop(sound_3007);
+    b(label_5e6);
+  label_5b3:
+    bne(var_1, 4, label_5b6);
+    sndStop(sound_3008);
+    b(label_5e6);
+  label_5b6:
+    bne(var_1, 5, label_5b9);
+    sndStop(sound_40ad);
+    b(label_5e6);
+  label_5b9:
+    bne(var_1, 6, label_5bc);
+    sndStop(sound_10a0);
+    b(label_5e6);
+  label_5bc:
+    bne(var_1, 7, label_5bf);
+    sndStop(sound_1100);
+    b(label_5e6);
+  label_5bf:
+    bne(var_1, 8, label_5c2);
+    sndStop(sound_1120);
+    b(label_5e6);
+  label_5c2:
+    bne(var_1, 9, label_5c5);
+    sndStop(sound_1140);
+    b(label_5e6);
+  label_5c5:
+    bne(var_1, 10, label_5c8);
+    sndStop(sound_40ae);
+    b(label_5e6);
+  label_5c8:
+    bne(var_1, 11, label_5cb);
+    sndStop(sound_1180);
+    b(label_5e6);
+  label_5cb:
+    bne(var_1, 12, label_5ce);
+    sndStop(sound_11a0);
+    b(label_5e6);
+  label_5ce:
+    bne(var_1, 13, label_5d1);
+    sndStop(sound_11c0);
+    b(label_5e6);
+  label_5d1:
+    bne(var_1, 14, label_5d4);
+    sndStop(sound_1200);
+    b(label_5e6);
+  label_5d4:
+    bne(var_1, 15, label_5d7);
+    sndStop(sound_3014);
+    b(label_5e6);
+  label_5d7:
+    bne(var_1, 16, label_5da);
+    sndStop(sound_1220);
+    b(label_5e6);
+  label_5da:
+    bne(var_1, 17, label_5dd);
+    sndStop(sound_1240);
+    b(label_5e6);
+  label_5dd:
+    bne(var_1, 18, label_5e0);
+    sndStop(sound_1260);
+    b(label_5e6);
+  label_5e0:
+    bne(var_1, 19, label_5e3);
+    sndStop(sound_300a);
+    b(label_5e6);
+  label_5e3:
+    bne(var_1, 20, label_5e6);
+    sndStop(sound_300c);
+    b(label_5e6);
+  label_5e6:
+    sndMusicPlay(sound_3023, 127);
+}
+
+function HA_SHOP_END_0()
+{
+    shopOverlayInit();
+    li(var_5, 0);
+    controlEnable();
+}
+
+function HA_SHOP_TALK_0()
+{
+}
+
+function HA_SHOP_RESTART_1()
+{
+}
+
+function HA_SHOP_RESTART_0()
+{
+    li(var_5, 1);
+}

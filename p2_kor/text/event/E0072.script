@@ -1,0 +1,2552 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_f);
+    ref_3 = spriteLoad(sprite_0);
+    wait(ref_3);
+    ref_5 = spriteLoad(sprite_2);
+    wait(ref_5);
+    ref_7 = spriteLoad(sprite_1);
+    wait(ref_7);
+    ref_9 = spriteLoad(sprite_6);
+    wait(ref_9);
+    ref_b = spriteLoad(sprite_d);
+    wait(ref_b);
+    ref_d = spriteLoad(sprite_13);
+    wait(ref_d);
+    ref_f = spriteLoad(sprite_1f);
+    wait(ref_f);
+    ref_11 = spriteLoad(sprite_23);
+    wait(ref_11);
+    partyHealthRestore(katsuya);
+    partySPRestore(katsuya);
+    partyStatusClear(katsuya);
+    partyHealthRestore(baofu);
+    partySPRestore(baofu);
+    partyStatusClear(baofu);
+    partyMemberRemove(katsuya);
+    partyMemberRemove(baofu);
+    objVisible(obj_b, false);
+    bitGet(var_1, EBIT_E0075);
+    bne(var_1, 0, label_21);
+    ref_1e = call(KYOUSEI);
+    wait(ref_1e);
+    b(label_25);
+  label_21:
+    bne(var_1, 1, label_25);
+    ref_22 = call(FREE);
+    wait(ref_22);
+    b(label_25);
+  label_25:
+}
+
+function KYOUSEI()
+{
+    cameraSet(northwest, 225, 0, -391);
+    unitSpawn(maya, sprite_0, 327, 0, -289, north, none);
+    unitFace(maya, north);
+    unitSpawn(ulala, sprite_6, 188, 0, -365, north, none);
+    unitFace(ulala, west);
+    unitSpawn(katsuya, sprite_d, 324, 0, -509, north, none);
+    unitFace(katsuya, south);
+    unitSpawn(baofu, sprite_13, 463, 0, -493, north, none);
+    unitFace(baofu, south);
+    bitGet(var_1, MBIT_HI_NANJOTOUJO);
+    bne(var_1, 0, label_34);
+    unitSpawn(elly, sprite_23, 493, 0, -362, north, none);
+    unitFace(elly, east);
+    b(label_38);
+  label_34:
+    bne(var_1, 1, label_38);
+    unitSpawn(nanjo, sprite_1f, 493, 0, -362, north, none);
+    unitFace(nanjo, east);
+    b(label_38);
+  label_38:
+    unitIdleOffAll();
+    unitTriggerSet(ulala, URARA, 255, 1);
+    bne(var_1, 0, label_3d);
+    unitTriggerSet(elly, ERI, 255, 1);
+    b(label_40);
+  label_3d:
+    bne(var_1, 1, label_40);
+    unitTriggerSet(nanjo, NANJO, 255, 1);
+    b(label_40);
+  label_40:
+    envTriggerSet(EXIT, 131, 1, line, coll_7);
+    envTriggerSet(TOIRE1, 131, 1, line, coll_8);
+    envTriggerSet(TOIRE2, 131, 1, line, coll_9);
+    envTriggerSet(TOIRE3, 131, 1, line, coll_a);
+    envTriggerSet(TOIRE4, 131, 1, line, coll_b);
+    envTriggerSet(TOIRE5, 56, 1, line, coll_c);
+    envTriggerSet(TOIRE6, 56, 1, line, coll_d);
+    envTriggerSet(TOIRE7, 56, 1, line, coll_e);
+    envTriggerSet(TOIRE8, 56, 1, line, coll_f);
+    envTriggerSet(TOIRE9, 56, 1, line, coll_10);
+    envTriggerSet(YOUGU, 56, 1, line, coll_11);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 4, true);
+    screenFadeOuter(rgb(0,0,0), 4, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    ref_52 = bustupLoad(bustup_17);
+    bustupWait(ref_52);
+    ref_54 = bustupAlloc(ref_52, left, rgb(0,0,0));
+    bustupFade(ref_54, rgb(128,0,0), 30);
+    ref_56 = dialogAlloc();
+    ref_57 = msgShow(msg_0);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]So, what are we gonna do?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_57);
+    ref_60 = msgShow(msg_1);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Catch Sasaki, or destroy the machine...
+[tab]Either way, with all those people, 
+[tab]they are going to get mixed up in it!
+[sync][wait][clear]
+***************************************/
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_60);
+    dialogFree(ref_56);
+    ref_66 = bustupFade(ref_54, rgb(0,0,0), 10);
+    bustupWait(ref_66);
+    bustupFree(ref_54);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    ref_6b = bustupLoad(bustup_1);
+    bustupWait(ref_6b);
+    ref_6d = bustupAlloc(ref_6b, center, rgb(0,0,0));
+    bustupFade(ref_6d, rgb(128,0,0), 30);
+    ref_6f = dialogChoiceAlloc();
+    ref_70 = msgShow(msg_2);
+/***************************************
+[tab]They are going to get mixed up in it!
+[choice(2)]What should we do...?
+Let’s start a fire!
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_70);
+    dialogFree(ref_6f);
+    ref_74 = bustupFade(ref_6d, rgb(0,0,0), 10);
+    bustupWait(ref_74);
+    bustupFree(ref_6d);
+    choiceGetResult(var_2);
+    bne(var_2, 0, label_444);
+    unitAnimationPlay(maya, animation_11, 1);
+    unitWait(maya);
+    delayClear();
+    delayWait(60);
+    bne(var_1, 0, label_22a);
+    delayClear();
+    delayWait(60);
+    unitFace(katsuya, west);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    delayClear();
+    delayWait(45);
+    ref_84 = bustupLoad(bustup_21);
+    bustupWait(ref_84);
+    ref_86 = bustupAlloc(ref_84, left, rgb(0,0,0));
+    bustupFade(ref_86, rgb(128,0,0), 30);
+    ref_88 = dialogAlloc();
+    ref_89 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]We’ll use this...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_f, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_89);
+    dialogFree(ref_88);
+    ref_90 = bustupFade(ref_86, rgb(0,0,0), 10);
+    bustupWait(ref_90);
+    bustupFree(ref_86);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_5, 1);
+    unitAnimationPlay(baofu, animation_5, 1);
+    unitAnimationPlay(ulala, animation_5, 1);
+    unitAnimationPlay(elly, animation_5, 1);
+    delayClear();
+    delayWait(90);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(elly, animation_0, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(baofu);
+    unitWait(ulala);
+    unitWait(elly);
+    delayClear();
+    delayWait(30);
+    ref_a7 = bustupLoad(bustup_17);
+    bustupWait(ref_a7);
+    ref_a9 = bustupAlloc(ref_a7, left, rgb(0,0,0));
+    bustupFade(ref_a9, rgb(128,0,0), 30);
+    ref_ab = dialogAlloc();
+    ref_ac = msgShow(msg_4);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]A fire alarm...? You’re going to tear
+[tab]it off and throw it at him?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    unitFace(katsuya, south);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_ac);
+    dialogFree(ref_ab);
+    ref_b9 = bustupFade(ref_a9, rgb(0,0,0), 10);
+    bustupWait(ref_b9);
+    bustupFree(ref_a9);
+    ref_bc = bustupLoad(bustup_27);
+    bustupWait(ref_bc);
+    ref_be = bustupAlloc(ref_bc, left, rgb(0,0,0));
+    bustupFade(ref_be, rgb(128,0,0), 30);
+    ref_c0 = dialogAlloc();
+    ref_c1 = msgShow(msg_5);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]No... I meant...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitAnimationPlay(katsuya, animation_29, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitWait(katsuya);
+    sync();
+    wait(ref_c1);
+    dialogFree(ref_c0);
+    ref_cc = bustupFade(ref_be, rgb(0,0,0), 10);
+    bustupWait(ref_cc);
+    bustupFree(ref_be);
+    delayClear();
+    delayWait(30);
+    ref_d1 = bustupLoad(bustup_18);
+    bustupWait(ref_d1);
+    ref_d3 = bustupAlloc(ref_d1, left, rgb(0,0,0));
+    bustupFade(ref_d3, rgb(128,0,0), 30);
+    ref_d5 = dialogAlloc();
+    ref_d6 = msgShow(msg_6);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Just joking, just joking.
+[tab]I’m not much of a "Joker".
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_30, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_d6);
+    dialogFree(ref_d5);
+    ref_dd = bustupFade(ref_d3, rgb(0,0,0), 10);
+    bustupWait(ref_dd);
+    bustupFree(ref_d3);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(15);
+    unitFace(baofu, east);
+    delayClear();
+    delayWait(15);
+    ref_e7 = bustupLoad(bustup_2c);
+    bustupWait(ref_e7);
+    ref_e9 = bustupAlloc(ref_e7, left, rgb(0,0,0));
+    bustupFade(ref_e9, rgb(128,0,0), 30);
+    ref_eb = dialogAlloc();
+    ref_ec = msgShow(msg_7);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Idiot...
+[tab]When you say it, it doesn’t sound like a joke...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1f, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(baofu, animation_24, 1);
+    unitWait(baofu);
+    sync();
+    wait(ref_ec);
+    dialogFree(ref_eb);
+    ref_f7 = bustupFade(ref_e9, rgb(0,0,0), 10);
+    bustupWait(ref_f7);
+    bustupFree(ref_e9);
+    ref_fa = bustupLoad(bustup_19);
+    bustupWait(ref_fa);
+    ref_fc = bustupAlloc(ref_fa, left, rgb(0,0,0));
+    bustupFade(ref_fc, rgb(128,0,0), 30);
+    ref_fe = dialogAlloc();
+    ref_ff = msgShow(msg_8);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]What!?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1b, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(45);
+    unitAnimationPlay(ulala, animation_1e, 2);
+    unitWait(ulala);
+    sync();
+    wait(ref_ff);
+    dialogFree(ref_fe);
+    ref_109 = bustupFade(ref_fc, rgb(0,0,0), 10);
+    bustupWait(ref_109);
+    bustupFree(ref_fc);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    ref_110 = bustupLoad(bustup_3d);
+    bustupWait(ref_110);
+    ref_112 = bustupAlloc(ref_110, left, rgb(0,0,0));
+    bustupFade(ref_112, rgb(128,0,0), 30);
+    ref_114 = dialogAlloc();
+    ref_115 = msgShow(msg_9);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]You’re causing a panic right?
+[tab]So what if you send smoke in that duct?
+[tab]It should be effective.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(katsuya, animation_1, 1);
+    unitAnimationPlay(baofu, animation_4, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_115);
+    dialogFree(ref_114);
+    ref_123 = bustupFade(ref_112, rgb(0,0,0), 10);
+    bustupWait(ref_123);
+    bustupFree(ref_112);
+    unitAnimationPlay(elly, animation_0, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(elly, animation_5, 1);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitFace(ulala, north);
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_2, 1);
+    unitAnimationPlay(baofu, animation_5, 1);
+    unitAnimationPlay(katsuya, animation_4, 1);
+    unitFace(ulala, east);
+    unitAnimationPlay(ulala, animation_5, 1);
+    delayClear();
+    delayWait(120);
+    ref_13e = bustupLoad(bustup_21);
+    bustupWait(ref_13e);
+    ref_140 = bustupAlloc(ref_13e, left, rgb(0,0,0));
+    bustupFade(ref_140, rgb(128,0,0), 30);
+    ref_142 = dialogAlloc();
+    ref_143 = msgShow(msg_10);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Let’s split into 2 groups, one sends smoke
+[tab]and charges in, while the other sets off
+[tab]the alarm.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(elly, animation_1, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitAnimationPlay(maya, animation_1, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitFace(ulala, north);
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(ulala, west);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_143);
+    dialogFree(ref_142);
+    ref_159 = bustupFade(ref_140, rgb(0,0,0), 10);
+    bustupWait(ref_159);
+    bustupFree(ref_140);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(elly, animation_0, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(ulala);
+    unitWait(baofu);
+    unitWait(elly);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(katsuya, animation_24, 1);
+    unitAnimationPlay(maya, animation_24, 1);
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitAnimationPlay(baofu, animation_24, 1);
+    unitAnimationPlay(elly, animation_24, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(ulala);
+    unitWait(baofu);
+    unitWait(elly);
+    delayClear();
+    delayWait(60);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitDespawn(katsuya, none);
+    unitDespawn(baofu, none);
+    unitSpawn(ulala, sprite_6, 328, 0, -525, north, none);
+    unitSpawn(maya, sprite_0, 328, 0, -425, north, none);
+    unitFace(ulala, south);
+    unitAnimationPlay(elly, animation_1, 1);
+    delayClear();
+    delayWait(90);
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenEffectUnknown();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_1);
+    unitAnimationPlay(maya, animation_6, 1);
+    delayClear();
+    delayWait(60);
+    sndMusicPlay(sound_31d2, 127);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    ref_193 = bustupLoad(bustup_17);
+    bustupWait(ref_193);
+    ref_195 = bustupAlloc(ref_193, left, rgb(0,0,0));
+    bustupFade(ref_195, rgb(128,0,0), 30);
+    ref_197 = dialogAlloc();
+    ref_198 = msgShow(msg_11);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Hey Ma-ya...
+[tab]Does everyone think I’m stupid?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_14, 1);
+    unitAnimationPlay(elly, animation_1, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(ulala, animation_1f, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_198);
+    ref_1a4 = msgShow(msg_12);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Can’t those two understand that I’m just
+[tab]trying to relax this tension?
+[tab]Joke and Joker... Wasn’t it funny?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_1a4);
+    dialogFree(ref_197);
+    ref_1ab = bustupFade(ref_195, rgb(0,0,0), 10);
+    bustupWait(ref_1ab);
+    bustupFree(ref_195);
+    unitAnimationPlay(elly, animation_23, 1);
+    delayClear();
+    delayWait(60);
+    ref_1b1 = bustupLoad(bustup_3d);
+    bustupWait(ref_1b1);
+    ref_1b3 = bustupAlloc(ref_1b1, left, rgb(0,0,0));
+    bustupFade(ref_1b3, rgb(128,0,0), 30);
+    ref_1b5 = dialogAlloc();
+    ref_1b6 = msgShow(msg_13);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Well those two are very rigid.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_b, 1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(ulala, animation_1, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_1b6);
+    dialogFree(ref_1b5);
+    ref_1c0 = bustupFade(ref_1b3, rgb(0,0,0), 10);
+    bustupWait(ref_1c0);
+    bustupFree(ref_1b3);
+    delayClear();
+    delayWait(60);
+    ref_1c5 = dialogAlloc();
+    ref_1c6 = msgShow(msg_14);
+/***************************************
+[color(yellow)]Katsuya’s laugh[color(white)]
+[tab](chuckle). . .
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1c6);
+    dialogFree(ref_1c5);
+    delayClear();
+    delayWait(30);
+    sndVolumeFadeOff(sound_3016, 120);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_0);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(elly, animation_5, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_2, 1);
+    unitAnimationPlay(ulala, animation_4, 1);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(elly, animation_1, 1);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    ref_1e5 = bustupLoad(bustup_5);
+    bustupWait(ref_1e5);
+    ref_1e7 = bustupAlloc(ref_1e5, left, rgb(0,0,0));
+    bustupFade(ref_1e7, rgb(128,0,0), 30);
+    ref_1e9 = dialogAlloc();
+    ref_1ea = bustupLoad(bustup_1b);
+    bustupWait(ref_1ea);
+    ref_1ec = bustupAlloc(ref_1ea, center, rgb(0,0,0));
+    bustupFade(ref_1ec, rgb(128,0,0), 30);
+    ref_1ee = bustupLoad(bustup_41);
+    bustupWait(ref_1ee);
+    ref_1f0 = bustupAlloc(ref_1ee, right, rgb(0,0,0));
+    bustupFade(ref_1f0, rgb(128,0,0), 30);
+    ref_1f2 = msgShow(msg_15);
+/***************************************
+[color(yellow)]Maya/Ulala/Elly[color(white)]
+[tab]. . . . . . . . .
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1f2);
+    ref_1f5 = bustupFade(ref_1e7, rgb(0,0,0), 10);
+    bustupWait(ref_1f5);
+    bustupFree(ref_1e7);
+    dialogFree(ref_1e9);
+    ref_1f9 = bustupFade(ref_1ec, rgb(0,0,0), 10);
+    bustupWait(ref_1f9);
+    bustupFree(ref_1ec);
+    ref_1fc = bustupFade(ref_1f0, rgb(0,0,0), 10);
+    bustupWait(ref_1fc);
+    bustupFree(ref_1f0);
+    ref_1ff = bustupLoad(bustup_3d);
+    bustupWait(ref_1ff);
+    ref_201 = bustupAlloc(ref_1ff, left, rgb(0,0,0));
+    bustupFade(ref_201, rgb(128,0,0), 30);
+    ref_203 = dialogAlloc();
+    ref_204 = msgShow(msg_16);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]He just got the joke...?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_b, 1);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(ulala, animation_b, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(maya, west);
+    unitAnimationPlay(maya, animation_0, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_204);
+    dialogFree(ref_203);
+    ref_211 = bustupFade(ref_201, rgb(0,0,0), 10);
+    bustupWait(ref_211);
+    bustupFree(ref_201);
+    call(JIRIRI);
+    delayClear();
+    delayWait(90);
+    unitAnimationPlay(maya, animation_5, 1);
+    unitAnimationPlay(ulala, animation_5, 1);
+    unitAnimationPlay(elly, animation_5, 1);
+    delayClear();
+    delayWait(120);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(elly, animation_1, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_24, 1);
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitAnimationPlay(elly, animation_24, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    unitWait(elly);
+    delayClear();
+    delayWait(60);
+    b(label_443);
+  label_22a:
+    bne(var_1, 1, label_443);
+    delayClear();
+    delayWait(60);
+    unitFace(katsuya, west);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    delayClear();
+    delayWait(45);
+    ref_231 = bustupLoad(bustup_21);
+    bustupWait(ref_231);
+    ref_233 = bustupAlloc(ref_231, left, rgb(0,0,0));
+    bustupFade(ref_233, rgb(128,0,0), 30);
+    ref_235 = dialogAlloc();
+    ref_236 = msgShow(msg_17);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]We’ll use this...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_f, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_236);
+    dialogFree(ref_235);
+    ref_23d = bustupFade(ref_233, rgb(0,0,0), 10);
+    bustupWait(ref_23d);
+    bustupFree(ref_233);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_5, 1);
+    unitAnimationPlay(baofu, animation_5, 1);
+    unitAnimationPlay(ulala, animation_5, 1);
+    unitAnimationPlay(nanjo, animation_5, 1);
+    delayClear();
+    delayWait(90);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(baofu);
+    unitWait(ulala);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(30);
+    ref_254 = bustupLoad(bustup_17);
+    bustupWait(ref_254);
+    ref_256 = bustupAlloc(ref_254, left, rgb(0,0,0));
+    bustupFade(ref_256, rgb(128,0,0), 30);
+    ref_258 = dialogAlloc();
+    ref_259 = msgShow(msg_18);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]A fire alarm...? You’re going to tear it off
+[tab]and throw it at him?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    unitFace(katsuya, south);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_259);
+    dialogFree(ref_258);
+    ref_266 = bustupFade(ref_256, rgb(0,0,0), 10);
+    bustupWait(ref_266);
+    bustupFree(ref_256);
+    ref_269 = bustupLoad(bustup_27);
+    bustupWait(ref_269);
+    ref_26b = bustupAlloc(ref_269, left, rgb(0,0,0));
+    bustupFade(ref_26b, rgb(128,0,0), 30);
+    ref_26d = dialogAlloc();
+    ref_26e = msgShow(msg_19);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]No... I meant...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitAnimationPlay(katsuya, animation_29, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitWait(katsuya);
+    sync();
+    wait(ref_26e);
+    dialogFree(ref_26d);
+    ref_279 = bustupFade(ref_26b, rgb(0,0,0), 10);
+    bustupWait(ref_279);
+    bustupFree(ref_26b);
+    delayClear();
+    delayWait(30);
+    ref_27e = bustupLoad(bustup_18);
+    bustupWait(ref_27e);
+    ref_280 = bustupAlloc(ref_27e, left, rgb(0,0,0));
+    bustupFade(ref_280, rgb(128,0,0), 30);
+    ref_282 = dialogAlloc();
+    ref_283 = msgShow(msg_20);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Just joking, just joking.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_30, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_283);
+    dialogFree(ref_282);
+    ref_28a = bustupFade(ref_280, rgb(0,0,0), 10);
+    bustupWait(ref_28a);
+    bustupFree(ref_280);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(15);
+    unitFace(baofu, east);
+    delayClear();
+    delayWait(15);
+    ref_294 = bustupLoad(bustup_2c);
+    bustupWait(ref_294);
+    ref_296 = bustupAlloc(ref_294, left, rgb(0,0,0));
+    bustupFade(ref_296, rgb(128,0,0), 30);
+    ref_298 = dialogAlloc();
+    ref_299 = msgShow(msg_21);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Idiot...
+[tab]When you say it, it doesn’t sound like a joke...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1f, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(baofu, animation_24, 1);
+    unitWait(baofu);
+    sync();
+    wait(ref_299);
+    dialogFree(ref_298);
+    ref_2a4 = bustupFade(ref_296, rgb(0,0,0), 10);
+    bustupWait(ref_2a4);
+    bustupFree(ref_296);
+    ref_2a7 = bustupLoad(bustup_19);
+    bustupWait(ref_2a7);
+    ref_2a9 = bustupAlloc(ref_2a7, left, rgb(0,0,0));
+    bustupFade(ref_2a9, rgb(128,0,0), 30);
+    ref_2ab = dialogAlloc();
+    ref_2ac = msgShow(msg_22);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]What!?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1b, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(45);
+    unitAnimationPlay(ulala, animation_1e, 2);
+    unitWait(ulala);
+    sync();
+    wait(ref_2ac);
+    dialogFree(ref_2ab);
+    ref_2b6 = bustupFade(ref_2a9, rgb(0,0,0), 10);
+    bustupWait(ref_2b6);
+    bustupFree(ref_2a9);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    ref_2bd = bustupLoad(bustup_36);
+    bustupWait(ref_2bd);
+    ref_2bf = bustupAlloc(ref_2bd, left, rgb(0,0,0));
+    bustupFade(ref_2bf, rgb(128,0,0), 30);
+    ref_2c1 = dialogAlloc();
+    ref_2c2 = msgShow(msg_23);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]They just have to believe there is a fire.
+[tab]So what if you send smoke up at that duct?
+[tab]It should be better than just an alarm.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_2d, 1);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(katsuya, animation_1, 1);
+    unitAnimationPlay(baofu, animation_4, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_2c2);
+    dialogFree(ref_2c1);
+    ref_2d0 = bustupFade(ref_2bf, rgb(0,0,0), 10);
+    bustupWait(ref_2d0);
+    bustupFree(ref_2bf);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(nanjo, animation_5, 1);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitFace(ulala, north);
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_2, 1);
+    unitAnimationPlay(baofu, animation_5, 1);
+    unitAnimationPlay(katsuya, animation_4, 1);
+    unitFace(ulala, east);
+    unitAnimationPlay(ulala, animation_5, 1);
+    delayClear();
+    delayWait(120);
+    ref_2eb = bustupLoad(bustup_21);
+    bustupWait(ref_2eb);
+    ref_2ed = bustupAlloc(ref_2eb, left, rgb(0,0,0));
+    bustupFade(ref_2ed, rgb(128,0,0), 30);
+    ref_2ef = dialogAlloc();
+    ref_2f0 = msgShow(msg_24);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Let’s split into 2 groups, one sends smoke
+[tab]and charges in, while the other sets off
+[tab]the alarm.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(nanjo, animation_1, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitAnimationPlay(maya, animation_1, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitFace(ulala, north);
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(ulala, west);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_2f0);
+    dialogFree(ref_2ef);
+    ref_306 = bustupFade(ref_2ed, rgb(0,0,0), 10);
+    bustupWait(ref_306);
+    bustupFree(ref_2ed);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(ulala);
+    unitWait(baofu);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(katsuya, animation_24, 1);
+    unitAnimationPlay(maya, animation_24, 1);
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitAnimationPlay(baofu, animation_24, 1);
+    unitAnimationPlay(nanjo, animation_24, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(ulala);
+    unitWait(baofu);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(60);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitDespawn(katsuya, none);
+    unitDespawn(baofu, none);
+    unitSpawn(ulala, sprite_6, 328, 0, -525, north, none);
+    unitSpawn(maya, sprite_0, 328, 0, -425, north, none);
+    unitFace(ulala, south);
+    delayClear();
+    delayWait(90);
+    unitAnimationPlay(nanjo, animation_1, 1);
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenEffectUnknown();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_1);
+    unitAnimationPlay(maya, animation_6, 1);
+    delayClear();
+    delayWait(60);
+    sndMusicPlay(sound_31d2, 127);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    ref_340 = bustupLoad(bustup_17);
+    bustupWait(ref_340);
+    ref_342 = bustupAlloc(ref_340, left, rgb(0,0,0));
+    bustupFade(ref_342, rgb(128,0,0), 30);
+    ref_344 = dialogAlloc();
+    ref_345 = msgShow(msg_25);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Hey Ma-ya...
+[tab]Does everyone think I’m stupid?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_14, 1);
+    unitAnimationPlay(nanjo, animation_1, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(ulala, animation_1f, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_345);
+    ref_351 = msgShow(msg_26);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Can’t those two understand that I’m just
+[tab]trying to relax this tension?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_351);
+    dialogFree(ref_344);
+    ref_358 = bustupFade(ref_342, rgb(0,0,0), 10);
+    bustupWait(ref_358);
+    bustupFree(ref_342);
+    unitAnimationPlay(nanjo, animation_b, 1);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(30);
+    ref_35f = bustupLoad(bustup_36);
+    bustupWait(ref_35f);
+    ref_361 = bustupAlloc(ref_35f, left, rgb(0,0,0));
+    bustupFade(ref_361, rgb(128,0,0), 30);
+    ref_363 = dialogAlloc();
+    ref_364 = msgShow(msg_27);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Those two are very rigid.
+[sync][wait][clear]
+***************************************/
+    delayClear();
+    delayWait(5);
+    sndVolumeFadeOff(sound_3016, 120);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_0);
+    unitFace(maya, south);
+    unitAnimationPlay(maya, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_1, 1);
+    delayClear();
+    delayWait(7);
+    delayClear();
+    delayWait(90);
+    sync();
+    wait(ref_364);
+    dialogFree(ref_363);
+    ref_377 = bustupFade(ref_361, rgb(0,0,0), 10);
+    bustupWait(ref_377);
+    bustupFree(ref_361);
+    delayClear();
+    delayWait(30);
+    unitFace(maya, west);
+    unitFace(ulala, west);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_4, 1);
+    unitAnimationPlay(ulala, animation_2, 1);
+    delayClear();
+    delayWait(30);
+    ref_38a = bustupLoad(bustup_1);
+    bustupWait(ref_38a);
+    ref_38c = bustupAlloc(ref_38a, left, rgb(0,0,0));
+    bustupFade(ref_38c, rgb(128,0,0), 30);
+    ref_38e = dialogAlloc();
+    ref_38f = bustupLoad(bustup_17);
+    bustupWait(ref_38f);
+    ref_391 = bustupAlloc(ref_38f, right, rgb(0,0,0));
+    bustupFade(ref_391, rgb(128,0,0), 30);
+    ref_393 = msgShow(msg_28);
+/***************************************
+[color(yellow)]Maya/Ulala[color(white)]
+[tab]. . . . . . . . .
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_393);
+    ref_396 = bustupFade(ref_38c, rgb(0,0,0), 10);
+    bustupWait(ref_396);
+    bustupFree(ref_38c);
+    dialogFree(ref_38e);
+    ref_39a = bustupFade(ref_391, rgb(0,0,0), 10);
+    bustupWait(ref_39a);
+    bustupFree(ref_391);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(nanjo, animation_1, 1);
+    ref_3a0 = bustupLoad(bustup_36);
+    bustupWait(ref_3a0);
+    ref_3a2 = bustupAlloc(ref_3a0, left, rgb(0,0,0));
+    bustupFade(ref_3a2, rgb(128,0,0), 30);
+    ref_3a4 = dialogAlloc();
+    ref_3a5 = msgShow(msg_29);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Is something the matter?
+[sync][wait][clear]
+***************************************/
+    delayClear();
+    delayWait(10);
+    unitAnimationHold(maya, animation_21, -1);
+    unitAnimationHold(ulala, animation_21, -1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_3a5);
+    dialogFree(ref_3a4);
+    ref_3af = bustupFade(ref_3a2, rgb(0,0,0), 10);
+    bustupWait(ref_3af);
+    bustupFree(ref_3a2);
+    delayClear();
+    delayWait(30);
+    ref_3b4 = bustupLoad(bustup_5);
+    bustupWait(ref_3b4);
+    ref_3b6 = bustupAlloc(ref_3b4, left, rgb(0,0,0));
+    bustupFade(ref_3b6, rgb(128,0,0), 30);
+    ref_3b8 = dialogAlloc();
+    ref_3b9 = bustupLoad(bustup_1b);
+    bustupWait(ref_3b9);
+    ref_3bb = bustupAlloc(ref_3b9, right, rgb(0,0,0));
+    bustupFade(ref_3bb, rgb(128,0,0), 30);
+    ref_3bd = msgShow(msg_30);
+/***************************************
+[color(yellow)]Maya/Ulala[color(white)]
+[tab]Nothing...
+[sync][wait][clear]
+***************************************/
+    unitAnimationStop(maya);
+    unitAnimationStop(ulala);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_2, 1);
+    unitAnimationPlay(ulala, animation_2, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_4, 1);
+    unitAnimationPlay(ulala, animation_4, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_2, 1);
+    unitAnimationPlay(ulala, animation_2, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_4, 1);
+    unitAnimationPlay(ulala, animation_4, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(maya, animation_1, 1);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    sync();
+    wait(ref_3bd);
+    ref_426 = bustupFade(ref_3b6, rgb(0,0,0), 10);
+    bustupWait(ref_426);
+    bustupFree(ref_3b6);
+    dialogFree(ref_3b8);
+    ref_42a = bustupFade(ref_3bb, rgb(0,0,0), 10);
+    bustupWait(ref_42a);
+    bustupFree(ref_3bb);
+    call(JIRIRI);
+    delayClear();
+    delayWait(90);
+    unitAnimationPlay(maya, animation_5, 1);
+    unitAnimationPlay(ulala, animation_5, 1);
+    unitAnimationPlay(nanjo, animation_5, 1);
+    delayClear();
+    delayWait(120);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_24, 1);
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitAnimationPlay(nanjo, animation_24, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(60);
+    b(label_443);
+  label_443:
+    b(label_6fe);
+  label_444:
+    bne(var_2, 1, label_6fe);
+    bne(var_1, 0, label_5b3);
+    delayClear();
+    delayWait(60);
+    ref_448 = bustupLoad(bustup_19);
+    bustupWait(ref_448);
+    ref_44a = bustupAlloc(ref_448, left, rgb(0,0,0));
+    bustupFade(ref_44a, rgb(128,0,0), 30);
+    ref_44c = dialogAlloc();
+    ref_44d = msgShow(msg_31);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Haven’t you had enough fires? Besides, 
+[tab]I don’t think [suou]-san would let you 
+[tab]start one in front of him...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2f, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_44d);
+    dialogFree(ref_44c);
+    ref_454 = bustupFade(ref_44a, rgb(0,0,0), 10);
+    bustupWait(ref_454);
+    bustupFree(ref_44a);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(15);
+    ref_45f = bustupLoad(bustup_21);
+    bustupWait(ref_45f);
+    ref_461 = bustupAlloc(ref_45f, left, rgb(0,0,0));
+    bustupFade(ref_461, rgb(128,0,0), 30);
+    ref_463 = dialogAlloc();
+    ref_464 = msgShow(msg_32);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Actually... I think it’s a good idea...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_464);
+    dialogFree(ref_463);
+    ref_46b = bustupFade(ref_461, rgb(0,0,0), 10);
+    bustupWait(ref_46b);
+    bustupFree(ref_461);
+    unitAnimationHold(ulala, animation_21, -1);
+    delayClear();
+    delayWait(90);
+    ref_471 = bustupLoad(bustup_1b);
+    bustupWait(ref_471);
+    ref_473 = bustupAlloc(ref_471, left, rgb(0,0,0));
+    bustupFade(ref_473, rgb(128,0,0), 30);
+    ref_475 = dialogAlloc();
+    ref_476 = msgShow(msg_33);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]What the hell? ...Unbelievable...! You were
+[tab]always yapping "justice, justice, justice",
+[tab]but when it’s Ma-ya, anything is okay?
+[sync][wait][clear]
+***************************************/
+    unitAnimationStop(ulala);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_476);
+    dialogFree(ref_475);
+    ref_47e = bustupFade(ref_473, rgb(0,0,0), 10);
+    bustupWait(ref_47e);
+    bustupFree(ref_473);
+    delayClear();
+    delayWait(30);
+    ref_483 = bustupLoad(bustup_27);
+    bustupWait(ref_483);
+    ref_485 = bustupAlloc(ref_483, left, rgb(0,0,0));
+    bustupFade(ref_485, rgb(128,0,0), 30);
+    ref_487 = dialogAlloc();
+    ref_488 = msgShow(msg_34);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]No... I meant...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitAnimationPlay(katsuya, animation_29, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitWait(katsuya);
+    sync();
+    wait(ref_488);
+    dialogFree(ref_487);
+    ref_493 = bustupFade(ref_485, rgb(0,0,0), 10);
+    bustupWait(ref_493);
+    bustupFree(ref_485);
+    ref_496 = bustupLoad(bustup_18);
+    bustupWait(ref_496);
+    ref_498 = bustupAlloc(ref_496, left, rgb(0,0,0));
+    bustupFade(ref_498, rgb(128,0,0), 30);
+    ref_49a = dialogAlloc();
+    ref_49b = msgShow(msg_35);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Ohhhh... Ahhhh... Now this is a big surprise.
+[tab]With cops like this, this country really
+[tab]is finished... I seeeeeee...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(ulala, animation_1d, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(15);
+    sync();
+    wait(ref_49b);
+    dialogFree(ref_49a);
+    ref_4a6 = bustupFade(ref_498, rgb(0,0,0), 10);
+    bustupWait(ref_4a6);
+    bustupFree(ref_498);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(baofu, animation_4, 1);
+    delayClear();
+    delayWait(30);
+    ref_4ae = bustupLoad(bustup_2c);
+    bustupWait(ref_4ae);
+    ref_4b0 = bustupAlloc(ref_4ae, left, rgb(0,0,0));
+    bustupFade(ref_4b0, rgb(128,0,0), 30);
+    ref_4b2 = dialogAlloc();
+    ref_4b3 = msgShow(msg_36);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Hey stupid... Look up...
+[sync][wait][clear]
+***************************************/
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_4b3);
+    dialogFree(ref_4b2);
+    ref_4bc = bustupFade(ref_4b0, rgb(0,0,0), 10);
+    bustupWait(ref_4bc);
+    bustupFree(ref_4b0);
+    unitAnimationPlay(ulala, animation_5, 1);
+    delayClear();
+    delayWait(90);
+    ref_4c2 = bustupLoad(bustup_3d);
+    bustupWait(ref_4c2);
+    ref_4c4 = bustupAlloc(ref_4c2, left, rgb(0,0,0));
+    bustupFade(ref_4c4, rgb(128,0,0), 30);
+    ref_4c6 = dialogAlloc();
+    ref_4c7 = msgShow(msg_37);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]A fire alarm...
+[tab]All we have to do is cause a panic, and we
+[tab]wouldn’t even have to burn anything.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(katsuya, animation_1, 1);
+    unitAnimationPlay(baofu, animation_1, 1);
+    unitAnimationPlay(maya, animation_3, 1);
+    sync();
+    wait(ref_4c7);
+    ref_4d0 = msgShow(msg_38);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Though I would kind of like to see it.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_4d0);
+    dialogFree(ref_4c6);
+    ref_4d7 = bustupFade(ref_4c4, rgb(0,0,0), 10);
+    bustupWait(ref_4d7);
+    bustupFree(ref_4c4);
+    unitAnimationPlay(elly, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    ref_4dd = bustupLoad(bustup_2c);
+    bustupWait(ref_4dd);
+    ref_4df = bustupAlloc(ref_4dd, left, rgb(0,0,0));
+    bustupFade(ref_4df, rgb(128,0,0), 30);
+    ref_4e1 = dialogAlloc();
+    ref_4e2 = msgShow(msg_39);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]We can also burn trash or something at the
+[tab]duct. It’ll be better than just an alarm.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(katsuya, animation_2, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitAnimationPlay(elly, animation_1, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(elly, animation_2, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_4e2);
+    dialogFree(ref_4e1);
+    ref_4f1 = bustupFade(ref_4df, rgb(0,0,0), 10);
+    bustupWait(ref_4f1);
+    bustupFree(ref_4df);
+    unitAnimationPlay(baofu, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    ref_4f7 = bustupLoad(bustup_21);
+    bustupWait(ref_4f7);
+    ref_4f9 = bustupAlloc(ref_4f7, left, rgb(0,0,0));
+    bustupFade(ref_4f9, rgb(128,0,0), 30);
+    ref_4fb = dialogAlloc();
+    ref_4fc = msgShow(msg_40);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Let’s split into 2 groups, one sends smoke
+[tab]and charges in, while the other sets off
+[tab]the alarm.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitAnimationPlay(elly, animation_1, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(baofu, animation_4, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_4fc);
+    dialogFree(ref_4fb);
+    ref_50c = bustupFade(ref_4f9, rgb(0,0,0), 10);
+    bustupWait(ref_50c);
+    bustupFree(ref_4f9);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    unitAnimationPlay(elly, animation_0, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(ulala);
+    unitWait(baofu);
+    unitWait(elly);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(baofu, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(katsuya, animation_24, 1);
+    unitAnimationPlay(maya, animation_24, 1);
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitAnimationPlay(baofu, animation_24, 1);
+    unitAnimationPlay(elly, animation_24, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(ulala);
+    unitWait(baofu);
+    unitWait(elly);
+    delayClear();
+    delayWait(60);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitDespawn(katsuya, none);
+    unitDespawn(baofu, none);
+    unitSpawn(ulala, sprite_6, 328, 0, -525, north, none);
+    unitSpawn(maya, sprite_0, 328, 0, -425, north, none);
+    unitFace(ulala, south);
+    unitAnimationPlay(elly, animation_1, 1);
+    delayClear();
+    delayWait(90);
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenEffectUnknown();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_1);
+    unitAnimationPlay(maya, animation_6, 1);
+    delayClear();
+    delayWait(60);
+    sndMusicPlay(sound_31d2, 127);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    ref_549 = bustupLoad(bustup_17);
+    bustupWait(ref_549);
+    ref_54b = bustupAlloc(ref_549, left, rgb(0,0,0));
+    bustupFade(ref_54b, rgb(128,0,0), 30);
+    ref_54d = dialogAlloc();
+    ref_54e = msgShow(msg_41);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Hey Ma-ya...
+[tab]Does everyone think I’m stupid?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_14, 1);
+    unitAnimationPlay(elly, animation_1, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(ulala, animation_1f, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_54e);
+    ref_55a = msgShow(msg_42);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]If you ask me, there’s something wrong with
+[tab]you guys for being able to stay so calm
+[tab]at a time like this...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_55a);
+    dialogFree(ref_54d);
+    ref_561 = bustupFade(ref_54b, rgb(0,0,0), 10);
+    bustupWait(ref_561);
+    bustupFree(ref_54b);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    ref_568 = bustupLoad(bustup_3d);
+    bustupWait(ref_568);
+    ref_56a = bustupAlloc(ref_568, left, rgb(0,0,0));
+    bustupFade(ref_56a, rgb(128,0,0), 30);
+    ref_56c = dialogAlloc();
+    ref_56d = msgShow(msg_43);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Don’t worry.
+[tab]You seem so... natural, I’m envious...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_b, 1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(ulala, animation_1, 1);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_0);
+    unitFace(maya, west);
+    unitAnimationPlay(maya, animation_0, 1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(maya, animation_1, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_56d);
+    ref_57d = msgShow(msg_44);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]I hear women are more likable if
+[tab]they’re a little air-headed.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_57d);
+    dialogFree(ref_56c);
+    ref_581 = bustupFade(ref_56a, rgb(0,0,0), 10);
+    bustupWait(ref_581);
+    bustupFree(ref_56a);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(ulala, animation_6, 1);
+    delayClear();
+    delayWait(30);
+    ref_589 = bustupLoad(bustup_1d);
+    bustupWait(ref_589);
+    ref_58b = bustupAlloc(ref_589, left, rgb(0,0,0));
+    bustupFade(ref_58b, rgb(128,0,0), 30);
+    ref_58d = dialogAlloc();
+    ref_58e = msgShow(msg_45);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Gee, thanks...
+[sync][wait][clear]
+***************************************/
+    sndVolumeFadeOff(sound_3016, 120);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(maya, animation_23, 1);
+    delayClear();
+    delayWait(50);
+    sync();
+    wait(ref_58e);
+    dialogFree(ref_58d);
+    ref_598 = bustupFade(ref_58b, rgb(0,0,0), 10);
+    bustupWait(ref_598);
+    bustupFree(ref_58b);
+    delayClear();
+    delayWait(60);
+    call(JIRIRI);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_5, 1);
+    unitAnimationPlay(ulala, animation_5, 1);
+    unitAnimationPlay(elly, animation_5, 1);
+    delayClear();
+    delayWait(120);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(elly, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_24, 1);
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitAnimationPlay(elly, animation_24, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    unitWait(elly);
+    delayClear();
+    delayWait(60);
+    b(label_6fd);
+  label_5b3:
+    bne(var_1, 1, label_6fd);
+    delayClear();
+    delayWait(60);
+    ref_5b6 = bustupLoad(bustup_19);
+    bustupWait(ref_5b6);
+    ref_5b8 = bustupAlloc(ref_5b6, left, rgb(0,0,0));
+    bustupFade(ref_5b8, rgb(128,0,0), 30);
+    ref_5ba = dialogAlloc();
+    ref_5bb = msgShow(msg_46);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Haven’t you had enough fires? Besides, I
+[tab]don’t think [suou]-san would let you start one
+[tab]in front of him...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2f, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_5bb);
+    dialogFree(ref_5ba);
+    ref_5c2 = bustupFade(ref_5b8, rgb(0,0,0), 10);
+    bustupWait(ref_5c2);
+    bustupFree(ref_5b8);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(15);
+    ref_5cd = bustupLoad(bustup_21);
+    bustupWait(ref_5cd);
+    ref_5cf = bustupAlloc(ref_5cd, left, rgb(0,0,0));
+    bustupFade(ref_5cf, rgb(128,0,0), 30);
+    ref_5d1 = dialogAlloc();
+    ref_5d2 = msgShow(msg_47);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Actually... I think it’s a good idea...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_5d2);
+    dialogFree(ref_5d1);
+    ref_5d9 = bustupFade(ref_5cf, rgb(0,0,0), 10);
+    bustupWait(ref_5d9);
+    bustupFree(ref_5cf);
+    unitAnimationHold(ulala, animation_21, -1);
+    delayClear();
+    delayWait(90);
+    ref_5df = bustupLoad(bustup_1b);
+    bustupWait(ref_5df);
+    ref_5e1 = bustupAlloc(ref_5df, left, rgb(0,0,0));
+    bustupFade(ref_5e1, rgb(128,0,0), 30);
+    ref_5e3 = dialogAlloc();
+    ref_5e4 = msgShow(msg_48);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]What the hell? ...Unbelievable...! You were
+[tab]always yapping "justice, justice, justice",
+[tab]but when it’s Ma-ya, anything is okay?
+[sync][wait][clear]
+***************************************/
+    unitAnimationStop(ulala);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_5e4);
+    dialogFree(ref_5e3);
+    ref_5ec = bustupFade(ref_5e1, rgb(0,0,0), 10);
+    bustupWait(ref_5ec);
+    bustupFree(ref_5e1);
+    delayClear();
+    delayWait(30);
+    ref_5f1 = bustupLoad(bustup_27);
+    bustupWait(ref_5f1);
+    ref_5f3 = bustupAlloc(ref_5f1, left, rgb(0,0,0));
+    bustupFade(ref_5f3, rgb(128,0,0), 30);
+    ref_5f5 = dialogAlloc();
+    ref_5f6 = msgShow(msg_49);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]No... I meant...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitAnimationPlay(katsuya, animation_29, 1);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    unitWait(katsuya);
+    sync();
+    wait(ref_5f6);
+    dialogFree(ref_5f5);
+    ref_601 = bustupFade(ref_5f3, rgb(0,0,0), 10);
+    bustupWait(ref_601);
+    bustupFree(ref_5f3);
+    ref_604 = bustupLoad(bustup_18);
+    bustupWait(ref_604);
+    ref_606 = bustupAlloc(ref_604, left, rgb(0,0,0));
+    bustupFade(ref_606, rgb(128,0,0), 30);
+    ref_608 = dialogAlloc();
+    ref_609 = msgShow(msg_50);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Ohhhh... Ahhhh... Now this is a big surprise.
+[tab]With cops like this, this country really
+[tab]is finished... I seeeeeee...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(ulala, animation_1d, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(15);
+    sync();
+    wait(ref_609);
+    dialogFree(ref_608);
+    ref_614 = bustupFade(ref_606, rgb(0,0,0), 10);
+    bustupWait(ref_614);
+    bustupFree(ref_606);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(baofu, animation_4, 1);
+    delayClear();
+    delayWait(30);
+    ref_61c = bustupLoad(bustup_2c);
+    bustupWait(ref_61c);
+    ref_61e = bustupAlloc(ref_61c, left, rgb(0,0,0));
+    bustupFade(ref_61e, rgb(128,0,0), 30);
+    ref_620 = dialogAlloc();
+    ref_621 = msgShow(msg_51);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Hey stupid... Look up...
+[sync][wait][clear]
+***************************************/
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_621);
+    dialogFree(ref_620);
+    ref_62a = bustupFade(ref_61e, rgb(0,0,0), 10);
+    bustupWait(ref_62a);
+    bustupFree(ref_61e);
+    unitAnimationPlay(ulala, animation_5, 1);
+    delayClear();
+    delayWait(90);
+    ref_630 = bustupLoad(bustup_36);
+    bustupWait(ref_630);
+    ref_632 = bustupAlloc(ref_630, left, rgb(0,0,0));
+    bustupFade(ref_632, rgb(128,0,0), 30);
+    ref_634 = dialogAlloc();
+    ref_635 = msgShow(msg_52);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]A fire alarm, huh...
+[tab]As long as people BELIEVE there is a
+[tab]fire, we don’t actually need to set one.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_2d, 1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(katsuya, animation_1, 1);
+    unitAnimationPlay(baofu, animation_1, 1);
+    unitAnimationPlay(maya, animation_3, 1);
+    sync();
+    wait(ref_635);
+    ref_63e = msgShow(msg_53);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]How about burning some trash at the duct
+[tab]too? If we make a little smoke, it should
+[tab]be much more effective than just an alarm.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_63e);
+    dialogFree(ref_634);
+    ref_645 = bustupFade(ref_632, rgb(0,0,0), 10);
+    bustupWait(ref_645);
+    bustupFree(ref_632);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(30);
+    ref_64c = bustupLoad(bustup_21);
+    bustupWait(ref_64c);
+    ref_64e = bustupAlloc(ref_64c, left, rgb(0,0,0));
+    bustupFade(ref_64e, rgb(128,0,0), 30);
+    ref_650 = dialogAlloc();
+    ref_651 = msgShow(msg_54);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Let’s split into 2 groups, one sends smoke
+[tab]and charges in, while the other sets off
+[tab]the alarm.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_3, 1);
+    unitAnimationPlay(nanjo, animation_1, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(baofu, animation_4, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_651);
+    dialogFree(ref_650);
+    ref_661 = bustupFade(ref_64e, rgb(0,0,0), 10);
+    bustupWait(ref_661);
+    bustupFree(ref_64e);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(baofu, animation_3, 1);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(ulala);
+    unitWait(baofu);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(baofu, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(katsuya, animation_24, 1);
+    unitAnimationPlay(maya, animation_24, 1);
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitAnimationPlay(baofu, animation_24, 1);
+    unitAnimationPlay(nanjo, animation_24, 1);
+    unitWait(maya);
+    unitWait(katsuya);
+    unitWait(ulala);
+    unitWait(baofu);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(60);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitDespawn(katsuya, none);
+    unitDespawn(baofu, none);
+    unitSpawn(ulala, sprite_6, 328, 0, -525, north, none);
+    unitSpawn(maya, sprite_0, 328, 0, -425, north, none);
+    unitFace(ulala, south);
+    unitAnimationPlay(nanjo, animation_1, 1);
+    delayClear();
+    delayWait(90);
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenEffectUnknown();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_1);
+    unitAnimationPlay(maya, animation_6, 1);
+    delayClear();
+    delayWait(60);
+    sndMusicPlay(sound_31d2, 127);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    ref_69e = bustupLoad(bustup_17);
+    bustupWait(ref_69e);
+    ref_6a0 = bustupAlloc(ref_69e, left, rgb(0,0,0));
+    bustupFade(ref_6a0, rgb(128,0,0), 30);
+    ref_6a2 = dialogAlloc();
+    ref_6a3 = msgShow(msg_55);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Hey Ma-ya...
+[tab]Does everyone think I’m stupid?
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_14, 1);
+    unitAnimationPlay(nanjo, animation_1, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(ulala, animation_1f, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_6a3);
+    ref_6af = msgShow(msg_56);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]If you ask me, there’s something wrong with
+[tab]you guys for being able to stay so calm
+[tab]at a time like this...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_6af);
+    dialogFree(ref_6a2);
+    ref_6b6 = bustupFade(ref_6a0, rgb(0,0,0), 10);
+    bustupWait(ref_6b6);
+    bustupFree(ref_6a0);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    delayClear();
+    delayWait(30);
+    ref_6bd = bustupLoad(bustup_36);
+    bustupWait(ref_6bd);
+    ref_6bf = bustupAlloc(ref_6bd, left, rgb(0,0,0));
+    bustupFade(ref_6bf, rgb(128,0,0), 30);
+    ref_6c1 = dialogAlloc();
+    ref_6c2 = msgShow(msg_57);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Your reaction is relatively normal.
+[tab]Everybody is just used to these situations...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_b, 1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(ulala, animation_1, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_6c2);
+    ref_6cb = msgShow(msg_58);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]What I don’t understand is Ms. Amano...
+[tab]Where does your "d五j二 vu" originate from?
+[sync][wait][clear]
+***************************************/
+    sndVolumeFadeOff(sound_3016, 120);
+    unitAnimationPlay(nanjo, animation_1, 1);
+    delayClear();
+    delayWait(10);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_0);
+    unitFace(maya, west);
+    unitAnimationPlay(maya, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(maya, animation_1, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_6cb);
+    dialogFree(ref_6c1);
+    ref_6dc = bustupFade(ref_6bf, rgb(0,0,0), 10);
+    bustupWait(ref_6dc);
+    bustupFree(ref_6bf);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(maya, animation_11, 1);
+    unitWait(maya);
+    delayClear();
+    delayWait(60);
+    call(JIRIRI);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_5, 1);
+    unitAnimationPlay(ulala, animation_5, 1);
+    unitAnimationPlay(nanjo, animation_5, 1);
+    delayClear();
+    delayWait(120);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_24, 1);
+    unitAnimationPlay(ulala, animation_24, 1);
+    unitAnimationPlay(nanjo, animation_24, 1);
+    unitWait(maya);
+    unitWait(ulala);
+    unitWait(nanjo);
+    delayClear();
+    delayWait(60);
+    b(label_6fd);
+  label_6fd:
+    b(label_6fe);
+  label_6fe:
+    ref_6fe = cameraLookAtUnit(maya, 0, 30);
+    wait(ref_6fe);
+    unitDespawn(maya, none);
+    playerInit(west);
+    bitSet(EBIT_E0075);
+    bitClear(DBIT_SMILE_DOOR);
+    bitSet(DBIT_SMILE_KEIHO);
+    unitIdleOn(ulala);
+    bne(var_1, 0, label_709);
+    unitIdleOn(elly);
+    b(label_70c);
+  label_709:
+    bne(var_1, 1, label_70c);
+    unitIdleOn(nanjo);
+    b(label_70c);
+  label_70c:
+    controlEnable();
+}
+
+function FREE()
+{
+    sndIdGet(var_0);
+    bne(var_0, -1, label_711);
+    b(label_713);
+  label_711:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_713);
+  label_713:
+    sndUnkCF(90);
+    call(JIRIRI);
+    unitSpawn(ulala, sprite_6, 343, 0, -382, north, none);
+    unitFace(ulala, west);
+    bitGet(var_1, MBIT_HI_NANJOTOUJO);
+    bne(var_1, 0, label_71c);
+    unitSpawn(elly, sprite_23, 920, 0, -660, north, none);
+    unitFace(elly, north);
+    b(label_720);
+  label_71c:
+    bne(var_1, 1, label_720);
+    unitSpawn(nanjo, sprite_1f, 920, 0, -660, north, none);
+    unitFace(nanjo, north);
+    b(label_720);
+  label_720:
+    unitIdleOnAll();
+    unitTriggerSet(ulala, URARA, 255, 1);
+    bne(var_1, 0, label_725);
+    unitTriggerSet(elly, ERI, 255, 1);
+    b(label_728);
+  label_725:
+    bne(var_1, 1, label_728);
+    unitTriggerSet(nanjo, NANJO, 255, 1);
+    b(label_728);
+  label_728:
+    envTriggerSet(EXIT, 131, 1, line, coll_7);
+    envTriggerSet(TOIRE1, 131, 1, line, coll_8);
+    envTriggerSet(TOIRE2, 131, 1, line, coll_9);
+    envTriggerSet(TOIRE3, 131, 1, line, coll_a);
+    envTriggerSet(TOIRE4, 131, 1, line, coll_b);
+    envTriggerSet(TOIRE5, 56, 1, line, coll_c);
+    envTriggerSet(TOIRE6, 56, 1, line, coll_d);
+    envTriggerSet(TOIRE7, 56, 1, line, coll_e);
+    envTriggerSet(TOIRE8, 56, 1, line, coll_f);
+    envTriggerSet(TOIRE9, 56, 1, line, coll_10);
+    envTriggerSet(YOUGU, 56, 1, line, coll_11);
+    cameraSetNorth(west);
+    cameraSet(southeast, 250, 0, -1430);
+    playerInit(south);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function URARA()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_740 = bustupLoad(bustup_19);
+    bustupWait(ref_740);
+    ref_742 = bustupAlloc(ref_740, left, rgb(0,0,0));
+    bustupFade(ref_742, rgb(128,0,0), 30);
+    ref_744 = dialogAlloc();
+    ref_745 = msgShow(msg_59);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Damn, that Baofu pisses me off...
+[tab]He calls me an idiot all the time!
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2f, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_745);
+    dialogFree(ref_744);
+    ref_74c = bustupFade(ref_742, rgb(0,0,0), 10);
+    bustupWait(ref_74c);
+    bustupFree(ref_742);
+    unitAnimationPlay(ulala, animation_0, 1);
+    unitWait(ulala);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function ERI()
+{
+    controlDisable();
+    unitFacePlayer(elly);
+    ref_756 = bustupLoad(bustup_3d);
+    bustupWait(ref_756);
+    ref_758 = bustupAlloc(ref_756, left, rgb(0,0,0));
+    bustupFade(ref_758, rgb(128,0,0), 30);
+    ref_75a = dialogAlloc();
+    ref_75b = msgShow(msg_60);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Let’s go...
+[tab]The guys are waiting.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    delayClear();
+    delayWait(45);
+    sync();
+    wait(ref_75b);
+    dialogFree(ref_75a);
+    ref_762 = bustupFade(ref_758, rgb(0,0,0), 10);
+    bustupWait(ref_762);
+    bustupFree(ref_758);
+    unitAnimationPlay(elly, animation_0, 1);
+    unitWait(elly);
+    unitRestoreFacing(elly);
+    controlEnable();
+}
+
+function NANJO()
+{
+    controlDisable();
+    unitFacePlayer(nanjo);
+    ref_76c = bustupLoad(bustup_36);
+    bustupWait(ref_76c);
+    ref_76e = bustupAlloc(ref_76c, left, rgb(0,0,0));
+    bustupFade(ref_76e, rgb(128,0,0), 30);
+    ref_770 = dialogAlloc();
+    ref_771 = msgShow(msg_61);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Let’s go now.
+[tab]The guys are waiting for us.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_771);
+    dialogFree(ref_770);
+    ref_778 = bustupFade(ref_76e, rgb(0,0,0), 10);
+    bustupWait(ref_778);
+    bustupFree(ref_76e);
+    unitAnimationPlay(nanjo, animation_0, 1);
+    unitWait(nanjo);
+    unitRestoreFacing(nanjo);
+    controlEnable();
+}
+
+function EXIT()
+{
+    controlDisable();
+    ref_781 = sndVolumeFadeTo(sound_31d0, 0, 30);
+    objAnimRotate(obj_17, 0, -80, 0, 60, 0);
+    sndMusicPlay(sound_31d3, 127);
+    objAnimWait(obj_17);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    wait(ref_781);
+    cameraSetNorth(west);
+    dngLoad2(smile_hirasaka1-14);
+}
+
+function TOIRE1()
+{
+    controlDisable();
+    objAnimRotate(obj_13, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_13);
+    ref_793 = dialogAlloc();
+    ref_794 = msgShow(msg_62);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_794);
+    dialogFree(ref_793);
+    objAnimRotate(obj_13, 0, 80, 0, 45, 0);
+    objAnimWait(obj_13);
+    controlEnable();
+}
+
+function TOIRE2()
+{
+    controlDisable();
+    objAnimRotate(obj_14, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_14);
+    ref_7a0 = dialogAlloc();
+    ref_7a1 = msgShow(msg_63);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7a1);
+    dialogFree(ref_7a0);
+    objAnimRotate(obj_14, 0, 80, 0, 45, 0);
+    objAnimWait(obj_14);
+    controlEnable();
+}
+
+function TOIRE3()
+{
+    controlDisable();
+    objAnimRotate(obj_15, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_15);
+    ref_7ad = dialogAlloc();
+    ref_7ae = msgShow(msg_64);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7ae);
+    dialogFree(ref_7ad);
+    objAnimRotate(obj_15, 0, 80, 0, 45, 0);
+    objAnimWait(obj_15);
+    controlEnable();
+}
+
+function TOIRE4()
+{
+    controlDisable();
+    objAnimRotate(obj_16, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_16);
+    ref_7ba = dialogAlloc();
+    ref_7bb = msgShow(msg_65);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7bb);
+    dialogFree(ref_7ba);
+    objAnimRotate(obj_16, 0, 80, 0, 45, 0);
+    objAnimWait(obj_16);
+    controlEnable();
+}
+
+function TOIRE5()
+{
+    controlDisable();
+    objAnimRotate(obj_d, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_d);
+    ref_7c7 = dialogAlloc();
+    ref_7c8 = msgShow(msg_66);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7c8);
+    dialogFree(ref_7c7);
+    objAnimRotate(obj_d, 0, 80, 0, 45, 0);
+    objAnimWait(obj_d);
+    controlEnable();
+}
+
+function TOIRE6()
+{
+    controlDisable();
+    objAnimRotate(obj_e, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_e);
+    ref_7d4 = dialogAlloc();
+    ref_7d5 = msgShow(msg_67);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7d5);
+    dialogFree(ref_7d4);
+    objAnimRotate(obj_e, 0, 80, 0, 45, 0);
+    objAnimWait(obj_e);
+    controlEnable();
+}
+
+function TOIRE7()
+{
+    controlDisable();
+    objAnimRotate(obj_f, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_f);
+    ref_7e1 = dialogAlloc();
+    ref_7e2 = msgShow(msg_68);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7e2);
+    dialogFree(ref_7e1);
+    objAnimRotate(obj_f, 0, 80, 0, 45, 0);
+    objAnimWait(obj_f);
+    controlEnable();
+}
+
+function TOIRE8()
+{
+    controlDisable();
+    objAnimRotate(obj_10, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_10);
+    ref_7ee = dialogAlloc();
+    ref_7ef = msgShow(msg_69);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7ef);
+    dialogFree(ref_7ee);
+    objAnimRotate(obj_10, 0, 80, 0, 45, 0);
+    objAnimWait(obj_10);
+    controlEnable();
+}
+
+function TOIRE9()
+{
+    controlDisable();
+    objAnimRotate(obj_11, 0, -80, 0, 45, 0);
+    sndMusicPlay(sound_31d1, 127);
+    objAnimWait(obj_11);
+    ref_7fb = dialogAlloc();
+    ref_7fc = msgShow(msg_70);
+/***************************************
+[color(yellow)]Toilet[color(green)]
+[tab]No one is inside. [color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7fc);
+    dialogFree(ref_7fb);
+    objAnimRotate(obj_11, 0, 80, 0, 45, 0);
+    objAnimWait(obj_11);
+    controlEnable();
+}
+
+function YOUGU()
+{
+    controlDisable();
+    ref_805 = dialogAlloc();
+    ref_806 = msgShow(msg_71);
+/***************************************
+[color(yellow)]Janitor’s Closet[color(green)]
+[tab]It won’t open.[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_806);
+    dialogFree(ref_805);
+    controlEnable();
+}
+
+function JIRIRI()
+{
+    sndMusicPlay(sound_31d0, 127);
+}

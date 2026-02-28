@@ -1,0 +1,4881 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 2, true);
+    screenFadeOuter(rgb(0,0,0), 2, true);
+    cameraSet(north, 432, 0, -497);
+    ref_6 = dialogAlloc();
+    ref_7 = msgShow(msg_0);
+/***************************************
+[tab]テレビ局のイベントに、
+[tab]入れるようにしました。
+[tab]女の子に話しかけてミソ。[wait][clear]
+***************************************/
+    ref_8 = spriteLoad(sprite_0);
+    wait(ref_8);
+    ref_a = spriteLoad(sprite_2);
+    wait(ref_a);
+    sync();
+    wait(ref_7);
+    ref_e = msgShow(msg_1);
+/***************************************
+[tab]…全ショップ機能をオンにするよ。
+[tab]そういう制御をつくったよ。
+[tab]オレが…そう、片岡がね…
+[wait][clear]
+***************************************/
+    playerInit(northwest);
+    controlDisable();
+    ref_11 = spriteLoad(sprite_94);
+    wait(ref_11);
+    unitSpawn(npc1, sprite_94, 32, 0, -72, north, none);
+    unitTriggerSet(npc1, EVENTSINKOU, 255, 1);
+    unitSpawn(npc2, sprite_94, 208, 0, -72, north, none);
+    unitTriggerSet(npc2, UWASA, 255, 1);
+    unitSpawn(npc4, sprite_94, 352, 0, -72, north, none);
+    unitPalette(npc4, 3);
+    unitTriggerSet(npc4, battle, 255, 1);
+    ref_1a = spriteLoad(sprite_9c);
+    wait(ref_1a);
+    unitSpawn(npc3, sprite_9c, 488, 0, -72, north, none);
+    unitTriggerSet(npc3, SAGASE, 255, 1);
+    ref_1e = spriteLoad(sprite_9c);
+    wait(ref_1e);
+    unitSpawn(npc5, sprite_9c, 608, 0, -72, north, none);
+    unitTriggerSet(npc5, PSP_DEBUG, 255, 1);
+    ref_22 = spriteLoad(sprite_9c);
+    wait(ref_22);
+    unitSpawn(npc6, sprite_9c, 728, 0, -72, north, none);
+    unitTriggerSet(npc6, PSP_DEBUG_2, 255, 1);
+    ref_26 = spriteLoad(sprite_9c);
+    wait(ref_26);
+    unitSpawn(npc7, sprite_9c, 850, 0, -72, north, none);
+    unitTriggerSet(npc7, PSP_DEBUG_3, 255, 1);
+    wait(ref_e);
+    dialogFree(ref_6);
+    partyPersonaGive(maia, VBIT_PR_MAIA, party_stock);
+    partyPersonaEquip(maya, maia);
+    partyMoneyAdd(100000);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(MBIT_KUZU_KENSHOU);
+    bitSet(MBIT_HBATOLUBUKI);
+    partyMemberAdd(ulala);
+    partyPersonaGive(callisto, VBIT_PR_KARIS, party_stock);
+    partyPersonaEquip(ulala, callisto);
+    delayClear();
+    delayWait(1);
+    partyMemberAdd(katsuya);
+    partyPersonaGive(helios, VBIT_PR_HERIO, party_stock);
+    partyPersonaEquip(katsuya, helios);
+    delayClear();
+    delayWait(1);
+    partyMemberAdd(baofu);
+    partyPersonaGive(odysseus, VBIT_PR_ODUSE, party_stock);
+    partyPersonaEquip(baofu, odysseus);
+    delayClear();
+    delayWait(1);
+    partyMemberAdd(tatsuya);
+    partyPersonaGive(apollo, VBIT_PR_APORO, party_stock);
+    partyPersonaEquip(tatsuya, apollo);
+    delayClear();
+    delayWait(1);
+    controlEnable();
+}
+
+function PSP_DEBUG()
+{
+    controlDisable();
+    ref_66 = dialogChoiceAlloc();
+    ref_67 = msgShow(msg_2);
+/***************************************
+[color(green)]追加デバッグ機能[color(white)]
+[choice(7)]ショップへ
+ダンジョンへ
+２Ｄマップに出る
+南条ルートエンディング
+エリールートエンディング
+リスタートエンディング
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_67);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_6d);
+    b(label_87);
+    b(label_86);
+  label_6d:
+    bne(var_0, 1, label_70);
+    b(label_1dd);
+    b(label_86);
+  label_70:
+    bne(var_0, 2, label_74);
+    bitClear(MBIT_EXITBIT);
+    op_120(0);
+    b(label_86);
+  label_74:
+    bne(var_0, 3, label_79);
+    bitClear(MBIT_EXITBIT);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    eventFileLoad(E, 202);
+    b(label_86);
+  label_79:
+    bne(var_0, 4, label_7e);
+    bitClear(MBIT_EXITBIT);
+    bitClear(MBIT_HI_NANJOTOUJO);
+    eventFileLoad(E, 202);
+    b(label_86);
+  label_7e:
+    bne(var_0, 5, label_83);
+    bitClear(MBIT_EXITBIT);
+    bitSet(EBIT_E1F00);
+    eventFileLoad(E, 202);
+    b(label_86);
+  label_83:
+    bne(var_0, 6, label_86);
+    controlEnable();
+    b(label_86);
+  label_86:
+    b(label_24e);
+  label_87:
+    ref_87 = msgShow(msg_3);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(8)]食事屋
+エステ・アロマ・回復
+カード・武器開発・宝石
+武器・防具・アクセサリ
+噂・人捜し・占い
+地図作成
+その他のショップ
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_87);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_8d);
+    b(label_a3);
+    b(label_a2);
+  label_8d:
+    bne(var_0, 1, label_90);
+    b(label_d2);
+    b(label_a2);
+  label_90:
+    bne(var_0, 2, label_93);
+    b(label_101);
+    b(label_a2);
+  label_93:
+    bne(var_0, 3, label_96);
+    b(label_118);
+    b(label_a2);
+  label_96:
+    bne(var_0, 4, label_99);
+    b(label_147);
+    b(label_a2);
+  label_99:
+    bne(var_0, 5, label_9c);
+    b(label_16e);
+    b(label_a2);
+  label_9c:
+    bne(var_0, 6, label_9f);
+    b(label_19f);
+    b(label_a2);
+  label_9f:
+    bne(var_0, 7, label_a2);
+    controlEnable();
+    b(label_a2);
+  label_a2:
+    b(label_24e);
+  label_a3:
+    ref_a3 = msgShow(msg_4);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(11)]がってん寿司
+がってん寿司２
+ピースダイナー
+ピースダイナー２
+ダブルスラッシュ
+ダブルスラッシュ２
+ジョリーロジャー
+ジョリーロジャー２
+エボニー
+エボニー２
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_a3);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_aa);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 4);
+    b(label_d1);
+  label_aa:
+    bne(var_0, 1, label_ae);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 5);
+    b(label_d1);
+  label_ae:
+    bne(var_0, 2, label_b2);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 24);
+    b(label_d1);
+  label_b2:
+    bne(var_0, 3, label_b6);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 25);
+    b(label_d1);
+  label_b6:
+    bne(var_0, 4, label_ba);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 40);
+    b(label_d1);
+  label_ba:
+    bne(var_0, 5, label_be);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 41);
+    b(label_d1);
+  label_be:
+    bne(var_0, 6, label_c2);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 50);
+    b(label_d1);
+  label_c2:
+    bne(var_0, 7, label_c6);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 51);
+    b(label_d1);
+  label_c6:
+    bne(var_0, 8, label_ca);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 64);
+    b(label_d1);
+  label_ca:
+    bne(var_0, 9, label_ce);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 65);
+    b(label_d1);
+  label_ce:
+    bne(var_0, 10, label_d1);
+    controlEnable();
+    b(label_d1);
+  label_d1:
+    b(label_24e);
+  label_d2:
+    ref_d2 = msgShow(msg_5);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(11)]かおり
+かおり２
+エテーリア
+エテーリア２
+ビキニライン
+ビキニライン２
+柊サイコセラピー
+柊サイコセラピー２
+富永カイロプラティック
+富永カイロプラティック２
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_d2);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_d9);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 2);
+    b(label_100);
+  label_d9:
+    bne(var_0, 1, label_dd);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 3);
+    b(label_100);
+  label_dd:
+    bne(var_0, 2, label_e1);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 38);
+    b(label_100);
+  label_e1:
+    bne(var_0, 3, label_e5);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 39);
+    b(label_100);
+  label_e5:
+    bne(var_0, 4, label_e9);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 26);
+    b(label_100);
+  label_e9:
+    bne(var_0, 5, label_ed);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 27);
+    b(label_100);
+  label_ed:
+    bne(var_0, 6, label_f1);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 52);
+    b(label_100);
+  label_f1:
+    bne(var_0, 7, label_f5);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 53);
+    b(label_100);
+  label_f5:
+    bne(var_0, 8, label_f9);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 16);
+    b(label_100);
+  label_f9:
+    bne(var_0, 9, label_fd);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 17);
+    b(label_100);
+  label_fd:
+    bne(var_0, 10, label_100);
+    controlEnable();
+    b(label_100);
+  label_100:
+    b(label_24e);
+  label_101:
+    ref_101 = msgShow(msg_6);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(5)]時間城
+時間城２
+パパラチャ
+パパラチャ２
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_101);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_108);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 0);
+    b(label_117);
+  label_108:
+    bne(var_0, 1, label_10c);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 1);
+    b(label_117);
+  label_10c:
+    bne(var_0, 2, label_110);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 62);
+    b(label_117);
+  label_110:
+    bne(var_0, 3, label_114);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 63);
+    b(label_117);
+  label_114:
+    bne(var_0, 4, label_117);
+    controlEnable();
+    b(label_117);
+  label_117:
+    b(label_24e);
+  label_118:
+    ref_118 = msgShow(msg_7);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(11)]バラヘルム
+バラヘルム２
+クレール・ド・リュンヌ
+クレール・ド・リュンヌ２
+ロサカンディータ
+ロサカンディータ２
+東亜ディフェンス
+東亜ディフェンス２
+トニーの店
+トニーの店２
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_118);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_11f);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 34);
+    b(label_146);
+  label_11f:
+    bne(var_0, 1, label_123);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 35);
+    b(label_146);
+  label_123:
+    bne(var_0, 2, label_127);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 60);
+    b(label_146);
+  label_127:
+    bne(var_0, 3, label_12b);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 61);
+    b(label_146);
+  label_12b:
+    bne(var_0, 4, label_12f);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 36);
+    b(label_146);
+  label_12f:
+    bne(var_0, 5, label_133);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 37);
+    b(label_146);
+  label_133:
+    bne(var_0, 6, label_137);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 14);
+    b(label_146);
+  label_137:
+    bne(var_0, 7, label_13b);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 15);
+    b(label_146);
+  label_13b:
+    bne(var_0, 8, label_13f);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 22);
+    b(label_146);
+  label_13f:
+    bne(var_0, 9, label_143);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 23);
+    b(label_146);
+  label_143:
+    bne(var_0, 10, label_146);
+    controlEnable();
+    b(label_146);
+  label_146:
+    b(label_24e);
+  label_147:
+    ref_147 = msgShow(msg_8);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(9)]探偵事務所
+探偵事務所２
+探偵事務所３
+探偵事務所４
+赤提灯しらいし
+赤提灯しらいし２
+ジニー
+ジニー２
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_147);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_14e);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 42);
+    b(label_16d);
+  label_14e:
+    bne(var_0, 1, label_152);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 43);
+    b(label_16d);
+  label_152:
+    bne(var_0, 2, label_156);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(E, 15);
+    b(label_16d);
+  label_156:
+    bne(var_0, 3, label_15a);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(E, 65);
+    b(label_16d);
+  label_15a:
+    bne(var_0, 4, label_15e);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 12);
+    b(label_16d);
+  label_15e:
+    bne(var_0, 5, label_162);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 13);
+    b(label_16d);
+  label_162:
+    bne(var_0, 6, label_166);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 48);
+    b(label_16d);
+  label_166:
+    bne(var_0, 7, label_16a);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 49);
+    b(label_16d);
+  label_16a:
+    bne(var_0, 8, label_16d);
+    controlEnable();
+    b(label_16d);
+  label_16d:
+    b(label_24e);
+  label_16e:
+    ref_16e = msgShow(msg_9);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(5)]エボニー
+エボニー２
+サトミタダシ
+地図フラグ操作
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_16e);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_175);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 64);
+    b(label_19e);
+  label_175:
+    bne(var_0, 1, label_179);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 64);
+    b(label_19e);
+  label_179:
+    bne(var_0, 2, label_17d);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 19);
+    b(label_19e);
+  label_17d:
+    bne(var_0, 3, label_19b);
+    ref_17e = msgShow(msg_10);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(9)]珠「瑠城クリア
+岩戸山クリア
+海底遺跡クリア
+廃工場クリア
+スマイル平坂クリア
+研究施設・ＴＶ局クリア
+エリー
+南条
+止める
+[end_choice][clear]
+***************************************/
+    wait(ref_17e);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_184);
+    bitSet(EBIT_E00B8);
+    b(label_199);
+  label_184:
+    bne(var_0, 1, label_187);
+    bitSet(EBIT_E009F);
+    b(label_199);
+  label_187:
+    bne(var_0, 2, label_18a);
+    bitSet(EBIT_E008C);
+    b(label_199);
+  label_18a:
+    bne(var_0, 3, label_18d);
+    bitSet(EBIT_E007F);
+    b(label_199);
+  label_18d:
+    bne(var_0, 4, label_190);
+    bitSet(EBIT_E007B);
+    b(label_199);
+  label_190:
+    bne(var_0, 5, label_193);
+    bitSet(EBIT_E006F);
+    b(label_199);
+  label_193:
+    bne(var_0, 6, label_196);
+    bitSet(MBIT_HI_ERITOUJO);
+    b(label_199);
+  label_196:
+    bne(var_0, 7, label_199);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    b(label_199);
+  label_199:
+    b(label_16e);
+    b(label_19e);
+  label_19b:
+    bne(var_0, 8, label_19e);
+    controlEnable();
+    b(label_19e);
+  label_19e:
+    b(label_24e);
+  label_19f:
+    choiceSetResult(11);
+    ref_1a0 = msgShow(msg_11);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+[choice(12)]ルナパレス港南
+ルナパレス港南２
+トリッシュの泉
+トリッシュの泉２
+トリッシュの泉ＥＸ
+ギガマッチョ
+カジノ
+カジノ２
+ベルベットルーム
+ベルベットルーム２
+ベルベットルームＥＸ
+[if_all(EBIT_SINARIOFF)]止める
+[end_choice][clear]
+***************************************/
+    wait(ref_1a0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_1a9);
+    partyItemAdd(mt_katatsumuri, 1);
+    bitSet(MBIT_CD_CD01);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 56);
+    b(label_1dc);
+  label_1a9:
+    bne(var_0, 1, label_1af);
+    partyItemAdd(mt_katatsumuri, 1);
+    bitSet(MBIT_CD_CD01);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 57);
+    b(label_1dc);
+  label_1af:
+    bne(var_0, 2, label_1b3);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 92);
+    b(label_1dc);
+  label_1b3:
+    bne(var_0, 3, label_1b7);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 93);
+    b(label_1dc);
+  label_1b7:
+    bne(var_0, 4, label_1bb);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 88);
+    b(label_1dc);
+  label_1bb:
+    bne(var_0, 5, label_1bf);
+    bitClear(MBIT_EXITBIT);
+    dngLoad2(giga_macho1-0);
+    b(label_1dc);
+  label_1bf:
+    bne(var_0, 6, label_1c3);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 30);
+    b(label_1dc);
+  label_1c3:
+    bne(var_0, 7, label_1c7);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 31);
+    b(label_1dc);
+  label_1c7:
+    bne(var_0, 8, label_1cb);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 8);
+    b(label_1dc);
+  label_1cb:
+    bne(var_0, 9, label_1cf);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 9);
+    b(label_1dc);
+  label_1cf:
+    bne(var_0, 10, label_1d9);
+    bitSet(MBIT_EXTRARANK_E);
+    bitSet(MBIT_EXTRARANK_D);
+    bitSet(MBIT_EXTRARANK_C);
+    bitSet(MBIT_EXTRARANK_B);
+    bitSet(MBIT_EXTRARANK_A);
+    bitSet(MBIT_EXTRARANK_S);
+    bitClear(MBIT_EXITBIT);
+    eventFileLoad(M, 84);
+    b(label_1dc);
+  label_1d9:
+    bne(var_0, 11, label_1dc);
+    controlEnable();
+    b(label_1dc);
+  label_1dc:
+    b(label_24e);
+  label_1dd:
+    ref_1dd = msgShow(msg_12);
+/***************************************
+[color(green)][tab]ダンジョンデバッグ[color(white)]
+[choice(11)]七姉妹学園１
+七姉妹学園２
+蝸牛山裏道
+森本病院
+空の科学館
+ＧＯＬＤ
+ゾディアック
+青葉公園
+下水／Ａブロック
+次へ
+[if_all(EBIT_SINARIOFF)]止める
+[end_choice][clear]
+***************************************/
+    wait(ref_1dd);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_1e3);
+    dngLoad2(seven_sisters_high_empty-0);
+    b(label_202);
+  label_1e3:
+    bne(var_0, 1, label_1e6);
+    dngLoad2(nichirinmaru1-0);
+    b(label_202);
+  label_1e6:
+    bne(var_0, 2, label_1e9);
+    dngLoad2(katatsumuri_trail1-0);
+    b(label_202);
+  label_1e9:
+    bne(var_0, 3, label_1ec);
+    dngLoad2(sanitarium-0);
+    b(label_202);
+  label_1ec:
+    bne(var_0, 4, label_1ef);
+    dngLoad2(aerospace_museum-0);
+    b(label_202);
+  label_1ef:
+    bne(var_0, 5, label_1f2);
+    dngLoad2(gold-0);
+    b(label_202);
+  label_1f2:
+    bne(var_0, 6, label_1f5);
+    dngLoad2(zodiac1-0);
+    b(label_202);
+  label_1f5:
+    bne(var_0, 7, label_1f8);
+    dngLoad2(aoba_park-0);
+    b(label_202);
+  label_1f8:
+    bne(var_0, 8, label_1fb);
+    dngLoad2(sewer1-0);
+    b(label_202);
+  label_1fb:
+    bne(var_0, 9, label_1fe);
+    b(label_202);
+    b(label_202);
+  label_1fe:
+    bne(var_0, 10, label_202);
+    controlEnable();
+    b(label_24e);
+    b(label_202);
+  label_202:
+    ref_202 = msgShow(msg_13);
+/***************************************
+[color(green)][tab]ダンジョンデバッグ[color(white)]
+[choice(11)]理化学研究所
+珠「瑠ＴＶ
+裏珠「瑠ＴＶ
+スマイル平坂
+廃工場
+アジト船
+海底遺跡
+岩戸山
+地下鉄工事現場
+次へ
+[if_all(EBIT_SINARIOFF)]止める
+[end_choice][clear]
+***************************************/
+    wait(ref_202);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_208);
+    dngLoad2(science_lab1-0);
+    b(label_227);
+  label_208:
+    bne(var_0, 1, label_20b);
+    dngLoad2(sumaru_tv1-0);
+    b(label_227);
+  label_20b:
+    bne(var_0, 2, label_20e);
+    dngLoad2(sumaru_tv2-0);
+    b(label_227);
+  label_20e:
+    bne(var_0, 3, label_211);
+    dngLoad2(smile_hirasaka1-0);
+    b(label_227);
+  label_211:
+    bne(var_0, 4, label_214);
+    dngLoad2(abandoned_factory-0);
+    b(label_227);
+  label_214:
+    bne(var_0, 5, label_217);
+    dngLoad2(nichirinmaru1-0);
+    b(label_227);
+  label_217:
+    bne(var_0, 6, label_21a);
+    dngLoad2(undersea_ruin-0);
+    b(label_227);
+  label_21a:
+    bne(var_0, 7, label_21d);
+    dngLoad2(mt_iwato-0);
+    b(label_227);
+  label_21d:
+    bne(var_0, 8, label_220);
+    dngLoad2(subway-0);
+    b(label_227);
+  label_220:
+    bne(var_0, 9, label_223);
+    b(label_227);
+    b(label_227);
+  label_223:
+    bne(var_0, 10, label_227);
+    controlEnable();
+    b(label_24e);
+    b(label_227);
+  label_227:
+    ref_227 = msgShow(msg_14);
+/***************************************
+[color(green)][tab]ダンジョンデバッグ[color(white)]
+[choice(11)]アメノトリフネ
+珠「瑠城
+ニャル世界
+カス校
+防空壕
+ギガ・マッチョ１
+ギガマッチョ２
+ムー大陸
+アジト船／アジト部分
+次へ
+[if_all(EBIT_SINARIOFF)]止める
+[end_choice][clear]
+***************************************/
+    wait(ref_227);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_22d);
+    dngLoad2(torifune1-0);
+    b(label_24d);
+  label_22d:
+    bne(var_0, 1, label_230);
+    dngLoad2(sumaru_castle1-0);
+    b(label_24d);
+  label_230:
+    bne(var_0, 2, label_233);
+    dngLoad2(monad1-0);
+    b(label_24d);
+  label_233:
+    bne(var_0, 3, label_236);
+    dngLoad2(kasu_high-0);
+    b(label_24d);
+  label_236:
+    bne(var_0, 4, label_239);
+    dngLoad2(air_raid_shelter1-0);
+    b(label_24d);
+  label_239:
+    bne(var_0, 5, label_23c);
+    dngLoad2(giga_macho1-0);
+    b(label_24d);
+  label_23c:
+    bne(var_0, 6, label_23f);
+    dngLoad2(giga_macho2-0);
+    b(label_24d);
+  label_23f:
+    bne(var_0, 7, label_242);
+    dngLoad2(mu_continent-0);
+    b(label_24d);
+  label_242:
+    bne(var_0, 8, label_245);
+    dngLoad2(nichirinmaru2-0);
+    b(label_24d);
+  label_245:
+    bne(var_0, 9, label_249);
+    controlEnable();
+    b(label_24e);
+    b(label_24d);
+  label_249:
+    bne(var_0, 10, label_24d);
+    controlEnable();
+    b(label_24e);
+    b(label_24d);
+  label_24d:
+    b(label_24e);
+  label_24e:
+    dialogFree(ref_66);
+}
+
+function PSP_DEBUG_2()
+{
+    controlDisable();
+    choiceSetResult(1);
+    ref_252 = dialogChoiceAlloc();
+    ref_253 = msgShow(msg_15);
+/***************************************
+[tab]相性・占い関係のデバッグを行いますか？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_253);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_259);
+    eventFileLoad(M, 109);
+    b(label_25c);
+  label_259:
+    bne(var_0, 1, label_25c);
+    controlEnable();
+    b(label_25c);
+  label_25c:
+    dialogFree(ref_252);
+}
+
+function PSP_DEBUG_3()
+{
+    controlDisable();
+    ref_25f = dialogChoiceAlloc();
+    ref_260 = msgShow(msg_16);
+/***************************************
+[color(green)][tab]ショップデバッグ[color(white)]
+未対応フォントを表示します。
+[wait][clear]塾艇湾遁愕錠午泳顎媧←ゐゑ菓輿廉緋侠謂↑↓吾捉ヰヱ\x1f21椎撤
+鱗践該荘搾寮―眉栓叔秋皎羲皺嬲疇閑溌剌鳩傘洩捻之撓網閥曹
+斎勲匿弛叙諜硝什繕唸緩邁藁撰艦隻瘴墟樫冤呉株哨嵯峨祓賽肖
+[wait][clear]酬棟嘱毟粛塔謡旬暦毀錮凸凹瓜戚斡筒嵌甚槽簀疫俳逝沖亭塀掠
+吧气么曾脊髄斜啊氓※獪菅莫慇懃窃癪斥呢啦☰☱☲☳☴☵☶☷
+痕桑愴祠擲筮穀酵ン縞吼飴棺此貢頷寵駕怙貪褻芯靭喘肘氾濫屁
+[wait][clear]曝疚娑騰唾薀滴姑酉齧誑暢諾呈軟蟠且錆狽京邦蟻糖尿糧趾卜篤
+吏已摯括於楊綻巫侶鷲嬌訟夭夷蹇兌遯夬綬訝琥珀孕吠蓼腿寞惟
+箒篭燻券楠恒弔贋蠢駿阪倦壺斗攪拌旱魃蒙蝙蝠綜套蟲牢脹匍匐
+[wait][clear]閇條剖煤椅径牌郊襟渓畦璃墳雹徘徊★瞑窺擬薩禹畳涅槃曙胤裔
+咋峻檀麝枸櫞膜郵綯芙蓉祀磯饗累糾呵祷竿諍胴巴磔嘗腱眷峰萎
+嗚＼
+[wait][clear]サトミタダシ
+覧廃翌苺晴編損仙桃卵崖粉陣剤鎮幣升鈴懸鐘猛募漢叱芝諭撮契
+棄熱昇絆孝林寺粋贈位牡
+[wait][clear]
+***************************************/
+    wait(ref_260);
+    dialogFree(ref_25f);
+    controlEnable();
+}
+
+function battle()
+{
+    controlDisable();
+    ref_266 = dialogChoiceAlloc();
+    ref_267 = msgShow(msg_17);
+/***************************************
+[color(green)]バトル関連テスト[color(white)]
+
+[choice(4)]イベントバトル番号（十進）を選択してください
+パーティ編成
+アイテム・装備、ペルソナセット
+終了
+[end_choice][clear]
+***************************************/
+    ref_268 = textInputInit();
+    wait(ref_267);
+    dialogFree(ref_266);
+    wait(ref_268);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_356);
+    ref_26e = textInputPrompt();
+    wait(ref_26e);
+    textInputCompare(msg_18, var_0);
+    bne(var_0, 0, label_274);
+    encounterLoad(encounter_0);
+    b(label_355);
+  label_274:
+    bne(var_0, 1, label_277);
+    encounterLoad(encounter_1);
+    b(label_355);
+  label_277:
+    bne(var_0, 2, label_27a);
+    encounterLoad(encounter_2);
+    b(label_355);
+  label_27a:
+    bne(var_0, 3, label_27d);
+    encounterLoad(encounter_3);
+    b(label_355);
+  label_27d:
+    bne(var_0, 4, label_280);
+    encounterLoad(encounter_4);
+    b(label_355);
+  label_280:
+    bne(var_0, 5, label_283);
+    encounterLoad(encounter_5);
+    b(label_355);
+  label_283:
+    bne(var_0, 6, label_286);
+    encounterLoad(encounter_6);
+    b(label_355);
+  label_286:
+    bne(var_0, 7, label_289);
+    encounterLoad(encounter_7);
+    b(label_355);
+  label_289:
+    bne(var_0, 8, label_28c);
+    encounterLoad(encounter_8);
+    b(label_355);
+  label_28c:
+    bne(var_0, 9, label_28f);
+    encounterLoad(encounter_9);
+    b(label_355);
+  label_28f:
+    bne(var_0, 10, label_292);
+    encounterLoad(encounter_a);
+    b(label_355);
+  label_292:
+    bne(var_0, 11, label_295);
+    encounterLoad(encounter_b);
+    b(label_355);
+  label_295:
+    bne(var_0, 12, label_298);
+    encounterLoad(encounter_c);
+    b(label_355);
+  label_298:
+    bne(var_0, 13, label_29b);
+    encounterLoad(encounter_d);
+    b(label_355);
+  label_29b:
+    bne(var_0, 14, label_29e);
+    encounterLoad(encounter_e);
+    b(label_355);
+  label_29e:
+    bne(var_0, 15, label_2a1);
+    encounterLoad(encounter_f);
+    b(label_355);
+  label_2a1:
+    bne(var_0, 16, label_2a4);
+    encounterLoad(encounter_10);
+    b(label_355);
+  label_2a4:
+    bne(var_0, 17, label_2a7);
+    encounterLoad(encounter_11);
+    b(label_355);
+  label_2a7:
+    bne(var_0, 18, label_2aa);
+    encounterLoad(encounter_12);
+    b(label_355);
+  label_2aa:
+    bne(var_0, 19, label_2ad);
+    encounterLoad(encounter_13);
+    b(label_355);
+  label_2ad:
+    bne(var_0, 20, label_2b0);
+    encounterLoad(encounter_14);
+    b(label_355);
+  label_2b0:
+    bne(var_0, 21, label_2b3);
+    encounterLoad(encounter_15);
+    b(label_355);
+  label_2b3:
+    bne(var_0, 22, label_2b6);
+    encounterLoad(encounter_16);
+    b(label_355);
+  label_2b6:
+    bne(var_0, 23, label_2b9);
+    encounterLoad(encounter_17);
+    b(label_355);
+  label_2b9:
+    bne(var_0, 24, label_2bc);
+    encounterLoad(encounter_18);
+    b(label_355);
+  label_2bc:
+    bne(var_0, 25, label_2bf);
+    encounterLoad(encounter_19);
+    b(label_355);
+  label_2bf:
+    bne(var_0, 26, label_2c2);
+    encounterLoad(encounter_1a);
+    b(label_355);
+  label_2c2:
+    bne(var_0, 27, label_2c5);
+    encounterLoad(encounter_1b);
+    b(label_355);
+  label_2c5:
+    bne(var_0, 28, label_2c8);
+    encounterLoad(encounter_1c);
+    b(label_355);
+  label_2c8:
+    bne(var_0, 29, label_2cb);
+    encounterLoad(encounter_1d);
+    b(label_355);
+  label_2cb:
+    bne(var_0, 30, label_2ce);
+    encounterLoad(encounter_1e);
+    b(label_355);
+  label_2ce:
+    bne(var_0, 31, label_2d1);
+    encounterLoad(encounter_1f);
+    b(label_355);
+  label_2d1:
+    bne(var_0, 32, label_2d4);
+    encounterLoad(encounter_20);
+    b(label_355);
+  label_2d4:
+    bne(var_0, 33, label_2d7);
+    encounterLoad(encounter_21);
+    b(label_355);
+  label_2d7:
+    bne(var_0, 34, label_2da);
+    encounterLoad(encounter_22);
+    b(label_355);
+  label_2da:
+    bne(var_0, 35, label_2dd);
+    encounterLoad(encounter_23);
+    b(label_355);
+  label_2dd:
+    bne(var_0, 36, label_2e0);
+    encounterLoad(encounter_24);
+    b(label_355);
+  label_2e0:
+    bne(var_0, 37, label_2e3);
+    encounterLoad(encounter_25);
+    b(label_355);
+  label_2e3:
+    bne(var_0, 38, label_2e6);
+    encounterLoad(encounter_26);
+    b(label_355);
+  label_2e6:
+    bne(var_0, 39, label_2e9);
+    encounterLoad(encounter_27);
+    b(label_355);
+  label_2e9:
+    bne(var_0, 40, label_2ec);
+    encounterLoad(encounter_28);
+    b(label_355);
+  label_2ec:
+    bne(var_0, 41, label_2ef);
+    encounterLoad(encounter_29);
+    b(label_355);
+  label_2ef:
+    bne(var_0, 42, label_2f2);
+    encounterLoad(encounter_2a);
+    b(label_355);
+  label_2f2:
+    bne(var_0, 43, label_2f5);
+    encounterLoad(encounter_2b);
+    b(label_355);
+  label_2f5:
+    bne(var_0, 44, label_2f8);
+    encounterLoad(encounter_2c);
+    b(label_355);
+  label_2f8:
+    bne(var_0, 45, label_2fb);
+    encounterLoad(encounter_2d);
+    b(label_355);
+  label_2fb:
+    bne(var_0, 46, label_2fe);
+    encounterLoad(encounter_2e);
+    b(label_355);
+  label_2fe:
+    bne(var_0, 47, label_301);
+    encounterLoad(encounter_2f);
+    b(label_355);
+  label_301:
+    bne(var_0, 48, label_304);
+    encounterLoad(encounter_30);
+    b(label_355);
+  label_304:
+    bne(var_0, 49, label_307);
+    encounterLoad(encounter_31);
+    b(label_355);
+  label_307:
+    bne(var_0, 50, label_30a);
+    encounterLoad(encounter_32);
+    b(label_355);
+  label_30a:
+    bne(var_0, 51, label_30d);
+    encounterLoad(encounter_33);
+    b(label_355);
+  label_30d:
+    bne(var_0, 52, label_310);
+    encounterLoad(encounter_34);
+    b(label_355);
+  label_310:
+    bne(var_0, 53, label_313);
+    encounterLoad(encounter_35);
+    b(label_355);
+  label_313:
+    bne(var_0, 54, label_316);
+    encounterLoad(encounter_36);
+    b(label_355);
+  label_316:
+    bne(var_0, 55, label_319);
+    encounterLoad(encounter_37);
+    b(label_355);
+  label_319:
+    bne(var_0, 56, label_31c);
+    encounterLoad(encounter_38);
+    b(label_355);
+  label_31c:
+    bne(var_0, 57, label_31f);
+    encounterLoad(encounter_39);
+    b(label_355);
+  label_31f:
+    bne(var_0, 58, label_322);
+    encounterLoad(encounter_3a);
+    b(label_355);
+  label_322:
+    bne(var_0, 59, label_325);
+    encounterLoad(encounter_3b);
+    b(label_355);
+  label_325:
+    bne(var_0, 60, label_328);
+    encounterLoad(encounter_3c);
+    b(label_355);
+  label_328:
+    bne(var_0, 61, label_32b);
+    encounterLoad(encounter_3d);
+    b(label_355);
+  label_32b:
+    bne(var_0, 62, label_32e);
+    encounterLoad(encounter_3e);
+    b(label_355);
+  label_32e:
+    bne(var_0, 63, label_331);
+    encounterLoad(encounter_3f);
+    b(label_355);
+  label_331:
+    bne(var_0, 64, label_334);
+    encounterLoad(encounter_40);
+    b(label_355);
+  label_334:
+    bne(var_0, 65, label_337);
+    encounterLoad(encounter_41);
+    b(label_355);
+  label_337:
+    bne(var_0, 66, label_33a);
+    encounterLoad(encounter_42);
+    b(label_355);
+  label_33a:
+    bne(var_0, 67, label_33d);
+    encounterLoad(encounter_43);
+    b(label_355);
+  label_33d:
+    bne(var_0, 68, label_340);
+    encounterLoad(encounter_44);
+    b(label_355);
+  label_340:
+    bne(var_0, 69, label_343);
+    encounterLoad(encounter_45);
+    b(label_355);
+  label_343:
+    bne(var_0, 70, label_346);
+    encounterLoad(encounter_46);
+    b(label_355);
+  label_346:
+    bne(var_0, 71, label_349);
+    encounterLoad(encounter_47);
+    b(label_355);
+  label_349:
+    bne(var_0, 72, label_34c);
+    encounterLoad(encounter_48);
+    b(label_355);
+  label_34c:
+    bne(var_0, 73, label_34f);
+    encounterLoad(encounter_49);
+    b(label_355);
+  label_34f:
+    bne(var_0, 74, label_352);
+    encounterLoad(encounter_4a);
+    b(label_355);
+  label_352:
+    bne(var_0, 75, label_355);
+    encounterLoad(encounter_4b);
+    b(label_355);
+  label_355:
+    b(label_521);
+  label_356:
+    bne(var_0, 1, label_374);
+    ref_357 = dialogChoiceAlloc();
+    ref_358 = msgShow(msg_19);
+/***************************************
+[color(green)]パーティ編成[color(white)]
+[choice(8)]麻耶をはずす
+うららをはずす
+克哉をはずす
+パオフゥをはずす
+達也をはずす
+南条を入れる
+エリーを入れる
+終了
+[end_choice][clear]
+***************************************/
+    wait(ref_358);
+    dialogFree(ref_357);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_35f);
+    partyMemberRemove(maya);
+    b(label_373);
+  label_35f:
+    bne(var_0, 1, label_362);
+    partyMemberRemove(ulala);
+    b(label_373);
+  label_362:
+    bne(var_0, 2, label_365);
+    partyMemberRemove(katsuya);
+    b(label_373);
+  label_365:
+    bne(var_0, 3, label_368);
+    partyMemberRemove(baofu);
+    b(label_373);
+  label_368:
+    bne(var_0, 4, label_36b);
+    partyMemberRemove(tatsuya);
+    b(label_373);
+  label_36b:
+    bne(var_0, 5, label_36e);
+    partyMemberAdd(nanjo);
+    b(label_373);
+  label_36e:
+    bne(var_0, 6, label_371);
+    partyMemberAdd(elly);
+    b(label_373);
+  label_371:
+    bne(var_0, 7, label_373);
+    b(label_373);
+  label_373:
+    b(label_521);
+  label_374:
+    bne(var_0, 2, label_51f);
+    choiceSetResult(10);
+    ref_376 = dialogChoiceAlloc();
+    ref_377 = msgShow(msg_20);
+/***************************************
+[color(green)]アイテム・装備・ペルソナセット[color(white)]
+[choice(11)]回復・移動系アイテム
+移動・インセンス系アイテム
+バトル系アイテム
+原石・ＢＯＯＫ系アイテム
+装備を整える
+カード
+ペルソナ
+ペルソナ２
+ペルソナ３
+カスタム
+やめる
+[end_choice][clear]
+***************************************/
+    wait(ref_377);
+    dialogFree(ref_376);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_398);
+    partyItemAdd(medicine, 99);
+    partyItemAdd(medical_powder, 99);
+    partyItemAdd(four_d_eraser, 99);
+    partyItemAdd(rattle_drink, 99);
+    partyItemAdd(yamatano_drink, 99);
+    partyItemAdd(super_peach, 99);
+    partyItemAdd(bead, 99);
+    partyItemAdd(bead_chain, 99);
+    partyItemAdd(snuff_soul, 99);
+    partyItemAdd(soul_forever, 99);
+    partyItemAdd(chewing_soul, 99);
+    partyItemAdd(limitless_soul, 99);
+    partyItemAdd(miracle_egg, 99);
+    partyItemAdd(hiranya, 99);
+    partyItemAdd(revival_bead, 99);
+    partyItemAdd(balm_of_life, 99);
+    partyItemAdd(brink_tea, 99);
+    partyItemAdd(desperate_measure, 99);
+    partyItemAdd(antidote, 99);
+    partyItemAdd(tranquilizer, 99);
+    partyItemAdd(energy_drink, 99);
+    partyItemAdd(ohnusa, 99);
+    partyItemAdd(miracle_soda, 99);
+    partyItemAdd(soma, 99);
+    partyItemAdd(muscle_drink, 99);
+    partyItemAdd(bacchus_drink, 99);
+    partyItemAdd(eternal_soul, 99);
+    b(label_51e);
+  label_398:
+    bne(var_0, 1, label_3a9);
+    partyItemAdd(st_incense, 99);
+    partyItemAdd(dx_incense, 99);
+    partyItemAdd(vi_incense, 99);
+    partyItemAdd(ag_incense, 99);
+    partyItemAdd(lu_incense, 99);
+    partyItemAdd(hp_incense, 99);
+    partyItemAdd(sp_incense, 99);
+    partyItemAdd(all_incense, 99);
+    partyItemAdd(lucky_mallet, 99);
+    partyItemAdd(clean_salt, 99);
+    partyItemAdd(disguise_kit, 99);
+    partyItemAdd(devil_capote, 99);
+    partyItemAdd(item_breeder, 99);
+    partyItemAdd(awaken, 99);
+    partyItemAdd(golden_honey, 99);
+    b(label_51e);
+  label_3a9:
+    bne(var_0, 2, label_3c9);
+    partyItemAdd(bead_of_fire, 99);
+    partyItemAdd(bead_of_flame, 99);
+    partyItemAdd(bead_of_water, 99);
+    partyItemAdd(bead_of_torrent, 99);
+    partyItemAdd(bead_of_wind, 99);
+    partyItemAdd(bead_of_hurricane, 99);
+    partyItemAdd(bead_of_earth, 99);
+    partyItemAdd(bead_of_earthquake, 99);
+    partyItemAdd(bead_of_ice, 99);
+    partyItemAdd(bead_of_lightning, 99);
+    partyItemAdd(bead_of_heat, 99);
+    partyItemAdd(bead_of_impact, 99);
+    partyItemAdd(bead_of_torment, 99);
+    partyItemAdd(bead_of_shockwave, 99);
+    partyItemAdd(bead_of_pressure, 99);
+    partyItemAdd(explosive_bead, 99);
+    partyItemAdd(bead_of_devastation, 99);
+    partyItemAdd(bead_of_annihilation, 99);
+    partyItemAdd(bead_of_holiness, 99);
+    partyItemAdd(bead_of_darkness, 99);
+    partyItemAdd(bead_of_power, 99);
+    partyItemAdd(bead_of_protection, 99);
+    partyItemAdd(bead_of_magic_power, 99);
+    partyItemAdd(bead_of_magic_wall, 99);
+    partyItemAdd(bead_of_speed, 99);
+    partyItemAdd(anti_force_bead, 99);
+    partyItemAdd(anti_magic_bead, 99);
+    partyItemAdd(open_sesame, 99);
+    partyItemAdd(escape_clapboard, 99);
+    partyItemAdd(silver_manisha, 99);
+    b(label_51e);
+  label_3c9:
+    bne(var_0, 3, label_3de);
+    partyItemAdd(battle_master, 99);
+    partyItemAdd(miracle_magazine, 99);
+    partyItemAdd(fantasy_world, 99);
+    partyItemAdd(sumaru_magazine, 99);
+    partyItemAdd(sumaru_magazine_2, 99);
+    partyItemAdd(legenbright, 99);
+    partyItemAdd(akashic_ring, 99);
+    partyItemAdd(beyondite, 99);
+    partyItemAdd(meteorite_s, 99);
+    partyItemAdd(rainbow_piece, 99);
+    partyItemAdd(dream_droplet, 99);
+    partyItemAdd(moon_stone, 99);
+    partyItemAdd(sun_stone, 99);
+    partyItemAdd(obsidian, 99);
+    partyItemAdd(hihi_irokane, 99);
+    partyItemAdd(orichalch, 99);
+    partyItemAdd(mithril_silver, 99);
+    partyItemAdd(damascus_steel, 99);
+    partyItemAdd(tenshou_coin, 99);
+    b(label_51e);
+  label_3de:
+    bne(var_0, 4, label_417);
+    partyItemAdd(soldiers_manual, 99);
+    partyItemAdd(leaders_manual, 99);
+    partyItemAdd(warlords_manual, 99);
+    partyItemAdd(war_gods_manual, 99);
+    partyItemAdd(dragon_charm, 99);
+    partyItemAdd(emerald_ring, 99);
+    partyItemAdd(crystal_ring, 99);
+    partyItemAdd(legendary_handgun, 99);
+    partyItemAdd(dead_end, 99);
+    partyItemAdd(legendary_zip_gun, 99);
+    partyItemAdd(megido_fire, 99);
+    partyItemAdd(sw_magma, 99);
+    partyItemAdd(pipe_fox, 99);
+    partyItemAdd(gun_of_might, 99);
+    partyItemAdd(legendary_glove, 99);
+    partyItemAdd(yuuma_ankoku_shio, 99);
+    partyItemAdd(legendary_mitten, 99);
+    partyItemAdd(shinsa_bakenutsu_sho, 99);
+    partyItemAdd(meow_claw, 99);
+    partyItemAdd(taping, 99);
+    partyItemAdd(ogre_hand, 99);
+    partyItemAdd(legendary_coin, 99);
+    partyItemAdd(gougasha, 99);
+    partyItemAdd(legendary_penny, 99);
+    partyItemAdd(nayuta, 99);
+    partyItemAdd(micro_chakram, 99);
+    partyItemAdd(one_dollar_coin, 99);
+    partyItemAdd(striker, 99);
+    partyItemAdd(legendary_katana, 99);
+    partyItemAdd(victory, 99);
+    partyItemAdd(dull_katana, 99);
+    partyItemAdd(laevateinn, 99);
+    partyItemAdd(aishu_masamune, 99);
+    partyItemAdd(plasma_sword, 99);
+    partyItemAdd(myohou_muramasa, 99);
+    partyItemAdd(legendary_rapier, 99);
+    partyItemAdd(paradoxer, 99);
+    partyItemAdd(legendary_rapoor, 99);
+    partyItemAdd(genesis, 99);
+    partyItemAdd(soul_starver, 99);
+    partyItemAdd(sol_blade, 99);
+    partyItemAdd(eternal_helm, 99);
+    partyItemAdd(mechanical_hat, 99);
+    partyItemAdd(glistening_mane, 99);
+    partyItemAdd(kazeyomi_kabuto, 99);
+    partyItemAdd(hide_cloak, 99);
+    partyItemAdd(natures_cloak, 99);
+    partyItemAdd(aurora_armor, 99);
+    partyItemAdd(woman_powered, 99);
+    partyItemAdd(best_dresser, 99);
+    partyItemAdd(guzei_armor, 99);
+    partyItemAdd(tengus_clogs, 99);
+    partyItemAdd(thule_greaves, 99);
+    partyItemAdd(achilles_greaves, 99);
+    partyItemAdd(angel_leg, 99);
+    b(label_51e);
+  label_417:
+    bne(var_0, 5, label_474);
+    partyItemAdd(priestess_card, 7);
+    partyItemAdd(empress_card, 7);
+    partyItemAdd(emperor_card, 7);
+    partyItemAdd(hierophant_card, 7);
+    partyItemAdd(lovers_card, 7);
+    partyItemAdd(ancient_sun, 7);
+    partyItemAdd(generals_piece, 7);
+    partyItemAdd(pao_pei, 7);
+    partyItemAdd(black_goat, 7);
+    partyItemAdd(bronze_ring, 7);
+    partyItemAdd(styx, 7);
+    partyItemAdd(gale_card, 7);
+    partyItemAdd(st_card, 7);
+    partyItemAdd(vi_card, 7);
+    partyItemAdd(dx_card, 7);
+    partyItemAdd(ag_card, 7);
+    partyItemAdd(lu_card, 7);
+    partyItemAdd(all_card, 7);
+    partyItemAdd(agi_card, 77);
+    partyItemAdd(agilao_card, 7);
+    partyItemAdd(agidyne_card, 7);
+    partyItemAdd(maragi_card, 7);
+    partyItemAdd(maragion_card, 7);
+    partyItemAdd(inferno_card, 7);
+    partyItemAdd(aqua_card, 7);
+    partyItemAdd(aques_card, 7);
+    partyItemAdd(aquadyne_card, 7);
+    partyItemAdd(malaqua_card, 7);
+    partyItemAdd(malaques_card, 7);
+    partyItemAdd(torrent_card, 7);
+    partyItemAdd(garu_card, 7);
+    partyItemAdd(garula_card, 7);
+    partyItemAdd(garudyne_card, 7);
+    partyItemAdd(magaru_card, 7);
+    partyItemAdd(magarula_card, 7);
+    partyItemAdd(gale_card, 7);
+    partyItemAdd(magna_card, 7);
+    partyItemAdd(magnara_card, 7);
+    partyItemAdd(magnadyne_card, 7);
+    partyItemAdd(mamagna_card, 7);
+    partyItemAdd(mamagnara_card, 7);
+    partyItemAdd(quake_card, 7);
+    partyItemAdd(bufu_card, 7);
+    partyItemAdd(bufula_card, 7);
+    partyItemAdd(frigid_card, 7);
+    partyItemAdd(zio_card, 7);
+    partyItemAdd(zionga_card, 7);
+    partyItemAdd(thunderbolt_card, 7);
+    partyItemAdd(frei_card, 7);
+    partyItemAdd(freila_card, 7);
+    partyItemAdd(scorching_card, 7);
+    partyItemAdd(zan_card, 7);
+    partyItemAdd(zanma_card, 7);
+    partyItemAdd(wavelength_card, 7);
+    partyItemAdd(gry_card, 7);
+    partyItemAdd(gryva_card, 7);
+    partyItemAdd(pressure_card, 7);
+    partyItemAdd(megido_card, 7);
+    partyItemAdd(megidola_card, 7);
+    partyItemAdd(nuclear_card, 7);
+    partyItemAdd(dia_card, 7);
+    partyItemAdd(diarama_card, 7);
+    partyItemAdd(healing_card, 7);
+    partyItemAdd(media_card, 7);
+    partyItemAdd(medirama_card, 7);
+    partyItemAdd(blessing_card, 7);
+    partyItemAdd(posumudi_card, 7);
+    partyItemAdd(kotoludi_card, 7);
+    partyItemAdd(patra_card, 7);
+    partyItemAdd(me patra_card, 7);
+    partyItemAdd(recarm_card, 7);
+    partyItemAdd(holylight_card, 7);
+    partyItemAdd(sacrifice_card, 7);
+    partyItemAdd(dormina_card, 7);
+    partyItemAdd(poisma_card, 7);
+    partyItemAdd(marin karin_card, 7);
+    partyItemAdd(pulinpa_card, 7);
+    partyItemAdd(mafui_card, 7);
+    partyItemAdd(balzac_card, 7);
+    partyItemAdd(illuzone_card, 7);
+    partyItemAdd(tarukaja_card, 7);
+    partyItemAdd(rakukaja_card, 7);
+    partyItemAdd(makakaja_card, 7);
+    partyItemAdd(samakaja_card, 7);
+    partyItemAdd(sukukaja_card, 7);
+    partyItemAdd(dekaja_card, 7);
+    partyItemAdd(tetraja_card, 7);
+    partyItemAdd(attack mirror_card, 7);
+    partyItemAdd(magic mirror_card, 7);
+    partyItemAdd(estoma_card, 7);
+    partyItemAdd(open door_card, 7);
+    b(label_51e);
+  label_474:
+    bne(var_0, 6, label_4be);
+    partyPersonaGive(rangda, VBIT_PR_RANDA, party_stock);
+    partyPersonaGive(isis, VBIT_PR_ISISU, party_stock);
+    partyPersonaGive(manannan, VBIT_PR_MANAN, party_stock);
+    partyPersonaGive(abe_no_seimei, VBIT_PR_ABENO, party_stock);
+    partyPersonaGive(agrippa, VBIT_PR_AGURI, party_stock);
+    partyPersonaGive(tengu, VBIT_PR_TENGU, party_stock);
+    partyPersonaGive(lakshmi, VBIT_PR_RAKUS, party_stock);
+    partyPersonaGive(scathach, VBIT_PR_SKAHA, party_stock);
+    partyPersonaGive(hathor, VBIT_PR_HATOH, party_stock);
+    partyPersonaGive(izanami, VBIT_PR_IZANA, party_stock);
+    partyPersonaGive(parvati, VBIT_PR_PAHRU, party_stock);
+    partyPersonaGive(sif, VBIT_PR_SIFU, party_stock);
+    partyPersonaGive(tensen_nyannyan, VBIT_PR_TENSE, party_stock);
+    partyPersonaGive(gaia, VBIT_PR_GAIA, party_stock);
+    partyPersonaGive(kali, VBIT_PR_KARI, party_stock);
+    partyPersonaGive(linog, VBIT_PR_RINOK, party_stock);
+    partyPersonaGive(seioubo, VBIT_PR_SEIOU, party_stock);
+    partyPersonaGive(nemesis, VBIT_PR_NAMES, party_stock);
+    partyPersonaGive(arianrhod, VBIT_PR_ARIAN, party_stock);
+    partyPersonaGive(vishnu, VBIT_PR_VISYU, party_stock);
+    partyPersonaGive(lugh, VBIT_PR_RUGU, party_stock);
+    partyPersonaGive(odin, VBIT_PR_ODHIN, party_stock);
+    partyPersonaGive(indra, VBIT_PR_INDOR, party_stock);
+    partyPersonaGive(huracan, VBIT_PR_FURAK, party_stock);
+    partyPersonaGive(baal, VBIT_PR_BARU, party_stock);
+    partyPersonaGive(marduk, VBIT_PR_MARUD, party_stock);
+    partyPersonaGive(airgetlam, VBIT_PR_AGATO, party_stock);
+    partyPersonaGive(brahma, VBIT_PR_BURAF, party_stock);
+    partyPersonaGive(yamaoka, VBIT_PR_YAMAO, party_stock);
+    partyPersonaGive(varuna, VBIT_PR_VARUN, party_stock);
+    partyPersonaGive(mithra, VBIT_PR_MISUR, party_stock);
+    partyPersonaGive(yama, VBIT_PR_YAMA, party_stock);
+    partyPersonaGive(sakya, VBIT_PR_SYAKA, party_stock);
+    partyPersonaGive(umayadono_ouji, VBIT_PR_UMAYA, party_stock);
+    partyPersonaGive(aizen_myouou, VBIT_PR_AIZEN, party_stock);
+    partyPersonaGive(xuanzang, VBIT_PR_GENJO, party_stock);
+    partyPersonaGive(alice, VBIT_PR_ARISU, party_stock);
+    partyPersonaGive(vivian, VBIT_PR_VIVIA, party_stock);
+    partyPersonaGive(pyro_jack, VBIT_PR_JACKR, party_stock);
+    partyPersonaGive(jack_frost, VBIT_PR_JACKF, party_stock);
+    partyPersonaGive(robin_goodfellow, VBIT_PR_ROBIN, party_stock);
+    partyPersonaGive(pixie, VBIT_PR_PIXY, party_stock);
+    partyPersonaGive(shiva, VBIT_PR_SIVA, party_stock);
+    partyPersonaGive(mahakala, VBIT_PR_MAHAK, party_stock);
+    partyPersonaGive(ares, VBIT_PR_ARESU, party_stock);
+    partyPersonaGive(susanoo, VBIT_PR_SUSAN, party_stock);
+    partyPersonaGive(seiten_taisei, VBIT_PR_SEITE, party_stock);
+    partyPersonaGive(taranis, VBIT_PR_TARAN, party_stock);
+    partyPersonaGive(minotaur, VBIT_PR_MINOT, party_stock);
+    partyPersonaGive(wong_long, VBIT_PR_PAIRO, party_stock);
+    partyPersonaGive(vritra, VBIT_PR_VURIT, party_stock);
+    partyPersonaGive(takshaka, VBIT_PR_TAKUS, party_stock);
+    partyPersonaGive(culebre, VBIT_PR_KUERE, party_stock);
+    partyPersonaGive(otohime, VBIT_PR_OTOHI, party_stock);
+    partyPersonaGive(longma, VBIT_PR_RYUME, party_stock);
+    partyPersonaGive(tishtrya, VBIT_PR_TISYU, party_stock);
+    partyPersonaGive(kinich ahau, VBIT_PR_KIAHA, party_stock);
+    partyPersonaGive(genbu, VBIT_PR_GENBU, party_stock);
+    partyPersonaGive(byakko, VBIT_PR_BYAKO, party_stock);
+    partyPersonaGive(gullinbursti, VBIT_PR_GURIN, party_stock);
+    partyPersonaGive(marshal_tianpeng, VBIT_PR_TENHO, party_stock);
+    partyPersonaGive(nekomata, VBIT_PR_NEKOM, party_stock);
+    partyPersonaGive(gyokukou_joutei, VBIT_PR_GYOKU, party_stock);
+    partyPersonaGive(fenrir, VBIT_PR_FENRI, party_stock);
+    partyPersonaGive(skuld, VBIT_PR_SUKUR, party_stock);
+    partyPersonaGive(verdandi, VBIT_PR_VERUZ, party_stock);
+    partyPersonaGive(urd, VBIT_PR_URUZU, party_stock);
+    partyPersonaGive(cerberus, VBIT_PR_KERUB, party_stock);
+    partyPersonaGive(pallas_athena, VBIT_PR_PARAS, party_stock);
+    partyPersonaGive(hyperion, VBIT_PR_HYUPE, party_stock);
+    partyPersonaGive(bishamonten, VBIT_PR_BISYA, party_stock);
+    partyPersonaGive(skanda, VBIT_PR_SUKAN, party_stock);
+    b(label_51e);
+  label_4be:
+    bne(var_0, 7, label_4ef);
+    partyPersonaGive(kundali_vidyaraja, VBIT_PR_GUNDA, party_stock);
+    partyPersonaGive(nezha, VBIT_PR_NATA, party_stock);
+    partyPersonaGive(mars, VBIT_PR_MARUS, party_stock);
+    partyPersonaGive(helios, VBIT_PR_HERIO, party_stock);
+    partyPersonaGive(azazel, VBIT_PR_AZAZE, party_stock);
+    partyPersonaGive(prometheus, VBIT_PR_PROME, party_stock);
+    partyPersonaGive(adramelech, VBIT_PR_ADORA, party_stock);
+    partyPersonaGive(barbatos, VBIT_PR_BARUB, party_stock);
+    partyPersonaGive(kabandha, VBIT_PR_KABAN, party_stock);
+    partyPersonaGive(shax, VBIT_PR_SYAKU, party_stock);
+    partyPersonaGive(odysseus, VBIT_PR_ODUSE, party_stock);
+    partyPersonaGive(mot, VBIT_PR_MOTO, party_stock);
+    partyPersonaGive(charon, VBIT_PR_KARON, party_stock);
+    partyPersonaGive(ankou, VBIT_PR_ANKU, party_stock);
+    partyPersonaGive(hel, VBIT_PR_HERU, party_stock);
+    partyPersonaGive(suzaku, VBIT_PR_SUZAK, party_stock);
+    partyPersonaGive(phoenix, VBIT_PR_FENIX, party_stock);
+    partyPersonaGive(stymphalides, VBIT_PR_SUTYU, party_stock);
+    partyPersonaGive(fjalar, VBIT_PR_FIARA, party_stock);
+    partyPersonaGive(harpy, VBIT_PR_HAPI, party_stock);
+    partyPersonaGive(lucifer, VBIT_PR_RUSIF, party_stock);
+    partyPersonaGive(beelzebub, VBIT_PR_BERUZ, party_stock);
+    partyPersonaGive(surt, VBIT_PR_SURUT, party_stock);
+    partyPersonaGive(poltergeist, VBIT_PR_PORUT, party_stock);
+    partyPersonaGive(seth, VBIT_PR_SETO, party_stock);
+    partyPersonaGive(hastur, VBIT_PR_HASTA, party_stock);
+    partyPersonaGive(seker, VBIT_PR_SEKER, party_stock);
+    partyPersonaGive(aeshma, VBIT_PR_AESYU, party_stock);
+    partyPersonaGive(loki, VBIT_PR_ROKI, party_stock);
+    partyPersonaGive(kanaloa, VBIT_PR_KANAR, party_stock);
+    partyPersonaGive(fariedone, VBIT_PR_FARDO, party_stock);
+    partyPersonaGive(hanuman, VBIT_PR_HANUM, party_stock);
+    partyPersonaGive(asteria, VBIT_PR_ASTER, party_stock);
+    partyPersonaGive(valkyrie, VBIT_PR_VARUK, party_stock);
+    partyPersonaGive(hoenir, VBIT_PR_HENIR, party_stock);
+    partyPersonaGive(juanlian_dajiang, VBIT_PR_KENRE, party_stock);
+    partyPersonaGive(gandharva, VBIT_PR_GANDA, party_stock);
+    partyPersonaGive(iris, VBIT_PR_IRISU, party_stock);
+    partyPersonaGive(kinnara, VBIT_PR_KINNA, party_stock);
+    partyPersonaGive(callisto, VBIT_PR_KARIS, party_stock);
+    partyPersonaGive(nanna, VBIT_PR_NANNA, party_stock);
+    partyPersonaGive(artemis, VBIT_PR_ARUTE, party_stock);
+    partyPersonaGive(maihime_amano, VBIT_PR_AMANO, party_stock);
+    partyPersonaGive(tsukuyomi, VBIT_PR_TUKUY, party_stock);
+    partyPersonaGive(succubus, VBIT_PR_SAKYU, party_stock);
+    partyPersonaGive(maia_prime, VBIT_PR_MAIKA, party_stock);
+    partyPersonaGive(pairika, VBIT_PR_PARIK, party_stock);
+    b(label_51e);
+  label_4ef:
+    bne(var_0, 8, label_519);
+    partyPersonaGive(maia, VBIT_PR_MAIA, party_stock);
+    partyPersonaGive(virochana, VBIT_PR_VIROS, party_stock);
+    partyPersonaGive(apollo, VBIT_PR_APORO, party_stock);
+    partyPersonaGive(tatsunoshin_suou, VBIT_PR_SUOU, party_stock);
+    partyPersonaGive(ildanach, VBIT_PR_IRUDA, party_stock);
+    partyPersonaGive(heimdall, VBIT_PR_HEIMU, party_stock);
+    partyPersonaGive(kinich_kakmo, VBIT_PR_KIKAK, party_stock);
+    partyPersonaGive(surya, VBIT_PR_SURIY, party_stock);
+    partyPersonaGive(satan, VBIT_PR_SATAN, party_stock);
+    partyPersonaGive(michael, VBIT_PR_MIKAE, party_stock);
+    partyPersonaGive(gabriel, VBIT_PR_GABRI, party_stock);
+    partyPersonaGive(ameretat, VBIT_PR_AMURU, party_stock);
+    partyPersonaGive(armaiti, VBIT_PR_ARUMA, party_stock);
+    partyPersonaGive(melchizedek, VBIT_PR_MERUK, party_stock);
+    partyPersonaGive(nike, VBIT_PR_NIKE, party_stock);
+    partyPersonaGive(phaleg, VBIT_PR_FAREG, party_stock);
+    partyPersonaGive(zhu_yin, VBIT_PR_SYOKU, party_stock);
+    partyPersonaGive(ouroboros, VBIT_PR_UROBO, party_stock);
+    partyPersonaGive(seiryu, VBIT_PR_SEIRY, party_stock);
+    partyPersonaGive(mucalinda, VBIT_PR_MUTYA, party_stock);
+    partyPersonaGive(hunab_ku, VBIT_PR_FUNAB, party_stock);
+    partyPersonaGive(njord, VBIT_PR_NIYOR, party_stock);
+    partyPersonaGive(demeter, VBIT_PR_DEMET, party_stock);
+    partyPersonaGive(fuuma_kotarou, VBIT_PR_FUMA, party_stock);
+    partyPersonaGive(junnosuke_kuroda, VBIT_PR_KASIN, party_stock);
+    partyPersonaGive(tobi_katou, VBIT_PR_TOBIK, party_stock);
+    partyPersonaGive(tenjiku_tokubei, VBIT_PR_TENJI, party_stock);
+    partyPersonaGive(sarutobi_sasuke, VBIT_PR_SARUT, party_stock);
+    partyPersonaGive(quetzalcoatl, VBIT_PR_KETUA, party_stock);
+    partyPersonaGive(nodens, VBIT_PR_NODEN, party_stock);
+    partyPersonaGive(shou_shen, VBIT_PR_NANKY, party_stock);
+    partyPersonaGive(budai, VBIT_PR_HOTEI, party_stock);
+    partyPersonaGive(dagda, VBIT_PR_DAGUD, party_stock);
+    partyPersonaGive(bacchus, VBIT_PR_BAKAS, party_stock);
+    partyPersonaGive(galahad, VBIT_PR_GARAH, party_stock);
+    partyPersonaGive(matsuosama, VBIT_PR_MATUO, party_stock);
+    partyPersonaGive(futsuno_mitama, VBIT_PR_FUTUN, party_stock);
+    partyPersonaGive(arthur, VBIT_PR_ASA, party_stock);
+    partyPersonaGive(cu_chulainn, VBIT_PR_KUFUR, party_stock);
+    partyPersonaGive(kanshou, VBIT_PR_KANSY, party_stock);
+    b(label_51e);
+  label_519:
+    bne(var_0, 9, label_51c);
+    partyPersonaGive(cu_chulainn, VBIT_PR_KUFUR, party_stock);
+    b(label_51e);
+  label_51c:
+    bne(var_0, 10, label_51e);
+    b(label_51e);
+  label_51e:
+    b(label_521);
+  label_51f:
+    bne(var_0, 3, label_521);
+    b(label_521);
+  label_521:
+    controlEnable();
+}
+
+function UWASA()
+{
+    controlDisable();
+  label_524:
+    choiceSetResult(4);
+    ref_525 = dialogAlloc();
+    ref_526 = msgShow(msg_21);
+/***************************************
+[color(green)][tab]噂操作イベント[color(white)]
+[choice(5)][color(pink)]噂全て聞いた[color(white)]
+[color(blue)]噂指定[color(white)]
+[color(yellow)]お金いっぱい[color(white)]
+[color(green)]説明[color(white)]
+[color(gray)]終了[color(white)]
+[end_choice][clear]
+***************************************/
+    wait(ref_526);
+    dialogFree(ref_525);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_585);
+    bitSet(MBIT_KI_JIKANSELL);
+    bitSet(MBIT_KI_JIKANDUP);
+    bitSet(MBIT_KI_KAORIAROMA);
+    bitSet(MBIT_KI_KAORIHENNI);
+    bitSet(MBIT_KI_SIRAMAN);
+    bitSet(MBIT_KI_SIRAHENNI);
+    bitSet(MBIT_KI_TOAARM);
+    bitSet(MBIT_KI_TOADEF);
+    bitSet(MBIT_KI_TONYITEM);
+    bitSet(MBIT_KI_TONYACCE);
+    bitSet(MBIT_KI_MUSLOT);
+    bitSet(MBIT_KI_MUBJ);
+    bitSet(MBIT_KI_MUPOKER);
+    bitSet(MBIT_KI_GIGACD1);
+    bitSet(MBIT_KI_GIGACD2);
+    bitSet(MBIT_KI_BARARM);
+    bitSet(MBIT_KI_BARHENNI);
+    bitSet(MBIT_KI_ROSADEF);
+    bitSet(MBIT_KI_ROSAHENNI);
+    bitSet(MBIT_KI_ETEESTHE);
+    bitSet(MBIT_KI_ETEHENNI);
+    bitSet(MBIT_KI_GYPAISHO1);
+    bitSet(MBIT_KI_GYPAISHO2);
+    bitSet(MBIT_KI_CLEARM);
+    bitSet(MBIT_KI_CLEDEF);
+    bitSet(MBIT_KI_CLEAOBA);
+    bitSet(MBIT_KI_JEWDEVE);
+    bitSet(MBIT_KI_JEWKOUNAN);
+    bitSet(MBIT_KI_SKYMAP);
+    bitSet(MBIT_KI_TRISHOKUJI);
+    bitSet(MBIT_KI_TRIKAISIN);
+    bitSet(MBIT_KI_BATOLUBUKI);
+    bitSet(MBIT_KI_BATOLUBOUGU);
+    bitSet(MBIT_KI_BATOLUAKUSE);
+    bitSet(MBIT_KI_MAGICKITEM);
+    bitSet(MBIT_KI_MAGICKCADE);
+    bitSet(MBIT_KI_PELPELBUKI);
+    bitSet(MBIT_KI_PELPELBOUGU);
+    bitSet(MBIT_KI_PELPELAKUSE);
+    bitSet(MBIT_KI_PELPELITEM);
+    bitSet(MBIT_KI_PELPELCADE);
+    bitSet(MBIT_KI_DEVIL1);
+    bitSet(MBIT_KI_DEVIL2);
+    bitSet(MBIT_KI_DEVIL3);
+    bitSet(MBIT_KI_DEVIL4);
+    bitSet(MBIT_KI_DEVIL5);
+    bitSet(MBIT_KI_DEVIL6);
+    bitSet(MBIT_KI_DEVIL7);
+    bitSet(MBIT_KI_DEVIL8);
+    bitSet(MBIT_KI_DEVIL9);
+    bitSet(MBIT_KI_DEVIL10);
+    bitSet(MBIT_KI_DENNSETU);
+    bitSet(MBIT_KI_NorETOUJO);
+    bitSet(MBIT_KI_HANAKOTOBA);
+    bitSet(MBIT_KI_TATUNOSIN);
+    bitSet(MBIT_KI_MAIHIME);
+    bitSet(MBIT_KI_ZODI2F);
+    bitSet(MBIT_KI_GYPSTART);
+    bitSet(CBIT_HEAR_AGI);
+    bitSet(CBIT_AGI_ONCE);
+    bitSet(BBIT_D_AGIRAO_M);
+    bitSet(CBIT_HEAR_BUF);
+    bitSet(CBIT_BUF_ONCE);
+    bitSet(BBIT_A_BUFURA_S);
+    bitSet(CBIT_HEAR_GAR);
+    bitSet(CBIT_GAR_ONCE);
+    bitSet(BBIT_D_GARURA_L);
+    bitSet(CBIT_HEAR_MAG);
+    bitSet(CBIT_MAG_ONCE);
+    bitSet(BBIT_G_MAGNAS_S);
+    bitSet(CBIT_HEAR_JIO);
+    bitSet(CBIT_JIO_ONCE);
+    bitSet(BBIT_H_JIONGA_M);
+    bitSet(CBIT_HEAR_AQU);
+    bitSet(CBIT_AQU_ONCE);
+    bitSet(BBIT_W_AQUES_L);
+    bitSet(CBIT_HEAR_FRA);
+    bitSet(CBIT_FRA_ONCE);
+    bitSet(BBIT_U_FRAIRA_S);
+    bitSet(CBIT_HEAR_MEG);
+    bitSet(CBIT_MEG_ONCE);
+    bitSet(BBIT_C_MEGIDO_L);
+    bitSet(CBIT_HEAR_SWD);
+    bitSet(VBIT_SWD_LGND_F);
+    bitSet(CBIT_HEAR_GUN);
+    bitSet(VBIT_GUN_LGND_F);
+    bitSet(MBIT_NDENSETU2);
+    bitSet(MBIT_NDENSETU3);
+    b(label_524);
+    b(label_5a4);
+  label_585:
+    bne(var_0, 1, label_596);
+    choiceSetResult(1);
+    ref_587 = dialogAlloc();
+    ref_588 = msgShow(msg_22);
+/***************************************
+番号を選択してください
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    ref_589 = textInputInit();
+    wait(ref_588);
+    dialogFree(ref_587);
+    wait(ref_589);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_591);
+    b(label_5a5);
+    b(label_595);
+  label_591:
+    bne(var_0, 1, label_595);
+    controlEnable();
+    b(label_74d);
+    b(label_595);
+  label_595:
+    b(label_5a4);
+  label_596:
+    bne(var_0, 2, label_59a);
+    partyMoneyAdd(1000000);
+    b(label_524);
+    b(label_5a4);
+  label_59a:
+    bne(var_0, 3, label_5a0);
+    ref_59b = dialogAlloc();
+    ref_59c = msgShow(msg_23);
+/***************************************
+操作実行
+葛葉探偵事務所のそれと同じ、
+ショップテーブルを呼び出します。[wait][clear][color(pink)]噂全て聞いた[color(white)]
+全ての噂を聞いた状態にします。
+ただし、本来同時に現れるはずの無い噂まで
+表示されるので注意してください。[wait][clear][color(blue)]噂指定[color(white)]
+文字入力によって、
+特定の噂を聞いた状態にします。
+番号は専用のＨＰで確認してください。[wait][clear][color(yellow)]お金いっぱい[color(white)]
+ドーンと１００万円プレゼント。[wait][clear][color(green)]説明[color(white)]
+これです。[wait][clear][color(gray)]終了[color(white)]
+全ての処理を終了します。[wait][clear]
+***************************************/
+    wait(ref_59c);
+    dialogFree(ref_59b);
+    b(label_5a4);
+  label_5a0:
+    bne(var_0, 4, label_5a4);
+    controlEnable();
+    b(label_74d);
+    b(label_5a4);
+  label_5a4:
+    b(label_524);
+  label_5a5:
+    ref_5a5 = textInputPrompt();
+    wait(ref_5a5);
+    textInputCompare(msg_24, var_0);
+    bne(var_0, 0, label_5ae);
+    ref_5a9 = dialogAlloc();
+    ref_5aa = msgShow(msg_25);
+/***************************************
+範囲外の数値です。
+やり直し。
+[wait][clear]
+***************************************/
+    wait(ref_5aa);
+    dialogFree(ref_5a9);
+    b(label_74b);
+  label_5ae:
+    bne(var_0, 1, label_5b5);
+    bitSet(MBIT_KI_MONSYOU);
+    ref_5b0 = dialogAlloc();
+    ref_5b1 = msgShow(msg_26);
+/***************************************
+１
+その他セブンスの紋章は
+ＪＯＫＥＲ除けの噂
+[wait][clear]
+***************************************/
+    wait(ref_5b1);
+    dialogFree(ref_5b0);
+    b(label_74b);
+  label_5b5:
+    bne(var_0, 2, label_5bc);
+    bitSet(MBIT_KI_JIKANSELL);
+    ref_5b7 = dialogAlloc();
+    ref_5b8 = msgShow(msg_27);
+/***************************************
+２
+時間城マジックカード販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_5b8);
+    dialogFree(ref_5b7);
+    b(label_74b);
+  label_5bc:
+    bne(var_0, 3, label_5c3);
+    bitSet(MBIT_KI_JIKANDUP);
+    ref_5be = dialogAlloc();
+    ref_5bf = msgShow(msg_28);
+/***************************************
+３
+時間城カード複製の噂
+[wait][clear]
+***************************************/
+    wait(ref_5bf);
+    dialogFree(ref_5be);
+    b(label_74b);
+  label_5c3:
+    bne(var_0, 4, label_5ca);
+    bitSet(MBIT_KI_KAORIAROMA);
+    ref_5c5 = dialogAlloc();
+    ref_5c6 = msgShow(msg_29);
+/***************************************
+４
+かおりアロマ療法の噂
+[wait][clear]
+***************************************/
+    wait(ref_5c6);
+    dialogFree(ref_5c5);
+    b(label_74b);
+  label_5ca:
+    bne(var_0, 5, label_5d1);
+    bitSet(MBIT_KI_KAORIHENNI);
+    ref_5cc = dialogAlloc();
+    ref_5cd = msgShow(msg_30);
+/***************************************
+５
+かおり変異噂
+[wait][clear]
+***************************************/
+    wait(ref_5cd);
+    dialogFree(ref_5cc);
+    b(label_74b);
+  label_5d1:
+    bne(var_0, 6, label_5d8);
+    bitSet(MBIT_KI_SIRAMAN);
+    ref_5d3 = dialogAlloc();
+    ref_5d4 = msgShow(msg_31);
+/***************************************
+６
+赤提灯しらいし人捜し施設の噂
+[wait][clear]
+***************************************/
+    wait(ref_5d4);
+    dialogFree(ref_5d3);
+    b(label_74b);
+  label_5d8:
+    bne(var_0, 7, label_5df);
+    bitSet(MBIT_KI_SIRAHENNI);
+    ref_5da = dialogAlloc();
+    ref_5db = msgShow(msg_32);
+/***************************************
+７
+赤提灯しらいし変異噂
+[wait][clear]
+***************************************/
+    wait(ref_5db);
+    dialogFree(ref_5da);
+    b(label_74b);
+  label_5df:
+    bne(var_0, 8, label_5e6);
+    bitSet(MBIT_KI_TOAARM);
+    ref_5e1 = dialogAlloc();
+    ref_5e2 = msgShow(msg_33);
+/***************************************
+８
+東亜ディフェンス特殊武器販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_5e2);
+    dialogFree(ref_5e1);
+    b(label_74b);
+  label_5e6:
+    bne(var_0, 9, label_5ed);
+    bitSet(MBIT_KI_TOADEF);
+    ref_5e8 = dialogAlloc();
+    ref_5e9 = msgShow(msg_34);
+/***************************************
+９
+東亜ディフェンス特殊防具販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_5e9);
+    dialogFree(ref_5e8);
+    b(label_74b);
+  label_5ed:
+    bne(var_0, 10, label_5f4);
+    bitSet(MBIT_KI_TONYITEM);
+    ref_5ef = dialogAlloc();
+    ref_5f0 = msgShow(msg_35);
+/***************************************
+１０
+トニーの店特殊アイテム販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_5f0);
+    dialogFree(ref_5ef);
+    b(label_74b);
+  label_5f4:
+    bne(var_0, 11, label_5fb);
+    bitSet(MBIT_KI_TONYACCE);
+    ref_5f6 = dialogAlloc();
+    ref_5f7 = msgShow(msg_36);
+/***************************************
+１１
+トニーの店不思議アクセサリー販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_5f7);
+    dialogFree(ref_5f6);
+    b(label_74b);
+  label_5fb:
+    bne(var_0, 12, label_602);
+    bitSet(MBIT_KI_MUSLOT);
+    ref_5fd = dialogAlloc();
+    ref_5fe = msgShow(msg_37);
+/***************************************
+１２
+ムー大陸カジノ化・スロット有利の噂
+[wait][clear]
+***************************************/
+    wait(ref_5fe);
+    dialogFree(ref_5fd);
+    b(label_74b);
+  label_602:
+    bne(var_0, 13, label_609);
+    bitSet(MBIT_KI_MUBJ);
+    ref_604 = dialogAlloc();
+    ref_605 = msgShow(msg_38);
+/***************************************
+１３
+ムー大陸カジノ化
+ブラックジャック有利の噂
+[wait][clear]
+***************************************/
+    wait(ref_605);
+    dialogFree(ref_604);
+    b(label_74b);
+  label_609:
+    bne(var_0, 14, label_610);
+    bitSet(MBIT_KI_MUPOKER);
+    ref_60b = dialogAlloc();
+    ref_60c = msgShow(msg_39);
+/***************************************
+１４
+ムー大陸カジノ化
+ポーカー有利の噂
+[wait][clear]
+***************************************/
+    wait(ref_60c);
+    dialogFree(ref_60b);
+    b(label_74b);
+  label_610:
+    bne(var_0, 15, label_617);
+    bitSet(MBIT_KI_GIGACD1);
+    ref_612 = dialogAlloc();
+    ref_613 = msgShow(msg_40);
+/***************************************
+１５
+ギガマッチョ
+隠しＣＤ１販売開始の噂
+[wait][clear]
+***************************************/
+    wait(ref_613);
+    dialogFree(ref_612);
+    b(label_74b);
+  label_617:
+    bne(var_0, 16, label_61e);
+    bitSet(MBIT_KI_GIGACD2);
+    ref_619 = dialogAlloc();
+    ref_61a = msgShow(msg_41);
+/***************************************
+１６
+ギガマッチョ
+隠しＣＤ２販売開始の噂
+[wait][clear]
+***************************************/
+    wait(ref_61a);
+    dialogFree(ref_619);
+    b(label_74b);
+  label_61e:
+    bne(var_0, 17, label_625);
+    bitSet(MBIT_KI_BARARM);
+    ref_620 = dialogAlloc();
+    ref_621 = msgShow(msg_42);
+/***************************************
+１７
+パラベラム（バー）
+武器販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_621);
+    dialogFree(ref_620);
+    b(label_74b);
+  label_625:
+    bne(var_0, 18, label_62c);
+    bitSet(MBIT_KI_BARHENNI);
+    ref_627 = dialogAlloc();
+    ref_628 = msgShow(msg_43);
+/***************************************
+１８
+パラベラム（バー）変異噂
+[wait][clear]
+***************************************/
+    wait(ref_628);
+    dialogFree(ref_627);
+    b(label_74b);
+  label_62c:
+    bne(var_0, 19, label_633);
+    bitSet(MBIT_KI_ROSADEF);
+    ref_62e = dialogAlloc();
+    ref_62f = msgShow(msg_44);
+/***************************************
+１９
+ロサカンディータ防具販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_62f);
+    dialogFree(ref_62e);
+    b(label_74b);
+  label_633:
+    bne(var_0, 20, label_63a);
+    bitSet(MBIT_KI_ROSAHENNI);
+    ref_635 = dialogAlloc();
+    ref_636 = msgShow(msg_45);
+/***************************************
+２０
+ロサカンディータ変異噂
+[wait][clear]
+***************************************/
+    wait(ref_636);
+    dialogFree(ref_635);
+    b(label_74b);
+  label_63a:
+    bne(var_0, 21, label_641);
+    bitSet(MBIT_KI_ETEESTHE);
+    ref_63c = dialogAlloc();
+    ref_63d = msgShow(msg_46);
+/***************************************
+２１
+エテーリアエステの噂
+[wait][clear]
+***************************************/
+    wait(ref_63d);
+    dialogFree(ref_63c);
+    b(label_74b);
+  label_641:
+    bne(var_0, 22, label_648);
+    bitSet(MBIT_KI_ETEHENNI);
+    ref_643 = dialogAlloc();
+    ref_644 = msgShow(msg_47);
+/***************************************
+２２
+エテーリア変異噂
+[wait][clear]
+***************************************/
+    wait(ref_644);
+    dialogFree(ref_643);
+    b(label_74b);
+  label_648:
+    bne(var_0, 23, label_64f);
+    bitSet(MBIT_KI_GYPAISHO1);
+    ref_64a = dialogAlloc();
+    ref_64b = msgShow(msg_48);
+/***************************************
+２３
+珠「瑠ジニー相性占いの噂
+[wait][clear]
+***************************************/
+    wait(ref_64b);
+    dialogFree(ref_64a);
+    b(label_74b);
+  label_64f:
+    bne(var_0, 24, label_656);
+    bitSet(MBIT_KI_GYPAISHO2);
+    ref_651 = dialogAlloc();
+    ref_652 = msgShow(msg_49);
+/***************************************
+２４
+珠「瑠ジニー相性占い拡大の噂
+[wait][clear]
+***************************************/
+    wait(ref_652);
+    dialogFree(ref_651);
+    b(label_74b);
+  label_656:
+    bne(var_0, 25, label_65d);
+    bitSet(MBIT_KI_CLEARM);
+    ref_658 = dialogAlloc();
+    ref_659 = msgShow(msg_50);
+/***************************************
+２５
+クレール・ド・リュンヌ
+魔法武器販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_659);
+    dialogFree(ref_658);
+    b(label_74b);
+  label_65d:
+    bne(var_0, 26, label_664);
+    bitSet(MBIT_KI_CLEDEF);
+    ref_65f = dialogAlloc();
+    ref_660 = msgShow(msg_51);
+/***************************************
+２６
+クレール・ド・リュンヌ
+魔法防具販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_660);
+    dialogFree(ref_65f);
+    b(label_74b);
+  label_664:
+    bne(var_0, 27, label_66b);
+    bitSet(MBIT_KI_CLEAOBA);
+    ref_666 = dialogAlloc();
+    ref_667 = msgShow(msg_52);
+/***************************************
+２７
+クレール・ド・リュンヌ
+青葉区に移転の噂
+[wait][clear]
+***************************************/
+    wait(ref_667);
+    dialogFree(ref_666);
+    b(label_74b);
+  label_66b:
+    bne(var_0, 28, label_672);
+    bitSet(MBIT_KI_JEWDEVE);
+    ref_66d = dialogAlloc();
+    ref_66e = msgShow(msg_53);
+/***************************************
+２８
+宝石屋開発の噂
+[wait][clear]
+***************************************/
+    wait(ref_66e);
+    dialogFree(ref_66d);
+    b(label_74b);
+  label_672:
+    bne(var_0, 29, label_679);
+    bitSet(MBIT_KI_JEWKOUNAN);
+    ref_674 = dialogAlloc();
+    ref_675 = msgShow(msg_54);
+/***************************************
+２９
+宝石屋港南区に移転の噂
+[wait][clear]
+***************************************/
+    wait(ref_675);
+    dialogFree(ref_674);
+    b(label_74b);
+  label_679:
+    bne(var_0, 30, label_680);
+    bitSet(MBIT_KI_SKYMAP);
+    ref_67b = dialogAlloc();
+    ref_67c = msgShow(msg_55);
+/***************************************
+３０
+スカイラウンジマップ屋の噂
+[wait][clear]
+***************************************/
+    wait(ref_67c);
+    dialogFree(ref_67b);
+    b(label_74b);
+  label_680:
+    bne(var_0, 31, label_687);
+    bitSet(MBIT_KI_TRISHOKUJI);
+    ref_682 = dialogAlloc();
+    ref_683 = msgShow(msg_56);
+/***************************************
+３１
+回復の泉食べ物の販売の噂
+[wait][clear]
+***************************************/
+    wait(ref_683);
+    dialogFree(ref_682);
+    b(label_74b);
+  label_687:
+    bne(var_0, 32, label_68e);
+    bitSet(MBIT_KI_TRIKAISIN);
+    ref_689 = dialogAlloc();
+    ref_68a = msgShow(msg_57);
+/***************************************
+３２
+回復の泉変異噂
+[wait][clear]
+***************************************/
+    wait(ref_68a);
+    dialogFree(ref_689);
+    b(label_74b);
+  label_68e:
+    bne(var_0, 33, label_695);
+    bitSet(MBIT_KI_BATOLUBUKI);
+    ref_690 = dialogAlloc();
+    ref_691 = msgShow(msg_58);
+/***************************************
+３３
+月刊バトルマスター武器が当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_691);
+    dialogFree(ref_690);
+    b(label_74b);
+  label_695:
+    bne(var_0, 34, label_69c);
+    bitSet(MBIT_KI_BATOLUBOUGU);
+    ref_697 = dialogAlloc();
+    ref_698 = msgShow(msg_59);
+/***************************************
+３４
+月刊バトルマスター防具が当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_698);
+    dialogFree(ref_697);
+    b(label_74b);
+  label_69c:
+    bne(var_0, 35, label_6a3);
+    bitSet(MBIT_KI_BATOLUAKUSE);
+    ref_69e = dialogAlloc();
+    ref_69f = msgShow(msg_60);
+/***************************************
+３５
+月刊バトルマスター
+アクセサリーが当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_69f);
+    dialogFree(ref_69e);
+    b(label_74b);
+  label_6a3:
+    bne(var_0, 36, label_6aa);
+    bitSet(MBIT_KI_MAGICKITEM);
+    ref_6a5 = dialogAlloc();
+    ref_6a6 = msgShow(msg_61);
+/***************************************
+３６
+別冊ミラクル
+特殊アイテムが当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_6a6);
+    dialogFree(ref_6a5);
+    b(label_74b);
+  label_6aa:
+    bne(var_0, 37, label_6b1);
+    bitSet(MBIT_KI_MAGICKCADE);
+    ref_6ac = dialogAlloc();
+    ref_6ad = msgShow(msg_62);
+/***************************************
+３７
+別冊ミラクル
+マジックカードが当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_6ad);
+    dialogFree(ref_6ac);
+    b(label_74b);
+  label_6b1:
+    bne(var_0, 38, label_6b8);
+    bitSet(MBIT_KI_PELPELBUKI);
+    ref_6b3 = dialogAlloc();
+    ref_6b4 = msgShow(msg_63);
+/***************************************
+３８
+ファンタジーワールド
+武器が当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_6b4);
+    dialogFree(ref_6b3);
+    b(label_74b);
+  label_6b8:
+    bne(var_0, 39, label_6bf);
+    bitSet(MBIT_KI_PELPELBOUGU);
+    ref_6ba = dialogAlloc();
+    ref_6bb = msgShow(msg_64);
+/***************************************
+３９
+ファンタジーワールド
+防具が当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_6bb);
+    dialogFree(ref_6ba);
+    b(label_74b);
+  label_6bf:
+    bne(var_0, 40, label_6c6);
+    bitSet(MBIT_KI_PELPELAKUSE);
+    ref_6c1 = dialogAlloc();
+    ref_6c2 = msgShow(msg_65);
+/***************************************
+４０
+ファンタジーワールド
+アクセサリーが当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_6c2);
+    dialogFree(ref_6c1);
+    b(label_74b);
+  label_6c6:
+    bne(var_0, 41, label_6cd);
+    bitSet(MBIT_KI_PELPELITEM);
+    ref_6c8 = dialogAlloc();
+    ref_6c9 = msgShow(msg_66);
+/***************************************
+４１
+ファンタジーワールド
+特殊アイテムが当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_6c9);
+    dialogFree(ref_6c8);
+    b(label_74b);
+  label_6cd:
+    bne(var_0, 42, label_6d4);
+    bitSet(MBIT_KI_PELPELCADE);
+    ref_6cf = dialogAlloc();
+    ref_6d0 = msgShow(msg_67);
+/***************************************
+４２
+ファンタジーワールド
+マジックカードが当たる噂
+[wait][clear]
+***************************************/
+    wait(ref_6d0);
+    dialogFree(ref_6cf);
+    b(label_74b);
+  label_6d4:
+    bne(var_0, 43, label_6db);
+    bitSet(MBIT_KI_DEVIL1);
+    ref_6d6 = dialogAlloc();
+    ref_6d7 = msgShow(msg_68);
+/***************************************
+４３
+カス校
+カス校に噂悪魔テケテケ出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_6d7);
+    dialogFree(ref_6d6);
+    b(label_74b);
+  label_6db:
+    bne(var_0, 44, label_6e2);
+    bitSet(MBIT_KI_DEVIL2);
+    ref_6dd = dialogAlloc();
+    ref_6de = msgShow(msg_69);
+/***************************************
+４４
+下水道
+下水道に噂悪魔ツチノコ出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_6de);
+    dialogFree(ref_6dd);
+    b(label_74b);
+  label_6e2:
+    bne(var_0, 45, label_6e9);
+    bitSet(MBIT_KI_DEVIL3);
+    ref_6e4 = dialogAlloc();
+    ref_6e5 = msgShow(msg_70);
+/***************************************
+４５
+ＴＶ局
+ＴＶ局に噂悪魔カシマレイコ出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_6e5);
+    dialogFree(ref_6e4);
+    b(label_74b);
+  label_6e9:
+    bne(var_0, 46, label_6f0);
+    bitSet(MBIT_KI_DEVIL4);
+    ref_6eb = dialogAlloc();
+    ref_6ec = msgShow(msg_71);
+/***************************************
+４６
+ギガ・マッチョ
+噂悪魔１００ｋババア出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_6ec);
+    dialogFree(ref_6eb);
+    b(label_74b);
+  label_6f0:
+    bne(var_0, 47, label_6f7);
+    bitSet(MBIT_KI_DEVIL5);
+    ref_6f2 = dialogAlloc();
+    ref_6f3 = msgShow(msg_72);
+/***************************************
+４７
+ムー大陸
+噂悪魔ムッシー出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_6f3);
+    dialogFree(ref_6f2);
+    b(label_74b);
+  label_6f7:
+    bne(var_0, 48, label_6fe);
+    bitSet(MBIT_KI_DEVIL6);
+    ref_6f9 = dialogAlloc();
+    ref_6fa = msgShow(msg_73);
+/***************************************
+４８
+アジト船
+噂悪魔赤マント出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_6fa);
+    dialogFree(ref_6f9);
+    b(label_74b);
+  label_6fe:
+    bne(var_0, 49, label_705);
+    bitSet(MBIT_KI_DEVIL7);
+    ref_700 = dialogAlloc();
+    ref_701 = msgShow(msg_74);
+/***************************************
+４９
+アジト船噂悪魔青マント出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_701);
+    dialogFree(ref_700);
+    b(label_74b);
+  label_705:
+    bne(var_0, 50, label_70c);
+    bitSet(MBIT_KI_DEVIL8);
+    ref_707 = dialogAlloc();
+    ref_708 = msgShow(msg_75);
+/***************************************
+５０
+ギガ・マッチョ
+噂悪魔２００ｋジジイ出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_708);
+    dialogFree(ref_707);
+    b(label_74b);
+  label_70c:
+    bne(var_0, 51, label_713);
+    bitSet(MBIT_KI_DEVIL9);
+    ref_70e = dialogAlloc();
+    ref_70f = msgShow(msg_76);
+/***************************************
+５１
+ムー大陸
+噂悪魔呪いのタクシー出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_70f);
+    dialogFree(ref_70e);
+    b(label_74b);
+  label_713:
+    bne(var_0, 52, label_71a);
+    bitSet(MBIT_KI_DEVIL10);
+    ref_715 = dialogAlloc();
+    ref_716 = msgShow(msg_77);
+/***************************************
+５２
+防空壕噂悪魔くだん出現の噂
+[wait][clear]
+***************************************/
+    wait(ref_716);
+    dialogFree(ref_715);
+    b(label_74b);
+  label_71a:
+    bne(var_0, 53, label_721);
+    bitSet(MBIT_KI_DENNSETU);
+    ref_71c = dialogAlloc();
+    ref_71d = msgShow(msg_78);
+/***************************************
+５３
+その他伝説の武器職人の噂
+[wait][clear]
+***************************************/
+    wait(ref_71d);
+    dialogFree(ref_71c);
+    b(label_74b);
+  label_721:
+    bne(var_0, 54, label_728);
+    bitSet(MBIT_KI_NorETOUJO);
+    ref_723 = dialogAlloc();
+    ref_724 = msgShow(msg_79);
+/***************************************
+５４
+その他南条、エリー、出現噂
+[wait][clear]
+***************************************/
+    wait(ref_724);
+    dialogFree(ref_723);
+    b(label_74b);
+  label_728:
+    bne(var_0, 55, label_72f);
+    bitSet(MBIT_KI_HANAKOTOBA);
+    ref_72a = dialogAlloc();
+    ref_72b = msgShow(msg_80);
+/***************************************
+５５
+青葉公園花がメッセージを語る
+[wait][clear]
+***************************************/
+    wait(ref_72b);
+    dialogFree(ref_72a);
+    b(label_74b);
+  label_72f:
+    bne(var_0, 56, label_736);
+    bitSet(MBIT_KI_TATUNOSIN);
+    ref_731 = dialogAlloc();
+    ref_732 = msgShow(msg_81);
+/***************************************
+５６
+珠「瑠城周防辰之進の噂
+[wait][clear]
+***************************************/
+    wait(ref_732);
+    dialogFree(ref_731);
+    b(label_74b);
+  label_736:
+    bne(var_0, 57, label_73d);
+    bitSet(MBIT_KI_MAIHIME);
+    ref_738 = dialogAlloc();
+    ref_739 = msgShow(msg_82);
+/***************************************
+５７
+珠「瑠城天野舞姫の噂
+[wait][clear]
+***************************************/
+    wait(ref_739);
+    dialogFree(ref_738);
+    b(label_74b);
+  label_73d:
+    bne(var_0, 58, label_744);
+    bitSet(MBIT_KI_ZODI2F);
+    ref_73f = dialogAlloc();
+    ref_740 = msgShow(msg_83);
+/***************************************
+５８
+クラブ・ゾディアックダンジョンの
+２階、構造変化の噂
+[wait][clear]
+***************************************/
+    wait(ref_740);
+    dialogFree(ref_73f);
+    b(label_74b);
+  label_744:
+    bne(var_0, 59, label_74b);
+    bitSet(MBIT_KI_GYPSTART);
+    ref_746 = dialogAlloc();
+    ref_747 = msgShow(msg_84);
+/***************************************
+５９
+珠「瑠ジニー
+珠「瑠ジニーでワンロン占いの噂
+[wait][clear]
+***************************************/
+    wait(ref_747);
+    dialogFree(ref_746);
+    b(label_74b);
+  label_74b:
+    b(label_524);
+    b(label_74d);
+  label_74d:
+}
+
+function EVENTSINKOU()
+{
+    controlDisable();
+  label_74f:
+    partyMemberCheck(var_0, ulala);
+    bne(var_0, 0, label_752);
+    b(label_755);
+  label_752:
+    bne(var_0, 1, label_755);
+    partyMemberRemove(ulala);
+    b(label_755);
+  label_755:
+    partyMemberCheck(var_0, katsuya);
+    bne(var_0, 0, label_758);
+    b(label_75b);
+  label_758:
+    bne(var_0, 1, label_75b);
+    partyMemberRemove(katsuya);
+    b(label_75b);
+  label_75b:
+    partyMemberCheck(var_0, baofu);
+    bne(var_0, 0, label_75e);
+    b(label_761);
+  label_75e:
+    bne(var_0, 1, label_761);
+    partyMemberRemove(baofu);
+    b(label_761);
+  label_761:
+    partyMemberCheck(var_0, nanjo);
+    bne(var_0, 0, label_764);
+    b(label_767);
+  label_764:
+    bne(var_0, 1, label_767);
+    partyMemberRemove(nanjo);
+    b(label_767);
+  label_767:
+    partyMemberCheck(var_0, elly);
+    bne(var_0, 0, label_76a);
+    b(label_76d);
+  label_76a:
+    bne(var_0, 1, label_76d);
+    partyMemberRemove(elly);
+    b(label_76d);
+  label_76d:
+    partyMemberCheck(var_0, tatsuya);
+    bne(var_0, 0, label_770);
+    b(label_773);
+  label_770:
+    bne(var_0, 1, label_773);
+    partyMemberRemove(tatsuya);
+    b(label_773);
+  label_773:
+    choiceSetResult(3);
+    ref_774 = dialogAlloc();
+    ref_775 = msgShow(msg_85);
+/***************************************
+ご用件は？
+[choice(4)]シナリオ番号を選択
+説明
+ＴＶ局イベント見る
+終了
+[end_choice][clear]
+***************************************/
+    ref_776 = textInputInit();
+    wait(ref_775);
+    dialogFree(ref_774);
+    wait(ref_776);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_77e);
+    b(label_7b3);
+    b(label_7ae);
+  label_77e:
+    bne(var_0, 1, label_781);
+    b(label_7ae);
+    b(label_7ae);
+  label_781:
+    bne(var_0, 2, label_7ab);
+    ref_782 = dialogChoiceAlloc();
+    ref_783 = msgShow(msg_86);
+/***************************************
+[tab]イベントを選択してください。
+[choice(5)]Ｅ００５Ｂ
+Ｅ００５Ｃ
+Ｅ００５Ｅ
+その他
+やめる
+[end_choice][clear]
+***************************************/
+    wait(ref_783);
+    dialogFree(ref_782);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_78a);
+    bitSet(EBIT_E005E);
+    b(label_7a9);
+  label_78a:
+    bne(var_0, 1, label_78d);
+    bitSet(EBIT_E005F);
+    b(label_7a9);
+  label_78d:
+    bne(var_0, 2, label_790);
+    bitSet(EBIT_E0061);
+    b(label_7a9);
+  label_790:
+    bne(var_0, 3, label_7a6);
+    ref_791 = dialogChoiceAlloc();
+    ref_792 = msgShow(msg_87);
+/***************************************
+[tab]選んでください。
+[choice(5)]Ｅ００６０
+Ｅ００６１
+Ｅ００６３
+Ｅ００６４
+やめる
+[end_choice][clear]
+***************************************/
+    wait(ref_792);
+    dialogFree(ref_791);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_799);
+    bitSet(EBIT_GATE2_MISS);
+    b(label_7a5);
+  label_799:
+    bne(var_0, 1, label_79c);
+    bitSet(EBIT_E0064);
+    b(label_7a5);
+  label_79c:
+    bne(var_0, 2, label_79f);
+    bitSet(EBIT_E0066);
+    b(label_7a5);
+  label_79f:
+    bne(var_0, 3, label_7a2);
+    bitSet(EBIT_E0067);
+    b(label_7a5);
+  label_7a2:
+    bne(var_0, 4, label_7a5);
+    b(label_c06);
+    b(label_7a5);
+  label_7a5:
+    b(label_7a9);
+  label_7a6:
+    bne(var_0, 4, label_7a9);
+    b(label_c06);
+    b(label_7a9);
+  label_7a9:
+    b(label_c06);
+    b(label_7ae);
+  label_7ab:
+    bne(var_0, 3, label_7ae);
+    b(label_c06);
+    b(label_7ae);
+  label_7ae:
+    ref_7ae = dialogAlloc();
+    ref_7af = msgShow(msg_88);
+/***************************************
+[color(yellow)]金田[color(white)]
+イベント進行に合わせた、
+フラグ設定、及びパーティキャラクターの設定を
+行うイベントデータです。
+[wait][clear][color(yellow)]金田[color(white)]
+ＨＰから、必要な番号を調べ、
+文字入力後、
+ソフトリセットで終了してください。
+[wait][clear][color(yellow)]金田[color(white)]
+そのまま他のイベントを開始すれば、
+状況に合わせたパーティ構成と、
+メッセージになっている筈です。
+[wait][clear]
+***************************************/
+    wait(ref_7af);
+    dialogFree(ref_7ae);
+    b(label_74f);
+  label_7b3:
+    ref_7b3 = textInputPrompt();
+    wait(ref_7b3);
+    textInputCompare(msg_89, var_0);
+    bne(var_0, 0, label_7bc);
+    ref_7b7 = dialogAlloc();
+    ref_7b8 = msgShow(msg_90);
+/***************************************
+該当する番号がありません。[wait][clear]
+***************************************/
+    wait(ref_7b8);
+    dialogFree(ref_7b7);
+    b(label_c06);
+  label_7bc:
+    bne(var_0, 1, label_7d9);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    ref_7d4 = dialogAlloc();
+    ref_7d5 = msgShow(msg_91);
+/***************************************
+セブンスクリア後に設定しました。
+[wait][clear]
+***************************************/
+    wait(ref_7d5);
+    dialogFree(ref_7d4);
+    b(label_c06);
+  label_7d9:
+    bne(var_0, 2, label_7f7);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    ref_7f2 = dialogAlloc();
+    ref_7f3 = msgShow(msg_92);
+/***************************************
+探偵事務所で初めて噂操作。
+終了後に設定しました。[wait][clear]
+***************************************/
+    wait(ref_7f3);
+    dialogFree(ref_7f2);
+    b(label_c06);
+  label_7f7:
+    bne(var_0, 3, label_817);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_812 = dialogAlloc();
+    ref_813 = msgShow(msg_93);
+/***************************************
+バーでパオフゥと会う。
+終了後に設定しました。
+
+***************************************/
+    wait(ref_813);
+    dialogFree(ref_812);
+    b(label_c06);
+  label_817:
+    bne(var_0, 4, label_838);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_833 = dialogAlloc();
+    ref_834 = msgShow(msg_94);
+/***************************************
+病院イベント終了後に
+設定しました。[wait][clear]
+***************************************/
+    wait(ref_834);
+    dialogFree(ref_833);
+    b(label_c06);
+  label_838:
+    bne(var_0, 5, label_857);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    ref_852 = dialogAlloc();
+    ref_853 = msgShow(msg_95);
+/***************************************
+飛行船イベント終了後に
+設定しました。[wait][clear]
+***************************************/
+    wait(ref_853);
+    dialogFree(ref_852);
+    b(label_c06);
+  label_857:
+    bne(var_0, 6, label_878);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(baofu);
+    ref_873 = dialogAlloc();
+    ref_874 = msgShow(msg_96);
+/***************************************
+キスメット出版イベント
+終了後に設定しました。[wait][clear]
+***************************************/
+    wait(ref_874);
+    dialogFree(ref_873);
+    b(label_c06);
+  label_878:
+    bne(var_0, 7, label_89c);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_897 = dialogAlloc();
+    ref_898 = msgShow(msg_97);
+/***************************************
+警察署イベント終了後に
+設定しました。[wait][clear]
+***************************************/
+    wait(ref_898);
+    dialogFree(ref_897);
+    b(label_c06);
+  label_89c:
+    bne(var_0, 8, label_8c1);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_8bc = dialogAlloc();
+    ref_8bd = msgShow(msg_98);
+/***************************************
+バーイベント終了。
+詐欺師確保後に設定しました。[wait][clear]
+***************************************/
+    wait(ref_8bd);
+    dialogFree(ref_8bc);
+    b(label_c06);
+  label_8c1:
+    bne(var_0, 9, label_8e8);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_8e3 = dialogAlloc();
+    ref_8e4 = msgShow(msg_99);
+/***************************************
+ベルベットルームで、
+うらら救出後に設定しました。[wait][clear]
+***************************************/
+    wait(ref_8e4);
+    dialogFree(ref_8e3);
+    b(label_c06);
+  label_8e8:
+    bne(var_0, 10, label_910);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_90b = dialogAlloc();
+    ref_90c = msgShow(msg_100);
+/***************************************
+ベルベットルームで、
+ノリコ救出後に設定しました。[wait][clear]
+***************************************/
+    wait(ref_90c);
+    dialogFree(ref_90b);
+    b(label_c06);
+  label_910:
+    bne(var_0, 11, label_939);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_934 = dialogAlloc();
+    ref_935 = msgShow(msg_101);
+/***************************************
+青葉公園イベント終了後に
+設定しました。[wait][clear]
+***************************************/
+    wait(ref_935);
+    dialogFree(ref_934);
+    b(label_c06);
+  label_939:
+    bne(var_0, 12, label_966);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(MBIT_KI_NorETOUJO);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    bitSet(MBIT_KE_NorETOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_961 = dialogAlloc();
+    ref_962 = msgShow(msg_102);
+/***************************************
+探偵事務所で、
+鍵を握る「男」と広めた。
+設定しました。[wait][clear]
+***************************************/
+    wait(ref_962);
+    dialogFree(ref_961);
+    b(label_c06);
+  label_966:
+    bne(var_0, 13, label_993);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(MBIT_KI_NorETOUJO);
+    bitSet(MBIT_HI_ERITOUJO);
+    bitSet(MBIT_KE_NorETOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    ref_98e = dialogAlloc();
+    ref_98f = msgShow(msg_103);
+/***************************************
+探偵事務所で、
+鍵を握る「女」と広めた。
+設定しました。[wait][clear]
+***************************************/
+    wait(ref_98f);
+    dialogFree(ref_98e);
+    b(label_c06);
+  label_993:
+    bne(var_0, 14, label_9cc);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    ref_9b6 = dialogChoiceAlloc();
+    ref_9b7 = msgShow(msg_104);
+/***************************************
+ペントハウスイベント終了後に設定します。
+ルートを選んでください。
+[choice(2)]南条ルート
+エリールート
+[end_choice][clear]
+***************************************/
+    wait(ref_9b7);
+    dialogFree(ref_9b6);
+    choiceGetResult(var_1);
+    bne(var_1, 0, label_9c3);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    bitSet(MBIT_KE_NorETOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(nanjo);
+    b(label_9cb);
+  label_9c3:
+    bne(var_1, 1, label_9cb);
+    bitSet(MBIT_HI_ERITOUJO);
+    bitSet(MBIT_KE_NorETOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(elly);
+    b(label_9cb);
+  label_9cb:
+    b(label_c06);
+  label_9cc:
+    bne(var_0, 15, label_a04);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    ref_9f0 = dialogChoiceAlloc();
+    ref_9f1 = msgShow(msg_105);
+/***************************************
+パオフゥアジトイベント終了後に設定。
+ルートを選んでください。
+[choice(2)]南条ルート
+エリールート
+[end_choice][clear]
+***************************************/
+    wait(ref_9f1);
+    dialogFree(ref_9f0);
+    choiceGetResult(var_1);
+    bne(var_1, 0, label_9fc);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(nanjo);
+    b(label_a03);
+  label_9fc:
+    bne(var_1, 1, label_a03);
+    bitSet(MBIT_HI_ERITOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(elly);
+    b(label_a03);
+  label_a03:
+    b(label_c06);
+  label_a04:
+    bne(var_0, 16, label_a3d);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    ref_a29 = dialogChoiceAlloc();
+    ref_a2a = msgShow(msg_106);
+/***************************************
+スマイル平坂終了後に設定。
+ルートを選んでください。
+[choice(2)]南条ルート
+エリールート
+[end_choice][clear]
+***************************************/
+    wait(ref_a2a);
+    dialogFree(ref_a29);
+    choiceGetResult(var_1);
+    bne(var_1, 0, label_a35);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(nanjo);
+    b(label_a3c);
+  label_a35:
+    bne(var_1, 1, label_a3c);
+    bitSet(MBIT_HI_ERITOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(elly);
+    b(label_a3c);
+  label_a3c:
+    b(label_c06);
+  label_a3d:
+    bne(var_0, 17, label_a77);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007A);
+    ref_a63 = dialogChoiceAlloc();
+    ref_a64 = msgShow(msg_107);
+/***************************************
+野外音楽堂終了後に設定。
+ルートを選んでください。
+[choice(2)]南条ルート
+エリールート
+[end_choice][clear]
+***************************************/
+    wait(ref_a64);
+    dialogFree(ref_a63);
+    choiceGetResult(var_1);
+    bne(var_1, 0, label_a6f);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(nanjo);
+    b(label_a76);
+  label_a6f:
+    bne(var_1, 1, label_a76);
+    bitSet(MBIT_HI_ERITOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(elly);
+    b(label_a76);
+  label_a76:
+    b(label_c06);
+  label_a77:
+    bne(var_0, 18, label_ab0);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007A);
+    bitSet(EBIT_E007B);
+    ref_a9e = dialogChoiceAlloc();
+    ref_a9f = msgShow(msg_108);
+/***************************************
+パオフゥアジト終了後に設定。
+ルートを選んでください。
+[choice(2)]南条ルート
+エリールート
+[end_choice][clear]
+***************************************/
+    wait(ref_a9f);
+    dialogFree(ref_a9e);
+    choiceGetResult(var_1);
+    bne(var_1, 0, label_aa9);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(nanjo);
+    b(label_aaf);
+  label_aa9:
+    bne(var_1, 1, label_aaf);
+    bitSet(MBIT_HI_ERITOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(elly);
+    b(label_aaf);
+  label_aaf:
+    b(label_c06);
+  label_ab0:
+    bne(var_0, 19, label_aec);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007A);
+    bitSet(EBIT_E007B);
+    bitSet(EBIT_E007F);
+    ref_ad8 = dialogChoiceAlloc();
+    ref_ad9 = msgShow(msg_109);
+/***************************************
+廃工場イベント終了後に設定。
+ルートを選んでください。
+[choice(2)]南条ルート
+エリールート
+[end_choice][clear]
+***************************************/
+    wait(ref_ad9);
+    dialogFree(ref_ad8);
+    choiceGetResult(var_1);
+    bne(var_1, 0, label_ae4);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(nanjo);
+    b(label_aeb);
+  label_ae4:
+    bne(var_1, 1, label_aeb);
+    bitSet(MBIT_HI_ERITOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(elly);
+    b(label_aeb);
+  label_aeb:
+    b(label_c06);
+  label_aec:
+    bne(var_0, 20, label_b29);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007A);
+    bitSet(EBIT_E007B);
+    bitSet(EBIT_E007F);
+    bitSet(EBIT_E008C);
+    ref_b15 = dialogChoiceAlloc();
+    ref_b16 = msgShow(msg_110);
+/***************************************
+海底遺跡終了後に設定。
+ルートを選んでください。
+[choice(2)]南条ルート
+エリールート
+[end_choice][clear]
+***************************************/
+    wait(ref_b16);
+    dialogFree(ref_b15);
+    choiceGetResult(var_1);
+    bne(var_1, 0, label_b21);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(nanjo);
+    b(label_b28);
+  label_b21:
+    bne(var_1, 1, label_b28);
+    bitSet(MBIT_HI_ERITOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(elly);
+    b(label_b28);
+  label_b28:
+    b(label_c06);
+  label_b29:
+    bne(var_0, 21, label_b67);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007A);
+    bitSet(EBIT_E007B);
+    bitSet(EBIT_E007F);
+    bitSet(EBIT_E008C);
+    bitSet(EBIT_E008F);
+    ref_b53 = dialogChoiceAlloc();
+    ref_b54 = msgShow(msg_111);
+/***************************************
+アラヤ神社終了後に設定。
+ルートを選んでください。
+[choice(2)]南条ルート
+エリールート
+[end_choice][clear]
+***************************************/
+    wait(ref_b54);
+    dialogFree(ref_b53);
+    choiceGetResult(var_1);
+    bne(var_1, 0, label_b5f);
+    bitSet(MBIT_HI_NANJOTOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(nanjo);
+    b(label_b66);
+  label_b5f:
+    bne(var_1, 1, label_b66);
+    bitSet(MBIT_HI_ERITOUJO);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(elly);
+    b(label_b66);
+  label_b66:
+    b(label_c06);
+  label_b67:
+    bne(var_0, 22, label_b9b);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007A);
+    bitSet(EBIT_E007B);
+    bitSet(EBIT_E007F);
+    bitSet(EBIT_E008C);
+    bitSet(EBIT_E008F);
+    bitSet(EBIT_E009F);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(tatsuya);
+    ref_b96 = dialogChoiceAlloc();
+    ref_b97 = msgShow(msg_112);
+/***************************************
+岩戸山イベント終了後に設定。
+[wait][clear]
+***************************************/
+    wait(ref_b97);
+    dialogFree(ref_b96);
+    b(label_c06);
+  label_b9b:
+    bne(var_0, 23, label_bd0);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007A);
+    bitSet(EBIT_E007B);
+    bitSet(EBIT_E007F);
+    bitSet(EBIT_E008C);
+    bitSet(EBIT_E008F);
+    bitSet(EBIT_E009F);
+    bitSet(EBIT_E00AF);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(tatsuya);
+    ref_bcb = dialogAlloc();
+    ref_bcc = msgShow(msg_113);
+/***************************************
+トリフネイベント終了後に設定。[wait][clear]
+***************************************/
+    wait(ref_bcc);
+    dialogFree(ref_bcb);
+    b(label_c06);
+  label_bd0:
+    bne(var_0, 24, label_c06);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E0045);
+    bitSet(EBIT_E0044);
+    bitSet(EBIT_E0043);
+    bitSet(EBIT_E003E);
+    bitSet(EBIT_E0038);
+    bitSet(EBIT_E0037_B);
+    bitSet(EBIT_E0037);
+    bitSet(EBIT_E0033);
+    bitSet(EBIT_E002B);
+    bitSet(EBIT_E001F);
+    bitSet(EBIT_E0018);
+    bitSet(EBIT_E0016);
+    bitSet(EBIT_E0015);
+    bitSet(EBIT_E1000);
+    bitSet(EBIT_E1001);
+    bitSet(EBIT_E0003_B);
+    bitSet(EBIT_E0004_B);
+    bitSet(EBIT_FUJII);
+    bitSet(EBIT_JOHO1);
+    bitSet(EBIT_JOHO2);
+    bitSet(EBIT_JOHO3);
+    bitSet(EBIT_JOHO4);
+    bitSet(EBIT_JOHO5);
+    bitSet(EBIT_JOHO6);
+    bitSet(EBIT_JOHO7);
+    bitSet(EBIT_0005);
+    bitSet(EBIT_E0006);
+    bitSet(EBIT_KASIHARA);
+    bitSet(EBIT_OKAMURA);
+    bitSet(EBIT_E000D);
+    bitSet(EBIT_E0010);
+    bitSet(EBIT_GETKEY1);
+    bitSet(EBIT_SEVENS_KYOMEI);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007A);
+    bitSet(EBIT_E007B);
+    bitSet(EBIT_E007F);
+    bitSet(EBIT_E008C);
+    bitSet(EBIT_E008F);
+    bitSet(EBIT_E009F);
+    bitSet(EBIT_E00AF);
+    bitSet(EBIT_E00B8);
+    partyMemberAdd(ulala);
+    partyMemberAdd(katsuya);
+    partyMemberAdd(baofu);
+    partyMemberAdd(tatsuya);
+    ref_c01 = dialogAlloc();
+    ref_c02 = msgShow(msg_114);
+/***************************************
+珠閒瑠城終了後に設定。[wait][clear]
+***************************************/
+    wait(ref_c02);
+    dialogFree(ref_c01);
+    b(label_c06);
+  label_c06:
+    controlEnable();
+}
+
+function HA_SHOP_TALK_0()
+{
+    ref_c08 = dialogAlloc();
+    ref_c09 = msgShow(msg_115);
+/***************************************
+会話データ[wait][clear]
+***************************************/
+    wait(ref_c09);
+    dialogFree(ref_c08);
+}
+
+function HA_SHOP_END_0()
+{
+    ref_c0d = dialogAlloc();
+    ref_c0e = msgShow(msg_116);
+/***************************************
+別れメッセージ[wait][clear]
+***************************************/
+    wait(ref_c0e);
+    dialogFree(ref_c0d);
+    bitGet(var_0, MBIT_KI_MONSYOU);
+    msgVar_Number(msgvar_0, var_0);
+    bitGet(var_0, MBIT_KI_JIKANSELL);
+    msgVar_Number(msgvar_1, var_0);
+    bitGet(var_0, MBIT_KI_JIKANDUP);
+    msgVar_Number(msgvar_2, var_0);
+    bitGet(var_0, MBIT_KI_KAORIAROMA);
+    msgVar_Number(msgvar_3, var_0);
+    bitGet(var_0, MBIT_KI_KAORIHENNI);
+    msgVar_Number(msgvar_4, var_0);
+    bitGet(var_0, MBIT_KI_SIRAMAN);
+    msgVar_Number(msgvar_5, var_0);
+    bitGet(var_0, MBIT_KI_SIRAHENNI);
+    msgVar_Number(msgvar_6, var_0);
+    bitGet(var_0, MBIT_KI_TOAARM);
+    msgVar_Number(msgvar_7, var_0);
+    ref_c21 = dialogAlloc();
+    ref_c22 = msgShow(msg_117);
+/***************************************
+[var(msg_var_0)][var(msg_var_1)][var(msg_var_2)][var(msg_var_3)][var(msg_var_4)][var(msg_var_5)][var(msg_var_6)][var(msg_var_7)]
+***************************************/
+    wait(ref_c22);
+    bitGet(var_0, MBIT_KI_TOADEF);
+    msgVar_Number(msgvar_0, var_0);
+    bitGet(var_0, MBIT_KI_TONYITEM);
+    msgVar_Number(msgvar_1, var_0);
+    bitGet(var_0, MBIT_KI_TONYACCE);
+    msgVar_Number(msgvar_2, var_0);
+    bitGet(var_0, MBIT_KI_MUSLOT);
+    msgVar_Number(msgvar_3, var_0);
+    bitGet(var_0, MBIT_KI_MUBJ);
+    msgVar_Number(msgvar_4, var_0);
+    bitGet(var_0, MBIT_KI_MUPOKER);
+    msgVar_Number(msgvar_5, var_0);
+    bitGet(var_0, MBIT_KI_GIGACD1);
+    msgVar_Number(msgvar_6, var_0);
+    bitGet(var_0, MBIT_KI_GIGACD2);
+    msgVar_Number(msgvar_7, var_0);
+    ref_c34 = msgShow(msg_118);
+/***************************************
+[var(msg_var_0)][var(msg_var_1)][var(msg_var_2)][var(msg_var_3)][var(msg_var_4)][var(msg_var_5)][var(msg_var_6)][var(msg_var_7)]
+***************************************/
+    wait(ref_c34);
+    bitGet(var_0, MBIT_KI_BARARM);
+    msgVar_Number(msgvar_0, var_0);
+    bitGet(var_0, MBIT_KI_BARHENNI);
+    msgVar_Number(msgvar_1, var_0);
+    bitGet(var_0, MBIT_KI_ROSADEF);
+    msgVar_Number(msgvar_2, var_0);
+    bitGet(var_0, MBIT_KI_ROSAHENNI);
+    msgVar_Number(msgvar_3, var_0);
+    bitGet(var_0, MBIT_KI_ETEESTHE);
+    msgVar_Number(msgvar_4, var_0);
+    bitGet(var_0, MBIT_KI_ETEHENNI);
+    msgVar_Number(msgvar_5, var_0);
+    bitGet(var_0, MBIT_KI_GYPAISHO1);
+    msgVar_Number(msgvar_6, var_0);
+    bitGet(var_0, MBIT_KI_GYPAISHO2);
+    msgVar_Number(msgvar_7, var_0);
+    ref_c46 = msgShow(msg_119);
+/***************************************
+[var(msg_var_0)][var(msg_var_1)][var(msg_var_2)][var(msg_var_3)][var(msg_var_4)][var(msg_var_5)][var(msg_var_6)][var(msg_var_7)]
+
+***************************************/
+    wait(ref_c46);
+    bitGet(var_0, MBIT_KI_CLEARM);
+    msgVar_Number(msgvar_0, var_0);
+    bitGet(var_0, MBIT_KI_CLEDEF);
+    msgVar_Number(msgvar_1, var_0);
+    bitGet(var_0, MBIT_KI_CLEAOBA);
+    msgVar_Number(msgvar_2, var_0);
+    bitGet(var_0, MBIT_KI_JEWDEVE);
+    msgVar_Number(msgvar_3, var_0);
+    bitGet(var_0, MBIT_KI_JEWKOUNAN);
+    msgVar_Number(msgvar_4, var_0);
+    bitGet(var_0, MBIT_KI_SKYMAP);
+    msgVar_Number(msgvar_5, var_0);
+    bitGet(var_0, MBIT_KI_TRISHOKUJI);
+    msgVar_Number(msgvar_6, var_0);
+    bitGet(var_0, MBIT_KI_TRIKAISIN);
+    msgVar_Number(msgvar_7, var_0);
+    ref_c58 = msgShow(msg_120);
+/***************************************
+[var(msg_var_0)][var(msg_var_1)][var(msg_var_2)][var(msg_var_3)][var(msg_var_4)][var(msg_var_5)][var(msg_var_6)][var(msg_var_7)]
+***************************************/
+    wait(ref_c58);
+    bitGet(var_0, MBIT_KI_BATOLUBUKI);
+    msgVar_Number(msgvar_0, var_0);
+    bitGet(var_0, MBIT_KI_BATOLUBOUGU);
+    msgVar_Number(msgvar_1, var_0);
+    bitGet(var_0, MBIT_KI_BATOLUAKUSE);
+    msgVar_Number(msgvar_2, var_0);
+    bitGet(var_0, MBIT_KI_MAGICKITEM);
+    msgVar_Number(msgvar_3, var_0);
+    bitGet(var_0, MBIT_KI_MAGICKCADE);
+    msgVar_Number(msgvar_4, var_0);
+    bitGet(var_0, MBIT_KI_PELPELBUKI);
+    msgVar_Number(msgvar_5, var_0);
+    bitGet(var_0, MBIT_KI_PELPELBOUGU);
+    msgVar_Number(msgvar_6, var_0);
+    bitGet(var_0, MBIT_KI_PELPELAKUSE);
+    msgVar_Number(msgvar_7, var_0);
+    ref_c6a = msgShow(msg_121);
+/***************************************
+[var(msg_var_0)][var(msg_var_1)][var(msg_var_2)][var(msg_var_3)][var(msg_var_4)][var(msg_var_5)][var(msg_var_6)][var(msg_var_7)]
+***************************************/
+    wait(ref_c6a);
+    bitGet(var_0, MBIT_KI_PELPELITEM);
+    msgVar_Number(msgvar_0, var_0);
+    bitGet(var_0, MBIT_KI_PELPELCADE);
+    msgVar_Number(msgvar_1, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL1);
+    msgVar_Number(msgvar_2, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL2);
+    msgVar_Number(msgvar_3, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL3);
+    msgVar_Number(msgvar_4, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL4);
+    msgVar_Number(msgvar_5, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL5);
+    msgVar_Number(msgvar_6, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL6);
+    msgVar_Number(msgvar_7, var_0);
+    ref_c7c = msgShow(msg_122);
+/***************************************
+[var(msg_var_0)][var(msg_var_1)][var(msg_var_2)][var(msg_var_3)][var(msg_var_4)][var(msg_var_5)][var(msg_var_6)][var(msg_var_7)]
+
+***************************************/
+    wait(ref_c7c);
+    bitGet(var_0, MBIT_KI_DEVIL7);
+    msgVar_Number(msgvar_0, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL8);
+    msgVar_Number(msgvar_1, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL9);
+    msgVar_Number(msgvar_2, var_0);
+    bitGet(var_0, MBIT_KI_DEVIL10);
+    msgVar_Number(msgvar_3, var_0);
+    bitGet(var_0, MBIT_KI_DENNSETU);
+    msgVar_Number(msgvar_4, var_0);
+    bitGet(var_0, MBIT_KI_NorETOUJO);
+    msgVar_Number(msgvar_5, var_0);
+    bitGet(var_0, MBIT_KI_HANAKOTOBA);
+    msgVar_Number(msgvar_6, var_0);
+    bitGet(var_0, MBIT_KI_TATUNOSIN);
+    msgVar_Number(msgvar_7, var_0);
+    ref_c8e = msgShow(msg_123);
+/***************************************
+[var(msg_var_0)][var(msg_var_1)][var(msg_var_2)][var(msg_var_3)][var(msg_var_4)][var(msg_var_5)][var(msg_var_6)][var(msg_var_7)]
+***************************************/
+    wait(ref_c8e);
+    bitGet(var_0, MBIT_KI_MAIHIME);
+    msgVar_Number(msgvar_0, var_0);
+    bitGet(var_0, MBIT_KI_ZODI2F);
+    msgVar_Number(msgvar_1, var_0);
+    bitGet(var_0, MBIT_KI_GYPSTART);
+    msgVar_Number(msgvar_2, var_0);
+    ref_c96 = msgShow(msg_124);
+/***************************************
+[var(msg_var_0)][var(msg_var_1)][var(msg_var_2)]
+[suou][tab][tatsuya][tab][tatsu][tab][wait][clear]
+***************************************/
+    wait(ref_c96);
+    dialogFree(ref_c21);
+    controlEnable();
+}
+
+function HA_SHOP_EXPLAIN_0()
+{
+    ref_c9b = dialogAlloc();
+    ref_c9c = msgShow(msg_125);
+/***************************************
+説明メッセージ[wait][clear]
+***************************************/
+    wait(ref_c9c);
+    dialogFree(ref_c9b);
+}
+
+function HA_SHOP_RESTART_0()
+{
+    ref_ca0 = dialogAlloc();
+    ref_ca1 = msgShow(msg_126);
+/***************************************
+他には？
+[wait][clear]
+***************************************/
+    wait(ref_ca1);
+    dialogFree(ref_ca0);
+}
+
+function SAGASE()
+{
+    controlDisable();
+    unitFacePlayer(npc3);
+    choiceSetResult(4);
+    ref_ca8 = dialogAlloc();
+    ref_ca9 = msgShow(msg_127);
+/***************************************
+[tab]人捜しイベント
+[choice(5)]全依頼ビットオン
+個別オォォーーン
+全ショップ機能ＯＮ
+[color(orange)]ＮＥＸＴ（片岡専用）[color(white)]
+終了
+[end_choice][clear]
+***************************************/
+    wait(ref_ca9);
+    dialogFree(ref_ca8);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_cc4);
+    bitSet(EBIT_E0043);
+    bitSet(MBIT_KE_GYPSTART);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007B);
+    bitSet(EBIT_E007B);
+    bitSet(MBIT_NEKO_SAGASI);
+    bitSet(EBIT_E009F);
+    bitSet(EBIT_E009F);
+    bitSet(EBIT_E009F);
+    bitSet(EBIT_E00AF);
+    bitSet(EBIT_E00AF);
+    bitSet(MBIT_bukishoku_irai);
+    ref_cbe = dialogAlloc();
+    ref_cbf = msgShow(msg_128);
+/***************************************
+[tab]全依頼表示ビットオン
+[wait][clear]
+***************************************/
+    wait(ref_cbf);
+    dialogFree(ref_cbe);
+    b(label_db5);
+    b(label_d0e);
+  label_cc4:
+    bne(var_0, 1, label_cd4);
+    choiceSetResult(1);
+    ref_cc6 = dialogAlloc();
+    ref_cc7 = msgShow(msg_129);
+/***************************************
+番号を選択すべし（詳細は片岡ＨＰ）
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    ref_cc8 = textInputInit();
+    wait(ref_cc7);
+    dialogFree(ref_cc6);
+    wait(ref_cc8);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_cd0);
+    b(label_d0e);
+    b(label_cd3);
+  label_cd0:
+    bne(var_0, 1, label_cd3);
+    b(label_db5);
+    b(label_cd3);
+  label_cd3:
+    b(label_d0e);
+  label_cd4:
+    bne(var_0, 2, label_d08);
+    bitSet(MBIT_KE_JIKANSELL);
+    bitSet(MBIT_KE_JIKANDUP);
+    bitSet(MBIT_KE_KAORIAROMA);
+    bitSet(MBIT_HI_JIKANSELL);
+    bitSet(MBIT_HI_JIKANDUP);
+    bitSet(MBIT_HI_KAORIAROMA);
+    bitSet(MBIT_KE_SIRAMAN);
+    bitSet(MBIT_KE_TOA);
+    bitSet(MBIT_KE_TONY);
+    bitSet(MBIT_KE_BARARM);
+    bitSet(MBIT_KE_ROSADEF);
+    bitSet(MBIT_KE_ETEESTHE);
+    bitSet(MBIT_KE_GYPAISHO1);
+    bitSet(MBIT_KE_GYPAISHO2);
+    bitSet(MBIT_HI_GYPAISHO1);
+    bitSet(MBIT_HI_GYPAISHO2);
+    bitSet(MBIT_KE_CLE);
+    bitSet(MBIT_KE_JEWDEVE);
+    bitSet(MBIT_KE_SKYMAP);
+    bitSet(MBIT_KE_TRISHOKUJI);
+    bitSet(MBIT_HI_TRISHOKUJI);
+    bitSet(MBIT_DBATOLU);
+    bitSet(MBIT_DMAGICK);
+    bitSet(MBIT_DPELPEL);
+    bitSet(MBIT_KE_DENNSETU);
+    bitSet(MBIT_KE_TATUNOSIN);
+    bitSet(MBIT_KE_MAIHIME);
+    bitSet(MBIT_KE_GYPSTART);
+    bitSet(MBIT_KUZU_HATUNEKO);
+    bitSet(MBIT_TRI_HENKEN);
+    bitSet(MBIT_HI_TRIKAISIN);
+    bitSet(MBIT_KE_MU);
+    bitSet(MBIT_HI_SIRAMAN);
+    bitSet(MBIT_HI_TOAARM);
+    bitSet(MBIT_HI_TONYITEM);
+    bitSet(MBIT_HI_BARARM);
+    bitSet(MBIT_HI_KAORIAROMA);
+    bitSet(MBIT_HI_ETEESTHE);
+    bitSet(MBIT_HI_CLEARM);
+    bitSet(MBIT_HI_CLEDEF);
+    bitSet(MBIT_HI_JEWDEVE);
+    bitSet(MBIT_HI_SKYMAP);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E008C);
+    bitSet(EBIT_E00B8);
+    ref_d02 = dialogAlloc();
+    ref_d03 = msgShow(msg_130);
+/***************************************
+[tab]噂の関係するショップ用ビット
+[tab]全てオン（変異は除く）
+[tab]おまけ[tab]ネコマタ登場＋
+[tab][tab]伝説の武器職人と清忠殺害犯人ビットオン
+[wait][clear]
+***************************************/
+    wait(ref_d03);
+    dialogFree(ref_d02);
+    b(label_db5);
+    b(label_d0e);
+  label_d08:
+    bne(var_0, 3, label_d0b);
+    b(label_d98);
+    b(label_d0e);
+  label_d0b:
+    bne(var_0, 4, label_d0e);
+    b(label_db5);
+    b(label_d0e);
+  label_d0e:
+    ref_d0e = textInputPrompt();
+    wait(ref_d0e);
+    textInputCompare(msg_131, var_0);
+    bne(var_0, 0, label_d18);
+    ref_d12 = dialogAlloc();
+    ref_d13 = msgShow(msg_132);
+/***************************************
+範囲外の数値です。
+やり直し。
+注：１～５はデフォルト表示。
+[wait][clear]
+***************************************/
+    wait(ref_d13);
+    dialogFree(ref_d12);
+    b(label_db5);
+    b(label_d98);
+  label_d18:
+    bne(var_0, 1, label_d20);
+    bitSet(EBIT_E0043);
+    ref_d1a = dialogAlloc();
+    ref_d1b = msgShow(msg_133);
+/***************************************
+６
+スズキユウイチ
+[wait][clear]
+***************************************/
+    wait(ref_d1b);
+    dialogFree(ref_d1a);
+    b(label_db5);
+    b(label_d98);
+  label_d20:
+    bne(var_0, 2, label_d28);
+    bitSet(MBIT_KE_GYPSTART);
+    ref_d22 = dialogAlloc();
+    ref_d23 = msgShow(msg_134);
+/***************************************
+７
+イケナカユウタ
+[wait][clear]
+***************************************/
+    wait(ref_d23);
+    dialogFree(ref_d22);
+    b(label_db5);
+    b(label_d98);
+  label_d28:
+    bne(var_0, 3, label_d30);
+    bitSet(EBIT_E0046);
+    ref_d2a = dialogAlloc();
+    ref_d2b = msgShow(msg_135);
+/***************************************
+８
+ハンフリー
+[wait][clear]
+***************************************/
+    wait(ref_d2b);
+    dialogFree(ref_d2a);
+    b(label_db5);
+    b(label_d98);
+  label_d30:
+    bne(var_0, 4, label_d38);
+    bitSet(EBIT_E006F);
+    ref_d32 = dialogAlloc();
+    ref_d33 = msgShow(msg_136);
+/***************************************
+９
+シミズショウイチ
+タナカシズエ
+[wait][clear]
+***************************************/
+    wait(ref_d33);
+    dialogFree(ref_d32);
+    b(label_db5);
+    b(label_d98);
+  label_d38:
+    bne(var_0, 5, label_d40);
+    bitSet(EBIT_E006F);
+    ref_d3a = dialogAlloc();
+    ref_d3b = msgShow(msg_137);
+/***************************************
+１０
+ナガセタイチ
+[wait][clear]
+***************************************/
+    wait(ref_d3b);
+    dialogFree(ref_d3a);
+    b(label_db5);
+    b(label_d98);
+  label_d40:
+    bne(var_0, 6, label_d48);
+    bitSet(EBIT_E006F);
+    ref_d42 = dialogAlloc();
+    ref_d43 = msgShow(msg_138);
+/***************************************
+１１
+ヨコヤマケイコ
+[wait][clear]
+***************************************/
+    wait(ref_d43);
+    dialogFree(ref_d42);
+    b(label_db5);
+    b(label_d98);
+  label_d48:
+    bne(var_0, 7, label_d50);
+    bitSet(EBIT_E0077);
+    ref_d4a = dialogAlloc();
+    ref_d4b = msgShow(msg_139);
+/***************************************
+１２
+クドウサオリ
+[wait][clear]
+***************************************/
+    wait(ref_d4b);
+    dialogFree(ref_d4a);
+    b(label_db5);
+    b(label_d98);
+  label_d50:
+    bne(var_0, 8, label_d58);
+    bitSet(EBIT_E007B);
+    ref_d52 = dialogAlloc();
+    ref_d53 = msgShow(msg_140);
+/***************************************
+１３
+イイダサトミ
+[wait][clear]
+***************************************/
+    wait(ref_d53);
+    dialogFree(ref_d52);
+    b(label_db5);
+    b(label_d98);
+  label_d58:
+    bne(var_0, 9, label_d60);
+    bitSet(EBIT_E007B);
+    ref_d5a = dialogAlloc();
+    ref_d5b = msgShow(msg_141);
+/***************************************
+１４
+キノシタジュンジ
+[wait][clear]
+***************************************/
+    wait(ref_d5b);
+    dialogFree(ref_d5a);
+    b(label_db5);
+    b(label_d98);
+  label_d60:
+    bne(var_0, 10, label_d68);
+    bitSet(MBIT_NEKO_SAGASI);
+    ref_d62 = dialogAlloc();
+    ref_d63 = msgShow(msg_142);
+/***************************************
+１５
+ネコマタ
+[wait][clear]
+***************************************/
+    wait(ref_d63);
+    dialogFree(ref_d62);
+    b(label_db5);
+    b(label_d98);
+  label_d68:
+    bne(var_0, 11, label_d70);
+    bitSet(EBIT_E009F);
+    ref_d6a = dialogAlloc();
+    ref_d6b = msgShow(msg_143);
+/***************************************
+１６
+ニシタニセツ
+[wait][clear]
+***************************************/
+    wait(ref_d6b);
+    dialogFree(ref_d6a);
+    b(label_db5);
+    b(label_d98);
+  label_d70:
+    bne(var_0, 12, label_d78);
+    bitSet(EBIT_E009F);
+    ref_d72 = dialogAlloc();
+    ref_d73 = msgShow(msg_144);
+/***************************************
+１７
+ナカタニケンイチ
+[wait][clear]
+***************************************/
+    wait(ref_d73);
+    dialogFree(ref_d72);
+    b(label_db5);
+    b(label_d98);
+  label_d78:
+    bne(var_0, 13, label_d80);
+    bitSet(EBIT_E009F);
+    ref_d7a = dialogAlloc();
+    ref_d7b = msgShow(msg_145);
+/***************************************
+１８
+サイトウジュン
+[wait][clear]
+***************************************/
+    wait(ref_d7b);
+    dialogFree(ref_d7a);
+    b(label_db5);
+    b(label_d98);
+  label_d80:
+    bne(var_0, 14, label_d88);
+    bitSet(EBIT_E00AF);
+    ref_d82 = dialogAlloc();
+    ref_d83 = msgShow(msg_146);
+/***************************************
+１９
+マツシタヒロミ
+[wait][clear]
+***************************************/
+    wait(ref_d83);
+    dialogFree(ref_d82);
+    b(label_db5);
+    b(label_d98);
+  label_d88:
+    bne(var_0, 15, label_d90);
+    bitSet(EBIT_E00AF);
+    ref_d8a = dialogAlloc();
+    ref_d8b = msgShow(msg_147);
+/***************************************
+２０
+イケダジュンコ
+[wait][clear]
+***************************************/
+    wait(ref_d8b);
+    dialogFree(ref_d8a);
+    b(label_db5);
+    b(label_d98);
+  label_d90:
+    bne(var_0, 16, label_d98);
+    bitSet(MBIT_bukishoku_irai);
+    ref_d92 = dialogAlloc();
+    ref_d93 = msgShow(msg_148);
+/***************************************
+２１
+アサノタクミ（仮）
+[wait][clear]
+***************************************/
+    wait(ref_d93);
+    dialogFree(ref_d92);
+    b(label_db5);
+    b(label_d98);
+  label_d98:
+    choiceSetResult(2);
+    ref_d99 = dialogAlloc();
+    ref_d9a = msgShow(msg_149);
+/***************************************
+[tab]全ショップ・マップ屋イベント
+[choice(3)]トリフネ１踏破・完成
+トリフネ２踏破・完成
+終了
+[end_choice][clear]
+***************************************/
+    wait(ref_d9a);
+    dialogFree(ref_d99);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_da8);
+    bitClear(IBIT_BLK_MAP_11);
+    bitSet(IBIT_CMP_MAP_11);
+    bitSet(MBIT_OK_MAP_11);
+    ref_da2 = dialogAlloc();
+    ref_da3 = msgShow(msg_150);
+/***************************************
+[tab]トリフネ１踏破ビットオン
+[tab]地図完成ビットオン
+[wait][clear]
+***************************************/
+    wait(ref_da3);
+    dialogFree(ref_da2);
+    b(label_db5);
+    b(label_db5);
+  label_da8:
+    bne(var_0, 1, label_db2);
+    bitClear(IBIT_BLK_MAP_2C);
+    bitSet(IBIT_CMP_MAP_2C);
+    bitSet(MBIT_OK_MAP_2C);
+    ref_dac = dialogAlloc();
+    ref_dad = msgShow(msg_151);
+/***************************************
+[tab]トリフネ２踏破ビットオン
+[tab]地図完成ビットオン
+[wait][clear]
+***************************************/
+    wait(ref_dad);
+    dialogFree(ref_dac);
+    b(label_db5);
+    b(label_db5);
+  label_db2:
+    bne(var_0, 2, label_db5);
+    b(label_db5);
+    b(label_db5);
+  label_db5:
+    unitRestoreFacing(npc3);
+    controlEnable();
+}

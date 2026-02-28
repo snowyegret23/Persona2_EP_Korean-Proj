@@ -1,0 +1,7 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 語るには飽いた…
+ 来たまえ…
+[sync][wait]
+[end]

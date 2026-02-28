@@ -1,0 +1,48 @@
+function START()
+{
+    controlDisable();
+    ref_1 = dialogAlloc();
+    ref_2 = msgShow(msg_0);
+/***************************************
+[color(yellow)]Locked Door[color(white)]
+[tab]Please enter the password.
+[wait][clear]
+***************************************/
+    wait(ref_2);
+    dialogFree(ref_1);
+    ref_5 = textInputInit();
+    textInputPrompt();
+    wait(ref_5);
+    textInputCompare(msg_1, var_0);
+    bne(var_0, 0, label_11);
+    delayClear();
+    delayWait(10);
+    ref_c = dialogAlloc();
+    ref_d = msgShow(msg_2);
+/***************************************
+[color(yellow)]Locked Door[color(white)]
+[tab]Invalid password.
+[tab]Please enter the correct password.
+[wait][clear]
+***************************************/
+    wait(ref_d);
+    dialogFree(ref_c);
+    b(label_1a);
+  label_11:
+    delayClear();
+    delayWait(10);
+    sndMusicPlay(sound_1196, 127);
+    ref_14 = dialogAlloc();
+    ref_15 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Locked Door[color(white)]
+[tab]The door has been unlocked.
+[wait][clear]
+***************************************/
+    wait(ref_15);
+    dialogFree(ref_14);
+    bitSet(DBIT_HAI_PASS);
+    b(label_1a);
+  label_1a:
+    controlEnable();
+}

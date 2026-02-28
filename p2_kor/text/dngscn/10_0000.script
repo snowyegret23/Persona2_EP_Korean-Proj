@@ -1,0 +1,68 @@
+function START()
+{
+    controlDisable();
+    bitGet(var_0, VBIT_DNG10_HASHI);
+    bne(var_0, 0, label_24);
+    ref_3 = dialogAlloc();
+    ref_4 = msgShow(msg_0);
+/***************************************
+[color(green)]There is a switch.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_4);
+    dialogFree(ref_3);
+    delayClear();
+    delayWait(10);
+    choiceSetResult(1);
+    op_105(1);
+    ref_b = bustupLoad(bustup_1);
+    bustupWait(ref_b);
+    ref_d = bustupAlloc(ref_b, center, rgb(0,0,0));
+    bustupFade(ref_d, rgb(128,0,0), 30);
+    ref_f = dialogChoiceAlloc();
+    ref_10 = msgShow(msg_1);
+/***************************************
+[color(green)]Will you press the switch?[color(white)]
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_10);
+    dialogFree(ref_f);
+    ref_13 = bustupFade(ref_d, rgb(0,0,0), 10);
+    bustupWait(ref_13);
+    bustupFree(ref_d);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_21);
+    delayClear();
+    delayWait(10);
+    bitSet(VBIT_DNG10_HASHI);
+    sndMusicPlay(sound_1216, 127);
+    ref_1c = dialogAlloc();
+    ref_1d = msgShow(msg_2);
+/***************************************
+[color(green)]The movable bridge has been raised.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_1d);
+    dialogFree(ref_1c);
+    b(label_23);
+  label_21:
+    bne(var_0, 1, label_23);
+    b(label_23);
+  label_23:
+    b(label_2a);
+  label_24:
+    bne(var_0, 1, label_2a);
+    ref_25 = dialogAlloc();
+    ref_26 = msgShow(msg_3);
+/***************************************
+[color(green)]The movable bridge is raised.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_26);
+    dialogFree(ref_25);
+    b(label_2a);
+  label_2a:
+    controlEnable();
+}

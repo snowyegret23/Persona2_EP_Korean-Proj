@@ -1,0 +1,103 @@
+
+msg_0:
+ [color(green)]心の奥で、おぞましき軟体生物が宇宙的な音で
+ 敵である[var(msg_var_0)]に、こう語りかけた…
+ 「下がれ」と…[color(white)]
+[wait][clear][end]
+
+msg_1:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぬぉぉぉぉぉ！
+[wait][clear][end]
+
+msg_2:
+ [color(green)]心に棲みつく軟体生物は復もや宇宙的な音で
+ [var(msg_var_0)]に語りかけた…
+ 「手をかすのだ」と…[color(white)]
+[wait][clear][end]
+
+msg_3:
+[color(yellow)][var(msg_var_0)][color(white)]
+ きぃぃぃぃぃぃぃいっ！
+[wait][clear][end]
+
+msg_4:
+ どうして欲しいぃぃぃっ！
+[choice(2)]契約して欲しい
+カードが欲しい
+[end_choice][clear][end]
+
+msg_5:
+[color(yellow)][var(msg_var_0)][color(white)]
+ カードの山に埋もれる悪夢の中でえぇぇっ！
+[wait][clear][end]
+
+msg_6:
+[color(yellow)][var(msg_var_0)][color(white)]
+ うぉまえぇぇえ…
+ 黒き太陽と赤き月が交わる時、煮えたぎる血の匂い
+ それが[color(green)]契約[color(white)]ぅぅう！
+[wait][clear][end]
+
+msg_7:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 腐れる三人の輩…
+ 黒き太陽と赤き月は交わった…
+ [color(green)]契約を破棄[color(white)]すべき時…
+[wait][clear][end]
+
+msg_8:
+ どれを[color(green)]破棄[color(white)]するのだぁぁあ！
+[choice(4)][pact_demon(0)]
+[pact_demon(1)]
+[pact_demon(2)]
+契約しない
+[end_choice][clear][end]
+
+msg_9:
+[color(yellow)][var(msg_var_0)][color(white)]
+ やらねばならぬぅぅう！
+ [color(green)][var(msg_var_4)][color(white)]のカード、[color(green)][var(msg_var_5)]枚[color(white)]ぃぃい…
+[wait][clear][end]
+
+msg_10:
+[color(yellow)][var(msg_var_0)][color(white)]
+ カードの持ち過ぎだとぉぉお！
+ ９９９枚なのだぁぁあ！
+ なんと忌まわしき数字ぃぃい！
+[wait][clear][end]
+
+msg_11:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [color(green)]回復[color(white)]してやるぅぅう！
+ うぉれが夢の中の崖から突き落として
+ しまったのだからぁぁあ！
+[wait][clear][end]
+
+msg_12:
+ [color(green)]心の奥で、おぞましき軟体生物が宇宙的な音で
+ 敵である[var(msg_var_0)]に、こう語りかけた…
+ 「下がれ」と…[color(white)]
+[wait][clear][end]
+
+msg_13:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぬぉぉぉぉぉ！
+[wait][clear][end]
+
+msg_14:
+ [color(green)]心に棲みつく軟体生物は復もや宇宙的な音で
+ [var(msg_var_0)]に語りかけた…
+ 「あれを渡せ」と…[color(white)]
+[wait][clear][end]
+
+msg_15:
+[color(yellow)][var(msg_var_0)][color(white)]
+ きぃぃぃぃぃぃぃいっ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ [color(orange)]道具／黄金の蜂蜜酒[color(white)]だぁぁぁぁあっ！
+[wait][clear][end]
+
+msg_16:
+[color(green)]選択肢ジャンプの挙動エラーです[color(white)]
+[end]

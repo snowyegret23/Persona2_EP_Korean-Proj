@@ -1,0 +1,45 @@
+function START()
+{
+    controlDisable();
+    bitGet(var_0, DBIT_KEN_ELEV);
+    bnz(var_0, label_b);
+    bitGet(var_0, IBIT_DENGEN_ON);
+    bnz(var_0, label_11);
+    ref_5 = dialogAlloc();
+    ref_6 = msgShow(msg_0);
+/***************************************
+[color(green)]The Fuse Box is locked.[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_6);
+    dialogFree(ref_5);
+    b(label_19);
+  label_b:
+    ref_b = dialogAlloc();
+    ref_c = msgShow(msg_1);
+/***************************************
+[color(green)]There’s no need to be here.[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_c);
+    dialogFree(ref_b);
+    b(label_19);
+  label_11:
+    sndMusicPlay(sound_1117, 127);
+    ref_12 = dialogAlloc();
+    ref_13 = msgShow(msg_2);
+/***************************************
+[color(green)]Maya used the Fuse Box Key
+and turned the elevator on.[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_13);
+    dialogFree(ref_12);
+    bitSet(DBIT_KEN_ELEV);
+    b(label_19);
+  label_19:
+    controlEnable();
+}

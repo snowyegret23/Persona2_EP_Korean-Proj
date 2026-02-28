@@ -1,0 +1,7 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ゲフ！ゲフゲフ！
+ ワシの走りは世界一ィィィ！
+[sync][wait]
+[end]

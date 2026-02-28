@@ -1,0 +1,2229 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    sndUnkCF(127);
+    levelFootstepSet(sfx_19);
+    envTriggerSet(ELE, 56, 1, line, coll_b);
+    envTriggerSet(HENSHU, 131, 1, line, coll_1);
+    envTriggerSet(KAIDAN, 224, 1, line, coll_15);
+    envTriggerSet(KSHO_00, 255, 1, collision_2, coll_e);
+    objCollisionLink(collision_2, coll_e, obj_4d);
+    objVisible(obj_a9, false);
+    bitGet(var_0, MBIT_KISS_HENSHU);
+    bne(var_0, 0, label_e);
+    cameraSet(northeast, 1006, 0, -44);
+    b(label_11);
+  label_e:
+    bne(var_0, 1, label_11);
+    cameraSet(southwest, 300, 0, -1740);
+    b(label_11);
+  label_11:
+    bitGet(var_0, MBIT_BATLE_OUBO);
+    bez(var_0, label_19);
+    sweepstakesSteps(var_a, battle);
+    boutrange(var_a, 0, 299, label_17);
+    b(label_19);
+    b(label_19);
+  label_17:
+    bitSet(LBIT_0013);
+    b(label_19);
+  label_19:
+    bitGet(var_1, MBIT_MRCLE_OUBO);
+    bez(var_1, label_21);
+    sweepstakesSteps(var_b, miracle);
+    boutrange(var_b, 0, 299, label_1f);
+    b(label_21);
+    b(label_21);
+  label_1f:
+    bitSet(LBIT_0014);
+    b(label_21);
+  label_21:
+    bitGet(var_2, MBIT_WORLD_OUBO);
+    bez(var_2, label_29);
+    sweepstakesSteps(var_c, fantasy);
+    boutrange(var_c, 0, 299, label_27);
+    b(label_29);
+    b(label_29);
+  label_27:
+    bitSet(LBIT_0015);
+    b(label_29);
+  label_29:
+    bitGet(var_0, LBIT_0013);
+    bitGet(var_1, LBIT_0014);
+    bitGet(var_2, LBIT_0015);
+    add(var_0, var_0, var_1);
+    add(var_0, var_0, var_2);
+    bne(var_0, 0, label_3c);
+    bitGet(var_0, MBIT_W_PASS);
+    bne(var_0, 0, label_33);
+    objVisible(obj_4d, false);
+    b(label_3b);
+  label_33:
+    bne(var_0, 1, label_3b);
+    bitGet(var_0, MBIT_W_ITEMGET);
+    bne(var_0, 0, label_37);
+    b(label_3a);
+  label_37:
+    bne(var_0, 1, label_3a);
+    objVisible(obj_4d, false);
+    b(label_3a);
+  label_3a:
+    b(label_3b);
+  label_3b:
+    b(label_3d);
+  label_3c:
+    b(label_3d);
+  label_3d:
+    bitGet(var_0, EBIT_E0046);
+    bne(var_0, 0, label_40);
+    b(label_48);
+  label_40:
+    bne(var_0, 1, label_48);
+    bitGet(var_0, EBIT_E006F);
+    bne(var_0, 0, label_45);
+    b(label_50);
+    b(label_47);
+  label_45:
+    bne(var_0, 1, label_47);
+    b(label_47);
+  label_47:
+    b(label_48);
+  label_48:
+    ref_48 = spriteLoad(sprite_35);
+    wait(ref_48);
+    unitSpawn(yukino, sprite_35, 1410, 0, -1370, west, none);
+    unitTriggerSet(yukino, YUKINO, 255, 1);
+    ref_4c = spriteLoad(sprite_6b);
+    wait(ref_4c);
+    unitSpawn(fujii, sprite_6b, 1350, 0, -1510, south, none);
+    unitTriggerSet(fujii, FUJII, 255, 1);
+  label_50:
+    ref_50 = spriteLoad(sprite_c0);
+    wait(ref_50);
+    bitGet(var_0, LBIT_0013);
+    bitGet(var_1, LBIT_0014);
+    bitGet(var_2, LBIT_0015);
+    add(var_1, var_1, var_0);
+    add(var_1, var_1, var_2);
+    bne(var_1, 0, label_66);
+    bitGet(var_0, MBIT_W_PASS);
+    bne(var_0, 0, label_5c);
+    unitSpawn(npc1, sprite_c0, 1415, 0, -465, south, none);
+    b(label_65);
+  label_5c:
+    bne(var_0, 1, label_65);
+    bitGet(var_0, MBIT_W_ITEMGET);
+    bne(var_0, 0, label_61);
+    unitSpawn(npc1, sprite_c0, 1300, 0, -140, east, none);
+    b(label_64);
+  label_61:
+    bne(var_0, 1, label_64);
+    unitSpawn(npc1, sprite_c0, 1415, 0, -465, south, none);
+    b(label_64);
+  label_64:
+    b(label_65);
+  label_65:
+    b(label_68);
+  label_66:
+    unitSpawn(npc1, sprite_c0, 1300, 0, -140, east, none);
+    b(label_68);
+  label_68:
+    unitTriggerSet(npc1, MAN1, 255, 1);
+    objAnimTranslate(obj_2b, -50, 0, 0, 5);
+    objAnimWait(obj_2b);
+    objAnimTranslate(obj_38, -50, 0, 0, 5);
+    objAnimWait(obj_38);
+    ref_6d = spriteLoad(sprite_bd);
+    wait(ref_6d);
+    unitSpawn(npc2, sprite_bd, 700, 0, -1020, south, none);
+    unitPalette(npc2, 0);
+    unitTriggerSet(npc2, MAN2, 255, 1);
+    unitSpawn(npc3, sprite_bd, 120, 0, -1550, north, none);
+    unitPalette(npc3, 1);
+    unitTriggerSet(npc3, MAN3, 255, 1);
+    ref_75 = spriteLoad(sprite_c1);
+    wait(ref_75);
+    unitSpawn(npc4, sprite_c1, 250, 0, -120, south, none);
+    unitTriggerSet(npc4, MAN4, 255, 1);
+    ref_79 = spriteLoad(sprite_c2);
+    wait(ref_79);
+    unitSpawn(npc5, sprite_c2, 540, 0, -1220, east, none);
+    unitPalette(npc5, 1);
+    unitAnimationPlay(npc5, animation_28, 1);
+    unitRevolveAnimationPlay(npc5, animrevolve_2);
+    objCollisionLink(collision_5, coll_6, obj_32);
+    objCollisionLink(collision_5, coll_4, obj_32);
+    objAnimTranslate(obj_32, 50, 0, 0, 5);
+    objAnimWait(obj_32);
+    unitSpawn(npc6, sprite_c0, 780, 0, -650, west, none);
+    unitPalette(npc6, 1);
+    unitAnimationPlay(npc6, animation_28, 1);
+    unitRevolveAnimationPlay(npc6, animrevolve_1);
+    objCollisionLink(collision_5, coll_1, obj_2d);
+    objCollisionLink(collision_5, coll_0, obj_2d);
+    objAnimTranslate(obj_2d, -30, 0, 0, 5);
+    objAnimWait(obj_2d);
+    unitSpawn(npc7, sprite_c0, 1020, 0, -540, east, none);
+    unitPalette(npc7, 2);
+    unitAnimationPlay(npc7, animation_28, 1);
+    unitRevolveAnimationPlay(npc7, animrevolve_1);
+    objCollisionLink(collision_5, coll_3, obj_36);
+    objCollisionLink(collision_5, coll_2, obj_36);
+    objAnimTranslate(obj_36, 30, 0, 0, 5);
+    objAnimWait(obj_36);
+    unitTriggerSet(npc5, MAN5, 255, 1);
+    unitTriggerSet(npc6, MAN6, 255, 1);
+    unitTriggerSet(npc7, MAN7, 255, 1);
+    envTriggerSet(MAN5, 14, 1, collision_5, coll_6);
+    envTriggerSet(MAN5, 14, 1, collision_5, coll_4);
+    envTriggerSet(MAN6, 224, 1, collision_5, coll_1);
+    envTriggerSet(MAN6, 224, 1, collision_5, coll_0);
+    envTriggerSet(MAN7, 14, 1, collision_5, coll_3);
+    envTriggerSet(MAN7, 14, 1, collision_5, coll_2);
+    ref_9c = spriteLoad(sprite_0);
+    wait(ref_9c);
+    ref_9e = spriteLoad(sprite_2);
+    wait(ref_9e);
+    bitGet(var_0, MBIT_KISS_HENSHU);
+    bne(var_0, 0, label_a4);
+    playerInit(north);
+    b(label_a7);
+  label_a4:
+    bne(var_0, 1, label_a7);
+    playerInit(south);
+    b(label_a7);
+  label_a7:
+    controlDisable();
+    unitIdleOnAll();
+    bitGet(var_0, MBIT_KISS_HENSHU);
+    bne(var_0, 0, label_b8);
+    objAnimTranslate(obj_13, 100, 0, 0, 1);
+    objAnimTranslate(obj_14, -200, 0, 0, 1);
+    objAnimWait(obj_13);
+    objAnimWait(obj_14);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    sndMusicPlay(sound_30a7, 127);
+    objAnimTranslate(obj_13, -100, 0, 0, 30);
+    objAnimTranslate(obj_14, 200, 0, 0, 30);
+    objAnimWait(obj_13);
+    objAnimWait(obj_14);
+    b(label_be);
+  label_b8:
+    bne(var_0, 1, label_be);
+    bitClear(MBIT_KISS_HENSHU);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    b(label_be);
+  label_be:
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+    unitIdleOff(npc5);
+    unitIdleOff(npc6);
+    unitIdleOff(npc7);
+}
+
+function YUKINO()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_11a);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_10a);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_fa);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_e1);
+    unitFacePlayer(yukino);
+    ref_cf = bustupLoad(bustup_11a);
+    bustupWait(ref_cf);
+    ref_d1 = bustupAlloc(ref_cf, right, rgb(0,0,0));
+    bustupFade(ref_d1, rgb(128,0,0), 30);
+    ref_d3 = dialogAlloc();
+    ref_d4 = msgShow(msg_0);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]あ、舞耶さん！
+[tab]セブンスで事件に巻き込まれたんだろ！？
+[tab]冴子先生は？[tab]冴子先生は大丈夫なのか！？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_1f, 1);
+    wait(ref_d4);
+    ref_d7 = msgShow(msg_1);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]…そうか、良かった。
+[tab]本当に良かった。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_2d, 1);
+    wait(ref_d7);
+    unitAnimationPlay(yukino, animation_a, 1);
+    dialogFree(ref_d3);
+    ref_dc = bustupFade(ref_d1, rgb(0,0,0), 10);
+    bustupWait(ref_dc);
+    bustupFree(ref_d1);
+    unitRestoreFacing(yukino);
+    b(label_138);
+  label_e1:
+    unitFacePlayer(yukino);
+    ref_e2 = bustupLoad(bustup_11a);
+    bustupWait(ref_e2);
+    ref_e4 = bustupAlloc(ref_e2, right, rgb(0,0,0));
+    bustupFade(ref_e4, rgb(128,0,0), 30);
+    ref_e6 = dialogAlloc();
+    bitGet(var_0, MBIT_KISS_YUKINO);
+    bne(var_0, 0, label_ee);
+    bitSet(LBIT_0000);
+    ref_ea = msgShow(msg_2);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]最近、編集部では本物の武器を売る店の噂で
+[tab]大変なんだ。あとで取材に同行するんだけどさ、
+[tab]みんな馬鹿な噂に踊らされてるよね？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_2d, 1);
+    wait(ref_ea);
+    b(label_f3);
+  label_ee:
+    bne(var_0, 1, label_f3);
+    ref_ef = msgShow(msg_3);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]舞耶さん！[tab]スゴイよ！
+[tab]本当に武器を売ってる店があったんだよ！
+[tab]…あれ、…前にもあった…かな…？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_2d, 1);
+    wait(ref_ef);
+    b(label_f3);
+  label_f3:
+    unitAnimationPlay(yukino, animation_a, 1);
+    dialogFree(ref_e6);
+    ref_f5 = bustupFade(ref_e4, rgb(0,0,0), 10);
+    bustupWait(ref_f5);
+    bustupFree(ref_e4);
+    unitRestoreFacing(yukino);
+    b(label_138);
+  label_fa:
+    unitFacePlayer(yukino);
+    ref_fb = bustupLoad(bustup_11a);
+    bustupWait(ref_fb);
+    ref_fd = bustupAlloc(ref_fb, right, rgb(0,0,0));
+    bustupFade(ref_fd, rgb(128,0,0), 30);
+    ref_ff = dialogAlloc();
+    ref_100 = msgShow(msg_4);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]セブンスでの事件以来、この街もずいぶん騒がしく
+[tab]なったよね？[tab]ＪＯＫＥＲ事件がこんなに
+[tab]大きくなるなんて、考えもしなかったよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_2d, 1);
+    wait(ref_100);
+    unitAnimationPlay(yukino, animation_a, 1);
+    dialogFree(ref_ff);
+    ref_105 = bustupFade(ref_fd, rgb(0,0,0), 10);
+    bustupWait(ref_105);
+    bustupFree(ref_fd);
+    unitRestoreFacing(yukino);
+    b(label_138);
+  label_10a:
+    unitFacePlayer(yukino);
+    ref_10b = bustupLoad(bustup_11a);
+    bustupWait(ref_10b);
+    ref_10d = bustupAlloc(ref_10b, right, rgb(0,0,0));
+    bustupFade(ref_10d, rgb(128,0,0), 30);
+    ref_10f = dialogAlloc();
+    ref_110 = msgShow(msg_5);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]舞耶さん…何か大変な事隠したりしてないよね？
+[tab]困ってる事があるなら何でも言いなよ。アタシや
+[tab]アタシの仲間達なら、きっと力になれるからさ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_2d, 1);
+    wait(ref_110);
+    unitAnimationPlay(yukino, animation_a, 1);
+    dialogFree(ref_10f);
+    ref_115 = bustupFade(ref_10d, rgb(0,0,0), 10);
+    bustupWait(ref_115);
+    bustupFree(ref_10d);
+    unitRestoreFacing(yukino);
+    b(label_138);
+  label_11a:
+    unitFacePlayer(yukino);
+    ref_11b = bustupLoad(bustup_11a);
+    bustupWait(ref_11b);
+    ref_11d = bustupAlloc(ref_11b, right, rgb(0,0,0));
+    bustupFade(ref_11d, rgb(128,0,0), 30);
+    bitGet(var_0, MBIT_HI_NANJOTOUJO);
+    bne(var_0, 0, label_128);
+    ref_121 = dialogAlloc();
+    ref_122 = msgShow(msg_6);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]ＴＶ局ではどうなる事かと思ったけど、
+[tab]皆が無事で何よりだったよ。
+[tab]それにしても…あの神取が生きていたなんて…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_2d, 1);
+    wait(ref_122);
+    unitAnimationPlay(yukino, animation_a, 1);
+    dialogFree(ref_121);
+    b(label_133);
+  label_128:
+    bne(var_0, 1, label_133);
+    ref_129 = dialogAlloc();
+    ref_12a = msgShow(msg_7);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]英理子から聞きましたよ！
+[tab]舞耶さんもペルソナ使いだったんだね。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_2d, 1);
+    wait(ref_12a);
+    ref_12d = msgShow(msg_8);
+/***************************************
+[color(yellow)]ゆきの[color(white)]
+[tab]初めて会った時の、あの不思議な感じ…
+[tab]あれはやっぱり共鳴だったのか。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(yukino, animation_2d, 1);
+    wait(ref_12d);
+    unitAnimationPlay(yukino, animation_a, 1);
+    dialogFree(ref_129);
+    b(label_133);
+  label_133:
+    ref_133 = bustupFade(ref_11d, rgb(0,0,0), 10);
+    bustupWait(ref_133);
+    bustupFree(ref_11d);
+    unitRestoreFacing(yukino);
+    b(label_138);
+  label_138:
+    controlEnable();
+}
+
+function FUJII()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_186);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_176);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_166);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_156);
+    unitFacePlayer(fujii);
+    ref_144 = bustupLoad(bustup_d5);
+    bustupWait(ref_144);
+    ref_146 = bustupAlloc(ref_144, right, rgb(0,0,0));
+    bustupFade(ref_146, rgb(128,0,0), 30);
+    ref_148 = dialogAlloc();
+    ref_149 = msgShow(msg_9);
+/***************************************
+[color(yellow)]藤井[color(white)]
+[tab]お、お帰りマッキー！
+[tab]事件に巻き込まれるなんてタイミング悪かったな。
+[tab]でも、変わったレポートが書けそうじゃないか。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(fujii, animation_24, 1);
+    wait(ref_149);
+    ref_14c = msgShow(msg_10);
+/***************************************
+[color(yellow)]藤井[color(white)]
+[tab]いい記事になるよう頑張れよ！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(fujii, animation_27, 1);
+    wait(ref_14c);
+    unitAnimationPlay(fujii, animation_0, 1);
+    dialogFree(ref_148);
+    ref_151 = bustupFade(ref_146, rgb(0,0,0), 10);
+    bustupWait(ref_151);
+    bustupFree(ref_146);
+    unitRestoreFacing(fujii);
+    b(label_1a4);
+  label_156:
+    unitFacePlayer(fujii);
+    ref_157 = bustupLoad(bustup_d5);
+    bustupWait(ref_157);
+    ref_159 = bustupAlloc(ref_157, right, rgb(0,0,0));
+    bustupFade(ref_159, rgb(128,0,0), 30);
+    ref_15b = dialogAlloc();
+    ref_15c = msgShow(msg_11);
+/***************************************
+[color(yellow)]藤井[color(white)]
+[tab]…武器を売る店の噂？[tab]あまり興味ないなぁ。
+[tab]僕はカメラマンだから、ファインダーの向こうに
+[tab]見えるもの、そのものを写し出すだけだよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(fujii, animation_24, 1);
+    wait(ref_15c);
+    unitAnimationPlay(fujii, animation_0, 1);
+    dialogFree(ref_15b);
+    ref_161 = bustupFade(ref_159, rgb(0,0,0), 10);
+    bustupWait(ref_161);
+    bustupFree(ref_159);
+    unitRestoreFacing(fujii);
+    b(label_1a4);
+  label_166:
+    unitFacePlayer(fujii);
+    ref_167 = bustupLoad(bustup_d5);
+    bustupWait(ref_167);
+    ref_169 = bustupAlloc(ref_167, right, rgb(0,0,0));
+    bustupFade(ref_169, rgb(128,0,0), 30);
+    ref_16b = dialogAlloc();
+    ref_16c = msgShow(msg_12);
+/***************************************
+[color(yellow)]藤井[color(white)]
+[tab]ユッキーの言う通り、最近は妙に騒がしいな。
+[tab]血生臭い仕事とか回されそうだし、少し休暇でも
+[tab]取って、山を撮りにでも行こうかな？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(fujii, animation_24, 1);
+    wait(ref_16c);
+    unitAnimationPlay(fujii, animation_0, 1);
+    dialogFree(ref_16b);
+    ref_171 = bustupFade(ref_169, rgb(0,0,0), 10);
+    bustupWait(ref_171);
+    bustupFree(ref_169);
+    unitRestoreFacing(fujii);
+    b(label_1a4);
+  label_176:
+    unitFacePlayer(fujii);
+    ref_177 = bustupLoad(bustup_d5);
+    bustupWait(ref_177);
+    ref_179 = bustupAlloc(ref_177, right, rgb(0,0,0));
+    bustupFade(ref_179, rgb(128,0,0), 30);
+    ref_17b = dialogAlloc();
+    ref_17c = msgShow(msg_13);
+/***************************************
+[color(yellow)]藤井[color(white)]
+[tab]マッキー、ユッキーの言う通りだぞ！
+[tab]肌も荒れてるし…無理してるんじゃないのか？
+[tab]レンズの前で嘘はつけない…無理は禁物だぞ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(fujii, animation_24, 1);
+    wait(ref_17c);
+    unitAnimationPlay(fujii, animation_0, 1);
+    dialogFree(ref_17b);
+    ref_181 = bustupFade(ref_179, rgb(0,0,0), 10);
+    bustupWait(ref_181);
+    bustupFree(ref_179);
+    unitRestoreFacing(fujii);
+    b(label_1a4);
+  label_186:
+    unitFacePlayer(fujii);
+    ref_187 = bustupLoad(bustup_d5);
+    bustupWait(ref_187);
+    ref_189 = bustupAlloc(ref_187, right, rgb(0,0,0));
+    bustupFade(ref_189, rgb(128,0,0), 30);
+    bitGet(var_0, MBIT_HI_NANJOTOUJO);
+    bne(var_0, 0, label_194);
+    ref_18d = dialogAlloc();
+    ref_18e = msgShow(msg_14);
+/***************************************
+[color(yellow)]藤井[color(white)]
+[tab]あの時、ＴＶ局で何がおきていたんだい？
+[tab]ユッキーもちゃんと説明してくれないし…
+[tab]僕には話せない事なのか？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(fujii, animation_24, 1);
+    wait(ref_18e);
+    unitAnimationPlay(fujii, animation_0, 1);
+    dialogFree(ref_18d);
+    b(label_19f);
+  label_194:
+    bne(var_0, 1, label_19f);
+    ref_195 = dialogAlloc();
+    ref_196 = msgShow(msg_15);
+/***************************************
+[color(yellow)]藤井[color(white)]
+[tab]珠閒瑠ＴＶで何がおきていたのか…
+[tab]マッキーは知ってるかい？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(fujii, animation_24, 1);
+    wait(ref_196);
+    ref_199 = msgShow(msg_16);
+/***************************************
+[color(yellow)]藤井[color(white)]
+[tab]一緒にいたユッキーとブラウン君は
+[tab]何かを知っているようなんだが、
+[tab]二人とも僕には説明してくれないんだ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(fujii, animation_24, 1);
+    wait(ref_199);
+    unitAnimationPlay(fujii, animation_0, 1);
+    dialogFree(ref_195);
+    b(label_19f);
+  label_19f:
+    ref_19f = bustupFade(ref_189, rgb(0,0,0), 10);
+    bustupWait(ref_19f);
+    bustupFree(ref_189);
+    unitRestoreFacing(fujii);
+    b(label_1a4);
+  label_1a4:
+    controlEnable();
+}
+
+function MAN1()
+{
+    controlDisable();
+    bitGet(var_0, LBIT_0013);
+    bnz(var_0, label_1dd);
+    bitGet(var_0, LBIT_0014);
+    bnz(var_0, label_1dd);
+    bitGet(var_0, LBIT_0015);
+    bnz(var_0, label_1dd);
+    bitGet(var_0, MBIT_W_PASS);
+    bne(var_0, 0, label_1b0);
+    b(label_1b8);
+  label_1b0:
+    bne(var_0, 1, label_1b8);
+    bitGet(var_0, MBIT_W_ITEMGET);
+    bne(var_0, 0, label_1b5);
+    b(label_1dd);
+    b(label_1b7);
+  label_1b5:
+    bne(var_0, 1, label_1b7);
+    b(label_1b7);
+  label_1b7:
+    b(label_1b8);
+  label_1b8:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_1d4);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_1c8);
+    unitFacePlayer(npc1);
+    ref_1bd = dialogAlloc();
+    ref_1be = msgShow(msg_17);
+/***************************************
+[color(yellow)]新人[color(white)]
+[tab]先輩、取材中に事件に巻き込まれたって
+[tab]聞いたんすけど大丈夫だったみたいすね？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_19, 1);
+    wait(ref_1be);
+    ref_1c1 = msgShow(msg_18);
+/***************************************
+[color(yellow)]新人[color(white)]
+[tab]よかった～
+[tab]…先輩がいないと俺、なんか肩身狭いすから。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_24, 1);
+    wait(ref_1c1);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_1bd);
+    unitRestoreFacing(npc1);
+    b(label_1e8);
+  label_1c8:
+    unitFacePlayer(npc1);
+    ref_1c9 = dialogAlloc();
+    ref_1ca = msgShow(msg_19);
+/***************************************
+[color(yellow)]新人[color(white)]
+[tab]あ、天野先輩！
+[tab]最近どうしたんすか？[tab]外出たまんまっすね？
+[tab]…もしかして編集長の嫌がらせすかぁ？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_19, 1);
+    wait(ref_1ca);
+    ref_1cd = msgShow(msg_20);
+/***************************************
+[color(yellow)]新人[color(white)]
+[tab]…そんな事無いって、…ホントすか？
+[tab]はぁ…田崎先輩も先輩のイヤミ言ってたし。
+[tab]やっぱ辞めよかな。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_24, 1);
+    wait(ref_1cd);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_1c9);
+    unitRestoreFacing(npc1);
+    b(label_1e8);
+  label_1d4:
+    unitFacePlayer(npc1);
+    ref_1d5 = dialogAlloc();
+    ref_1d6 = msgShow(msg_21);
+/***************************************
+[color(yellow)]新人[color(white)]
+[tab]先輩があんまり帰ってこないから、
+[tab]拉致事件にでも巻き込まれたのかと思ったすよ。
+[tab]…最近多いんすから、気を付けて下さいね。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_24, 1);
+    wait(ref_1d6);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_1d5);
+    unitRestoreFacing(npc1);
+    b(label_1e8);
+  label_1dd:
+    unitFacePlayer(npc1);
+    ref_1de = dialogAlloc();
+    ref_1df = msgShow(msg_22);
+/***************************************
+[color(yellow)]新人[color(white)]
+[tab]あ、お帰りなさい先輩。
+[tab]さっき先輩宛になんか届きましたよ？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_19, 1);
+    wait(ref_1df);
+    ref_1e2 = msgShow(msg_23);
+/***************************************
+[color(yellow)]新人[color(white)]
+[tab]机の横の箱に入れときましたから、
+[tab]ちゃんと確認しといて下さいね。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_24, 1);
+    wait(ref_1e2);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_1de);
+    unitRestoreFacing(npc1);
+  label_1e8:
+    controlEnable();
+}
+
+function MAN2()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_20c);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_203);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_1fa);
+    unitFacePlayer(npc2);
+    ref_1f2 = dialogAlloc();
+    ref_1f3 = msgShow(msg_24);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]はぁ～抗議の手紙と抗議の電話ばっかり。
+[tab]何、私の仕事は苦情対策室と一緒なの？
+[tab]…はっ、キチンと応対しなくちゃ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_1f3);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_1f2);
+    unitRestoreFacing(npc2);
+    b(label_217);
+  label_1fa:
+    unitFacePlayer(npc2);
+    ref_1fb = dialogAlloc();
+    ref_1fc = msgShow(msg_25);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]珠閒瑠市に本物の武器を売る店が！？
+[tab]よ～し、今度はこの記事を盛り上げてこう！
+[tab]…苦情がこない程度に。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_1fc);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_1fb);
+    unitRestoreFacing(npc2);
+    b(label_217);
+  label_203:
+    unitFacePlayer(npc2);
+    ref_204 = dialogAlloc();
+    ref_205 = msgShow(msg_26);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]今度の巻頭、「ＪＯＫＥＲこそ世紀末の覇者！」
+[tab]って感じでどうかな？[tab]…やっぱ猟奇殺人の犯人を
+[tab]持ち上げるのはマズイか。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_205);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_204);
+    unitRestoreFacing(npc2);
+    b(label_217);
+  label_20c:
+    unitFacePlayer(npc2);
+    ref_20d = dialogAlloc();
+    ref_20e = msgShow(msg_27);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]天野ォ～外に出てばっかいないでさぁ、
+[tab]たまには雑務もやってよね～
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_20e);
+    ref_211 = msgShow(msg_28);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]あ、でも掃除はしなくていいよ。
+[tab]アンタに掃除させると余計に散らかるからね。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_211);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_20d);
+    unitRestoreFacing(npc2);
+  label_217:
+    controlEnable();
+}
+
+function MAN3()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_233);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_22a);
+    unitFacePlayer(npc3);
+    ref_21f = dialogAlloc();
+    ref_220 = msgShow(msg_29);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]はぁ～ワンロンワンロンワンロンワンロン！
+[tab]ワンロン占いブームで忙しい～
+[tab]…はて、何で占いの担当になったんだっけ？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_220);
+    ref_223 = msgShow(msg_30);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]金龍の人は何事にも挑戦…って
+[tab]ワンロン占いがきっかけじゃない。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_223);
+    unitAnimationPlay(npc3, animation_0, 1);
+    dialogFree(ref_21f);
+    unitRestoreFacing(npc3);
+    b(label_23b);
+  label_22a:
+    unitFacePlayer(npc3);
+    ref_22b = dialogAlloc();
+    ref_22c = msgShow(msg_31);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]ＪＯＫＥＲ呪いとワンロン占いに意外な接点が！
+[tab]これはまた、盛り上がりそうね！
+[tab]…でも、また仕事が増えちゃうのよね～
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_22c);
+    unitAnimationPlay(npc3, animation_0, 1);
+    dialogFree(ref_22b);
+    unitRestoreFacing(npc3);
+    b(label_23b);
+  label_233:
+    unitFacePlayer(npc3);
+    ref_234 = dialogAlloc();
+    ref_235 = msgShow(msg_32);
+/***************************************
+[color(yellow)]同期社員[color(white)]
+[tab]なんか例のＴＶ放送の後からさ、ワンロン占いが
+[tab]ちょっとオカルトものみたいに思われてるのよ。
+[tab]別のファンまで付いちゃったって感じよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_235);
+    unitAnimationPlay(npc3, animation_0, 1);
+    dialogFree(ref_234);
+    unitRestoreFacing(npc3);
+  label_23b:
+    controlEnable();
+}
+
+function MAN4()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_25f);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_256);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_24d);
+    unitFacePlayer(npc4);
+    ref_245 = dialogAlloc();
+    ref_246 = msgShow(msg_33);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]なに、天野ってば七姉妹学園の事件に
+[tab]巻き込まれたの？[tab]おいおい、大丈夫かよ～
+[tab]嫁入り前なんだから気を付けなよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_246);
+    unitAnimationPlay(npc4, animation_0, 1);
+    dialogFree(ref_245);
+    unitRestoreFacing(npc4);
+    b(label_26a);
+  label_24d:
+    unitFacePlayer(npc4);
+    ref_24e = dialogAlloc();
+    ref_24f = msgShow(msg_34);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]天野知ってた？
+[tab]今度、ワンロン千鶴がうちの編集部に来るんだよ！
+[tab]…誰それって、有名な占い師じゃないか！！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_24f);
+    unitAnimationPlay(npc4, animation_0, 1);
+    dialogFree(ref_24e);
+    unitRestoreFacing(npc4);
+    b(label_26a);
+  label_256:
+    unitFacePlayer(npc4);
+    ref_257 = dialogAlloc();
+    ref_258 = msgShow(msg_35);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]おいおい、ＪＯＫＥＲ呪いするなって言ったら、
+[tab]高校生なんか逆にやっちゃうんじゃないか？
+[tab]絶対、冗談半分でＪＯＫＥＲ呪いしだすぞ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_258);
+    unitAnimationPlay(npc4, animation_0, 1);
+    dialogFree(ref_257);
+    unitRestoreFacing(npc4);
+    b(label_26a);
+  label_25f:
+    unitFacePlayer(npc4);
+    ref_260 = dialogAlloc();
+    ref_261 = msgShow(msg_36);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]怖い世の中だよな。
+[tab]天野は親元から通ってんだっけ？
+[tab]…え、違うの！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_261);
+    ref_264 = msgShow(msg_37);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]危ないよ女のコの一人暮はぁ～！
+[tab]…女のコの二人暮だから大丈夫？
+[tab]はぁ～大丈夫です…か…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_6, 1);
+    wait(ref_264);
+    unitAnimationPlay(npc4, animation_0, 1);
+    dialogFree(ref_260);
+    unitRestoreFacing(npc4);
+  label_26a:
+    controlEnable();
+}
+
+function MAN555()
+{
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_285);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_280);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_279);
+    ref_272 = dialogAlloc();
+    ref_273 = msgShow(msg_38);
+/***************************************
+[color(yellow)]田崎[color(white)]
+[tab]あら天野さん、お帰りなさい。
+[tab]事件に巻き込まれたんですって？
+[tab]編集者として、貴重な経験したんじゃない？
+[wait][clear]
+***************************************/
+    wait(ref_273);
+    ref_275 = msgShow(msg_39);
+/***************************************
+[color(yellow)]田崎[color(white)]
+[tab]…良かったわね。
+[wait][clear]
+***************************************/
+    wait(ref_275);
+    dialogFree(ref_272);
+    b(label_289);
+  label_279:
+    ref_279 = dialogAlloc();
+    ref_27a = msgShow(msg_40);
+/***************************************
+[color(yellow)]田崎[color(white)]
+[tab]天野さん、武器を売る店に行ってきてくれる？
+[tab]あ、店主は銃器マニアの凶暴な男らしいから
+[tab]くれぐれも！[tab]…気を付けてね？
+[wait][clear]
+***************************************/
+    wait(ref_27a);
+    ref_27c = msgShow(msg_41);
+/***************************************
+[color(yellow)]田崎[color(white)]
+[tab]…ちょっと、何笑ってんの？
+[tab]なんか不愉快だわ。
+[tab]もういい、あなたには頼まないわよ。
+[wait][clear]
+***************************************/
+    wait(ref_27c);
+    dialogFree(ref_279);
+    b(label_289);
+  label_280:
+    ref_280 = dialogAlloc();
+    ref_281 = msgShow(msg_42);
+/***************************************
+[color(yellow)]田崎[color(white)]
+[tab]いいわね天野さんは外で羽根が伸ばせて。
+[tab]私なんかホントに編集ばっかりでしょ？
+[tab]責任無い立場ってうらやましいわぁ。
+[wait][clear]
+***************************************/
+    wait(ref_281);
+    dialogFree(ref_280);
+    b(label_289);
+  label_285:
+    ref_285 = dialogAlloc();
+    ref_286 = msgShow(msg_43);
+/***************************************
+[color(yellow)]田崎[color(white)]
+[tab]ちょっと、この間の原稿どこやったの？
+[tab]あれ、最新号の色校っていつ戻したのよ！？
+[tab]全く…あら天野さん！[tab]……いたの？
+[wait][clear]
+***************************************/
+    wait(ref_286);
+    dialogFree(ref_285);
+  label_289:
+}
+
+function MAN666()
+{
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_298);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_293);
+    ref_28e = dialogAlloc();
+    ref_28f = msgShow(msg_44);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]知ってるか？[tab]連続殺人ってのは先進国、
+[tab]しかも中流以上の家庭で育った人間が犯す犯罪
+[tab]なんだとさ。そういう統計があるんだと。
+[wait][clear]
+***************************************/
+    wait(ref_28f);
+    dialogFree(ref_28e);
+    b(label_29e);
+  label_293:
+    ref_293 = dialogAlloc();
+    ref_294 = msgShow(msg_45);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]ＪＯＫＥＲによる猟奇殺人って、減るどころか
+[tab]増えてくらしいじゃないか。大人はともかく、
+[tab]ガキどもの安全くらい警察に守って欲しいよな。
+[wait][clear]
+***************************************/
+    wait(ref_294);
+    dialogFree(ref_293);
+    b(label_29e);
+  label_298:
+    ref_298 = dialogAlloc();
+    ref_299 = msgShow(msg_46);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]猟奇殺人の次は白昼堂々の拉致事件か…
+[tab]珠閒瑠市も犯罪都市まっしぐらだな。
+[tab]…拉致事件は知らないだぁ？
+[wait][clear]
+***************************************/
+    wait(ref_299);
+    ref_29b = msgShow(msg_47);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]お前、新聞くらい読めよ！
+[tab]…し・ん・ぶ・ん！！
+[wait][clear]
+***************************************/
+    wait(ref_29b);
+    dialogFree(ref_298);
+  label_29e:
+}
+
+function MAN777()
+{
+    bitGet(var_0, MBIT_SH_S_02);
+    bne(var_0, 0, label_2a2);
+    b(label_2af);
+  label_2a2:
+    bne(var_0, 1, label_2af);
+    bitGet(var_0, MBIT_SH_H_02);
+    bne(var_0, 0, label_2ac);
+    bitGet(var_0, MBIT_TANAKA_GET);
+    bne(var_0, 0, label_2a9);
+    b(label_2b0);
+    b(label_2ab);
+  label_2a9:
+    bne(var_0, 1, label_2ab);
+    b(label_2ab);
+  label_2ab:
+    b(label_2ae);
+  label_2ac:
+    bne(var_0, 1, label_2ae);
+    b(label_2ae);
+  label_2ae:
+    b(label_2af);
+  label_2af:
+    b(label_2f2);
+  label_2b0:
+    add(var_3, var_3, 1);
+    boutrange(var_3, 0, 1, label_2b4);
+    b(label_2b8);
+    b(label_2b8);
+  label_2b4:
+    bne(var_3, 2, label_2b8);
+    sub(var_3, var_3, 2);
+    b(label_2bd);
+    b(label_2b8);
+  label_2b8:
+    ref_2b8 = dialogAlloc();
+    ref_2b9 = msgShow(msg_48);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]俺、高校生向けの雑誌なんてヤなんだよね。
+[tab]ジャーナリスト目指してんのにさ、
+[tab]クーレストの編集なんかやってらんねぇよなぁ。
+[wait][clear]
+***************************************/
+    wait(ref_2b9);
+    dialogFree(ref_2b8);
+    b(label_322);
+  label_2bd:
+    ref_2bd = dialogAlloc();
+    ref_2be = msgShow(msg_49);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]…なんだよ天野？
+[tab]何か用かい？
+[wait][clear]
+***************************************/
+    wait(ref_2be);
+    dialogFree(ref_2bd);
+    delayClear();
+    delayWait(30);
+    choiceSetResult(2);
+    ref_2c4 = bustupLoad(bustup_1);
+    bustupWait(ref_2c4);
+    ref_2c6 = bustupAlloc(ref_2c4, center, rgb(0,0,0));
+    bustupFade(ref_2c6, rgb(128,0,0), 30);
+    ref_2c8 = dialogChoiceAlloc();
+    ref_2c9 = msgShow(msg_50);
+/***************************************
+[tab]何か用かい？
+[choice(3)]名前を言い当てる
+話をする
+用はない
+[end_choice][clear]
+***************************************/
+    ref_2ca = textInputInit();
+    wait(ref_2c9);
+    dialogFree(ref_2c8);
+    ref_2cd = bustupFade(ref_2c6, rgb(0,0,0), 10);
+    bustupWait(ref_2cd);
+    bustupFree(ref_2c6);
+    wait(ref_2ca);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2d5);
+    b(label_2db);
+    b(label_2da);
+  label_2d5:
+    bne(var_0, 1, label_2d8);
+    b(label_2f2);
+    b(label_2da);
+  label_2d8:
+    bne(var_0, 2, label_2da);
+    b(label_2da);
+  label_2da:
+    b(label_322);
+  label_2db:
+    ref_2db = textInputPrompt();
+    wait(ref_2db);
+    textInputCompare(msg_51, var_0);
+    bne(var_0, 0, label_2e5);
+    ref_2df = dialogAlloc();
+    ref_2e0 = msgShow(msg_52);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]あまのくぅ～ん？
+[tab]お前は先輩の名前も知らないのかぁ？
+[tab]…まったく今時の連中はダメだな。
+[wait][clear]
+***************************************/
+    wait(ref_2e0);
+    dialogFree(ref_2df);
+    b(label_322);
+    b(label_2f2);
+  label_2e5:
+    bne(var_0, 1, label_2f2);
+    ref_2e6 = dialogAlloc();
+    ref_2e7 = msgShow(msg_53);
+/***************************************
+[color(yellow)]タナカ[tab]オサミツ[color(white)]
+[tab]なんだよ急にあらたまって。
+[tab]なに？[tab]…同級生？[tab]…高校の？
+[tab]あいつが俺を捜してんの？
+[wait][clear]
+***************************************/
+    wait(ref_2e7);
+    ref_2e9 = msgShow(msg_54);
+/***************************************
+[color(yellow)]タナカ[tab]オサミツ[color(white)]
+[tab]…ふーん。
+[tab]あいつと会うの１０年ぶりだな。
+[tab]いやー懐かしいよ。
+[wait][clear]
+***************************************/
+    wait(ref_2e9);
+    ref_2eb = msgShow(msg_55);
+/***************************************
+[color(yellow)]タナカ[tab]オサミツ[color(white)]
+[tab]わかった、あいつのケータイに連絡しとくわ。
+[tab]ところで天野…[delay(30)]バイトは禁止だぞ。
+[wait][clear]
+***************************************/
+    wait(ref_2eb);
+    dialogFree(ref_2e6);
+    bitSet(MBIT_TANAKA_GET);
+    bitSet(MBIT_SH_HH);
+    b(label_322);
+    b(label_2f2);
+  label_2f2:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_30e);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_302);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_2fd);
+    ref_2f8 = dialogAlloc();
+    ref_2f9 = msgShow(msg_56);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]地下鉄の遺跡もそうだけど、なんか海外でも
+[tab]続々新しい遺跡が発掘されてるらしいね。
+[tab]…偶然なのかな？
+[wait][clear]
+***************************************/
+    wait(ref_2f9);
+    dialogFree(ref_2f8);
+    b(label_322);
+  label_2fd:
+    ref_2fd = dialogAlloc();
+    ref_2fe = msgShow(msg_57);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+[tab]今度は噂話をトップにするの？
+[tab]もう、単なるゴシップ誌と変わんないじゃん！！
+[tab]あーあ、社会部行きてぇなぁ。
+[wait][clear]
+***************************************/
+    wait(ref_2fe);
+    dialogFree(ref_2fd);
+    b(label_322);
+  label_302:
+    ref_302 = dialogAlloc();
+    bitGet(var_0, MBIT_TANAKA_GET);
+    bne(var_0, 0, label_307);
+    msgShow(msg_58);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+
+***************************************/
+    b(label_30a);
+  label_307:
+    bne(var_0, 1, label_30a);
+    msgShow(msg_59);
+/***************************************
+[color(yellow)]タナカ[tab]オサミツ[color(white)]
+
+***************************************/
+    b(label_30a);
+  label_30a:
+    ref_30a = msgShow(msg_60);
+/***************************************
+[tab]まだＪＯＫＥＲネタ続くの？
+[tab]もういいじゃんねぇ？
+[tab]でも…ワンロン千鶴って美っ人だよな！？
+[wait][clear]
+***************************************/
+    wait(ref_30a);
+    dialogFree(ref_302);
+    b(label_322);
+  label_30e:
+    ref_30e = dialogAlloc();
+    bitGet(var_0, MBIT_TANAKA_GET);
+    bne(var_0, 0, label_313);
+    msgShow(msg_61);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+
+***************************************/
+    b(label_316);
+  label_313:
+    bne(var_0, 1, label_316);
+    msgShow(msg_62);
+/***************************************
+[color(yellow)]タナカ[tab]オサミツ[color(white)]
+
+***************************************/
+    b(label_316);
+  label_316:
+    ref_316 = msgShow(msg_63);
+/***************************************
+[tab]現職外務大臣の汚職を暴く…かぁ。
+[tab]この記事書いたヤツとこの間飲んだンだよね～
+[tab]なんかイキイキしてたなぁ～
+
+[wait][clear]
+***************************************/
+    wait(ref_316);
+    bitGet(var_0, MBIT_TANAKA_GET);
+    bne(var_0, 0, label_31c);
+    msgShow(msg_64);
+/***************************************
+[color(yellow)]先輩社員[color(white)]
+
+***************************************/
+    b(label_31f);
+  label_31c:
+    bne(var_0, 1, label_31f);
+    msgShow(msg_65);
+/***************************************
+[color(yellow)]タナカ[tab]オサミツ[color(white)]
+
+***************************************/
+    b(label_31f);
+  label_31f:
+    ref_31f = msgShow(msg_66);
+/***************************************
+[tab]いいなぁ～社会部…
+[wait][clear]
+***************************************/
+    wait(ref_31f);
+    dialogFree(ref_30e);
+  label_322:
+}
+
+function HENSHU()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E00B8);
+    bne(var_0, 0, label_327);
+    b(label_32a);
+  label_327:
+    bne(var_0, 1, label_32a);
+    b(label_35b);
+    b(label_32a);
+  label_32a:
+    bitGet(var_0, EBIT_E00AF);
+    bne(var_0, 0, label_32d);
+    b(label_33c);
+  label_32d:
+    bne(var_0, 1, label_33c);
+    bitGet(var_0, MBIT_IIE_EIREI);
+    bne(var_0, 0, label_332);
+    b(label_36e);
+    b(label_33b);
+  label_332:
+    bne(var_0, 1, label_33b);
+    bitGet(var_0, MBIT_PAPA_EIREI);
+    bne(var_0, 0, label_337);
+    b(label_35b);
+    b(label_33a);
+  label_337:
+    bne(var_0, 1, label_33a);
+    b(label_368);
+    b(label_33a);
+  label_33a:
+    b(label_33b);
+  label_33b:
+    b(label_33c);
+  label_33c:
+    bitGet(var_0, EBIT_E007B);
+    bne(var_0, 0, label_33f);
+    b(label_348);
+  label_33f:
+    bne(var_0, 1, label_348);
+    bitGet(var_0, MBIT_IIE_EIREI);
+    bne(var_0, 0, label_344);
+    b(label_36e);
+    b(label_347);
+  label_344:
+    bne(var_0, 1, label_347);
+    b(label_368);
+    b(label_347);
+  label_347:
+    b(label_348);
+  label_348:
+    bitGet(var_0, EBIT_E0046);
+    bne(var_0, 0, label_34b);
+    b(label_354);
+  label_34b:
+    bne(var_0, 1, label_354);
+    bitGet(var_0, MBIT_HENSHU_TALK);
+    bne(var_0, 0, label_350);
+    b(label_35b);
+    b(label_353);
+  label_350:
+    bne(var_0, 1, label_353);
+    b(label_368);
+    b(label_353);
+  label_353:
+    b(label_354);
+  label_354:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_35b);
+    bitGet(var_0, EBIT_E002B);
+    bnz(var_0, label_368);
+    bitGet(var_0, EBIT_E0015);
+    bnz(var_0, label_35b);
+    bez(var_0, label_368);
+  label_35b:
+    sndMusicPlay(sound_30a8, 127);
+    objAnimRotate(obj_15, 0, 80, 0, 60, 0);
+    delayClear();
+    delayWait(30);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    bitSet(MBIT_KISS_HENSHU);
+    eventLoad(event_e2);
+    b(label_375);
+  label_368:
+    ref_368 = dialogAlloc();
+    ref_369 = msgShow(msg_67);
+/***************************************
+[color(yellow)]編集長室[color(white)]
+[tab][color(green)]…会議中のようだ。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_369);
+    dialogFree(ref_368);
+    b(label_374);
+  label_36e:
+    ref_36e = dialogAlloc();
+    ref_36f = msgShow(msg_68);
+/***************************************
+[color(yellow)]編集長室[color(white)]
+[tab][color(green)]…編集長は休暇中のようだ。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_36f);
+    dialogFree(ref_36e);
+    b(label_374);
+  label_374:
+    controlEnable();
+  label_375:
+}
+
+function KAIDAN()
+{
+    controlDisable();
+    ref_377 = dialogAlloc();
+    ref_378 = msgShow(msg_69);
+/***************************************
+[color(yellow)]非常階段[color(white)]
+[tab][color(green)]ここには入れない。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_378);
+    dialogFree(ref_377);
+    controlEnable();
+}
+
+function KSHO_00()
+{
+    bitGet(var_0, LBIT_0013);
+    bne(var_0, 0, label_381);
+    b(label_38b);
+  label_381:
+    bne(var_0, 1, label_38b);
+    bitClear(MBIT_BATLE_OUBO);
+    sweepstakesResult(var_a, battle);
+    bne(var_a, 0, label_387);
+    b(label_3a6);
+    b(label_38a);
+  label_387:
+    bne(var_a, 1, label_38a);
+    b(label_3e6);
+    b(label_38a);
+  label_38a:
+    b(label_38b);
+  label_38b:
+    bitGet(var_0, LBIT_0014);
+    bne(var_0, 0, label_38e);
+    b(label_398);
+  label_38e:
+    bne(var_0, 1, label_398);
+    bitClear(MBIT_MRCLE_OUBO);
+    sweepstakesResult(var_b, miracle);
+    bne(var_b, 0, label_394);
+    b(label_3bc);
+    b(label_397);
+  label_394:
+    bne(var_b, 1, label_397);
+    b(label_408);
+    b(label_397);
+  label_397:
+    b(label_398);
+  label_398:
+    bitGet(var_0, LBIT_0015);
+    bne(var_0, 0, label_39b);
+    b(label_3a5);
+  label_39b:
+    bne(var_0, 1, label_3a5);
+    bitClear(MBIT_WORLD_OUBO);
+    sweepstakesResult(var_c, fantasy);
+    bne(var_c, 0, label_3a1);
+    b(label_3d2);
+    b(label_3a4);
+  label_3a1:
+    bne(var_c, 1, label_3a4);
+    b(label_42a);
+    b(label_3a4);
+  label_3a4:
+    b(label_3a5);
+  label_3a5:
+    b(label_44c);
+  label_3a6:
+    controlDisable();
+    ref_3a7 = dialogAlloc();
+    ref_3a8 = msgShow(msg_70);
+/***************************************
+[color(yellow)]箱の中[color(white)]
+[tab][color(green)]月刊バトルマスターからの
+[tab]手紙が入っている。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_3a8);
+    dialogFree(ref_3a7);
+    delayClear();
+    delayWait(30);
+    ref_3ae = bustupLoad(bustup_1);
+    bustupWait(ref_3ae);
+    ref_3b0 = bustupAlloc(ref_3ae, center, rgb(0,0,0));
+    bustupFade(ref_3b0, rgb(128,0,0), 30);
+    ref_3b2 = dialogAlloc();
+    ref_3b3 = msgShow(msg_71);
+/***************************************
+[color(yellow)]月刊バトルマスターからの手紙[color(white)]
+[tab]「懸賞への御応募、誠にありがとうございます。
+[tab][tab]お客様は、残念ながら落選されてしまいました。
+[tab][tab]また、次回の御応募お待ちしております。」[wait][clear]
+***************************************/
+    wait(ref_3b3);
+    dialogFree(ref_3b2);
+    ref_3b6 = bustupFade(ref_3b0, rgb(0,0,0), 10);
+    bustupWait(ref_3b6);
+    bustupFree(ref_3b0);
+    delayClear();
+    delayWait(30);
+    b(label_38b);
+  label_3bc:
+    controlDisable();
+    ref_3bd = dialogAlloc();
+    ref_3be = msgShow(msg_72);
+/***************************************
+[color(yellow)]箱の中[color(white)]
+[tab][color(green)]別冊ミラクルからの
+[tab]手紙が入っている。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_3be);
+    dialogFree(ref_3bd);
+    delayClear();
+    delayWait(30);
+    ref_3c4 = bustupLoad(bustup_1);
+    bustupWait(ref_3c4);
+    ref_3c6 = bustupAlloc(ref_3c4, center, rgb(0,0,0));
+    bustupFade(ref_3c6, rgb(128,0,0), 30);
+    ref_3c8 = dialogAlloc();
+    ref_3c9 = msgShow(msg_73);
+/***************************************
+[color(yellow)]別冊ミラクルからの手紙[color(white)]
+[tab]「懸賞への御応募、誠にありがとうございます。
+[tab][tab]お客様は、残念ながら落選されてしまいました。
+[tab][tab]また、次回の御応募お待ちしております。」[wait][clear]
+***************************************/
+    wait(ref_3c9);
+    dialogFree(ref_3c8);
+    ref_3cc = bustupFade(ref_3c6, rgb(0,0,0), 10);
+    bustupWait(ref_3cc);
+    bustupFree(ref_3c6);
+    delayClear();
+    delayWait(30);
+    b(label_398);
+  label_3d2:
+    controlDisable();
+    ref_3d3 = dialogAlloc();
+    ref_3d4 = msgShow(msg_74);
+/***************************************
+[color(yellow)]箱の中[color(white)]
+[tab][color(green)]ファンタジーワールドからの
+[tab]手紙が入っている。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_3d4);
+    dialogFree(ref_3d3);
+    delayClear();
+    delayWait(30);
+    ref_3da = bustupLoad(bustup_1);
+    bustupWait(ref_3da);
+    ref_3dc = bustupAlloc(ref_3da, center, rgb(0,0,0));
+    bustupFade(ref_3dc, rgb(128,0,0), 30);
+    ref_3de = dialogAlloc();
+    ref_3df = msgShow(msg_75);
+/***************************************
+[color(yellow)]ファンタジーワールドからの手紙[color(white)]
+[tab]「懸賞への御応募、誠にありがとうございます。
+[tab][tab]お客様は、残念ながら落選されてしまいました。
+[tab][tab]また、次回の御応募お待ちしております。」[wait][clear]
+***************************************/
+    wait(ref_3df);
+    dialogFree(ref_3de);
+    ref_3e2 = bustupFade(ref_3dc, rgb(0,0,0), 10);
+    bustupWait(ref_3e2);
+    bustupFree(ref_3dc);
+    b(label_44c);
+  label_3e6:
+    controlDisable();
+    sweepstakesReward(var_5, battle);
+    msgVar_Item(msgvar_0, var_5);
+    ref_3e9 = dialogAlloc();
+    ref_3ea = msgShow(msg_76);
+/***************************************
+[color(yellow)]箱の中[color(white)]
+[tab][color(green)]月刊バトルマスターからの
+[tab]手紙が入っている。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_3ea);
+    dialogFree(ref_3e9);
+    delayClear();
+    delayWait(30);
+    ref_3f0 = bustupLoad(bustup_1);
+    bustupWait(ref_3f0);
+    ref_3f2 = bustupAlloc(ref_3f0, center, rgb(0,0,0));
+    bustupFade(ref_3f2, rgb(128,0,0), 30);
+    ref_3f4 = dialogAlloc();
+    ref_3f5 = msgShow(msg_77);
+/***************************************
+[color(yellow)]月刊バトルマスターからの手紙[color(white)]
+[tab]「懸賞への御応募、誠にありがとうございます。
+[tab][tab]お客様は、見事当選なされました。
+[tab][tab]おめでとうございます！！」[wait][clear]
+***************************************/
+    wait(ref_3f5);
+    ref_3f7 = msgShow(msg_78);
+/***************************************
+[color(yellow)]月刊バトルマスターからの手紙[color(white)]
+[tab]「賞品として
+[tab][tab][color(green)][var(msg_var_0)][color(white)]をお送りいたします。
+[tab][tab]またの御応募を、お待ちしています。」[wait][clear]
+***************************************/
+    wait(ref_3f7);
+    partyItemAdd(var_5, 1);
+    dialogFree(ref_3f4);
+    ref_3fb = bustupFade(ref_3f2, rgb(0,0,0), 10);
+    bustupWait(ref_3fb);
+    bustupFree(ref_3f2);
+    delayClear();
+    delayWait(30);
+    msgVarSet(msgvar_0, var_5);
+    ref_401 = dialogAlloc();
+    ref_402 = msgShow(msg_79);
+/***************************************
+[tab][color(green)][item_with_type(item_ffff)]を手に入れた。[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_402);
+    dialogFree(ref_401);
+    delayClear();
+    delayWait(30);
+    b(label_38b);
+  label_408:
+    controlDisable();
+    sweepstakesReward(var_5, miracle);
+    msgVar_Item(msgvar_0, var_5);
+    ref_40b = dialogAlloc();
+    ref_40c = msgShow(msg_80);
+/***************************************
+[color(yellow)]箱の中[color(white)]
+[tab][color(green)]別冊ミラクルからの
+[tab]手紙が入っている。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_40c);
+    dialogFree(ref_40b);
+    delayClear();
+    delayWait(30);
+    ref_412 = bustupLoad(bustup_1);
+    bustupWait(ref_412);
+    ref_414 = bustupAlloc(ref_412, center, rgb(0,0,0));
+    bustupFade(ref_414, rgb(128,0,0), 30);
+    ref_416 = dialogAlloc();
+    ref_417 = msgShow(msg_81);
+/***************************************
+[color(yellow)]別冊ミラクルからの手紙[color(white)]
+[tab]「懸賞への御応募、誠にありがとうございます。
+[tab][tab]お客様は、見事当選なされました。
+[tab][tab]おめでとうございます！！」[wait][clear]
+***************************************/
+    wait(ref_417);
+    ref_419 = msgShow(msg_82);
+/***************************************
+[color(yellow)]別冊ミラクルからの手紙[color(white)]
+[tab]「賞品として
+[tab][tab][color(green)][var(msg_var_0)][color(white)]をお送りいたします。
+[tab][tab]またの御応募を、お待ちしています。」[wait][clear]
+***************************************/
+    wait(ref_419);
+    partyItemAdd(var_5, 1);
+    dialogFree(ref_416);
+    ref_41d = bustupFade(ref_414, rgb(0,0,0), 10);
+    bustupWait(ref_41d);
+    bustupFree(ref_414);
+    delayClear();
+    delayWait(30);
+    msgVarSet(msgvar_0, var_5);
+    ref_423 = dialogAlloc();
+    ref_424 = msgShow(msg_83);
+/***************************************
+[tab][color(green)][item_with_type(item_ffff)]を手に入れた。[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_424);
+    dialogFree(ref_423);
+    delayClear();
+    delayWait(30);
+    b(label_398);
+  label_42a:
+    controlDisable();
+    sweepstakesReward(var_5, fantasy);
+    msgVar_Item(msgvar_0, var_5);
+    ref_42d = dialogAlloc();
+    ref_42e = msgShow(msg_84);
+/***************************************
+[color(yellow)]箱の中[color(white)]
+[tab][color(green)]ファンタジーワールドからの
+[tab]手紙が入っている。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_42e);
+    dialogFree(ref_42d);
+    delayClear();
+    delayWait(30);
+    ref_434 = bustupLoad(bustup_1);
+    bustupWait(ref_434);
+    ref_436 = bustupAlloc(ref_434, center, rgb(0,0,0));
+    bustupFade(ref_436, rgb(128,0,0), 30);
+    ref_438 = dialogAlloc();
+    ref_439 = msgShow(msg_85);
+/***************************************
+[color(yellow)]ファンタジーワールドからの手紙[color(white)]
+[tab]「懸賞への御応募、誠にありがとうございます。
+[tab][tab]お客様は、見事当選なされました。
+[tab][tab]おめでとうございます！！」[wait][clear]
+***************************************/
+    wait(ref_439);
+    ref_43b = msgShow(msg_86);
+/***************************************
+[color(yellow)]ファンタジーワールドからの手紙[color(white)]
+[tab]「賞品として
+[tab][tab][color(green)][var(msg_var_0)][color(white)]をお送りいたします。
+[tab][tab]またの御応募を、お待ちしています。」[wait][clear]
+***************************************/
+    wait(ref_43b);
+    partyItemAdd(var_5, 1);
+    dialogFree(ref_438);
+    ref_43f = bustupFade(ref_436, rgb(0,0,0), 10);
+    bustupWait(ref_43f);
+    bustupFree(ref_436);
+    delayClear();
+    delayWait(30);
+    msgVarSet(msgvar_0, var_5);
+    ref_445 = dialogAlloc();
+    ref_446 = msgShow(msg_87);
+/***************************************
+[tab][color(green)][item_with_type(item_ffff)]を手に入れた。[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_446);
+    dialogFree(ref_445);
+    delayClear();
+    delayWait(30);
+    b(label_44c);
+  label_44c:
+    bitClear(LBIT_0013);
+    bitClear(LBIT_0010);
+    bitClear(LBIT_0014);
+    bitClear(LBIT_0011);
+    bitClear(LBIT_0015);
+    bitClear(LBIT_0012);
+    bitGet(var_0, MBIT_W_PASS);
+    bne(var_0, 0, label_456);
+    b(label_47b);
+    b(label_47b);
+  label_456:
+    bne(var_0, 1, label_47b);
+    bitGet(var_0, MBIT_W_ITEMGET);
+    bne(var_0, 0, label_477);
+    controlDisable();
+    ref_45a = dialogAlloc();
+    ref_45b = msgShow(msg_88);
+/***************************************
+[color(yellow)]箱の中[color(white)]
+[tab][color(green)]手紙が入っている。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_45b);
+    dialogFree(ref_45a);
+    delayClear();
+    delayWait(30);
+    ref_461 = bustupLoad(bustup_1);
+    bustupWait(ref_461);
+    ref_463 = bustupAlloc(ref_461, center, rgb(0,0,0));
+    bustupFade(ref_463, rgb(128,0,0), 30);
+    ref_465 = dialogAlloc();
+    ref_466 = msgShow(msg_89);
+/***************************************
+[color(yellow)]差出人不明の手紙[color(white)]
+[tab]君は、これを手にする器の者か？
+[wait][clear]
+***************************************/
+    wait(ref_466);
+    partyItemAdd(king_in_yellow, 1);
+    msgVarSet(msgvar_0, 8237);
+    bitSet(MBIT_W_ITEMGET);
+    dialogFree(ref_465);
+    ref_46c = bustupFade(ref_463, rgb(0,0,0), 10);
+    bustupWait(ref_46c);
+    bustupFree(ref_463);
+    delayClear();
+    delayWait(30);
+    ref_471 = dialogAlloc();
+    ref_472 = msgShow(msg_90);
+/***************************************
+[tab][color(green)][item_with_type(item_ffff)]を手に入れた。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_472);
+    dialogFree(ref_471);
+    b(label_47a);
+  label_477:
+    bne(var_0, 1, label_47a);
+    b(label_47b);
+    b(label_47a);
+  label_47a:
+    b(label_47b);
+  label_47b:
+    objVisible(obj_4d, false);
+    controlEnable();
+}
+
+function MESTEST()
+{
+    bitGet(var_0, MBIT_BATLE_OUBO);
+    bnz(var_0, label_487);
+    bitSet(MBIT_BATLE_OUBO);
+    bitSet(MBIT_WORLD_OUBO);
+    ref_482 = dialogAlloc();
+    ref_483 = msgShow(msg_91);
+/***************************************
+懸賞応募・バトル・ワールド
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_483);
+    dialogFree(ref_482);
+    b(label_498);
+  label_487:
+    bitGet(var_0, MBIT_MRCLE_OUBO);
+    bnz(var_0, label_48f);
+    bitSet(MBIT_MRCLE_OUBO);
+    ref_48a = dialogAlloc();
+    ref_48b = msgShow(msg_92);
+/***************************************
+懸賞応募・ミラクル
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_48b);
+    dialogFree(ref_48a);
+    b(label_498);
+  label_48f:
+    bitGet(var_0, MBIT_WORLD_OUBO);
+    bnz(var_0, label_498);
+    bitSet(MBIT_MRCLE_OUBO);
+    bitSet(MBIT_WORLD_OUBO);
+    ref_493 = dialogAlloc();
+    ref_494 = msgShow(msg_93);
+/***************************************
+懸賞応募・ミラクル
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_494);
+    dialogFree(ref_493);
+    b(label_498);
+  label_498:
+}
+
+function MESTEST1()
+{
+    bitGet(var_0, MBIT_AIS_32);
+    bnz(var_0, label_4a1);
+    bitSet(MBIT_AIS_32);
+    ref_49c = dialogAlloc();
+    ref_49d = msgShow(msg_94);
+/***************************************
+ＭＢＩＴ[tab]ＡＩＳ[tab]３２
+相性占いの
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_49d);
+    dialogFree(ref_49c);
+    b(label_4f1);
+  label_4a1:
+    bitGet(var_0, EBIT_E0015);
+    bnz(var_0, label_4a9);
+    bitSet(EBIT_E0015);
+    ref_4a4 = dialogAlloc();
+    ref_4a5 = msgShow(msg_95);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００１５
+七姉妹学園クリア
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4a5);
+    dialogFree(ref_4a4);
+    b(label_4f1);
+  label_4a9:
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_4b1);
+    bitSet(EBIT_E0018);
+    ref_4ac = dialogAlloc();
+    ref_4ad = msgShow(msg_96);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００１８
+バー終了・パオフゥ初参加
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4ad);
+    dialogFree(ref_4ac);
+    b(label_4f1);
+  label_4b1:
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_4b9);
+    bitSet(EBIT_E0033);
+    ref_4b4 = dialogAlloc();
+    ref_4b5 = msgShow(msg_97);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００３３
+「パオフゥ編入」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4b5);
+    dialogFree(ref_4b4);
+    b(label_4f1);
+  label_4b9:
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_4c1);
+    bitSet(EBIT_E0037);
+    ref_4bc = dialogAlloc();
+    ref_4bd = msgShow(msg_98);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００３７
+警察署[half_tab]受付、終了
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4bd);
+    dialogFree(ref_4bc);
+    b(label_4f1);
+  label_4c1:
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_4c9);
+    bitSet(EBIT_E0038);
+    ref_4c4 = dialogAlloc();
+    ref_4c5 = msgShow(msg_99);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００３８
+「詐欺男を確保」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4c5);
+    dialogFree(ref_4c4);
+    b(label_4f1);
+  label_4c9:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_4d1);
+    bitSet(EBIT_E003E);
+    ref_4cc = dialogAlloc();
+    ref_4cd = msgShow(msg_100);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００３Ｅ
+「ゴールドクリア」「うらら編入」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4cd);
+    dialogFree(ref_4cc);
+    b(label_4f1);
+  label_4d1:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_4d9);
+    bitSet(EBIT_E0043);
+    ref_4d4 = dialogAlloc();
+    ref_4d5 = msgShow(msg_101);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００４３
+「クラブクリア」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4d5);
+    dialogFree(ref_4d4);
+    b(label_4f1);
+  label_4d9:
+    bitGet(var_0, EBIT_E0044);
+    bnz(var_0, label_4e1);
+    bitSet(EBIT_E0044);
+    ref_4dc = dialogAlloc();
+    ref_4dd = msgShow(msg_102);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００４４
+「青葉公園クリア」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4dd);
+    dialogFree(ref_4dc);
+    b(label_4f1);
+  label_4e1:
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_4e9);
+    bitSet(EBIT_E0046);
+    ref_4e4 = dialogAlloc();
+    ref_4e5 = msgShow(msg_103);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００４６
+「南条ｏｒエリー編入」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4e5);
+    dialogFree(ref_4e4);
+    b(label_4f1);
+  label_4e9:
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_4f1);
+    bitSet(EBIT_E006F);
+    ref_4ec = dialogAlloc();
+    ref_4ed = msgShow(msg_104);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００６Ｆ
+「研究施設・ＴＶ局クリア」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4ed);
+    dialogFree(ref_4ec);
+    b(label_4f1);
+  label_4f1:
+}
+
+function ELE()
+{
+    controlDisable();
+    sndMusicPlay(sound_30a7, 127);
+    objAnimTranslate(obj_13, 100, 0, 0, 30);
+    objAnimTranslate(obj_14, -200, 0, 0, 30);
+    objAnimWait(obj_13);
+    objAnimWait(obj_14);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    call(GOOUT);
+}
+
+function GOOUT()
+{
+    bitGet(var_0, LBIT_0000);
+    bne(var_0, 0, label_501);
+    b(label_504);
+  label_501:
+    bne(var_0, 1, label_504);
+    bitSet(MBIT_KISS_YUKINO);
+    b(label_504);
+  label_504:
+    eventLoad(event_e3);
+}
+
+function MAN5()
+{
+    controlDisable();
+    objAnimRotate(obj_32, 0, 45, 0, 5, 0);
+    unitFace8(npc5, southeast);
+    objAnimWait(obj_32);
+    objAnimRotate(obj_32, 0, 45, 0, 5, 0);
+    unitFace8(npc5, south);
+    objAnimWait(obj_32);
+    objAnimRotate(obj_32, 0, 45, 0, 5, 0);
+    unitFace8(npc5, southwest);
+    objAnimWait(obj_32);
+    objAnimRotate(obj_32, 0, 45, 0, 5, 0);
+    unitFace8(npc5, west);
+    objAnimWait(obj_32);
+    ref_513 = call(MAN555);
+    wait(ref_513);
+    unitRestoreFacing(npc5);
+    objAnimRotate(obj_32, 0, 45, 0, 5, 0);
+    unitFace8(npc5, northwest);
+    objAnimWait(obj_32);
+    objAnimRotate(obj_32, 0, 45, 0, 5, 0);
+    unitFace8(npc5, north);
+    objAnimWait(obj_32);
+    objAnimRotate(obj_32, 0, 45, 0, 5, 0);
+    unitFace8(npc5, northeast);
+    objAnimWait(obj_32);
+    objAnimRotate(obj_32, 0, 45, 0, 5, 0);
+    unitFace8(npc5, east);
+    objAnimWait(obj_32);
+    controlEnable();
+    unitIdleOff(npc5);
+}
+
+function MAN6()
+{
+    controlDisable();
+    objAnimRotate(obj_2d, 0, 45, 0, 5, 0);
+    unitFace8(npc6, northwest);
+    objAnimWait(obj_2d);
+    objAnimRotate(obj_2d, 0, 45, 0, 5, 0);
+    unitFace8(npc6, north);
+    objAnimWait(obj_2d);
+    objAnimRotate(obj_2d, 0, 45, 0, 5, 0);
+    unitFace8(npc6, northeast);
+    objAnimWait(obj_2d);
+    objAnimRotate(obj_2d, 0, 45, 0, 5, 0);
+    unitFace8(npc6, east);
+    objAnimWait(obj_2d);
+    ref_532 = call(MAN666);
+    wait(ref_532);
+    unitRestoreFacing(npc6);
+    objAnimRotate(obj_2d, 0, 45, 0, 5, 0);
+    unitFace8(npc6, southeast);
+    objAnimWait(obj_2d);
+    objAnimRotate(obj_2d, 0, 45, 0, 5, 0);
+    unitFace8(npc6, south);
+    objAnimWait(obj_2d);
+    objAnimRotate(obj_2d, 0, 45, 0, 5, 0);
+    unitFace8(npc6, southwest);
+    objAnimWait(obj_2d);
+    objAnimRotate(obj_2d, 0, 45, 0, 5, 0);
+    unitFace8(npc6, west);
+    objAnimWait(obj_2d);
+    controlEnable();
+    unitIdleOff(npc6);
+}
+
+function MAN7()
+{
+    controlDisable();
+    objAnimRotate(obj_36, 0, 45, 0, 5, 0);
+    unitFace8(npc7, southeast);
+    objAnimWait(obj_36);
+    objAnimRotate(obj_36, 0, 45, 0, 5, 0);
+    unitFace8(npc7, south);
+    objAnimWait(obj_36);
+    objAnimRotate(obj_36, 0, 45, 0, 5, 0);
+    unitFace8(npc7, southwest);
+    objAnimWait(obj_36);
+    objAnimRotate(obj_36, 0, 45, 0, 5, 0);
+    unitFace8(npc7, west);
+    objAnimWait(obj_36);
+    ref_551 = call(MAN777);
+    wait(ref_551);
+    unitRestoreFacing(npc7);
+    objAnimRotate(obj_36, 0, 45, 0, 5, 0);
+    unitFace8(npc7, northwest);
+    objAnimWait(obj_36);
+    objAnimRotate(obj_36, 0, 45, 0, 5, 0);
+    unitFace8(npc7, north);
+    objAnimWait(obj_36);
+    objAnimRotate(obj_36, 0, 45, 0, 5, 0);
+    unitFace8(npc7, northeast);
+    objAnimWait(obj_36);
+    objAnimRotate(obj_36, 0, 45, 0, 5, 0);
+    unitFace8(npc7, east);
+    objAnimWait(obj_36);
+    controlEnable();
+    unitIdleOff(npc7);
+}

@@ -1,0 +1,3168 @@
+
+msg_0:
+[end]
+
+msg_1:
+[end]
+
+msg_2:
+[end]
+
+msg_3:
+[end]
+
+msg_4:
+[end]
+
+msg_5:
+[end]
+
+msg_6:
+[end]
+
+msg_7:
+[end]
+
+msg_8:
+[end]
+
+msg_9:
+[end]
+
+msg_10:
+[end]
+
+msg_11:
+[end]
+
+msg_12:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ～カンタンには行かないですぅ。
+[wait][clear][end]
+
+msg_13:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]も、おねえちゃんのこと
+ 知りたいですぅ。
+[wait][clear][end]
+
+msg_14:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]のこと、
+ 気になりますかぁ？
+[wait][clear][end]
+
+msg_15:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、
+ だいにんきですぅ！
+[wait][clear][end]
+
+msg_16:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おもしろい、おしごとですね！
+[wait][clear][end]
+
+msg_17:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]のこと
+ スキなんですね！
+[wait][clear][end]
+
+msg_18:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぜったいぜ～ったい
+ わるいこと考えてますぅ！
+[wait][clear][end]
+
+msg_19:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ ぷらいばし～のしんがいですぅ！
+[wait][clear][end]
+
+msg_20:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぜ～ったい、ヒミツですぅ！
+[wait][clear][end]
+
+msg_21:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ そんなこと教えたら、おこられますぅ！
+ こわいですぅ…ふ、ふぇぇええん！
+[wait][clear][end]
+
+msg_22:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ あくまさんのヒミツ教えたら
+ パパに、い～っぱい、おこられますぅ…
+[wait][clear][end]
+
+msg_23:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、なにかわるいこと
+ 考えてるにきまってますぅ…
+[wait][clear][end]
+
+msg_24:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それ、なんですかぁ？
+[wait][clear][end]
+
+msg_25:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]ね、[var(msg_var_0)]ね…
+ あのぅ…「れんあいうん」うらなって
+ ほしいですぅ。
+[wait][clear][end]
+
+msg_26:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]も、
+ やってみたいですぅ！
+[wait][clear][end]
+
+msg_27:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 次は[var(msg_var_0)]のばんですぅ！
+[wait][clear][end]
+
+msg_28:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ ありがとですぅ！
+[wait][clear][end]
+
+msg_29:
+[color(yellow)][var(msg_var_0)][color(white)]
+ インチキですぅ！
+[wait][clear][end]
+
+msg_30:
+[color(yellow)][var(msg_var_0)][color(white)]
+ もぅおしまいですかぁ？
+ もっと、おはなししてください！
+[wait][clear][end]
+
+msg_31:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウソですぅ！
+ ぜったいぜ～ったい
+ しんじませんっっ！
+[wait][clear][end]
+
+msg_32:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「れんあいうん」は、ダメですぅ…
+[wait][clear][end]
+
+msg_33:
+[color(yellow)][var(msg_var_0)][color(white)]
+ や、やめてください…
+[wait][clear][end]
+
+msg_34:
+[color(yellow)][var(msg_var_0)][color(white)]
+ お金、とりませんよね…
+[wait][clear][end]
+
+msg_35:
+[color(yellow)][var(msg_var_0)][color(white)]
+ つぎは、[var(msg_var_0)]が
+ 「けーじ」ですぅ！
+[wait][clear][end]
+
+msg_36:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ もっと聞かせてくださいっ！
+[wait][clear][end]
+
+msg_37:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]が
+ はんにんやく、ですねぇ～？
+[wait][clear][end]
+
+msg_38:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]じゃないですぅ！
+[wait][clear][end]
+
+msg_39:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 知りませんっ！
+[wait][clear][end]
+
+msg_40:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ [var(msg_var_0)]、「はんにんやく」は
+ つまんないですぅ！
+[wait][clear][end]
+
+msg_41:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ し、知りません！
+ そんな女の人、見たことないですぅ！
+[wait][clear][end]
+
+msg_42:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]、[var(msg_var_0)]…
+ そんな女の人は知らないんですぅ！
+[wait][clear][end]
+
+msg_43:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]じゃないですぅ！
+ そんな女の人、聞いたこともないですぅ！
+[wait][clear][end]
+
+msg_44:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そのキカイ、[var(msg_var_0)]の
+ こえが出ますぅ！
+[wait][clear][end]
+
+msg_45:
+[color(yellow)][var(msg_var_0)][color(white)]
+ んん～？
+ このこえ、どっかで聞いたことありますぅ。
+[wait][clear][end]
+
+msg_46:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間って、おもしろいですね！
+[wait][clear][end]
+
+msg_47:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ とっても良くとれてますぅ！
+ おじちゃん、おじょうずですぅ！
+[wait][clear][end]
+
+msg_48:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ およめにいけません…
+[wait][clear][end]
+
+msg_49:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 大人は、こわいですぅ…
+[wait][clear][end]
+
+msg_50:
+[color(yellow)][var(msg_var_0)][color(white)]
+ もの知りさんですぅ！
+[wait][clear][end]
+
+msg_51:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]には
+ なにがひつようですかぁ？
+[wait][clear][end]
+
+msg_52:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あくまのおはなしは、ないんですかぁ？
+[wait][clear][end]
+
+msg_53:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、ファンに
+ なっちゃいますぅ！
+[wait][clear][end]
+
+msg_54:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ しんけんなおにいちゃん、
+ かっこいいですぅ！
+[wait][clear][end]
+
+msg_55:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]も、大人になったら
+ そのセリフ、つかいますぅ！
+[wait][clear][end]
+
+msg_56:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ おはなし、つまんないですぅ！
+[wait][clear][end]
+
+msg_57:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ 言ってること、ぜ～んぜん
+ 分かりませんっっ！
+[wait][clear][end]
+
+msg_58:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ そんなの、聞きたくないですぅ！
+[wait][clear][end]
+
+msg_59:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ おこってるのかなぁ…
+[wait][clear][end]
+
+msg_60:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 大人は、よくわかりません…
+[wait][clear][end]
+
+msg_61:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なに言ってるのかなぁ…
+[wait][clear][end]
+
+msg_62:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おねえちゃん、すごいですぅ！
+ [var(msg_var_0)]、おねえちゃんみたいに
+ なりたいですぅ！
+[wait][clear][end]
+
+msg_63:
+[color(yellow)][var(msg_var_0)][color(white)]
+ じょゆうさんみたいですぅ。
+[wait][clear][end]
+
+msg_64:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ ドキドキしちゃいましたぁ！
+[wait][clear][end]
+
+msg_65:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おぎょ～ぎ、わるいですよっっ！
+[wait][clear][end]
+
+msg_66:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぜ～んぜん！
+ うらやましくないですからねっ！
+[wait][clear][end]
+
+msg_67:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ ど～せ[var(msg_var_0)]は
+ キレイじゃないですぅ！
+[wait][clear][end]
+
+msg_68:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]には、できません…
+[wait][clear][end]
+
+msg_69:
+[color(yellow)][var(msg_var_0)][color(white)]
+ いきなり、どしたんですかぁ…？
+[wait][clear][end]
+
+msg_70:
+[color(yellow)][var(msg_var_0)][color(white)]
+ どして、じ～っと見るんですかぁ？
+[wait][clear][end]
+
+msg_71:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、まよっちゃいますぅ。
+[wait][clear][end]
+
+msg_72:
+[color(yellow)][var(msg_var_0)][color(white)]
+ じろじろ見ないでください！
+[wait][clear][end]
+
+msg_73:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ ビックリさせないでくださいっっ！
+[wait][clear][end]
+
+msg_74:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ご、ごめんなさぁい…
+[wait][clear][end]
+
+msg_75:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]のほうが
+ かわいいですぅ。
+[wait][clear][end]
+
+msg_76:
+[color(yellow)][var(msg_var_0)][color(white)]
+ んーとねぇ…
+ どっちも、キレイで、
+ どっちも、おいしそうですぅ。
+[wait][clear][end]
+
+msg_77:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ どっちのおねえちゃんも、かわいいですぅ！
+ かわいいおねえちゃん、スキですぅ！
+[wait][clear][end]
+
+msg_78:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]が、いっちば～ん
+ かわいいですぅ！
+[wait][clear][end]
+
+msg_79:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]は
+ おいしそうなほうがスキですぅ！
+[wait][clear][end]
+
+msg_80:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ どっちも、イヤですぅ！
+ ぜぇ～んぜんっ、かわいくないですぅ！
+[wait][clear][end]
+
+msg_81:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなの、きょ～みないですぅ！
+[wait][clear][end]
+
+msg_82:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ おっきくなったら、[var(msg_var_0)]のほうが
+ びじんになるんですぅ！
+[wait][clear][end]
+
+msg_83:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ きっときっと、えらばなかったほうに
+ ころされちゃいますぅ…
+[wait][clear][end]
+
+msg_84:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ きっときっと、えらんだおねえちゃんと
+ けっこんさせられますぅ…
+[wait][clear][end]
+
+msg_85:
+[color(yellow)][var(msg_var_0)][color(white)]
+ いっ、言えません…
+[wait][clear][end]
+
+msg_86:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 聞いてくれますかぁ？
+ [var(msg_var_0)]、ジャンケンに
+ かてないんですぅ。
+[wait][clear][end]
+
+msg_87:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間って、やさしいんですね。
+[wait][clear][end]
+
+msg_88:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ そうだん、しますぅ！ あのね、えっとね…
+ んん？ 「なやみ」ってなんですかぁ？
+[wait][clear][end]
+
+msg_89:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おねえちゃんたち
+ やさしいですぅ！
+[wait][clear][end]
+
+msg_90:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ [var(msg_var_0)]、もう大人ですぅ！
+[wait][clear][end]
+
+msg_91:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]のこと、
+ バカにしてますぅ！
+[wait][clear][end]
+
+msg_92:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ おねえちゃんたち、きっとあとで
+ だれかに言っちゃうですぅ…
+[wait][clear][end]
+
+msg_93:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ アイス食べると、おなかが…
+ いっ、言えないですぅ…
+[wait][clear][end]
+
+msg_94:
+[color(yellow)][var(msg_var_0)][color(white)]
+ つづき、聞きたいですぅ。
+[wait][clear][end]
+
+msg_95:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おはなし、と～っても
+ おもしろいですぅ。
+[wait][clear][end]
+
+msg_96:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]も、
+ おはなししたいですぅ。
+[wait][clear][end]
+
+msg_97:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おもしろいおはなし、ありがとですぅ！
+[wait][clear][end]
+
+msg_98:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ こんどは[var(msg_var_0)]に
+ 「いんたぶー」してください！
+[wait][clear][end]
+
+msg_99:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ おはなし、よくわかんないですぅ…
+ [var(msg_var_0)]、バカですかぁ…？
+[wait][clear][end]
+
+msg_100:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]とも
+ おはなししてほしいですぅ…
+[wait][clear][end]
+
+msg_101:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ちがうおどりも
+ おどってほしいですぅ！
+[wait][clear][end]
+
+msg_102:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]も、いっしょに
+ おどりたいですぅ！
+[wait][clear][end]
+
+msg_103:
+[color(yellow)][var(msg_var_0)][color(white)]
+ へたですぅ！
+ たいじょー、してくださいっっ！
+[wait][clear][end]
+
+msg_104:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おにいちゃんが、なに言っても
+ 「あくま」は、やめないですぅ！
+[wait][clear][end]
+
+msg_105:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ わるい子は、いいあくまなんですぅ！
+[wait][clear][end]
+
+msg_106:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ こうなったら、[var(msg_var_0)]は
+ もっともーっと！ わるい子になりますぅ！
+[wait][clear][end]
+
+msg_107:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ [var(msg_var_0)]が、正しいんですっ！
+[wait][clear][end]
+
+msg_108:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]、わるい子ですかぁ？
+[wait][clear][end]
+
+msg_109:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ 「あくま」でいることは
+ わるいこと、なんですかぁ…？
+[wait][clear][end]
+
+msg_110:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]ね、こんどは
+ ちがうおはなし
+ してほしいですぅ。
+[wait][clear][end]
+
+msg_111:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おにいちゃんたち、むずかしいこと
+ よく知ってるんですね！
+[wait][clear][end]
+
+msg_112:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]も、「せーぎ」の
+ おはなし、したいですぅ！
+[wait][clear][end]
+
+msg_113:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ せーぎ？ って、たくさん食べると
+ おなかピーになりますかぁ？
+[wait][clear][end]
+
+msg_114:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]には
+ おねえちゃんが、いるんですよ～。
+ い～っつも、オヤツとられちゃうんですぅ！
+[wait][clear][end]
+
+msg_115:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ ケンカしてほしいですぅ！
+[wait][clear][end]
+
+msg_116:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]も、
+ 「おにいちゃん」に、なりたいですぅ！
+[wait][clear][end]
+
+msg_117:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、おうちに帰って
+ おねえちゃんに、あまえたいですぅ！
+[wait][clear][end]
+
+msg_118:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぜ～んぜん、うらやましくないもん！
+ おにいちゃんなんか、いらないですぅ！
+ ほ、ほんとですぅ！
+[wait][clear][end]
+
+msg_119:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]と、おねえちゃんは
+ ケンカ中なんですぅ！
+ 思い出しちゃうから、やめてください！
+[wait][clear][end]
+
+msg_120:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ おにいちゃん、ほしいですぅ…
+[wait][clear][end]
+
+msg_121:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 自分の、かぞくなのに
+ きらいなんですかぁ…？
+[wait][clear][end]
+
+msg_122:
+[color(yellow)][var(msg_var_0)][color(white)]
+ オトナなかんじですぅ！
+[wait][clear][end]
+
+msg_123:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おさけは、「おまつり」と「ぎしき」のときだけ、
+ のませてもらえるですぅ。
+[wait][clear][end]
+
+msg_124:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 大人も、いろいろタイヘンなんですね！
+[wait][clear][end]
+
+msg_125:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]も、大スキですぅ！
+[wait][clear][end]
+
+msg_126:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]だって、のみたいのに
+ おじちゃんたち、ズルイですぅ！
+[wait][clear][end]
+
+msg_127:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ま、まさか、おさけのまされて
+ 「ゆーかい」されるんじゃ…
+[wait][clear][end]
+
+msg_128:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]は、おさけのんだら
+ あばれるらしいんですぅ…
+[wait][clear][end]
+
+msg_129:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]はぁ、どっちも
+ おうえんしてますぅ～！
+[wait][clear][end]
+
+msg_130:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 男の人は、いつまでたっても
+ 子どもですね！
+[wait][clear][end]
+
+msg_131:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]も、
+ おなかまに入れてください！
+[wait][clear][end]
+
+msg_132:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]のほうが
+ 大人ですぅ！
+[wait][clear][end]
+
+msg_133:
+[color(yellow)][var(msg_var_0)][color(white)]
+ もぅケンカおわりですかぁ？
+ つまんないですぅ！
+[wait][clear][end]
+
+msg_134:
+[color(yellow)][var(msg_var_0)][color(white)]
+ えっと、えっと、えっとぉ…
+ わ、わかんないですぅ…ふぇぇええん！
+[wait][clear][end]
+
+msg_135:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …かっ、帰りたいですぅ…パパぁ…
+[wait][clear][end]
+
+msg_136:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 大人はカッコイイですぅ！
+ [var(msg_var_0)]も、
+ はやく大人になりたいですぅ！
+[wait][clear][end]
+
+msg_137:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、頭がよくなったような
+ 気がしますぅ！
+[wait][clear][end]
+
+msg_138:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、たよられちゃってますぅ。
+[wait][clear][end]
+
+msg_139:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ よくわかんないけど、さんせいしますぅ！
+[wait][clear][end]
+
+msg_140:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むずかしいおはなし、
+ きらいですぅ！
+[wait][clear][end]
+
+msg_141:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほめじょうずですぅ。
+[wait][clear][end]
+
+msg_142:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ ほめられちゃいましたぁ！
+[wait][clear][end]
+
+msg_143:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]のこと、きらいなのかなぁ…
+[wait][clear][end]
+
+msg_144:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おしごと、たいへんなんですね。
+[wait][clear][end]
+
+msg_145:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]も、
+ おしごとって、してみたいですぅ。
+[wait][clear][end]
+
+msg_146:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]も、
+ おしごとしてみたいんですぅ！
+ おねえちゃんたち、ズルイですぅ！
+[wait][clear][end]
+
+msg_147:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]も、
+ おしごとしてみたいですぅ…
+[wait][clear][end]
+
+msg_148:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ちょっとだけ、うらやましいですぅ…
+[wait][clear][end]
+
+msg_149:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 男の人って、こわいんですねぇ。
+[wait][clear][end]
+
+msg_150:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 男の人のこと、よくわかんないですぅ。
+[wait][clear][end]
+
+msg_151:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、子どもでよかったですぅ！
+[wait][clear][end]
+
+msg_152:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]には
+ わかりませんっ！
+[wait][clear][end]
+
+msg_153:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ど～せ[var(msg_var_0)]には
+ そんなケイケンありませんっっ！
+[wait][clear][end]
+
+msg_154:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おねえちゃんのこと、スキなんですね。
+[wait][clear][end]
+
+msg_155:
+[color(yellow)][var(msg_var_0)][color(white)]
+ どして、そのおねえちゃんのこと
+ まもるんですかぁ？
+[wait][clear][end]
+
+msg_156:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ じゃぁ、じゃぁ、おにいちゃんも、
+ いっしょにころしちゃいますぅ！
+[wait][clear][end]
+
+msg_157:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ テレビみたいですぅ！
+[wait][clear][end]
+
+msg_158:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おねえちゃんばっかり、ズルイですぅ！
+[wait][clear][end]
+
+msg_159:
+[color(yellow)][var(msg_var_0)][color(white)]
+ メガネのおにいちゃん、
+ どして、ないちゃいそ～なんですかぁ？
+[wait][clear][end]
+
+msg_160:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間のきょーだいは、
+ そんなことするんですね。
+[wait][clear][end]
+
+msg_161:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 人間は、ヘンですぅ！
+[wait][clear][end]
+
+msg_162:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]には、かんけいないですぅ！
+[wait][clear][end]
+
+msg_163:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]には、
+ わからないせかいですぅ…
+[wait][clear][end]
+
+msg_164:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]は、
+ かっこいいおにいちゃんのほう、
+ おうえんしますぅ！
+[wait][clear][end]
+
+msg_165:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おにいちゃん、いがいと子どもですね！
+[wait][clear][end]
+
+msg_166:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]には、りかいふの～ですぅ…
+[wait][clear][end]
+
+msg_167:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]も、早く大人になって
+ そ～ゆうこと、したいですぅ。
+[wait][clear][end]
+
+msg_168:
+[color(yellow)][var(msg_var_0)][color(white)]
+ んん～？？
+ どっか、いたいんですかぁ？
+[wait][clear][end]
+
+msg_169:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ [var(msg_var_0)]だって、オトナになったら
+ 「おいろけ」になりますぅ！
+[wait][clear][end]
+
+msg_170:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ど、どしたんですかぁ…
+[wait][clear][end]
+
+msg_171:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ おねえちゃんたち、グネグネしてますぅ…
+ ホネ、なくなっちゃったんですかぁ…？
+[wait][clear][end]
+
+msg_172:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]じゃ、ダメですかぁ？
+[wait][clear][end]
+
+msg_173:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ええ～っ！
+ おねえちゃん、けっこん
+ してなかったんですかぁ？
+[wait][clear][end]
+
+msg_174:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ けっこん、[var(msg_var_0)]も
+ したいですぅ～！
+[wait][clear][end]
+
+msg_175:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ダメですっっ！
+ おにいちゃんは、[var(msg_var_0)]と
+ けっこんするんですぅ！
+[wait][clear][end]
+
+msg_176:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おねえちゃんじゃ、およめさんには
+ なれっこないですぅ！
+[wait][clear][end]
+
+msg_177:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …[var(msg_var_0)]も、
+ けっこんできなかったら…
+ おねえちゃんみたいに、なっちゃいますか…？
+[wait][clear][end]
+
+msg_178:
+[color(yellow)][var(msg_var_0)][color(white)]
+ はぁ～い！
+ [var(msg_var_0)]、のみますぅ！
+[wait][clear][end]
+
+msg_179:
+[color(yellow)][var(msg_var_0)][color(white)]
+ メガネのおにいちゃん、
+ かなしいんですかぁ？
+ フラれちゃったんですかぁ？
+[wait][clear][end]
+
+msg_180:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おさけのんだら、おこられちゃいますぅ！
+ [var(msg_var_0)]が、おこられても
+ いいんですかぁっ？
+[wait][clear][end]
+
+msg_181:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]だって、のみたいの、
+ ガマンしてるんですよっっ！
+[wait][clear][end]
+
+msg_182:
+[color(yellow)][var(msg_var_0)][color(white)]
+ はぁ～い！
+ わかりましたぁ！
+[wait][clear][end]
+
+msg_183:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あいのむち、ですかぁ？
+[wait][clear][end]
+
+msg_184:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おこられちゃいましたぁ！
+[wait][clear][end]
+
+msg_185:
+[color(yellow)][var(msg_var_0)][color(white)]
+ パパに言いつけちゃいますっ！
+[wait][clear][end]
+
+msg_186:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間は、おばけ、こわくないんですかぁ？
+[wait][clear][end]
+
+msg_187:
+[end]
+
+msg_188:
+[end]
+
+msg_189:
+[end]
+
+msg_190:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ も～っと、あそんであげますぅ！
+[wait][clear][end]
+
+msg_191:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、つよいんですぅ！
+[wait][clear][end]
+
+msg_192:
+[color(yellow)][var(msg_var_0)][color(white)]
+ よわいから、いけないんですぅ！
+[wait][clear][end]
+
+msg_193:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]は、わるくないですぅ！
+[wait][clear][end]
+
+msg_194:
+[color(yellow)][var(msg_var_0)][color(white)]
+ バチがあたったんですぅ！
+[wait][clear][end]
+
+msg_195:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こわいかお、しないでください…
+[wait][clear][end]
+
+msg_196:
+[end]
+
+msg_197:
+[end]
+
+msg_198:
+[end]
+
+msg_199:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 人間は、よわいから、
+ しょ～がないですぅ！
+[wait][clear][end]
+
+msg_200:
+[color(yellow)][var(msg_var_0)][color(white)]
+ どしてなくのか、
+ ぜ～んぜんわかりませんっ！
+[wait][clear][end]
+
+msg_201:
+[color(yellow)][var(msg_var_0)][color(white)]
+ か、かわいそうですぅ…
+[wait][clear][end]
+
+msg_202:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なかないでください…
+[wait][clear][end]
+
+msg_203:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]、ないちゃいますぅ…
+[wait][clear][end]
+
+msg_204:
+[end]
+
+msg_205:
+[end]
+
+msg_206:
+[end]
+
+msg_207:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ なにしてるんですかぁ？
+ そのひと、しんでますよぉ？
+[wait][clear][end]
+
+msg_208:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ そのひと、聞こえてませんよぉ？
+[wait][clear][end]
+
+msg_209:
+[color(yellow)][var(msg_var_0)][color(white)]
+ しんだひとと
+ おはなししないでください！
+[wait][clear][end]
+
+msg_210:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]とも、
+ おはなししてください！
+[wait][clear][end]
+
+msg_211:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]とも、
+ おはなししてください！
+[wait][clear][end]
+
+msg_212:
+[color(yellow)][var(msg_var_0)][color(white)]
+ し、しんだひとと、おはなししてますぅ…
+[wait][clear][end]
+
+msg_213:
+[color(yellow)][var(msg_var_0)][color(white)]
+ し、しんだひとがスキなのかなぁ…
+[wait][clear][end]
+
+msg_214:
+[end]
+
+msg_215:
+[end]
+
+msg_216:
+[end]
+
+msg_217:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ ひどいですぅ！
+ あくまみたいですぅ！
+[wait][clear][end]
+
+msg_218:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 人間って、おもしろいですぅ！
+[wait][clear][end]
+
+msg_219:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]も、
+ わるぐち言いたいですぅ！
+[wait][clear][end]
+
+msg_220:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなの、ひどいですぅ！
+[wait][clear][end]
+
+msg_221:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほんと～は、そんなこと思ってないですぅ！
+ ウソつきですぅ！
+[wait][clear][end]
+
+msg_222:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウソついても、ダメですぅ！
+[wait][clear][end]
+
+msg_223:
+[color(yellow)][var(msg_var_0)][color(white)]
+ と、ともだちじゃないんですかぁ？
+[wait][clear][end]
+
+msg_224:
+[end]
+
+msg_225:
+[end]
+
+msg_226:
+[end]
+
+msg_227:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、たのみごと
+ されちゃいましたぁ！
+[wait][clear][end]
+
+msg_228:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おかし、かってくれますかぁ？
+[wait][clear][end]
+
+msg_229:
+[color(yellow)][var(msg_var_0)][color(white)]
+ カッコわるいですぅ！
+[wait][clear][end]
+
+msg_230:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぜ～ったい、ダメですぅ！
+[wait][clear][end]
+
+msg_231:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、そんなに[var(msg_var_0)]のこと
+ こわがらないでください…
+ [var(msg_var_0)]、ないちゃいますぅ…
+[wait][clear][end]
+
+msg_232:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あのね、つぎはね、[var(msg_var_0)]が
+ 「いんたぶー」しますぅ！
+ おねえちゃんのこと、聞きたいですぅ！
+[wait][clear][end]
+
+msg_233:
+ なにを教えてくれますかぁ？
+[choice(3)]お姉ちゃん、天野舞耶って名前なんだ！
+歳は２３よ！
+好きなタイプは…
+[end_choice][clear][end]
+
+msg_234:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぜ～ったい、ウソですぅ！
+ そんなヘンなお名前、あるわけないですぅ！
+[wait][clear][end]
+
+msg_235:
+[color(yellow)][var(msg_var_0)][color(white)]
+ しゅみ、かわってますぅ。
+[wait][clear][end]
+
+msg_236:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ それ、[var(msg_var_0)]のことですかぁ…？
+ そ～ゆぅシュミ、ないですぅ…
+[wait][clear][end]
+
+msg_237:
+[color(yellow)][var(msg_var_0)][color(white)]
+ いっつもい～っつも、まけるですぅ…
+ 「にんげんごっこ」してても
+ いっつも「にんげんやく」ですぅ…
+[wait][clear][end]
+
+msg_238:
+ どうやったら、かてますかぁ？
+[choice(3)]確率を計算しろ
+相手の心を読め
+後出ししろ
+[end_choice][clear][end]
+
+msg_239:
+[color(yellow)][var(msg_var_0)][color(white)]
+ じゃぁ、おにいちゃんの心を読んでみますぅ！
+ ………………………………「うどん」
+ ？？ おくがふかいですね…
+[wait][clear][end]
+
+msg_240:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ いいこと聞いちゃいましたぁ！
+ グー出されたら、後からチョキですねっ？
+[wait][clear][end]
+
+msg_241:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あっ…でも、ご本で読みましたぁ。
+ ちっちゃい「つづら」に
+ お金、入ってるんですよね！
+[wait][clear][end]
+
+msg_242:
+ どっちのおねえちゃんが、ちっちゃいですかぁ？
+[choice(3)]私の方が背が小さいよ
+私の方が気が小さいよ
+私の方が胸が小さいよ
+[end_choice][clear][end]
+
+msg_243:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]のほうが、
+ も～っとちっちゃいですぅ！
+[wait][clear][end]
+
+msg_244:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ ちっちゃい「つづら」は、おねえちゃんですぅ！
+ お金、くださいなっ！
+[wait][clear][end]
+
+msg_245:
+[color(yellow)][var(msg_var_0)][color(white)]
+ し、しんじられません…
+[wait][clear][end]
+
+msg_246:
+[color(yellow)][var(msg_var_0)][color(white)]
+ オムネ、ちっちゃくないですよ？
+ ………あっ！
+ もしかして、にせオムネですかぁ？
+[wait][clear][end]
+
+msg_247:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ そんなオムネじゃ、お金入ってないですぅ！
+[wait][clear][end]
+
+msg_248:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]が、きのうならった
+ まじゅつで、なおしてあげますぅ！
+[wait][clear][end]
+
+msg_249:
+ え～っと、じゅもんはぁ…
+[choice(3)]も、もう治ったから！
+病気じゃないの！
+じゃあ、早く治してくれない？
+[end_choice][clear][end]
+
+msg_250:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ よかったですぅ～！
+[wait][clear][end]
+
+msg_251:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わがまま言わないでください！
+[wait][clear][end]
+
+msg_252:
+ なんの、おはなししますかぁ？
+[choice(3)]お名前は？
+歳はいくつかなぁ？
+好きなタイプ
+[end_choice][clear][end]
+
+msg_253:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 「[var(msg_var_0)]」ですぅ！
+ コンゴトモヨロシクですぅ！
+[wait][clear][end]
+
+msg_254:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ それだけですかぁ？
+[wait][clear][end]
+
+msg_255:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こぉ見えて、もぅ子どもじゃないんですぅ。
+[wait][clear][end]
+
+msg_256:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あんちゃん…
+ しらばっくれても、むだだぜ！
+ ネタはあがってるんだぁ～！
+[wait][clear][end]
+
+msg_257:
+ さあ、おとなしく、はくじょーしろぉ！
+[choice(3)]ごめんなさい、私がやりました…
+俺はやってない！
+付き合ってられないな…
+[end_choice][clear][end]
+
+msg_258:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ はくじょーが、早いですぅ！
+ かつどん食べさせるシーンが、まだですぅ！
+[wait][clear][end]
+
+msg_259:
+[color(yellow)][var(msg_var_0)][color(white)]
+ んん～？
+ ほんとかなぁ？
+[wait][clear][end]
+
+msg_260:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おにいちゃんばっかり、ズルイですぅ！
+[wait][clear][end]
+
+msg_261:
+[color(yellow)][var(msg_var_0)][color(white)]
+ でも、[var(msg_var_0)]には、
+ スキな男の子がいるんですぅ。
+[wait][clear][end]
+
+msg_262:
+ だから、おにいちゃんとは、けっこんできません…
+[choice(2)]それは残念な…
+仲良くな
+[end_choice][clear][end]
+
+msg_263:
+ どんなおはなしが、とくいですかぁ？
+[choice(3)]難しい話
+怖い話
+笑える話
+[end_choice][clear][end]
+
+msg_264:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 聞きたいですぅ！
+[wait][clear][end]
+
+msg_265:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、もう、
+ おねえちゃん、いらないですぅ…
+ おにいちゃんが、ほしいですぅ…
+[wait][clear][end]
+
+msg_266:
+ おにいちゃんに、なってください～！
+[choice(2)]ああ、喜んで…
+[tatsuya]、ああ言ってるぞ？
+[end_choice][clear][end]
+
+msg_267:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、うれしいですぅ！
+ 今日は、パーティーですぅ！
+[wait][clear][end]
+
+msg_268:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ 思いだしましたぁ…
+ きょーだいは、けっこんできないんですぅ…
+[wait][clear][end]
+
+msg_269:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、どっちの
+ おにいちゃんでも、うれしいですぅ！
+[wait][clear][end]
+
+msg_270:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ [var(msg_var_0)]の、おにいちゃんになるの
+ そんなに、イヤですかぁっ？
+[wait][clear][end]
+
+msg_271:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ こんなおっきな、おとうと、イヤですぅ…
+[wait][clear][end]
+
+msg_272:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]ね、スキな子いるんですぅ。
+ でね、でね、「あいしょう」
+ うらなってほしいんですぅ。
+[wait][clear][end]
+
+msg_273:
+ カレと、らぶらぶに、なれますかぁ？
+[choice(3)]大丈夫！きっとなれるよ！
+ちょぉっと無理かな…
+そんな事、私に聞かないで欲しいわ！
+[end_choice][clear][end]
+
+msg_274:
+ どして、けっこんしないんですかぁ？
+[choice(3)]私くらいになると釣り合う男がねぇ…
+じ、自主的にね…
+そ、それは聞かないでくれないかな…
+[end_choice][clear][end]
+
+msg_275:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふぅ～ん！
+ はやく、パパみたいな、かっこいい男の人、
+ 見つかるといいですねっ！
+[wait][clear][end]
+
+msg_276:
+[color(yellow)][var(msg_var_0)][color(white)]
+ どして、したくないんですかぁ？
+ おねえちゃん、ヘンですぅ！
+[wait][clear][end]
+
+msg_277:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ちゃんと、答えてください！
+[wait][clear][end]
+
+msg_278:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]ね、と～っても
+ おどり、じょうずなんですぅ！
+ いっつも、パパにほめられますぅ！
+[wait][clear][end]
+
+msg_279:
+ [var(msg_var_0)]のおどり、見たいですかぁ？
+[choice(2)]へぇ、見てみたいね
+興味ないんだよねぇ…
+[end_choice][clear][end]
+
+msg_280:
+[color(yellow)][var(msg_var_0)][color(white)]
+ じゃぁ、おうちで、れんしゅうしてきますぅ！
+[wait][clear][end]
+
+msg_281:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あ、で、でも…
+ おねえちゃんより、じょうずにおどったら
+ きっと、ころされちゃいますぅ…
+[wait][clear][end]
+
+msg_282:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ ほんとは、さいきん、れんしゅうしてないから
+ じしん、なかったですぅ！
+[wait][clear][end]
+
+msg_283:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あっ、わかりましたぁ！
+ [var(msg_var_0)]の
+ おねえちゃんのこえですぅ！
+[wait][clear][end]
+
+msg_284:
+ おねえちゃんのこと、知ってるんですかぁ？
+[choice(3)]あぁ、よぉく知ってるぜぇ…
+あぁ？知らねぇな…
+てめぇの声だぜぇ、こりゃあ…
+[end_choice][clear][end]
+
+msg_285:
+[color(yellow)][var(msg_var_0)][color(white)]
+ じゃ、じゃぁ、きっと、
+ おじちゃんも、こわいひとですぅ…
+[wait][clear][end]
+
+msg_286:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ええええ～！！
+ ほんとですかぁ？
+ [var(msg_var_0)]、びっくりですぅ！
+[wait][clear][end]
+
+msg_287:
+ おねえちゃんは、いつのみますかぁ？
+[choice(3)]嫌な事があった時かな…
+そりゃあ、男ぉゲットするときでしょ！
+そりゃあ、毎日よ！毎日！
+[end_choice][clear][end]
+
+msg_288:
+[color(yellow)][var(msg_var_0)][color(white)]
+ まいにち、あばれてるんですかぁ…？
+[wait][clear][end]
+
+msg_289:
+ どしたら、早く大人になれますかぁ？
+[choice(3)]時間を進めれば、なれんじゃねぇか？
+牛乳でも飲みゃ、なれんじゃねぇか？
+大人になんざ、なるもんじゃねぇぜ…
+[end_choice][clear][end]
+
+msg_290:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほんとですかぁ？
+ じゃぁ、じゃぁ、トナリのオババに
+ まじゅつ、おそわってきますぅ！
+[wait][clear][end]
+
+msg_291:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ ぎゅ～にゅ、おなかゴロゴロ言いますぅ…
+[wait][clear][end]
+
+msg_292:
+ あれぇ？ 「びーる」ないんですかぁ？
+[choice(3)]待ってて、用意してあげる！
+他ので我慢して！
+子供のくせに！
+[end_choice][clear][end]
+
+msg_293:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほかにも、あわあわってなってる
+ おさけ、あるんですかぁ？
+[wait][clear][end]
+
+msg_294:
+ 今でも、ママのゆめ、見ますかぁ？
+[choice(3)]あぁ、たまにはな…
+お袋の事なんざ、覚えちゃいねぇな…
+てめぇと同じにすんな、ガキが！
+[end_choice][clear][end]
+
+msg_295:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おにいちゃん、わすれっぽいんですね！
+[wait][clear][end]
+
+msg_296:
+ なにが、ひつようですかぁ？
+[choice(3)]知識だ！
+経験だな
+色気だろうな。
+[end_choice][clear][end]
+
+msg_297:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ まじゅつのテストが１８点だったの、
+ どして知ってるんですかぁ…？
+[wait][clear][end]
+
+msg_298:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ ちゃぁんと、ぎゅ～にゅ、
+ のんでるのになぁ…
+[wait][clear][end]
+
+msg_299:
+ も～っと、いろいろ聞いてください。
+[choice(3)]日本の行く末について
+人間と悪魔の違いについて
+[var(msg_var_0)]について
+[end_choice][clear][end]
+
+msg_300:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ あくまのほうが、えらいんですぅ！
+[wait][clear][end]
+
+msg_301:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ど、どうちがうのかなぁ…
+[wait][clear][end]
+
+msg_302:
+ でも、そ～ゆぅしゅみ、ないんですぅ…
+[choice(3)]俺も無い
+それは残念だな…
+勘違いするな！
+[end_choice][clear][end]
+
+msg_303:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あれぇ？？ ちがうんですかぁ？
+ あいのむちって、なんなのかなぁ？
+[wait][clear][end]
+
+msg_304:
+ どして、ほめてくれるんですかぁ？
+[choice(3)]何を勘違いしているんだ？
+何とかな子ほど可愛いというからな…
+やれやれ、皮肉も通じないとは…
+[end_choice][clear][end]
+
+msg_305:
+[color(yellow)][var(msg_var_0)][color(white)]
+ えっ？ ちがうんですかぁ？
+ よのなか、わかんないことだらけですぅ。
+[wait][clear][end]
+
+msg_306:
+ おねえちゃん、じょゆうさんですかぁ？
+[choice(3)]Ｙｅｓ！その通りですわ！
+Ｎｏ！Ｍｏｄｅｌですわ！
+さぁ、秘密ですわ…
+[end_choice][clear][end]
+
+msg_307:
+ どして人間は、はたらくんですかぁ？
+[choice(3)]生きていく為に、お金は不可欠だからですわ
+仕事が生きがいだからですわ。
+貴方には少々難しいかしら…
+[end_choice][clear][end]
+
+msg_308:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、あくまでよかったですぅ！
+[wait][clear][end]
+
+msg_309:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、あくまですけど、
+ おばけは、こわいんですぅ。
+ でも、こわいおはなしは、スキなんですぅ。
+[wait][clear][end]
+
+msg_310:
+ おばけ、こわくないんですかぁ？
+[choice(3)]怖いですわ！
+怖くはありませんわ！
+悪魔とどう違うんですの？
+[end_choice][clear][end]
+
+msg_311:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こわいけど、スキなんですかぁ？
+ [var(msg_var_0)]と、いっしょですね！
+[wait][clear][end]
+
+msg_312:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ぜ～んぜん、ちがいますぅ！
+ おばけは、しんでるのに生きてるんですぅ！
+ こわいんだから、言わせないでください！
+[wait][clear][end]
+
+msg_313:
+ 男の人のこと、おしえてください。
+[choice(3)]あんなのは獣よ、ケモノ！
+アンタには、まだ早いんじゃない？
+こっちが聞きたいくらいよ、ハァ…
+[end_choice][clear][end]
+
+msg_314:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなの、ウソですぅ！
+ 人間と、どうぶつさんは、ちがいますぅ！
+[wait][clear][end]
+
+msg_315:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おねえちゃんにも、わからないんですね！
+ ちょっと、あんしんですぅ。
+[wait][clear][end]
+
+msg_316:
+ [var(msg_var_0)]、どっかヘンですかぁ？
+[choice(3)]いや…
+変だな…
+………………
+[end_choice][clear][end]
+
+msg_317:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おにいちゃんのほうが、ヘンですぅ！
+[wait][clear][end]
+
+msg_318:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんな、見つめないでください…
+ てれちゃいますぅ…
+[wait][clear][end]
+
+msg_319:
+ [var(msg_var_0)]も、まもってください…
+[choice(3)]俺が守るのは、この人だけだ…
+ああ…
+この人を傷つける奴は倒す…
+[end_choice][clear][end]
+
+msg_320:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]と、おねえちゃんは
+ よく「にんげんごっこ」するんですよ。
+[wait][clear][end]
+
+msg_321:
+ おにいちゃんたちも、しますかぁ？
+[choice(3)]いや…
+似たような遊びなら、たまにしたな。
+俺としようか？
+[end_choice][clear][end]
+
+msg_322:
+[color(yellow)][var(msg_var_0)][color(white)]
+ お、おにいちゃんも、こわいひとなんですね…
+[wait][clear][end]
+
+msg_323:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 人間と「にんげんごっこ」なんて
+ と～っても、おもしろそうですぅ！
+[wait][clear][end]
+
+msg_324:
+ おうえんって、ど～すればいいのかなぁ？
+[choice(3)]言葉だけで良い…
+アイテムをくれ…
+契約してくれ…
+[end_choice][clear][end]
+
+msg_325:
+[color(yellow)][var(msg_var_0)][color(white)]
+ はぁ～い！
+ おにいちゃ～ん、がんばれぇ～～！！
+ ………おうえん、できましたかぁ？
+[wait][clear][end]
+
+msg_326:
+[color(yellow)][var(msg_var_0)][color(white)]
+ で、でも、ずっとそばに
+ いること、できないんですぅ…
+[wait][clear][end]
+
+msg_327:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]、りようされてますぅ…
+[wait][clear][end]
+
+msg_328:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あ～、そう言えば…
+ 人間に、聞いてみたいこと
+ あるんですぅ。
+[wait][clear][end]
+
+msg_329:
+ [var(msg_var_0)]、どしてあくまなんですかぁ？
+[choice(4)]親が悪魔だから
+悪い子だから
+人間ではないから
+悪魔ではない
+[end_choice][clear][end]
+
+msg_330:
+[color(yellow)][var(msg_var_0)][color(white)]
+ んん～？
+ じゃぁ、パパとママは、どしてあくまなのかなぁ？
+[wait][clear][end]
+
+msg_331:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ それだけですかぁ？
+ [var(msg_var_0)]、ガッカリですぅ！
+[wait][clear][end]
+
+msg_332:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あっ、そっかぁ～！
+ ど～も、ありがとですぅ！
+[wait][clear][end]
+
+msg_333:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]、こぉ見えても
+ り～っぱな、あくまですぅ！
+[wait][clear][end]
+
+msg_334:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おはなしが、かわるんですけど
+ [var(msg_var_0)]、スキな子がいるんですぅ…
+[wait][clear][end]
+
+msg_335:
+ どうすれば「あついきもち」を伝えられますかぁ？
+[choice(4)]勇気を出して告白
+おまじないをすれば
+下駄箱に恋文
+こっちが知りたい
+[end_choice][clear][end]
+
+msg_336:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなの、できっこないですぅ！
+ は、はずかしいですぅ！！
+[wait][clear][end]
+
+msg_337:
+[color(yellow)][var(msg_var_0)][color(white)]
+ もう、たっくさ～んやってますぅ。
+ あれぇ？ もう、伝わってるのかなぁ？
+[wait][clear][end]
+
+msg_338:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなの、ウソですぅ！
+ たっくさ～ん、やったのに、
+ ぜ～んぜん、ききめないですぅ！
+[wait][clear][end]
+
+msg_339:
+[color(yellow)][var(msg_var_0)][color(white)]
+ げたばこって、どこにありますかぁ？
+[wait][clear][end]
+
+msg_340:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]、字がヘタなんですぅ…
+ おてがみ書いたら、きらわれちゃいますぅ…
+[wait][clear][end]
+
+msg_341:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ ひょっとして、もてないんですかぁ？
+ いっしょに、がんばりましょ～♥
+[wait][clear][end]
+
+msg_342:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おはなしが、かわるんですけど
+ [var(msg_var_0)]、いま「おまじない」に
+ こってるんですぅ。
+[wait][clear][end]
+
+msg_343:
+ 人間の「おまじない」おしえてください。
+[choice(3)]手のひらに「人」と３回書いて飲む
+消しゴムに好きな人の名前を書く
+首にネギを巻く
+[end_choice][clear][end]
+
+msg_344:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間をのんでも、ダメなんですかぁ？
+[wait][clear][end]
+
+msg_345:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ひ、ひとをのむんですかぁ？
+ 人間って、こわいですぅ…
+[wait][clear][end]
+
+msg_346:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そしたら、らぶらぶですかぁ？
+ [var(msg_var_0)]、やってみますぅ！
+[wait][clear][end]
+
+msg_347:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、じぶんのなまえ
+ 書いてましたぁ…
+ こ、これ、どうなっちゃうんですか？
+[wait][clear][end]
+
+msg_348:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ それ、おネツ下げるときですぅ！
+ おばあちゃまに、まかれたことありますぅ。
+[wait][clear][end]
+
+msg_349:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！
+ そんなの、カッコわるいですぅ！
+[wait][clear][end]
+
+msg_350:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あ～、そう言えば…
+ ご本で読んだんですけど
+ 「うちゅうじん」が来るらしいですぅ。
+[wait][clear][end]
+
+msg_351:
+ 「うちゅうじん」って、だれですかぁ？
+[choice(4)]地球以外の星の生物
+空想上の生物
+悪魔
+親戚の叔父さん
+[end_choice][clear][end]
+
+msg_352:
+[color(yellow)][var(msg_var_0)][color(white)]
+ とおいところに、すんでるんですかぁ？
+ じゃぁ、まだ来ないですよね。
+[wait][clear][end]
+
+msg_353:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ お空から、おそって来るんですね…
+ み、みはってますぅ。
+[wait][clear][end]
+
+msg_354:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ええ～！
+ ほんとは、いないんですかぁ？
+ あんしんしましたぁ～。
+[wait][clear][end]
+
+msg_355:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウソですぅ！
+ ほんとにいるって、ご本にあったですぅ！
+[wait][clear][end]
+
+msg_356:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]のことだったんですね！
+ おねえちゃんにも、教えてきますぅ！
+[wait][clear][end]
+
+msg_357:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 知ってるひとなんですか！？
+ ちょっと会ってみたいですぅ。
+[wait][clear][end]
+
+msg_358:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、そのひと、わるい人ですぅ…
+ み～んな、食べられちゃうんですぅ…
+[wait][clear][end]
+
+msg_359:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そう言えば、ご本で読んだんですけど
+ いちねんにいっかい、さんたくろーすっていう
+ おじさんが、おうちに来るらしいんですぅ。
+[wait][clear][end]
+
+msg_360:
+ さんたくろーす、なんのために来るんですかぁ？
+[choice(3)]子供達にプレゼントをあげる為
+お菓子をもらう為
+悪い子を捕まえる為
+[end_choice][clear][end]
+
+msg_361:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ [var(msg_var_0)]も、もらえますよね！
+ たのしみですぅ！
+[wait][clear][end]
+
+msg_362:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウソですぅ！
+ そんな「うまいはなし」が
+ あるわけないですぅ！
+[wait][clear][end]
+
+msg_363:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おかし、スキなんですかぁ？
+ [var(msg_var_0)]と、いっしょですね。
+[wait][clear][end]
+
+msg_364:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こ、来なくていいですぅ…
+[wait][clear][end]
+
+msg_365:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]、わるい子だから
+ つかまっちゃいますぅ…
+[wait][clear][end]
+
+msg_366:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！！
+ そ～ゆぅこと言ってると、ひっさつのパンチ
+ おみまいしちゃいますよっ！？
+[wait][clear][end]
+
+msg_367:
+ え～と、なんてゆうパンチにしましょう？
+[choice(3)]メガトンパンチ
+必殺パンチ
+ねこぱんち
+[end_choice][clear][end]
+
+msg_368:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ つよそ～ですぅ！
+ それにしますぅ！
+[wait][clear][end]
+
+msg_369:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、それ、パパのパンチとおんなじですぅ…
+ ど、どして知ってるんですかぁ…
+[wait][clear][end]
+
+msg_370:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そのまんまで、つまんないですぅ！
+ センスないんですねっ！
+[wait][clear][end]
+
+msg_371:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それがいいですぅ！
+ と～ってもかわいいですぅ！
+[wait][clear][end]
+
+msg_372:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんな、よわそ～なパンチじゃダメですぅ！
+ も～っと、つよいパンチですぅ！
+[wait][clear][end]
+
+msg_373:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、大スキですぅ！
+[wait][clear][end]
+
+msg_374:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それ、たべものですぅ！
+ バカにしないでください！
+[wait][clear][end]
+
+msg_375:
+[color(yellow)][var(msg_var_0)][color(white)]
+ もう[var(msg_var_0)]、プンプンですぅ！
+ わるい子には、とぉ～っても
+ こわいオシオキ、しちゃいますぅ！
+[wait][clear][end]
+
+msg_376:
+ どんなオシオキがいいですかぁ？
+[choice(3)]おしりを叩く
+押入れに閉じ込める
+廊下に立つ
+[end_choice][clear][end]
+
+msg_377:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ それがいいですぅ！
+ おしり、出してくださ～い！
+[wait][clear][end]
+
+msg_378:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、そんなことしたら、いたいですぅ…
+[wait][clear][end]
+
+msg_379:
+[color(yellow)][var(msg_var_0)][color(white)]
+ く、くらくって、こわいですぅ…
+[wait][clear][end]
+
+msg_380:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなの、ぜ～んぜん
+ おもしろくないですぅ！
+[wait][clear][end]
+
+msg_381:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ゲーム、スキなんですかぁ？
+ [var(msg_var_0)]もですぅ。
+[wait][clear][end]
+
+msg_382:
+[color(yellow)][var(msg_var_0)][color(white)]
+ つ、つらいですぅ…
+[wait][clear][end]
+
+msg_383:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ろうかって、なんですかぁ？
+[wait][clear][end]
+
+msg_384:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅー！！
+ どして、[var(msg_var_0)]を
+ おこらせるんですかぁ？
+[wait][clear][end]
+
+msg_385:
+ [var(msg_var_0)]のこと、きらいですかぁ？
+[choice(4)]嫌い
+嫌いではない
+愛してるからこそ
+どっちでもいい
+[end_choice][clear][end]
+
+msg_386:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ハッキリしないひと、きらいですぅ！
+[wait][clear][end]
+
+msg_387:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あいしてると、イジメちゃうんですかぁ？
+ ん～ん～、わかる気がしますぅ。
+[wait][clear][end]
+
+msg_388:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウソですぅ！
+ [var(msg_var_0)]のこと、
+ 子どもだと思って、ウソ言ってますぅ！
+[wait][clear][end]
+
+msg_389:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]に、
+ きょうみないんですね…
+ さびしいですぅ…
+[wait][clear][end]
+
+msg_390:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、にんげんに
+ きょうみしんしんですぅ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ でも、いっしょにあそんでると、
+ パパにおこられちゃいますぅ…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ またこんど、こっそりあそんでくださいね。
+ かわりに[color(green)][var(msg_var_4)][color(white)]のカード
+ [color(green)][var(msg_var_5)]まい[color(white)]、あげますぅ！
+[wait][clear][end]
+
+msg_391:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、と～っても
+ おもしろかったですぅ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ また、あそんでくださいね。
+ おれいに、[color(green)][var(msg_var_4)][color(white)]のカード
+ [color(green)][var(msg_var_5)]まい[color(white)]、あげますぅ！
+[wait][clear][end]
+
+msg_392:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、と～っても
+ たのしかったですぅ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ でも、もうおうち帰らないと
+ ママにおこられちゃいますぅ…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 今日は、ありがと～ございましたぁ！
+ おれいに、[color(green)][var(msg_var_4)][color(white)]のカード
+ [color(green)][var(msg_var_5)]まい[color(white)]、あげますぅ！
+[wait][clear][end]
+
+msg_393:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あと、あと、[color(green)]フリータロット[color(white)]も[color(green)][var(msg_var_6)]枚[color(white)]
+ あげますぅ！
+[wait][clear][end]
+
+msg_394:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あれぇ？？
+ カード、いっぱいですよぉ？
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ ざんねんだけど、あげられないですぅ…
+ でも、[var(msg_var_0)]のこと
+ わすれないでくださいね♥
+[wait][clear][end]
+
+msg_395:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]だと思って、
+ だいじにしてくださいね♥
+[wait][clear][end]
+
+msg_396:
+[color(yellow)][var(msg_var_0)][color(white)]
+ にんげんって、おもしろいですぅ！
+ おともだちになりたいですぅ…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ でも、いっしょに行っちゃ、
+ ダメって言われてるんですぅ…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ だから、[color(green)]「けいやく」[color(white)]してあげますぅ！
+[wait][clear][end]
+
+msg_397:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、と～っても
+ たのしかったですぅ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ あっ、いいこと思いついちゃいましたぁ！
+ [var(msg_var_0)]ね、[color(green)]「けいやく」[color(white)]
+ してあげますぅ！
+[wait][clear][end]
+
+msg_398:
+[color(yellow)][var(msg_var_0)][color(white)]
+ スキになっちゃいましたぁ！
+ [var(msg_var_0)]、みかたに
+ なってあげますぅ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]ね、[color(green)]「けいやく」[color(white)]
+ してあげますぅ！
+[wait][clear][end]
+
+msg_399:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あれぇ？
+ [color(green)]レベル、足りない[color(white)]みたいですぅ…
+ これじゃぁ、「けいやく」できませんよぉ…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ ガッカリですぅ…
+ あっ、じゃぁ、かわりに…
+[wait][clear][end]
+
+msg_400:
+[color(yellow)][var(msg_var_0)][color(white)]
+ もぉっと、つよくなったら、
+ 「けいやく」してあげますぅ！
+ [var(msg_var_0)]、まってますぅ！
+[wait][clear][end]
+
+msg_401:
+ [color(green)]けいやく[color(white)]しますかぁ？
+[choice(2)]はい
+いいえ
+[end_choice][clear][end]
+
+msg_402:
+[color(yellow)][var(msg_var_0)][color(white)]
+ じゃぁ、[var(msg_var_0)]は、つぎから
+ みかたですぅ！
+ まもっちゃいますぅ！
+[wait][clear][end]
+
+msg_403:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ [var(msg_var_0)]、きらわれてるんじゃ…
+ また、つぎ、ありますよね…
+[wait][clear][end]
+
+msg_404:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あれぇ？？
+ もう、けいやくのかずが、いっぱいみたいですぅ！
+[wait][clear][end]
+
+msg_405:
+ どれか、[color(green)]けいやくはき[color(white)]してほしいですぅ！
+[choice(4)][pact_demon(0)]
+[pact_demon(1)]
+[pact_demon(2)]
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_406:
+[color(yellow)][var(msg_var_0)][color(white)]
+ むぅーっっ！
+ もぅ、だいっっきらいですぅっ！
+ [var(msg_var_0)]、[color(green)]けいやくやめますぅ！[color(white)]
+[wait][clear][end]
+
+msg_407:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ もぅ、みかた、いやですぅ…
+ [color(green)]けいやくやめさせて[color(white)]ください…
+[wait][clear][end]
+
+msg_408:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こ、こわいですぅ…
+ ふぇぇえええん！
+ ママぁ！
+[wait][clear][end]
+
+msg_409:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おうちに帰んなきゃですぅ…
+[wait][clear][end]
+
+msg_410:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふぇぇええええんん！
+ パパに言いつけちゃうんだからぁ…
+[wait][clear][end]
+
+msg_411:
+[color(yellow)][var(msg_var_0)][color(white)]
+ んむぅ～！！ ゆるしませんっっ！
+[wait][clear][end]
+
+msg_412:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、ぷんぷんですっっ！
+[wait][clear][end]
+
+msg_413:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 子どもじゃないとこ、
+ みせてあげますっっ！
+[wait][clear][end]
+
+msg_414:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]…
+ 「とりこ」ですぅ…
+[wait][clear][end]
+
+msg_415:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あこがれちゃいますぅ…
+[wait][clear][end]
+
+msg_416:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、
+ めろめろですぅ…
+[wait][clear][end]
+
+msg_417:
+[color(yellow)][var(msg_var_0)][color(white)]
+ と～っても、たのしかったですぅ！
+ これは、[var(msg_var_0)]からの
+ きもちですぅ！
+[wait][clear][end]
+
+msg_418:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 今日は、ありがと～ございましたぁ！
+ おれいの、プレゼントあげますぅ！
+[wait][clear][end]
+
+msg_419:
+[color(yellow)][var(msg_var_0)][color(white)]
+ と～っても、おもしろかったですぅ！
+ おれいに、[var(msg_var_0)]の、
+ たからもの、もらってください！
+[wait][clear][end]
+
+msg_420:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [color(green)][var(msg_var_1)][color(white)]あげますぅ！
+ たいせつにしてくださいね♥
+[wait][clear][end]
+
+msg_421:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [color(green)]￥[var(msg_var_2)][color(white)]あげますぅ！
+ たいせつにしてくださいね♥
+[wait][clear][end]
+
+msg_422:
+[color(yellow)][var(msg_var_0)][color(white)]
+ たいりょく[color(green)]かいふく[color(white)]してあげますぅ！
+ けが、しないでくださいね♥
+[wait][clear][end]
+
+msg_423:
+[color(yellow)][var(msg_var_0)][color(white)]
+ また、すぐにあえますよねっ！
+ たのしみに、まってますぅ！
+[wait][clear][end]
+
+msg_424:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あのね、あのね、うらみちのどこかに
+ 「ぶしょ～のほこら」があるらしいんですぅ。
+ ほこら………って、なんですかぁ？
+[wait][clear][end]
+
+msg_425:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「キヨヒメおねえちゃん」知ってますかぁ？
+ と～っても、きれいずきなんですぅ。
+ あのユカも、きれいにしてくれないかなぁ。
+[wait][clear][end]
+
+msg_426:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あのね、あのね、「Ｂ２ルート」は、
+ たからものが、たっくさ～んってウワサですぅ。
+ [var(msg_var_0)]、今から行くんですぅ！
+[wait][clear][end]
+
+msg_427:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あのね、あのね、「Ｂ３ルート」は、
+ たからものが、たっくさ～んってウワサですぅ。
+ [var(msg_var_0)]、今から行くんですぅ！
+[wait][clear][end]
+
+msg_428:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こないだね、「ラスプーチンおじちゃん」が
+ 「はいでんばんのカギ」ひろったらしいですぅ。
+ それ、どしたのかなぁ？
+[wait][clear][end]
+
+msg_429:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こないだね、だいはっけんしたんですぅ！
+ かがみって、右手が左手なんですぅ！！
+ 左手が右手で、えっとえっと、そ～なんですぅ。
+[wait][clear][end]
+
+msg_430:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あのね、ここのいっちば～ん下にね、
+ 「たからもののへや」があるんですぅ。
+ でも、入口がないらしいですぅ。
+[wait][clear][end]
+
+msg_431:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「たからもののへや」、どしたら入れるかなぁ？
+ ん～とん～と…「リヴァイアサン」だったら、
+ かべをこわして入れるんですけど…
+[wait][clear][end]
+
+msg_432:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「セケルおじさん」知ってますかぁ？
+ おじさんね、お空をとぶのが、
+ と～ってもとくいなんですぅ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ おじさんだったら、きっと、
+ 「はし」の「むこうぎしのスイッチ」を
+ ポチッておすのも、かんたんですぅ！
+[wait][clear][end]
+
+msg_433:
+[end]
+
+msg_434:
+[end]
+
+msg_435:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのにほんと～[color(white)]には
+ [color(orange)]かくれたちからがやどってる[color(white)]ってウワサですぅ。
+[wait][clear][end]
+
+msg_436:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのにほんと～[color(white)]は
+ [color(orange)]さいきょ～[color(white)]らしいんですぅ。
+[wait][clear][end]
+
+msg_437:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのハンドガン[color(white)]には
+ [color(orange)]かくれたちからがやどってる[color(white)]ってウワサですぅ。
+[wait][clear][end]
+
+msg_438:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのハンドガン[color(white)]は
+ [color(orange)]さいきょ～[color(white)]らしいんですぅ。
+[wait][clear][end]
+
+msg_439:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのコイン[color(white)]には
+ [color(orange)]かくれたちからがやどってる[color(white)]ってウワサですぅ。
+[wait][clear][end]
+
+msg_440:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのコイン[color(white)]は
+ [color(orange)]さいきょ～[color(white)]らしいんですぅ。
+[wait][clear][end]
+
+msg_441:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのグラブ[color(white)]は
+ [color(orange)]かくれたちからがやどってる[color(white)]ってウワサですぅ。
+[wait][clear][end]
+
+msg_442:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのグラブ[color(white)]は
+ [color(orange)]さいきょ～[color(white)]らしいんですぅ。
+[wait][clear][end]
+
+msg_443:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのレイピア[color(white)]は
+ [color(orange)]かくれたちからがやどってる[color(white)]ってウワサですぅ。
+[wait][clear][end]
+
+msg_444:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヒミツにしてくださいね…
+ あのね、あのね、[color(orange)]でんせつのレイピア[color(white)]は
+ [color(orange)]さいきょ～[color(white)]らしいんですぅ。
+[wait][clear][end]
+
+msg_445:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それにね、[color(orange)]と～ってもつよい[color(white)]らしいんですぅ。
+[wait][clear][end]
+
+msg_446:
+[color(yellow)][var(msg_var_0)][color(white)]
+ でもね、でもね、
+ [color(orange)]よわい[color(white)]らしいんですぅ…
+ かっこわるいですね…
+[wait][clear][end]
+
+msg_447:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あんまり、つよくないんですけど、
+ [color(orange)]ほかのヒミツまほうと合体する[color(white)]んですぅ！
+ [var(msg_var_0)]もほしいですぅ！
+[wait][clear][end]
+
+msg_448:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ジャックランタンって知ってますかぁ？
+ こないだね、[color(orange)]ダイナミックアギラオ[color(white)]って
+ まほう、おぼえたって言ってましたぁ。
+[wait][clear][end]
+
+msg_449:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ジャックフロストって知ってますかぁ？
+ こないだね、[color(orange)]アトミックブフーラ[color(white)]って
+ まほう、おぼえたって言ってましたぁ。
+[wait][clear][end]
+
+msg_450:
+[color(yellow)][var(msg_var_0)][color(white)]
+ スチュパリデスって知ってますかぁ？
+ こないだね、[color(orange)]デンジャラスガルーラ[color(white)]って
+ まほう、おぼえたって言ってましたぁ。
+[wait][clear][end]
+
+msg_451:
+[color(yellow)][var(msg_var_0)][color(white)]
+ バルバトスって知ってますかぁ？
+ こないだね、[color(orange)]グレイトマグナス[color(white)]って
+ まほう、おぼえたって言ってましたぁ。
+[wait][clear][end]
+
+msg_452:
+[color(yellow)][var(msg_var_0)][color(white)]
+ アンクウって知ってますかぁ？
+ こないだね、[color(orange)]ハイパージオンガ[color(white)]って
+ まほう、おぼえたって言ってましたぁ。
+[wait][clear][end]
+
+msg_453:
+[color(yellow)][var(msg_var_0)][color(white)]
+ カナロアって知ってますかぁ？
+ こないだね、[color(orange)]ワンダフルアクエス[color(white)]って
+ まほう、おぼえたって言ってましたぁ。
+[wait][clear][end]
+
+msg_454:
+[color(yellow)][var(msg_var_0)][color(white)]
+ デメテールって知ってますかぁ？
+ こないだね、[color(orange)]ウルトラフレイラ[color(white)]って
+ まほう、おぼえたって言ってましたぁ。
+[wait][clear][end]
+
+msg_455:
+[color(yellow)][var(msg_var_0)][color(white)]
+ サキュバスって知ってますかぁ？
+ こないだね、[color(orange)]超メギド[color(white)]って
+ まほう、おぼえたって言ってましたぁ。
+[wait][clear][end]
+
+msg_456:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あのね、あのね、パパが言ってたんですけど、
+ おしゃべりな子は、きらわれちゃうんですぅ…
+ だから、おしゃべりできないんですけど、
+[wait][clear][end]
+
+msg_457:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ああ～！ [var(msg_var_0)]と、
+ けいやくしてるんですね！
+ [var(msg_var_0)]、ちからになりますぅ。
+[wait][clear][end]
+
+msg_458:
+ [var(msg_var_0)]、どしたらいいですかぁ？
+[choice(4)]アイテムが欲しい
+お金が欲しい
+情報が欲しい
+[if(CBIT_HEAR_RUMOR)]噂を流して欲しい
+[end_choice][clear][end]
+
+msg_459:
+ ながしたいウワサ、ありますかぁ？
+[choice(3)][if(CBIT_HEAR_WEPON)]伝説の武器関連
+[if(CBIT_HEAR_MAGIC)]魔法関連
+特に無い
+[end_choice][clear][end]
+
+msg_460:
+ ながしたいウワサ、ありますかぁ？
+[choice(4)][if(CBIT_HEAR_WEPON)]伝説の武器関連
+[if(CBIT_HEAR_MAGIC)]魔法関連
+[if(CBIT_HEAR_MAP1)]このダンジョンの噂
+特に無い
+[end_choice][clear][end]
+
+msg_461:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そのおはなし、知ってますぅ…
+ ちがうウワサないんですかぁ？
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ ほかのウワサ、ありますかぁ？
+[wait][clear][end]
+
+msg_462:
+ どんな「ぶき」ですかぁ？
+[choice(6)][if(CBIT_HEAR_SWD)]伝説の日本刀
+[if(CBIT_HEAR_GUN)]伝説のハンドガン
+[if(CBIT_HEAR_GTR)]伝説のコイン
+[if(CBIT_HEAR_FST)]伝説のグラブ
+[if(CBIT_HEAR_FLW)]伝説のレイピア
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_463:
+ だれの「まほう」ですかぁ？
+[choice(6)][if(CBIT_HEAR_AGI)]ジャックランタン
+[if(CBIT_HEAR_BUF)]ジャックフロスト
+[if(CBIT_HEAR_GAR)]スチュパリデス
+[if(CBIT_HEAR_MAG)]バルバトス
+[if(CBIT_RESERVE_Ff)]他の悪魔
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_464:
+ だれの「まほう」ですかぁ？
+[choice(6)][if(CBIT_HEAR_JIO)]アンクウ
+[if(CBIT_HEAR_AQU)]カナロア
+[if(CBIT_HEAR_FRA)]デメテール
+[if(CBIT_HEAR_MEG)]サキュバス
+[if(CBIT_RESERVE_Fe)]他の悪魔
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_465:
+ どんなウワサですかぁ？
+[choice(3)][if(CBIT_HEAR_MAP1)]管制室の配電盤が隠し部屋に通じている
+[if(CBIT_HEAR_MAP2)]制御室の開かずの扉から廃液処理場に行ける
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_466:
+ にほんと～が、どしたんですかぁ？
+[choice(4)][if(CBIT_HEAR_SWD_G)][if_not(IBIT_SWD_LGND_G)]実は最強？
+[if(CBIT_HEAR_SWD_L)][if_not(IBIT_SWD_LGND_S)]隠された力がある
+[if_not(IBIT_SWD_LGND_N)]やっぱり普通
+[if_not(IBIT_SWD_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_467:
+ ハンドガンが、どしたんですかぁ？
+[choice(4)][if(CBIT_HEAR_GUN_G)][if_not(IBIT_GUN_LGND_G)]実は最強？
+[if(CBIT_HEAR_GUN_L)][if_not(IBIT_GUN_LGND_S)]隠された力がある
+[if_not(IBIT_GUN_LGND_N)]やっぱり普通
+[if_not(IBIT_GUN_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_468:
+ コインが、どしたんですかぁ？
+[choice(4)][if(CBIT_HEAR_GTR_G)][if_not(IBIT_CON_LGND_G)]実は最強？
+[if(CBIT_HEAR_GTR_L)][if_not(IBIT_CON_LGND_S)]隠された力がある
+[if_not(IBIT_CON_LGND_N)]やっぱり普通
+[if_not(IBIT_CON_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_469:
+ グラブが、どしたんですかぁ？
+[choice(4)][if(CBIT_HEAR_FST_G)][if_not(IBIT_FST_LGND_G)]実は最強？
+[if(CBIT_HEAR_FST_L)][if_not(IBIT_FST_LGND_S)]隠された力がある
+[if_not(IBIT_FST_LGND_N)]やっぱり普通
+[if_not(IBIT_FST_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_470:
+ レイピアが、どしたんですかぁ？
+[choice(4)][if(CBIT_HEAR_FLW_G)][if_not(IBIT_NSW_LGND_G)]実は最強？
+[if(CBIT_HEAR_FLW_L)][if_not(IBIT_NSW_LGND_S)]隠された力がある
+[if_not(IBIT_NSW_LGND_N)]やっぱり普通
+[if_not(IBIT_NSW_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_471:
+ ジャックランタンが、どしたんですかぁ？
+[choice(6)][if(CBIT_HEAR_AGI_L)][if_not(BBIT_D_AGIRAO_L)]Ｄアギラオは強い
+[if(CBIT_HEAR_AGI_M)][if_not(CBIT_HEAR_AGI_S)]ダイナミックアギラオを使う
+[if(CBIT_HEAR_AGI_S)][if_not(BBIT_D_AGIRAO_M)]Ｄアギラオは普通
+[if(CBIT_HEAR_AGI_S)][if_not(BBIT_D_AGIRAO_S)]Ｄアギラオは弱い
+[if(CBIT_HEAR_AGI_C)][if_not(BBIT_D_AGIRAO_C)]Ｄアギラオは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_472:
+ ジャックフロストが、どしたんですかぁ？
+[choice(6)][if(CBIT_HEAR_BUF_L)][if_not(BBIT_A_BUFURA_L)]Ａブフーラは強い
+[if(CBIT_HEAR_BUF_M)][if_not(CBIT_HEAR_BUF_S)]アトミックブフーラを使う
+[if(CBIT_HEAR_BUF_S)][if_not(BBIT_A_BUFURA_M)]Ａブフーラは普通
+[if(CBIT_HEAR_BUF_S)][if_not(BBIT_A_BUFURA_S)]Ａブフーラは弱い
+[if(CBIT_HEAR_BUF_C)][if_not(BBIT_A_BUFURA_C)]Ａブフーラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_473:
+ スチュパリデスが、どしたんですかぁ？
+[choice(6)][if(CBIT_HEAR_GAR_L)][if_not(BBIT_D_GARURA_L)]Ｄガルーラは強い
+[if(CBIT_HEAR_GAR_M)][if_not(CBIT_HEAR_GAR_S)]デンジャラスガルーラを使う
+[if(CBIT_HEAR_GAR_S)][if_not(BBIT_D_GARURA_M)]Ｄガルーラは普通
+[if(CBIT_HEAR_GAR_S)][if_not(BBIT_D_GARURA_S)]Ｄガルーラは弱い
+[if(CBIT_HEAR_GAR_C)][if_not(BBIT_D_GARURA_C)]Ｄガルーラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_474:
+ バルバトスが、どしたんですかぁ？
+[choice(6)][if(CBIT_HEAR_MAG_L)][if_not(BBIT_G_MAGNAS_L)]Ｇマグナスは強い
+[if(CBIT_HEAR_MAG_M)][if_not(CBIT_HEAR_MAG_S)]グレイトマグナスを使う
+[if(CBIT_HEAR_MAG_S)][if_not(BBIT_G_MAGNAS_M)]Ｇマグナスは普通
+[if(CBIT_HEAR_MAG_S)][if_not(BBIT_G_MAGNAS_S)]Ｇマグナスは弱い
+[if(CBIT_HEAR_MAG_C)][if_not(BBIT_G_MAGNAS_C)]Ｇマグナスは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_475:
+ アンクウが、どしたんですかぁ？
+[choice(6)][if(CBIT_HEAR_JIO_L)][if_not(BBIT_H_JIONGA_L)]Ｈジオンガは強い
+[if(CBIT_HEAR_JIO_M)][if_not(CBIT_HEAR_JIO_S)]ハイパージオンガを使う
+[if(CBIT_HEAR_JIO_S)][if_not(BBIT_H_JIONGA_M)]Ｈジオンガは普通
+[if(CBIT_HEAR_JIO_S)][if_not(BBIT_H_JIONGA_S)]Ｈジオンガは弱い
+[if(CBIT_HEAR_JIO_C)][if_not(BBIT_H_JIONGA_C)]Ｈジオンガは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_476:
+ カナロアが、どしたんですかぁ？
+[choice(6)][if(CBIT_HEAR_AQU_L)][if_not(BBIT_W_AQUES_L)]Ｗアクエスは強い
+[if(CBIT_HEAR_AQU_M)][if_not(CBIT_HEAR_AQU_S)]ワンダフルアクエスを使う
+[if(CBIT_HEAR_AQU_S)][if_not(BBIT_W_AQUES_M)]Ｗアクエスは普通
+[if(CBIT_HEAR_AQU_S)][if_not(BBIT_W_AQUES_S)]Ｗアクエスは弱い
+[if(CBIT_HEAR_AQU_C)][if_not(BBIT_W_AQUES_C)]Ｗアクエスは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_477:
+ デメテールが、どしたんですかぁ？
+[choice(6)][if(CBIT_HEAR_FRA_L)][if_not(BBIT_U_FRAIRA_L)]Ｕフレイラは強い
+[if(CBIT_HEAR_FRA_M)][if_not(CBIT_HEAR_FRA_S)]ウルトラフレイラを使う
+[if(CBIT_HEAR_FRA_S)][if_not(BBIT_U_FRAIRA_M)]Ｕフレイラは普通
+[if(CBIT_HEAR_FRA_S)][if_not(BBIT_U_FRAIRA_S)]Ｕフレイラは弱い
+[if(CBIT_HEAR_FRA_C)][if_not(BBIT_U_FRAIRA_C)]Ｕフレイラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_478:
+ サキュバスが、どしたんですかぁ？
+[choice(6)][if(CBIT_HEAR_MEG_L)][if_not(BBIT_C_MEGIDO_L)]超メギドは強い
+[if(CBIT_HEAR_MEG_M)][if_not(CBIT_HEAR_MEG_S)]超メギドを使う
+[if(CBIT_HEAR_MEG_S)][if_not(BBIT_C_MEGIDO_M)]超メギドは普通
+[if(CBIT_HEAR_MEG_S)][if_not(BBIT_C_MEGIDO_S)]超メギドは弱い
+[if(CBIT_HEAR_MEG_C)][if_not(BBIT_C_MEGIDO_C)]超メギドは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_479:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふぅ～ん！
+ そんなウワサ、知りませんでしたぁ。
+ みんなに言っちゃって、いいんですよね？
+[wait][clear][end]
+
+msg_480:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウワサ、ないんですかぁ？
+ [var(msg_var_0)]、さびしいですぅ…
+ こんど会ったときは、聞かせてくださいね。
+[wait][clear][end]
+
+msg_481:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、[var(msg_var_0)]…
+ おにいちゃんの[color(orange)]にほんと～[color(white)]は[color(orange)]よわい[color(white)]って
+ みんなに言っちゃいますぅ！！
+[wait][clear][end]
+
+msg_482:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、[var(msg_var_0)]…
+ おねえちゃんの[color(orange)]ハンドガン[color(white)]は[color(orange)]よわい[color(white)]って
+ みんなに言っちゃいますぅ！！
+[wait][clear][end]
+
+msg_483:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、[var(msg_var_0)]…
+ おじちゃんの[color(orange)]コイン[color(white)]は[color(orange)]よわい[color(white)]って
+ みんなに言っちゃいますぅ！！
+[wait][clear][end]
+
+msg_484:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、[var(msg_var_0)]…
+ おねえちゃんの[color(orange)]グラブ[color(white)]は[color(orange)]よわい[color(white)]って
+ みんなに言っちゃいますぅ！！
+[wait][clear][end]
+
+msg_485:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、[var(msg_var_0)]…
+ おねえちゃんの[color(orange)]レイピア[color(white)]は[color(orange)]よわい[color(white)]って
+ みんなに言っちゃいますぅ！！
+[wait][clear][end]
+
+msg_486:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あのね、[var(msg_var_0)]ね、
+ じぶんでも、ちょっと
+ おバカさんだと思うんです…
+[wait][clear][end]
+
+msg_487:
+ どしたら、なおりますかぁ？
+[choice(3)]勉強すれば直る
+魔術で直る
+自分も馬鹿だから…
+[end_choice][clear][end]
+
+msg_488:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふみゅぅ…
+ べんきょ、きらいだから
+ おバカさんなんですぅ…
+[wait][clear][end]
+
+msg_489:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほんとですかぁ？
+ [var(msg_var_0)]といっしょですね！
+[wait][clear][end]
+
+msg_490:
+[color(yellow)][var(msg_var_0)][color(white)]
+ じゃぁ、じゃぁ、おともだちのしるしですぅ！
+ [color(green)]占札／ＦＯＯＬのカード[color(white)]あげちゃいますぅ！
+ だいじにしてくださいね♥
+[wait][clear][end]
+
+msg_491:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あれぇ？
+ それ、よくみたら[var(msg_var_0)]とおそろいの
+ [color(orange)]飾／カルマリング[color(white)]ですよねぇ。
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ それ、と～ってもめずらしいんですぅ。
+ [var(msg_var_0)]いがいで、そのリングしてるひと
+ はじめて見ましたぁ。
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ これって、きっと「うんめい」って
+ いうんですよね！
+ あっ！ じゃぁ、じゃぁ、これあげますぅ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ これ、[color(orange)]素札／チャンピオン[color(white)]ですぅ！
+ これで、[var(msg_var_0)]をよびだしてくれれば
+ な～んでも、おてつだいしちゃいますぅ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]、まってますから、
+ ぜったい、よびだしてくださいね♥
+[wait][clear][end]
+
+msg_492:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あぁ～！
+ 人間ですぅ！
+[wait][clear][end]
+
+msg_493:
+[color(green)]選択肢ジャンプの挙動エラーです[color(white)]
+[end]
+
+msg_494:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ 男のひとなのに、「えすて」行くんですね！
+ かわってますぅ！
+[wait][clear][end]
+
+msg_495:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ こんど、[var(msg_var_0)]も
+ 「えすて」つれてってください！
+[wait][clear][end]
+
+msg_496:
+[color(yellow)][var(msg_var_0)][color(white)]
+ キャハハッ！
+ おはだチュルチュルですぅ！
+ 「えすて」だからかなぁ？
+[wait][clear][end]
+
+msg_497:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おねえちゃんがかわいいのは、
+ 「えすて」行ったからですぅ！
+[wait][clear][end]
+
+msg_498:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]だって、
+ 「えすて」行けば、かわいいですぅ！
+[wait][clear][end]
+
+msg_499:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [var(msg_var_0)]は、「えすて」に
+ 行かなくてもかわいいですぅ！
+[wait][clear][end]

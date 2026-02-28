@@ -1,0 +1,632 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    bitSet(EBIT_NOSAVE_B);
+    envTriggerSet(warp1, 131, 2, line, coll_0);
+    envTriggerSet(warp2, 56, 2, line, coll_1);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_8);
+    b(label_a);
+  label_8:
+    sndVolumeFadeTo(var_0, 0, 60);
+    b(label_a);
+  label_a:
+    bitGet(var_0, EBIT_CHARENGE_REOR);
+    bne(var_0, 0, label_12);
+    ref_c = spriteLoad(sprite_3f);
+    wait(ref_c);
+    unitSpawn(npc1, sprite_3f, 1397, 0, -1407, north, none);
+    unitAnimationPlay(npc1, animation_6, 1);
+    unitTriggerSet(npc1, REOBOX, 255, 1);
+    b(label_14);
+  label_12:
+    bne(var_0, 1, label_14);
+    b(label_14);
+  label_14:
+    bitGet(var_0, EBIT_CHARENGE_REOSTR);
+    bne(var_0, 0, label_18);
+    call(KYOUSEI);
+    b(label_1b);
+  label_18:
+    bne(var_0, 1, label_1b);
+    call(FREE);
+    b(label_1b);
+  label_1b:
+}
+
+function KYOUSEI()
+{
+    cameraSet(southeast, 1413, 0, -2277);
+    ref_1d = spriteLoad(sprite_0);
+    wait(ref_1d);
+    unitFace(npc1, south);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitSpawn(maya, sprite_0, 1410, 0, -2287, south, fade);
+    unitMove(maya, 1410, -2155, face_south, fast);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    unitAnimationHold(maya, animation_21, 60);
+    unitWait(maya);
+    unitAnimationPlay(maya, animation_0, 1);
+    ref_2d = cameraMoveTo(1444, 0, -1533, 60);
+    wait(ref_2d);
+    ref_2f = cameraRotateTo(1, 30);
+    wait(ref_2f);
+    unitMove(maya, 1403, -1633, face_south, medium);
+    unitWait(maya);
+    delayClear();
+    delayWait(60);
+    ref_35 = dialogAlloc();
+    ref_36 = msgShow(msg_0);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]The night is still... The streets are quiet...
+[tab]In this house... lived... my Love...
+[tab](sigh)... My heart is empty... Hmm?
+[wait][clear]
+***************************************/
+    wait(ref_36);
+    dialogFree(ref_35);
+    unitAnimationPlay(npc1, animation_12, 1);
+    unitWait(npc1);
+    unitFace_2(npc1, north);
+    unitAnimationPlay(npc1, animation_0, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc1, animation_a, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc1, animation_2d, 1);
+    ref_43 = dialogAlloc();
+    ref_44 = msgShow(msg_1);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]Who are you...?
+[tab]I do not know who you are, 
+[tab]but could you tell me...
+[wait][clear][color(yellow)]Man with a sword[color(white)]
+[tab]Where am I?
+[tab]WHO... am I...?
+[tab]Why am I carrying this sword...?
+[wait][clear]
+***************************************/
+    wait(ref_44);
+    dialogFree(ref_43);
+    unitAnimationPlay(npc1, animation_16, 1);
+    ref_48 = dialogAlloc();
+    ref_49 = msgShow(msg_2);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]I cannot remember...
+[tab]I came here for a reason...
+[tab]But I cannot remember... Why...?
+[wait][clear]
+***************************************/
+    wait(ref_49);
+    dialogFree(ref_48);
+    bitSet(EBIT_CHARENGE_REOSTR);
+    ref_4d = cameraLookAtUnit(maya, 0, 60);
+    wait(ref_4d);
+    ref_4f = spriteLoad(sprite_2);
+    wait(ref_4f);
+    unitDespawn(maya, none);
+    playerInit(south);
+}
+
+function FREE()
+{
+    ref_54 = spriteLoad(sprite_0);
+    wait(ref_54);
+    ref_56 = spriteLoad(sprite_2);
+    wait(ref_56);
+    unknownVar1(var_0);
+    bne(var_0, 6157, label_5f);
+    cameraSetNorth(north);
+    cameraSet(southeast, 1411, 0, -2159);
+    playerInit(south);
+    controlDisable();
+    b(label_64);
+  label_5f:
+    cameraSetNorth(south);
+    cameraSet(northeast, 1408, 0, -642);
+    playerInit(north);
+    controlDisable();
+    b(label_64);
+  label_64:
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function REOBOX()
+{
+    controlDisable();
+    unitFacePlayer(npc1);
+    li(var_1, 0);
+    bitGet(var_0, EBIT_CHARENGE_REO1);
+    bne(var_0, 0, label_71);
+    b(label_74);
+  label_71:
+    bne(var_0, 1, label_74);
+    add(var_1, var_1, 1);
+    b(label_74);
+  label_74:
+    bitGet(var_0, EBIT_CHARENGE_REO2);
+    bne(var_0, 0, label_77);
+    b(label_7a);
+  label_77:
+    bne(var_0, 1, label_7a);
+    add(var_1, var_1, 1);
+    b(label_7a);
+  label_7a:
+    bitGet(var_0, EBIT_CHARENGE_REO3);
+    bne(var_0, 0, label_7d);
+    b(label_80);
+  label_7d:
+    bne(var_0, 1, label_80);
+    add(var_1, var_1, 1);
+    b(label_80);
+  label_80:
+    bne(var_1, 0, label_88);
+    ref_81 = dialogAlloc();
+    ref_82 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]If there was some kind of chance that
+[tab]I might regain my memory...
+[tab]Not having one’s memory is a sad thing...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_6, 1);
+    wait(ref_82);
+    unitAnimationPlay(npc1, animation_16, 1);
+    dialogFree(ref_81);
+    b(label_94);
+  label_88:
+    bne(var_1, 1, label_8e);
+    ref_89 = dialogAlloc();
+    ref_8a = msgShow(msg_4);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]I remember bits and pieces...
+[tab]I came here to do something.
+[tab]But as far as what that something was...?
+[wait][clear]
+***************************************/
+    wait(ref_8a);
+    dialogFree(ref_89);
+    b(label_94);
+  label_8e:
+    bne(var_1, 2, label_94);
+    ref_8f = dialogAlloc();
+    ref_90 = msgShow(msg_5);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]Just a little more...
+[tab]Just a little more and I’ll remember...
+[tab]Then...
+[wait][clear]
+***************************************/
+    wait(ref_90);
+    dialogFree(ref_8f);
+    b(label_94);
+  label_94:
+    bitGet(var_0, IBIT_EX_OMOIDE_1);
+    bne(var_0, 0, label_97);
+    b(label_9f);
+  label_97:
+    bne(var_0, 1, label_9f);
+    bitGet(var_0, EBIT_CHARENGE_REO1);
+    bne(var_0, 0, label_9c);
+    b(label_b6);
+    b(label_9e);
+  label_9c:
+    bne(var_0, 1, label_9e);
+    b(label_9e);
+  label_9e:
+    b(label_9f);
+  label_9f:
+    bitGet(var_0, IBIT_EX_OMOIDE_2);
+    bne(var_0, 0, label_a2);
+    b(label_aa);
+  label_a2:
+    bne(var_0, 1, label_aa);
+    bitGet(var_0, EBIT_CHARENGE_REO2);
+    bne(var_0, 0, label_a7);
+    b(label_d2);
+    b(label_a9);
+  label_a7:
+    bne(var_0, 1, label_a9);
+    b(label_a9);
+  label_a9:
+    b(label_aa);
+  label_aa:
+    bitGet(var_0, IBIT_EX_OMOIDE_3);
+    bne(var_0, 0, label_ad);
+    b(label_b5);
+  label_ad:
+    bne(var_0, 1, label_b5);
+    bitGet(var_0, EBIT_CHARENGE_REO3);
+    bne(var_0, 0, label_b2);
+    b(label_ee);
+    b(label_b4);
+  label_b2:
+    bne(var_0, 1, label_b4);
+    b(label_b4);
+  label_b4:
+    b(label_b5);
+  label_b5:
+    b(label_1a3);
+  label_b6:
+    choiceSetResult(1);
+    op_105(1);
+    msgVar_Key(msgvar_0, in_rakech);
+    ref_b9 = bustupLoad(bustup_1);
+    bustupWait(ref_b9);
+    ref_bb = bustupAlloc(ref_b9, center, rgb(0,0,0));
+    bustupFade(ref_bb, rgb(128,0,0), 30);
+    ref_bd = dialogChoiceAlloc();
+    ref_be = msgShow(msg_6);
+/***************************************
+[tab]Will you show him [color(green)][var(msg_var_0)][color(white)]?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_be);
+    dialogFree(ref_bd);
+    ref_c1 = bustupFade(ref_bb, rgb(0,0,0), 10);
+    bustupWait(ref_c1);
+    bustupFree(ref_bb);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_cf);
+    ref_c6 = dialogAlloc();
+    ref_c7 = msgShow(msg_7);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]Huh? ...That is...
+[tab][color(green)][var(msg_var_0)][color(white)]!?
+[tab]T-That’s right... That’s mine...
+
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_2d, 1);
+    wait(ref_c7);
+    bitSet(EBIT_CHARENGE_REO1);
+    bitClear(IBIT_EX_OMOIDE_1);
+    dialogFree(ref_c6);
+    b(label_109);
+    b(label_d2);
+  label_cf:
+    bne(var_0, 1, label_d2);
+    b(label_1a3);
+    b(label_d2);
+  label_d2:
+    choiceSetResult(1);
+    op_105(1);
+    msgVar_Key(msgvar_0, black_lighter);
+    ref_d5 = bustupLoad(bustup_1);
+    bustupWait(ref_d5);
+    ref_d7 = bustupAlloc(ref_d5, center, rgb(0,0,0));
+    bustupFade(ref_d7, rgb(128,0,0), 30);
+    ref_d9 = dialogChoiceAlloc();
+    ref_da = msgShow(msg_8);
+/***************************************
+[tab]Will you show him [color(green)][var(msg_var_0)][color(white)]?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_da);
+    dialogFree(ref_d9);
+    ref_dd = bustupFade(ref_d7, rgb(0,0,0), 10);
+    bustupWait(ref_dd);
+    bustupFree(ref_d7);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_eb);
+    ref_e2 = dialogAlloc();
+    ref_e3 = msgShow(msg_9);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]T-That’s...[color(green)][var(msg_var_0)][color(white)]?
+[tab]I know that... That’s mine...
+[tab]I’m remembering... I’m remembering...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_2d, 1);
+    wait(ref_e3);
+    bitSet(EBIT_CHARENGE_REO2);
+    bitClear(IBIT_EX_OMOIDE_2);
+    dialogFree(ref_e2);
+    b(label_109);
+    b(label_ee);
+  label_eb:
+    bne(var_0, 1, label_ee);
+    b(label_1a3);
+    b(label_ee);
+  label_ee:
+    choiceSetResult(1);
+    op_105(1);
+    msgVar_Key(msgvar_0, knife);
+    ref_f1 = bustupLoad(bustup_1);
+    bustupWait(ref_f1);
+    ref_f3 = bustupAlloc(ref_f1, center, rgb(0,0,0));
+    bustupFade(ref_f3, rgb(128,0,0), 30);
+    ref_f5 = dialogChoiceAlloc();
+    ref_f6 = msgShow(msg_10);
+/***************************************
+[tab]Will you show him [color(green)][var(msg_var_0)][color(white)]?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_f6);
+    dialogFree(ref_f5);
+    ref_f9 = bustupFade(ref_f3, rgb(0,0,0), 10);
+    bustupWait(ref_f9);
+    bustupFree(ref_f3);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_106);
+    ref_fe = dialogAlloc();
+    ref_ff = msgShow(msg_11);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]...!?
+[tab]T... That [color(green)][var(msg_var_0)][color(white)] is...
+[tab]T-That is mine... It’s coming back to me...
+[wait][clear]
+***************************************/
+    wait(ref_ff);
+    dialogFree(ref_fe);
+    bitSet(EBIT_CHARENGE_REO3);
+    bitClear(IBIT_EX_OMOIDE_3);
+    b(label_109);
+    b(label_109);
+  label_106:
+    bne(var_0, 1, label_109);
+    b(label_1a3);
+    b(label_109);
+  label_109:
+    li(var_1, 0);
+    bitGet(var_0, EBIT_CHARENGE_REO1);
+    bne(var_0, 0, label_10d);
+    b(label_110);
+  label_10d:
+    bne(var_0, 1, label_110);
+    add(var_1, var_1, 1);
+    b(label_110);
+  label_110:
+    bitGet(var_0, EBIT_CHARENGE_REO2);
+    bne(var_0, 0, label_113);
+    b(label_116);
+  label_113:
+    bne(var_0, 1, label_116);
+    add(var_1, var_1, 1);
+    b(label_116);
+  label_116:
+    bitGet(var_0, EBIT_CHARENGE_REO3);
+    bne(var_0, 0, label_119);
+    b(label_11c);
+  label_119:
+    bne(var_0, 1, label_11c);
+    add(var_1, var_1, 1);
+    b(label_11c);
+  label_11c:
+    bne(var_1, 1, label_124);
+    ref_11d = dialogAlloc();
+    ref_11e = msgShow(msg_12);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]It’s just a little...
+[tab]But I’m starting to remember...
+[tab]Gugu... gugu...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_16, 1);
+    wait(ref_11e);
+    dialogFree(ref_11d);
+    b(label_1a3);
+    b(label_12f);
+  label_124:
+    bne(var_1, 2, label_12c);
+    ref_125 = dialogAlloc();
+    ref_126 = msgShow(msg_13);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]But who am I...?
+[tab]I still can’t remember that...
+[tab]Who am I... Gugugu...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_16, 1);
+    wait(ref_126);
+    dialogFree(ref_125);
+    b(label_1a3);
+    b(label_12f);
+  label_12c:
+    bne(var_1, 3, label_12f);
+    b(label_12f);
+    b(label_12f);
+  label_12f:
+    unitAnimationPlay(npc1, animation_1b, 1);
+    delayClear();
+    delayWait(60);
+    ref_132 = dialogAlloc();
+    ref_133 = msgShow(msg_14);
+/***************************************
+[color(yellow)]Man with a sword[color(white)]
+[tab]Gugugugugu...
+[tab]guoooooooooohhhhhhhhhhhh!!!!!
+[wait][clear]
+***************************************/
+    unitAnimationHold(npc1, animation_1c, -1);
+    wait(ref_133);
+    dialogFree(ref_132);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    cameraMoveTo(1447, 0, -1283, 1);
+    cameraRotateTo(3, 1);
+    unitAnimationStop(npc1);
+    unitFace(npc1, south);
+    unitAnimationPlay(npc1, animation_23, 1);
+    unitFace(npc1, south);
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitSpawn(maya, sprite_0, 1437, 0, -1225, north, none);
+    unitAnimationHold(maya, animation_21, -1);
+    delayClear();
+    delayWait(60);
+    ref_149 = sndLoad(sound_3017);
+    wait(ref_149);
+    sndMusicPlay(sound_3017, 127);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    ref_151 = bustupLoad(bustup_4a);
+    bustupWait(ref_151);
+    ref_153 = bustupAlloc(ref_151, right, rgb(0,0,0));
+    bustupFade(ref_153, rgb(128,0,0), 30);
+    ref_155 = dialogAlloc();
+    ref_156 = msgShow(msg_15);
+/***************************************
+[color(yellow)]Tatsuya Sudou[color(white)]
+[tab]Hyaha-------!!!
+[tab]I remember!! ...EVERYTHING!!
+[tab]Who I am, and what I am supposed to do!!
+[wait][clear]
+***************************************/
+    wait(ref_156);
+    unitAnimationStop(maya);
+    unitAnimationPlay(maya, animation_0, 1);
+    dialogFree(ref_155);
+    ref_15b = bustupFade(ref_153, rgb(0,0,0), 10);
+    bustupWait(ref_15b);
+    bustupFree(ref_153);
+    unitAnimationPlay(npc1, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc1, animation_1c, 1);
+    unitWait(npc1);
+    delayClear();
+    delayWait(30);
+    ref_165 = bustupLoad(bustup_4a);
+    bustupWait(ref_165);
+    ref_167 = bustupAlloc(ref_165, right, rgb(0,0,0));
+    bustupFade(ref_167, rgb(128,0,0), 30);
+    ref_169 = dialogAlloc();
+    ref_16a = msgShow(msg_16);
+/***************************************
+[color(yellow)]Tatsuya Sudou[color(white)]
+[tab]I can hear them... The... Voices!!
+[tab]Voices... Voices... Voices... Voices...!!
+[tab]Voices are telling me to do this...
+[wait][clear]
+***************************************/
+    wait(ref_16a);
+    dialogFree(ref_169);
+    ref_16d = bustupFade(ref_167, rgb(0,0,0), 10);
+    bustupWait(ref_16d);
+    bustupFree(ref_167);
+    unitAnimationHold(npc1, animation_1f, -1);
+    delayClear();
+    delayWait(30);
+    ref_173 = bustupLoad(bustup_4a);
+    bustupWait(ref_173);
+    ref_175 = bustupAlloc(ref_173, right, rgb(0,0,0));
+    bustupFade(ref_175, rgb(128,0,0), 30);
+    ref_177 = dialogAlloc();
+    ref_178 = msgShow(msg_17);
+/***************************************
+[color(yellow)]Tatsuya Sudou[color(white)]
+[tab]Telling me to burn this world to ashes...
+[tab]Hya----hahahaha---...!!
+[tab]All will become ashes! ...Hyaha--!!
+[wait][clear]
+***************************************/
+    unitAnimationStop(npc1);
+    unitAnimationPlay(npc1, animation_23, 1);
+    wait(ref_178);
+    dialogFree(ref_177);
+    ref_17d = bustupFade(ref_175, rgb(0,0,0), 10);
+    bustupWait(ref_17d);
+    bustupFree(ref_175);
+    unitAnimationPlay(npc1, animation_0, 1);
+    unitWait(npc1);
+    unitAnimationPlay(npc1, animation_12, 1);
+    unitWait(npc1);
+    unitFace_2(npc1, north);
+    cameraFollow(npc1);
+    unitMove(npc1, 1408, -2202, face_north, fast);
+    unitWait(npc1);
+    unitMove(npc1, 1432, -2293, fade, fast);
+    sndVolumeFadeTo(sound_3017, 0, 60);
+    delayClear();
+    delayWait(60);
+    envTriggerClear(line, coll_1);
+    objVisible(obj_1, false);
+    objVisible(obj_2, false);
+    objVisible(obj_3, false);
+    objVisible(obj_4, false);
+    objVisible(obj_12, false);
+    bitSet(EBIT_CHARENGE_REOR);
+    ref_193 = cameraLookAtUnit(maya, 0, 60);
+    wait(ref_193);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_29, 1);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    cameraSetNorth(north);
+    bitSet(MBIT_EXE_TOBI);
+    bitSet(EBIT_NOSAVE_B);
+    timerSet(2400, event_8f);
+    delayClear();
+    delayWait(60);
+    dngLoad2(ex_sevens2-7);
+    b(label_1a5);
+  label_1a3:
+    controlEnable();
+    unitRestoreFacing(npc1);
+  label_1a5:
+}
+
+function warp1()
+{
+    controlDisable();
+    cameraSetNorth(north);
+    bitGet(var_0, EBIT_CHARENGE_REOR);
+    bne(var_0, 0, label_1ac);
+    dngLoad2(ex_sevens1-13);
+    b(label_1b2);
+  label_1ac:
+    bne(var_0, 1, label_1b2);
+    bitSet(MBIT_EXE_TOBI);
+    bitSet(EBIT_NOSAVE_B);
+    timerSet(2400, event_8f);
+    dngLoad2(ex_sevens2-7);
+    b(label_1b2);
+  label_1b2:
+}
+
+function warp2()
+{
+    cameraSetNorth(south);
+    controlDisable();
+    dngLoad2(ex2c-25);
+}

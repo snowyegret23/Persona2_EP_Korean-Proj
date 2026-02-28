@@ -1,0 +1,6 @@
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+[tab]That's not fair...
+[tab]Breaking your promise...
+[sync][wait]
+[end]

@@ -1,0 +1,6 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 運命からは逃げられねぇぞぉ！！
+[sync][wait]
+[end]

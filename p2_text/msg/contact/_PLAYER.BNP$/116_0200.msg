@@ -1,0 +1,152 @@
+
+msg_0:
+[color(yellow)]パオフゥ[color(white)]
+ おい芹沢…
+ お前は、どんな酒が好きなんだ？
+ 聞いてやるから、言ってみな。
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]うらら[color(white)]
+ ビトゥイーン・ザ・シーツかな…
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]パオフゥ[color(white)]
+ へへ…お前さんらしいな…
+ シーツに包まって、さっさと寝ちまいな。
+ こんな現実より、夢の方がなんぼかマシだ…
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]うらら[color(white)]
+ アンタは、どんなお酒が好きなわけ？
+[wait][clear][end]
+
+msg_4:
+[color(yellow)]パオフゥ[color(white)]
+ 俺か…
+ 俺は、バーボンだ…
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]うらら[color(white)]
+ フロンティアスピリットってわけ…？
+ いつまで、そんな気持ちを持ってられるのかな？
+ 人間ってさ…
+[wait][clear][end]
+
+msg_6:
+[color(yellow)]パオフゥ[color(white)]
+ ひとつ、お前向きなカクテルを教えてやる。
+ 世界一甘い「幻」のカクテルだ…
+[wait][clear][end]
+
+msg_7:
+[color(yellow)]うらら[color(white)]
+ へぇ～ アンタにしちゃ珍しい事言うじゃない…？
+ そんじゃ、教えてもらおうじゃん。
+[wait][clear][end]
+
+msg_8:
+[load_sound(sndeff_1b)][sync][color(yellow)]パオフゥ[color(white)]
+ 「希望」「友情」「健康」をそれぞれ１／３づつ
+ 後は、２ダッシュのセンス…
+ 「のぞみ」ってヤツだ…[play_sound(sndeff_1b)][sync]まさしく幻だな…[sync]
+[wait][clear][end]
+
+msg_9:
+[color(yellow)]パオフゥ[color(white)]
+ いいから聞きなよ。
+ あんまり調子乗ってっと、コイツばら撒くぜ…？
+[wait][clear][end]
+
+msg_10:
+[color(yellow)]パオフゥ[color(white)]
+ どうだ、このテープ？
+ 良く録れてるだろうが？
+ 都合…悪いんじゃねぇのかい？
+[wait][clear][end]
+
+msg_11:
+[color(yellow)]パオフゥ[color(white)]
+ おっと、ちょいと待ちな…
+ コイツをよ～く聞いてみなよ…
+[wait][clear][end]
+
+msg_12:
+[color(yellow)]パオフゥ[color(white)]
+ 全く…あんたも隅に置けないねぇ…
+ おっと、勘違いすんなよ！
+ こいつぁ取引だぜ…
+[wait][clear][end]
+
+msg_13:
+[color(yellow)]パオフゥ[color(white)]
+ おっと、まだ手ぇ出しちゃイケねぇぜ…
+ その前に、こいつを聞いてもらおうか…
+[wait][clear][end]
+
+msg_14:
+[load_sound(sndeff_18)][sync][color(yellow)]パオフゥ[color(white)]
+ こんな面白ぇ事、[play_sound(sndeff_18)][sync]秘密にしておくにゃ
+ ちょいと勿体ねぇ…[sync]
+ コイツをばら撒かせてもらっても良いかい？
+[wait][clear][end]
+
+msg_15:
+[color(yellow)]パオフゥ[color(white)]
+ 馬鹿野郎が…
+ あっさり死んじまいやがって…
+[wait][clear][end]
+
+msg_16:
+[color(yellow)]パオフゥ[color(white)]
+ 弔い酒なんてな、旨かねぇ…
+ さっさと目ぇ覚ましな…
+[wait][clear][end]
+
+msg_17:
+[color(yellow)]パオフゥ[color(white)]
+ いいぜ…しばらくこうしてようや…
+ お前さんが冥土に着くまで…な…
+[wait][clear][end]
+
+msg_18:
+[color(yellow)]パオフゥ[color(white)]
+ チッ…こんな悪魔風情に情けねぇ。
+ まぁ、お前さんにゃお似合いだがよ…
+[wait][clear][end]
+
+msg_19:
+[color(yellow)]パオフゥ[color(white)]
+ チッ…
+ ちったぁ使えるかと思ったが、見当違いだったぜ。
+ そのままオネンネしてな…
+[wait][clear][end]
+
+msg_20:
+[color(yellow)]パオフゥ[color(white)]
+ ったく手間増やしやがって…悔しきゃ立て。
+ このままじゃお前さん、負け犬のまんまだぜ？
+[wait][clear][end]
+
+msg_21:
+[color(yellow)]パオフゥ[color(white)]
+ ど素人はさがっときなぁ。
+ 怪我ぁするぜぇ…
+[wait][clear][end]
+
+msg_22:
+[color(yellow)]うらら[color(white)]
+ ナニ格好つけてんだか…
+ まぁ、後は頼んだわ！
+[wait][clear][end]
+
+msg_23:
+[load_sound(sndeff_33)][sync][sync]
+[end]
+
+msg_24:
+[play_sound(sndeff_33)][sync][sync]
+[end]

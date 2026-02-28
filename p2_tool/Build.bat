@@ -1,0 +1,1 @@
+ts-node cli/mod.ts "../Persona 2 - Batsu - Eternal Punishment (Japan).iso" "../p2_kor" -o "../p2_build"

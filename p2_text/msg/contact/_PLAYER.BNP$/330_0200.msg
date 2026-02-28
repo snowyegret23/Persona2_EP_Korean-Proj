@@ -1,0 +1,57 @@
+
+msg_0:
+[color(yellow)]うらら[color(white)]
+ 他人に迷惑ばっかりかけてるから
+ アンタには、友達がいないの！
+ 解かってる？
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]克哉[color(white)]
+ お前の様なヤツが、無理して友人を作ろうとして
+ 悪い友人に捕まって非行に走るんだ！
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]南条[color(white)]
+ 類は友を呼ぶというからな…
+ 本人が良くならん限り良い友は得られんぞ。
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]うらら[color(white)]
+ だいたい、なんなのよぅ？
+ そのイジけた態度！？
+ こっちまで暗くなっちゃうわよ。
+[wait][clear][end]
+
+msg_4:
+[color(yellow)]克哉[color(white)]
+ お前の様なヤツが、犯罪に走るんだ！
+ もっと前向きに生きるんだ！
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]南条[color(white)]
+ 貴様の様にいじけた輩は、決して一番にはなれん！
+ 出なおして来いっ！
+[wait][clear][end]
+
+msg_6:
+[color(yellow)]克哉[color(white)]
+ なんだ、その態度は！
+ 人の話を聞くのに、その態度はないだろう！
+[wait][clear][end]
+
+msg_7:
+[color(yellow)]うらら[color(white)]
+ だいたいアンタ、私達の話聞いてんの？
+ 私達だってアンタが憎くて叱ってるんじゃないよ。
+ わかってんの？
+[wait][clear][end]
+
+msg_8:
+[load_sound(sndeff_23)][sync][color(yellow)]南条[color(white)]
+ [play_sound(sndeff_23)][sync]善を責むるは朋友の道なり…[sync]
+ 俺達は、貴様の事を案じて言っているのだ！
+[wait][clear][end]

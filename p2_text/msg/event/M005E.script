@@ -1,0 +1,203 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_f);
+    bitGet(var_0, MBIT_DUM_MUSENVIDE);
+    bne(var_0, 0, label_7);
+    call(KYOUSEI);
+    b(label_10);
+  label_7:
+    bne(var_0, 1, label_10);
+    bitGet(var_0, MBIT_END_NOROI);
+    bne(var_0, 0, label_c);
+    call(YARARE);
+    b(label_f);
+  label_c:
+    bne(var_0, 1, label_f);
+    call(ENDEVT);
+    b(label_f);
+  label_f:
+    b(label_10);
+  label_10:
+}
+
+function YARARE()
+{
+    cameraSet(southeast, 850, 0, -1003);
+    ref_12 = spriteLoad(sprite_100);
+    wait(ref_12);
+    unitSpawn(npc1, sprite_100, 848, 0, -671, north, none);
+    ref_15 = spriteLoad(sprite_3);
+    wait(ref_15);
+    unitSpawn(maya, sprite_3, 803, 0, -1197, south, none);
+    unitAnimationPlay(maya, animation_10, 1);
+    ref_19 = spriteLoad(sprite_0);
+    wait(ref_19);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(npc1, animation_7, 1);
+    sndMusicPlay(sound_309c, 127);
+    delayClear();
+    delayWait(120);
+    objAnimTranslate(obj_6, 100, 0, 0, 30);
+    sndMusicPlay(sound_309e, 127);
+    objAnimTranslate(obj_5, -100, 0, 0, 30);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_0);
+    unitFace(maya, south);
+    unitAnimationHold(maya, animation_21, -1);
+    unitWait(npc1);
+    unitJumpTo(npc1, 810, 0, -1203, 8, 0);
+    unitAnimationPlay(npc1, animation_2, 1);
+    call(TAKUTEISI);
+    delayClear();
+    delayWait(15);
+    sndVolumeFadeTo(sound_301d, 0, 30);
+    unitAnimationStop(maya);
+    cameraFollow(maya);
+    unitJumpTo(maya, 798, -120, -1739, 12, 2);
+    unitAnimationPlay(maya, animation_47, 1);
+    delayClear();
+    delayWait(30);
+    ref_3a = sndLoad(sound_12e0);
+    wait(ref_3a);
+    sndMusicPlay(sound_12e0, 0);
+    sndVolumeFadeTo(sound_12e0, 127, 30);
+    delayClear();
+    delayWait(60);
+    objAnimTranslate(obj_6, -100, 0, 0, 30);
+    sndMusicPlay(sound_309e, 127);
+    objAnimTranslate(obj_5, 100, 0, 0, 30);
+    bitClear(MBIT_DUM_MUSENVIDE);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(mu_continent-2);
+}
+
+function TAKUTEISI()
+{
+    unitWait(npc1);
+    unitAnimationPlay(npc1, animation_0, 1);
+}
+
+function KYOUSEI()
+{
+    ref_4f = sndLoad(sound_301d);
+    wait(ref_4f);
+    cameraSet(southeast, 833, 0, -1604);
+    ref_52 = spriteLoad(sprite_100);
+    wait(ref_52);
+    unitSpawn(npc1, sprite_100, 847, 0, -650, north, none);
+    sndMusicPlay(sound_301d, 127);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    ref_5b = spriteLoad(sprite_0);
+    wait(ref_5b);
+    delayClear();
+    delayWait(60);
+    objAnimTranslate(obj_6, 100, 0, 0, 30);
+    sndMusicPlay(sound_309e, 127);
+    objAnimTranslate(obj_5, -100, 0, 0, 30);
+    objAnimWait(obj_6);
+    objAnimWait(obj_5);
+    ref_64 = cameraMoveTo(859, 0, -799, 180);
+    unitSpawn(maya, sprite_0, 803, 0, -1652, south, fade);
+    unitMove(maya, 851, -837, face_south, medium);
+    call(DOOREND);
+    delayClear();
+    delayWait(120);
+    cameraRotateTo(1, 1);
+    unitWait(maya);
+    wait(ref_64);
+    ref_6d = spriteLoad(sprite_3);
+    wait(ref_6d);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_3);
+    unitFace(maya, south);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitFace(maya, south);
+    bitSet(MBIT_DUM_MUSENVIDE);
+    delayClear();
+    delayWait(60);
+    sndMusicPlay(sound_309d, 127);
+    encounterLoad(encounter_27);
+}
+
+function ENDEVT()
+{
+    ref_7a = sndLoad(sound_12e0);
+    wait(ref_7a);
+    ref_7c = spriteLoad(sprite_0);
+    wait(ref_7c);
+    unitSpawn(maya, sprite_0, 851, 0, -837, south, none);
+    unitAnimationPlay(maya, animation_31, 1);
+    cameraRotateTo(1, 1);
+    ref_81 = cameraMoveTo(851, 0, -837, 2);
+    wait(ref_81);
+    sndMusicPlay(sound_12e0, 127);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(maya, animation_0, 1);
+    delayClear();
+    delayWait(60);
+    msgVarSet(msgvar_0, 4116);
+    ref_8f = dialogAlloc();
+    ref_90 = msgShow(msg_0);
+/***************************************
+[color(green)][tab][item_with_type(item_ffff)]を手に入れた。
+[tab]早くカジノまで戻らなくては。[color(white)][wait][clear]
+***************************************/
+    bitSet(IBIT_RUMOR_TAXIH);
+    bitClear(MBIT_DUN_KYE_01);
+    wait(ref_90);
+    dialogFree(ref_8f);
+    cameraFollow(maya);
+    unitMove(maya, 804, -1552, face_north, fast);
+    delayClear();
+    delayWait(60);
+    cameraRotateTo(3, 1);
+    unitWait(maya);
+    objAnimTranslate(obj_6, 100, 0, 0, 30);
+    sndMusicPlay(sound_309e, 127);
+    objAnimTranslate(obj_5, -100, 0, 0, 30);
+    objAnimWait(obj_6);
+    objAnimWait(obj_5);
+    unitMove(maya, 804, -1680, fade, fast);
+    delayClear();
+    delayWait(30);
+    objAnimTranslate(obj_6, -100, 0, 0, 30);
+    sndMusicPlay(sound_309e, 127);
+    objAnimTranslate(obj_5, 100, 0, 0, 30);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(mu_continent-2);
+}
+
+function DOOREND()
+{
+    objAnimTranslate(obj_6, -100, 0, 0, 30);
+    sndMusicPlay(sound_309e, 127);
+    objAnimTranslate(obj_5, 100, 0, 0, 30);
+}

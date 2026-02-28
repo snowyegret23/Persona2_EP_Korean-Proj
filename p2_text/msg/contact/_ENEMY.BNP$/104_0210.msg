@@ -1,0 +1,8 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ これから始まる地獄の饗宴を
+ ゆっくり楽しんで下さい…
+ くっくっくっくっ…
+[sync][wait]
+[end]

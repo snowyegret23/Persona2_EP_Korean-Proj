@@ -1,0 +1,30 @@
+
+msg_0:
+[color(yellow)]ファリードゥーン[color(white)]
+ お前は、全ての穢れ、苦しみ、災厄の根源
+ ダハーカ…
+ よもや、この様な場所で出会うとは…
+[wait][clear][end]
+
+msg_1:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ お久し振りですねぇ、ファリードゥーンさん…
+ どうしたのです、お顔が真っ青ですよ？
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 死人でも見た様な驚き様…
+ まさか貴方は、私を殺したとでも
+ 思ってらっしゃったのでは？
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]ファリードゥーン[color(white)]
+ 貴様の様な輩、この私の手で止めを刺してくれる！
+[wait][clear][end]
+
+msg_3:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そう来なくては、面白くありませんよ…
+ その為に私は、幾年月、苦汁をなめながら
+ 貴方をお待ちしていたのですから…
+[wait][clear][end]

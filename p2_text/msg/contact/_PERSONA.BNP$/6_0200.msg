@@ -1,0 +1,53 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あっ！！
+ そっちの[var(msg_var_0)]、ペルソナなんですかぁ？
+ うらやましいですぅ。
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]ペルソナ [var(msg_var_0)][color(white)]
+ そうなんですぅ。
+ [var(msg_var_0)]、ペルソナになっちゃったんですぅ。
+[wait][clear][end]
+
+msg_2:
+[color(yellow)][var(msg_var_0)][color(white)]
+ どうしたら、ペルソナになれるんですかぁ？
+ [var(msg_var_0)]もペルソナになりたいですぅ。
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]ペルソナ [var(msg_var_0)][color(white)]
+ それって[var(msg_var_0)]もわからないんですぅ。
+ でも、この人たちにカードあげたら
+ ペルソナにしてもらえるかも…
+[wait][clear][end]
+
+msg_4:
+[color(yellow)][var(msg_var_0)][color(white)]
+ だったら、[var(msg_var_0)]のカードもらってください！
+[wait][clear][end]
+
+msg_5:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [color(green)][var(msg_var_4)][color(white)]ですぅ。
+ [color(green)][var(msg_var_5)]まい[color(white)]ありますぅ。
+ これで[var(msg_var_0)]もペルソナにしてくださいね♥
+[wait][clear][end]
+
+msg_6:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あれぇ、この人、カードいっぱいですぅ！
+ 代わりに[color(green)][var(msg_var_1)][color(white)]あげます。
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ じゃあ、さよならですぅ！
+[wait][clear][end]
+
+msg_7:
+[color(yellow)][var(msg_var_0)][color(white)]
+ だから、そのカードで[var(msg_var_0)]も
+ ペルソナにしてくださぁい！
+ おねがいですぅ！
+[wait][clear][end]

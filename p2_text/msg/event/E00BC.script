@@ -1,0 +1,853 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_10);
+    bitClear(DBIT_NYAL_KYOUMEI1);
+    objVisible(obj_c, true);
+    objVisible(obj_d, true);
+    objVisible(obj_9, true);
+    objVisible(obj_a, true);
+    objVisible(obj_b, true);
+    objVisible(obj_1, false);
+    objVisible(obj_2, false);
+    objVisible(obj_3, false);
+    objAnimRotate(obj_0, 0, 360, 0, 2400, 1);
+    envTriggerSet(warp1, 131, 2, line, coll_0);
+    envTriggerSet(warp2, 56, 2, line, coll_3);
+    ref_f = spriteLoad(sprite_6);
+    wait(ref_f);
+    ref_11 = spriteLoad(sprite_d);
+    wait(ref_11);
+    ref_13 = spriteLoad(sprite_13);
+    wait(ref_13);
+    ref_15 = spriteLoad(sprite_18);
+    wait(ref_15);
+    ref_17 = spriteLoad(sprite_0);
+    wait(ref_17);
+    bitGet(var_0, EBIT_E00BE);
+    bne(var_0, 0, label_1c);
+    b(label_30);
+  label_1c:
+    bne(var_0, 1, label_30);
+    unknownVar1(var_0);
+    bne(var_0, 4869, label_27);
+    cameraSetNorth(west);
+    cameraSet(southeast, 1399, 0, -2190);
+    ref_21 = spriteLoad(sprite_2);
+    wait(ref_21);
+    playerInit(south);
+    call(FREEBOX);
+    b(label_41);
+    b(label_2f);
+  label_27:
+    cameraSetNorth(west);
+    cameraSet(northeast, 1401, 0, -628);
+    ref_29 = spriteLoad(sprite_2);
+    wait(ref_29);
+    playerInit(north);
+    call(FREEBOX);
+    b(label_41);
+    b(label_2f);
+  label_2f:
+    b(label_30);
+  label_30:
+    ref_30 = sndLoad(sound_3010);
+    wait(ref_30);
+    sndMusicPlay(sound_3010, 127);
+    bitGet(var_0, EBIT_KABAU);
+    bne(var_0, 0, label_37);
+    call(BUZI);
+    b(label_41);
+  label_37:
+    bne(var_0, 1, label_41);
+    bitGet(var_0, EBIT_MITUKETERU);
+    bne(var_0, 0, label_3c);
+    call(BUZI);
+    b(label_40);
+  label_3c:
+    bne(var_0, 1, label_40);
+    bitSet(EBIT_EIKITIOKITA);
+    call(MEZAME);
+    b(label_40);
+  label_40:
+    b(label_41);
+  label_41:
+}
+
+function FREEBOX()
+{
+    sndIdGet(var_0);
+    bne(var_0, -1, label_48);
+    ref_44 = sndLoad(sound_1260);
+    wait(ref_44);
+    sndMusicPlay(sound_1260, 90);
+    b(label_4a);
+  label_48:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_4a);
+  label_4a:
+    sndUnkCF(90);
+    unitSpawn(ulala, sprite_6, 1093, 0, -1512, west, none);
+    unitTriggerSet(ulala, URARABOX, 255, 1);
+    unitSpawn(baofu, sprite_13, 1386, 0, -1716, south, none);
+    unitTriggerSet(baofu, PAOBOX, 255, 1);
+    unitSpawn(tatsuya, sprite_18, 1339, 0, -1488, south, none);
+    unitTriggerSet(tatsuya, TATUYABOX, 255, 1);
+    unitSpawn(katsuya, sprite_d, 1610, 0, -1380, east, none);
+    unitTriggerSet(katsuya, KATUYABOX, 255, 1);
+    unitAnimationPlay(ulala, animation_a, 1);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    unitAnimationPlay(baofu, animation_a, 1);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    cameraSetNorth(west);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 5, true);
+    screenFadeOuter(rgb(0,0,0), 5, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function BUZI()
+{
+    unitSpawn(maya, sprite_0, 1436, 0, -1595, south, none);
+    unitAnimationPlay(maya, animation_6, 1);
+    unitSpawn(ulala, sprite_6, 1251, 0, -1684, south, none);
+    unitSpawn(baofu, sprite_13, 1395, 0, -1726, south, none);
+    unitAnimationPlay(ulala, animation_6, 1);
+    unitSpawn(tatsuya, sprite_18, 1338, 0, -1499, south, none);
+    unitAnimationPlay(tatsuya, animation_31, 1);
+    ref_66 = spriteLoad(sprite_102);
+    wait(ref_66);
+    unitSpawn(npc1, sprite_102, 1348, 0, -1385, south, none);
+    unitAnimationPlay(npc1, animation_3, 1);
+    unitFace(npc1, south);
+    unitSpawn(katsuya, sprite_d, 1485, 0, -1380, east, none);
+    unitAnimationPlay(katsuya, animation_37, 1);
+    cameraSet(southeast, 1397, 0, -1426);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 5, true);
+    screenFadeOuter(rgb(0,0,0), 5, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(tatsuya, animation_37, 1);
+    delayClear();
+    delayWait(30);
+    ref_78 = bustupLoad(bustup_10);
+    bustupWait(ref_78);
+    ref_7a = bustupAlloc(ref_78, left, rgb(0,0,0));
+    bustupFade(ref_7a, rgb(128,0,0), 30);
+    ref_7c = dialogAlloc();
+    ref_7d = msgShow(msg_0);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]栄吉…
+[wait][clear]
+***************************************/
+    wait(ref_7d);
+    dialogFree(ref_7c);
+    ref_80 = bustupFade(ref_7a, rgb(0,0,0), 10);
+    bustupWait(ref_80);
+    bustupFree(ref_7a);
+    unitAnimationPlay(katsuya, animation_31, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(katsuya, animation_32, 1);
+    delayClear();
+    delayWait(30);
+    ref_89 = bustupLoad(bustup_21);
+    bustupWait(ref_89);
+    ref_8b = bustupAlloc(ref_89, left, rgb(0,0,0));
+    bustupFade(ref_8b, rgb(128,0,0), 30);
+    ref_8d = dialogAlloc();
+    ref_8e = msgShow(msg_1);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]まだ目を覚ましていないな。
+[tab]ひとまず、一安心というところか…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_31, 1);
+    delayClear();
+    delayWait(6);
+    unitAnimationPlay(tatsuya, animation_32, 1);
+    wait(ref_8e);
+    dialogFree(ref_8d);
+    ref_95 = bustupFade(ref_8b, rgb(0,0,0), 10);
+    bustupWait(ref_95);
+    bustupFree(ref_8b);
+    unitAnimationPlay(tatsuya, animation_31, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(tatsuya, animation_39, 1);
+    unitWait(tatsuya);
+    delayClear();
+    delayWait(20);
+    ref_9f = call(URARASIN);
+    unitAnimationPlay(baofu, animation_3, 1);
+    ref_a1 = bustupLoad(bustup_1a);
+    bustupWait(ref_a1);
+    ref_a3 = bustupAlloc(ref_a1, left, rgb(0,0,0));
+    bustupFade(ref_a3, rgb(128,0,0), 30);
+    ref_a5 = dialogAlloc();
+    ref_a6 = msgShow(msg_2);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]でもさ…[tatsuya]君はこれで本当にいいの？
+[tab]自分の事、忘れられたままで…
+[tab]大事な友達なんでしょ？
+[sync][wait][clear]
+***************************************/
+    wait(ref_9f);
+    sync();
+    wait(ref_a6);
+    dialogFree(ref_a5);
+    ref_ab = bustupFade(ref_a3, rgb(0,0,0), 10);
+    bustupWait(ref_ab);
+    bustupFree(ref_a3);
+    unitAnimationPlay(maya, animation_3, 1);
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    delayClear();
+    delayWait(60);
+    ref_b2 = bustupLoad(bustup_10);
+    bustupWait(ref_b2);
+    ref_b4 = bustupAlloc(ref_b2, left, rgb(0,0,0));
+    bustupFade(ref_b4, rgb(128,0,0), 30);
+    ref_b6 = dialogAlloc();
+    ref_b7 = msgShow(msg_3);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]いいんだ…これで…
+[sync][wait][clear]
+***************************************/
+    ref_b8 = spriteLoad(sprite_55);
+    wait(ref_b8);
+    sync();
+    wait(ref_b7);
+    dialogFree(ref_b6);
+    ref_bd = bustupFade(ref_b4, rgb(0,0,0), 10);
+    bustupWait(ref_bd);
+    bustupFree(ref_b4);
+    ref_c0 = efctDummy(effect_d);
+    wait(ref_c0);
+    ref_c2 = efctLoad(effect_d);
+    wait(ref_c2);
+    efctPlay(effect_d, efct_f, 1322, 0, -1312, 1322, 0, -1312, false);
+    ref_c5 = call(CYOUDETA);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(maya, animation_0, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(baofu, animation_0, 1);
+    wait(ref_c5);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    ref_d5 = bustupLoad(bustup_e);
+    bustupWait(ref_d5);
+    ref_d7 = bustupAlloc(ref_d5, left, rgb(0,0,0));
+    bustupFade(ref_d7, rgb(128,0,0), 30);
+    ref_d9 = dialogAlloc();
+    ref_da = msgShow(msg_4);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]フィレモン…
+[wait][clear]
+***************************************/
+    wait(ref_da);
+    dialogFree(ref_d9);
+    ref_dd = bustupFade(ref_d7, rgb(0,0,0), 10);
+    bustupWait(ref_dd);
+    bustupFree(ref_d7);
+    delayClear();
+    delayWait(60);
+    ref_e2 = dialogAlloc();
+    ref_e3 = msgShow(msg_5);
+/***************************************
+[color(yellow)]フィレモン[color(white)]
+[tab]彼は…私が現世へ送り返そう…
+[tab]残念だが、今の彼を連れて行けば彼奴の思う壺だ…
+[tab]辛いだろうが先に進みたまえ…
+[wait][clear]
+***************************************/
+    wait(ref_e3);
+    dialogFree(ref_e2);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(tatsuya, animation_24, 1);
+    unitWait(tatsuya);
+    delayClear();
+    delayWait(30);
+    ref_ec = efctDummy(effect_d);
+    wait(ref_ec);
+    ref_ee = efctLoad(effect_d);
+    wait(ref_ee);
+    efctPlay(effect_d, efct_e, 1348, 0, -1385, 1348, 0, -1385, false);
+    sndMusicPlay(sound_32d4, 127);
+    sndVolumeFadeTo(sound_32d5, 0, 30);
+    unitSpriteEffect(npc1, 2);
+    unitSpriteEffect(npc2, 2);
+    delayClear();
+    delayWait(3);
+    unitDespawn(npc1, fade);
+    unitDespawn(npc2, fade);
+    delayClear();
+    delayWait(60);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    bitSet(EBIT_E00BE);
+    ref_102 = cameraLookAtUnit(maya, 0, 2);
+    wait(ref_102);
+    ref_104 = spriteLoad(sprite_2);
+    wait(ref_104);
+    unitDespawn(maya, none);
+    playerInit(south);
+    controlDisable();
+    sndStop(sound_3010);
+    call(FREEBOX);
+}
+
+function MEZAME()
+{
+    unitSpawn(maya, sprite_0, 1436, 0, -1595, south, none);
+    unitSpawn(ulala, sprite_6, 1251, 0, -1684, south, none);
+    unitSpawn(katsuya, sprite_d, 1583, 0, -1377, east, none);
+    unitAnimationPlay(katsuya, animation_6, 1);
+    unitSpawn(baofu, sprite_13, 1395, 0, -1726, south, none);
+    unitAnimationPlay(baofu, animation_1a, 1);
+    unitSpawn(tatsuya, sprite_18, 1343, 0, -1528, south, none);
+    ref_113 = spriteLoad(sprite_27);
+    wait(ref_113);
+    unitSpawn(npc1, sprite_27, 1314, 0, -1330, north, none);
+    cameraSet(northeast, 1384, 0, -1532);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 5, true);
+    screenFadeOuter(rgb(0,0,0), 5, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    delayClear();
+    delayWait(30);
+    ref_121 = bustupLoad(bustup_12);
+    bustupWait(ref_121);
+    ref_123 = bustupAlloc(ref_121, left, rgb(0,0,0));
+    bustupFade(ref_123, rgb(128,0,0), 30);
+    ref_125 = dialogAlloc();
+    ref_126 = msgShow(msg_6);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]思い…出したのか…？
+[wait][clear]
+***************************************/
+    wait(ref_126);
+    dialogFree(ref_125);
+    ref_129 = bustupFade(ref_123, rgb(0,0,0), 10);
+    bustupWait(ref_129);
+    bustupFree(ref_123);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc1, animation_6, 1);
+    delayClear();
+    delayWait(30);
+    ref_131 = bustupLoad(bustup_118);
+    bustupWait(ref_131);
+    ref_133 = bustupAlloc(ref_131, right, rgb(0,0,0));
+    bustupFade(ref_133, rgb(128,0,0), 30);
+    ref_135 = dialogAlloc();
+    ref_136 = msgShow(msg_7);
+/***************************************
+[color(yellow)]栄吉[color(white)]
+[tab]ああ…ああ…思い出したよ！
+
+***************************************/
+    wait(ref_136);
+    ref_138 = msgShow(msg_8);
+/***************************************
+[tab]またあの野郎なんだな？[tab]そうなんだな！？
+[tab]なら、なんで俺に声かけねぇんだ！？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    unitAnimationPlay(npc1, animation_2f, 1);
+    wait(ref_138);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_135);
+    ref_13e = bustupFade(ref_133, rgb(0,0,0), 10);
+    bustupWait(ref_13e);
+    bustupFree(ref_133);
+    call(NAZETATU);
+    ref_142 = bustupLoad(bustup_12);
+    bustupWait(ref_142);
+    ref_144 = bustupAlloc(ref_142, left, rgb(0,0,0));
+    bustupFade(ref_144, rgb(128,0,0), 30);
+    ref_146 = dialogAlloc();
+    ref_147 = msgShow(msg_9);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]栄吉…俺は…
+[wait][clear]
+***************************************/
+    wait(ref_147);
+    dialogFree(ref_146);
+    ref_14a = bustupFade(ref_144, rgb(0,0,0), 10);
+    bustupWait(ref_14a);
+    bustupFree(ref_144);
+    unitAnimationPlay(npc1, animation_1b, 1);
+    ref_14e = bustupLoad(bustup_118);
+    bustupWait(ref_14e);
+    ref_150 = bustupAlloc(ref_14e, right, rgb(0,0,0));
+    bustupFade(ref_150, rgb(128,0,0), 30);
+    ref_152 = dialogAlloc();
+    ref_153 = msgShow(msg_10);
+/***************************************
+[color(yellow)]栄吉[color(white)]
+[tab]馬鹿野郎！！
+
+***************************************/
+    wait(ref_153);
+    ref_155 = call(EEEMOVE);
+    ref_156 = msgShow(msg_11);
+/***************************************
+[tab]そんなボロボロになるまで無理しやがって…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_3, 1);
+    wait(ref_155);
+    sync();
+    wait(ref_156);
+    dialogFree(ref_152);
+    ref_15c = bustupFade(ref_150, rgb(0,0,0), 10);
+    bustupWait(ref_15c);
+    bustupFree(ref_150);
+    unitAnimationPlay(npc1, animation_0, 1);
+    delayClear();
+    delayWait(20);
+    cameraFollow(npc1);
+    call(IKARIEI);
+    ref_164 = call(mukimukikatu);
+    ref_165 = bustupLoad(bustup_117);
+    bustupWait(ref_165);
+    ref_167 = bustupAlloc(ref_165, right, rgb(0,0,0));
+    bustupFade(ref_167, rgb(128,0,0), 30);
+    ref_169 = dialogAlloc();
+    ref_16a = msgShow(msg_12);
+/***************************************
+[color(yellow)]栄吉[color(white)]
+[tab]チクショー！！[tab]出てきやがれ！！
+[tab]今度こそブッ殺してやるっ！！
+[sync][wait][clear]
+***************************************/
+    ref_16b = spriteLoad(sprite_55);
+    wait(ref_16b);
+    wait(ref_164);
+    sync();
+    wait(ref_16a);
+    dialogFree(ref_169);
+    ref_171 = bustupFade(ref_167, rgb(0,0,0), 10);
+    bustupWait(ref_171);
+    bustupFree(ref_167);
+    ref_174 = efctDummy(effect_d);
+    wait(ref_174);
+    ref_176 = efctLoad(effect_d);
+    wait(ref_176);
+    efctPlay(effect_d, efct_d, 1339, 0, -1216, 1339, 0, -1216, false);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    sndMusicPlay(sound_32d4, 127);
+    unitSpriteEffect(npc1, 2);
+    delayClear();
+    delayWait(3);
+    unitDespawn(npc1, fade);
+    delayClear();
+    delayWait(80);
+    cameraMoveTo(1374, 0, -1498, 60);
+    unitAnimationPlay(katsuya, animation_3, 1);
+    ref_183 = call(FIREDETA);
+    efctPlay(effect_d, efct_d, 1345, 0, -1401, 1345, 0, -1401, false);
+    wait(ref_183);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    delayClear();
+    delayWait(30);
+    ref_18b = bustupLoad(bustup_e);
+    bustupWait(ref_18b);
+    ref_18d = bustupAlloc(ref_18b, left, rgb(0,0,0));
+    bustupFade(ref_18d, rgb(128,0,0), 30);
+    ref_18f = dialogAlloc();
+    ref_190 = msgShow(msg_13);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]フィレモン…
+[wait][clear]
+***************************************/
+    wait(ref_190);
+    dialogFree(ref_18f);
+    ref_193 = bustupFade(ref_18d, rgb(0,0,0), 10);
+    bustupWait(ref_193);
+    bustupFree(ref_18d);
+    ref_196 = dialogAlloc();
+    ref_197 = msgShow(msg_14);
+/***************************************
+[color(yellow)]フィレモン[color(white)]
+[tab]彼は…私が現世へ送り返した…
+[tab]残念だが、今の彼を連れて行けば彼奴の思う壺だ…
+[tab]辛いだろうが、先に進みたまえ…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    sync();
+    wait(ref_197);
+    dialogFree(ref_196);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(tatsuya, animation_24, 1);
+    delayClear();
+    delayWait(60);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    bitSet(EBIT_E00BE);
+    sndVolumeFadeTo(sound_32d5, 0, 30);
+    unitDespawn(npc2, none);
+    ref_1aa = cameraLookAtUnit(maya, 0, 2);
+    wait(ref_1aa);
+    ref_1ac = spriteLoad(sprite_2);
+    wait(ref_1ac);
+    unitDespawn(maya, none);
+    playerInit(south);
+    controlDisable();
+    sndStop(sound_3010);
+    call(FREEBOX);
+}
+
+function warp1()
+{
+    controlDisable();
+    dngLoad2(monad1-5);
+}
+
+function warp2()
+{
+    controlDisable();
+    dngLoad2(monad1-6);
+}
+
+function URARABOX()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_1bc = bustupLoad(bustup_19);
+    bustupWait(ref_1bc);
+    ref_1be = bustupAlloc(ref_1bc, left, rgb(0,0,0));
+    bustupFade(ref_1be, rgb(128,0,0), 30);
+    ref_1c0 = dialogAlloc();
+    ref_1c1 = msgShow(msg_15);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]私…自分の事以外でこんなに頭きたの初めてだわ…
+[tab][tatsuya]君が一体なにしたってのさ…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2f, 1);
+    wait(ref_1c1);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_1c0);
+    ref_1c6 = bustupFade(ref_1be, rgb(0,0,0), 10);
+    bustupWait(ref_1c6);
+    bustupFree(ref_1be);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function PAOBOX()
+{
+    controlDisable();
+    unitFacePlayer(baofu);
+    ref_1ce = bustupLoad(bustup_33);
+    bustupWait(ref_1ce);
+    ref_1d0 = bustupAlloc(ref_1ce, left, rgb(0,0,0));
+    bustupFade(ref_1d0, rgb(128,0,0), 30);
+    ref_1d2 = dialogAlloc();
+    ref_1d3 = msgShow(msg_16);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]天野よ…ここにいるのは、
+[tab]どいつもこいつも俗物ばっかりだ…
+[tab]力ずくであの化物と殺り合うつもりらしい。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_1d3);
+    ref_1d6 = msgShow(msg_17);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]お前さんも、覚悟決めときな…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_1d6);
+    dialogFree(ref_1d2);
+    ref_1da = bustupFade(ref_1d0, rgb(0,0,0), 10);
+    bustupWait(ref_1da);
+    bustupFree(ref_1d0);
+    unitRestoreFacing(baofu);
+    controlEnable();
+}
+
+function TATUYABOX()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_KABAU);
+    bne(var_0, 0, label_1e5);
+    b(label_1fc);
+    b(label_1ee);
+  label_1e5:
+    bne(var_0, 1, label_1ee);
+    bitGet(var_0, EBIT_MITUKETERU);
+    bne(var_0, 0, label_1ea);
+    b(label_1fc);
+    b(label_1ed);
+  label_1ea:
+    bne(var_0, 1, label_1ed);
+    b(label_1ee);
+    b(label_1ed);
+  label_1ed:
+    b(label_1ee);
+  label_1ee:
+    ref_1ee = bustupLoad(bustup_12);
+    bustupWait(ref_1ee);
+    ref_1f0 = bustupAlloc(ref_1ee, left, rgb(0,0,0));
+    bustupFade(ref_1f0, rgb(128,0,0), 30);
+    ref_1f2 = dialogAlloc();
+    ref_1f3 = msgShow(msg_18);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]済まない、栄吉…
+[tab]あんな辛い思い…思い出す必要はなかったのに…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    wait(ref_1f3);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_1f2);
+    ref_1f8 = bustupFade(ref_1f0, rgb(0,0,0), 10);
+    bustupWait(ref_1f8);
+    bustupFree(ref_1f0);
+    b(label_209);
+  label_1fc:
+    ref_1fc = bustupLoad(bustup_10);
+    bustupWait(ref_1fc);
+    ref_1fe = bustupAlloc(ref_1fc, left, rgb(0,0,0));
+    bustupFade(ref_1fe, rgb(128,0,0), 30);
+    ref_200 = dialogAlloc();
+    ref_201 = msgShow(msg_19);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]守ってみせる…
+[tab]「こちら側」も…みんなの記憶も…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_2f, 1);
+    wait(ref_201);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_200);
+    ref_206 = bustupFade(ref_1fe, rgb(0,0,0), 10);
+    bustupWait(ref_206);
+    bustupFree(ref_1fe);
+  label_209:
+    controlEnable();
+}
+
+function KATUYABOX()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    ref_20d = bustupLoad(bustup_23);
+    bustupWait(ref_20d);
+    ref_20f = bustupAlloc(ref_20d, left, rgb(0,0,0));
+    bustupFade(ref_20f, rgb(128,0,0), 30);
+    ref_211 = dialogAlloc();
+    ref_212 = msgShow(msg_20);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]天野君…奴は、怒りが影の力の源だと言ったね…？
+[tab]申し訳ないが…僕は自分を抑えられそうにない…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_212);
+    ref_215 = msgShow(msg_21);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]僕をどれだけ蔑もうが構わない…
+[tab]だが…[tatsuya]や皆に対するこの仕打ちだけは
+[tab]がまんならん…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2f, 1);
+    wait(ref_215);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_211);
+    ref_21a = bustupFade(ref_20f, rgb(0,0,0), 10);
+    bustupWait(ref_21a);
+    bustupFree(ref_20f);
+    unitRestoreFacing(katsuya);
+    controlEnable();
+}
+
+function URARASIN()
+{
+    unitMove(ulala, 1243, -1535, face_south, slow);
+    unitWait(ulala);
+    unitAnimationPlay(ulala, animation_1, 1);
+}
+
+function CYOUDETA()
+{
+    sndMusicPlay(sound_32d4, 127);
+    unitSpawn(npc2, sprite_55, 1322, 0, -1312, north, none);
+    unitShadowRadius(npc2, 0);
+    unitSpriteEffect(npc2, 2);
+    unitColorAdjust(npc2, 0, 0, 0);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.00048828125, 0.00048828125, 0.00048828125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.0009765625, 0.0009765625, 0.0009765625);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.001953125, 0.001953125, 0.001953125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.00390625, 0.00390625, 0.00390625);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.0078125, 0.0078125, 0.0078125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.015625, 0.015625, 0.015625);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.03125, 0.03125, 0.03125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.25, 0.25, 0.25);
+    sndMusicPlay(sound_32d5, 127);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 1, 1, 1);
+    unitSpriteEffect(npc2, 0);
+}
+
+function FIREDETA()
+{
+    sndMusicPlay(sound_32d4, 127);
+    unitSpawn(npc2, sprite_55, 1345, 0, -1401, north, none);
+    unitShadowRadius(npc2, 0);
+    unitSpriteEffect(npc2, 2);
+    unitColorAdjust(npc2, 0, 0, 0);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.00048828125, 0.00048828125, 0.00048828125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.0009765625, 0.0009765625, 0.0009765625);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.001953125, 0.001953125, 0.001953125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.00390625, 0.00390625, 0.00390625);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.0078125, 0.0078125, 0.0078125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.015625, 0.015625, 0.015625);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.03125, 0.03125, 0.03125);
+    sndMusicPlay(sound_32d5, 127);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(6);
+    unitColorAdjust(npc2, 1, 1, 1);
+    unitSpriteEffect(npc2, 0);
+}
+
+function IKARIEI()
+{
+    unitMove(npc1, 1339, -1216, face_south, fast);
+    unitWait(npc1);
+    unitAnimationPlay(npc1, animation_1b, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc1, animation_28, 1);
+}
+
+function EEEMOVE()
+{
+    unitMove(npc1, 1333, -1450, face_north, slow);
+    unitWait(npc1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc1, animation_6, 1);
+}
+
+function NAZETATU()
+{
+    unitAnimationPlay(tatsuya, animation_1f, 1);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(tatsuya, animation_6, 1);
+}
+
+function mukimukikatu()
+{
+    unitAnimationPlay(katsuya, animation_0, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(katsuya, animation_1, 1);
+}

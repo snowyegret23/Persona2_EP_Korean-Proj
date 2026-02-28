@@ -1,0 +1,21 @@
+
+msg_0:
+[color(yellow)]ケツアルカトル[color(white)]
+ 奸計を用い、我が王位を奪いし
+ 邪悪なる戦士[var(msg_var_0)]よ！
+ 我が恨み、未だ晴れてはおらぬぞ！
+[wait][clear][end]
+
+msg_1:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふっ、笑止な…
+ 貴様こそ、兄である私を天から蹴落とした事
+ 忘れているのではあるまい？
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]ケツアルカトル[color(white)]
+ ぐっ！
+ しかし、貴様だけは、許せん！
+ いざ勝負！！
+[wait][clear][end]

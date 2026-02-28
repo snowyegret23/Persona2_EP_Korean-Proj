@@ -1,0 +1,4751 @@
+function START()
+{
+    op_107();
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_10);
+    disableMap();
+    op_118();
+    bitGet(var_0, MBIT_SUN_BEL03);
+    bnz(var_0, label_d);
+    bitGet(var_0, MBIT_SUN_BEL02);
+    bnz(var_0, label_12);
+    bitGet(var_0, MBIT_SUN_BEL01);
+    bnz(var_0, label_15);
+    b(label_18);
+  label_d:
+    bitClear(MBIT_SUN_BEL03);
+    bitClear(MBIT_SUN_BEL02);
+    bitClear(MBIT_SUN_BEL01);
+    sndMusicPlay(sound_3003, 127);
+    b(label_1a);
+  label_12:
+    bitSet(MBIT_SUN_BEL03);
+    sndMusicPlay(sound_3002, 127);
+    b(label_1a);
+  label_15:
+    bitSet(MBIT_SUN_BEL02);
+    sndMusicPlay(sound_3001, 127);
+    b(label_1a);
+  label_18:
+    bitSet(MBIT_SUN_BEL01);
+    sndMusicPlay(sound_3000, 127);
+  label_1a:
+    objVisible(obj_29, false);
+    objVisible(obj_2a, false);
+    ref_1c = todLoad(tod_e);
+    wait(ref_1c);
+    todRun(tod_e, 1);
+    ref_1f = spriteLoad(sprite_0);
+    wait(ref_1f);
+    ref_21 = spriteLoad(sprite_2);
+    wait(ref_21);
+    ref_23 = spriteLoad(sprite_a4);
+    wait(ref_23);
+    unitSpawn(shopkeeper, sprite_a4, 1088, -60, -968, north, none);
+    envTriggerSet(IGORU, 56, 1, collision_5, coll_3);
+    ref_27 = spriteLoad(sprite_a6);
+    wait(ref_27);
+    unitSpawn(npc1, sprite_a6, 1269, -60, -695, north, none);
+    unitTriggerSet(npc1, BERADONNA, 255, 1);
+    ref_2b = spriteLoad(sprite_a5);
+    wait(ref_2b);
+    unitSpawn(npc2, sprite_a5, 1028, -60, -740, north, none);
+    ref_2e = spriteLoad(sprite_a7);
+    wait(ref_2e);
+    unitSpawn(unit_76, sprite_a7, 750, -60, -1250, north, none);
+    unitTriggerSet(unit_76, ESI, 255, 1);
+    cameraSet(northwest, 111, 0, -996);
+    ref_33 = spriteLoad(sprite_6);
+    wait(ref_33);
+    unitSpawn(ulala, sprite_6, 851, -30, -1662, south, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+    ref_37 = spriteLoad(sprite_d);
+    wait(ref_37);
+    unitSpawn(katsuya, sprite_d, 316, 0, -1256, west, none);
+    unitTriggerSet(katsuya, B_KATUYYY, 255, 1);
+    ref_3b = spriteLoad(sprite_13);
+    wait(ref_3b);
+    unitSpawn(baofu, sprite_13, 91, 0, -756, west, none);
+    unitTriggerSet(baofu, B_PAO, 255, 1);
+    ref_3f = spriteLoad(sprite_1f);
+    wait(ref_3f);
+    unitSpawn(nanjo, sprite_1f, 287, 0, -899, west, none);
+    unitTriggerSet(nanjo, B_NANJ, 255, 1);
+    ref_43 = spriteLoad(sprite_23);
+    wait(ref_43);
+    unitSpawn(elly, sprite_23, 1009, -30, -1624, south, none);
+    unitTriggerSet(elly, B_ERI, 255, 1);
+    ref_47 = spriteLoad(sprite_18);
+    wait(ref_47);
+    unitSpawn(tatsuya, sprite_18, 147, 0, -1408, west, none);
+    unitTriggerSet(tatsuya, B_TATU, 255, 1);
+    envTriggerSet(DOORBOX, 14, 1, collision_5, coll_2);
+    envTriggerSet(HIDARI, 56, 1, collision_5, coll_0);
+    envTriggerSet(MIGI, 131, 1, collision_5, coll_1);
+    bitGet(var_0, MBIT_EXE_MOVE);
+    bne(var_0, 0, label_51);
+    b(label_55);
+  label_51:
+    bne(var_0, 1, label_55);
+    call(MOVEKARA);
+    b(label_70);
+    b(label_55);
+  label_55:
+    bitGet(var_0, MBIT_CHARENG_START);
+    bne(var_0, 0, label_59);
+    call(STARTEVT);
+    b(label_70);
+  label_59:
+    bne(var_0, 1, label_70);
+    unknownVar1(var_0);
+    bne(var_0, 6152, label_64);
+    bitGet(var_0, MBIT_EXE_CHUUKAN);
+    bne(var_0, 0, label_60);
+    call(CHUUKAN);
+    b(label_63);
+  label_60:
+    bne(var_0, 1, label_63);
+    call(NOMAL);
+    b(label_63);
+  label_63:
+    b(label_6f);
+  label_64:
+    bne(var_0, 7425, label_6d);
+    bitGet(var_0, MBIT_EXE_CHUUKAN);
+    bne(var_0, 0, label_69);
+    call(CHUUKAN);
+    b(label_6c);
+  label_69:
+    bne(var_0, 1, label_6c);
+    call(NOMAL);
+    b(label_6c);
+  label_6c:
+    b(label_6f);
+  label_6d:
+    call(NOMAL);
+    b(label_6f);
+  label_6f:
+    b(label_70);
+  label_70:
+}
+
+function MOVEKARA()
+{
+    cameraSet(northwest, 1054, -60, -682);
+    delayClear();
+    delayWait(5);
+    playerInit(north);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitIdleOnAll();
+    unitAnimationPlay(npc2, animation_0, 1);
+    unitAnimationPlay(npc1, animation_7, 1);
+    unitAnimationPlay(unit_76, animation_b, 1);
+    call(MIGI);
+}
+
+function CHUUKAN()
+{
+    timerClear();
+    bitClear(EBIT_NOSAVE_B);
+    cameraSet(northwest, 1107, -60, -1148);
+    unitSpawn(maya, sprite_0, 1107, -60, -1148, south, none);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitIdleOnAll();
+    unitAnimationPlay(npc2, animation_0, 1);
+    unitAnimationPlay(npc1, animation_7, 1);
+    unitAnimationPlay(unit_76, animation_b, 1);
+    unitAnimationPlay(maya, animation_a, 1);
+    delayClear();
+    delayWait(60);
+    ref_91 = bustupLoad(bustup_e0);
+    bustupWait(ref_91);
+    ref_93 = bustupAlloc(ref_91, right, rgb(0,0,0));
+    bustupFade(ref_93, rgb(128,0,0), 30);
+    ref_95 = dialogAlloc();
+    ref_96 = msgShow(msg_0);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Do you understand...?
+[tab]This labyrinth is another world
+[tab]that you know, yet it cannot exist.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_96);
+    ref_9a = msgShow(msg_1);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]It is a false world where reality and
+[tab]fantasy mesh. But you should know
+[tab]a world that is very similar to this.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_9a);
+    ref_9e = msgShow(msg_2);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]It is the world which you
+[tab]experience within your sleep.
+[tab]Yes... It is a "dream"...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_9e);
+    ref_a2 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]This world created by Master Philemon can
+[tab]be called the "Relic of the Collective
+[tab]Unconsciousness". It resembles a dream...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_a2);
+    ref_a6 = msgShow(msg_4);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]What this means,
+[tab]I shall leave for you to decide.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_a6);
+    ref_aa = msgShow(msg_5);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]However, just as a dream has an end,
+[tab]this world also has a conclusion.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_aa);
+    ref_ae = msgShow(msg_6);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]This is the center of the labyrinth.
+[tab]You have halfway to go.
+[tab]Good luck.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_ae);
+    ref_b2 = msgShow(msg_7);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Yes yes, one final warning. Once you leave
+[tab]this room, you will not be able to use it
+[tab]for a while. Leave with care.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_b2);
+    dialogFree(ref_95);
+    ref_b7 = bustupFade(ref_93, rgb(0,0,0), 10);
+    bustupWait(ref_b7);
+    bustupFree(ref_93);
+    unitAnimationPlay(shopkeeper, animation_11, 1);
+    unitDespawn(maya, none);
+    playerInit(south);
+    controlDisable();
+    bitSet(MBIT_EXE_CHUUKAN);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function STARTEVT()
+{
+    cameraSet(northwest, 1107, -60, -1148);
+    unitSpawn(maya, sprite_0, 1107, -60, -1148, south, none);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitIdleOnAll();
+    unitAnimationPlay(npc2, animation_0, 1);
+    unitAnimationPlay(npc1, animation_7, 1);
+    unitAnimationPlay(unit_76, animation_b, 1);
+    unitAnimationPlay(maya, animation_a, 1);
+    delayClear();
+    delayWait(60);
+    dngRoomSet(293);
+    dngRoomDraw();
+    bitSet(CBIT_TUTORIAL);
+    bitSet(DBIT_NPC_JACK1);
+    bitSet(DBIT_NPC_JACK2);
+    bitSet(DBIT_NPC_JACK3);
+    bitSet(DBIT_NPC_JACK4);
+    bitSet(MBIT_EXE_WHIT_01);
+    bitSet(MBIT_EXE_WHIT_02);
+    bitSet(MBIT_EXE_WHIT_03);
+    bitSet(MBIT_EXE_WHIT_04);
+    bitSet(MBIT_EXE_WHIT_05);
+    bitSet(MBIT_EXE_KATUYA);
+    bitSet(MBIT_EXE_1A_OKU);
+    bitSet(MBIT_EXE_1D);
+    bitSet(MBIT_EXE_2A);
+    bitSet(MBIT_EXE_2B);
+    bitSet(EBIT_E0010);
+    bitSet(MBIT_BEL_ESI);
+    ref_e3 = bustupLoad(bustup_e0);
+    bustupWait(ref_e3);
+    ref_e5 = bustupAlloc(ref_e3, right, rgb(0,0,0));
+    bustupFade(ref_e5, rgb(128,0,0), 30);
+    ref_e7 = dialogAlloc();
+    ref_e8 = msgShow(msg_8);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Welcome to the Velvet Room.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_e8);
+    ref_ec = msgShow(msg_9);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]This room is currently connected to
+[tab]an undeveloped labyrinth created
+[tab]by our master, Philemon.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_ec);
+    ref_f0 = msgShow(msg_10);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Master Philemon intends to test
+[tab]your abilities once more through
+[tab]this labyrinth.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_f0);
+    ref_f4 = msgShow(msg_11);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]First, find the "Vortex of Light"
+[tab]hidden within the labyrinth. That
+[tab]is the key to conquering this labyrinth.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_f4);
+    ref_f8 = msgShow(msg_12);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]It is your choice as to who joins you.
+[tab]Now, go...
+[tab]I am supporting you from the shadows.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_f8);
+    bitGet(var_0, MBIT_EXTRARANK_E);
+    bez(var_0, label_10e);
+    ref_fe = msgShow(msg_13);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Yes yes... Nameless and I have
+[tab]a humble gift for you.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_fe);
+    ref_102 = msgShow(msg_14);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]This is an alternate world away from the
+[tab]real world. There must be a time when you
+[tab]want to hear the voices of your friends.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_102);
+    ref_106 = msgShow(msg_15);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]If you ask me, I can call those people
+[tab]using this evil phone.
+[tab]Please use it.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_106);
+    ref_10a = msgShow(msg_16);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Well, then...
+[tab]I wish you good luck.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_10a);
+  label_10e:
+    dialogFree(ref_e7);
+    ref_10f = bustupFade(ref_e5, rgb(0,0,0), 10);
+    bustupWait(ref_10f);
+    bustupFree(ref_e5);
+    unitAnimationPlay(shopkeeper, animation_11, 1);
+    bitSet(MBIT_CHARENG_START);
+    unitDespawn(maya, none);
+    playerInit(south);
+    controlDisable();
+    bitSet(LBIT_0010);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function NOMAL()
+{
+    cameraSet(northwest, 111, 0, -996);
+    playerInit(west);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    unitAnimationPlay(shopkeeper, animation_11, 1);
+    unitAnimationPlay(npc2, animation_0, 1);
+    unitAnimationPlay(npc1, animation_7, 1);
+    unitAnimationPlay(unit_76, animation_b, 1);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    partyMemberCheck(var_0, ulala);
+    bnz(var_0, label_1c5);
+    ref_12f = bustupLoad(bustup_18);
+    bustupWait(ref_12f);
+    ref_131 = bustupAlloc(ref_12f, left, rgb(0,0,0));
+    bustupFade(ref_131, rgb(128,0,0), 30);
+    ref_133 = dialogAlloc();
+    ref_134 = msgShow(msg_17);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Oh! Is it finally my turn♥...?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1e, 1);
+    wait(ref_134);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_133);
+    ref_139 = bustupFade(ref_131, rgb(0,0,0), 10);
+    bustupWait(ref_139);
+    bustupFree(ref_131);
+    choiceSetResult(1);
+    op_105(5);
+    ref_13e = bustupLoad(bustup_1);
+    bustupWait(ref_13e);
+    ref_140 = bustupAlloc(ref_13e, center, rgb(0,0,0));
+    bustupFade(ref_140, rgb(128,0,0), 30);
+    ref_142 = dialogChoiceAlloc();
+    ref_143 = msgShow(msg_18);
+/***************************************
+[tab]Is it my turn♥...?
+[choice(2)]Let’s go together.
+Take care while I’m gone.
+[end_choice][clear]
+***************************************/
+    wait(ref_143);
+    dialogFree(ref_142);
+    ref_146 = bustupFade(ref_140, rgb(0,0,0), 10);
+    bustupWait(ref_146);
+    bustupFree(ref_140);
+    choiceGetResult(var_0);
+    bnz(var_0, label_1b7);
+    bitClear(LBIT_0000);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    bitClear(LBIT_0005);
+    bitClear(LBIT_0006);
+    li(var_1, 0);
+    li(var_2, 0);
+    partyMemberCheck(var_2, ulala);
+    bne(var_2, 0, label_157);
+    b(label_15a);
+  label_157:
+    bne(var_2, 1, label_15a);
+    bitSet(LBIT_0000);
+    b(label_15a);
+  label_15a:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, katsuya);
+    bne(var_2, 0, label_15e);
+    b(label_161);
+  label_15e:
+    bne(var_2, 1, label_161);
+    bitSet(LBIT_0001);
+    b(label_161);
+  label_161:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, baofu);
+    bne(var_2, 0, label_165);
+    b(label_168);
+  label_165:
+    bne(var_2, 1, label_168);
+    bitSet(LBIT_0002);
+    b(label_168);
+  label_168:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, nanjo);
+    bne(var_2, 0, label_16c);
+    b(label_16f);
+  label_16c:
+    bne(var_2, 1, label_16f);
+    bitSet(LBIT_0003);
+    b(label_16f);
+  label_16f:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, elly);
+    bne(var_2, 0, label_173);
+    b(label_176);
+  label_173:
+    bne(var_2, 1, label_176);
+    bitSet(LBIT_0004);
+    b(label_176);
+  label_176:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, tatsuya);
+    bne(var_2, 0, label_17a);
+    b(label_17d);
+  label_17a:
+    bne(var_2, 1, label_17d);
+    bitSet(LBIT_0005);
+    b(label_17d);
+  label_17d:
+    add(var_1, var_1, var_2);
+    boutrange(var_1, 0, 3, label_181);
+    b(label_1a8);
+    b(label_1a7);
+  label_181:
+    choiceSetResult(5);
+    op_105(9);
+    ref_183 = bustupLoad(bustup_1);
+    bustupWait(ref_183);
+    ref_185 = bustupAlloc(ref_183, center, rgb(0,0,0));
+    bustupFade(ref_185, rgb(128,0,0), 30);
+    ref_187 = dialogChoiceAlloc();
+    ref_188 = msgShow(msg_19);
+/***************************************
+[tab]So, who should I trade places with?
+[choice(6)][if_all(LBIT_0001)]Katsuya
+[if_all(LBIT_0002)]Baofu
+[if_all(LBIT_0003)]Nanjo
+[if_all(LBIT_0004)]Elly
+[if_all(LBIT_0005)][tatsuya]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_188);
+    dialogFree(ref_187);
+    ref_18b = bustupFade(ref_185, rgb(0,0,0), 10);
+    bustupWait(ref_18b);
+    bustupFree(ref_185);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_193);
+    partyMemberRemove(katsuya);
+    b(label_1a8);
+    b(label_1a6);
+  label_193:
+    bne(var_0, 1, label_197);
+    partyMemberRemove(baofu);
+    b(label_1a8);
+    b(label_1a6);
+  label_197:
+    bne(var_0, 2, label_19b);
+    partyMemberRemove(nanjo);
+    b(label_1a8);
+    b(label_1a6);
+  label_19b:
+    bne(var_0, 3, label_19f);
+    partyMemberRemove(elly);
+    b(label_1a8);
+    b(label_1a6);
+  label_19f:
+    bne(var_0, 4, label_1a3);
+    partyMemberRemove(tatsuya);
+    b(label_1a8);
+    b(label_1a6);
+  label_1a3:
+    bne(var_0, 5, label_1a6);
+    b(label_1b7);
+    b(label_1a6);
+  label_1a6:
+    b(label_1a7);
+  label_1a7:
+    b(label_1f3);
+  label_1a8:
+    ref_1a8 = bustupLoad(bustup_17);
+    bustupWait(ref_1a8);
+    ref_1aa = bustupAlloc(ref_1a8, left, rgb(0,0,0));
+    bustupFade(ref_1aa, rgb(128,0,0), 30);
+    ref_1ac = dialogAlloc();
+    ref_1ad = msgShow(msg_20);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Ohhhh, that made me happy♪...
+[tab]There’s no need to worry now that I’m here.
+[tab]Let me handle it!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_30, 1);
+    partyMemberAdd(ulala);
+    wait(ref_1ad);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_1ac);
+    ref_1b3 = bustupFade(ref_1aa, rgb(0,0,0), 10);
+    bustupWait(ref_1b3);
+    bustupFree(ref_1aa);
+    b(label_1f3);
+  label_1b7:
+    ref_1b7 = bustupLoad(bustup_1a);
+    bustupWait(ref_1b7);
+    ref_1b9 = bustupAlloc(ref_1b7, left, rgb(0,0,0));
+    bustupFade(ref_1b9, rgb(128,0,0), 30);
+    ref_1bb = dialogAlloc();
+    ref_1bc = msgShow(msg_21);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]If I’m here forever,
+[tab]my nose will grow!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2e, 1);
+    wait(ref_1bc);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_1bb);
+    ref_1c1 = bustupFade(ref_1b9, rgb(0,0,0), 10);
+    bustupWait(ref_1c1);
+    bustupFree(ref_1b9);
+    b(label_1f3);
+  label_1c5:
+    ref_1c5 = bustupLoad(bustup_1f);
+    bustupWait(ref_1c5);
+    ref_1c7 = bustupAlloc(ref_1c5, left, rgb(0,0,0));
+    bustupFade(ref_1c7, rgb(128,0,0), 30);
+    ref_1c9 = dialogAlloc();
+    ref_1ca = msgShow(msg_22);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Ah... I got a baaaad feeling...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_6, 1);
+    wait(ref_1ca);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_1c9);
+    ref_1cf = bustupFade(ref_1c7, rgb(0,0,0), 10);
+    bustupWait(ref_1cf);
+    bustupFree(ref_1c7);
+    choiceSetResult(1);
+    op_105(5);
+    ref_1d4 = bustupLoad(bustup_1);
+    bustupWait(ref_1d4);
+    ref_1d6 = bustupAlloc(ref_1d4, center, rgb(0,0,0));
+    bustupFade(ref_1d6, rgb(128,0,0), 30);
+    ref_1d8 = dialogChoiceAlloc();
+    ref_1d9 = msgShow(msg_23);
+/***************************************
+[tab]I got a baaaad feeling...
+[choice(2)]Take care while I’m gone.
+Nothing.
+[end_choice][clear]
+***************************************/
+    wait(ref_1d9);
+    dialogFree(ref_1d8);
+    ref_1dc = bustupFade(ref_1d6, rgb(0,0,0), 10);
+    bustupWait(ref_1dc);
+    bustupFree(ref_1d6);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_1e4);
+    partyMemberRemove(ulala);
+    b(label_1b7);
+    b(label_1f3);
+  label_1e4:
+    bne(var_0, 1, label_1f3);
+    ref_1e5 = bustupLoad(bustup_18);
+    bustupWait(ref_1e5);
+    ref_1e7 = bustupAlloc(ref_1e5, left, rgb(0,0,0));
+    bustupFade(ref_1e7, rgb(128,0,0), 30);
+    ref_1e9 = dialogAlloc();
+    ref_1ea = msgShow(msg_24);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Whew...[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1f, 1);
+    wait(ref_1ea);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_1e9);
+    ref_1ef = bustupFade(ref_1e7, rgb(0,0,0), 10);
+    bustupWait(ref_1ef);
+    bustupFree(ref_1e7);
+    b(label_1f3);
+  label_1f3:
+    unitRestoreFacing(ulala);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_KATUYYY()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    partyMemberCheck(var_0, katsuya);
+    bnz(var_0, label_290);
+    ref_1fb = bustupLoad(bustup_21);
+    bustupWait(ref_1fb);
+    ref_1fd = bustupAlloc(ref_1fb, left, rgb(0,0,0));
+    bustupFade(ref_1fd, rgb(128,0,0), 30);
+    ref_1ff = dialogAlloc();
+    ref_200 = msgShow(msg_25);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Do you want me to go?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_200);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_1ff);
+    ref_205 = bustupFade(ref_1fd, rgb(0,0,0), 10);
+    bustupWait(ref_205);
+    bustupFree(ref_1fd);
+    choiceSetResult(1);
+    op_105(5);
+    ref_20a = bustupLoad(bustup_1);
+    bustupWait(ref_20a);
+    ref_20c = bustupAlloc(ref_20a, center, rgb(0,0,0));
+    bustupFade(ref_20c, rgb(128,0,0), 30);
+    ref_20e = dialogChoiceAlloc();
+    ref_20f = msgShow(msg_26);
+/***************************************
+[tab]Do you want me to go?
+[choice(2)]Let’s go together.
+Take care while I’m gone.
+[end_choice][clear]
+***************************************/
+    wait(ref_20f);
+    dialogFree(ref_20e);
+    ref_212 = bustupFade(ref_20c, rgb(0,0,0), 10);
+    bustupWait(ref_212);
+    bustupFree(ref_20c);
+    choiceGetResult(var_0);
+    bnz(var_0, label_282);
+    bitClear(LBIT_0000);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    bitClear(LBIT_0005);
+    bitClear(LBIT_0006);
+    li(var_1, 0);
+    li(var_2, 0);
+    partyMemberCheck(var_2, ulala);
+    bne(var_2, 0, label_223);
+    b(label_226);
+  label_223:
+    bne(var_2, 1, label_226);
+    bitSet(LBIT_0000);
+    b(label_226);
+  label_226:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, katsuya);
+    bne(var_2, 0, label_22a);
+    b(label_22d);
+  label_22a:
+    bne(var_2, 1, label_22d);
+    bitSet(LBIT_0001);
+    b(label_22d);
+  label_22d:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, baofu);
+    bne(var_2, 0, label_231);
+    b(label_234);
+  label_231:
+    bne(var_2, 1, label_234);
+    bitSet(LBIT_0002);
+    b(label_234);
+  label_234:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, nanjo);
+    bne(var_2, 0, label_238);
+    b(label_23b);
+  label_238:
+    bne(var_2, 1, label_23b);
+    bitSet(LBIT_0003);
+    b(label_23b);
+  label_23b:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, elly);
+    bne(var_2, 0, label_23f);
+    b(label_242);
+  label_23f:
+    bne(var_2, 1, label_242);
+    bitSet(LBIT_0004);
+    b(label_242);
+  label_242:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, tatsuya);
+    bne(var_2, 0, label_246);
+    b(label_249);
+  label_246:
+    bne(var_2, 1, label_249);
+    bitSet(LBIT_0005);
+    b(label_249);
+  label_249:
+    add(var_1, var_1, var_2);
+    boutrange(var_1, 0, 3, label_24d);
+    b(label_273);
+    b(label_273);
+  label_24d:
+    choiceSetResult(5);
+    op_105(9);
+    ref_24f = bustupLoad(bustup_1);
+    bustupWait(ref_24f);
+    ref_251 = bustupAlloc(ref_24f, center, rgb(0,0,0));
+    bustupFade(ref_251, rgb(128,0,0), 30);
+    ref_253 = dialogChoiceAlloc();
+    ref_254 = msgShow(msg_27);
+/***************************************
+[tab]Your party’s full. Who should I switch with?
+[choice(6)][if_all(LBIT_0000)]Ulala
+[if_all(LBIT_0002)]Baofu
+[if_all(LBIT_0003)]Nanjo
+[if_all(LBIT_0004)]Elly
+[if_all(LBIT_0005)][tatsuya]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_254);
+    dialogFree(ref_253);
+    ref_257 = bustupFade(ref_251, rgb(0,0,0), 10);
+    bustupWait(ref_257);
+    bustupFree(ref_251);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_25f);
+    partyMemberRemove(ulala);
+    b(label_273);
+    b(label_272);
+  label_25f:
+    bne(var_0, 1, label_263);
+    partyMemberRemove(baofu);
+    b(label_273);
+    b(label_272);
+  label_263:
+    bne(var_0, 2, label_267);
+    partyMemberRemove(nanjo);
+    b(label_273);
+    b(label_272);
+  label_267:
+    bne(var_0, 3, label_26b);
+    partyMemberRemove(elly);
+    b(label_273);
+    b(label_272);
+  label_26b:
+    bne(var_0, 4, label_26f);
+    partyMemberRemove(tatsuya);
+    b(label_273);
+    b(label_272);
+  label_26f:
+    bne(var_0, 5, label_272);
+    b(label_282);
+    b(label_272);
+  label_272:
+    b(label_273);
+  label_273:
+    ref_273 = bustupLoad(bustup_21);
+    bustupWait(ref_273);
+    ref_275 = bustupAlloc(ref_273, left, rgb(0,0,0));
+    bustupFade(ref_275, rgb(128,0,0), 30);
+    ref_277 = dialogAlloc();
+    ref_278 = msgShow(msg_28);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]To protect civilians is my sworn duty!
+[tab]Leave it to me.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1e, 1);
+    partyMemberAdd(katsuya);
+    wait(ref_278);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_277);
+    ref_27e = bustupFade(ref_275, rgb(0,0,0), 10);
+    bustupWait(ref_27e);
+    bustupFree(ref_275);
+    b(label_2b2);
+  label_282:
+    ref_282 = bustupLoad(bustup_21);
+    bustupWait(ref_282);
+    ref_284 = bustupAlloc(ref_282, left, rgb(0,0,0));
+    bustupFade(ref_284, rgb(128,0,0), 30);
+    ref_286 = dialogAlloc();
+    ref_287 = msgShow(msg_29);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I see...
+[tab]Then I will wait here.
+[tab]Don’t push yourself.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_6, 1);
+    wait(ref_287);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_286);
+    ref_28c = bustupFade(ref_284, rgb(0,0,0), 10);
+    bustupWait(ref_28c);
+    bustupFree(ref_284);
+    b(label_2b2);
+  label_290:
+    ref_290 = bustupLoad(bustup_21);
+    bustupWait(ref_290);
+    ref_292 = bustupAlloc(ref_290, left, rgb(0,0,0));
+    bustupFade(ref_292, rgb(128,0,0), 30);
+    ref_294 = dialogAlloc();
+    ref_295 = msgShow(msg_30);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Hmm?
+[tab]Is there anything you want?[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_295);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_294);
+    ref_29a = bustupFade(ref_292, rgb(0,0,0), 10);
+    bustupWait(ref_29a);
+    bustupFree(ref_292);
+    choiceSetResult(1);
+    op_105(5);
+    ref_29f = bustupLoad(bustup_1);
+    bustupWait(ref_29f);
+    ref_2a1 = bustupAlloc(ref_29f, center, rgb(0,0,0));
+    bustupFade(ref_2a1, rgb(128,0,0), 30);
+    ref_2a3 = dialogChoiceAlloc();
+    ref_2a4 = msgShow(msg_31);
+/***************************************
+[tab]Is there anything you want?
+[choice(2)]Take care while I’m gone.
+Nothing.
+[end_choice][clear]
+***************************************/
+    wait(ref_2a4);
+    dialogFree(ref_2a3);
+    ref_2a7 = bustupFade(ref_2a1, rgb(0,0,0), 10);
+    bustupWait(ref_2a7);
+    bustupFree(ref_2a1);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2af);
+    partyMemberRemove(katsuya);
+    b(label_282);
+    b(label_2b2);
+  label_2af:
+    bne(var_0, 1, label_2b2);
+    b(label_2b2);
+    b(label_2b2);
+  label_2b2:
+    unitRestoreFacing(katsuya);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_PAO()
+{
+    controlDisable();
+    unitFacePlayer(baofu);
+    partyMemberCheck(var_0, baofu);
+    bnz(var_0, label_34f);
+    ref_2ba = bustupLoad(bustup_2d);
+    bustupWait(ref_2ba);
+    ref_2bc = bustupAlloc(ref_2ba, left, rgb(0,0,0));
+    bustupFade(ref_2bc, rgb(128,0,0), 30);
+    ref_2be = dialogAlloc();
+    ref_2bf = msgShow(msg_32);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]They don’t look dependable.
+[tab]Are you okay without me?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_2bf);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_2be);
+    ref_2c4 = bustupFade(ref_2bc, rgb(0,0,0), 10);
+    bustupWait(ref_2c4);
+    bustupFree(ref_2bc);
+    choiceSetResult(1);
+    op_105(5);
+    ref_2c9 = bustupLoad(bustup_1);
+    bustupWait(ref_2c9);
+    ref_2cb = bustupAlloc(ref_2c9, center, rgb(0,0,0));
+    bustupFade(ref_2cb, rgb(128,0,0), 30);
+    ref_2cd = dialogChoiceAlloc();
+    ref_2ce = msgShow(msg_33);
+/***************************************
+[tab]Are you okay without me?
+[choice(2)]Let’s go together.
+Take care while I’m gone.
+[end_choice][clear]
+***************************************/
+    wait(ref_2ce);
+    dialogFree(ref_2cd);
+    ref_2d1 = bustupFade(ref_2cb, rgb(0,0,0), 10);
+    bustupWait(ref_2d1);
+    bustupFree(ref_2cb);
+    choiceGetResult(var_0);
+    bnz(var_0, label_341);
+    bitClear(LBIT_0000);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    bitClear(LBIT_0005);
+    bitClear(LBIT_0006);
+    li(var_1, 0);
+    li(var_2, 0);
+    partyMemberCheck(var_2, ulala);
+    bne(var_2, 0, label_2e2);
+    b(label_2e5);
+  label_2e2:
+    bne(var_2, 1, label_2e5);
+    bitSet(LBIT_0000);
+    b(label_2e5);
+  label_2e5:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, katsuya);
+    bne(var_2, 0, label_2e9);
+    b(label_2ec);
+  label_2e9:
+    bne(var_2, 1, label_2ec);
+    bitSet(LBIT_0001);
+    b(label_2ec);
+  label_2ec:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, baofu);
+    bne(var_2, 0, label_2f0);
+    b(label_2f3);
+  label_2f0:
+    bne(var_2, 1, label_2f3);
+    bitSet(LBIT_0002);
+    b(label_2f3);
+  label_2f3:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, nanjo);
+    bne(var_2, 0, label_2f7);
+    b(label_2fa);
+  label_2f7:
+    bne(var_2, 1, label_2fa);
+    bitSet(LBIT_0003);
+    b(label_2fa);
+  label_2fa:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, elly);
+    bne(var_2, 0, label_2fe);
+    b(label_301);
+  label_2fe:
+    bne(var_2, 1, label_301);
+    bitSet(LBIT_0004);
+    b(label_301);
+  label_301:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, tatsuya);
+    bne(var_2, 0, label_305);
+    b(label_308);
+  label_305:
+    bne(var_2, 1, label_308);
+    bitSet(LBIT_0005);
+    b(label_308);
+  label_308:
+    add(var_1, var_1, var_2);
+    boutrange(var_1, 0, 3, label_30c);
+    b(label_332);
+    b(label_332);
+  label_30c:
+    choiceSetResult(5);
+    op_105(9);
+    ref_30e = bustupLoad(bustup_1);
+    bustupWait(ref_30e);
+    ref_310 = bustupAlloc(ref_30e, center, rgb(0,0,0));
+    bustupFade(ref_310, rgb(128,0,0), 30);
+    ref_312 = dialogChoiceAlloc();
+    ref_313 = msgShow(msg_34);
+/***************************************
+[tab]Then pick someone to be our watch dog.
+[choice(6)][if_all(LBIT_0000)]Ulala
+[if_all(LBIT_0001)]Katsuya
+[if_all(LBIT_0003)]Nanjo
+[if_all(LBIT_0004)]Elly
+[if_all(LBIT_0005)][tatsuya]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_313);
+    dialogFree(ref_312);
+    ref_316 = bustupFade(ref_310, rgb(0,0,0), 10);
+    bustupWait(ref_316);
+    bustupFree(ref_310);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_31e);
+    partyMemberRemove(ulala);
+    b(label_332);
+    b(label_331);
+  label_31e:
+    bne(var_0, 1, label_322);
+    partyMemberRemove(katsuya);
+    b(label_332);
+    b(label_331);
+  label_322:
+    bne(var_0, 2, label_326);
+    partyMemberRemove(nanjo);
+    b(label_332);
+    b(label_331);
+  label_326:
+    bne(var_0, 3, label_32a);
+    partyMemberRemove(elly);
+    b(label_332);
+    b(label_331);
+  label_32a:
+    bne(var_0, 4, label_32e);
+    partyMemberRemove(tatsuya);
+    b(label_332);
+    b(label_331);
+  label_32e:
+    bne(var_0, 5, label_331);
+    b(label_341);
+    b(label_331);
+  label_331:
+    b(label_332);
+  label_332:
+    ref_332 = bustupLoad(bustup_2d);
+    bustupWait(ref_332);
+    ref_334 = bustupAlloc(ref_332, left, rgb(0,0,0));
+    bustupFade(ref_334, rgb(128,0,0), 30);
+    ref_336 = dialogAlloc();
+    ref_337 = msgShow(msg_35);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Heh, you should’ve said that in the first
+[tab]place... Well, leave it to me.
+[tab]My shots strike as fast as lightning.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_30, 1);
+    partyMemberAdd(baofu);
+    wait(ref_337);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_336);
+    ref_33d = bustupFade(ref_334, rgb(0,0,0), 10);
+    bustupWait(ref_33d);
+    bustupFree(ref_334);
+    b(label_370);
+  label_341:
+    ref_341 = bustupLoad(bustup_2d);
+    bustupWait(ref_341);
+    ref_343 = bustupAlloc(ref_341, left, rgb(0,0,0));
+    bustupFade(ref_343, rgb(128,0,0), 30);
+    ref_345 = dialogAlloc();
+    ref_346 = msgShow(msg_36);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Ch... Watch the place, huh...
+[tab]My skills will rot... How boring.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_346);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_345);
+    ref_34b = bustupFade(ref_343, rgb(0,0,0), 10);
+    bustupWait(ref_34b);
+    bustupFree(ref_343);
+    b(label_370);
+  label_34f:
+    ref_34f = bustupLoad(bustup_2d);
+    bustupWait(ref_34f);
+    ref_351 = bustupAlloc(ref_34f, left, rgb(0,0,0));
+    bustupFade(ref_351, rgb(128,0,0), 30);
+    ref_353 = dialogAlloc();
+    ref_354 = msgShow(msg_37);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Ah? Whaddya want...?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    wait(ref_354);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_353);
+    ref_359 = bustupFade(ref_351, rgb(0,0,0), 10);
+    bustupWait(ref_359);
+    bustupFree(ref_351);
+    choiceSetResult(1);
+    op_105(5);
+    ref_35e = bustupLoad(bustup_1);
+    bustupWait(ref_35e);
+    ref_360 = bustupAlloc(ref_35e, center, rgb(0,0,0));
+    bustupFade(ref_360, rgb(128,0,0), 30);
+    ref_362 = dialogChoiceAlloc();
+    ref_363 = msgShow(msg_38);
+/***************************************
+[tab]Whaddya want...?
+[choice(2)]Take care while I’m gone.
+Nothing.
+[end_choice][clear]
+***************************************/
+    wait(ref_363);
+    dialogFree(ref_362);
+    ref_366 = bustupFade(ref_360, rgb(0,0,0), 10);
+    bustupWait(ref_366);
+    bustupFree(ref_360);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_36e);
+    partyMemberRemove(baofu);
+    b(label_341);
+    b(label_370);
+  label_36e:
+    bne(var_0, 1, label_370);
+    b(label_370);
+  label_370:
+    unitRestoreFacing(baofu);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_NANJ()
+{
+    controlDisable();
+    unitFacePlayer(nanjo);
+    partyMemberCheck(var_0, nanjo);
+    bnz(var_0, label_40d);
+    ref_378 = bustupLoad(bustup_36);
+    bustupWait(ref_378);
+    ref_37a = bustupAlloc(ref_378, left, rgb(0,0,0));
+    bustupFade(ref_37a, rgb(128,0,0), 30);
+    ref_37c = dialogAlloc();
+    ref_37d = msgShow(msg_39);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Harmony is the greatest of values.
+[tab]I shall go as well.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_37d);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_37c);
+    ref_382 = bustupFade(ref_37a, rgb(0,0,0), 10);
+    bustupWait(ref_382);
+    bustupFree(ref_37a);
+    choiceSetResult(1);
+    op_105(5);
+    ref_387 = bustupLoad(bustup_1);
+    bustupWait(ref_387);
+    ref_389 = bustupAlloc(ref_387, center, rgb(0,0,0));
+    bustupFade(ref_389, rgb(128,0,0), 30);
+    ref_38b = dialogChoiceAlloc();
+    ref_38c = msgShow(msg_40);
+/***************************************
+[tab]I shall go as well.
+[choice(2)]Let’s go together.
+Take care while I’m gone.
+[end_choice][clear]
+***************************************/
+    wait(ref_38c);
+    dialogFree(ref_38b);
+    ref_38f = bustupFade(ref_389, rgb(0,0,0), 10);
+    bustupWait(ref_38f);
+    bustupFree(ref_389);
+    choiceGetResult(var_0);
+    bnz(var_0, label_3ff);
+    bitClear(LBIT_0000);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    bitClear(LBIT_0005);
+    bitClear(LBIT_0006);
+    li(var_1, 0);
+    li(var_2, 0);
+    partyMemberCheck(var_2, ulala);
+    bne(var_2, 0, label_3a0);
+    b(label_3a3);
+  label_3a0:
+    bne(var_2, 1, label_3a3);
+    bitSet(LBIT_0000);
+    b(label_3a3);
+  label_3a3:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, katsuya);
+    bne(var_2, 0, label_3a7);
+    b(label_3aa);
+  label_3a7:
+    bne(var_2, 1, label_3aa);
+    bitSet(LBIT_0001);
+    b(label_3aa);
+  label_3aa:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, baofu);
+    bne(var_2, 0, label_3ae);
+    b(label_3b1);
+  label_3ae:
+    bne(var_2, 1, label_3b1);
+    bitSet(LBIT_0002);
+    b(label_3b1);
+  label_3b1:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, nanjo);
+    bne(var_2, 0, label_3b5);
+    b(label_3b8);
+  label_3b5:
+    bne(var_2, 1, label_3b8);
+    bitSet(LBIT_0003);
+    b(label_3b8);
+  label_3b8:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, elly);
+    bne(var_2, 0, label_3bc);
+    b(label_3bf);
+  label_3bc:
+    bne(var_2, 1, label_3bf);
+    bitSet(LBIT_0004);
+    b(label_3bf);
+  label_3bf:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, tatsuya);
+    bne(var_2, 0, label_3c3);
+    b(label_3c6);
+  label_3c3:
+    bne(var_2, 1, label_3c6);
+    bitSet(LBIT_0005);
+    b(label_3c6);
+  label_3c6:
+    add(var_1, var_1, var_2);
+    boutrange(var_1, 0, 3, label_3ca);
+    b(label_3f0);
+    b(label_3f0);
+  label_3ca:
+    choiceSetResult(5);
+    op_105(9);
+    ref_3cc = bustupLoad(bustup_1);
+    bustupWait(ref_3cc);
+    ref_3ce = bustupAlloc(ref_3cc, center, rgb(0,0,0));
+    bustupFade(ref_3ce, rgb(128,0,0), 30);
+    ref_3d0 = dialogChoiceAlloc();
+    ref_3d1 = msgShow(msg_41);
+/***************************************
+[tab]Well then, who should I trade places with?
+[choice(6)][if_all(LBIT_0000)]Ulala
+[if_all(LBIT_0001)]Katsuya
+[if_all(LBIT_0002)]Baofu
+[if_all(LBIT_0004)]Elly
+[if_all(LBIT_0005)][tatsuya]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_3d1);
+    dialogFree(ref_3d0);
+    ref_3d4 = bustupFade(ref_3ce, rgb(0,0,0), 10);
+    bustupWait(ref_3d4);
+    bustupFree(ref_3ce);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_3dc);
+    partyMemberRemove(ulala);
+    b(label_3f0);
+    b(label_3ef);
+  label_3dc:
+    bne(var_0, 1, label_3e0);
+    partyMemberRemove(katsuya);
+    b(label_3f0);
+    b(label_3ef);
+  label_3e0:
+    bne(var_0, 2, label_3e4);
+    partyMemberRemove(baofu);
+    b(label_3f0);
+    b(label_3ef);
+  label_3e4:
+    bne(var_0, 3, label_3e8);
+    partyMemberRemove(elly);
+    b(label_3f0);
+    b(label_3ef);
+  label_3e8:
+    bne(var_0, 4, label_3ec);
+    partyMemberRemove(tatsuya);
+    b(label_3f0);
+    b(label_3ef);
+  label_3ec:
+    bne(var_0, 5, label_3ef);
+    b(label_3ff);
+    b(label_3ef);
+  label_3ef:
+    b(label_3f0);
+  label_3f0:
+    ref_3f0 = bustupLoad(bustup_36);
+    bustupWait(ref_3f0);
+    ref_3f2 = bustupAlloc(ref_3f0, left, rgb(0,0,0));
+    bustupFade(ref_3f2, rgb(128,0,0), 30);
+    ref_3f4 = dialogAlloc();
+    ref_3f5 = msgShow(msg_42);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Understood.[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_24, 1);
+    partyMemberAdd(nanjo);
+    wait(ref_3f5);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_3f4);
+    ref_3fb = bustupFade(ref_3f2, rgb(0,0,0), 10);
+    bustupWait(ref_3fb);
+    bustupFree(ref_3f2);
+    b(label_42e);
+  label_3ff:
+    ref_3ff = bustupLoad(bustup_36);
+    bustupWait(ref_3ff);
+    ref_401 = bustupAlloc(ref_3ff, left, rgb(0,0,0));
+    bustupFade(ref_401, rgb(128,0,0), 30);
+    ref_403 = dialogAlloc();
+    ref_404 = msgShow(msg_43);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Under... stood...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_6, 1);
+    wait(ref_404);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_403);
+    ref_409 = bustupFade(ref_401, rgb(0,0,0), 10);
+    bustupWait(ref_409);
+    bustupFree(ref_401);
+    b(label_42e);
+  label_40d:
+    ref_40d = bustupLoad(bustup_36);
+    bustupWait(ref_40d);
+    ref_40f = bustupAlloc(ref_40d, left, rgb(0,0,0));
+    bustupFade(ref_40f, rgb(128,0,0), 30);
+    ref_411 = dialogAlloc();
+    ref_412 = msgShow(msg_44);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Those with swift feet target not the
+[tab]anthill, but the highest of mountains.
+[tab]So... Is there anything?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_2d, 1);
+    wait(ref_412);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_411);
+    ref_417 = bustupFade(ref_40f, rgb(0,0,0), 10);
+    bustupWait(ref_417);
+    bustupFree(ref_40f);
+    choiceSetResult(1);
+    op_105(5);
+    ref_41c = bustupLoad(bustup_1);
+    bustupWait(ref_41c);
+    ref_41e = bustupAlloc(ref_41c, center, rgb(0,0,0));
+    bustupFade(ref_41e, rgb(128,0,0), 30);
+    ref_420 = dialogChoiceAlloc();
+    ref_421 = msgShow(msg_45);
+/***************************************
+[tab]Is there anything?
+[choice(2)]Take care while I’m gone.
+Nothing.
+[end_choice][clear]
+***************************************/
+    wait(ref_421);
+    dialogFree(ref_420);
+    ref_424 = bustupFade(ref_41e, rgb(0,0,0), 10);
+    bustupWait(ref_424);
+    bustupFree(ref_41e);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_42c);
+    partyMemberRemove(nanjo);
+    b(label_3ff);
+    b(label_42e);
+  label_42c:
+    bne(var_0, 1, label_42e);
+    b(label_42e);
+  label_42e:
+    unitRestoreFacing(nanjo);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_ERI()
+{
+    controlDisable();
+    unitFacePlayer(elly);
+    partyMemberCheck(var_0, elly);
+    bnz(var_0, label_4cb);
+    ref_436 = bustupLoad(bustup_3d);
+    bustupWait(ref_436);
+    ref_438 = bustupAlloc(ref_436, left, rgb(0,0,0));
+    bustupFade(ref_438, rgb(128,0,0), 30);
+    ref_43a = dialogAlloc();
+    ref_43b = msgShow(msg_46);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Hi!
+[tab]Is it my turn?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_43b);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_43a);
+    ref_440 = bustupFade(ref_438, rgb(0,0,0), 10);
+    bustupWait(ref_440);
+    bustupFree(ref_438);
+    choiceSetResult(1);
+    op_105(5);
+    ref_445 = bustupLoad(bustup_1);
+    bustupWait(ref_445);
+    ref_447 = bustupAlloc(ref_445, center, rgb(0,0,0));
+    bustupFade(ref_447, rgb(128,0,0), 30);
+    ref_449 = dialogChoiceAlloc();
+    ref_44a = msgShow(msg_47);
+/***************************************
+[tab]Is it my turn?
+[choice(2)]Let’s go together.
+Take care while I’m gone.
+[end_choice][clear]
+***************************************/
+    wait(ref_44a);
+    dialogFree(ref_449);
+    ref_44d = bustupFade(ref_447, rgb(0,0,0), 10);
+    bustupWait(ref_44d);
+    bustupFree(ref_447);
+    choiceGetResult(var_0);
+    bnz(var_0, label_4bd);
+    bitClear(LBIT_0000);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    bitClear(LBIT_0005);
+    bitClear(LBIT_0006);
+    li(var_1, 0);
+    li(var_2, 0);
+    partyMemberCheck(var_2, ulala);
+    bne(var_2, 0, label_45e);
+    b(label_461);
+  label_45e:
+    bne(var_2, 1, label_461);
+    bitSet(LBIT_0000);
+    b(label_461);
+  label_461:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, katsuya);
+    bne(var_2, 0, label_465);
+    b(label_468);
+  label_465:
+    bne(var_2, 1, label_468);
+    bitSet(LBIT_0001);
+    b(label_468);
+  label_468:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, baofu);
+    bne(var_2, 0, label_46c);
+    b(label_46f);
+  label_46c:
+    bne(var_2, 1, label_46f);
+    bitSet(LBIT_0002);
+    b(label_46f);
+  label_46f:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, nanjo);
+    bne(var_2, 0, label_473);
+    b(label_476);
+  label_473:
+    bne(var_2, 1, label_476);
+    bitSet(LBIT_0003);
+    b(label_476);
+  label_476:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, elly);
+    bne(var_2, 0, label_47a);
+    b(label_47d);
+  label_47a:
+    bne(var_2, 1, label_47d);
+    bitSet(LBIT_0004);
+    b(label_47d);
+  label_47d:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, tatsuya);
+    bne(var_2, 0, label_481);
+    b(label_484);
+  label_481:
+    bne(var_2, 1, label_484);
+    bitSet(LBIT_0005);
+    b(label_484);
+  label_484:
+    add(var_1, var_1, var_2);
+    boutrange(var_1, 0, 3, label_488);
+    b(label_4ae);
+    b(label_4ae);
+  label_488:
+    choiceSetResult(5);
+    op_105(9);
+    ref_48a = bustupLoad(bustup_1);
+    bustupWait(ref_48a);
+    ref_48c = bustupAlloc(ref_48a, center, rgb(0,0,0));
+    bustupFade(ref_48c, rgb(128,0,0), 30);
+    ref_48e = dialogChoiceAlloc();
+    ref_48f = msgShow(msg_48);
+/***************************************
+[tab]Whom shall I change with?
+[choice(6)][if_all(LBIT_0000)]Ulala
+[if_all(LBIT_0001)]Katsuya
+[if_all(LBIT_0002)]Baofu
+[if_all(LBIT_0003)]Nanjo
+[if_all(LBIT_0005)][tatsuya]
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_48f);
+    dialogFree(ref_48e);
+    ref_492 = bustupFade(ref_48c, rgb(0,0,0), 10);
+    bustupWait(ref_492);
+    bustupFree(ref_48c);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_49a);
+    partyMemberRemove(ulala);
+    b(label_4ae);
+    b(label_4ad);
+  label_49a:
+    bne(var_0, 1, label_49e);
+    partyMemberRemove(katsuya);
+    b(label_4ae);
+    b(label_4ad);
+  label_49e:
+    bne(var_0, 2, label_4a2);
+    partyMemberRemove(baofu);
+    b(label_4ae);
+    b(label_4ad);
+  label_4a2:
+    bne(var_0, 3, label_4a6);
+    partyMemberRemove(nanjo);
+    b(label_4ae);
+    b(label_4ad);
+  label_4a6:
+    bne(var_0, 4, label_4aa);
+    partyMemberRemove(tatsuya);
+    b(label_4ae);
+    b(label_4ad);
+  label_4aa:
+    bne(var_0, 5, label_4ad);
+    b(label_4bd);
+    b(label_4ad);
+  label_4ad:
+    b(label_4ae);
+  label_4ae:
+    ref_4ae = bustupLoad(bustup_3d);
+    bustupWait(ref_4ae);
+    ref_4b0 = bustupAlloc(ref_4ae, left, rgb(0,0,0));
+    bustupFade(ref_4b0, rgb(128,0,0), 30);
+    ref_4b2 = dialogAlloc();
+    ref_4b3 = msgShow(msg_49);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Yes! It’s so boring here.
+[tab]I was itching to do something.
+[tab]I will do my best!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_1e, 1);
+    partyMemberAdd(elly);
+    wait(ref_4b3);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_4b2);
+    ref_4b9 = bustupFade(ref_4b0, rgb(0,0,0), 10);
+    bustupWait(ref_4b9);
+    bustupFree(ref_4b0);
+    b(label_4ec);
+  label_4bd:
+    ref_4bd = bustupLoad(bustup_3d);
+    bustupWait(ref_4bd);
+    ref_4bf = bustupAlloc(ref_4bd, left, rgb(0,0,0));
+    bustupFade(ref_4bf, rgb(128,0,0), 30);
+    ref_4c1 = dialogAlloc();
+    ref_4c2 = msgShow(msg_50);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Oh...
+[tab]That’s too bad.
+[tab]Then, I will wait here.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_6, 1);
+    wait(ref_4c2);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_4c1);
+    ref_4c7 = bustupFade(ref_4bf, rgb(0,0,0), 10);
+    bustupWait(ref_4c7);
+    bustupFree(ref_4bf);
+    b(label_4ec);
+  label_4cb:
+    ref_4cb = bustupLoad(bustup_3d);
+    bustupWait(ref_4cb);
+    ref_4cd = bustupAlloc(ref_4cb, left, rgb(0,0,0));
+    bustupFade(ref_4cd, rgb(128,0,0), 30);
+    ref_4cf = dialogAlloc();
+    ref_4d0 = msgShow(msg_51);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Hello...
+[tab]What do you want?[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_4d0);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_4cf);
+    ref_4d5 = bustupFade(ref_4cd, rgb(0,0,0), 10);
+    bustupWait(ref_4d5);
+    bustupFree(ref_4cd);
+    choiceSetResult(1);
+    op_105(5);
+    ref_4da = bustupLoad(bustup_1);
+    bustupWait(ref_4da);
+    ref_4dc = bustupAlloc(ref_4da, center, rgb(0,0,0));
+    bustupFade(ref_4dc, rgb(128,0,0), 30);
+    ref_4de = dialogChoiceAlloc();
+    ref_4df = msgShow(msg_52);
+/***************************************
+[tab]What do you want?
+[choice(2)]Take care while I’m gone.
+Nothing.
+[end_choice][clear]
+***************************************/
+    wait(ref_4df);
+    dialogFree(ref_4de);
+    ref_4e2 = bustupFade(ref_4dc, rgb(0,0,0), 10);
+    bustupWait(ref_4e2);
+    bustupFree(ref_4dc);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_4ea);
+    partyMemberRemove(elly);
+    b(label_4bd);
+    b(label_4ec);
+  label_4ea:
+    bne(var_0, 1, label_4ec);
+    b(label_4ec);
+  label_4ec:
+    unitRestoreFacing(elly);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_TATU()
+{
+    controlDisable();
+    unitFacePlayer(tatsuya);
+    partyMemberCheck(var_0, tatsuya);
+    bnz(var_0, label_583);
+    ref_4f4 = bustupLoad(bustup_b);
+    bustupWait(ref_4f4);
+    ref_4f6 = bustupAlloc(ref_4f4, left, rgb(0,0,0));
+    bustupFade(ref_4f6, rgb(128,0,0), 30);
+    ref_4f8 = dialogAlloc();
+    ref_4f9 = msgShow(msg_53);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]I’m worried...
+[tab]I’ll go too.
+[wait][clear]
+***************************************/
+    wait(ref_4f9);
+    dialogFree(ref_4f8);
+    ref_4fc = bustupFade(ref_4f6, rgb(0,0,0), 10);
+    bustupWait(ref_4fc);
+    bustupFree(ref_4f6);
+    choiceSetResult(1);
+    op_105(5);
+    ref_501 = bustupLoad(bustup_1);
+    bustupWait(ref_501);
+    ref_503 = bustupAlloc(ref_501, center, rgb(0,0,0));
+    bustupFade(ref_503, rgb(128,0,0), 30);
+    ref_505 = dialogChoiceAlloc();
+    ref_506 = msgShow(msg_54);
+/***************************************
+[tab]I’ll go too.
+[choice(2)]Let’s go together.
+Take care while I’m gone.
+[end_choice][clear]
+***************************************/
+    wait(ref_506);
+    dialogFree(ref_505);
+    ref_509 = bustupFade(ref_503, rgb(0,0,0), 10);
+    bustupWait(ref_509);
+    bustupFree(ref_503);
+    choiceGetResult(var_0);
+    bnz(var_0, label_577);
+    bitClear(LBIT_0000);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    bitClear(LBIT_0005);
+    bitClear(LBIT_0006);
+    li(var_1, 0);
+    li(var_2, 0);
+    partyMemberCheck(var_2, ulala);
+    bne(var_2, 0, label_51a);
+    b(label_51d);
+  label_51a:
+    bne(var_2, 1, label_51d);
+    bitSet(LBIT_0000);
+    b(label_51d);
+  label_51d:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, katsuya);
+    bne(var_2, 0, label_521);
+    b(label_524);
+  label_521:
+    bne(var_2, 1, label_524);
+    bitSet(LBIT_0001);
+    b(label_524);
+  label_524:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, baofu);
+    bne(var_2, 0, label_528);
+    b(label_52b);
+  label_528:
+    bne(var_2, 1, label_52b);
+    bitSet(LBIT_0002);
+    b(label_52b);
+  label_52b:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, nanjo);
+    bne(var_2, 0, label_52f);
+    b(label_532);
+  label_52f:
+    bne(var_2, 1, label_532);
+    bitSet(LBIT_0003);
+    b(label_532);
+  label_532:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, elly);
+    bne(var_2, 0, label_536);
+    b(label_539);
+  label_536:
+    bne(var_2, 1, label_539);
+    bitSet(LBIT_0004);
+    b(label_539);
+  label_539:
+    add(var_1, var_1, var_2);
+    partyMemberCheck(var_2, tatsuya);
+    bne(var_2, 0, label_53d);
+    b(label_540);
+  label_53d:
+    bne(var_2, 1, label_540);
+    bitSet(LBIT_0005);
+    b(label_540);
+  label_540:
+    add(var_1, var_1, var_2);
+    boutrange(var_1, 0, 3, label_544);
+    b(label_56a);
+    b(label_56a);
+  label_544:
+    choiceSetResult(5);
+    op_105(9);
+    ref_546 = bustupLoad(bustup_1);
+    bustupWait(ref_546);
+    ref_548 = bustupAlloc(ref_546, center, rgb(0,0,0));
+    bustupFade(ref_548, rgb(128,0,0), 30);
+    ref_54a = dialogChoiceAlloc();
+    ref_54b = msgShow(msg_55);
+/***************************************
+[tab]Who should I trade places with?
+[choice(6)][if_all(LBIT_0000)]Ulala
+[if_all(LBIT_0001)]Katsuya
+[if_all(LBIT_0002)]Baofu
+[if_all(LBIT_0003)]Nanjo
+[if_all(LBIT_0004)]Elly
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_54b);
+    dialogFree(ref_54a);
+    ref_54e = bustupFade(ref_548, rgb(0,0,0), 10);
+    bustupWait(ref_54e);
+    bustupFree(ref_548);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_556);
+    partyMemberRemove(ulala);
+    b(label_56a);
+    b(label_569);
+  label_556:
+    bne(var_0, 1, label_55a);
+    partyMemberRemove(katsuya);
+    b(label_56a);
+    b(label_569);
+  label_55a:
+    bne(var_0, 2, label_55e);
+    partyMemberRemove(baofu);
+    b(label_56a);
+    b(label_569);
+  label_55e:
+    bne(var_0, 3, label_562);
+    partyMemberRemove(nanjo);
+    b(label_56a);
+    b(label_569);
+  label_562:
+    bne(var_0, 4, label_566);
+    partyMemberRemove(elly);
+    b(label_56a);
+    b(label_569);
+  label_566:
+    bne(var_0, 5, label_569);
+    b(label_577);
+    b(label_569);
+  label_569:
+    b(label_56a);
+  label_56a:
+    ref_56a = bustupLoad(bustup_b);
+    bustupWait(ref_56a);
+    ref_56c = bustupAlloc(ref_56a, left, rgb(0,0,0));
+    bustupFade(ref_56c, rgb(128,0,0), 30);
+    ref_56e = dialogAlloc();
+    ref_56f = msgShow(msg_56);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]Thanks.
+[tab]I promised the others.
+[tab]I promised that I’d protect you...
+[wait][clear]
+***************************************/
+    partyMemberAdd(tatsuya);
+    wait(ref_56f);
+    dialogFree(ref_56e);
+    ref_573 = bustupFade(ref_56c, rgb(0,0,0), 10);
+    bustupWait(ref_573);
+    bustupFree(ref_56c);
+    b(label_5a2);
+  label_577:
+    ref_577 = bustupLoad(bustup_b);
+    bustupWait(ref_577);
+    ref_579 = bustupAlloc(ref_577, left, rgb(0,0,0));
+    bustupFade(ref_579, rgb(128,0,0), 30);
+    ref_57b = dialogAlloc();
+    ref_57c = msgShow(msg_57);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]. . . . . .
+[tab]I got it.
+[tab]I’ll wait here.
+[wait][clear]
+***************************************/
+    wait(ref_57c);
+    dialogFree(ref_57b);
+    ref_57f = bustupFade(ref_579, rgb(0,0,0), 10);
+    bustupWait(ref_57f);
+    bustupFree(ref_579);
+    b(label_5a2);
+  label_583:
+    ref_583 = bustupLoad(bustup_b);
+    bustupWait(ref_583);
+    ref_585 = bustupAlloc(ref_583, left, rgb(0,0,0));
+    bustupFade(ref_585, rgb(128,0,0), 30);
+    ref_587 = dialogAlloc();
+    ref_588 = msgShow(msg_58);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]What’s wrong...?
+[wait][clear]
+***************************************/
+    wait(ref_588);
+    dialogFree(ref_587);
+    ref_58b = bustupFade(ref_585, rgb(0,0,0), 10);
+    bustupWait(ref_58b);
+    bustupFree(ref_585);
+    choiceSetResult(1);
+    op_105(5);
+    ref_590 = bustupLoad(bustup_1);
+    bustupWait(ref_590);
+    ref_592 = bustupAlloc(ref_590, center, rgb(0,0,0));
+    bustupFade(ref_592, rgb(128,0,0), 30);
+    ref_594 = dialogChoiceAlloc();
+    ref_595 = msgShow(msg_59);
+/***************************************
+[tab]What’s wrong...?
+[choice(2)]Take care while I’m gone.
+Nothing.
+[end_choice][clear]
+***************************************/
+    wait(ref_595);
+    dialogFree(ref_594);
+    ref_598 = bustupFade(ref_592, rgb(0,0,0), 10);
+    bustupWait(ref_598);
+    bustupFree(ref_592);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_5a0);
+    partyMemberRemove(tatsuya);
+    b(label_577);
+    b(label_5a2);
+  label_5a0:
+    bne(var_0, 1, label_5a2);
+    b(label_5a2);
+  label_5a2:
+    unitRestoreFacing(tatsuya);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function IGORU()
+{
+    controlDisable();
+    ref_5a7 = shopOverlayInit();
+    bitGet(var_0, VBIT_MUTATION_ON);
+    bne(var_0, 0, label_5ac);
+    b(label_5e5);
+    b(label_5b5);
+  label_5ac:
+    bne(var_0, 1, label_5b5);
+    bitGet(var_0, VBIT_MUT_MES_OFF);
+    bne(var_0, 0, label_5b1);
+    b(label_5b5);
+    b(label_5b4);
+  label_5b1:
+    bne(var_0, 1, label_5b4);
+    b(label_5e5);
+    b(label_5b4);
+  label_5b4:
+    b(label_5b5);
+  label_5b5:
+    ref_5b5 = bustupLoad(bustup_e0);
+    bustupWait(ref_5b5);
+    ref_5b7 = bustupAlloc(ref_5b5, right, rgb(0,0,0));
+    bustupFade(ref_5b7, rgb(128,0,0), 30);
+    ref_5b9 = dialogAlloc();
+    ref_5ba = msgShow(msg_60);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Hmm...?
+[tab]It seems that there is a Persona
+[tab]seeking rebirth into a new form.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_5ba);
+    ref_5be = msgShow(msg_61);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]I forgot to explain, but...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_5be);
+    ref_5c2 = msgShow(msg_62);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]You are familiar with Fusion Spells,
+[tab]correct? When you use one, there is a
+[tab]chance it will cause a Persona to mutate.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_5c2);
+    ref_5c6 = msgShow(msg_63);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]There are Personas that increase in ability,
+[tab]and others that gain new spells. But there
+[tab]are ones that become a different Persona.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_5c6);
+    ref_5ca = msgShow(msg_64);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]But to do so, they need my help.
+[tab]So if such a change occurs,
+[tab]please come to me.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_5ca);
+    ref_5ce = msgShow(msg_65);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Of course,
+[tab]it is not necessary that
+[tab]you mutate your Persona.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_5ce);
+    ref_5d2 = msgShow(msg_66);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]After mutation, a Persona returns to
+[tab]Rank 1, so please decide on your own
+[tab]whether or not to mutate it.
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_5d2);
+    ref_5d6 = msgShow(msg_67);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Also, [delay(15)]if you have the same post-mutated
+[tab]Persona, it might not let the mutation
+[tab]take place... So be forewarned!
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_5d6);
+    dialogFree(ref_5b9);
+    ref_5db = bustupFade(ref_5b7, rgb(0,0,0), 10);
+    bustupWait(ref_5db);
+    bustupFree(ref_5b7);
+    wait(ref_5a7);
+    bitSet(VBIT_MUT_MES_OFF);
+    shopInventory(3, shopInventory_0);
+    shopInventory(4, shopInventory_0);
+    shopInventory(2, shopInventory_0);
+    shopInventory(8, shopInventory_0);
+    b(label_5e5);
+  label_5e5:
+    ref_5e5 = bustupLoad(bustup_e0);
+    bustupWait(ref_5e5);
+    ref_5e7 = bustupAlloc(ref_5e5, right, rgb(0,0,0));
+    bustupFade(ref_5e7, rgb(128,0,0), 30);
+    choiceSetResult(6);
+    op_105(3);
+    ref_5eb = dialogAlloc();
+    ref_5ec = msgShow(msg_68);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Welcome to the Velvet Room.
+[tab]What business do you have today?
+[choice(8)]Summon Persona
+Take on Persona
+Return Persona
+[if_all(VBIT_MUTATION_ON)]Mutate Persona
+Talk to Igor
+[if_all(EBIT_SINARIOFF)]Additional Scenario
+Cancel
+Leave
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_5ec);
+    dialogFree(ref_5eb);
+    ref_5f0 = bustupFade(ref_5e7, rgb(0,0,0), 10);
+    bustupWait(ref_5f0);
+    bustupFree(ref_5e7);
+    wait(ref_5a7);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_5f9);
+    li(var_5, 0);
+    b(label_60e);
+  label_5f9:
+    bne(var_0, 1, label_5fc);
+    li(var_5, 1);
+    b(label_60e);
+  label_5fc:
+    bne(var_0, 2, label_5ff);
+    li(var_5, 2);
+    b(label_60e);
+  label_5ff:
+    bne(var_0, 3, label_602);
+    li(var_5, 3);
+    b(label_60e);
+  label_602:
+    bne(var_0, 4, label_605);
+    li(var_5, 4);
+    b(label_60e);
+  label_605:
+    bne(var_0, 5, label_608);
+    li(var_5, 5);
+    b(label_60e);
+  label_608:
+    bne(var_0, 6, label_60b);
+    li(var_5, 6);
+    b(label_60e);
+  label_60b:
+    bne(var_0, 7, label_60e);
+    li(var_5, 7);
+    b(label_60e);
+  label_60e:
+    shopInventory(3, shopInventory_0);
+    shopInventory(4, shopInventory_0);
+    shopInventory(2, shopInventory_0);
+    shopInventory(8, shopInventory_0);
+    bitGet(var_0, VBIT_MUTATION_ON);
+    bne(var_0, 0, label_617);
+    ref_614 = shopOpen(6);
+    wait(ref_614);
+    b(label_61b);
+  label_617:
+    bne(var_0, 1, label_61b);
+    ref_618 = shopOpen(7);
+    wait(ref_618);
+    b(label_61b);
+  label_61b:
+}
+
+function HA_SHOP_RESTART_0()
+{
+    choiceSetResult(6);
+    op_105(3);
+    ref_61e = bustupLoad(bustup_e0);
+    bustupWait(ref_61e);
+    ref_620 = bustupAlloc(ref_61e, right, rgb(0,0,0));
+    bustupFade(ref_620, rgb(128,0,0), 30);
+    ref_622 = dialogAlloc();
+    ref_623 = msgShow(msg_69);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Is there anything else?
+[choice(8)]Summon Persona
+Take on Persona
+Return Persona
+[if_all(VBIT_MUTATION_ON)]Mutate Persona
+Talk to Igor
+[if_all(EBIT_SINARIOFF)]Additional Scenario
+Cancel
+Leave
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_623);
+    dialogFree(ref_622);
+    ref_627 = bustupFade(ref_620, rgb(0,0,0), 10);
+    bustupWait(ref_627);
+    bustupFree(ref_620);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_62f);
+    li(var_5, 0);
+    b(label_644);
+  label_62f:
+    bne(var_0, 1, label_632);
+    li(var_5, 1);
+    b(label_644);
+  label_632:
+    bne(var_0, 2, label_635);
+    li(var_5, 2);
+    b(label_644);
+  label_635:
+    bne(var_0, 3, label_638);
+    li(var_5, 3);
+    b(label_644);
+  label_638:
+    bne(var_0, 4, label_63b);
+    li(var_5, 4);
+    b(label_644);
+  label_63b:
+    bne(var_0, 5, label_63e);
+    li(var_5, 5);
+    b(label_644);
+  label_63e:
+    bne(var_0, 6, label_641);
+    li(var_5, 6);
+    b(label_644);
+  label_641:
+    bne(var_0, 7, label_644);
+    li(var_5, 7);
+    b(label_644);
+  label_644:
+}
+
+function HA_SHOP_TALK_0()
+{
+    choiceSetResult(2);
+    op_105(2);
+    ref_647 = bustupLoad(bustup_e0);
+    bustupWait(ref_647);
+    ref_649 = bustupAlloc(ref_647, left, rgb(0,0,0));
+    bustupFade(ref_649, rgb(128,0,0), 30);
+    ref_64b = dialogAlloc();
+    ref_64c = msgShow(msg_70);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]What shall we converse about?
+[choice(3)]Make small talk
+Tutorials
+[if_all(EBIT_SINARIOFF)]Hidden items
+[end_choice][clear]
+***************************************/
+    wait(ref_64c);
+    dialogFree(ref_64b);
+    ref_64f = bustupFade(ref_649, rgb(0,0,0), 10);
+    bustupWait(ref_64f);
+    bustupFree(ref_649);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_655);
+    b(label_65c);
+  label_655:
+    bne(var_0, 1, label_658);
+    b(label_8d8);
+    b(label_65c);
+  label_658:
+    bne(var_0, 2, label_65c);
+    li(var_5, 1000);
+    b(label_960);
+    b(label_65c);
+  label_65c:
+    bitGet(var_0, MBIT_EXTRARANK_E);
+    bnz(var_0, label_675);
+    bitGet(var_0, MBIT_EXTRARANK_D);
+    bnz(var_0, label_675);
+    bitGet(var_0, MBIT_EXTRARANK_C);
+    bnz(var_0, label_675);
+    bitGet(var_0, MBIT_EXTRARANK_B);
+    bnz(var_0, label_675);
+    bitGet(var_0, MBIT_EXTRARANK_A);
+    bnz(var_0, label_675);
+    bitGet(var_0, MBIT_EXTRARANK_S);
+    bnz(var_0, label_675);
+    ref_668 = bustupLoad(bustup_e0);
+    bustupWait(ref_668);
+    ref_66a = bustupAlloc(ref_668, right, rgb(0,0,0));
+    bustupFade(ref_66a, rgb(128,0,0), 30);
+    ref_66c = dialogAlloc();
+    ref_66d = msgShow(msg_71);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Master Philemon detected the infinite
+[tab]potential you humans hold. This creation
+[tab]is likely for that purpose...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_66d);
+    dialogFree(ref_66c);
+    ref_671 = bustupFade(ref_66a, rgb(0,0,0), 10);
+    bustupWait(ref_671);
+    bustupFree(ref_66a);
+    b(label_960);
+  label_675:
+    ref_675 = bustupLoad(bustup_e0);
+    bustupWait(ref_675);
+    ref_677 = bustupAlloc(ref_675, right, rgb(0,0,0));
+    bustupFade(ref_677, rgb(128,0,0), 30);
+    ref_679 = dialogAlloc();
+    ref_67a = msgShow(msg_72);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Well then, who will you speak with?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_67a);
+    dialogFree(ref_679);
+    ref_67e = bustupFade(ref_677, rgb(0,0,0), 10);
+    bustupWait(ref_67e);
+    bustupFree(ref_677);
+    op_104(0);
+  label_682:
+    choiceSetResult(4);
+    op_105(8);
+    ref_684 = bustupLoad(bustup_1);
+    bustupWait(ref_684);
+    ref_686 = bustupAlloc(ref_684, center, rgb(0,0,0));
+    bustupFade(ref_686, rgb(128,0,0), 30);
+    ref_688 = dialogChoiceAlloc();
+    ref_689 = msgShow(msg_73);
+/***************************************
+[tab]Who will you speak with?
+[choice(5)]Address Book 1
+Address Book 2
+Address Book 3
+Address Book 4
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_689);
+    dialogFree(ref_688);
+    ref_68c = bustupFade(ref_686, rgb(0,0,0), 10);
+    bustupWait(ref_68c);
+    bustupFree(ref_686);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_693);
+    b(label_72d);
+    b(label_6a0);
+  label_693:
+    bne(var_0, 1, label_696);
+    b(label_6fc);
+    b(label_6a0);
+  label_696:
+    bne(var_0, 2, label_699);
+    b(label_6cb);
+    b(label_6a0);
+  label_699:
+    bne(var_0, 3, label_69c);
+    b(label_6a0);
+    b(label_6a0);
+  label_69c:
+    bne(var_0, 4, label_6a0);
+    op_104(1);
+    b(label_960);
+    b(label_6a0);
+  label_6a0:
+    li(var_5, 0);
+    choiceSetResult(6);
+    op_105(13);
+    ref_6a3 = bustupLoad(bustup_1);
+    bustupWait(ref_6a3);
+    ref_6a5 = bustupAlloc(ref_6a3, center, rgb(0,0,0));
+    bustupFade(ref_6a5, rgb(128,0,0), 30);
+    ref_6a7 = dialogChoiceAlloc();
+    ref_6a8 = msgShow(msg_74);
+/***************************************
+[color(yellow)]Address Book 4[color(white)]
+[choice(7)][if_all(MBIT_EXTRARANK_S)]Sudou
+[if_all(!MBIT_EXTRARANK_S)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_S)]Apollo
+[if_all(!MBIT_EXTRARANK_S)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_S)]Captain Shimazu
+[if_all(!MBIT_EXTRARANK_S)][color(pink)]? ? ? ?[color(white)]
+Return
+[end_choice][clear]
+***************************************/
+    wait(ref_6a8);
+    dialogFree(ref_6a7);
+    ref_6ab = bustupFade(ref_6a5, rgb(0,0,0), 10);
+    bustupWait(ref_6ab);
+    bustupFree(ref_6a5);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_6b2);
+    li(var_5, 9);
+    b(label_6c9);
+  label_6b2:
+    bne(var_0, 2, label_6b5);
+    li(var_5, 15);
+    b(label_6c9);
+  label_6b5:
+    bne(var_0, 4, label_6b8);
+    li(var_5, 6);
+    b(label_6c9);
+  label_6b8:
+    bne(var_0, 6, label_6bb);
+    b(label_682);
+    b(label_6c9);
+  label_6bb:
+    ref_6bb = bustupLoad(bustup_e0);
+    bustupWait(ref_6bb);
+    ref_6bd = bustupAlloc(ref_6bb, right, rgb(0,0,0));
+    bustupFade(ref_6bd, rgb(128,0,0), 30);
+    ref_6bf = dialogAlloc();
+    ref_6c0 = msgShow(msg_75);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Let me see... Who would that be?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_6c0);
+    dialogFree(ref_6bf);
+    ref_6c4 = bustupFade(ref_6bd, rgb(0,0,0), 10);
+    bustupWait(ref_6c4);
+    bustupFree(ref_6bd);
+    b(label_6a0);
+    b(label_6c9);
+  label_6c9:
+    bitSet(LBIT_0004);
+    b(label_75e);
+  label_6cb:
+    li(var_5, 0);
+    choiceSetResult(10);
+    op_105(13);
+    ref_6ce = bustupLoad(bustup_1);
+    bustupWait(ref_6ce);
+    ref_6d0 = bustupAlloc(ref_6ce, center, rgb(0,0,0));
+    bustupFade(ref_6d0, rgb(128,0,0), 30);
+    ref_6d2 = dialogChoiceAlloc();
+    ref_6d3 = msgShow(msg_76);
+/***************************************
+[color(yellow)]Address Book 3[color(white)]
+[choice(11)][if_all(MBIT_EXTRARANK_B)]Ginji
+[if_all(!MBIT_EXTRARANK_B)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_B)]Chizuru
+[if_all(!MBIT_EXTRARANK_B)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_A)]Nyarlathotep
+[if_all(!MBIT_EXTRARANK_A)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_A)]Nanjo
+[if_all(!MBIT_EXTRARANK_A)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_A)]Philemon
+[if_all(!MBIT_EXTRARANK_A)][color(pink)]? ? ? ?[color(white)]
+Return
+[end_choice][clear]
+***************************************/
+    wait(ref_6d3);
+    dialogFree(ref_6d2);
+    ref_6d6 = bustupFade(ref_6d0, rgb(0,0,0), 10);
+    bustupWait(ref_6d6);
+    bustupFree(ref_6d0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_6dd);
+    li(var_5, 5);
+    b(label_6fa);
+  label_6dd:
+    bne(var_0, 2, label_6e0);
+    li(var_5, 7);
+    b(label_6fa);
+  label_6e0:
+    bne(var_0, 4, label_6e3);
+    li(var_5, 2);
+    b(label_6fa);
+  label_6e3:
+    bne(var_0, 6, label_6e6);
+    li(var_5, 17);
+    b(label_6fa);
+  label_6e6:
+    bne(var_0, 8, label_6e9);
+    li(var_5, 18);
+    b(label_6fa);
+  label_6e9:
+    bne(var_0, 10, label_6ec);
+    b(label_682);
+    b(label_6fa);
+  label_6ec:
+    ref_6ec = bustupLoad(bustup_e0);
+    bustupWait(ref_6ec);
+    ref_6ee = bustupAlloc(ref_6ec, right, rgb(0,0,0));
+    bustupFade(ref_6ee, rgb(128,0,0), 30);
+    ref_6f0 = dialogAlloc();
+    ref_6f1 = msgShow(msg_77);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Let me see... Who would that be?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_6f1);
+    dialogFree(ref_6f0);
+    ref_6f5 = bustupFade(ref_6ee, rgb(0,0,0), 10);
+    bustupWait(ref_6f5);
+    bustupFree(ref_6ee);
+    b(label_6cb);
+    b(label_6fa);
+  label_6fa:
+    bitSet(LBIT_0003);
+    b(label_75e);
+  label_6fc:
+    li(var_5, 0);
+    choiceSetResult(10);
+    op_105(13);
+    ref_6ff = bustupLoad(bustup_1);
+    bustupWait(ref_6ff);
+    ref_701 = bustupAlloc(ref_6ff, center, rgb(0,0,0));
+    bustupFade(ref_701, rgb(128,0,0), 30);
+    ref_703 = dialogChoiceAlloc();
+    ref_704 = msgShow(msg_78);
+/***************************************
+[color(yellow)]Address Book 2[color(white)]
+[choice(11)][if_all(MBIT_EXTRARANK_D)]Maya
+[if_all(!MBIT_EXTRARANK_D)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_C)]Jun
+[if_all(!MBIT_EXTRARANK_C)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_C)]Elly
+[if_all(!MBIT_EXTRARANK_C)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_C)][tatsuya]
+[if_all(!MBIT_EXTRARANK_C)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_B)]Kandori
+[if_all(!MBIT_EXTRARANK_B)][color(pink)]? ? ? ?[color(white)]
+Return
+[end_choice][clear]
+***************************************/
+    wait(ref_704);
+    dialogFree(ref_703);
+    ref_707 = bustupFade(ref_701, rgb(0,0,0), 10);
+    bustupWait(ref_707);
+    bustupFree(ref_701);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_70e);
+    li(var_5, 10);
+    b(label_72b);
+  label_70e:
+    bne(var_0, 2, label_711);
+    li(var_5, 1);
+    b(label_72b);
+  label_711:
+    bne(var_0, 4, label_714);
+    li(var_5, 16);
+    b(label_72b);
+  label_714:
+    bne(var_0, 6, label_717);
+    li(var_5, 14);
+    b(label_72b);
+  label_717:
+    bne(var_0, 8, label_71a);
+    li(var_5, 3);
+    b(label_72b);
+  label_71a:
+    bne(var_0, 10, label_71d);
+    b(label_682);
+    b(label_72b);
+  label_71d:
+    ref_71d = bustupLoad(bustup_e0);
+    bustupWait(ref_71d);
+    ref_71f = bustupAlloc(ref_71d, right, rgb(0,0,0));
+    bustupFade(ref_71f, rgb(128,0,0), 30);
+    ref_721 = dialogAlloc();
+    ref_722 = msgShow(msg_79);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Let me see... Who would that be?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_722);
+    dialogFree(ref_721);
+    ref_726 = bustupFade(ref_71f, rgb(0,0,0), 10);
+    bustupWait(ref_726);
+    bustupFree(ref_71f);
+    b(label_6fc);
+    b(label_72b);
+  label_72b:
+    bitSet(LBIT_0002);
+    b(label_75e);
+  label_72d:
+    li(var_5, 0);
+    choiceSetResult(10);
+    op_105(13);
+    ref_730 = bustupLoad(bustup_1);
+    bustupWait(ref_730);
+    ref_732 = bustupAlloc(ref_730, center, rgb(0,0,0));
+    bustupFade(ref_732, rgb(128,0,0), 30);
+    ref_734 = dialogChoiceAlloc();
+    ref_735 = msgShow(msg_80);
+/***************************************
+[color(yellow)]Address Book 1[color(white)]
+[choice(11)][if_all(MBIT_EXTRARANK_E)]Katsuya
+[if_all(!MBIT_EXTRARANK_E)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_E)]Ulala
+[if_all(!MBIT_EXTRARANK_E)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_E)]Eikichi
+[if_all(!MBIT_EXTRARANK_E)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_D)]Lisa
+[if_all(!MBIT_EXTRARANK_D)][color(pink)]? ? ? ?[color(white)]
+[if_all(MBIT_EXTRARANK_D)]Baofu
+[if_all(!MBIT_EXTRARANK_D)][color(pink)]? ? ? ?[color(white)]
+Return
+[end_choice][clear]
+***************************************/
+    wait(ref_735);
+    dialogFree(ref_734);
+    ref_738 = bustupFade(ref_732, rgb(0,0,0), 10);
+    bustupWait(ref_738);
+    bustupFree(ref_732);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_73f);
+    li(var_5, 12);
+    b(label_75c);
+  label_73f:
+    bne(var_0, 2, label_742);
+    li(var_5, 11);
+    b(label_75c);
+  label_742:
+    bne(var_0, 4, label_745);
+    li(var_5, 4);
+    b(label_75c);
+  label_745:
+    bne(var_0, 6, label_748);
+    li(var_5, 8);
+    b(label_75c);
+  label_748:
+    bne(var_0, 8, label_74b);
+    li(var_5, 13);
+    b(label_75c);
+  label_74b:
+    bne(var_0, 10, label_74e);
+    b(label_682);
+    b(label_75c);
+  label_74e:
+    ref_74e = bustupLoad(bustup_e0);
+    bustupWait(ref_74e);
+    ref_750 = bustupAlloc(ref_74e, right, rgb(0,0,0));
+    bustupFade(ref_750, rgb(128,0,0), 30);
+    ref_752 = dialogAlloc();
+    ref_753 = msgShow(msg_81);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Let me see... Who would that be?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_753);
+    dialogFree(ref_752);
+    ref_757 = bustupFade(ref_750, rgb(0,0,0), 10);
+    bustupWait(ref_757);
+    bustupFree(ref_750);
+    b(label_72d);
+    b(label_75c);
+  label_75c:
+    bitSet(LBIT_0001);
+    b(label_75e);
+  label_75e:
+    bitGet(var_0, MBIT_SUN_BEL03);
+    bne(var_0, 0, label_76e);
+    bitGet(var_0, MBIT_SUN_BEL02);
+    bne(var_0, 0, label_76a);
+    bitGet(var_0, MBIT_SUN_BEL01);
+    bne(var_0, 0, label_766);
+    sndVolumeFadeTo(sound_3003, 0, 30);
+    b(label_769);
+  label_766:
+    bne(var_0, 1, label_769);
+    sndVolumeFadeTo(sound_3000, 0, 30);
+    b(label_769);
+  label_769:
+    b(label_76d);
+  label_76a:
+    bne(var_0, 1, label_76d);
+    sndVolumeFadeTo(sound_3001, 0, 30);
+    b(label_76d);
+  label_76d:
+    b(label_771);
+  label_76e:
+    bne(var_0, 1, label_771);
+    sndVolumeFadeTo(sound_3002, 0, 30);
+    b(label_771);
+  label_771:
+    bne(var_5, 1, label_782);
+    ref_772 = bustupLoad(bustup_10e);
+    bustupWait(ref_772);
+    ref_774 = bustupAlloc(ref_772, center, rgb(0,0,0));
+    bustupFade(ref_774, rgb(128,0,0), 30);
+    ref_776 = dialogAlloc();
+    sndVoicePlay(sound_b4, 128);
+    sndWaitStart();
+    ref_779 = msgShow(msg_82);
+/***************************************
+[color(yellow)]Jun[color(white)]
+[tab]I’m sorry, I’m not at home...
+[tab]If you want, please leave a message.
+[tab]B... B-Bye.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_779);
+    sndMusicFree();
+    dialogFree(ref_776);
+    ref_77e = bustupFade(ref_774, rgb(0,0,0), 10);
+    bustupWait(ref_77e);
+    bustupFree(ref_774);
+    b(label_89c);
+  label_782:
+    bne(var_5, 2, label_793);
+    ref_783 = bustupLoad(bustup_6b);
+    bustupWait(ref_783);
+    ref_785 = bustupAlloc(ref_783, center, rgb(0,0,0));
+    bustupFade(ref_785, rgb(128,0,0), 30);
+    ref_787 = dialogAlloc();
+    sndVoicePlay(sound_b7, 128);
+    sndWaitStart();
+    ref_78a = msgShow(msg_83);
+/***************************************
+[color(yellow)]Nyarlathotep[color(white)]
+[tab]Fuhahahahahaha!
+[tab]If you’ve something to say, I’ll listen!!
+[tab]Speak your foolish gibberish!!
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_78a);
+    sndMusicFree();
+    dialogFree(ref_787);
+    ref_78f = bustupFade(ref_785, rgb(0,0,0), 10);
+    bustupWait(ref_78f);
+    bustupFree(ref_785);
+    b(label_89c);
+  label_793:
+    bne(var_5, 3, label_7a4);
+    ref_794 = bustupLoad(bustup_51);
+    bustupWait(ref_794);
+    ref_796 = bustupAlloc(ref_794, center, rgb(0,0,0));
+    bustupFade(ref_796, rgb(128,0,0), 30);
+    ref_798 = dialogAlloc();
+    sndVoicePlay(sound_b2, 128);
+    sndWaitStart();
+    ref_79b = msgShow(msg_84);
+/***************************************
+[color(yellow)]Kandori[color(white)]
+[tab]I grow weary of speaking...
+[tab]Leave a message...
+[tab]Do not disappoint me...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_79b);
+    sndMusicFree();
+    dialogFree(ref_798);
+    ref_7a0 = bustupFade(ref_796, rgb(0,0,0), 10);
+    bustupWait(ref_7a0);
+    bustupFree(ref_796);
+    b(label_89c);
+  label_7a4:
+    bne(var_5, 4, label_7b5);
+    ref_7a5 = bustupLoad(bustup_119);
+    bustupWait(ref_7a5);
+    ref_7a7 = bustupAlloc(ref_7a5, center, rgb(0,0,0));
+    bustupFade(ref_7a7, rgb(128,0,0), 30);
+    ref_7a9 = dialogAlloc();
+    sndVoicePlay(sound_bd, 128);
+    sndWaitStart();
+    ref_7ac = msgShow(msg_85);
+/***************************************
+[color(yellow)]Eikichi[color(white)]
+[tab]Hoooooooooooo!
+[tab]Making a confession to me, my adoring fan.
+[tab]I’m busy right now... Sor-ry baby...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7ac);
+    sndMusicFree();
+    dialogFree(ref_7a9);
+    ref_7b1 = bustupFade(ref_7a7, rgb(0,0,0), 10);
+    bustupWait(ref_7b1);
+    bustupFree(ref_7a7);
+    b(label_89c);
+  label_7b5:
+    bne(var_5, 5, label_7c6);
+    ref_7b6 = bustupLoad(bustup_dd);
+    bustupWait(ref_7b6);
+    ref_7b8 = bustupAlloc(ref_7b6, center, rgb(0,0,0));
+    bustupFade(ref_7b8, rgb(128,0,0), 30);
+    ref_7ba = dialogAlloc();
+    sndVoicePlay(sound_b0, 128);
+    sndWaitStart();
+    ref_7bd = msgShow(msg_86);
+/***************************************
+[color(yellow)]Ginji[color(white)]
+[tab]Contact me through my agent.
+[tab]Unless you’re a female.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7bd);
+    sndMusicFree();
+    dialogFree(ref_7ba);
+    ref_7c2 = bustupFade(ref_7b8, rgb(0,0,0), 10);
+    bustupWait(ref_7c2);
+    bustupFree(ref_7b8);
+    b(label_89c);
+  label_7c6:
+    bne(var_5, 6, label_7d7);
+    ref_7c7 = bustupLoad(bustup_4e);
+    bustupWait(ref_7c7);
+    ref_7c9 = bustupAlloc(ref_7c7, center, rgb(0,0,0));
+    bustupFade(ref_7c9, rgb(128,0,0), 30);
+    ref_7cb = dialogAlloc();
+    sndVoicePlay(sound_ad, 128);
+    sndWaitStart();
+    ref_7ce = msgShow(msg_87);
+/***************************************
+[color(yellow)]Captain Shimazu[color(white)]
+[tab]Yo... Hel-loaf of bread!
+[tab]I’m not here, so all you rotten punks
+[tab]leave a message! I’m countin’ on ya!
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7ce);
+    sndMusicFree();
+    dialogFree(ref_7cb);
+    ref_7d3 = bustupFade(ref_7c9, rgb(0,0,0), 10);
+    bustupWait(ref_7d3);
+    bustupFree(ref_7c9);
+    b(label_89c);
+  label_7d7:
+    bne(var_5, 7, label_7e8);
+    ref_7d8 = bustupLoad(bustup_54);
+    bustupWait(ref_7d8);
+    ref_7da = bustupAlloc(ref_7d8, center, rgb(0,0,0));
+    bustupFade(ref_7da, rgb(128,0,0), 30);
+    ref_7dc = dialogAlloc();
+    sndVoicePlay(sound_ba, 128);
+    sndWaitStart();
+    ref_7df = msgShow(msg_88);
+/***************************************
+[color(yellow)]Chizuru[color(white)]
+[tab]You’ve reached the Clairvoyance Hotline.
+[tab]I sense...
+[tab]...You want to leave a message, yes?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7df);
+    sndMusicFree();
+    dialogFree(ref_7dc);
+    ref_7e4 = bustupFade(ref_7da, rgb(0,0,0), 10);
+    bustupWait(ref_7e4);
+    bustupFree(ref_7da);
+    b(label_89c);
+  label_7e8:
+    bne(var_5, 8, label_7f9);
+    ref_7e9 = bustupLoad(bustup_111);
+    bustupWait(ref_7e9);
+    ref_7eb = bustupAlloc(ref_7e9, center, rgb(0,0,0));
+    bustupFade(ref_7eb, rgb(128,0,0), 30);
+    ref_7ed = dialogAlloc();
+    sndVoicePlay(sound_cb, 128);
+    sndWaitStart();
+    ref_7f0 = msgShow(msg_89);
+/***************************************
+[color(yellow)]Lisa[color(white)]
+[tab]Aiyah--, I can’t reach the phone right now.
+[tab]Leave a message.
+[tab]Sorry-ia...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7f0);
+    sndMusicFree();
+    dialogFree(ref_7ed);
+    ref_7f5 = bustupFade(ref_7eb, rgb(0,0,0), 10);
+    bustupWait(ref_7f5);
+    bustupFree(ref_7eb);
+    b(label_89c);
+  label_7f9:
+    bne(var_5, 9, label_80a);
+    ref_7fa = bustupLoad(bustup_4a);
+    bustupWait(ref_7fa);
+    ref_7fc = bustupAlloc(ref_7fa, center, rgb(0,0,0));
+    bustupFade(ref_7fc, rgb(128,0,0), 30);
+    ref_7fe = dialogAlloc();
+    sndVoicePlay(sound_b1, 128);
+    sndWaitStart();
+    ref_801 = msgShow(msg_90);
+/***************************************
+[color(yellow)]Tatsuya Sudou[color(white)]
+[tab]Hya--hahahaha---!!
+[tab]VoiceMailVoiceMailVoiceMailVoiceMail--!!
+[tab]Talk to my voice mail------!
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_801);
+    sndMusicFree();
+    dialogFree(ref_7fe);
+    ref_806 = bustupFade(ref_7fc, rgb(0,0,0), 10);
+    bustupWait(ref_806);
+    bustupFree(ref_7fc);
+    b(label_89c);
+  label_80a:
+    bne(var_5, 10, label_81b);
+    ref_80b = bustupLoad(bustup_2);
+    bustupWait(ref_80b);
+    ref_80d = bustupAlloc(ref_80b, center, rgb(0,0,0));
+    bustupFade(ref_80d, rgb(128,0,0), 30);
+    ref_80f = dialogAlloc();
+    sndVoicePlay(sound_b5, 128);
+    sndWaitStart();
+    ref_812 = msgShow(msg_91);
+/***************************************
+[color(yellow)]Maya[color(white)]
+[tab]Let’s speak positive!
+[tab]Your messages should be optimistic♥...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_812);
+    sndMusicFree();
+    dialogFree(ref_80f);
+    ref_817 = bustupFade(ref_80d, rgb(0,0,0), 10);
+    bustupWait(ref_817);
+    bustupFree(ref_80d);
+    b(label_89c);
+  label_81b:
+    bne(var_5, 11, label_82c);
+    ref_81c = bustupLoad(bustup_18);
+    bustupWait(ref_81c);
+    ref_81e = bustupAlloc(ref_81c, center, rgb(0,0,0));
+    bustupFade(ref_81e, rgb(128,0,0), 30);
+    ref_820 = dialogAlloc();
+    sndVoicePlay(sound_bb, 128);
+    sndWaitStart();
+    ref_823 = msgShow(msg_92);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Ciaaao♥ You a guy? Are ya, are ya...?
+[tab]If you’re good looking, leave a message♥...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_823);
+    sndMusicFree();
+    dialogFree(ref_820);
+    ref_828 = bustupFade(ref_81e, rgb(0,0,0), 10);
+    bustupWait(ref_828);
+    bustupFree(ref_81e);
+    b(label_89c);
+  label_82c:
+    bne(var_5, 12, label_83d);
+    ref_82d = bustupLoad(bustup_23);
+    bustupWait(ref_82d);
+    ref_82f = bustupAlloc(ref_82d, center, rgb(0,0,0));
+    bustupFade(ref_82f, rgb(128,0,0), 30);
+    ref_831 = dialogAlloc();
+    sndVoicePlay(sound_b3, 128);
+    sndWaitStart();
+    ref_834 = msgShow(msg_93);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I’m not here right now. Please leave a long
+[tab]message, ’cause I can’t trace your call
+[tab]if it’s too short.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_834);
+    sndMusicFree();
+    dialogFree(ref_831);
+    ref_839 = bustupFade(ref_82f, rgb(0,0,0), 10);
+    bustupWait(ref_839);
+    bustupFree(ref_82f);
+    b(label_89c);
+  label_83d:
+    bne(var_5, 13, label_84e);
+    ref_83e = bustupLoad(bustup_2d);
+    bustupWait(ref_83e);
+    ref_840 = bustupAlloc(ref_83e, center, rgb(0,0,0));
+    bustupFade(ref_840, rgb(128,0,0), 30);
+    ref_842 = dialogAlloc();
+    sndVoicePlay(sound_b8, 128);
+    sndWaitStart();
+    ref_845 = msgShow(msg_94);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Sorry buddy, but I’m not here.
+[tab]I’ll listen to you if feel like it,
+[tab]so leave a message...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_845);
+    sndMusicFree();
+    dialogFree(ref_842);
+    ref_84a = bustupFade(ref_840, rgb(0,0,0), 10);
+    bustupWait(ref_84a);
+    bustupFree(ref_840);
+    b(label_89c);
+  label_84e:
+    bne(var_5, 14, label_85f);
+    ref_84f = bustupLoad(bustup_b);
+    bustupWait(ref_84f);
+    ref_851 = bustupAlloc(ref_84f, center, rgb(0,0,0));
+    bustupFade(ref_851, rgb(128,0,0), 30);
+    ref_853 = dialogAlloc();
+    sndVoicePlay(sound_b9, 128);
+    sndWaitStart();
+    ref_856 = msgShow(msg_95);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]I’m busy right now...
+[tab]Please leave a message...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_856);
+    sndMusicFree();
+    dialogFree(ref_853);
+    ref_85b = bustupFade(ref_851, rgb(0,0,0), 10);
+    bustupWait(ref_85b);
+    bustupFree(ref_851);
+    b(label_89c);
+  label_85f:
+    bne(var_5, 15, label_869);
+    ref_860 = dialogAlloc();
+    sndVoicePlay(sound_bc, 128);
+    sndWaitStart();
+    ref_863 = msgShow(msg_96);
+/***************************************
+[color(yellow)]Apollo[color(white)]
+[tab]I am thou, thou art I! The one from the sea
+[tab]of electrons! Necessity of the modern world,
+[tab]the extremely useful answering machine!
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_863);
+    sndMusicFree();
+    dialogFree(ref_860);
+    b(label_89c);
+  label_869:
+    bne(var_5, 16, label_87a);
+    ref_86a = bustupLoad(bustup_3e);
+    bustupWait(ref_86a);
+    ref_86c = bustupAlloc(ref_86a, center, rgb(0,0,0));
+    bustupFade(ref_86c, rgb(128,0,0), 30);
+    ref_86e = dialogAlloc();
+    sndVoicePlay(sound_ae, 128);
+    sndWaitStart();
+    ref_871 = msgShow(msg_97);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Hello! I am very sorry,
+[tab]but I cannot come to the phone.
+[tab]Please leave a message.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_871);
+    sndMusicFree();
+    dialogFree(ref_86e);
+    ref_876 = bustupFade(ref_86c, rgb(0,0,0), 10);
+    bustupWait(ref_876);
+    bustupFree(ref_86c);
+    b(label_89c);
+  label_87a:
+    bne(var_5, 17, label_88b);
+    ref_87b = bustupLoad(bustup_36);
+    bustupWait(ref_87b);
+    ref_87d = bustupAlloc(ref_87b, center, rgb(0,0,0));
+    bustupFade(ref_87d, rgb(128,0,0), 30);
+    ref_87f = dialogAlloc();
+    sndVoicePlay(sound_b6, 128);
+    sndWaitStart();
+    ref_882 = msgShow(msg_98);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]What do you want...?
+[tab]"Art is lasting, time is fleeting".
+[tab]If you have a message make it short.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_882);
+    sndMusicFree();
+    dialogFree(ref_87f);
+    ref_887 = bustupFade(ref_87d, rgb(0,0,0), 10);
+    bustupWait(ref_887);
+    bustupFree(ref_87d);
+    b(label_89c);
+  label_88b:
+    bne(var_5, 18, label_89c);
+    ref_88c = bustupLoad(bustup_de);
+    bustupWait(ref_88c);
+    ref_88e = bustupAlloc(ref_88c, center, rgb(0,0,0));
+    bustupFade(ref_88e, rgb(128,0,0), 30);
+    ref_890 = dialogAlloc();
+    sndVoicePlay(sound_af, 128);
+    sndWaitStart();
+    ref_893 = msgShow(msg_99);
+/***************************************
+[color(yellow)]Philemon[color(white)]
+[tab]I am the one who exists between the
+[tab]lines of communication...
+[tab]Are you able to give your name?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_893);
+    sndMusicFree();
+    dialogFree(ref_890);
+    ref_898 = bustupFade(ref_88e, rgb(0,0,0), 10);
+    bustupWait(ref_898);
+    bustupFree(ref_88e);
+    b(label_89c);
+  label_89c:
+    bitGet(var_0, MBIT_SUN_BEL03);
+    bne(var_0, 0, label_8ac);
+    bitGet(var_0, MBIT_SUN_BEL02);
+    bne(var_0, 0, label_8a8);
+    bitGet(var_0, MBIT_SUN_BEL01);
+    bne(var_0, 0, label_8a4);
+    sndMusicPlay(sound_3003, 127);
+    b(label_8a7);
+  label_8a4:
+    bne(var_0, 1, label_8a7);
+    sndMusicPlay(sound_3000, 127);
+    b(label_8a7);
+  label_8a7:
+    b(label_8ab);
+  label_8a8:
+    bne(var_0, 1, label_8ab);
+    sndMusicPlay(sound_3001, 127);
+    b(label_8ab);
+  label_8ab:
+    b(label_8af);
+  label_8ac:
+    bne(var_0, 1, label_8af);
+    sndMusicPlay(sound_3002, 127);
+    b(label_8af);
+  label_8af:
+    bitGet(var_0, LBIT_0001);
+    bne(var_0, 0, label_8cb);
+    bitGet(var_0, LBIT_0002);
+    bne(var_0, 0, label_8c3);
+    bitGet(var_0, LBIT_0003);
+    bne(var_0, 0, label_8bb);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    b(label_6a0);
+    b(label_8c2);
+  label_8bb:
+    bne(var_0, 1, label_8c2);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    b(label_6cb);
+    b(label_8c2);
+  label_8c2:
+    b(label_8ca);
+  label_8c3:
+    bne(var_0, 1, label_8ca);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    b(label_6fc);
+    b(label_8ca);
+  label_8ca:
+    b(label_8d2);
+  label_8cb:
+    bne(var_0, 1, label_8d2);
+    bitClear(LBIT_0001);
+    bitClear(LBIT_0002);
+    bitClear(LBIT_0003);
+    bitClear(LBIT_0004);
+    b(label_72d);
+    b(label_8d2);
+  label_8d2:
+    b(label_960);
+    ref_8d3 = bustupLoad(bustup_e0);
+    bustupWait(ref_8d3);
+    ref_8d5 = bustupAlloc(ref_8d3, left, rgb(0,0,0));
+    bustupFade(ref_8d5, rgb(128,0,0), 30);
+    ref_8d7 = dialogAlloc();
+  label_8d8:
+    choiceSetResult(6);
+    op_105(7);
+    ref_8da = msgShow(msg_100);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Please, ask away.
+[choice(7)]Personas
+Taking on and invoking.
+Arcana
+Persona growth
+Persona compatibility
+Next Page
+[if(EBIT_SINARIOFF)]Hidden items Back
+[end_choice][clear]
+***************************************/
+    wait(ref_8da);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_8e0);
+    b(label_92f);
+    b(label_8f3);
+  label_8e0:
+    bne(var_0, 1, label_8e3);
+    b(label_932);
+    b(label_8f3);
+  label_8e3:
+    bne(var_0, 2, label_8e6);
+    b(label_935);
+    b(label_8f3);
+  label_8e6:
+    bne(var_0, 3, label_8e9);
+    b(label_938);
+    b(label_8f3);
+  label_8e9:
+    bne(var_0, 4, label_8ec);
+    b(label_93b);
+    b(label_8f3);
+  label_8ec:
+    bne(var_0, 5, label_8ef);
+    b(label_8f4);
+    b(label_8f3);
+  label_8ef:
+    bne(var_0, 6, label_8f3);
+    li(var_5, 1000);
+    b(label_95c);
+    b(label_8f3);
+  label_8f3:
+    wait(ref_8da);
+  label_8f4:
+    choiceSetResult(7);
+    op_105(7);
+    ref_8f6 = msgShow(msg_101);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Please, ask away.
+[choice(8)]Tarot Cards
+Material Cards
+Skill Cards
+Incense Cards
+Persona Cards
+Next Page
+Previous Page
+[if(EBIT_SINARIOFF)]Hidden items Back
+[end_choice][clear]
+***************************************/
+    wait(ref_8f6);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_8fc);
+    b(label_93e);
+    b(label_912);
+  label_8fc:
+    bne(var_0, 1, label_8ff);
+    b(label_941);
+    b(label_912);
+  label_8ff:
+    bne(var_0, 2, label_902);
+    b(label_944);
+    b(label_912);
+  label_902:
+    bne(var_0, 3, label_905);
+    b(label_947);
+    b(label_912);
+  label_905:
+    bne(var_0, 4, label_908);
+    b(label_94a);
+    b(label_912);
+  label_908:
+    bne(var_0, 5, label_90b);
+    b(label_913);
+    b(label_912);
+  label_90b:
+    bne(var_0, 6, label_90e);
+    b(label_8d8);
+    b(label_912);
+  label_90e:
+    bne(var_0, 7, label_912);
+    li(var_5, 1000);
+    b(label_95c);
+    b(label_912);
+  label_912:
+    wait(ref_8f6);
+  label_913:
+    choiceSetResult(6);
+    op_105(7);
+    ref_915 = msgShow(msg_102);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Please, ask away.
+[choice(7)]Summoning basics
+Mystic change
+Mutation
+Contacting
+Demon personalities
+Previous Page
+[if(EBIT_SINARIOFF)]Hidden items Back
+[end_choice][clear]
+***************************************/
+    wait(ref_915);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_91b);
+    b(label_94d);
+    b(label_92e);
+  label_91b:
+    bne(var_0, 1, label_91e);
+    b(label_950);
+    b(label_92e);
+  label_91e:
+    bne(var_0, 2, label_921);
+    b(label_953);
+    b(label_92e);
+  label_921:
+    bne(var_0, 3, label_924);
+    b(label_956);
+    b(label_92e);
+  label_924:
+    bne(var_0, 4, label_927);
+    b(label_959);
+    b(label_92e);
+  label_927:
+    bne(var_0, 5, label_92a);
+    b(label_8f4);
+    b(label_92e);
+  label_92a:
+    bne(var_0, 6, label_92e);
+    li(var_5, 1000);
+    b(label_95c);
+    b(label_92e);
+  label_92e:
+    wait(ref_915);
+  label_92f:
+    ref_92f = msgShow(msg_103);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]The self suffused with divine love. The self
+[tab]capable of demonic cruelty. People live by
+[tab]wearing different masks.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Your current self may be only one of those
+[tab]innumerable masks. Personas are another aspect
+[tab]of you that lurks deep within your heart.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Those who can summon Personas into material
+[tab]forms and harness their power are called
+[tab]Persona-users.
+[wait][clear]
+***************************************/
+    wait(ref_92f);
+    b(label_8d8);
+  label_932:
+    ref_932 = msgShow(msg_104);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]In order to invoke a Persona - to use its
+[tab]powers, in other words - it must first be
+[tab]taken on.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]To "take" on a Persona means for a Persona-
+[tab]user such as yourself to accept it into you.
+[tab]Just having its card will do you no good.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]But you cannot take on Personas whose level
+[tab]is five or more above your own.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]When one takes on a Persona, it affects the
+[tab]stats of the Persona-user as well.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Personas are a hidden side of you... Thus, you
+[tab]change with respect to them.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]You can only take on one Persona at a time.
+[tab]but if you have other Persona Cards, you can
+[tab]take them on at any time as well.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Should you do so, the Persona you had formerly
+[tab]taken on will return to its Persona Card state.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]A Persona’s abilities differ depending on 
+[tab]its type. Each has its own strengths and
+[tab]weaknesses.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Understanding each Persona’s abilities and
+[tab]switching between them to suit the situation
+[tab]at hand is paramount to your survival.
+[wait][clear]
+***************************************/
+    wait(ref_932);
+    b(label_8d8);
+  label_935:
+    ref_935 = msgShow(msg_105);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Personas have types, just like demons. [wait][clear][color(yellow)]Igor[color(white)]
+[tab]Their type is represented by the Arcana of
+[tab]the Tarot, such as Magician, Emperor, Chariot,
+[tab]and the like. There are 26 types.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Some Arcana cannot be met by my summoning...
+[tab]You will have to do some experimentation to
+[tab]encounter these Arcana.
+[wait][clear]
+***************************************/
+    wait(ref_935);
+    b(label_8d8);
+  label_938:
+    ref_938 = msgShow(msg_106);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Though Personas are your hidden sides, it must
+[tab]come as a surprise that you can get in touch
+[tab]with this unconscious aspect of yourself.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]No one can fully harness a Persona’s power
+[tab]from the start.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]This is especially true of newer Personas...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Thus, a Persona will have only a small portion
+[tab]of its true power at the outset.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]But the more you invoke a Persona, the more
+[tab]adept you become at it. It will gain more
+[tab]abilities, more powerful attacks.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Of course, that is just the fruit of being
+[tab]able to fully utilize a Persona. The SP 
+[tab]needed to invoke it will not change.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The nuances are somewhat different from your
+[tab]own growth, but it may be best to think of
+[tab]this as a Persona’s growth.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]A Persona’s growth occurs in eight stages. At 
+[tab]each stage, a change will occur in the Persona.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Personas will also have a slight effect on 
+[tab]your own growth.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The way it affects your growth depends on the 
+[tab]type of Persona you take on. Remember this.
+[wait][clear]
+***************************************/
+    wait(ref_938);
+    b(label_8d8);
+  label_93b:
+    ref_93b = msgShow(msg_107);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]A Persona is your other self... All Personas 
+[tab]are connected to you...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Still, some are close resemblances to your 
+[tab]psyche, while others are quite distant.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]You may not be able to control a Persona if 
+[tab]your connection to it is weak. Indeed, you 
+[tab]may not be able to take it on at all.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The reverse of this is that the closer they 
+[tab]are to you, the easier it is to use them. This 
+[tab]can be seen in the cost of invoking them.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]In some cases, invoking a skill will cost less 
+[tab]SP than usual. But these circumstances will 
+[tab]not be the same for everyone.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]You should experiment and see for yourself.
+[wait][clear]
+***************************************/
+    wait(ref_93b);
+    b(label_8d8);
+  label_93e:
+    ref_93e = msgShow(msg_108);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Tarot Cards are necessary for a medium like
+[tab]myself to summon new Personas.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Personas are classified according to the
+[tab]Arcana of the Tarot, such as Magician and
+[tab]Emperor...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]If you wish to summon a Sun Persona, you will
+[tab]need cards of that Arcana.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The number of Tarot Cards required varies
+[tab]depending on the Persona’s level.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Indeed, the higher the Persona’s level, the
+[tab]more Tarot Cards are necessary to summon it.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Demons possess the Tarot Cards you need...
+[tab]The cards they carry will be the same Arcana
+[tab]as the demon itself.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Your task, then, is to collect Tarot Cards
+[tab]from demons of the same Arcana as the Persona
+[tab]you wish to summon.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]But contacting the same demons over and over
+[tab]will do you little good. Higher-level demons
+[tab]will possess more Tarot Cards.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The best way to summon a high-level Persona
+[tab]is to negotiate with equally high-level demons.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Some Tarot Cards, however, are held by
+[tab]no demons.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]When you find Free Tarot Cards, consult the
+[tab]Demon Painter over there.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Ah, yes, one final caveat: Even with the
+[tab]requisite number of cards, you cannot summon
+[tab]Personas that are five levels higher than you.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Do keep that in mind...
+[wait][clear]
+***************************************/
+    wait(ref_93e);
+    b(label_8f4);
+  label_941:
+    ref_941 = msgShow(msg_109);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]When I summon a Persona, you may choose to
+[tab]add a Material Card.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Only one Material Card can be used per
+[tab]summoning. By adding these cards, I can
+[tab]summon special Personas.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The Personas that correspond to your Material
+[tab]Cards will be shown in blue on the summoning
+[tab]list.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Material Cards are essential components in
+[tab]creating powerful Personas...
+[wait][clear]
+***************************************/
+    wait(ref_941);
+    b(label_8f4);
+  label_944:
+    ref_944 = msgShow(msg_110);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]I can add a Skill Card at the moment of
+[tab]summoning, if you choose.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Only one Skill Card can be used per summoning.
+[tab]The newly summoned Persona will learn the
+[tab]skill sealed within the card.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]For instance... Add an Agi Card when summoning
+[tab]a new Persona, and that Persona will learn Agi.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Even skills they would not normally learn can
+[tab]be taught with these cards.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Mind you, there are degrees of compatibility
+[tab]between Skill Cards and Personas. If it’s low,
+[tab]I cannot add the Skill Card.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Demons possess many of these Skill Cards.
+[tab]The best way to obtain them would be through
+[tab]negotiation with these demons...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]There are rare Skill Cards as well, which can
+[tab]be obtained in several ways. I suggest you
+[tab]experiment for yourself.
+[wait][clear]
+***************************************/
+    wait(ref_944);
+    b(label_8f4);
+  label_947:
+    ref_947 = msgShow(msg_111);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]If you wish it, I can add Incense Cards you
+[tab]find when I summon a new Persona.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Only one Incense Card can be used in any
+[tab]given summoning. It will increase the
+[tab]statistics of that Persona.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]These can only be used at the time of
+[tab]summoning, so I recommend thinking it
+[tab]through before adding one...
+[wait][clear]
+***************************************/
+    wait(ref_947);
+    b(label_8f4);
+  label_94a:
+    ref_94a = msgShow(msg_112);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Summoned Personas that are not taken on remain
+[tab]in the form of Persona Cards.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]You can possess several Persona Cards at
+[tab]once, but there is a limit.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]And remember, too, that the Personas you take
+[tab]on count towards this limit.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The power of Persona is crucial to your
+[tab]journey. I recommend switching Personas
+[tab]depending on the situation at hand.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]I will take good care of newly summoned
+[tab]Personas here.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]I, too, have my limit, but I can hold onto
+[tab]Personas in your possession along with newly
+[tab]summoned Personas.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]But if I am storing the maximum number of
+[tab]cards for you, I will not be able to summon
+[tab]any new Personas. Remember that...
+[wait][clear]
+***************************************/
+    wait(ref_94a);
+    b(label_8f4);
+  label_94d:
+    ref_94d = msgShow(msg_113);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]My duty is to summon new Personas. I use the
+[tab]Tarot Cards you carry as a medium to summon
+[tab]the Personas slumbering deep within your soul.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The more Tarot Cards you supply me, the higher
+[tab]level Personas I can summon.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]However... Gathering Tarot Cards alone will
+[tab]not be sufficient to summon every Persona.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Some require special conditions to be summoned.
+[tab]They slumber at the depths of the unconscious
+[tab]mind... You will need a way to awaken them.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]One such way is to summon them with the use
+[tab]of Material Cards.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Beyond that, the growth of Personas may be
+[tab]another way... I suggest you experiment and
+[tab]see what works.
+[wait][clear]
+***************************************/
+    wait(ref_94d);
+    b(label_913);
+  label_950:
+    ref_950 = msgShow(msg_114);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Personas that have reached the maximum rank
+[tab]of 8 will not grow any further.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Though they are extremely powerful, if you
+[tab]return these Personas to the sea of
+[tab]unconsciousness here in the Velvet Room...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Their powers will be released. In return, they
+[tab]will leave behind a memento of your time
+[tab]together.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]This may be a weapon, a piece of armor, an
+[tab]item... You can gain extremely rare things,
+[tab]obtainable only in this fashion.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Try it for yourself and see what kind of
+[tab]fantastic things you can obtain...
+[wait][clear]
+***************************************/
+    wait(ref_950);
+    b(label_913);
+  label_953:
+    ref_953 = msgShow(msg_115);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]When you use Fusion Spells frequently, in some
+[tab]rare cases the Persona may undergo a mutation.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The probability of this mutation is greatly
+[tab]affected by your compatibility with the
+[tab]Persona...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The better your compatibility, the higher the
+[tab]chances of it mutating.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The details of these mutations differ according
+[tab]to the Persona’s rank. A low-level Persona may
+[tab]simply mutate into Rank 2 or gain a few points.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]But a higher-ranked Persona may mutate to
+[tab]learn new skills... Depending on the Persona,
+[tab]it may become an entirely different Persona.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]It’s possible for some Personas to turn into
+[tab]a Persona of an Arcana I am incapable of
+[tab]summoning. Experiment and see![wait][clear]
+***************************************/
+    wait(ref_953);
+    b(label_913);
+  label_956:
+    ref_956 = msgShow(msg_116);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Demons aren’t so unlike you. They know joy,
+[tab]anger, and other emotions... You can talk to
+[tab]them by making contact.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]A demon’s feelings can be measured through
+[tab]its words, wounds, actions, and also a gauge.
+[tab]I’ll explain how to read the emotion gauge...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Happiness is represented as a green field. When
+[tab]this emotion is at its highest, you can form a
+[tab]pact with the demon.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]There are several benefits to forming pacts
+[tab]with demons.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]They may give you rare Tarot Cards or tell you
+[tab]interesting stories.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Demons you have pacts with will not give you
+[tab]these things of their own will, however. You
+[tab]must contact them again.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Next, anger is represented as a red field.
+[tab]When this emotion is at its peak, negotiations
+[tab]with the demon will be immediately cut off.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]When this happens, demons will no longer
+[tab]listen. In the worst case, they will attack.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]This can also happen to demons you have a
+[tab]pact with. It is highly inadvisable. I suggest
+[tab]you do not anger them.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Next, fear is represented as a blue field.
+[tab]When this emotion is at its height, the demon
+[tab]will become frightened and run away.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Finally, eagerness is represented as a yellow
+[tab]field. There is special significance in
+[tab]raising this emotion to its highest level.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]For it is then that you can obtain Tarot
+[tab]Cards, which are necessary in my summonings.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Summoning powerful Personas will require many
+[tab]Tarot Cards, so it’s best to contact demons
+[tab]frequently to collect them...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Remember that happiness, anger, and fear may
+[tab]increase alongside a demon’s eagerness.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]If happiness and eagerness reach critical levels
+[tab]at the same time, for instance, you will not be
+[tab]able to form a pact.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]And should anger or fear reach their peak at
+[tab]the same time as eagerness, another unusual
+[tab]result will occur.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]There are normally three stages of each
+[tab]emotion. My advice would be to try and focus
+[tab]on increasing a single emotion.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]That should cover the basics, I think. There
+[tab]will be times when demons will ask questions
+[tab]of you or open the battle by contacting you.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]But I’m sure you’ll figure all of this out
+[tab]for yourself during your struggles...
+[wait][clear]
+***************************************/
+    wait(ref_956);
+    b(label_913);
+  label_959:
+    ref_959 = msgShow(msg_117);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Well then, allow me to explain what I know of
+[tab]demon personalities.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]It’s as true of demons as it is of humans:
+there are many different kinds.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Wise demons, snappish demons, timid demons...
+[tab]Each has its own likes and dislikes.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]You must be mindful of these differences and
+[tab]make contact with the demons.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Their personalities can be divided into eight
+[tab]classifications: wise, foolish, joyful, timid,
+[tab]forceful, gloomy, snappish, and haughty...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Each demon has one or more of these qualities.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]The combination of these qualities will cause
+[tab]their reactions to vary wildly when making
+[tab]contact.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]There’s no knowing what a demon’s personality
+[tab]is like if you’ve never contacted it, but once
+[tab]you make contact, it will be apparent.
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]I recommend you try it out for yourself and
+[tab]see the phenomenon in action...
+[wait][clear]
+***************************************/
+    wait(ref_959);
+    b(label_913);
+  label_95c:
+    dialogFree(ref_8d7);
+    ref_95d = bustupFade(ref_8d5, rgb(0,0,0), 10);
+    bustupWait(ref_95d);
+    bustupFree(ref_8d5);
+  label_960:
+}
+
+function HA_SHOP_END_0()
+{
+    ref_961 = bustupLoad(bustup_e0);
+    bustupWait(ref_961);
+    ref_963 = bustupAlloc(ref_961, right, rgb(0,0,0));
+    bustupFade(ref_963, rgb(128,0,0), 30);
+    ref_965 = dialogAlloc();
+    ref_966 = msgShow(msg_118);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Well then, until you obtain cards anew,
+[tab]I bid you, adieu.[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_10, 1);
+    wait(ref_966);
+    shopOverlayInit();
+    dialogFree(ref_965);
+    ref_96b = bustupFade(ref_963, rgb(0,0,0), 10);
+    bustupWait(ref_96b);
+    bustupFree(ref_963);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_975);
+    unitRestoreFacing(shopkeeper);
+    controlEnable();
+    unitAnimationPlay(shopkeeper, animation_11, 1);
+    cameraControlDisable();
+    b(label_978);
+  label_975:
+    bne(var_0, 1, label_978);
+    call(EXITBOX);
+    b(label_978);
+  label_978:
+}
+
+function BERADONNA()
+{
+    controlDisable();
+    unitFacePlayer(npc1);
+    ref_97b = bustupLoad(bustup_e2);
+    bustupWait(ref_97b);
+    ref_97d = bustupAlloc(ref_97b, right, rgb(0,0,0));
+    bustupFade(ref_97d, rgb(128,0,0), 30);
+    ref_97f = dialogAlloc();
+    ref_980 = msgShow(msg_119);
+/***************************************
+[color(yellow)]Belladonna[color(white)]
+[tab]The Vortex of Light is♪...
+[tab]Trails which Master Philemon left♪...
+[tab]Touching it opens new paths♪...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_8, 1);
+    wait(ref_980);
+    dialogFree(ref_97f);
+    ref_984 = bustupFade(ref_97d, rgb(0,0,0), 10);
+    bustupWait(ref_984);
+    bustupFree(ref_97d);
+    unitRestoreFacing(npc1);
+    controlEnable();
+    cameraControlDisable();
+    unitAnimationPlay(npc1, animation_7, 1);
+}
+
+function NANASI()
+{
+    controlDisable();
+    ref_98d = bustupLoad(bustup_e1);
+    bustupWait(ref_98d);
+    ref_98f = bustupAlloc(ref_98d, right, rgb(0,0,0));
+    bustupFade(ref_98f, rgb(128,0,0), 30);
+    ref_991 = dialogAlloc();
+    ref_992 = msgShow(msg_120);
+/***************************************
+[color(yellow)]Nameless[color(white)]
+[tab]No one has yet to conquer this labyrinth.
+[tab]Will you be able to reach Master Philemon
+[tab]in the depths of this maze...?
+[wait][clear]
+***************************************/
+    wait(ref_992);
+    dialogFree(ref_991);
+    ref_995 = bustupFade(ref_98f, rgb(0,0,0), 10);
+    bustupWait(ref_995);
+    bustupFree(ref_98f);
+    controlEnable();
+    cameraControlDisable();
+    unitAnimationPlay(npc2, animation_0, 1);
+}
+
+function ESI()
+{
+    controlDisable();
+    ref_99d = shopOverlayInit();
+    unitFacePlayer(unit_76);
+    ref_99f = bustupLoad(bustup_e3);
+    bustupWait(ref_99f);
+    ref_9a1 = bustupAlloc(ref_99f, right, rgb(0,0,0));
+    bustupFade(ref_9a1, rgb(128,0,0), 30);
+    choiceSetResult(2);
+    op_105(3);
+    ref_9a5 = dialogAlloc();
+    bitGet(var_0, MBIT_BEL_ESI);
+    bne(var_0, 0, label_9ae);
+    ref_9a8 = msgShow(msg_121);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]I am the Demon Painter. I am the artist
+[tab]who draws the gods and demons that dwell
+[tab]within people. Nice to meet you.
+[sync][wait][clear]
+***************************************/
+    bitSet(MBIT_BEL_ESI);
+    sync();
+    wait(ref_9a8);
+    wait(ref_99d);
+    b(label_9b4);
+  label_9ae:
+    bne(var_0, 1, label_9b4);
+    ref_9af = msgShow(msg_122);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]Tarot cards are models of the heart.
+[tab]The heart controls a person’s fate.
+[tab]Do you want me to paint something?
+[choice(4)]Request card
+Talk
+Cancel
+Leave
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_9af);
+    wait(ref_99d);
+    b(label_9b4);
+  label_9b4:
+    dialogFree(ref_9a5);
+    ref_9b5 = bustupFade(ref_9a1, rgb(0,0,0), 10);
+    bustupWait(ref_9b5);
+    bustupFree(ref_9a1);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_9bd);
+    li(var_5, 0);
+    b(label_9c6);
+  label_9bd:
+    bne(var_0, 1, label_9c0);
+    li(var_5, 1);
+    b(label_9c6);
+  label_9c0:
+    bne(var_0, 2, label_9c3);
+    li(var_5, 2);
+    b(label_9c6);
+  label_9c3:
+    bne(var_0, 3, label_9c6);
+    li(var_5, 3);
+    b(label_9c6);
+  label_9c6:
+    shopInventory(3, shopInventory_1);
+    ref_9c7 = shopOpen(8);
+    wait(ref_9c7);
+}
+
+function HA_SHOP_RESTART_1()
+{
+    choiceSetResult(2);
+    op_105(3);
+    ref_9cc = bustupLoad(bustup_e3);
+    bustupWait(ref_9cc);
+    ref_9ce = bustupAlloc(ref_9cc, left, rgb(0,0,0));
+    bustupFade(ref_9ce, rgb(128,0,0), 30);
+    ref_9d0 = dialogAlloc();
+    ref_9d1 = msgShow(msg_123);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]Anything else?
+[choice(4)]Request card
+Talk
+Cancel
+Leave
+[end_choice][clear]
+***************************************/
+    wait(ref_9d1);
+    dialogFree(ref_9d0);
+    ref_9d4 = bustupFade(ref_9ce, rgb(0,0,0), 10);
+    bustupWait(ref_9d4);
+    bustupFree(ref_9ce);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_9dc);
+    li(var_5, 0);
+    b(label_9e5);
+  label_9dc:
+    bne(var_0, 1, label_9df);
+    li(var_5, 1);
+    b(label_9e5);
+  label_9df:
+    bne(var_0, 2, label_9e2);
+    li(var_5, 2);
+    b(label_9e5);
+  label_9e2:
+    bne(var_0, 3, label_9e5);
+    li(var_5, 3);
+    b(label_9e5);
+  label_9e5:
+}
+
+function HA_SHOP_TALK_1()
+{
+    ref_9e6 = bustupLoad(bustup_e3);
+    bustupWait(ref_9e6);
+    ref_9e8 = bustupAlloc(ref_9e6, right, rgb(0,0,0));
+    bustupFade(ref_9e8, rgb(128,0,0), 30);
+    ref_9ea = dialogAlloc();
+    choiceSetResult(2);
+    op_105(2);
+    ref_9ed = msgShow(msg_124);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]Okay. What should we talk about?
+[choice(3)]Make small talk
+Ask about card creation
+[if_all(EBIT_SINARIOFF)]Hidden items
+[end_choice][clear]
+***************************************/
+    wait(ref_9ed);
+    dialogFree(ref_9ea);
+    ref_9f0 = bustupFade(ref_9e8, rgb(0,0,0), 10);
+    bustupWait(ref_9f0);
+    bustupFree(ref_9e8);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_9f6);
+    b(label_9fd);
+  label_9f6:
+    bne(var_0, 1, label_9f9);
+    b(label_a0a);
+    b(label_9fd);
+  label_9f9:
+    bne(var_0, 2, label_9fd);
+    li(var_5, 1000);
+    b(label_a49);
+    b(label_9fd);
+  label_9fd:
+    ref_9fd = bustupLoad(bustup_e3);
+    bustupWait(ref_9fd);
+    ref_9ff = bustupAlloc(ref_9fd, right, rgb(0,0,0));
+    bustupFade(ref_9ff, rgb(128,0,0), 30);
+    ref_a01 = dialogAlloc();
+    ref_a02 = msgShow(msg_125);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]It seems that Master Philemon
+[tab]is really taking a liking to you.
+[tab]Good luck.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_a02);
+    dialogFree(ref_a01);
+    ref_a06 = bustupFade(ref_9ff, rgb(0,0,0), 10);
+    bustupWait(ref_a06);
+    bustupFree(ref_9ff);
+    b(label_a49);
+  label_a0a:
+    choiceSetResult(3);
+    op_105(7);
+    ref_a0c = bustupLoad(bustup_e3);
+    bustupWait(ref_a0c);
+    ref_a0e = bustupAlloc(ref_a0c, left, rgb(0,0,0));
+    bustupFade(ref_a0e, rgb(128,0,0), 30);
+    ref_a10 = dialogAlloc();
+    ref_a11 = msgShow(msg_126);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]What did you want to ask about?
+[choice(3)]Free Tarot
+How to obtain them
+How to use them
+[end_choice][clear]
+***************************************/
+    wait(ref_a11);
+    dialogFree(ref_a10);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    unitWait(unit_76);
+    ref_a16 = bustupFade(ref_a0e, rgb(0,0,0), 10);
+    bustupWait(ref_a16);
+    bustupFree(ref_a0e);
+    choiceGetResult(var_3);
+    bne(var_3, 0, label_a29);
+    ref_a1b = bustupLoad(bustup_e3);
+    bustupWait(ref_a1b);
+    ref_a1d = bustupAlloc(ref_a1b, right, rgb(0,0,0));
+    bustupFade(ref_a1d, rgb(128,0,0), 30);
+    ref_a1f = dialogAlloc();
+    ref_a20 = msgShow(msg_127);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]Free Tarot Cards are special cards with nothing
+[tab]drawn on them.
+[wait][clear][color(yellow)]Demon Painter[color(white)]
+[tab]They’re mysterious cards that can be turned
+[tab]into any type of Tarot Card.
+[wait][clear][color(yellow)]Demon Painter[color(white)]
+[tab]I can draw on Free Tarot Cards and turn
+[tab]them into something usable.
+[wait][clear][color(yellow)]Demon Painter[color(white)]
+[tab]If you find any Free Tarot Cards, bring them
+[tab]to me.
+[wait][clear]
+***************************************/
+    wait(ref_a20);
+    dialogFree(ref_a1f);
+    unitAnimationPlay(unit_76, animation_9, 1);
+    ref_a24 = bustupFade(ref_a1d, rgb(0,0,0), 10);
+    bustupWait(ref_a24);
+    bustupFree(ref_a1d);
+    b(label_a0a);
+    b(label_a49);
+  label_a29:
+    bne(var_3, 1, label_a38);
+    ref_a2a = bustupLoad(bustup_e3);
+    bustupWait(ref_a2a);
+    ref_a2c = bustupAlloc(ref_a2a, right, rgb(0,0,0));
+    bustupFade(ref_a2c, rgb(128,0,0), 30);
+    ref_a2e = dialogAlloc();
+    ref_a2f = msgShow(msg_128);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]Every demon, no matter what type, might have
+[tab]some Free Tarot Cards.
+[wait][clear][color(yellow)]Demon Painter[color(white)]
+[tab]But you can’t get them through standard
+[tab]negotiations. Free Tarot Cards are valuable 
+[tab]to demons too, after all.
+[wait][clear][color(yellow)]Demon Painter[color(white)]
+[tab]No, to get Free Tarot Cards from demons, you
+[tab]have to win their trust. Humans and demons are
+[tab]alike in that respect.
+[wait][clear]
+***************************************/
+    wait(ref_a2f);
+    dialogFree(ref_a2e);
+    unitAnimationPlay(unit_76, animation_9, 1);
+    ref_a33 = bustupFade(ref_a2c, rgb(0,0,0), 10);
+    bustupWait(ref_a33);
+    bustupFree(ref_a2c);
+    b(label_a0a);
+    b(label_a49);
+  label_a38:
+    bne(var_3, 2, label_a47);
+    ref_a39 = bustupLoad(bustup_e3);
+    bustupWait(ref_a39);
+    ref_a3b = bustupAlloc(ref_a39, right, rgb(0,0,0));
+    bustupFade(ref_a3b, rgb(128,0,0), 30);
+    ref_a3d = dialogAlloc();
+    ref_a3e = msgShow(msg_129);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]In order to summon Personas, you just have to
+[tab]collect Tarot Cards from demons of the same
+[tab]Arcana...
+[wait][clear][color(yellow)]Demon Painter[color(white)]
+[tab]The tricky thing is that there are some Arcana
+[tab]of Persona that don’t have corresponding demons.
+[wait][clear][color(yellow)]Demon Painter[color(white)]
+[tab]So what do you do when you want to summon a 
+[tab]Persona of that Arcana? Simple. That’s where
+[tab]Free Tarot Cards come in.
+[wait][clear][color(yellow)]Demon Painter[color(white)]
+[tab]You can use them to supplement the cards you need
+[tab]for regular summonings, but you should be certain
+[tab]before you use them that way.
+[wait][clear]
+***************************************/
+    wait(ref_a3e);
+    dialogFree(ref_a3d);
+    unitAnimationPlay(unit_76, animation_9, 1);
+    ref_a42 = bustupFade(ref_a3b, rgb(0,0,0), 10);
+    bustupWait(ref_a42);
+    bustupFree(ref_a3b);
+    b(label_a0a);
+    b(label_a49);
+  label_a47:
+    bne(var_3, 3, label_a49);
+    b(label_a49);
+  label_a49:
+}
+
+function HA_SHOP_END_1()
+{
+    ref_a4a = bustupLoad(bustup_e3);
+    bustupWait(ref_a4a);
+    ref_a4c = bustupAlloc(ref_a4a, right, rgb(0,0,0));
+    bustupFade(ref_a4c, rgb(128,0,0), 30);
+    ref_a4e = dialogAlloc();
+    ref_a4f = msgShow(msg_130);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]I will always be here.
+[tab]Come back whenever you feel like it.
+[tab]Here, time does not mean anything.[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_a4f);
+    shopOverlayInit();
+    dialogFree(ref_a4e);
+    ref_a54 = bustupFade(ref_a4c, rgb(0,0,0), 10);
+    bustupWait(ref_a54);
+    bustupFree(ref_a4c);
+    shopInventory(3, shopInventory_0);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_a5f);
+    unitRestoreFacing(unit_76);
+    controlEnable();
+    unitAnimationPlay(unit_76, animation_b, 1);
+    cameraControlDisable();
+    b(label_a62);
+  label_a5f:
+    bne(var_0, 1, label_a62);
+    call(EXITBOX);
+    b(label_a62);
+  label_a62:
+}
+
+function DOORBOX()
+{
+    controlDisable();
+    objAnimRotate(obj_0, 0, -70, 0, 30, 0);
+    sndMusicPlay(sound_3006, 127);
+    objAnimWait(obj_0);
+    call(EXITBOX);
+}
+
+function EXITBOX()
+{
+    bitClear(MBIT_EXITBIT);
+    unknownVar1(var_0);
+    bne(var_0, 6144, label_a70);
+    dngRoomSet(293);
+    dngRoomDraw();
+    dngLoad2(ex_sevens1-0);
+    b(label_a83);
+  label_a70:
+    bne(var_0, 6161, label_a75);
+    dngRoomSet(294);
+    dngRoomDraw();
+    dngLoad2(ex_sevens1-17);
+    b(label_a83);
+  label_a75:
+    bne(var_0, 6152, label_a7a);
+    dngRoomSet(294);
+    dngRoomDraw();
+    dngLoad2(ex_sevens1-7);
+    b(label_a83);
+  label_a7a:
+    bne(var_0, 7425, label_a7f);
+    dngRoomSet(294);
+    dngRoomDraw();
+    dngLoad2(ex_sevens1-7);
+    b(label_a83);
+  label_a7f:
+    dngRoomSet(293);
+    dngRoomDraw();
+    dngLoad2(ex_sevens1-0);
+    b(label_a83);
+  label_a83:
+}
+
+function warp1()
+{
+    call(DOORBOX);
+}
+
+function HA_SHOP_EXPLAIN_0()
+{
+}
+
+function HA_SHOP_EXPLAIN_1()
+{
+}
+
+function HIDARI()
+{
+    call(NANASI);
+    unitAnimationPlay(npc2, animation_3, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc2, animation_4, 1);
+}
+
+function MIGI()
+{
+    call(NANASI);
+    unitAnimationPlay(npc2, animation_1, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc2, animation_2, 1);
+}
+
+function DECIDE_PAINT()
+{
+    ref_a94 = bustupLoad(bustup_e3);
+    bustupWait(ref_a94);
+    ref_a96 = bustupAlloc(ref_a94, left, rgb(0,0,0));
+    bustupFade(ref_a96, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    op_105(1);
+    ref_a9a = dialogAlloc();
+    ref_a9b = msgShow(msg_131);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]Is this what you want?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_a9b);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_aa2);
+    li(var_7, 1);
+    b(label_aa5);
+  label_aa2:
+    bne(var_0, 1, label_aa5);
+    li(var_7, 0);
+    b(label_aa5);
+  label_aa5:
+    dialogFree(ref_a9a);
+    ref_aa6 = bustupFade(ref_a96, rgb(0,0,0), 10);
+    bustupWait(ref_aa6);
+    bustupFree(ref_a96);
+}
+
+function DECIDE_PERSONA()
+{
+    ref_aaa = bustupLoad(bustup_e0);
+    bustupWait(ref_aaa);
+    ref_aac = bustupAlloc(ref_aaa, left, rgb(0,0,0));
+    bustupFade(ref_aac, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    op_105(1);
+    ref_ab0 = dialogAlloc();
+    ref_ab1 = msgShow(msg_132);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Will this Persona suffice?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_ab1);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_ab9);
+    li(var_7, 1);
+    unitAnimationPlay(shopkeeper, animation_e, 1);
+    b(label_abc);
+  label_ab9:
+    bne(var_0, 1, label_abc);
+    li(var_7, 0);
+    b(label_abc);
+  label_abc:
+    dialogFree(ref_ab0);
+    ref_abd = bustupFade(ref_aac, rgb(0,0,0), 10);
+    bustupWait(ref_abd);
+    bustupFree(ref_aac);
+}
+
+function DECIDE_PERSONA_NG()
+{
+    ref_ac1 = bustupLoad(bustup_e0);
+    bustupWait(ref_ac1);
+    ref_ac3 = bustupAlloc(ref_ac1, left, rgb(0,0,0));
+    bustupFade(ref_ac3, rgb(128,0,0), 30);
+    ref_ac5 = dialogAlloc();
+    ref_ac6 = msgShow(msg_133);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]You can’t mutate this Persona.
+[wait][clear]
+***************************************/
+    wait(ref_ac6);
+    dialogFree(ref_ac5);
+    ref_ac9 = bustupFade(ref_ac3, rgb(0,0,0), 10);
+    bustupWait(ref_ac9);
+    bustupFree(ref_ac3);
+    li(var_7, 0);
+}
+
+function DECIDE_PERSONA_FAIL()
+{
+    ref_ace = bustupLoad(bustup_e0);
+    bustupWait(ref_ace);
+    ref_ad0 = bustupAlloc(ref_ace, left, rgb(0,0,0));
+    bustupFade(ref_ad0, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    op_105(1);
+    ref_ad4 = dialogAlloc();
+    ref_ad5 = msgShow(msg_134);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Will this Persona suffice?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_ad5);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_ade);
+    ref_ada = msgShow(msg_135);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]You already have that Persona.
+[wait][clear]
+***************************************/
+    wait(ref_ada);
+    li(var_7, 0);
+    b(label_ae1);
+  label_ade:
+    bne(var_0, 1, label_ae1);
+    li(var_7, 0);
+    b(label_ae1);
+  label_ae1:
+    dialogFree(ref_ad4);
+    ref_ae2 = bustupFade(ref_ad0, rgb(0,0,0), 10);
+    bustupWait(ref_ae2);
+    bustupFree(ref_ad0);
+}
+
+function DECIDE_DELETE()
+{
+    ref_ae6 = bustupLoad(bustup_e0);
+    bustupWait(ref_ae6);
+    ref_ae8 = bustupAlloc(ref_ae6, left, rgb(0,0,0));
+    bustupFade(ref_ae8, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    op_105(1);
+    ref_aec = dialogAlloc();
+    ref_aed = msgShow(msg_136);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Are you sure you want to let go of this Persona?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_aed);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_af4);
+    li(var_7, 1);
+    b(label_af7);
+  label_af4:
+    bne(var_0, 1, label_af7);
+    li(var_7, 0);
+    b(label_af7);
+  label_af7:
+    dialogFree(ref_aec);
+    ref_af8 = bustupFade(ref_ae8, rgb(0,0,0), 10);
+    bustupWait(ref_af8);
+    bustupFree(ref_ae8);
+}
+
+function DEL_MES()
+{
+    ref_afc = bustupLoad(bustup_e0);
+    bustupWait(ref_afc);
+    ref_afe = bustupAlloc(ref_afc, left, rgb(0,0,0));
+    bustupFade(ref_afe, rgb(128,0,0), 30);
+    ref_b00 = dialogAlloc();
+    ref_b01 = msgShow(msg_137);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]So, it is time to release [color(pink)][var(msg_var_0)][color(white)], 
+[tab]an old part of the soul that had
+[tab]been awakened...
+[wait][clear][color(yellow)]Igor[color(white)]
+[tab]Then I shall change this aspect who fought
+[tab]alongside you into a [color(green)][var(msg_var_1)][color(white)] and
+[tab]return it to you...
+[wait][clear]
+***************************************/
+    wait(ref_b01);
+    dialogFree(ref_b00);
+    ref_b04 = bustupFade(ref_afe, rgb(0,0,0), 10);
+    bustupWait(ref_b04);
+    bustupFree(ref_afe);
+}
+
+function GET_MES()
+{
+    ref_b08 = msgShow(msg_138);
+/***************************************
+[color(green)]Maya obtained [var(msg_var_1)][var(msg_var_2)]
+[wait][clear]
+***************************************/
+    wait(ref_b08);
+}
+
+function SMN_NG_LV()
+{
+    ref_b0b = bustupLoad(bustup_e0);
+    bustupWait(ref_b0b);
+    ref_b0d = bustupAlloc(ref_b0b, right, rgb(0,0,0));
+    bustupFade(ref_b0d, rgb(128,0,0), 30);
+    ref_b0f = dialogAlloc();
+    ref_b10 = msgShow(msg_139);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]It seems your team’s level is insufficient
+[tab]to summon this Persona...
+[wait][clear]
+***************************************/
+    wait(ref_b10);
+    dialogFree(ref_b0f);
+    ref_b13 = bustupFade(ref_b0d, rgb(0,0,0), 10);
+    bustupWait(ref_b13);
+    bustupFree(ref_b0d);
+}
+
+function SMN_NG_PST()
+{
+    ref_b17 = bustupLoad(bustup_e0);
+    bustupWait(ref_b17);
+    ref_b19 = bustupAlloc(ref_b17, right, rgb(0,0,0));
+    bustupFade(ref_b19, rgb(128,0,0), 30);
+    ref_b1b = dialogAlloc();
+    ref_b1c = msgShow(msg_140);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]You already have that Persona.
+[wait][clear]
+***************************************/
+    wait(ref_b1c);
+    dialogFree(ref_b1b);
+    ref_b1f = bustupFade(ref_b19, rgb(0,0,0), 10);
+    bustupWait(ref_b1f);
+    bustupFree(ref_b19);
+}
+
+function SMN_NG_VST()
+{
+    ref_b23 = bustupLoad(bustup_e0);
+    bustupWait(ref_b23);
+    ref_b25 = bustupAlloc(ref_b23, right, rgb(0,0,0));
+    bustupFade(ref_b25, rgb(128,0,0), 30);
+    ref_b27 = dialogAlloc();
+    ref_b28 = msgShow(msg_141);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]I am already keeping that Persona for you.
+[wait][clear]
+***************************************/
+    wait(ref_b28);
+    dialogFree(ref_b27);
+    ref_b2b = bustupFade(ref_b25, rgb(0,0,0), 10);
+    bustupWait(ref_b2b);
+    bustupFree(ref_b25);
+}
+
+function SMN_NG_FULL()
+{
+    ref_b2f = bustupLoad(bustup_e0);
+    bustupWait(ref_b2f);
+    ref_b31 = bustupAlloc(ref_b2f, right, rgb(0,0,0));
+    bustupFade(ref_b31, rgb(128,0,0), 30);
+    ref_b33 = dialogAlloc();
+    ref_b34 = msgShow(msg_142);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]I cannot hold on to any more Personas for you.
+[wait][clear]
+***************************************/
+    wait(ref_b34);
+    dialogFree(ref_b33);
+    ref_b37 = bustupFade(ref_b31, rgb(0,0,0), 10);
+    bustupWait(ref_b37);
+    bustupFree(ref_b31);
+}
+
+function SMN_NG_TAROT()
+{
+    ref_b3b = bustupLoad(bustup_e0);
+    bustupWait(ref_b3b);
+    ref_b3d = bustupAlloc(ref_b3b, right, rgb(0,0,0));
+    bustupFade(ref_b3d, rgb(128,0,0), 30);
+    ref_b3f = dialogAlloc();
+    ref_b40 = msgShow(msg_143);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]It seems you do not have the requisite
+[tab]Tarot Cards to summon this Persona.
+[wait][clear]
+***************************************/
+    wait(ref_b40);
+    dialogFree(ref_b3f);
+    ref_b43 = bustupFade(ref_b3d, rgb(0,0,0), 10);
+    bustupWait(ref_b43);
+    bustupFree(ref_b3d);
+}
+
+function SMN_NG_MTRL()
+{
+    ref_b47 = bustupLoad(bustup_e0);
+    bustupWait(ref_b47);
+    ref_b49 = bustupAlloc(ref_b47, right, rgb(0,0,0));
+    bustupFade(ref_b49, rgb(128,0,0), 30);
+    ref_b4b = dialogAlloc();
+    ref_b4c = msgShow(msg_144);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]It seems you do not have the requisite
+[tab]Material Card to summon this Persona.
+[wait][clear]
+***************************************/
+    wait(ref_b4c);
+    dialogFree(ref_b4b);
+    ref_b4f = bustupFade(ref_b49, rgb(0,0,0), 10);
+    bustupWait(ref_b4f);
+    bustupFree(ref_b49);
+}
+
+function SMN_NG_RIDATU()
+{
+    ref_b53 = bustupLoad(bustup_e0);
+    bustupWait(ref_b53);
+    ref_b55 = bustupAlloc(ref_b53, right, rgb(0,0,0));
+    bustupFade(ref_b55, rgb(128,0,0), 30);
+    ref_b57 = dialogAlloc();
+    ref_b58 = msgShow(msg_145);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]A character that has left your
+[tab]party already has that persona.
+[wait][clear]
+***************************************/
+    wait(ref_b58);
+    dialogFree(ref_b57);
+    ref_b5b = bustupFade(ref_b55, rgb(0,0,0), 10);
+    bustupWait(ref_b5b);
+    bustupFree(ref_b55);
+}

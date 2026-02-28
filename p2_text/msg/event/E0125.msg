@@ -1,0 +1,13 @@
+
+msg_0:
+[color(yellow)]フィレモン[color(white)]
+[tab][suou]…[tatsuya]よ…
+[tab]彼女を救えぬまま…そこで果てるのかね…？
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]フィレモン[color(white)]
+[tab]彼の者に刻まれた翌印を…
+[tab]打ち砕くのは君自身に他ならない…
+[tab]さあ…今一度…刻まれた時から歩き出したまえ…
+[wait][clear][end]

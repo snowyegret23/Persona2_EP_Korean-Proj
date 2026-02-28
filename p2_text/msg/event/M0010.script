@@ -1,0 +1,1853 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    sndMusicPlay(sound_304c, 127);
+    envTriggerSet(DOORBOX, 131, 1, line, coll_1f);
+    bitGet(var_0, MBIT_TOMI_HATURAITEN);
+    bne(var_0, 0, label_8);
+    cameraSet(southeast, 400, 0, -1140);
+    b(label_b);
+  label_8:
+    bne(var_0, 1, label_b);
+    cameraSet(southeast, 505, 0, -790);
+    b(label_b);
+  label_b:
+    li(var_0, 0);
+    li(var_1, 0);
+    partyMemberCheck(var_0, ulala);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, katsuya);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, baofu);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, nanjo);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, elly);
+    add(var_1, var_1, var_0);
+    boutrange(var_1, 0, 4, label_1a);
+    li(var_0, 0);
+    b(label_1f);
+  label_1a:
+    ref_1a = dialogAlloc();
+    ref_1b = msgShow(msg_0);
+/***************************************
+パーティの人数が四人を超えています。
+このままじゃハングします。
+金田・片岡に連絡してください。
+[wait][clear]
+***************************************/
+    wait(ref_1b);
+    dialogFree(ref_1a);
+    b(label_1f);
+  label_1f:
+    bitGet(var_0, EBIT_E0046);
+    bez(var_0, label_2d);
+    partyMemberCheck(var_0, nanjo);
+    bez(var_0, label_27);
+    ref_23 = spriteLoad(sprite_1f);
+    wait(ref_23);
+    unitSpawn(nanjo, sprite_1f, 50, 0, -250, north, none);
+    unitTriggerSet(nanjo, B_NANJ, 255, 1);
+  label_27:
+    partyMemberCheck(var_0, elly);
+    bez(var_0, label_2d);
+    ref_29 = spriteLoad(sprite_23);
+    wait(ref_29);
+    unitSpawn(elly, sprite_23, 50, 0, -400, east, none);
+    unitTriggerSet(elly, B_ERI, 255, 1);
+  label_2d:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_35);
+    bitGet(var_0, EBIT_E0038);
+    bez(var_0, label_35);
+    ref_31 = spriteLoad(sprite_6a);
+    wait(ref_31);
+    unitSpawn(makimura, sprite_6a, 630, 0, -1080, south, none);
+    unitTriggerSet(makimura, SAGIBOX, 255, 1);
+  label_35:
+    partyMemberCheck(var_0, ulala);
+    bez(var_0, label_3b);
+    ref_37 = spriteLoad(sprite_6);
+    wait(ref_37);
+    unitSpawn(ulala, sprite_6, 950, 0, -490, north, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+  label_3b:
+    partyMemberCheck(var_0, katsuya);
+    bez(var_0, label_41);
+    ref_3d = spriteLoad(sprite_d);
+    wait(ref_3d);
+    unitSpawn(katsuya, sprite_d, 245, 0, -1140, south, none);
+    unitTriggerSet(katsuya, B_KATUYYY, 255, 1);
+  label_41:
+    partyMemberCheck(var_0, baofu);
+    bez(var_0, label_47);
+    ref_43 = spriteLoad(sprite_13);
+    wait(ref_43);
+    unitSpawn(baofu, sprite_13, 860, 0, -950, east, none);
+    unitTriggerSet(baofu, B_PAO, 255, 1);
+  label_47:
+    ref_47 = spriteLoad(sprite_92);
+    wait(ref_47);
+    unitSpawn(shopkeeper, sprite_92, 505, 0, -710, north, none);
+    unitTriggerSet(shopkeeper, SHOP, 255, 1);
+    ref_4b = spriteLoad(sprite_c6);
+    wait(ref_4b);
+    unitSpawn(npc1, sprite_c6, 60, 0, -937, west, none);
+    unitTriggerSet(npc1, OJII, 255, 1);
+    unitShadowRadius(npc1, 0);
+    unitSpawn(npc2, sprite_c6, 817, 0, -291, west, none);
+    unitPalette(npc2, 2);
+    unitTriggerSet(npc2, TIHOUOJII, 255, 1);
+    ref_53 = spriteLoad(sprite_0);
+    wait(ref_53);
+    ref_55 = spriteLoad(sprite_2);
+    wait(ref_55);
+    playerInit(south);
+    controlDisable();
+    unitIdleOnAll();
+    unitIdleOff(npc1);
+    unitRevolveAnimationPlay(npc1, animrevolve_8);
+    unitFace8(npc1, west);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_89);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_79);
+    unitFacePlayer(ulala);
+    ref_6a = bustupLoad(bustup_1d);
+    bustupWait(ref_6a);
+    ref_6c = bustupAlloc(ref_6a, left, rgb(0,0,0));
+    bustupFade(ref_6c, rgb(128,0,0), 30);
+    ref_6e = dialogAlloc();
+    ref_6f = msgShow(msg_1);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]マーヤは肩こりとかヘーキ？
+[tab]私ってホラ、すっごい巨乳でしょ？
+[tab]だから肩こりがひどくて…[delay(15)]はぁ～
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_6f);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_6e);
+    ref_74 = bustupFade(ref_6c, rgb(0,0,0), 10);
+    bustupWait(ref_74);
+    bustupFree(ref_6c);
+    unitRestoreFacing(ulala);
+    b(label_a1);
+  label_79:
+    unitFacePlayer(ulala);
+    ref_7a = bustupLoad(bustup_17);
+    bustupWait(ref_7a);
+    ref_7c = bustupAlloc(ref_7a, left, rgb(0,0,0));
+    bustupFade(ref_7c, rgb(128,0,0), 30);
+    ref_7e = dialogAlloc();
+    ref_7f = msgShow(msg_2);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]エリーちゃんってモデルやってんのよねぇ。
+[tab]なんかいいなぁ、カッコイイよね？
+[tab]おもしろそうな仕事だけど、やっぱ大変かな？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1a, 1);
+    wait(ref_7f);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_7e);
+    ref_84 = bustupFade(ref_7c, rgb(0,0,0), 10);
+    bustupWait(ref_84);
+    bustupFree(ref_7c);
+    unitRestoreFacing(ulala);
+    b(label_a1);
+  label_89:
+    unitFacePlayer(ulala);
+    ref_8a = bustupLoad(bustup_1e);
+    bustupWait(ref_8a);
+    ref_8c = bustupAlloc(ref_8a, left, rgb(0,0,0));
+    bustupFade(ref_8c, rgb(128,0,0), 30);
+    ref_8e = dialogAlloc();
+    bitGet(var_0, MBIT_HI_NANJOTOUJO);
+    bne(var_0, 0, label_95);
+    ref_91 = msgShow(msg_3);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]南条君の部屋が襲われるなんて…
+[tab]やっと敵の尻尾をつかんだってのに、
+[tab]なーんかイヤな状況だよね。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_91);
+    b(label_9a);
+  label_95:
+    bne(var_0, 1, label_9a);
+    ref_96 = msgShow(msg_4);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]南条君、可哀相だよね。
+[tab]あれ、帝王学っていうのかな？
+[tab]将来の為とはいえ、何もあんな時までねぇ？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_96);
+    b(label_9a);
+  label_9a:
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_8e);
+    ref_9c = bustupFade(ref_8c, rgb(0,0,0), 10);
+    bustupWait(ref_9c);
+    bustupFree(ref_8c);
+    unitRestoreFacing(ulala);
+    b(label_a1);
+  label_a1:
+    controlEnable();
+}
+
+function B_KATUYYY()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_ef);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_df);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_cf);
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_bc);
+    unitFacePlayer(katsuya);
+    ref_ad = bustupLoad(bustup_22);
+    bustupWait(ref_ad);
+    ref_af = bustupAlloc(ref_ad, left, rgb(0,0,0));
+    bustupFade(ref_af, rgb(128,0,0), 30);
+    ref_b1 = dialogAlloc();
+    ref_b2 = msgShow(msg_5);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]こういう所もいいが、僕はやっぱり温泉がいいな。
+[tab]体の疲れだけではなく、心も落ち着くからね。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_b2);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_b1);
+    ref_b7 = bustupFade(ref_af, rgb(0,0,0), 10);
+    bustupWait(ref_b7);
+    bustupFree(ref_af);
+    unitRestoreFacing(katsuya);
+    b(label_ff);
+  label_bc:
+    unitFaceUnit(katsuya, makimura);
+    ref_bd = bustupLoad(bustup_21);
+    bustupWait(ref_bd);
+    ref_bf = bustupAlloc(ref_bd, left, rgb(0,0,0));
+    bustupFade(ref_bf, rgb(128,0,0), 30);
+    ref_c1 = dialogAlloc();
+    ref_c2 = msgShow(msg_6);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]牧村君…
+[tab]僕には君を保護する義務と責任がある。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_c2);
+    ref_c5 = msgShow(msg_7);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]事件を未然に防ぐ為、真面目にやっている。
+[tab]君に不満を言われる覚えは無いよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_c5);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_c1);
+    ref_ca = bustupFade(ref_bf, rgb(0,0,0), 10);
+    bustupWait(ref_ca);
+    bustupFree(ref_bf);
+    unitRestoreFacing(katsuya);
+    b(label_ff);
+  label_cf:
+    unitFacePlayer(katsuya);
+    ref_d0 = bustupLoad(bustup_22);
+    bustupWait(ref_d0);
+    ref_d2 = bustupAlloc(ref_d0, left, rgb(0,0,0));
+    bustupFade(ref_d2, rgb(128,0,0), 30);
+    ref_d4 = dialogAlloc();
+    ref_d5 = msgShow(msg_8);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]ハッハッハ。いくら肉体を酷使する職業とはいえ、
+[tab]僕はまだ２５歳だよ？[tab]ガタが来るには早過ぎる。
+[tab]…そう言えば、父は腰痛に悩まされていたっけ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_30, 1);
+    wait(ref_d5);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_d4);
+    ref_da = bustupFade(ref_d2, rgb(0,0,0), 10);
+    bustupWait(ref_da);
+    bustupFree(ref_d2);
+    unitRestoreFacing(katsuya);
+    b(label_ff);
+  label_df:
+    unitFacePlayer(katsuya);
+    ref_e0 = bustupLoad(bustup_21);
+    bustupWait(ref_e0);
+    ref_e2 = bustupAlloc(ref_e0, left, rgb(0,0,0));
+    bustupFade(ref_e2, rgb(128,0,0), 30);
+    ref_e4 = dialogAlloc();
+    ref_e5 = msgShow(msg_9);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]やっぱり女性は華やかな仕事に憧れるんだね？
+[tab]まぁ確かに、どうせ仕事で苦労するなら、
+[tab]華やかな方がいいか…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_e5);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_e4);
+    ref_ea = bustupFade(ref_e2, rgb(0,0,0), 10);
+    bustupWait(ref_ea);
+    bustupFree(ref_e2);
+    unitRestoreFacing(katsuya);
+    b(label_ff);
+  label_ef:
+    unitFacePlayer(katsuya);
+    ref_f0 = bustupLoad(bustup_27);
+    bustupWait(ref_f0);
+    ref_f2 = bustupAlloc(ref_f0, left, rgb(0,0,0));
+    bustupFade(ref_f2, rgb(128,0,0), 30);
+    ref_f4 = dialogAlloc();
+    ref_f5 = msgShow(msg_10);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab][tatsuya]…どうして…
+[tab]どうして僕に何も教えてくれないんだ！？
+[tab]……お前は一体…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1f, 1);
+    wait(ref_f5);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_f4);
+    ref_fa = bustupFade(ref_f2, rgb(0,0,0), 10);
+    bustupWait(ref_fa);
+    bustupFree(ref_f2);
+    unitRestoreFacing(katsuya);
+    b(label_ff);
+  label_ff:
+    controlEnable();
+}
+
+function B_PAO()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_15c);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_14c);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_13c);
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_12c);
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_11c);
+    unitFacePlayer(baofu);
+    ref_10d = bustupLoad(bustup_31);
+    bustupWait(ref_10d);
+    ref_10f = bustupAlloc(ref_10d, left, rgb(0,0,0));
+    bustupFade(ref_10f, rgb(128,0,0), 30);
+    ref_111 = dialogAlloc();
+    ref_112 = msgShow(msg_11);
+/***************************************
+[color(yellow)]かたおか[color(white)]
+[tab]出ないハズなので削除
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_30, 1);
+    wait(ref_112);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_111);
+    ref_117 = bustupFade(ref_10f, rgb(0,0,0), 10);
+    bustupWait(ref_117);
+    bustupFree(ref_10f);
+    unitRestoreFacing(baofu);
+    b(label_16b);
+  label_11c:
+    unitFacePlayer(baofu);
+    ref_11d = bustupLoad(bustup_2d);
+    bustupWait(ref_11d);
+    ref_11f = bustupAlloc(ref_11d, left, rgb(0,0,0));
+    bustupFade(ref_11f, rgb(128,0,0), 30);
+    ref_121 = dialogAlloc();
+    ref_122 = msgShow(msg_12);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]カイロプラクティックかぁ～俺には必要ねぇな。
+[tab]なぜなら、俺は最高の薬を知ってるからなぁ。
+[tab]なんたって百薬の長！[tab]恋の悩みにも効くぜ？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_122);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_121);
+    ref_127 = bustupFade(ref_11f, rgb(0,0,0), 10);
+    bustupWait(ref_127);
+    bustupFree(ref_11f);
+    unitRestoreFacing(baofu);
+    b(label_16b);
+  label_12c:
+    unitFaceUnit(baofu, makimura);
+    ref_12d = bustupLoad(bustup_2e);
+    bustupWait(ref_12d);
+    ref_12f = bustupAlloc(ref_12d, left, rgb(0,0,0));
+    bustupFade(ref_12f, rgb(128,0,0), 30);
+    ref_131 = dialogAlloc();
+    ref_132 = msgShow(msg_13);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]犯罪者を保護だぁ？[tab]勘違いも程々にしろ！
+[tab]お前がどうなろうと関係ねぇ。ただなぁ、
+[tab]あいつを殺人犯にしちまうと色々厄介なんだよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2f, 1);
+    wait(ref_132);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_131);
+    ref_137 = bustupFade(ref_12f, rgb(0,0,0), 10);
+    bustupWait(ref_137);
+    bustupFree(ref_12f);
+    unitRestoreFacing(baofu);
+    b(label_16b);
+  label_13c:
+    unitFacePlayer(baofu);
+    ref_13d = bustupLoad(bustup_2d);
+    bustupWait(ref_13d);
+    ref_13f = bustupAlloc(ref_13d, left, rgb(0,0,0));
+    bustupFade(ref_13f, rgb(128,0,0), 30);
+    ref_141 = dialogAlloc();
+    ref_142 = msgShow(msg_14);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]芹沢のヤツはほっといて…
+[tab]天野は体の冷えとかって平気か？
+[tab]…昔、冷え性で苦しんでるヤツがいてなぁ…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_142);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_141);
+    ref_147 = bustupFade(ref_13f, rgb(0,0,0), 10);
+    bustupWait(ref_147);
+    bustupFree(ref_13f);
+    unitRestoreFacing(baofu);
+    b(label_16b);
+  label_14c:
+    unitFacePlayer(baofu);
+    ref_14d = bustupLoad(bustup_31);
+    bustupWait(ref_14d);
+    ref_14f = bustupAlloc(ref_14d, left, rgb(0,0,0));
+    bustupFade(ref_14f, rgb(128,0,0), 30);
+    ref_151 = dialogAlloc();
+    ref_152 = msgShow(msg_15);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]大変じゃない仕事なんてどこにもねぇぞ。
+[tab]みんな、それぞれ苦労してるに決まってんだろ？
+[tab]楽して稼いでるのはなぁ、悪党だけなんだよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_152);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_151);
+    ref_157 = bustupFade(ref_14f, rgb(0,0,0), 10);
+    bustupWait(ref_157);
+    bustupFree(ref_14f);
+    unitRestoreFacing(baofu);
+    b(label_16b);
+  label_15c:
+    unitFacePlayer(baofu);
+    ref_15d = bustupLoad(bustup_2d);
+    bustupWait(ref_15d);
+    ref_15f = bustupAlloc(ref_15d, left, rgb(0,0,0));
+    bustupFade(ref_15f, rgb(128,0,0), 30);
+    ref_161 = dialogAlloc();
+    ref_162 = msgShow(msg_16);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]どうも新世塾の連中に
+[tab]振り回されてる気がするなぁ。
+[tab]…ここは、慎重に物事を運ぶべきだな。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    wait(ref_162);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_161);
+    ref_167 = bustupFade(ref_15f, rgb(0,0,0), 10);
+    bustupWait(ref_167);
+    bustupFree(ref_15f);
+    unitRestoreFacing(baofu);
+  label_16b:
+    controlEnable();
+}
+
+function B_NANJ()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_180);
+    unitFacePlayer(nanjo);
+    ref_171 = bustupLoad(bustup_36);
+    bustupWait(ref_171);
+    ref_173 = bustupAlloc(ref_171, left, rgb(0,0,0));
+    bustupFade(ref_173, rgb(128,0,0), 30);
+    ref_175 = dialogAlloc();
+    ref_176 = msgShow(msg_17);
+/***************************************
+[color(yellow)]南条[color(white)]
+[tab]現状に不満を感じている人には、
+[tab]他人の環境がうらやましく思えるものだ。
+[tab]隣の芝は青く見えるってやつだな。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_176);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_175);
+    ref_17b = bustupFade(ref_173, rgb(0,0,0), 10);
+    bustupWait(ref_17b);
+    bustupFree(ref_173);
+    unitRestoreFacing(nanjo);
+    b(label_18f);
+  label_180:
+    unitFacePlayer(nanjo);
+    ref_181 = bustupLoad(bustup_3b);
+    bustupWait(ref_181);
+    ref_183 = bustupAlloc(ref_181, left, rgb(0,0,0));
+    bustupFade(ref_183, rgb(128,0,0), 30);
+    ref_185 = dialogAlloc();
+    ref_186 = msgShow(msg_18);
+/***************************************
+[color(yellow)]南条[color(white)]
+[tab]神取を…死んだ人間を蘇らせる力…
+[tab]言霊とは、それほどの力を持つものなのか！？
+[wait][clear]
+***************************************/
+    unitAnimationHold(nanjo, animation_1f, -1);
+    wait(ref_186);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_185);
+    ref_18b = bustupFade(ref_183, rgb(0,0,0), 10);
+    bustupWait(ref_18b);
+    bustupFree(ref_183);
+    unitRestoreFacing(nanjo);
+  label_18f:
+    controlEnable();
+}
+
+function B_ERI()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_1a4);
+    unitFacePlayer(elly);
+    ref_195 = bustupLoad(bustup_42);
+    bustupWait(ref_195);
+    ref_197 = bustupAlloc(ref_195, left, rgb(0,0,0));
+    bustupFade(ref_197, rgb(128,0,0), 30);
+    ref_199 = dialogAlloc();
+    ref_19a = msgShow(msg_19);
+/***************************************
+[color(yellow)]エリー[color(white)]
+[tab]Ｍｏｄｅｌのお仕事はとても大変ですけど、
+[tab]それ以上にやりがいを感じていますわ。
+[tab]Ｂｕｔ…困った事も多いです。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_19a);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_199);
+    ref_19f = bustupFade(ref_197, rgb(0,0,0), 10);
+    bustupWait(ref_19f);
+    bustupFree(ref_197);
+    unitRestoreFacing(elly);
+    b(label_1b4);
+  label_1a4:
+    unitFacePlayer(elly);
+    ref_1a5 = bustupLoad(bustup_42);
+    bustupWait(ref_1a5);
+    ref_1a7 = bustupAlloc(ref_1a5, left, rgb(0,0,0));
+    bustupFade(ref_1a7, rgb(128,0,0), 30);
+    ref_1a9 = dialogAlloc();
+    ref_1aa = msgShow(msg_20);
+/***************************************
+[color(yellow)]エリー[color(white)]
+[tab]言霊…望龍術…神取…
+[tab]何か大きな力、いえ、大きな意志の働きを感じる。
+[tab]私の思い過しなら良いのですが…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_1a, 1);
+    wait(ref_1aa);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_1a9);
+    ref_1af = bustupFade(ref_1a7, rgb(0,0,0), 10);
+    bustupWait(ref_1af);
+    bustupFree(ref_1a7);
+    unitRestoreFacing(elly);
+    b(label_1b4);
+  label_1b4:
+    controlEnable();
+}
+
+function B_TATU()
+{
+}
+
+function OJII()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_1c6);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_1c1);
+    ref_1bc = dialogAlloc();
+    ref_1bd = msgShow(msg_21);
+/***************************************
+[color(yellow)]おじいさん[color(white)]
+[tab]富先生にゃ、治せぬものなど無いそうじゃ！！
+[tab]なんじゃ？[tab]疑うのか？[tab]マッタク若い連中は！
+[tab]一度揉んでもらいなさい。…効くぞ！
+[wait][clear]
+***************************************/
+    wait(ref_1bd);
+    dialogFree(ref_1bc);
+    b(label_1cb);
+  label_1c1:
+    ref_1c1 = dialogAlloc();
+    ref_1c2 = msgShow(msg_22);
+/***************************************
+[color(yellow)]おじいさん[color(white)]
+[tab]若いくせに、腰が痛いとか言う奴がいる。
+[tab]それは腹筋か背筋が弱っているのじゃ！
+[tab]マッタク、医者に来る前に体を鍛えんか！！
+[wait][clear]
+***************************************/
+    wait(ref_1c2);
+    dialogFree(ref_1c1);
+    b(label_1cb);
+  label_1c6:
+    ref_1c6 = dialogAlloc();
+    ref_1c7 = msgShow(msg_23);
+/***************************************
+[color(yellow)]おじいさん[color(white)]
+[tab]最近の若いのは何じゃ？[tab]ぽじてぃぶしんきんぐ？
+[tab]見た目だけではなく言う事まで同じなのか？
+[tab]自立出来てないのじゃろうな。あ～情けない！
+[wait][clear]
+***************************************/
+    wait(ref_1c7);
+    dialogFree(ref_1c6);
+    b(label_1cb);
+  label_1cb:
+    controlEnable();
+    unitIdleOff(npc1);
+    unitRevolveAnimationPlay(npc1, animrevolve_8);
+    unitFace8(npc1, west);
+}
+
+function TIHOUOJII()
+{
+    controlDisable();
+    bitGet(var_0, MBIT_SH_S_04);
+    bne(var_0, 0, label_1d4);
+    b(label_1e1);
+  label_1d4:
+    bne(var_0, 1, label_1e1);
+    bitGet(var_0, MBIT_SH_H_04);
+    bne(var_0, 0, label_1de);
+    bitGet(var_0, MBIT_NAGASE_GET);
+    bne(var_0, 0, label_1db);
+    b(label_1e2);
+    b(label_1dd);
+  label_1db:
+    bne(var_0, 1, label_1dd);
+    b(label_1dd);
+  label_1dd:
+    b(label_1e0);
+  label_1de:
+    bne(var_0, 1, label_1e0);
+    b(label_1e0);
+  label_1e0:
+    b(label_1e1);
+  label_1e1:
+    b(label_235);
+  label_1e2:
+    add(var_a, var_a, 1);
+    boutrange(var_a, 0, 1, label_1e6);
+    b(label_1ea);
+    b(label_1ea);
+  label_1e6:
+    bne(var_a, 2, label_1ea);
+    sub(var_a, var_a, 2);
+    b(label_1f3);
+    b(label_1ea);
+  label_1ea:
+    unitFacePlayer(npc2);
+    ref_1eb = dialogAlloc();
+    ref_1ec = msgShow(msg_24);
+/***************************************
+[color(yellow)]認知症の治った？[tab]おじいさん[color(white)]
+[tab]うちの嫁はいい嫁なんじゃが…
+[tab]物忘れがひどくてのぉ。
+[tab]何でもわしのせいにするのは反則じゃな。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_1ec);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_1eb);
+    unitRestoreFacing(npc2);
+    b(label_25b);
+  label_1f3:
+    unitFacePlayer(npc2);
+    ref_1f4 = dialogAlloc();
+    ref_1f5 = msgShow(msg_25);
+/***************************************
+[color(yellow)]認知症の治った？[tab]おじいさん[color(white)]
+[tab]…なんじゃあ？
+[tab]わしにまだ何か用か？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_1f5);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_1f4);
+    delayClear();
+    delayWait(30);
+    choiceSetResult(2);
+    ref_1fd = bustupLoad(bustup_1);
+    bustupWait(ref_1fd);
+    ref_1ff = bustupAlloc(ref_1fd, center, rgb(0,0,0));
+    bustupFade(ref_1ff, rgb(128,0,0), 30);
+    ref_201 = dialogChoiceAlloc();
+    ref_202 = msgShow(msg_26);
+/***************************************
+[tab]何の用じゃ？
+[choice(3)]名前を言い当てる
+話をする
+用はない
+[end_choice][clear]
+***************************************/
+    ref_203 = textInputInit();
+    wait(ref_202);
+    dialogFree(ref_201);
+    ref_206 = bustupFade(ref_1ff, rgb(0,0,0), 10);
+    bustupWait(ref_206);
+    bustupFree(ref_1ff);
+    wait(ref_203);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_20e);
+    b(label_216);
+    b(label_215);
+  label_20e:
+    bne(var_0, 1, label_212);
+    unitRestoreFacing(npc2);
+    b(label_235);
+    b(label_215);
+  label_212:
+    bne(var_0, 2, label_215);
+    unitRestoreFacing(npc2);
+    b(label_215);
+  label_215:
+    b(label_25b);
+  label_216:
+    ref_216 = textInputPrompt();
+    wait(ref_216);
+    textInputCompare(msg_27, var_0);
+    bne(var_0, 0, label_223);
+    ref_21a = dialogAlloc();
+    ref_21b = msgShow(msg_28);
+/***************************************
+[color(yellow)]認知症の治った？[tab]おじいさん[color(white)]
+[tab]はぁ～～～？
+[tab]誰のこと言ってるんじゃ？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_21b);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_21a);
+    unitRestoreFacing(npc2);
+    b(label_25b);
+    b(label_235);
+  label_223:
+    bne(var_0, 1, label_235);
+    ref_224 = dialogAlloc();
+    ref_225 = msgShow(msg_29);
+/***************************************
+[color(yellow)]ナガセ[tab]タイチ[color(white)]
+[tab]あぁ！？
+[tab]なんでわしの名前を知っとるんじゃ？
+[tab]…嫁が捜してるとな！？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_225);
+    ref_228 = msgShow(msg_30);
+/***************************************
+[color(yellow)]ナガセ[tab]タイチ[color(white)]
+[tab]…そうか、そうか。
+[tab]心配させていたようじゃのぉ。
+[tab]でも、ここに来る事は言ってあるはずじゃが？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_228);
+    ref_22b = msgShow(msg_31);
+/***************************************
+[color(yellow)]ナガセ[tab]タイチ[color(white)]
+[tab]まぁいいか、家に連絡しとくかなぁ。
+[tab]ほんと、うちの嫁はいい嫁じゃ。
+[tab]…物忘れのひどさが玉に傷じゃがな。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_22b);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_224);
+    bitSet(MBIT_NAGASE_GET);
+    bitSet(MBIT_SH_HH);
+    unitRestoreFacing(npc2);
+    b(label_25b);
+    b(label_235);
+  label_235:
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_24b);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_242);
+    unitFacePlayer(npc2);
+    ref_23a = dialogAlloc();
+    ref_23b = msgShow(msg_32);
+/***************************************
+[color(yellow)]認知症ぎみのおじいさん[color(white)]
+[tab]あんたが富先生かあ？[tab]女みたいな人じゃなー
+[tab]ところで先生、何でも治すっちゅー話じゃのぉ。
+[tab]ひとつ、わしの認知症も治してくれんか？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_23b);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_23a);
+    unitRestoreFacing(npc2);
+    b(label_25b);
+  label_242:
+    unitFacePlayer(npc2);
+    ref_243 = dialogAlloc();
+    ref_244 = msgShow(msg_33);
+/***************************************
+[color(yellow)]認知症ぎみのおじいさん[color(white)]
+[tab]ん～あんたも富先生かあ？
+[tab]何人もいるとは、さすが有名な先生じゃのぉ。
+[tab]さぁ、その柔らかな指で揉んどくれぇ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_244);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_243);
+    unitRestoreFacing(npc2);
+    b(label_25b);
+  label_24b:
+    unitFacePlayer(npc2);
+    ref_24c = dialogAlloc();
+    bitGet(var_0, MBIT_NAGASE_GET);
+    bne(var_0, 0, label_251);
+    msgShow(msg_34);
+/***************************************
+[color(yellow)]認知症の治った？[tab]おじいさん[color(white)]
+
+***************************************/
+    b(label_254);
+  label_251:
+    bne(var_0, 1, label_254);
+    msgShow(msg_35);
+/***************************************
+[color(yellow)]ナガセ[tab]タイチ[color(white)]
+
+***************************************/
+    b(label_254);
+  label_254:
+    ref_254 = msgShow(msg_36);
+/***************************************
+[tab]富先生が何でも治すっちゅう噂は、本当じゃのぉ。
+[tab]最近では物忘れもせんし、その上無かった事まで
+[tab]思い出せる様になったんじゃのぉ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_25, 1);
+    wait(ref_254);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_24c);
+    unitRestoreFacing(npc2);
+    b(label_25b);
+  label_25b:
+    controlEnable();
+}
+
+function SAGIBOX()
+{
+    controlDisable();
+    unitFacePlayer(makimura);
+    ref_25f = bustupLoad(bustup_128);
+    bustupWait(ref_25f);
+    ref_261 = bustupAlloc(ref_25f, right, rgb(0,0,0));
+    bustupFade(ref_261, rgb(128,0,0), 30);
+    ref_263 = dialogAlloc();
+    ref_264 = msgShow(msg_37);
+/***************************************
+[color(yellow)]牧村[color(white)]
+[tab]こんな所に連れてきてどうする気だ？
+[tab]オレを保護してくれるんだろ？
+[tab]だったら真面目にやってくれよ！！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(makimura, animation_26, 1);
+    wait(ref_264);
+    unitAnimationPlay(makimura, animation_0, 1);
+    dialogFree(ref_263);
+    ref_269 = bustupFade(ref_261, rgb(0,0,0), 10);
+    bustupWait(ref_269);
+    bustupFree(ref_261);
+    unitRestoreFacing(makimura);
+    controlEnable();
+}
+
+function SHOP()
+{
+    controlDisable();
+    ref_270 = shopOverlayInit();
+    unitFacePlayer(shopkeeper);
+    bitGet(var_0, MBIT_AIS_04);
+    bne(var_0, 0, label_276);
+    b(label_279);
+    b(label_279);
+  label_276:
+    bne(var_0, 1, label_279);
+    b(label_28b);
+    b(label_279);
+  label_279:
+    choiceSetResult(2);
+    ref_27a = bustupLoad(bustup_ef);
+    bustupWait(ref_27a);
+    ref_27c = bustupAlloc(ref_27a, right, rgb(0,0,0));
+    bustupFade(ref_27c, rgb(128,0,0), 30);
+    ref_27e = dialogAlloc();
+    ref_27f = msgShow(msg_38);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]ゴールドフィンガ～！！[delay(30)]
+[tab]ようこそ富永カイロプラクティックへ。
+[tab]私が黄金の指を持つ男、Ｍｒ．富だ。
+[choice(4)]回復してもらう
+話をする
+なにもしない
+店の外に出る
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_27f);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_27e);
+    ref_284 = bustupFade(ref_27c, rgb(0,0,0), 10);
+    bustupWait(ref_284);
+    bustupFree(ref_27c);
+    wait(ref_270);
+    shopInventory(5, shopInventory_0);
+    shopRate(100);
+    b(label_29d);
+  label_28b:
+    choiceSetResult(2);
+    ref_28c = bustupLoad(bustup_ef);
+    bustupWait(ref_28c);
+    ref_28e = bustupAlloc(ref_28c, right, rgb(0,0,0));
+    bustupFade(ref_28e, rgb(128,0,0), 30);
+    ref_290 = dialogAlloc();
+    ref_291 = msgShow(msg_39);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]ゴ～～～ルドッフィンガ～！！[delay(30)]
+[tab]何故だ！？[tab]君の顔が見れてとてもうれしいな！
+[tab]うん、今日はサービスさせてもらうぞ！
+[choice(4)]回復してもらう
+話をする
+なにもしない
+店の外に出る
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_291);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_290);
+    ref_296 = bustupFade(ref_28e, rgb(0,0,0), 10);
+    bustupWait(ref_296);
+    bustupFree(ref_28e);
+    wait(ref_270);
+    shopInventory(5, shopInventory_0);
+    shopRate(80);
+    b(label_29d);
+  label_29d:
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2a1);
+    call(HA_SHOP_HEAL_0);
+    b(label_2c0);
+  label_2a1:
+    bne(var_0, 1, label_2b9);
+    choiceSetResult(2);
+    ref_2a3 = bustupLoad(bustup_ef);
+    bustupWait(ref_2a3);
+    ref_2a5 = bustupAlloc(ref_2a3, left, rgb(0,0,0));
+    bustupFade(ref_2a5, rgb(128,0,0), 30);
+    ref_2a7 = dialogAlloc();
+    ref_2a8 = msgShow(msg_40);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]何が聞きたいのかね？
+[choice(3)]世間話をする
+回復の説明を聞く
+[if_all(EBIT_SINARIOFF)]非表示項目
+[end_choice][clear]
+***************************************/
+    wait(ref_2a8);
+    dialogFree(ref_2a7);
+    ref_2ab = bustupFade(ref_2a5, rgb(0,0,0), 10);
+    bustupWait(ref_2ab);
+    bustupFree(ref_2a5);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2b2);
+    call(HA_SHOP_TALK_0);
+    b(label_2b8);
+  label_2b2:
+    bne(var_0, 1, label_2b5);
+    call(HA_SHOP_EXPLAIN_0);
+    b(label_2b8);
+  label_2b5:
+    bne(var_0, 2, label_2b8);
+    call(HOKANI_SELECT);
+    b(label_2b8);
+  label_2b8:
+    b(label_2c0);
+  label_2b9:
+    bne(var_0, 2, label_2bc);
+    call(HA_SHOP_END_0);
+    b(label_2c0);
+  label_2bc:
+    bne(var_0, 3, label_2c0);
+    bitSet(MBIT_EXITBIT);
+    call(HA_SHOP_END_0);
+    b(label_2c0);
+  label_2c0:
+}
+
+function HA_SHOP_TALK_0()
+{
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_2e8);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_2d7);
+    ref_2c5 = bustupLoad(bustup_ef);
+    bustupWait(ref_2c5);
+    ref_2c7 = bustupAlloc(ref_2c5, right, rgb(0,0,0));
+    bustupFade(ref_2c7, rgb(128,0,0), 30);
+    ref_2c9 = dialogAlloc();
+    ref_2ca = msgShow(msg_41);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]ゴールドフィンガ～！！[delay(30)]
+[tab]私は本場アメリカにて修行を積んだ、
+[tab]マスター・オブ・カイロプラクティック！！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2ca);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_2ce = msgShow(msg_42);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]ささ、安心して背をあずけるがよい。
+[tab]歪みなき背骨には、健全な魂が宿るのだ！[delay(30)]
+[tab]ゴールドフィンガ～！！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2ce);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_2c9);
+    ref_2d3 = bustupFade(ref_2c7, rgb(0,0,0), 10);
+    bustupWait(ref_2d3);
+    bustupFree(ref_2c7);
+    b(label_2f5);
+  label_2d7:
+    ref_2d7 = bustupLoad(bustup_ef);
+    bustupWait(ref_2d7);
+    ref_2d9 = bustupAlloc(ref_2d7, right, rgb(0,0,0));
+    bustupFade(ref_2d9, rgb(128,0,0), 30);
+    ref_2db = dialogAlloc();
+    ref_2dc = msgShow(msg_43);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]邪気に憑かれるとＪＯＫＥＲになる…！？
+[tab]なるほど、わかったぞ！！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2dc);
+    ref_2df = msgShow(msg_44);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]邪気に憑かれる、すなわち疲れる！
+[tab]ＪＯＫＥＲとは筋肉に乳酸が溜まった状態だ！
+[tab]ならばこのゴールドフィンガーでひと揉み……
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2df);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_2db);
+    ref_2e4 = bustupFade(ref_2d9, rgb(0,0,0), 10);
+    bustupWait(ref_2e4);
+    bustupFree(ref_2d9);
+    b(label_2f5);
+  label_2e8:
+    ref_2e8 = bustupLoad(bustup_ef);
+    bustupWait(ref_2e8);
+    ref_2ea = bustupAlloc(ref_2e8, right, rgb(0,0,0));
+    bustupFade(ref_2ea, rgb(128,0,0), 30);
+    ref_2ec = dialogAlloc();
+    ref_2ed = msgShow(msg_45);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]うーむ、最近は記憶障害を訴える者が多いな。
+[tab]何か妙な感じだが、恐らく原因は尾骨のズレ！
+[tab]…私の尾骨もズレているのか？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2ed);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_2ec);
+    ref_2f2 = bustupFade(ref_2ea, rgb(0,0,0), 10);
+    bustupWait(ref_2f2);
+    bustupFree(ref_2ea);
+  label_2f5:
+    call(HOKANI_SELECT);
+}
+
+function HOKANI_SELECT()
+{
+  label_2f7:
+    choiceSetResult(2);
+    ref_2f8 = bustupLoad(bustup_ef);
+    bustupWait(ref_2f8);
+    ref_2fa = bustupAlloc(ref_2f8, right, rgb(0,0,0));
+    bustupFade(ref_2fa, rgb(128,0,0), 30);
+    ref_2fc = dialogAlloc();
+    ref_2fd = msgShow(msg_46);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]他に何かあるかね？
+[tab]我がゴールドフィンガーをもってすれば、
+[tab]問題は全て解決だぞ！？
+[choice(4)]回復してもらう
+話をする
+なにもしない
+店の外に出る
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_2fd);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_2fc);
+    ref_302 = bustupFade(ref_2fa, rgb(0,0,0), 10);
+    bustupWait(ref_302);
+    bustupFree(ref_2fa);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_309);
+    call(HA_SHOP_HEAL_0);
+    b(label_328);
+  label_309:
+    bne(var_0, 1, label_321);
+    choiceSetResult(2);
+    ref_30b = bustupLoad(bustup_ef);
+    bustupWait(ref_30b);
+    ref_30d = bustupAlloc(ref_30b, left, rgb(0,0,0));
+    bustupFade(ref_30d, rgb(128,0,0), 30);
+    ref_30f = dialogAlloc();
+    ref_310 = msgShow(msg_47);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]何が聞きたいのかね？
+[choice(3)]世間話をする
+回復の説明を聞く
+[if_all(EBIT_SINARIOFF)]非表示項目
+[end_choice][clear]
+***************************************/
+    wait(ref_310);
+    dialogFree(ref_30f);
+    ref_313 = bustupFade(ref_30d, rgb(0,0,0), 10);
+    bustupWait(ref_313);
+    bustupFree(ref_30d);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_31a);
+    call(HA_SHOP_TALK_0);
+    b(label_320);
+  label_31a:
+    bne(var_0, 1, label_31d);
+    call(HA_SHOP_EXPLAIN_0);
+    b(label_320);
+  label_31d:
+    bne(var_0, 2, label_320);
+    b(label_2f7);
+    b(label_320);
+  label_320:
+    b(label_328);
+  label_321:
+    bne(var_0, 2, label_324);
+    call(HA_SHOP_END_0);
+    b(label_328);
+  label_324:
+    bne(var_0, 3, label_328);
+    bitSet(MBIT_EXITBIT);
+    call(HA_SHOP_END_0);
+    b(label_328);
+  label_328:
+}
+
+function HA_SHOP_END_0()
+{
+    ref_329 = bustupLoad(bustup_ef);
+    bustupWait(ref_329);
+    ref_32b = bustupAlloc(ref_329, right, rgb(0,0,0));
+    bustupFade(ref_32b, rgb(128,0,0), 30);
+    ref_32d = dialogAlloc();
+    ref_32e = msgShow(msg_48);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]疲れたらまた来るがよい。
+[tab]我が黄金の指に治せぬもの無し！
+[tab]ゴールドフィンガ～！！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_32e);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    shopOverlayInit();
+    dialogFree(ref_32d);
+    ref_334 = bustupFade(ref_32b, rgb(0,0,0), 10);
+    bustupWait(ref_334);
+    bustupFree(ref_32b);
+    delayClear();
+    delayWait(10);
+    bitSet(MBIT_TOMI_HATURAITEN);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_33f);
+    unitRestoreFacing(shopkeeper);
+    controlEnable();
+    b(label_342);
+  label_33f:
+    bne(var_0, 1, label_342);
+    call(GOOUT);
+    b(label_342);
+  label_342:
+}
+
+function HA_SHOP_HEAL_0()
+{
+    ref_343 = call(KAIFUKUSURUBEKI);
+    wait(ref_343);
+    bitGet(var_1, LBIT_0000);
+    bne(var_1, 0, label_356);
+    ref_347 = bustupLoad(bustup_ef);
+    bustupWait(ref_347);
+    ref_349 = bustupAlloc(ref_347, right, rgb(0,0,0));
+    bustupFade(ref_349, rgb(128,0,0), 30);
+    ref_34b = dialogAlloc();
+    ref_34c = msgShow(msg_49);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]アム？[tab]だがしかし皆健康なようだぞ。
+[tab]過ぎたるは、及ばざるが如し。
+[tab]治療の必要はなかろう。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_34c);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_34b);
+    ref_351 = bustupFade(ref_349, rgb(0,0,0), 10);
+    bustupWait(ref_351);
+    bustupFree(ref_349);
+    b(label_3e5);
+    b(label_388);
+  label_356:
+    bne(var_1, 1, label_388);
+    ref_357 = bustupLoad(bustup_ef);
+    bustupWait(ref_357);
+    ref_359 = bustupAlloc(ref_357, right, rgb(0,0,0));
+    bustupFade(ref_359, rgb(128,0,0), 30);
+    ref_35b = dialogAlloc();
+    bitGet(var_0, MBIT_AIS_04);
+    bne(var_0, 0, label_363);
+    shopInventory(3, shopInventory_-bb8);
+    ref_35f = msgShow(msg_50);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]おお、これは酷い。背骨が著しく歪んでおる。
+[tab]確かに矯正が必要のようだな。
+[tab]ちなみに治療費は３０００円ほどになるが…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_35f);
+    b(label_369);
+  label_363:
+    bne(var_0, 1, label_369);
+    shopInventory(3, shopInventory_-5dc);
+    ref_365 = msgShow(msg_51);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]むむっ、これは…
+[tab]酷い、背骨が著しく歪んでおる。
+[tab]仕方ない、治療費は１５００円でいいぞ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_365);
+    b(label_369);
+  label_369:
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_35b);
+    ref_36b = bustupFade(ref_359, rgb(0,0,0), 10);
+    bustupWait(ref_36b);
+    bustupFree(ref_359);
+    choiceSetResult(1);
+    ref_36f = bustupLoad(bustup_1);
+    bustupWait(ref_36f);
+    ref_371 = bustupAlloc(ref_36f, center, rgb(0,0,0));
+    bustupFade(ref_371, rgb(128,0,0), 30);
+    ref_373 = dialogChoiceAlloc();
+    shopCurrencyType(8, -110, 150);
+    shopCurrencyDisplay(13, 150, false);
+    ref_376 = msgShow(msg_52);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]治療をうけるかね？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_376);
+    dialogFree(ref_373);
+    ref_379 = bustupFade(ref_371, rgb(0,0,0), 10);
+    bustupWait(ref_379);
+    bustupFree(ref_371);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_380);
+    b(label_388);
+    b(label_387);
+  label_380:
+    bne(var_0, 1, label_387);
+    shopCurrencyDisplay(-110, 150, true);
+    delayClear();
+    delayWait(30);
+    bitSet(LBIT_0001);
+    b(label_3e5);
+    b(label_387);
+  label_387:
+    b(label_388);
+  label_388:
+    bitGet(var_0, MBIT_AIS_04);
+    bne(var_0, 0, label_393);
+    partyMoneyGet(var_2);
+    boutrange(var_2, 0, 2999, label_38e);
+    b(label_3d7);
+    b(label_392);
+  label_38e:
+    partyMoneyAdd(-3000);
+    ref_38f = call(KAIFUKUMESS);
+    wait(ref_38f);
+    b(label_392);
+  label_392:
+    b(label_39d);
+  label_393:
+    bne(var_0, 1, label_39d);
+    partyMoneyGet(var_2);
+    boutrange(var_2, 0, 1499, label_398);
+    b(label_3d7);
+    b(label_39c);
+  label_398:
+    partyMoneyAdd(-1500);
+    ref_399 = call(KAIFUKUMESS);
+    wait(ref_399);
+    b(label_39c);
+  label_39c:
+    b(label_39d);
+  label_39d:
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), add);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    sndMusicPlay(sound_3, 127);
+    partyHealthRestore(maya);
+    partySPRestore(maya);
+    partyStatusClear(maya);
+    partyMemberCheck(var_3, ulala);
+    bez(var_3, label_3ac);
+    partyHealthRestore(ulala);
+    partySPRestore(ulala);
+    partyStatusClear(ulala);
+  label_3ac:
+    partyMemberCheck(var_3, katsuya);
+    bez(var_3, label_3b1);
+    partyHealthRestore(katsuya);
+    partySPRestore(katsuya);
+    partyStatusClear(katsuya);
+  label_3b1:
+    partyMemberCheck(var_3, baofu);
+    bez(var_3, label_3b6);
+    partyHealthRestore(baofu);
+    partySPRestore(baofu);
+    partyStatusClear(baofu);
+  label_3b6:
+    partyMemberCheck(var_3, nanjo);
+    bez(var_3, label_3bb);
+    partyHealthRestore(nanjo);
+    partySPRestore(nanjo);
+    partyStatusClear(nanjo);
+  label_3bb:
+    partyMemberCheck(var_3, elly);
+    bez(var_3, label_3c0);
+    partyHealthRestore(elly);
+    partySPRestore(elly);
+    partyStatusClear(elly);
+  label_3c0:
+    partyMemberCheck(var_3, tatsuya);
+    bez(var_3, label_3c5);
+    partyHealthRestore(tatsuya);
+    partySPRestore(tatsuya);
+    partyStatusClear(tatsuya);
+  label_3c5:
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), add);
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenEffectUnknown();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    ref_3cb = bustupLoad(bustup_1);
+    bustupWait(ref_3cb);
+    ref_3cd = bustupAlloc(ref_3cb, center, rgb(0,0,0));
+    bustupFade(ref_3cd, rgb(128,0,0), 30);
+    ref_3cf = dialogAlloc();
+    ref_3d0 = msgShow(msg_53);
+/***************************************
+[color(green)][tab]舞耶達は回復した。[color(white)][wait][clear]
+***************************************/
+    wait(ref_3d0);
+    dialogFree(ref_3cf);
+    ref_3d3 = bustupFade(ref_3cd, rgb(0,0,0), 10);
+    bustupWait(ref_3d3);
+    bustupFree(ref_3cd);
+    b(label_3e5);
+  label_3d7:
+    ref_3d7 = bustupLoad(bustup_ef);
+    bustupWait(ref_3d7);
+    ref_3d9 = bustupAlloc(ref_3d7, right, rgb(0,0,0));
+    bustupFade(ref_3d9, rgb(128,0,0), 30);
+    ref_3db = dialogAlloc();
+    ref_3dc = msgShow(msg_54);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]ムムムム！！
+[tab]残念だが代金が足りぬようだぞ。
+[tab]これでは治療できんな。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_19, 1);
+    wait(ref_3dc);
+    shopCurrencyDisplay(-110, 150, true);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_3db);
+    ref_3e2 = bustupFade(ref_3d9, rgb(0,0,0), 10);
+    bustupWait(ref_3e2);
+    bustupFree(ref_3d9);
+  label_3e5:
+    ref_3e5 = bustupLoad(bustup_ef);
+    bustupWait(ref_3e5);
+    ref_3e7 = bustupAlloc(ref_3e5, right, rgb(0,0,0));
+    bustupFade(ref_3e7, rgb(128,0,0), 30);
+    ref_3e9 = dialogAlloc();
+    bitGet(var_0, LBIT_0001);
+    bne(var_0, 0, label_3ed);
+    b(label_3f3);
+  label_3ed:
+    bne(var_0, 1, label_3f3);
+    bitClear(LBIT_0001);
+    ref_3ef = msgShow(msg_55);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]なんと…
+[tab]我がゴールドフィンガーにかかれば、
+[tab]その傷も癒えようというのに…[delay(15)]無理はいかんぞ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3ef);
+    b(label_3f3);
+  label_3f3:
+    dialogFree(ref_3e9);
+    ref_3f4 = bustupFade(ref_3e7, rgb(0,0,0), 10);
+    bustupWait(ref_3f4);
+    bustupFree(ref_3e7);
+    call(HOKANI_SELECT);
+}
+
+function KAIFUKUMESS()
+{
+    ref_3f9 = bustupLoad(bustup_ef);
+    bustupWait(ref_3f9);
+    ref_3fb = bustupAlloc(ref_3f9, right, rgb(0,0,0));
+    bustupFade(ref_3fb, rgb(128,0,0), 30);
+    ref_3fd = dialogAlloc();
+    ref_3fe = msgShow(msg_56);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]承知した。しからば…マジックにて印をつけて…
+[tab]いくぞ！！[tab]伝家の宝刀！！
+[tab]ゴールドフィンガァーーー！！！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    unitWait(shopkeeper);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(shopkeeper, animation_6, 1);
+    unitWait(shopkeeper);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    unitWait(shopkeeper);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(shopkeeper, animation_19, 1);
+    unitWait(shopkeeper);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(shopkeeper, animation_5, 1);
+    wait(ref_3fe);
+    dialogFree(ref_3fd);
+    unitWait(shopkeeper);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    unitWait(shopkeeper);
+    shopCurrencyDisplay(-110, 150, true);
+    ref_416 = bustupFade(ref_3fb, rgb(0,0,0), 10);
+    bustupWait(ref_416);
+    bustupFree(ref_3fb);
+}
+
+function KAIFUKUSURUBEKI()
+{
+    partyStatusHas(var_0, maya, poison);
+    bnz(var_0, label_47c);
+    partyStatusHas(var_0, maya, possesion);
+    bnz(var_0, label_47c);
+    partyInfoGet(var_4, maya, maxHealth);
+    partyInfoGet(var_5, maya, health);
+    beq(var_4, var_5, label_422);
+    b(label_47c);
+  label_422:
+    partyInfoGet(var_4, maya, maxSP);
+    partyInfoGet(var_5, maya, sp);
+    beq(var_4, var_5, label_426);
+    b(label_47c);
+  label_426:
+    partyMemberCheck(var_4, ulala);
+    bez(var_4, label_434);
+    partyStatusHas(var_0, ulala, poison);
+    bnz(var_0, label_47c);
+    partyStatusHas(var_0, ulala, possesion);
+    bnz(var_0, label_47c);
+    partyInfoGet(var_4, ulala, maxHealth);
+    partyInfoGet(var_5, ulala, health);
+    beq(var_4, var_5, label_430);
+    b(label_47c);
+  label_430:
+    partyInfoGet(var_4, ulala, maxSP);
+    partyInfoGet(var_5, ulala, sp);
+    beq(var_4, var_5, label_434);
+    b(label_47c);
+  label_434:
+    partyMemberCheck(var_4, katsuya);
+    bez(var_4, label_442);
+    partyStatusHas(var_0, katsuya, poison);
+    bnz(var_0, label_47c);
+    partyStatusHas(var_0, katsuya, possesion);
+    bnz(var_0, label_47c);
+    partyInfoGet(var_4, katsuya, maxHealth);
+    partyInfoGet(var_5, katsuya, health);
+    beq(var_4, var_5, label_43e);
+    b(label_47c);
+  label_43e:
+    partyInfoGet(var_4, katsuya, maxSP);
+    partyInfoGet(var_5, katsuya, sp);
+    beq(var_4, var_5, label_442);
+    b(label_47c);
+  label_442:
+    partyMemberCheck(var_4, baofu);
+    bez(var_4, label_450);
+    partyStatusHas(var_0, baofu, poison);
+    bnz(var_0, label_47c);
+    partyStatusHas(var_0, baofu, possesion);
+    bnz(var_0, label_47c);
+    partyInfoGet(var_4, baofu, maxHealth);
+    partyInfoGet(var_5, baofu, health);
+    beq(var_4, var_5, label_44c);
+    b(label_47c);
+  label_44c:
+    partyInfoGet(var_4, baofu, maxSP);
+    partyInfoGet(var_5, baofu, sp);
+    beq(var_4, var_5, label_450);
+    b(label_47c);
+  label_450:
+    partyMemberCheck(var_4, nanjo);
+    bez(var_4, label_45e);
+    partyStatusHas(var_0, nanjo, poison);
+    bnz(var_0, label_47c);
+    partyStatusHas(var_0, nanjo, possesion);
+    bnz(var_0, label_47c);
+    partyInfoGet(var_4, nanjo, maxHealth);
+    partyInfoGet(var_5, nanjo, health);
+    beq(var_4, var_5, label_45a);
+    b(label_47c);
+  label_45a:
+    partyInfoGet(var_4, nanjo, maxSP);
+    partyInfoGet(var_5, nanjo, sp);
+    beq(var_4, var_5, label_45e);
+    b(label_47c);
+  label_45e:
+    partyMemberCheck(var_4, elly);
+    bez(var_4, label_46c);
+    partyStatusHas(var_0, elly, poison);
+    bnz(var_0, label_47c);
+    partyStatusHas(var_0, elly, possesion);
+    bnz(var_0, label_47c);
+    partyInfoGet(var_4, elly, maxHealth);
+    partyInfoGet(var_5, elly, health);
+    beq(var_4, var_5, label_468);
+    b(label_47c);
+  label_468:
+    partyInfoGet(var_4, elly, maxSP);
+    partyInfoGet(var_5, elly, sp);
+    beq(var_4, var_5, label_46c);
+    b(label_47c);
+  label_46c:
+    partyMemberCheck(var_4, tatsuya);
+    bez(var_4, label_47a);
+    partyStatusHas(var_0, tatsuya, poison);
+    bnz(var_0, label_47c);
+    partyStatusHas(var_0, tatsuya, possesion);
+    bnz(var_0, label_47c);
+    partyInfoGet(var_4, tatsuya, maxHealth);
+    partyInfoGet(var_5, tatsuya, health);
+    beq(var_4, var_5, label_476);
+    b(label_47c);
+  label_476:
+    partyInfoGet(var_4, tatsuya, maxSP);
+    partyInfoGet(var_5, tatsuya, sp);
+    beq(var_4, var_5, label_47a);
+    b(label_47c);
+  label_47a:
+    bitClear(LBIT_0000);
+    b(label_47e);
+  label_47c:
+    bitSet(LBIT_0000);
+    b(label_47e);
+  label_47e:
+}
+
+function GOMI()
+{
+    bitGet(var_0, MBIT_AIS_04);
+    bnz(var_0, label_487);
+    bitSet(MBIT_AIS_04);
+    ref_482 = dialogAlloc();
+    ref_483 = msgShow(msg_57);
+/***************************************
+ＭＢＩＴ[tab]ＡＩＳ[tab]５４
+相性占いの
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_483);
+    dialogFree(ref_482);
+    b(label_4b7);
+  label_487:
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_48f);
+    bitSet(EBIT_E0037);
+    ref_48a = dialogAlloc();
+    ref_48b = msgShow(msg_58);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００３７
+警察署[half_tab]受付、終了
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_48b);
+    dialogFree(ref_48a);
+    b(label_4b7);
+  label_48f:
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_497);
+    bitSet(EBIT_E0038);
+    ref_492 = dialogAlloc();
+    ref_493 = msgShow(msg_59);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００３８
+「詐欺男を確保」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_493);
+    dialogFree(ref_492);
+    b(label_4b7);
+  label_497:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_49f);
+    bitSet(EBIT_E003E);
+    ref_49a = dialogAlloc();
+    ref_49b = msgShow(msg_60);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００３Ｅ
+「ゴールドクリア」「うらら編入」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_49b);
+    dialogFree(ref_49a);
+    b(label_4b7);
+  label_49f:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_4a7);
+    bitSet(EBIT_E0043);
+    ref_4a2 = dialogAlloc();
+    ref_4a3 = msgShow(msg_61);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００４３
+「クラブクリア」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4a3);
+    dialogFree(ref_4a2);
+    b(label_4b7);
+  label_4a7:
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_4af);
+    bitSet(EBIT_E0046);
+    ref_4aa = dialogAlloc();
+    ref_4ab = msgShow(msg_62);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００４６
+「南条ｏｒエリー編入」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4ab);
+    dialogFree(ref_4aa);
+    b(label_4b7);
+  label_4af:
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_4b7);
+    bitSet(EBIT_E006F);
+    ref_4b2 = dialogAlloc();
+    ref_4b3 = msgShow(msg_63);
+/***************************************
+ＥＢＩＴ[tab]Ｅ００６Ｆ
+「研究施設・ＴＶ局クリア」
+びっとお～んッ！！
+[wait][clear]
+***************************************/
+    wait(ref_4b3);
+    dialogFree(ref_4b2);
+    b(label_4b7);
+  label_4b7:
+}
+
+function DOORBOX()
+{
+    controlDisable();
+    sndMusicPlay(sound_306f, 127);
+    objAnimRotate(obj_4, 0, -70, 0, 30, 0);
+    objAnimRotate(obj_5, 0, 70, 0, 30, 0);
+    objAnimWait(obj_4);
+    objAnimWait(obj_5);
+    call(GOOUT);
+}
+
+function GOOUT()
+{
+    bitClear(MBIT_EXITBIT);
+    mapLoad(rengedai, 0, 0);
+}
+
+function HA_SHOP_EXPLAIN_0()
+{
+    ref_4c3 = dialogAlloc();
+    ref_4c4 = msgShow(msg_64);
+/***************************************
+[color(yellow)]Ｍｒ．富[color(white)]
+[tab]よし、「回復」についてだな。
+[wait][clear][color(yellow)]Ｍｒ．富[color(white)]
+[tab]当店で「回復してもらう」を選ぶと
+[tab]我じきじきのマッサージによって「ＨＰ」と「ＳＰ」のほか
+[tab]「猛毒」などのステータス異常も含め回復してやるぞ。
+[wait][clear][color(yellow)]Ｍｒ．富[color(white)]
+[tab]ちなみに、当店はグループで来たら
+[tab]全員を治療することになっている、決まりでな。
+[tab]安くはないが、薬に頼るよりは金はかからんはずだぞ。
+[wait][clear][color(yellow)]Ｍｒ．富[color(white)]
+[tab]まあ、こんなところだな。
+[tab]我がゴールドフィンガーを体感したくなったかね？
+[wait][clear]
+***************************************/
+    wait(ref_4c4);
+    dialogFree(ref_4c3);
+    call(HOKANI_SELECT);
+}

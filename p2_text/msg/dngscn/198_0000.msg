@@ -1,0 +1,6 @@
+
+msg_0:
+[color(yellow)]克哉[color(white)]
+[tab]まだ生きてるな…
+[tab]待ってろ、[tatsuya]…
+[sync][wait][clear][end]

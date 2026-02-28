@@ -1,0 +1,23 @@
+
+msg_0:
+[color(yellow)]アムルタート[color(white)]
+ 見つけましたわ！
+ 呪われしアンリ・マンユの子[var(msg_var_0)]！
+ あなたの醜きその姿、見るに耐えません！
+[wait][clear][color(yellow)]アムルタート[color(white)]
+ スプンタ・マンユの命により
+ あなたを滅ぼします！
+[wait][clear][end]
+
+msg_1:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 下手に手を出せば、地上は私の体より出ずる百害の
+ 蟲達に地上が埋め尽くされる事となりますよ。
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]アムルタート[color(white)]
+ 今のあなたに、その様な力はない筈…
+ さぁ、覚悟しなさい！
+[wait][clear][end]

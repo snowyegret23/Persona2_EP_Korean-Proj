@@ -1,0 +1,93 @@
+
+msg_0:
+[color(yellow)]克哉[color(white)]
+ 南条君、僕は時々判らなくなるんだ…
+ 正義とは一体何なんだ…
+ 君の意見を聞かせてくれないか？
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]南条[color(white)]
+ 荘子言うところの、「不知の知」でしょう。
+ 我々の判断は全て相対的なもの…
+ 絶対の正義など、この世にありはしませんよ…
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]克哉[color(white)]
+ 正義の名の元に行われた非道は数多い…
+ 僕は胸をはれるのか…？
+ 間違っていないと、言えるのか…？
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]南条[color(white)]
+ 単純な数の論理ですよ。大多数の幸福と安定…
+ 完全無欠の正義など、
+ 神か聖者でもなければ成し得ない…
+[wait][clear][end]
+
+msg_4:
+[load_sound(sndeff_15)][sync][color(yellow)]克哉[color(white)]
+ 人に人を裁く権利などあるのか…？
+ [play_sound(sndeff_15)][sync]純粋な正義など、本当にあるのだろうか？[sync]
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]南条[color(white)]
+ 「それ重刑は人を罪せんがためにあらざるなり」…
+ 法罰は、本来愚かな人類を治めるには必要です。
+ 貴方の行為は、十分正義と言えますよ…
+[wait][clear][end]
+
+msg_6:
+[color(yellow)]克哉[color(white)]
+ [var(msg_var_0)]さん…
+ まずは、君の同時刻におけるアリバイを
+ 聞かせてもらいたいな…
+[wait][clear][end]
+
+msg_7:
+[color(yellow)]克哉[color(white)]
+ ほう…それは妙だな…
+ 君は今、犯人しか知らない事を口にした。
+ 気がついたかな…
+[wait][clear][end]
+
+msg_8:
+[load_sound(sndeff_10)][sync][color(yellow)]克哉[color(white)]
+ 先程君は、こう言わなかったかな？
+ 「そんな女は知らない」と。
+ 妙だね…[play_sound(sndeff_10)][sync]女性とは一言も言っていないんだが…[sync]
+[wait][clear][end]
+
+msg_9:
+[color(yellow)]克哉[color(white)]
+ 何度見ても…人の死に目は心が痛む…
+[wait][clear][end]
+
+msg_10:
+[color(yellow)]克哉[color(white)]
+ 君の生き様…胸に刻んだ。
+ 安らかに眠ってくれ…
+[wait][clear][end]
+
+msg_11:
+[color(yellow)]克哉[color(white)]
+ 君の死がこれほど堪えるとはな…
+ どうやら僕は、なくしてはならない者を
+ 亡くしたようだ…
+[wait][clear][end]
+
+msg_12:
+[color(yellow)]克哉[color(white)]
+ 南条君…
+ 民間人である君に危険を冒させる訳にはいかない。
+ ここは、僕一人に任せてくれないかな？
+[wait][clear][end]
+
+msg_13:
+[color(yellow)]南条[color(white)]
+ ここは、[suou]巡査部長のご好意に
+ 甘えさせて頂きましょう…
+[wait][clear][end]

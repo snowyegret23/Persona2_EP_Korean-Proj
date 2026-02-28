@@ -1,0 +1,223 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_f);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_6);
+    b(label_8);
+  label_6:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_8);
+  label_8:
+    sndUnkCF(90);
+    envTriggerSet(warp1, 224, 1, line, coll_0);
+    envTriggerSet(warp2, 224, 1, line, coll_1);
+    unknownVar1(var_0);
+    bne(var_0, 13, label_10);
+    cameraSetNorth(west);
+    cameraSet(northeast, 1070, 0, -252);
+    b(label_13);
+  label_10:
+    cameraSetNorth(west);
+    cameraSet(southeast, 1076, 0, -1360);
+    b(label_13);
+  label_13:
+    ref_13 = spriteLoad(sprite_0);
+    wait(ref_13);
+    ref_15 = spriteLoad(sprite_2);
+    wait(ref_15);
+    playerInit(east);
+    controlDisable();
+    ref_19 = spriteLoad(sprite_6);
+    wait(ref_19);
+    unitSpawn(ulala, sprite_6, 988, 0, -1100, east, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+    ref_1d = spriteLoad(sprite_af);
+    wait(ref_1d);
+    unitSpawn(npc1, sprite_af, 675, 0, -798, south, none);
+    unitPalette(npc1, 3);
+    unitTriggerSet(npc1, URANAI, 255, 1);
+    ref_22 = spriteLoad(sprite_b0);
+    wait(ref_22);
+    unitSpawn(npc2, sprite_b0, 675, 0, -682, north, none);
+    unitPalette(npc2, 3);
+    unitTriggerSet(npc2, URANAI, 255, 1);
+    ref_27 = spriteLoad(sprite_ad);
+    wait(ref_27);
+    unitSpawn(npc3, sprite_ad, 573, 0, -1415, south, none);
+    unitPalette(npc3, 3);
+    unitTriggerSet(npc3, URESII, 255, 1);
+    ref_2c = spriteLoad(sprite_ae);
+    wait(ref_2c);
+    unitSpawn(npc4, sprite_ae, 1092, 0, -482, east, none);
+    unitPalette(npc4, 3);
+    unitTriggerSet(npc4, OBIE, 255, 1);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_3b = bustupLoad(bustup_18);
+    bustupWait(ref_3b);
+    ref_3d = bustupAlloc(ref_3b, left, rgb(0,0,0));
+    bustupFade(ref_3d, rgb(128,0,0), 30);
+    ref_3f = dialogAlloc();
+    ref_40 = msgShow(msg_0);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]うっふふー！！
+[tab]お見合いパーティ、お見合いパーティ♥
+[tab]たーのしみよねぇ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_30, 1);
+    wait(ref_40);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_3f);
+    ref_45 = bustupFade(ref_3d, rgb(0,0,0), 10);
+    bustupWait(ref_45);
+    bustupFree(ref_3d);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function URANAI()
+{
+    controlDisable();
+    unitFaceUnit(npc1, npc2);
+    unitFaceUnit(npc2, npc1);
+    ref_4e = dialogAlloc();
+    ref_4f = msgShow(msg_1);
+/***************************************
+[color(yellow)]残念そうな女子生徒[color(white)]
+[tab]やだ、前に誕生日教えたじゃん、１月って。
+[tab]忘れちゃったの？
+
+***************************************/
+    unitAnimationPlay(npc1, animation_24, 1);
+    wait(ref_4f);
+    ref_52 = msgShow(msg_2);
+/***************************************
+[tab]なんかショックゥ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_6, 1);
+    wait(ref_52);
+    dialogFree(ref_4e);
+    unitAnimationPlay(npc1, animation_0, 1);
+    ref_57 = dialogAlloc();
+    ref_58 = msgShow(msg_3);
+/***************************************
+[color(yellow)]占い好きな女子生徒[color(white)]
+[tab]１月って事は、あなたの龍は「黄龍」ねぇ。
+[tab]安定的で保守的な気質。
+
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_58);
+    ref_5b = msgShow(msg_4);
+/***************************************
+[tab]私は「青龍」だから…あちゃ、相性悪いみたい。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_6, 1);
+    wait(ref_5b);
+    dialogFree(ref_57);
+    unitAnimationPlay(npc2, animation_0, 1);
+    controlEnable();
+}
+
+function URESII()
+{
+    controlDisable();
+    unitFacePlayer(npc3);
+    ref_64 = dialogAlloc();
+    ref_65 = msgShow(msg_5);
+/***************************************
+[color(yellow)]嬉しそうな男子生徒[color(white)]
+[tab]当たるんデスよ、ワンロン占いは。
+[tab]僕なんか、それに従ってるだけで、
+[tab]素敵な彼女ができてしまったのデス。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_65);
+    ref_68 = msgShow(msg_6);
+/***************************************
+[color(yellow)]嬉しそうな男子生徒[color(white)]
+[tab]ぐふ。
+[tab]もうワンロン占い無しじゃ生きて行けませんね。
+[tab]いやいやマジで。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_1d, 1);
+    wait(ref_68);
+    dialogFree(ref_64);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    controlEnable();
+}
+
+function OBIE()
+{
+    controlDisable();
+    unitFacePlayer(npc4);
+    ref_72 = dialogAlloc();
+    ref_73 = msgShow(msg_7);
+/***************************************
+[color(yellow)]おびえた男子生徒[color(white)]
+[tab]あの…警察が来てるみたいなんスけど…
+[tab]この学校で何かあったんスか？
+[tab]まさかＪＯＫＥＲ事件じゃないでしょうね！？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_73);
+    ref_76 = msgShow(msg_8);
+/***************************************
+[color(yellow)]おびえた男子生徒[color(white)]
+[tab]そうだ…きっとそうなんだ！！
+
+***************************************/
+    unitAnimationPlay(npc4, animation_6, 1);
+    wait(ref_76);
+    ref_79 = msgShow(msg_9);
+/***************************************
+[tab]さっき３―Ｂで見た人も、きっと刑事ッス！
+[tab]やばい！[tab]この学校、やばいッスよ！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_79);
+    dialogFree(ref_72);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    controlEnable();
+}
+
+function warp1()
+{
+    controlDisable();
+    objAnimTranslate(obj_4c, 0, 0, 90, 30);
+    sndMusicPlay(sound_308c, 127);
+    objAnimWait(obj_4c);
+    dngLoad2(seven_sisters_high_empty-13);
+}
+
+function warp2()
+{
+    controlDisable();
+    objAnimTranslate(obj_4d, 0, 0, 90, 30);
+    sndMusicPlay(sound_308c, 127);
+    objAnimWait(obj_4d);
+    dngLoad2(seven_sisters_high_empty-14);
+}

@@ -1,0 +1,13 @@
+
+msg_0:
+[color(yellow)]南条[color(white)]
+[tab]神取…呼んでいるな…俺を…
+[tab]待っていろ…
+[tab]今すぐ、貴様の怨念を断ち切ってやる…
+[sync][wait][clear][end]
+
+msg_1:
+[color(yellow)]エリー[color(white)]
+[tab]これは…Ｍｒ．神取…？
+[tab]この先に…いるのですわね…
+[sync][wait][clear][end]

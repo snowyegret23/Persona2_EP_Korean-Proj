@@ -1,0 +1,968 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    sndUnkCF(127);
+    envTriggerSet(BOARD, 131, 1, line, coll_a);
+    envTriggerSet(BOARD, 7, 1, line, coll_a);
+    envTriggerSet(BOARD, 14, 1, line, coll_a);
+    envTriggerSet(MAGAZINE, 14, 1, line, coll_1b);
+    envTriggerSet(EXIT, 14, 1, line, coll_18);
+    cameraSet(southwest, 50, 0, -680);
+    bitGet(var_0, EBIT_E00AF);
+    bne(var_0, 0, label_c);
+    b(label_21);
+  label_c:
+    bne(var_0, 1, label_21);
+    bitGet(var_0, MBIT_IIE_EIREI);
+    bne(var_0, 0, label_10);
+    b(label_20);
+  label_10:
+    bne(var_0, 1, label_20);
+    bitGet(var_0, EBIT_E00B8);
+    bne(var_0, 0, label_1d);
+    bitGet(var_0, MBIT_PAPA_EIREI);
+    bne(var_0, 0, label_1a);
+    ref_15 = spriteLoad(sprite_58);
+    wait(ref_15);
+    unitSpawn(npc1, sprite_58, 80, 0, -300, east, none);
+    unitTriggerSet(npc1, JUNPAPA, 255, 1);
+    b(label_1c);
+  label_1a:
+    bne(var_0, 1, label_1c);
+    b(label_1c);
+  label_1c:
+    b(label_1f);
+  label_1d:
+    bne(var_0, 1, label_1f);
+    b(label_1f);
+  label_1f:
+    b(label_20);
+  label_20:
+    b(label_21);
+  label_21:
+    ref_21 = spriteLoad(sprite_56);
+    wait(ref_21);
+    bitGet(var_0, EBIT_E00B8);
+    bne(var_0, 0, label_34);
+    bitGet(var_0, EBIT_E00AF);
+    bne(var_0, 0, label_28);
+    b(label_33);
+  label_28:
+    bne(var_0, 1, label_33);
+    bitGet(var_0, MBIT_IIE_EIREI);
+    bne(var_0, 0, label_2c);
+    b(label_32);
+  label_2c:
+    bne(var_0, 1, label_32);
+    unitSpawn(unit_58, sprite_56, 170, 0, -770, south, none);
+    unitTriggerSet(unit_58, HENSHU, 255, 1);
+    bitSet(LBIT_0000);
+    b(label_45);
+    b(label_32);
+  label_32:
+    b(label_33);
+  label_33:
+    b(label_3e);
+  label_34:
+    bne(var_0, 1, label_3e);
+    unitSpawn(unit_58, sprite_56, 320, 0, -960, north, none);
+    unitTriggerSet(unit_58, HENSHU, 255, 1);
+    envTriggerSet(HENSHU, 224, 1, line, coll_8);
+    envTriggerSet(HENSHU, 224, 1, line, coll_6);
+    envTriggerSet(HENSHU, 193, 1, line, coll_5);
+    envTriggerSet(HENSHU, 131, 1, line, coll_4);
+    envTriggerSet(HENSHU, 131, 1, line, coll_3);
+    b(label_45);
+    b(label_3e);
+  label_3e:
+    unitSpawn(unit_58, sprite_56, 380, 0, -810, south, none);
+    unitTriggerSet(unit_58, HENSHU, 255, 1);
+    envTriggerSet(HENSHU, 224, 1, line, coll_8);
+    envTriggerSet(HENSHU, 224, 1, line, coll_6);
+    envTriggerSet(HENSHU, 193, 1, line, coll_5);
+    envTriggerSet(HENSHU, 131, 1, line, coll_4);
+    envTriggerSet(HENSHU, 131, 1, line, coll_3);
+  label_45:
+    ref_45 = spriteLoad(sprite_0);
+    wait(ref_45);
+    ref_47 = spriteLoad(sprite_2);
+    wait(ref_47);
+    playerInit(west);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function HENSHU()
+{
+    controlDisable();
+    bitGet(var_0, LBIT_0000);
+    bnz(var_0, label_71);
+    bitGet(var_0, EBIT_E00B8);
+    bne(var_0, 0, label_59);
+    b(label_62);
+  label_59:
+    bne(var_0, 1, label_62);
+    bitGet(var_0, MBIT_HENSHU_TALK2);
+    bne(var_0, 0, label_5e);
+    b(label_92);
+    b(label_61);
+  label_5e:
+    bne(var_0, 1, label_61);
+    b(label_179);
+    b(label_61);
+  label_61:
+    b(label_62);
+  label_62:
+    bitGet(var_0, EBIT_E0046);
+    bne(var_0, 0, label_65);
+    b(label_6e);
+  label_65:
+    bne(var_0, 1, label_6e);
+    bitGet(var_0, MBIT_HENSHU_TALK);
+    bne(var_0, 0, label_6a);
+    b(label_e9);
+    b(label_6d);
+  label_6a:
+    bne(var_0, 1, label_6d);
+    b(label_168);
+    b(label_6d);
+  label_6d:
+    b(label_6e);
+  label_6e:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_139);
+    b(label_150);
+  label_71:
+    ref_71 = bustupLoad(bustup_5b);
+    bustupWait(ref_71);
+    ref_73 = bustupAlloc(ref_71, right, rgb(0,0,0));
+    bustupFade(ref_73, rgb(128,0,0), 30);
+    ref_75 = dialogAlloc();
+    bitGet(var_0, MBIT_PAPA_EIREI);
+    bne(var_0, 0, label_84);
+    unitFaceUnit(unit_58, npc1);
+    unitAnimationHold(unit_58, animation_19, -1);
+    ref_7a = msgShow(msg_0);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]天野！
+[tab]そのトンデモ男を追い出して頂戴！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_7a);
+    unitAnimationStop(unit_58);
+    unitWait(unit_58);
+    unitAnimationPlay(unit_58, animation_2f, 1);
+    ref_80 = msgShow(msg_1);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]同期の「メー」編集長がどうしてもって言うから
+[tab]会ったら、単なる厄介ばらいだったのよ！
+[tab]今はそれどころじゃないっていうのに！！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_80);
+    b(label_8b);
+  label_84:
+    bne(var_0, 1, label_8b);
+    unitFacePlayer(unit_58);
+    unitAnimationPlay(unit_58, animation_1a, 1);
+    ref_87 = msgShow(msg_2);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]何だったの、あの男は…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_87);
+    b(label_8b);
+  label_8b:
+    dialogFree(ref_75);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    ref_8d = bustupFade(ref_73, rgb(0,0,0), 10);
+    bustupWait(ref_8d);
+    bustupFree(ref_73);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_92:
+    ref_92 = bustupLoad(bustup_5b);
+    bustupWait(ref_92);
+    ref_94 = bustupAlloc(ref_92, right, rgb(0,0,0));
+    bustupFade(ref_94, rgb(128,0,0), 30);
+    ref_96 = dialogAlloc();
+    ref_97 = msgShow(msg_3);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]天野…
+[tab]仕事仕事の私の人生って、何だったのかしらね…？
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_97);
+    ref_9a = msgShow(msg_4);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]街が飛んで、わけがわからない事件が起きて、
+[tab]何が現実かわからなくなって…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_9a);
+    ref_9d = msgShow(msg_5);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]私にとっての現実を考えてみたら…
+[tab]何一つ大した事ない事に気がついたのよ…
+[tab]目的も夢もなく、ただ働いていたんだ、ってね…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_9d);
+    unitAnimationPlay(unit_58, animation_6, 1);
+    ref_a1 = msgShow(msg_6);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]昔はこうじゃなかったわ…私にも夢があった…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_a1);
+    dialogFree(ref_96);
+    ref_a5 = bustupFade(ref_94, rgb(0,0,0), 10);
+    bustupWait(ref_a5);
+    bustupFree(ref_94);
+    delayClear();
+    delayWait(60);
+    ref_aa = bustupLoad(bustup_1);
+    bustupWait(ref_aa);
+    ref_ac = bustupAlloc(ref_aa, center, rgb(0,0,0));
+    bustupFade(ref_ac, rgb(128,0,0), 30);
+    ref_ae = dialogChoiceAlloc();
+    ref_af = msgShow(msg_7);
+/***************************************
+[tab]昔はこうじゃなかったわ…私にも夢があった…
+[choice(2)]夢、取り戻しましょう…編集長！！
+………
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_af);
+    dialogFree(ref_ae);
+    ref_b3 = bustupFade(ref_ac, rgb(0,0,0), 10);
+    bustupWait(ref_b3);
+    bustupFree(ref_ac);
+    bitSet(MBIT_HENSHU_TALK2);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_bb);
+    b(label_be);
+    b(label_be);
+  label_bb:
+    bne(var_0, 1, label_be);
+    b(label_d5);
+    b(label_be);
+  label_be:
+    unitAnimationPlay(unit_58, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitFacePlayer(unit_58);
+    ref_c2 = bustupLoad(bustup_5b);
+    bustupWait(ref_c2);
+    ref_c4 = bustupAlloc(ref_c2, right, rgb(0,0,0));
+    bustupFade(ref_c4, rgb(128,0,0), 30);
+    ref_c6 = dialogAlloc();
+    ref_c7 = msgShow(msg_8);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]天野…
+[tab]そうね…！[tab]若い連中に負けてられないものね。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_c7);
+    unitAnimationPlay(unit_58, animation_2d, 1);
+    ref_cb = msgShow(msg_9);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]さ…もう行きなさい。
+[tab]詳しくは知らないけど、やる事があるんでしょう？
+[tab]あの色つき眼鏡の男性によろしくね。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_cb);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_c6);
+    ref_d0 = bustupFade(ref_c4, rgb(0,0,0), 10);
+    bustupWait(ref_d0);
+    bustupFree(ref_c4);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_d5:
+    ref_d5 = bustupLoad(bustup_5b);
+    bustupWait(ref_d5);
+    ref_d7 = bustupAlloc(ref_d5, right, rgb(0,0,0));
+    bustupFade(ref_d7, rgb(128,0,0), 30);
+    ref_d9 = dialogAlloc();
+    ref_da = msgShow(msg_10);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]…悪かったわね、つまらない話して。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_da);
+    unitFacePlayer(unit_58);
+    unitAnimationPlay(unit_58, animation_2d, 1);
+    ref_df = msgShow(msg_11);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]さ…もう行きなさい。
+[tab]詳しくは知らないけど、やる事があるんでしょう？
+[tab]あの色つき眼鏡の男性によろしくね。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_df);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_d9);
+    ref_e4 = bustupFade(ref_d7, rgb(0,0,0), 10);
+    bustupWait(ref_e4);
+    bustupFree(ref_d7);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_e9:
+    unitFacePlayer(unit_58);
+    unitAnimationPlay(unit_58, animation_2d, 1);
+    ref_eb = bustupLoad(bustup_5b);
+    bustupWait(ref_eb);
+    ref_ed = bustupAlloc(ref_eb, right, rgb(0,0,0));
+    bustupFade(ref_ed, rgb(128,0,0), 30);
+    ref_ef = dialogAlloc();
+    ref_f0 = msgShow(msg_12);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]天野…あなた、パラベラムの前にいたわよね？
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_f0);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_ef);
+    ref_f5 = bustupFade(ref_ed, rgb(0,0,0), 10);
+    bustupWait(ref_f5);
+    bustupFree(ref_ed);
+    delayClear();
+    delayWait(60);
+    ref_fa = bustupLoad(bustup_2);
+    bustupWait(ref_fa);
+    ref_fc = bustupAlloc(ref_fa, center, rgb(0,0,0));
+    bustupFade(ref_fc, rgb(128,0,0), 30);
+    ref_fe = dialogChoiceAlloc();
+    ref_ff = msgShow(msg_13);
+/***************************************
+[tab]天野…あなた、パラベラムの前にいたわよね？
+[choice(2)]いいえ～何のことでしょぉ？
+疲れてるんですよ編集長。
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_ff);
+    dialogFree(ref_fe);
+    ref_103 = bustupFade(ref_fc, rgb(0,0,0), 10);
+    bustupWait(ref_103);
+    bustupFree(ref_fc);
+    bitSet(MBIT_HENSHU_TALK);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_10b);
+    b(label_10e);
+    b(label_10e);
+  label_10b:
+    bne(var_0, 1, label_10e);
+    b(label_126);
+    b(label_10e);
+  label_10e:
+    bitSet(MBIT_IIE_EIREI);
+    unitAnimationPlay(unit_58, animation_2d, 1);
+    ref_110 = bustupLoad(bustup_5b);
+    bustupWait(ref_110);
+    ref_112 = bustupAlloc(ref_110, right, rgb(0,0,0));
+    bustupFade(ref_112, rgb(128,0,0), 30);
+    ref_114 = dialogAlloc();
+    ref_115 = msgShow(msg_14);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]…嘘ついてないでしょうね？
+[tab]もし嘘をついて男とチャラチャラしてたのなら、
+[tab]承知しないわよ！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_115);
+    unitAnimationPlay(unit_58, animation_2f, 1);
+    ref_119 = msgShow(msg_15);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]いい、女は仕事に命を捧げてこそ華なのよ！
+[tab]ちょっとくらいイイ男だからって、
+[tab]尻尾を振っちゃダメなのよ！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_119);
+    ref_11c = msgShow(msg_16);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]男は魔物よ！
+[tab]甘い顔で近づいて、お金とか騙し取っていくのよ！
+[tab]わかったら取材を続けなさいっ！！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_11c);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_114);
+    ref_121 = bustupFade(ref_112, rgb(0,0,0), 10);
+    bustupWait(ref_121);
+    bustupFree(ref_112);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_126:
+    unitAnimationPlay(unit_58, animation_2d, 1);
+    ref_127 = bustupLoad(bustup_5b);
+    bustupWait(ref_127);
+    ref_129 = bustupAlloc(ref_127, right, rgb(0,0,0));
+    bustupFade(ref_129, rgb(128,0,0), 30);
+    ref_12b = dialogAlloc();
+    ref_12c = msgShow(msg_17);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]やっぱりあなたもそう思う？
+[tab]私ほどのキャリアになると、
+[tab]疲れ方も尋常じゃないのよね…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_12c);
+    ref_12f = msgShow(msg_18);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]最近いいこともないし、ちょっと休もうかしらね…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_12f);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_12b);
+    ref_134 = bustupFade(ref_129, rgb(0,0,0), 10);
+    bustupWait(ref_134);
+    bustupFree(ref_129);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_139:
+    unitFacePlayer(unit_58);
+    unitAnimationPlay(unit_58, animation_2f, 1);
+    ref_13b = bustupLoad(bustup_5b);
+    bustupWait(ref_13b);
+    ref_13d = bustupAlloc(ref_13b, right, rgb(0,0,0));
+    bustupFade(ref_13d, rgb(128,0,0), 30);
+    ref_13f = dialogAlloc();
+    ref_140 = msgShow(msg_19);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]天野、ＪＯＫＥＲ呪いの取材はどうなってるの！？
+[tab]街中、ＪＯＫＥＲだらけになってるって
+[tab]いうじゃない！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_140);
+    ref_143 = msgShow(msg_20);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]ワンロン千鶴の占い通りってこと…？
+[tab]いえ、そんな非科学的なことがあって
+[tab]たまるもんですか…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_143);
+    ref_146 = msgShow(msg_21);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]もう、あなただけには任せておけないわ。
+[tab]私も調べてみるけど、ネタを押さえたら
+[tab]ちゃんと報告するのよ！！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_146);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_13f);
+    ref_14b = bustupFade(ref_13d, rgb(0,0,0), 10);
+    bustupWait(ref_14b);
+    bustupFree(ref_13d);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_150:
+    unitFacePlayer(unit_58);
+    unitAnimationPlay(unit_58, animation_2d, 1);
+    ref_152 = bustupLoad(bustup_5b);
+    bustupWait(ref_152);
+    ref_154 = bustupAlloc(ref_152, right, rgb(0,0,0));
+    bustupFade(ref_154, rgb(128,0,0), 30);
+    ref_156 = dialogAlloc();
+    ref_157 = msgShow(msg_22);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]七姉妹学園の取材はどうだったの？
+[tab]報告なさい。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_157);
+    ref_15a = msgShow(msg_23);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]ええっ！？[tab]ＪＯＫＥＲに会ったですって！？
+[tab]ペルソナ…？[tab]悪魔…？
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_15a);
+    unitAnimationPlay(unit_58, animation_2f, 1);
+    ref_15e = msgShow(msg_24);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]何寝ぼけたこと言ってるの！？
+[tab]ちゃんと取材してきなさい！！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_15e);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_156);
+    ref_163 = bustupFade(ref_154, rgb(0,0,0), 10);
+    bustupWait(ref_163);
+    bustupFree(ref_154);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_168:
+    unitFacePlayer(unit_58);
+    unitAnimationPlay(unit_58, animation_2d, 1);
+    ref_16a = bustupLoad(bustup_5b);
+    bustupWait(ref_16a);
+    ref_16c = bustupAlloc(ref_16a, right, rgb(0,0,0));
+    bustupFade(ref_16c, rgb(128,0,0), 30);
+    ref_16e = dialogAlloc();
+    ref_16f = msgShow(msg_25);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]…何しているの？
+[tab]早く仕事に戻りなさい！！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_16f);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_16e);
+    ref_174 = bustupFade(ref_16c, rgb(0,0,0), 10);
+    bustupWait(ref_174);
+    bustupFree(ref_16c);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_179:
+    unitFacePlayer(unit_58);
+    unitAnimationPlay(unit_58, animation_2d, 1);
+    ref_17b = bustupLoad(bustup_5b);
+    bustupWait(ref_17b);
+    ref_17d = bustupAlloc(ref_17b, right, rgb(0,0,0));
+    bustupFade(ref_17d, rgb(128,0,0), 30);
+    ref_17f = dialogAlloc();
+    ref_180 = msgShow(msg_26);
+/***************************************
+[color(yellow)]水野編集長[color(white)]
+[tab]さ…もう行きなさい。
+[tab]詳しくは知らないけど、やる事があるんでしょう？
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_180);
+    unitAnimationPlay(unit_58, animation_0, 1);
+    dialogFree(ref_17f);
+    ref_185 = bustupFade(ref_17d, rgb(0,0,0), 10);
+    bustupWait(ref_185);
+    bustupFree(ref_17d);
+    unitRestoreFacing(unit_58);
+    b(label_18a);
+  label_18a:
+    controlEnable();
+}
+
+function JUNPAPA()
+{
+    controlDisable();
+    bitSet(MBIT_PAPA_EIREI);
+    unitFacePlayer(npc1);
+    ref_18f = bustupLoad(bustup_c9);
+    bustupWait(ref_18f);
+    ref_191 = bustupAlloc(ref_18f, right, rgb(0,0,0));
+    bustupFade(ref_191, rgb(128,0,0), 30);
+    unitAnimationPlay(npc1, animation_24, 1);
+    ref_194 = dialogAlloc();
+    ref_195 = msgShow(msg_27);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]いや～どうも。
+[tab]私、今回の事件について伝説を調べてみたんです。
+[tab]そうしたら凄い事がわかりましてね！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_195);
+    bitGet(var_0, EBIT_KASIHARA);
+    bne(var_0, 0, label_19f);
+    unitAnimationPlay(npc1, animation_0, 1);
+    ref_19b = msgShow(msg_28);
+/***************************************
+[color(yellow)]橿原[tab]明成（かしはら[tab]あきなり）[color(green)]
+[tab]七姉妹学園の世界史教諭であり、橿原[tab]淳の父。
+[tab]同学園３年生の学年主任も務める。
+[tab]風変わりだが、優しい先生として慕われている。[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_19b);
+    b(label_1a1);
+  label_19f:
+    bne(var_0, 1, label_1a1);
+    b(label_1a1);
+  label_1a1:
+    unitAnimationPlay(npc1, animation_19, 1);
+    ref_1a2 = msgShow(msg_29);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]これはぜひとも、「メー」編集部に知らせねば！
+[tab]と思いまして。
+[tab]少し長い話ですけど、聞いてくださいますか？
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1a2);
+    dialogFree(ref_194);
+    ref_1a6 = bustupFade(ref_191, rgb(0,0,0), 10);
+    bustupWait(ref_1a6);
+    bustupFree(ref_191);
+    bitSet(EBIT_KASIHARA);
+    delayClear();
+    delayWait(60);
+    ref_1ac = bustupLoad(bustup_1);
+    bustupWait(ref_1ac);
+    ref_1ae = bustupAlloc(ref_1ac, center, rgb(0,0,0));
+    bustupFade(ref_1ae, rgb(128,0,0), 30);
+    ref_1b0 = dialogChoiceAlloc();
+    ref_1b1 = msgShow(msg_30);
+/***************************************
+[tab]少し長い話ですけど、聞いてくださいますか？
+[choice(2)]お伺いします！
+こ、ここは「メー」編集部じゃないですよ。
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_1b1);
+    dialogFree(ref_1b0);
+    ref_1b5 = bustupFade(ref_1ae, rgb(0,0,0), 10);
+    bustupWait(ref_1b5);
+    bustupFree(ref_1ae);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_1bc);
+    b(label_1d5);
+    b(label_1bf);
+  label_1bc:
+    bne(var_0, 1, label_1bf);
+    b(label_1bf);
+    b(label_1bf);
+  label_1bf:
+    unitAnimationPlay(npc1, animation_0, 1);
+    unitWait(npc1);
+    delayClear();
+    delayWait(30);
+    unitAnimationHold(npc1, animation_1b, -1);
+    ref_1c4 = bustupLoad(bustup_c9);
+    bustupWait(ref_1c4);
+    ref_1c6 = bustupAlloc(ref_1c4, right, rgb(0,0,0));
+    bustupFade(ref_1c6, rgb(128,0,0), 30);
+    ref_1c8 = dialogAlloc();
+    ref_1c9 = msgShow(msg_31);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]え、そうなんですか？
+[tab]いや～失礼しました。
+[sync][wait][clear]
+***************************************/
+    delayClear();
+    delayWait(60);
+    unitAnimationStop(npc1);
+    unitAnimationPlay(npc1, animation_0, 1);
+    sync();
+    wait(ref_1c9);
+    dialogFree(ref_1c8);
+    ref_1d1 = bustupFade(ref_1c6, rgb(0,0,0), 10);
+    bustupWait(ref_1d1);
+    bustupFree(ref_1c6);
+    b(label_22f);
+  label_1d5:
+    unitAnimationPlay(npc1, animation_24, 1);
+    ref_1d6 = bustupLoad(bustup_c9);
+    bustupWait(ref_1d6);
+    ref_1d8 = bustupAlloc(ref_1d6, right, rgb(0,0,0));
+    bustupFade(ref_1d8, rgb(128,0,0), 30);
+    ref_1da = dialogAlloc();
+    ref_1db = msgShow(msg_32);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]貴方も、清忠とトリフネの伝説はご存知ですよね？
+[tab]遠い昔、トリフネに乗り飛来した神々が、
+[tab]我々人類に文明を与えた…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1db);
+    ref_1de = msgShow(msg_33);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]それを知った澄丸[tab]清忠は、そのトリフネが眠る地
+[tab]つまりこの珠閒瑠市に城を建てた…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1de);
+    ref_1e1 = msgShow(msg_34);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]実はこの一連の伝説自体、戦国の昔、
+[tab]清忠がトリフネを言霊で創造しようとしたがために
+[tab]生まれたものだったんですよ！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1e1);
+    ref_1e4 = msgShow(msg_35);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]清忠は、陰陽を基調とする区画整理を行い、
+[tab]現在の珠閒瑠市の姿を作った張本人です。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1e4);
+    ref_1e7 = msgShow(msg_36);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]史実では、単なる暴君のように語られるだけだが、
+[tab]伝説では、言霊や望龍術などの呪術を操ったと、
+[tab]がぜん精彩を帯びてくる！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1e7);
+    ref_1ea = msgShow(msg_37);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]裏望龍術の邪術で天下統一を目指した清忠は、
+[tab]分家の[suou]の謀反で誅殺され、
+[tab]悪行を償わされるため即身仏にされたんです！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1ea);
+    ref_1ed = msgShow(msg_38);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]病没したという正史の方が誤りだったんですよ！
+[tab]伝説は、[suou]の謀反の時、トリフネが浮上し、
+[tab]一夜にして不気味な城が建ったと伝えています。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1ed);
+    ref_1f0 = msgShow(msg_39);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]ね、今の状況にピッタリ一致するでしょう！？
+[tab]いや～１０年前に知ってればなぁ…
+[tab]伝説は真実を語っていたんですよ！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1f0);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_1da);
+    ref_1f5 = bustupFade(ref_1d8, rgb(0,0,0), 10);
+    bustupWait(ref_1f5);
+    bustupFree(ref_1d8);
+    delayClear();
+    delayWait(60);
+    ref_1fa = bustupLoad(bustup_1);
+    bustupWait(ref_1fa);
+    ref_1fc = bustupAlloc(ref_1fa, center, rgb(0,0,0));
+    bustupFade(ref_1fc, rgb(128,0,0), 30);
+    ref_1fe = dialogChoiceAlloc();
+    ref_1ff = msgShow(msg_40);
+/***************************************
+[tab]伝説は真実を語っていたんですよ！
+[choice(2)]謀反の首謀者の名前は、なんていうんですか？
+そ、そうですか…
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_1ff);
+    dialogFree(ref_1fe);
+    ref_203 = bustupFade(ref_1fc, rgb(0,0,0), 10);
+    bustupWait(ref_203);
+    bustupFree(ref_1fc);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_20a);
+    b(label_20d);
+    b(label_20d);
+  label_20a:
+    bne(var_0, 1, label_20d);
+    b(label_220);
+    b(label_20d);
+  label_20d:
+    bitSet(MBIT_KI_TATUNOSIN);
+    unitAnimationPlay(npc1, animation_24, 1);
+    ref_20f = bustupLoad(bustup_c9);
+    bustupWait(ref_20f);
+    ref_211 = bustupAlloc(ref_20f, right, rgb(0,0,0));
+    bustupFade(ref_211, rgb(128,0,0), 30);
+    ref_213 = dialogAlloc();
+    ref_214 = msgShow(msg_41);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]清忠を討ったのは、[color(orange)][suou][tab]辰之進[color(white)]という若武者
+[tab]です。他に、家臣とお姫様がいたらしいですが…
+[tab]そこまではわかりません。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_214);
+    ref_217 = msgShow(msg_42);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]辰之進が復活でもして、この混乱を治めてくれれば
+[tab]いいんですがね…
+[tab]では、失礼しました。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_217);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_213);
+    ref_21c = bustupFade(ref_211, rgb(0,0,0), 10);
+    bustupWait(ref_21c);
+    bustupFree(ref_211);
+    b(label_22f);
+  label_220:
+    unitAnimationPlay(npc1, animation_24, 1);
+    ref_221 = bustupLoad(bustup_c9);
+    bustupWait(ref_221);
+    ref_223 = bustupAlloc(ref_221, right, rgb(0,0,0));
+    bustupFade(ref_223, rgb(128,0,0), 30);
+    ref_225 = dialogAlloc();
+    ref_226 = msgShow(msg_43);
+/***************************************
+[color(yellow)]橿原先生[color(white)]
+[tab]それでは、ぜひとも「メー」に載せてくださいね！
+[tab]失礼しました。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_226);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_225);
+    ref_22b = bustupFade(ref_223, rgb(0,0,0), 10);
+    bustupWait(ref_22b);
+    bustupFree(ref_223);
+    b(label_22f);
+  label_22f:
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 4, false);
+    screenFadeOuter(rgb(255,255,255), 4, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitDespawn(npc1, none);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 4, true);
+    screenFadeOuter(rgb(0,0,0), 4, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function EXIT()
+{
+    controlDisable();
+    sndMusicPlay(sound_30a6, 127);
+    objAnimRotate(obj_b, 0, -80, 0, 60, 0);
+    objAnimWait(obj_b);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    bitGet(var_0, EBIT_E0077);
+    bne(var_0, 0, label_24b);
+    eventLoad(event_e6);
+    b(label_24e);
+  label_24b:
+    bne(var_0, 1, label_24e);
+    eventLoad(event_e7);
+    b(label_24e);
+  label_24e:
+}
+
+function BOARD()
+{
+    controlDisable();
+    ref_250 = dialogAlloc();
+    ref_251 = msgShow(msg_44);
+/***************************************
+[color(yellow)]クーレストの売り上げ表[color(white)]
+[tab][color(green)]販売部数が落ち込んでいる。
+[tab]編集長のイライラの原因らしい。
+[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_251);
+    dialogFree(ref_250);
+    controlEnable();
+}
+
+function MAGAZINE()
+{
+    controlDisable();
+    ref_258 = dialogAlloc();
+    ref_259 = msgShow(msg_45);
+/***************************************
+[color(yellow)]マガジンラック[color(white)]
+[tab][color(green)]クーレストのバックナンバーがある。
+[color(white)]
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_259);
+    dialogFree(ref_258);
+    controlEnable();
+}

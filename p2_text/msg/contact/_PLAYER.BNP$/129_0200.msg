@@ -1,0 +1,82 @@
+
+msg_0:
+[color(yellow)]南条[color(white)]
+ 報道の自由とプライバシーについては
+ 永きに渡り論争の的です。
+ そこでＭｓ．天野、貴方の意見を伺いたい。
+[wait][clear][end]
+
+msg_1:
+ [color(green)]舞耶は報道の自由とプライバシーについて述べた。[color(white)]
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]南条[color(white)]
+ なるほど…
+ では次に悪魔の立場から[var(msg_var_0)]氏
+ 貴方の意見をお聞きしたい。
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]南条[color(white)]
+ 通信傍受法案、通称「盗聴法案」が可決しました。
+ 若者向け情報誌「クーレスト」記者である
+ Ｍｓ．天野に若者の意見を代表して頂きたい。
+[wait][clear][end]
+
+msg_4:
+ [color(green)]舞耶は若者を代表し盗聴法とプライバシーについて
+ 述べた。[color(white)]
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]南条[color(white)]
+ なるほど…
+ では次に悪魔の立場から[var(msg_var_0)]氏
+ 貴方の意見をお聞きしたい。
+[wait][clear][end]
+
+msg_6:
+[color(yellow)]南条[color(white)]
+ インターネットの普及は情報の高度な共有化の反面
+ プライバシー漏洩の危険も孕んでいます。
+ Ｍｓ．天野は、どの様な意見をお持ちか？
+[wait][clear][end]
+
+msg_7:
+ [color(green)]舞耶はインターネットとプライバシーについて
+ 述べた。[color(white)]
+[wait][clear][end]
+
+msg_8:
+[load_sound(sndeff_22)][sync][color(yellow)]南条[color(white)]
+ Ｍｓ．天野のご意見は、よく解かりました。
+ 最後に悪魔の立場から[var(msg_var_0)]氏
+ [play_sound(sndeff_22)][sync]貴方の意見をお聞きしたい。[sync]
+[wait][clear][end]
+
+msg_9:
+[color(yellow)]南条[color(white)]
+ Ｍｓ．天野…
+ 俺はこれ以上近しい人間が死んでゆくのを
+ 見るのは耐えられません…
+[wait][clear][end]
+
+msg_10:
+[color(yellow)]南条[color(white)]
+ Ｍｓ．天野…
+ まだ早過ぎますよ…
+[wait][clear][end]
+
+msg_11:
+[color(yellow)]南条[color(white)]
+ 愛別離苦とは正にこの事…
+[wait][clear][end]
+
+msg_12:
+[load_sound(sndeff_37)][sync][sync]
+[end]
+
+msg_13:
+[play_sound(sndeff_37)][sync]
+[end]

@@ -1,0 +1,967 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_1a);
+    disableMap();
+    ref_4 = spriteLoad(sprite_0);
+    wait(ref_4);
+    ref_6 = spriteLoad(sprite_2);
+    wait(ref_6);
+    ref_8 = spriteLoad(sprite_6);
+    wait(ref_8);
+    ref_a = spriteLoad(sprite_d);
+    wait(ref_a);
+    ref_c = spriteLoad(sprite_13);
+    wait(ref_c);
+    ref_e = spriteLoad(sprite_18);
+    wait(ref_e);
+    bitGet(var_1, EBIT_E00B0);
+    bne(var_1, 0, label_15);
+    ref_12 = call(KYOUSEI);
+    wait(ref_12);
+    b(label_19);
+  label_15:
+    bne(var_1, 1, label_19);
+    ref_16 = call(FREE);
+    wait(ref_16);
+    b(label_19);
+  label_19:
+}
+
+function KYOUSEI()
+{
+    cameraSet(northwest, 750, 0, -1000);
+    ref_1b = sndLoad(sound_1240);
+    wait(ref_1b);
+    sndMusicPlay(sound_1240, 90);
+    unitSpawn(maya, sprite_0, 750, 0, -700, south, none);
+    unitSpawn(ulala, sprite_6, 550, 0, -800, south, none);
+    unitSpawn(katsuya, sprite_d, 850, 0, -950, south, none);
+    unitSpawn(baofu, sprite_13, 650, 0, -1050, south, none);
+    unitSpawn(tatsuya, sprite_18, 1050, 0, -850, south, none);
+    unitAnimationPlay(ulala, animation_a, 1);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    unitAnimationPlay(baofu, animation_a, 1);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    unitIdleOffAll();
+    unitTriggerSet(katsuya, KATUYA, 255, 1);
+    unitTriggerSet(baofu, PAOFU, 255, 1);
+    unitTriggerSet(ulala, URARA, 255, 1);
+    unitTriggerSet(tatsuya, TATUYA, 255, 1);
+    envTriggerSet(EXIT, 131, 1, line, coll_5);
+    envTriggerSet(ATATA1, 255, 2, circle, coll_1);
+    envTriggerSet(ATATA2, 255, 2, circle, coll_0);
+    envTriggerSet(ATATA3, 255, 2, circle, coll_3);
+    envTriggerSet(ATATA4, 255, 2, circle, coll_2);
+    envTriggerSet(ATATA5, 255, 2, circle, coll_4);
+    envTriggerSet(ATATA6, 255, 2, circle, coll_5);
+    envTriggerSet(ATATA7, 255, 2, circle, coll_6);
+    envTriggerSet(ATATA8, 255, 2, circle, coll_7);
+    envTriggerSet(IDOL1, 255, 1, collision_2, coll_d);
+    envTriggerSet(IDOL2, 255, 1, collision_2, coll_f);
+    ref_37 = cameraMoveTo(750, 0, -150, 180);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 4, true);
+    screenFadeOuter(rgb(0,0,0), 4, true);
+    wait(ref_37);
+    delayClear();
+    delayWait(60);
+    cameraRotateTo(7, 30);
+    ref_3f = cameraMoveTo(500, 0, -150, 60);
+    wait(ref_3f);
+    delayClear();
+    delayWait(30);
+    ref_43 = dialogAlloc();
+    ref_44 = msgShow(msg_0);
+/***************************************
+[color(yellow)]女媧の像[color(white)]
+[tab]わらわは女媧（じょか）…
+[tab]ウテナの扉開かんとする者…
+[tab]粛々と古の祝詞捧ぐべし…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_44);
+    dialogFree(ref_43);
+    delayClear();
+    delayWait(60);
+    cameraRotateTo(1, 30);
+    ref_4b = cameraMoveTo(1000, 0, -150, 120);
+    wait(ref_4b);
+    ref_4d = dialogAlloc();
+    ref_4e = msgShow(msg_1);
+/***************************************
+[color(yellow)]伏羲の像[color(white)]
+[tab]我は伏羲（ふくぎ）…
+[tab]祝詞は言霊…
+[tab]分かたれし七霊集め、古の祝詞捧ぐべし…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_4e);
+    dialogFree(ref_4d);
+    delayClear();
+    delayWait(30);
+    ref_54 = cameraLookAtUnit(maya, 0, 90);
+    wait(ref_54);
+    unitDespawn(maya, none);
+    playerInit(south);
+    controlDisable();
+    bitSet(EBIT_E00B0);
+    unitIdleOnAll();
+    controlEnable();
+}
+
+function FREE()
+{
+    bitGet(var_7, EBIT_E1700);
+    bne(var_7, 0, label_69);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_65);
+    ref_61 = sndLoad(sound_1240);
+    wait(ref_61);
+    sndMusicPlay(sound_1240, 90);
+    b(label_67);
+  label_65:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_67);
+  label_67:
+    sndUnkCF(90);
+    b(label_6e);
+  label_69:
+    bne(var_7, 1, label_6e);
+    ref_6a = sndLoad(sound_1240);
+    wait(ref_6a);
+    sndMusicPlay(sound_1240, 90);
+    b(label_6e);
+  label_6e:
+    unitSpawn(ulala, sprite_6, 550, 0, -800, south, none);
+    unitSpawn(katsuya, sprite_d, 850, 0, -950, south, none);
+    unitSpawn(baofu, sprite_13, 650, 0, -1050, south, none);
+    unitSpawn(tatsuya, sprite_18, 1050, 0, -850, south, none);
+    unitAnimationPlay(ulala, animation_a, 1);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    unitAnimationPlay(baofu, animation_a, 1);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    unitIdleOnAll();
+    unitTriggerSet(katsuya, KATUYA, 255, 1);
+    unitTriggerSet(baofu, PAOFU, 255, 1);
+    unitTriggerSet(ulala, URARA, 255, 1);
+    unitTriggerSet(tatsuya, TATUYA, 255, 1);
+    envTriggerSet(EXIT, 131, 1, line, coll_5);
+    envTriggerSet(ATATA1, 255, 2, circle, coll_1);
+    envTriggerSet(ATATA2, 255, 2, circle, coll_0);
+    envTriggerSet(ATATA3, 255, 2, circle, coll_3);
+    envTriggerSet(ATATA4, 255, 2, circle, coll_2);
+    envTriggerSet(ATATA5, 255, 2, circle, coll_4);
+    envTriggerSet(ATATA6, 255, 2, circle, coll_5);
+    envTriggerSet(ATATA7, 255, 2, circle, coll_6);
+    envTriggerSet(ATATA8, 255, 2, circle, coll_7);
+    envTriggerSet(IDOL1, 255, 1, collision_2, coll_d);
+    envTriggerSet(IDOL2, 255, 1, collision_2, coll_f);
+    bitGet(var_7, EBIT_E1700);
+    bne(var_7, 0, label_8c);
+    cameraSet(northeast, 740, 0, -380);
+    playerInit(north);
+    controlDisable();
+    b(label_92);
+  label_8c:
+    bne(var_7, 1, label_92);
+    bitClear(EBIT_E1700);
+    cameraSet(southeast, 750, 0, -1230);
+    playerInit(south);
+    controlDisable();
+    b(label_92);
+  label_92:
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function KATUYA()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    ref_9b = bustupLoad(bustup_21);
+    bustupWait(ref_9b);
+    ref_9d = bustupAlloc(ref_9b, left, rgb(0,0,0));
+    bustupFade(ref_9d, rgb(128,0,0), 30);
+    ref_9f = dialogAlloc();
+    ref_a0 = msgShow(msg_2);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]祝詞…？[tab]七つの言霊…？
+[tab]それがわからないと、ウテナの間とやらは
+[tab]開かないと言いたいのか…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_a0);
+    dialogFree(ref_9f);
+    ref_a7 = bustupFade(ref_9d, rgb(0,0,0), 10);
+    bustupWait(ref_a7);
+    bustupFree(ref_9d);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    unitRestoreFacing(katsuya);
+    controlEnable();
+}
+
+function PAOFU()
+{
+    controlDisable();
+    unitFacePlayer(baofu);
+    ref_b0 = bustupLoad(bustup_2c);
+    bustupWait(ref_b0);
+    ref_b2 = bustupAlloc(ref_b0, left, rgb(0,0,0));
+    bustupFade(ref_b2, rgb(128,0,0), 30);
+    ref_b4 = dialogAlloc();
+    ref_b5 = msgShow(msg_3);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]奥に通じるドアがねえなぁ…
+[tab]その光がどこぞにつながってるってことか…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_b5);
+    dialogFree(ref_b4);
+    ref_bc = bustupFade(ref_b2, rgb(0,0,0), 10);
+    bustupWait(ref_bc);
+    bustupFree(ref_b2);
+    unitAnimationPlay(baofu, animation_a, 1);
+    unitRestoreFacing(baofu);
+    controlEnable();
+}
+
+function URARA()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_c5 = bustupLoad(bustup_17);
+    bustupWait(ref_c5);
+    ref_c7 = bustupAlloc(ref_c5, left, rgb(0,0,0));
+    bustupFade(ref_c7, rgb(128,0,0), 30);
+    ref_c9 = dialogAlloc();
+    ref_ca = msgShow(msg_4);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]北斗七星ってやつでしょ、これ？
+[tab]像と像の間にも１つあるわね…
+[tab]あれなんだろ？
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_ca);
+    dialogFree(ref_c9);
+    ref_d1 = bustupFade(ref_c7, rgb(0,0,0), 10);
+    bustupWait(ref_d1);
+    bustupFree(ref_c7);
+    unitAnimationPlay(ulala, animation_a, 1);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function TATUYA()
+{
+    controlDisable();
+    unitFacePlayer(tatsuya);
+    ref_da = bustupLoad(bustup_b);
+    bustupWait(ref_da);
+    ref_dc = bustupAlloc(ref_da, left, rgb(0,0,0));
+    bustupFade(ref_dc, rgb(128,0,0), 30);
+    ref_de = dialogAlloc();
+    ref_df = msgShow(msg_5);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]ワープゾーンか…厄介だな…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_14, 1);
+    unitWait(tatsuya);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(tatsuya, animation_24, 1);
+    unitWait(tatsuya);
+    delayClear();
+    delayWait(10);
+    sync();
+    wait(ref_df);
+    dialogFree(ref_de);
+    ref_eb = bustupFade(ref_dc, rgb(0,0,0), 10);
+    bustupWait(ref_eb);
+    bustupFree(ref_dc);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    unitRestoreFacing(tatsuya);
+    controlEnable();
+}
+
+function IDOL_LEFT()
+{
+    controlDisable();
+    ref_f3 = dialogAlloc();
+    ref_f4 = msgShow(msg_6);
+/***************************************
+[color(yellow)]女媧の像[color(white)]
+[tab]わらわは女媧（じょか）…
+[tab]ウテナの扉開かんとする者…
+[tab]粛々と古の祝詞捧ぐべし…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_f4);
+    dialogFree(ref_f3);
+    controlEnable();
+}
+
+function IDOL_RIGHT()
+{
+    controlDisable();
+    ref_fb = dialogAlloc();
+    ref_fc = msgShow(msg_7);
+/***************************************
+[color(yellow)]伏羲の像[color(white)]
+[tab]我は伏羲（ふくぎ）…
+[tab]祝詞は言霊…
+[tab]分かたれし七霊集め、古の祝詞捧ぐべし…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_fc);
+    dialogFree(ref_fb);
+    controlEnable();
+}
+
+function EXIT()
+{
+    controlDisable();
+    objAnimRotate(obj_9, 0, -80, 0, 60, 0);
+    sndMusicPlay(sound_329f, 127);
+    objAnimRotate(obj_a, 0, 80, 0, 60, 0);
+    objAnimWait(obj_9);
+    objAnimWait(obj_a);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    bitSet(EBIT_E1700);
+    mapLoad(rengedai, 10, 5);
+}
+
+function ATATA1()
+{
+    controlDisable();
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitMove(maya, 325, -670, face_south, medium);
+    ref_115 = efctDummy(effect_f);
+    wait(ref_115);
+    ref_117 = efctLoad(effect_f);
+    wait(ref_117);
+    efctPlay(effect_f, efct_0, 325, 0, -670, 325, 0, -670, false);
+    sndMusicPlay(sound_329e, 127);
+    unitSpriteEffect(maya, 2);
+    unitShadowRadius(maya, 0);
+    unitColorAdjust(maya, 0.9375, 0.9375, 0.9375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.875, 0.875, 0.875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.8125, 0.8125, 0.8125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.75, 0.75, 0.75);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.6875, 0.6875, 0.6875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.625, 0.625, 0.625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5625, 0.5625, 0.5625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.4375, 0.4375, 0.4375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.375, 0.375, 0.375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.3125, 0.3125, 0.3125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.1875, 0.1875, 0.1875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0, 0, 0);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(sumaru_castle1-1);
+}
+
+function ATATA2()
+{
+    controlDisable();
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitMove(maya, 460, -550, face_south, medium);
+    ref_157 = efctDummy(effect_f);
+    wait(ref_157);
+    ref_159 = efctLoad(effect_f);
+    wait(ref_159);
+    efctPlay(effect_f, efct_0, 460, 0, -550, 460, 0, -550, false);
+    sndMusicPlay(sound_329e, 127);
+    unitSpriteEffect(maya, 2);
+    unitShadowRadius(maya, 0);
+    unitColorAdjust(maya, 0.9375, 0.9375, 0.9375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.875, 0.875, 0.875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.8125, 0.8125, 0.8125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.75, 0.75, 0.75);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.6875, 0.6875, 0.6875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.625, 0.625, 0.625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5625, 0.5625, 0.5625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.4375, 0.4375, 0.4375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.375, 0.375, 0.375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.3125, 0.3125, 0.3125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.1875, 0.1875, 0.1875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0, 0, 0);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    bitGet(var_7, MBIT_KE_MAIHIME);
+    bne(var_7, 0, label_197);
+    dngLoad2(sumaru_castle1-2);
+    b(label_19a);
+  label_197:
+    bne(var_7, 1, label_19a);
+    dngLoad2(sumaru_castle1-25);
+    b(label_19a);
+  label_19a:
+}
+
+function ATATA3()
+{
+    controlDisable();
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitMove(maya, 630, -510, face_south, medium);
+    ref_19f = efctDummy(effect_f);
+    wait(ref_19f);
+    ref_1a1 = efctLoad(effect_f);
+    wait(ref_1a1);
+    efctPlay(effect_f, efct_0, 630, 0, -510, 630, 0, -510, false);
+    sndMusicPlay(sound_329e, 127);
+    unitSpriteEffect(maya, 2);
+    unitShadowRadius(maya, 0);
+    unitColorAdjust(maya, 0.9375, 0.9375, 0.9375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.875, 0.875, 0.875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.8125, 0.8125, 0.8125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.75, 0.75, 0.75);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.6875, 0.6875, 0.6875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.625, 0.625, 0.625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5625, 0.5625, 0.5625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.4375, 0.4375, 0.4375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.375, 0.375, 0.375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.3125, 0.3125, 0.3125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.1875, 0.1875, 0.1875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0, 0, 0);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(sumaru_castle1-3);
+}
+
+function ATATA4()
+{
+    controlDisable();
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitMove(maya, 775, -565, face_south, medium);
+    ref_1e1 = efctDummy(effect_f);
+    wait(ref_1e1);
+    ref_1e3 = efctLoad(effect_f);
+    wait(ref_1e3);
+    efctPlay(effect_f, efct_0, 775, 0, -565, 775, 0, -565, false);
+    sndMusicPlay(sound_329e, 127);
+    unitSpriteEffect(maya, 2);
+    unitShadowRadius(maya, 0);
+    unitColorAdjust(maya, 0.9375, 0.9375, 0.9375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.875, 0.875, 0.875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.8125, 0.8125, 0.8125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.75, 0.75, 0.75);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.6875, 0.6875, 0.6875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.625, 0.625, 0.625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5625, 0.5625, 0.5625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.4375, 0.4375, 0.4375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.375, 0.375, 0.375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.3125, 0.3125, 0.3125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.1875, 0.1875, 0.1875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0, 0, 0);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(sumaru_castle2-0);
+}
+
+function ATATA5()
+{
+    controlDisable();
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitMove(maya, 890, -685, face_south, medium);
+    ref_223 = efctDummy(effect_f);
+    wait(ref_223);
+    ref_225 = efctLoad(effect_f);
+    wait(ref_225);
+    efctPlay(effect_f, efct_0, 890, 0, -685, 890, 0, -685, false);
+    sndMusicPlay(sound_329e, 127);
+    unitSpriteEffect(maya, 2);
+    unitShadowRadius(maya, 0);
+    unitColorAdjust(maya, 0.9375, 0.9375, 0.9375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.875, 0.875, 0.875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.8125, 0.8125, 0.8125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.75, 0.75, 0.75);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.6875, 0.6875, 0.6875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.625, 0.625, 0.625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5625, 0.5625, 0.5625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.4375, 0.4375, 0.4375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.375, 0.375, 0.375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.3125, 0.3125, 0.3125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.1875, 0.1875, 0.1875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0, 0, 0);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(sumaru_castle2-1);
+}
+
+function ATATA6()
+{
+    controlDisable();
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitMove(maya, 1075, -615, face_south, medium);
+    ref_265 = efctDummy(effect_f);
+    wait(ref_265);
+    ref_267 = efctLoad(effect_f);
+    wait(ref_267);
+    efctPlay(effect_f, efct_0, 1075, 0, -615, 1075, 0, -615, false);
+    sndMusicPlay(sound_329e, 127);
+    unitSpriteEffect(maya, 2);
+    unitShadowRadius(maya, 0);
+    unitColorAdjust(maya, 0.9375, 0.9375, 0.9375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.875, 0.875, 0.875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.8125, 0.8125, 0.8125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.75, 0.75, 0.75);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.6875, 0.6875, 0.6875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.625, 0.625, 0.625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5625, 0.5625, 0.5625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.4375, 0.4375, 0.4375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.375, 0.375, 0.375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.3125, 0.3125, 0.3125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.1875, 0.1875, 0.1875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0, 0, 0);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(sumaru_castle2-2);
+}
+
+function ATATA7()
+{
+    controlDisable();
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitMove(maya, 1020, -460, face_south, medium);
+    ref_2a7 = efctDummy(effect_f);
+    wait(ref_2a7);
+    ref_2a9 = efctLoad(effect_f);
+    wait(ref_2a9);
+    efctPlay(effect_f, efct_0, 1020, 0, -460, 1020, 0, -460, false);
+    sndMusicPlay(sound_329e, 127);
+    unitSpriteEffect(maya, 2);
+    unitShadowRadius(maya, 0);
+    unitColorAdjust(maya, 0.9375, 0.9375, 0.9375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.875, 0.875, 0.875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.8125, 0.8125, 0.8125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.75, 0.75, 0.75);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.6875, 0.6875, 0.6875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.625, 0.625, 0.625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5625, 0.5625, 0.5625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.4375, 0.4375, 0.4375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.375, 0.375, 0.375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.3125, 0.3125, 0.3125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.1875, 0.1875, 0.1875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0, 0, 0);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    bitGet(var_7, MBIT_KE_TATUNOSIN);
+    bne(var_7, 0, label_2e7);
+    dngLoad2(sumaru_castle2-3);
+    b(label_2ea);
+  label_2e7:
+    bne(var_7, 1, label_2ea);
+    dngLoad2(sumaru_castle2-19);
+    b(label_2ea);
+  label_2ea:
+}
+
+function ATATA8()
+{
+    controlDisable();
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitMove(maya, 740, -210, face_south, medium);
+    ref_2ef = efctDummy(effect_f);
+    wait(ref_2ef);
+    ref_2f1 = efctLoad(effect_f);
+    wait(ref_2f1);
+    efctPlay(effect_f, efct_0, 740, 0, -210, 740, 0, -210, false);
+    sndMusicPlay(sound_329e, 127);
+    unitSpriteEffect(maya, 2);
+    unitShadowRadius(maya, 0);
+    unitColorAdjust(maya, 0.9375, 0.9375, 0.9375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.875, 0.875, 0.875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.8125, 0.8125, 0.8125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.75, 0.75, 0.75);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.6875, 0.6875, 0.6875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.625, 0.625, 0.625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5625, 0.5625, 0.5625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.5, 0.5, 0.5);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.4375, 0.4375, 0.4375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.375, 0.375, 0.375);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.3125, 0.3125, 0.3125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.25, 0.25, 0.25);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.1875, 0.1875, 0.1875);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.125, 0.125, 0.125);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0.0625, 0.0625, 0.0625);
+    delayClear();
+    delayWait(4);
+    unitColorAdjust(maya, 0, 0, 0);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(sumaru_castle1-0);
+}
+
+function IDOL1()
+{
+    controlDisable();
+    ref_32e = dialogAlloc();
+    ref_32f = msgShow(msg_8);
+/***************************************
+[color(yellow)]女媧の像[color(white)]
+[tab]わらわは女媧（じょか）…
+[tab]ウテナの扉開かんとする者…
+[tab]粛々と古の祝詞捧ぐべし…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_32f);
+    dialogFree(ref_32e);
+    controlEnable();
+}
+
+function IDOL2()
+{
+    controlDisable();
+    ref_336 = dialogAlloc();
+    ref_337 = msgShow(msg_9);
+/***************************************
+[color(yellow)]伏羲の像[color(white)]
+[tab]我は伏羲（ふくぎ）…
+[tab]祝詞は言霊…
+[tab]分かたれし七霊集め、古の祝詞捧ぐべし…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_337);
+    dialogFree(ref_336);
+    controlEnable();
+}

@@ -1,0 +1,6 @@
+
+msg_0:
+[color(yellow)]克哉[color(white)]
+[tab][tatsuya]か…
+[tab]あのバカ者が…皆に心配をかけて…
+[sync][wait][clear][end]

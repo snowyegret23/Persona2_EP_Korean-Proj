@@ -1,0 +1,505 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_f);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_6);
+    b(label_8);
+  label_6:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_8);
+  label_8:
+    sndUnkCF(90);
+    envTriggerSet(warp1, 131, 1, line, coll_1e);
+    cameraSetNorth(south);
+    cameraSet(southeast, 315, 0, -803);
+    ref_c = spriteLoad(sprite_6);
+    wait(ref_c);
+    unitSpawn(ulala, sprite_6, 312, -50, -56, south, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+    bitGet(var_0, EBIT_E0010);
+    bne(var_0, 0, label_13);
+    b(label_19);
+  label_13:
+    bne(var_0, 1, label_19);
+    ref_14 = spriteLoad(sprite_d);
+    wait(ref_14);
+    unitSpawn(katsuya, sprite_d, 134, -50, -612, south, none);
+    unitTriggerSet(katsuya, KATUYA, 255, 1);
+    b(label_19);
+  label_19:
+    ref_19 = spriteLoad(sprite_65);
+    wait(ref_19);
+    unitSpawn(npc1, sprite_65, 497, -60, -304, east, none);
+    unitRevolveAnimationPlay(npc1, animrevolve_10);
+    unitTriggerSet(npc1, KOUMU, 255, 1);
+    ref_1e = spriteLoad(sprite_66);
+    wait(ref_1e);
+    unitSpawn(npc2, sprite_66, 327, -60, -491, south, none);
+    unitRevolveAnimationPlay(npc2, animrevolve_c);
+    unitTriggerSet(npc2, HOKEN, 255, 1);
+    ref_23 = spriteLoad(sprite_0);
+    wait(ref_23);
+    ref_25 = spriteLoad(sprite_2);
+    wait(ref_25);
+    playerInit(south);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    unitIdleOff(npc1);
+    unitIdleOff(npc2);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+    unitRevolveAnimationPlay(npc1, animrevolve_10);
+    unitRevolveAnimationPlay(npc2, animrevolve_c);
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    ref_36 = bustupLoad(bustup_17);
+    bustupWait(ref_36);
+    ref_38 = bustupAlloc(ref_36, left, rgb(0,0,0));
+    bustupFade(ref_38, rgb(128,0,0), 30);
+    ref_3a = dialogAlloc();
+    ref_3b = msgShow(msg_0);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]ありゃ…
+[tab]このポスター、口の所がふやけてる…
+
+***************************************/
+    unitAnimationPlay(ulala, animation_1f, 1);
+    wait(ref_3b);
+    ref_3e = msgShow(msg_1);
+/***************************************
+[tab]……まぁ…いっか。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_6, 1);
+    wait(ref_3e);
+    dialogFree(ref_3a);
+    unitAnimationPlay(ulala, animation_a, 1);
+    ref_43 = bustupFade(ref_38, rgb(0,0,0), 10);
+    bustupWait(ref_43);
+    bustupFree(ref_38);
+    controlEnable();
+}
+
+function KATUYA()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_GETKEY1);
+    bnz(var_0, label_5b);
+    unitFacePlayer(katsuya);
+    ref_4c = bustupLoad(bustup_21);
+    bustupWait(ref_4c);
+    ref_4e = bustupAlloc(ref_4c, left, rgb(0,0,0));
+    bustupFade(ref_4e, rgb(128,0,0), 30);
+    ref_50 = dialogAlloc();
+    ref_51 = msgShow(msg_2);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]ここにあった時計台の鍵が消えたそうだ。
+[tab]窃盗の可能性が高いな…
+[tab]取り敢えず鑑識に連絡しておくか…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_51);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_50);
+    ref_56 = bustupFade(ref_4e, rgb(0,0,0), 10);
+    bustupWait(ref_56);
+    bustupFree(ref_4e);
+    unitRestoreFacing(katsuya);
+    b(label_6a);
+  label_5b:
+    unitFacePlayer(katsuya);
+    ref_5c = bustupLoad(bustup_21);
+    bustupWait(ref_5c);
+    ref_5e = bustupAlloc(ref_5c, left, rgb(0,0,0));
+    bustupFade(ref_5e, rgb(128,0,0), 30);
+    ref_60 = dialogAlloc();
+    ref_61 = msgShow(msg_3);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]ここに時計台の鍵がある事を知っているのは、
+[tab]校務員さんと教員…そして生徒…か。
+[tab]まさかあの娘が鍵を…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_61);
+    dialogFree(ref_60);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    ref_66 = bustupFade(ref_5e, rgb(0,0,0), 10);
+    bustupWait(ref_66);
+    bustupFree(ref_5e);
+    unitRestoreFacing(katsuya);
+  label_6a:
+    controlEnable();
+}
+
+function KOUMU()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E0010);
+    bnz(var_0, label_7c);
+    ref_6f = cameraRotateTo(3, 60);
+    wait(ref_6f);
+    unitAnimationPlay(npc1, animation_29, 1);
+    ref_72 = dialogAlloc();
+    ref_73 = msgShow(msg_4);
+/***************************************
+[color(yellow)]校務員さん[color(white)]
+[tab]はぁ…
+[tab]この歳で、大時計の手入れは大変じゃわい…
+[tab]…ところで…飯はまだかの？
+[wait][clear]
+***************************************/
+    wait(ref_73);
+    dialogFree(ref_72);
+    unitAnimationPlay(npc2, animation_2a, 1);
+    ref_77 = dialogAlloc();
+    ref_78 = msgShow(msg_5);
+/***************************************
+[color(yellow)]保健のオバチャン[color(white)]
+[tab]まったくお爺ちゃんったら、
+[tab]さっき食べたばかりじゃない。
+[tab]しょうがないわねぇ。
+[wait][clear]
+***************************************/
+    wait(ref_78);
+    dialogFree(ref_77);
+    b(label_9d);
+  label_7c:
+    bitGet(var_0, MBIT_KOM_TALK);
+    bnz(var_0, label_91);
+    ref_7e = cameraRotateTo(3, 60);
+    wait(ref_7e);
+    unitAnimationPlay(npc1, animation_29, 1);
+    ref_81 = dialogAlloc();
+    ref_82 = msgShow(msg_6);
+/***************************************
+[color(yellow)]校務員さん[color(white)]
+[tab]時計台の鍵が見当たらんのじゃ。
+[tab]どこにしまったかのぉ…
+[wait][clear]
+***************************************/
+    wait(ref_82);
+    dialogFree(ref_81);
+    unitAnimationPlay(npc2, animation_2a, 1);
+    ref_86 = dialogAlloc();
+    ref_87 = msgShow(msg_7);
+/***************************************
+[color(yellow)]保健のオバチャン[color(white)]
+[tab]いつも机の上に
+[tab]置いておいたじゃありませんか。
+[wait][clear]
+***************************************/
+    wait(ref_87);
+    dialogFree(ref_86);
+    unitAnimationPlay(npc1, animation_28, 1);
+    ref_8b = dialogAlloc();
+    ref_8c = msgShow(msg_8);
+/***************************************
+[color(yellow)]校務員さん[color(white)]
+[tab]それが無いんじゃよ。
+[tab]誰かが持って行ったんじゃろうか…
+[wait][clear]
+***************************************/
+    wait(ref_8c);
+    dialogFree(ref_8b);
+    bitSet(MBIT_KOM_TALK);
+    b(label_9d);
+  label_91:
+    ref_91 = cameraRotateTo(3, 60);
+    wait(ref_91);
+    unitAnimationPlay(npc1, animation_29, 1);
+    ref_94 = dialogAlloc();
+    ref_95 = msgShow(msg_9);
+/***************************************
+[color(yellow)]校務員さん[color(white)]
+[tab]あの鍵が無くては、時計台に入れん…
+[tab]困ったのぉ…
+[wait][clear]
+***************************************/
+    wait(ref_95);
+    dialogFree(ref_94);
+    unitAnimationPlay(npc2, animation_2a, 1);
+    ref_99 = dialogAlloc();
+    ref_9a = msgShow(msg_10);
+/***************************************
+[color(yellow)]保健のオバチャン[color(white)]
+[tab]たしか…職員室に予備がなかったかしら？
+[tab]先生に聞いてみたらどうです？
+[wait][clear]
+***************************************/
+    wait(ref_9a);
+    dialogFree(ref_99);
+  label_9d:
+    controlEnable();
+    unitIdleOff(npc1);
+    unitIdleOff(npc2);
+    unitRevolveAnimationPlay(npc1, animrevolve_10);
+    unitRevolveAnimationPlay(npc2, animrevolve_c);
+}
+
+function HOKEN()
+{
+    controlDisable();
+    bitClear(LBIT_0000);
+    ref_a5 = call(KAIFUKUSURUBEKI);
+    wait(ref_a5);
+    bitGet(var_1, LBIT_0000);
+    bne(var_1, 0, label_ac);
+    call(KOUMU);
+    b(label_f5);
+    b(label_b3);
+  label_ac:
+    bne(var_1, 1, label_b3);
+    unitFacePlayer(npc2);
+    ref_ae = dialogAlloc();
+    ref_af = msgShow(msg_11);
+/***************************************
+[color(yellow)]保健のオバチャン[color(white)]
+[tab]あらあら？
+[tab]怪我してるようね？
+[tab]ちょっと見せてごらんなさい。
+[wait][clear]
+***************************************/
+    wait(ref_af);
+    dialogFree(ref_ae);
+    b(label_b3);
+  label_b3:
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), add);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    sndMusicPlay(sound_3, 127);
+    partyHealthRestore(maya);
+    partySPRestore(maya);
+    partyStatusClear(maya);
+    partyMemberCheck(var_3, ulala);
+    bez(var_3, label_c0);
+    partyHealthRestore(ulala);
+    partySPRestore(ulala);
+    partyStatusClear(ulala);
+  label_c0:
+    partyMemberCheck(var_3, katsuya);
+    bez(var_3, label_c5);
+    partyHealthRestore(katsuya);
+    partySPRestore(katsuya);
+    partyStatusClear(katsuya);
+  label_c5:
+    partyMemberCheck(var_3, baofu);
+    bez(var_3, label_ca);
+    partyHealthRestore(baofu);
+    partySPRestore(baofu);
+    partyStatusClear(baofu);
+  label_ca:
+    partyMemberCheck(var_3, nanjo);
+    bez(var_3, label_cf);
+    partyHealthRestore(nanjo);
+    partySPRestore(nanjo);
+    partyStatusClear(nanjo);
+  label_cf:
+    partyMemberCheck(var_3, elly);
+    bez(var_3, label_d4);
+    partyHealthRestore(elly);
+    partySPRestore(elly);
+    partyStatusClear(elly);
+  label_d4:
+    partyMemberCheck(var_3, tatsuya);
+    bez(var_3, label_d9);
+    partyHealthRestore(tatsuya);
+    partySPRestore(tatsuya);
+    partyStatusClear(tatsuya);
+  label_d9:
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), add);
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenEffectUnknown();
+    delayClear();
+    delayWait(40);
+    ref_df = bustupLoad(bustup_1);
+    bustupWait(ref_df);
+    ref_e1 = bustupAlloc(ref_df, center, rgb(0,0,0));
+    bustupFade(ref_e1, rgb(128,0,0), 30);
+    ref_e3 = dialogAlloc();
+    ref_e4 = msgShow(msg_12);
+/***************************************
+[color(green)][tab]舞耶達は回復した。[color(white)][wait][clear]
+***************************************/
+    wait(ref_e4);
+    dialogFree(ref_e3);
+    ref_e7 = bustupFade(ref_e1, rgb(0,0,0), 10);
+    bustupWait(ref_e7);
+    bustupFree(ref_e1);
+    b(label_eb);
+  label_eb:
+    ref_eb = dialogAlloc();
+    ref_ec = msgShow(msg_13);
+/***************************************
+[color(yellow)]保健のオバチャン[color(white)]
+[tab]さぁこれで大丈夫。
+[tab]性分かしらねぇ、怪我人は放っておけないの。
+[tab]何かあったら、またいつでもいらっしゃいね。
+[wait][clear]
+***************************************/
+    wait(ref_ec);
+    dialogFree(ref_eb);
+    unitRestoreFacing(npc2);
+    controlEnable();
+    unitIdleOff(npc1);
+    unitIdleOff(npc2);
+    unitRevolveAnimationPlay(npc1, animrevolve_10);
+    unitRevolveAnimationPlay(npc2, animrevolve_c);
+  label_f5:
+    unitIdleOff(npc1);
+    unitIdleOff(npc2);
+    unitRevolveAnimationPlay(npc1, animrevolve_10);
+    unitRevolveAnimationPlay(npc2, animrevolve_c);
+}
+
+function KAIFUKUSURUBEKI()
+{
+    partyStatusHas(var_0, maya, poison);
+    bnz(var_0, label_15c);
+    partyStatusHas(var_0, maya, possesion);
+    bnz(var_0, label_15c);
+    partyInfoGet(var_4, maya, maxHealth);
+    partyInfoGet(var_5, maya, health);
+    beq(var_4, var_5, label_102);
+    b(label_15c);
+  label_102:
+    partyInfoGet(var_4, maya, maxSP);
+    partyInfoGet(var_5, maya, sp);
+    beq(var_4, var_5, label_106);
+    b(label_15c);
+  label_106:
+    partyMemberCheck(var_4, ulala);
+    bez(var_4, label_114);
+    partyStatusHas(var_0, ulala, poison);
+    bnz(var_0, label_15c);
+    partyStatusHas(var_0, ulala, possesion);
+    bnz(var_0, label_15c);
+    partyInfoGet(var_4, ulala, maxHealth);
+    partyInfoGet(var_5, ulala, health);
+    beq(var_4, var_5, label_110);
+    b(label_15c);
+  label_110:
+    partyInfoGet(var_4, ulala, maxSP);
+    partyInfoGet(var_5, ulala, sp);
+    beq(var_4, var_5, label_114);
+    b(label_15c);
+  label_114:
+    partyMemberCheck(var_4, katsuya);
+    bez(var_4, label_122);
+    partyStatusHas(var_0, katsuya, poison);
+    bnz(var_0, label_15c);
+    partyStatusHas(var_0, katsuya, possesion);
+    bnz(var_0, label_15c);
+    partyInfoGet(var_4, katsuya, maxHealth);
+    partyInfoGet(var_5, katsuya, health);
+    beq(var_4, var_5, label_11e);
+    b(label_15c);
+  label_11e:
+    partyInfoGet(var_4, katsuya, maxSP);
+    partyInfoGet(var_5, katsuya, sp);
+    beq(var_4, var_5, label_122);
+    b(label_15c);
+  label_122:
+    partyMemberCheck(var_4, baofu);
+    bez(var_4, label_130);
+    partyStatusHas(var_0, baofu, poison);
+    bnz(var_0, label_15c);
+    partyStatusHas(var_0, baofu, possesion);
+    bnz(var_0, label_15c);
+    partyInfoGet(var_4, baofu, maxHealth);
+    partyInfoGet(var_5, baofu, health);
+    beq(var_4, var_5, label_12c);
+    b(label_15c);
+  label_12c:
+    partyInfoGet(var_4, baofu, maxSP);
+    partyInfoGet(var_5, baofu, sp);
+    beq(var_4, var_5, label_130);
+    b(label_15c);
+  label_130:
+    partyMemberCheck(var_4, nanjo);
+    bez(var_4, label_13e);
+    partyStatusHas(var_0, nanjo, poison);
+    bnz(var_0, label_15c);
+    partyStatusHas(var_0, nanjo, possesion);
+    bnz(var_0, label_15c);
+    partyInfoGet(var_4, nanjo, maxHealth);
+    partyInfoGet(var_5, nanjo, health);
+    beq(var_4, var_5, label_13a);
+    b(label_15c);
+  label_13a:
+    partyInfoGet(var_4, nanjo, maxSP);
+    partyInfoGet(var_5, nanjo, sp);
+    beq(var_4, var_5, label_13e);
+    b(label_15c);
+  label_13e:
+    partyMemberCheck(var_4, elly);
+    bez(var_4, label_14c);
+    partyStatusHas(var_0, elly, poison);
+    bnz(var_0, label_15c);
+    partyStatusHas(var_0, elly, possesion);
+    bnz(var_0, label_15c);
+    partyInfoGet(var_4, elly, maxHealth);
+    partyInfoGet(var_5, elly, health);
+    beq(var_4, var_5, label_148);
+    b(label_15c);
+  label_148:
+    partyInfoGet(var_4, elly, maxSP);
+    partyInfoGet(var_5, elly, sp);
+    beq(var_4, var_5, label_14c);
+    b(label_15c);
+  label_14c:
+    partyMemberCheck(var_4, tatsuya);
+    bez(var_4, label_15a);
+    partyStatusHas(var_0, tatsuya, poison);
+    bnz(var_0, label_15c);
+    partyStatusHas(var_0, tatsuya, possesion);
+    bnz(var_0, label_15c);
+    partyInfoGet(var_4, tatsuya, maxHealth);
+    partyInfoGet(var_5, tatsuya, health);
+    beq(var_4, var_5, label_156);
+    b(label_15c);
+  label_156:
+    partyInfoGet(var_4, tatsuya, maxSP);
+    partyInfoGet(var_5, tatsuya, sp);
+    beq(var_4, var_5, label_15a);
+    b(label_15c);
+  label_15a:
+    bitClear(LBIT_0000);
+    b(label_15e);
+  label_15c:
+    bitSet(LBIT_0000);
+    b(label_15e);
+  label_15e:
+}
+
+function warp1()
+{
+    controlDisable();
+    objAnimTranslate(obj_1, 100, 0, 0, 30);
+    sndMusicPlay(sound_3090, 127);
+    objAnimWait(obj_1);
+    bitGet(var_0, EBIT_E0010);
+    bne(var_0, 0, label_167);
+    dngLoad2(seven_sisters_high_empty-1);
+    b(label_16a);
+  label_167:
+    bne(var_0, 1, label_16a);
+    dngLoad2(seven_sisters_high-0);
+    b(label_16a);
+  label_16a:
+}

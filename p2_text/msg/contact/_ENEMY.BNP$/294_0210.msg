@@ -1,0 +1,8 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヤイル・ジョーカー！！
+ ヤイル・カメーン！！
+ 仮面党バンザーイ！！
+[sync][wait]
+[end]

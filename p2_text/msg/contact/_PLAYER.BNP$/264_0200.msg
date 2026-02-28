@@ -1,0 +1,52 @@
+
+msg_0:
+ [color(green)]舞耶は悪魔の説得を試みた。[color(white)]
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]克哉[color(white)]
+ そうだ。
+ 田舎のお母さんも心配しているぞ…
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]パオフゥ[color(white)]
+ 回りくどいのは、止めにしようや。
+ さっさと片づけちまった方が、話が早ぇえ。
+ さ、来な…
+[wait][clear][end]
+
+msg_3:
+ [color(green)]舞耶は悪魔を力強く説得した。[color(white)]
+[wait][clear][end]
+
+msg_4:
+[color(yellow)]克哉[color(white)]
+ これ以上罪を重ねるな…
+ 今なら、まだ間に合う。
+ 君なら、やり直せるはずだ！
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]パオフゥ[color(white)]
+ へへ…やり直しなんざきかねぇよ。
+ 罪は罪だ…
+ 罰が…必要なのさ…
+[wait][clear][end]
+
+msg_6:
+ [color(green)]舞耶は悪魔を優しく説得した。[color(white)]
+[wait][clear][end]
+
+msg_7:
+[load_sound(sndeff_11)][sync][color(yellow)]克哉[color(white)]
+ 僕は理解しているつもりだ。
+ 君が実は、優しい悪魔だと言う事を…
+ [play_sound(sndeff_11)][sync]こんな無駄な争い、終わりにしないか？[sync]
+[wait][clear][end]
+
+msg_8:
+[color(yellow)]パオフゥ[color(white)]
+ 心にもねぇことを…
+ 虫酸が走るぜ。
+[wait][clear][end]

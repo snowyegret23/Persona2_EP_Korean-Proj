@@ -1,0 +1,5 @@
+
+msg_0:
+[color(yellow)]地蔵[color(white)]
+[tab]「[color(green)]夢[color(white)]」は英語で、「[color(green)]Ｄｒｅａｍ[color(white)]」。
+[wait][clear][end]

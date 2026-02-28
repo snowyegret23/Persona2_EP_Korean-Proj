@@ -1,0 +1,61 @@
+function START()
+{
+    controlDisable();
+    choiceSetResult(1);
+    op_105(1);
+    ref_3 = bustupLoad(bustup_1);
+    bustupWait(ref_3);
+    ref_5 = bustupAlloc(ref_3, center, rgb(0,0,0));
+    bustupFade(ref_5, rgb(128,0,0), 30);
+    ref_7 = dialogChoiceAlloc();
+    ref_8 = msgShow(msg_0);
+/***************************************
+[color(green)]Will you touch it?[color(white)]
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_8);
+    dialogFree(ref_7);
+    ref_b = bustupFade(ref_5, rgb(0,0,0), 10);
+    bustupWait(ref_b);
+    bustupFree(ref_5);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_25);
+    bitGet(var_0, VBIT_HANTEI_DKR_1);
+    bne(var_0, 0, label_1c);
+    delayClear();
+    delayWait(10);
+    bitSet(VBIT_HANTEI_DKR_1);
+    bitClear(VBIT_DOKURO_KESHI);
+    sndMusicPlay(sound_1536, 127);
+    ref_17 = dialogAlloc();
+    ref_18 = msgShow(msg_1);
+/***************************************
+[color(green)]Something changed somewhere.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_18);
+    dialogFree(ref_17);
+    b(label_24);
+  label_1c:
+    bne(var_0, 1, label_24);
+    delayClear();
+    delayWait(10);
+    ref_1f = dialogAlloc();
+    ref_20 = msgShow(msg_2);
+/***************************************
+[color(green)]Nothing happened.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_20);
+    dialogFree(ref_1f);
+    b(label_24);
+  label_24:
+    b(label_27);
+  label_25:
+    bne(var_0, 1, label_27);
+    b(label_27);
+  label_27:
+    controlEnable();
+}

@@ -1,0 +1,2335 @@
+function START()
+{
+    op_107();
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_10);
+    objVisible(obj_29, false);
+    objVisible(obj_2a, false);
+    ref_6 = todLoad(tod_e);
+    wait(ref_6);
+    todRun(tod_e, 1);
+    envTriggerSet(DOORBOX, 14, 1, line, coll_20);
+    envTriggerSet(DOORBOX, 14, 1, collision_5, coll_2);
+    envTriggerSet(HIDARI, 56, 1, collision_5, coll_0);
+    envTriggerSet(MIGI, 131, 1, collision_5, coll_1);
+    ref_d = spriteLoad(sprite_a4);
+    wait(ref_d);
+    unitSpawn(shopkeeper, sprite_a4, 1088, -60, -968, north, none);
+    envTriggerSet(IGORU, 56, 1, collision_5, coll_3);
+    ref_11 = spriteLoad(sprite_a6);
+    wait(ref_11);
+    unitSpawn(npc1, sprite_a6, 1269, -60, -695, north, none);
+    unitTriggerSet(npc1, BERADONNA, 255, 1);
+    ref_15 = spriteLoad(sprite_a5);
+    wait(ref_15);
+    unitSpawn(npc2, sprite_a5, 1028, -60, -740, north, none);
+    ref_18 = spriteLoad(sprite_a7);
+    wait(ref_18);
+    unitSpawn(unit_76, sprite_a7, 750, -60, -1250, north, none);
+    unitTriggerSet(unit_76, ESI, 255, 1);
+    cameraSet(northwest, 111, 0, -996);
+    call(FREEBOX);
+}
+
+function FREEBOX()
+{
+    bitGet(var_0, LBIT_0000);
+    bnz(var_0, label_35);
+    bitGet(var_0, MBIT_SUN_BEL03);
+    bnz(var_0, label_28);
+    bitGet(var_0, MBIT_SUN_BEL02);
+    bnz(var_0, label_2d);
+    bitGet(var_0, MBIT_SUN_BEL01);
+    bnz(var_0, label_30);
+    b(label_33);
+  label_28:
+    bitClear(MBIT_SUN_BEL03);
+    bitClear(MBIT_SUN_BEL02);
+    bitClear(MBIT_SUN_BEL01);
+    sndMusicPlay(sound_3003, 127);
+    b(label_35);
+  label_2d:
+    bitSet(MBIT_SUN_BEL03);
+    sndMusicPlay(sound_3002, 127);
+    b(label_35);
+  label_30:
+    bitSet(MBIT_SUN_BEL02);
+    sndMusicPlay(sound_3001, 127);
+    b(label_35);
+  label_33:
+    bitSet(MBIT_SUN_BEL01);
+    sndMusicPlay(sound_3000, 127);
+  label_35:
+    li(var_0, 0);
+    partyMemberCheck(var_0, ulala);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_3d);
+    ref_39 = spriteLoad(sprite_6);
+    wait(ref_39);
+    unitSpawn(ulala, sprite_6, 851, -30, -1662, south, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+  label_3d:
+    partyMemberCheck(var_0, katsuya);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_44);
+    ref_40 = spriteLoad(sprite_d);
+    wait(ref_40);
+    unitSpawn(katsuya, sprite_d, 316, 0, -1256, west, none);
+    unitTriggerSet(katsuya, B_KATUYYY, 255, 1);
+  label_44:
+    partyMemberCheck(var_0, baofu);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_4b);
+    ref_47 = spriteLoad(sprite_13);
+    wait(ref_47);
+    unitSpawn(baofu, sprite_13, 91, 0, -756, west, none);
+    unitTriggerSet(baofu, B_PAO, 255, 1);
+  label_4b:
+    partyMemberCheck(var_0, nanjo);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_52);
+    ref_4e = spriteLoad(sprite_1f);
+    wait(ref_4e);
+    unitSpawn(nanjo, sprite_1f, 287, 0, -899, west, none);
+    unitTriggerSet(nanjo, B_NANJ, 255, 1);
+  label_52:
+    partyMemberCheck(var_0, elly);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_59);
+    ref_55 = spriteLoad(sprite_23);
+    wait(ref_55);
+    unitSpawn(elly, sprite_23, 1009, -30, -1624, south, none);
+    unitTriggerSet(elly, B_ERI, 255, 1);
+  label_59:
+    partyMemberCheck(var_0, tatsuya);
+    add(var_5, var_5, var_0);
+    bez(var_0, label_61);
+    ref_5c = spriteLoad(sprite_18);
+    wait(ref_5c);
+    unitSpawn(tatsuya, sprite_18, 147, 0, -1408, west, none);
+    unitTriggerSet(tatsuya, B_TATU, 255, 1);
+    b(label_6a);
+  label_61:
+    bitGet(var_0, EBIT_E008C);
+    bne(var_0, 0, label_64);
+    b(label_6a);
+  label_64:
+    bne(var_0, 1, label_6a);
+    ref_65 = spriteLoad(sprite_18);
+    wait(ref_65);
+    unitSpawn(tatsuya, sprite_18, 147, 0, -1408, west, none);
+    unitTriggerSet(tatsuya, B_TATU, 255, 1);
+    b(label_6a);
+  label_6a:
+    ref_6a = spriteLoad(sprite_2);
+    wait(ref_6a);
+    ref_6c = spriteLoad(sprite_0);
+    wait(ref_6c);
+    bitGet(var_0, LBIT_0001);
+    bne(var_0, 0, label_73);
+    playerInit(west);
+    controlDisable();
+    b(label_77);
+  label_73:
+    bne(var_0, 1, label_77);
+    playerInit(south);
+    controlDisable();
+    b(label_77);
+  label_77:
+    unitAnimationPlay(shopkeeper, animation_11, 1);
+    unitAnimationPlay(npc2, animation_0, 1);
+    unitAnimationPlay(npc1, animation_7, 1);
+    unitAnimationPlay(unit_76, animation_b, 1);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_86 = bustupLoad(bustup_17);
+    bustupWait(ref_86);
+    ref_88 = bustupAlloc(ref_86, left, rgb(0,0,0));
+    bustupFade(ref_88, rgb(128,0,0), 30);
+    ref_8a = dialogAlloc();
+    ref_8b = msgShow(msg_0);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]ここっていつ来ても快適よねー。
+[tab]どっかに空調でも付いてんのかしら？
+[tab]…って、そもそも電気が来てるのかしら？
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1a, 1);
+    wait(ref_8b);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_8a);
+    ref_90 = bustupFade(ref_88, rgb(0,0,0), 10);
+    bustupWait(ref_90);
+    bustupFree(ref_88);
+    unitRestoreFacing(ulala);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_KATUYYY()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    ref_9a = bustupLoad(bustup_21);
+    bustupWait(ref_9a);
+    ref_9c = bustupAlloc(ref_9a, left, rgb(0,0,0));
+    bustupFade(ref_9c, rgb(128,0,0), 30);
+    ref_9e = dialogAlloc();
+    ref_9f = msgShow(msg_1);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]ペルソナ…心の中のもう一人の自分を具現化したもの…
+[tab]この力を持つ人間は、この世にどれだけいるんだろうか。
+[tab]この力は、どれだけ犯罪に使われているんだろうか…
+[wait][clear]
+***************************************/
+    wait(ref_9f);
+    dialogFree(ref_9e);
+    ref_a2 = bustupFade(ref_9c, rgb(0,0,0), 10);
+    bustupWait(ref_a2);
+    bustupFree(ref_9c);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    unitRestoreFacing(katsuya);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_PAO()
+{
+    controlDisable();
+    unitFacePlayer(baofu);
+    ref_ac = bustupLoad(bustup_2d);
+    bustupWait(ref_ac);
+    ref_ae = bustupAlloc(ref_ac, left, rgb(0,0,0));
+    bustupFade(ref_ae, rgb(128,0,0), 30);
+    ref_b0 = dialogAlloc();
+    ref_b1 = msgShow(msg_2);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]芹沢の奴、馴染み過ぎだな…緊張感を無くすと死ぬぜ。
+[tab]後でお前からなんか言ってやれ。
+[tab]…周防みたいに悩みすぎるのも、良かぁねぇけどな。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_b1);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_b0);
+    ref_b6 = bustupFade(ref_ae, rgb(0,0,0), 10);
+    bustupWait(ref_b6);
+    bustupFree(ref_ae);
+    unitRestoreFacing(baofu);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_NANJ()
+{
+    controlDisable();
+    ref_be = bustupLoad(bustup_36);
+    bustupWait(ref_be);
+    ref_c0 = bustupAlloc(ref_be, left, rgb(0,0,0));
+    bustupFade(ref_c0, rgb(128,0,0), 30);
+    ref_c2 = dialogAlloc();
+    ref_c3 = msgShow(msg_3);
+/***************************************
+[color(yellow)]南条[color(white)]
+[tab]イここの風景はいつ来ても変わらない…
+[tab]そのせいか、ふと昔の苦労を思い出す事があります。
+[tab]悪魔に演説し、時には物で釣り…本当に苦労しました。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_6, 1);
+    wait(ref_c3);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_c2);
+    ref_c8 = bustupFade(ref_c0, rgb(0,0,0), 10);
+    bustupWait(ref_c8);
+    bustupFree(ref_c0);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_ERI()
+{
+    controlDisable();
+    unitFacePlayer(elly);
+    ref_d0 = bustupLoad(bustup_40);
+    bustupWait(ref_d0);
+    ref_d2 = bustupAlloc(ref_d0, left, rgb(0,0,0));
+    bustupFade(ref_d2, rgb(128,0,0), 30);
+    ref_d4 = dialogAlloc();
+    ref_d5 = msgShow(msg_4);
+/***************************************
+[color(yellow)]エリー[color(white)]
+[tab]こちらの方々、お食事はどうなさってるのでしょうか。
+[tab]Ｂｉｓｓｉｎｅｓの関係で、お菓子をいただくのですが、
+[tab]持ってきたら喜んでいただけるかしら。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_6, 1);
+    wait(ref_d5);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_d4);
+    ref_da = bustupFade(ref_d2, rgb(0,0,0), 10);
+    bustupWait(ref_da);
+    bustupFree(ref_d2);
+    unitRestoreFacing(elly);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function B_TATU()
+{
+    controlDisable();
+    ref_e2 = bustupLoad(bustup_10);
+    bustupWait(ref_e2);
+    ref_e4 = bustupAlloc(ref_e2, left, rgb(0,0,0));
+    bustupFade(ref_e4, rgb(128,0,0), 30);
+    ref_e6 = dialogAlloc();
+    ref_e7 = msgShow(msg_5);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]いつかもし、償いを済ませることがあったら、
+[tab]俺は、ペルソナを…どうするのか…
+[tab]この部屋を訪れることはあるんだろうか…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    wait(ref_e7);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_e6);
+    ref_ec = bustupFade(ref_e4, rgb(0,0,0), 10);
+    bustupWait(ref_ec);
+    bustupFree(ref_e4);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function IGORU()
+{
+    controlDisable();
+    ref_f3 = shopOverlayInit();
+    bitGet(var_0, EBIT_E003E);
+    bne(var_0, 0, label_f7);
+    b(label_ff);
+  label_f7:
+    bne(var_0, 1, label_ff);
+    bitGet(var_0, MBIT_BEL_IGOUL);
+    bne(var_0, 0, label_fc);
+    b(label_13c);
+    b(label_fe);
+  label_fc:
+    bne(var_0, 1, label_fe);
+    b(label_fe);
+  label_fe:
+    b(label_ff);
+  label_ff:
+    bitGet(var_0, VBIT_MUTATION_ON);
+    bne(var_0, 0, label_103);
+    b(label_14f);
+    b(label_10c);
+  label_103:
+    bne(var_0, 1, label_10c);
+    bitGet(var_0, VBIT_MUT_MES_OFF);
+    bne(var_0, 0, label_108);
+    b(label_10c);
+    b(label_10b);
+  label_108:
+    bne(var_0, 1, label_10b);
+    b(label_14f);
+    b(label_10b);
+  label_10b:
+    b(label_10c);
+  label_10c:
+    ref_10c = bustupLoad(bustup_e0);
+    bustupWait(ref_10c);
+    ref_10e = bustupAlloc(ref_10c, right, rgb(0,0,0));
+    bustupFade(ref_10e, rgb(128,0,0), 30);
+    ref_110 = dialogAlloc();
+    ref_111 = msgShow(msg_6);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]おや？
+[tab]新しい姿に生まれ変わろうとしている
+[tab]ペルソナがいるようですな。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_111);
+    ref_115 = msgShow(msg_7);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]おっと、説明するのを忘れていましたが…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_115);
+    ref_119 = msgShow(msg_8);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]合体スキルというものを、ご存じですかな？
+[tab]これを使うと、たまにペルソナが突然変異を
+[tab]起こすことがあります。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_119);
+    ref_11d = msgShow(msg_9);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]それは基本能力の上昇であったり、新しい
+[tab]スキルの取得であったりするのですが、中には
+[tab]別のペルソナに生まれ変わる場合もあります。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_11d);
+    ref_121 = msgShow(msg_10);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ただ、この場合は、私の手助けが
+[tab]必要となりますので、ペルソナにこのような変化が
+[tab]起こった場合は私の所へおいでください。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_121);
+    ref_125 = msgShow(msg_11);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]もちろん、
+[tab]必ず変異させねばならないわけでは
+[tab]ありません。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_8, 1);
+    sync();
+    wait(ref_125);
+    ref_129 = msgShow(msg_12);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]変異後のペルソナはランク１に
+[tab]戻ってしまいますから、変異させるかどうかは、
+[tab]あなた方自身で判断してください。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_a, 1);
+    sync();
+    wait(ref_129);
+    ref_12d = msgShow(msg_13);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]そうそう、[delay(15)]変異後のペルソナと同じペルソナが
+[tab]既にいるような場合、変異させられないことも
+[tab]ありますので、注意が必要ですぞ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_b, 1);
+    sync();
+    wait(ref_12d);
+    dialogFree(ref_110);
+    ref_132 = bustupFade(ref_10e, rgb(0,0,0), 10);
+    bustupWait(ref_132);
+    bustupFree(ref_10e);
+    wait(ref_f3);
+    bitSet(VBIT_MUT_MES_OFF);
+    shopInventory(3, shopInventory_0);
+    shopInventory(4, shopInventory_0);
+    shopInventory(2, shopInventory_0);
+    shopInventory(8, shopInventory_0);
+    b(label_14f);
+  label_13c:
+    ref_13c = bustupLoad(bustup_e0);
+    bustupWait(ref_13c);
+    ref_13e = bustupAlloc(ref_13c, right, rgb(0,0,0));
+    bustupFade(ref_13e, rgb(128,0,0), 30);
+    ref_140 = dialogAlloc();
+    ref_141 = msgShow(msg_14);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ようこそ、ベルベットルームへ。
+[tab]ここは、人の心の様々なる形を呼び覚ます部屋…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]我らが主、フィレモン様の命により、
+[tab]貴方がたをお待ちしておりました。
+[tab]我が名は、イゴールと申します。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]我ら４人、貴方がたの新たな心、
+[tab]新たなペルソナの目覚めをお助けするよう、
+[tab]仰せつかっております。以後、お見知りおきを…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_141);
+    dialogFree(ref_140);
+    ref_145 = bustupFade(ref_13e, rgb(0,0,0), 10);
+    bustupWait(ref_145);
+    bustupFree(ref_13e);
+    wait(ref_f3);
+    bitSet(MBIT_BEL_IGOUL);
+    shopInventory(3, shopInventory_0);
+    shopInventory(4, shopInventory_0);
+    shopInventory(2, shopInventory_0);
+    shopInventory(8, shopInventory_0);
+    b(label_14f);
+  label_14f:
+    ref_14f = bustupLoad(bustup_e0);
+    bustupWait(ref_14f);
+    ref_151 = bustupAlloc(ref_14f, right, rgb(0,0,0));
+    bustupFade(ref_151, rgb(128,0,0), 30);
+    choiceSetResult(6);
+    ref_154 = dialogAlloc();
+    ref_155 = msgShow(msg_15);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ようこそベルベットルームへ。
+[tab]今日は、どんな御用ですかな？
+[choice(8)]ペルソナを召喚する
+ペルソナを降魔する
+ペルソナの帰還
+[if_all(VBIT_MUTATION_ON)]ペルソナの変異
+話をする
+[if_all(EBIT_SINARIOFF)]アディショナルシナリオ
+やめる
+ベルベットルームから出る
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_155);
+    dialogFree(ref_154);
+    ref_159 = bustupFade(ref_151, rgb(0,0,0), 10);
+    bustupWait(ref_159);
+    bustupFree(ref_151);
+    wait(ref_f3);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_162);
+    li(var_5, 0);
+    b(label_177);
+  label_162:
+    bne(var_0, 1, label_165);
+    li(var_5, 1);
+    b(label_177);
+  label_165:
+    bne(var_0, 2, label_168);
+    li(var_5, 2);
+    b(label_177);
+  label_168:
+    bne(var_0, 3, label_16b);
+    li(var_5, 3);
+    b(label_177);
+  label_16b:
+    bne(var_0, 4, label_16e);
+    li(var_5, 4);
+    b(label_177);
+  label_16e:
+    bne(var_0, 5, label_171);
+    li(var_5, 5);
+    b(label_177);
+  label_171:
+    bne(var_0, 6, label_174);
+    li(var_5, 6);
+    b(label_177);
+  label_174:
+    bne(var_0, 7, label_177);
+    li(var_5, 7);
+    b(label_177);
+  label_177:
+    shopInventory(3, shopInventory_0);
+    shopInventory(4, shopInventory_0);
+    shopInventory(2, shopInventory_0);
+    shopInventory(8, shopInventory_0);
+    bitGet(var_0, VBIT_MUTATION_ON);
+    bne(var_0, 0, label_180);
+    ref_17d = shopOpen(6);
+    wait(ref_17d);
+    b(label_184);
+  label_180:
+    bne(var_0, 1, label_184);
+    ref_181 = shopOpen(7);
+    wait(ref_181);
+    b(label_184);
+  label_184:
+}
+
+function HA_SHOP_RESTART_0()
+{
+    choiceSetResult(6);
+    ref_186 = bustupLoad(bustup_e0);
+    bustupWait(ref_186);
+    ref_188 = bustupAlloc(ref_186, right, rgb(0,0,0));
+    bustupFade(ref_188, rgb(128,0,0), 30);
+    ref_18a = dialogAlloc();
+    ref_18b = msgShow(msg_16);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]他に御用はありますかな？
+[choice(8)]ペルソナを召喚する
+ペルソナを降魔する
+ペルソナの帰還
+[if_all(VBIT_MUTATION_ON)]ペルソナの変異
+話をする
+[if_all(EBIT_SINARIOFF)]アディショナルシナリオ
+やめる
+ベルベットルームから出る
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_18b);
+    dialogFree(ref_18a);
+    ref_18f = bustupFade(ref_188, rgb(0,0,0), 10);
+    bustupWait(ref_18f);
+    bustupFree(ref_188);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_197);
+    li(var_5, 0);
+    b(label_1ac);
+  label_197:
+    bne(var_0, 1, label_19a);
+    li(var_5, 1);
+    b(label_1ac);
+  label_19a:
+    bne(var_0, 2, label_19d);
+    li(var_5, 2);
+    b(label_1ac);
+  label_19d:
+    bne(var_0, 3, label_1a0);
+    li(var_5, 3);
+    b(label_1ac);
+  label_1a0:
+    bne(var_0, 4, label_1a3);
+    li(var_5, 4);
+    b(label_1ac);
+  label_1a3:
+    bne(var_0, 5, label_1a6);
+    li(var_5, 5);
+    b(label_1ac);
+  label_1a6:
+    bne(var_0, 6, label_1a9);
+    li(var_5, 6);
+    b(label_1ac);
+  label_1a9:
+    bne(var_0, 7, label_1ac);
+    li(var_5, 7);
+    b(label_1ac);
+  label_1ac:
+}
+
+function HA_SHOP_TALK_0()
+{
+    choiceSetResult(2);
+    ref_1ae = bustupLoad(bustup_e0);
+    bustupWait(ref_1ae);
+    ref_1b0 = bustupAlloc(ref_1ae, left, rgb(0,0,0));
+    bustupFade(ref_1b0, rgb(128,0,0), 30);
+    ref_1b2 = dialogAlloc();
+    ref_1b3 = msgShow(msg_17);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]何か、聞きたいことがおありのようですな？
+[choice(3)]世間話を聞く
+説明を聞く
+[if_all(EBIT_SINARIOFF)]非表示項目
+[end_choice][clear]
+***************************************/
+    wait(ref_1b3);
+    dialogFree(ref_1b2);
+    ref_1b6 = bustupFade(ref_1b0, rgb(0,0,0), 10);
+    bustupWait(ref_1b6);
+    bustupFree(ref_1b0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_1bc);
+    b(label_1c3);
+  label_1bc:
+    bne(var_0, 1, label_1bf);
+    b(label_1d5);
+    b(label_1c3);
+  label_1bf:
+    bne(var_0, 2, label_1c3);
+    li(var_5, 1000);
+    b(label_25a);
+    b(label_1c3);
+  label_1c3:
+    ref_1c3 = bustupLoad(bustup_e0);
+    bustupWait(ref_1c3);
+    ref_1c5 = bustupAlloc(ref_1c3, right, rgb(0,0,0));
+    bustupFade(ref_1c5, rgb(128,0,0), 30);
+    ref_1c7 = dialogAlloc();
+    ref_1c8 = msgShow(msg_18);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ペルソナは、いつでもあなた方の中に存在しております。
+[tab]たとえその力を行使する機会を失っても、
+[tab]あなた方を導き、護ってくれることでしょう。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_1c8);
+    dialogFree(ref_1c7);
+    ref_1cc = bustupFade(ref_1c5, rgb(0,0,0), 10);
+    bustupWait(ref_1cc);
+    bustupFree(ref_1c5);
+    b(label_25a);
+    ref_1d0 = bustupLoad(bustup_e0);
+    bustupWait(ref_1d0);
+    ref_1d2 = bustupAlloc(ref_1d0, left, rgb(0,0,0));
+    bustupFade(ref_1d2, rgb(128,0,0), 30);
+    ref_1d4 = dialogAlloc();
+  label_1d5:
+    choiceSetResult(6);
+    ref_1d6 = msgShow(msg_19);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]何なりと御質問を。
+[choice(7)]ペルソナについて
+降魔と発動について
+アルカナについて
+ペルソナの成長について
+ペルソナとの相性について
+次のページへ
+[if(EBIT_SINARIOFF)]非表示項目・戻る
+[end_choice][clear]
+***************************************/
+    wait(ref_1d6);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_1dc);
+    b(label_229);
+    b(label_1ef);
+  label_1dc:
+    bne(var_0, 1, label_1df);
+    b(label_22c);
+    b(label_1ef);
+  label_1df:
+    bne(var_0, 2, label_1e2);
+    b(label_22f);
+    b(label_1ef);
+  label_1e2:
+    bne(var_0, 3, label_1e5);
+    b(label_232);
+    b(label_1ef);
+  label_1e5:
+    bne(var_0, 4, label_1e8);
+    b(label_235);
+    b(label_1ef);
+  label_1e8:
+    bne(var_0, 5, label_1eb);
+    b(label_1f0);
+    b(label_1ef);
+  label_1eb:
+    bne(var_0, 6, label_1ef);
+    li(var_5, 1000);
+    b(label_256);
+    b(label_1ef);
+  label_1ef:
+    wait(ref_1d6);
+  label_1f0:
+    choiceSetResult(7);
+    ref_1f1 = msgShow(msg_20);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]何なりと御質問を。
+[choice(8)]タロットカードについて
+マテリアルカードについて
+スキルカードについて
+インセンスカードについて
+ペルソナカードについて
+次のページへ
+前のページへ
+[if(EBIT_SINARIOFF)]非表示項目・戻る
+[end_choice][clear]
+***************************************/
+    wait(ref_1f1);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_1f7);
+    b(label_238);
+    b(label_20d);
+  label_1f7:
+    bne(var_0, 1, label_1fa);
+    b(label_23b);
+    b(label_20d);
+  label_1fa:
+    bne(var_0, 2, label_1fd);
+    b(label_23e);
+    b(label_20d);
+  label_1fd:
+    bne(var_0, 3, label_200);
+    b(label_241);
+    b(label_20d);
+  label_200:
+    bne(var_0, 4, label_203);
+    b(label_244);
+    b(label_20d);
+  label_203:
+    bne(var_0, 5, label_206);
+    b(label_20e);
+    b(label_20d);
+  label_206:
+    bne(var_0, 6, label_209);
+    b(label_1d5);
+    b(label_20d);
+  label_209:
+    bne(var_0, 7, label_20d);
+    li(var_5, 1000);
+    b(label_256);
+    b(label_20d);
+  label_20d:
+    wait(ref_1f1);
+  label_20e:
+    choiceSetResult(6);
+    ref_20f = msgShow(msg_21);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]何なりと御質問を。
+[choice(7)]召喚の基本について
+魔晶変化について
+ミューテーションについて
+コンタクトについて
+悪魔の個性について
+前のページへ
+[if(EBIT_SINARIOFF)]非表示項目・戻る
+[end_choice][clear]
+***************************************/
+    wait(ref_20f);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_215);
+    b(label_247);
+    b(label_228);
+  label_215:
+    bne(var_0, 1, label_218);
+    b(label_24a);
+    b(label_228);
+  label_218:
+    bne(var_0, 2, label_21b);
+    b(label_24d);
+    b(label_228);
+  label_21b:
+    bne(var_0, 3, label_21e);
+    b(label_250);
+    b(label_228);
+  label_21e:
+    bne(var_0, 4, label_221);
+    b(label_253);
+    b(label_228);
+  label_221:
+    bne(var_0, 5, label_224);
+    b(label_1f0);
+    b(label_228);
+  label_224:
+    bne(var_0, 6, label_228);
+    li(var_5, 1000);
+    b(label_256);
+    b(label_228);
+  label_228:
+    wait(ref_20f);
+  label_229:
+    ref_229 = msgShow(msg_22);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]神の様に慈愛に満ちた自分…、悪魔の如き残酷な自分…
+[tab]人は、様々な仮面を着けて生きております。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]今の貴方の姿も無数の仮面の１つに過ぎません。
+[tab]「ペルソナ」は、心の奥底に潜む
+[tab]貴方の姿の１つになります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]そして、「ペルソナ」を形ある姿で召喚し
+[tab]その力を行使する者の事を「ペルソナ使い」と
+[tab]申します。
+[wait][clear]
+***************************************/
+    wait(ref_229);
+    b(label_1d5);
+  label_22c:
+    ref_22c = msgShow(msg_23);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]召喚されたペルソナを「発動」…
+[tab]すなわち、ペルソナを呼び出しその力を行使するには
+[tab]「降魔」することが必要です。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]「降魔」とは、召喚したペルソナを貴方のような
+[tab]ペルソナ使いの体に降ろすことです。
+[tab]「ペルソナカード」を所持しているだけではダメですぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ペルソナを「降魔」すると、ペルソナ使い自身の
+[tab]ステータスにも変化が生じます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ペルソナは貴方の隠れた一面…
+[tab]それに相応しい状態に変化するというわけですな。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]「降魔」は１度に１体しか出来ません。
+[tab]ですが、「ペルソナカード」があれば、
+[tab]いつでも別のペルソナを降魔する事が出来ます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]その場合、それまで降魔していたペルソナは、
+[tab]「ペルソナカード」の状態に戻ります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ペルソナは、その種類によって持っている能力が違い
+[tab]メリットだけではなく、デメリットもありますぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]それぞれのペルソナの能力を良く理解し、
+[tab]状況に応じて使い分けることが、戦闘で生き延び、
+[tab]勝利を収める鍵ですな。
+[wait][clear]
+***************************************/
+    wait(ref_22c);
+    b(label_1d5);
+  label_22f:
+    ref_22f = msgShow(msg_24);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ペルソナも悪魔と同じように種族がございます。[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]種族は「魔術師」や「皇帝」、「戦車」など…
+[tab]タロットのアルカナで表され、２６種類に
+[tab]分類されております。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]アルカナによっては、私の召喚では出会えないものも
+[tab]ございまして…それらのアルカナに出会う為には、
+[tab]ご自身の手で色々と試されるのが宜しいでしょう。
+[wait][clear]
+***************************************/
+    wait(ref_22f);
+    b(label_1d5);
+  label_232:
+    ref_232 = msgShow(msg_25);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ペルソナが人の隠れた一面であるとはいえ、
+[tab]意識していなかった、もう１人の自分に触れるのは、
+[tab]驚きもあるでしょう。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]誰でも初めのうちは、ペルソナの力を十二分に
+[tab]出し切ることは出来ません。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]それは新しく召喚したペルソナほど、
+[tab]その傾向が顕著に現れます…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]そのため最初の内は、ペルソナが持つ本来の能力の
+[tab]一部しか発揮することが出来ないでしょう。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]しかし、ペルソナを発動させればさせる程、
+[tab]次第に使いこなせるようになります。
+[tab]能力が増え、より強力な攻撃も可能になります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]もちろんそれは、ペルソナを使いこなせるようになった
+[tab]結果なので、発動に必要なＳＰに変わりはありません。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]多少ニュアンスは違いますが、この貴方自身の慣れを
+[tab]「ペルソナの成長」と考えてもいいでしょう。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ペルソナの成長には８段階の節目があります。
+[tab]その節目毎に、ペルソナに変化が現れるでしょう。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]また、ペルソナは貴方自身の成長にも、
+[tab]わずかながら影響を与えます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]貴方の能力のどの部分に影響を与えるかは、
+[tab]降魔しているペルソナの種類によって異なります。
+[tab]その点も考慮すると良いでしょうな。
+[wait][clear]
+***************************************/
+    wait(ref_232);
+    b(label_1d5);
+  label_235:
+    ref_235 = msgShow(msg_26);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ペルソナは貴方の半身…
+[tab]全てのペルソナは、貴方と繋がっております…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]とはいえ、貴方に近い存在もあれば、
+[tab]遠い存在もおりますでしょう。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]繋がりが希薄なペルソナの場合、貴方には扱えないかも
+[tab]しれません。
+[tab]そう、中には降魔すら出来ない場合もあります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]逆に近い存在である場合、楽に扱えることも
+[tab]あるでしょう。
+[tab]これらの影響は、特にＳＰの消費に現れます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]本来より少ないＳＰでスキルを発動出来ることもあれば
+[tab]より多くのＳＰを消費する場合もあります。
+[tab]それらの事柄は誰でも同じ条件とは限りませんぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]…色々試されて確認されると良いでしょう。
+[wait][clear]
+***************************************/
+    wait(ref_235);
+    b(label_1d5);
+  label_238:
+    ref_238 = msgShow(msg_27);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]私が新たにペルソナを召喚するのに必要な媒体として
+[tab]「タロットカード」が必要でございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ペルソナは、タロットのアルカナ、
+[tab]「魔術師」や「皇帝」などに種別されておりまして…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]アルカナ「太陽」に属するペルソナを召喚したければ、
+[tab]同じアルカナのカードでなければなりません。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]また、集めるタロットの枚数も、
+[tab]そのペルソナのレベルに見合った分だけ
+[tab]必要となりますぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]そう、レベルが高いペルソナほど、
+[tab]必要なタロットの枚数も増えるわけですな。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]タロットカードの多くは悪魔が所持してまして…
+[tab]彼らが持つカードは、その悪魔の種族と同じアルカナの
+[tab]タロットになっております。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]つまり、召喚したいペルソナと同じ種族の悪魔から、
+[tab]タロットを手に入れればよいわけですな。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]但し、同じ悪魔とだけ交渉していてもダメですぞ。
+[tab]レベルの高い悪魔ほど、所持しているタロットの枚数も
+[tab]多いのです。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]高レベルのペルソナを召喚したいのであれば、
+[tab]同じく高レベルの悪魔と交渉することが必要です。
+[tab]それが、効率よくタロットを集めるコツですな。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]また、一部のタロットは悪魔からは手に入れることは
+[tab]出来ません。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]「フリータロット」と呼ばれるカードを入手したら
+[tab]そちらの「悪魔絵師」に相談されると良いでしょう。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]そうそう、たとえカードを所持されていても、
+[tab]貴方達の「最高レベル＋５」を超えるレベルのペルソナは
+[tab]召喚出来ませんぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]それをお忘れなく…
+[wait][clear]
+***************************************/
+    wait(ref_238);
+    b(label_1f0);
+  label_23b:
+    ref_23b = msgShow(msg_28);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]私がペルソナを召喚する際に追加出来るカードに
+[tab]「マテリアルカード」というものがございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]マテリアルカードは１度の召喚で１枚だけ使用出来まして
+[tab]特定のマテリアルカードを追加することで
+[tab]特殊なペルソナを召喚する事が可能となります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]また、マテリアルカードを所持していると、
+[tab]がい当するペルソナが青色で召喚リストに表示されます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]「マテリアルカード」は、強力なペルソナを
+[tab]作り出すためにも欠かすことのできない物なので
+[tab]ございます…
+[wait][clear]
+***************************************/
+    wait(ref_23b);
+    b(label_1f0);
+  label_23e:
+    ref_23e = msgShow(msg_29);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]私がペルソナを召喚する際に追加出来るカードに
+[tab]「スキルカード」というものがございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]スキルカードは１度の召喚で１枚だけ使用出来まして、
+[tab]カードに封じられたスキルを新たに召喚する
+[tab]ペルソナに覚えさせる事が出来ます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]そう…「アギカード」を新たなペルソナの
+[tab]召喚時に加えれば、そのペルソナは「アギ」を
+[tab]覚えるということです…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]普通の成長では覚えることがないスキルであっても
+[tab]カードで習得させられますぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ただし、スキルカードとペルソナの間には
+[tab]相性が存在しておりまして、相性が悪いと
+[tab]そのスキルカードを加えることは出来ません。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]なお、スキルカードの多くは悪魔が所持しております。
+[tab]悪魔と遭遇した時にコンタクトなどを行って
+[tab]入手されるのが良いでしょうな…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]珍しいスキルカードは入手手段が異なるようです
+[tab]…色々試されると良いでしょう。
+[wait][clear]
+***************************************/
+    wait(ref_23e);
+    b(label_1f0);
+  label_241:
+    ref_241 = msgShow(msg_30);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]私がペルソナを召喚する際に追加出来るカードに
+[tab]「インセンスカード」というものがございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]インセンスカードは１度の召喚で１枚だけ使用出来まして
+[tab]カードに関連したペルソナの能力を伸ばす事が出来ます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]あくまでも、新たに召喚するペルソナにしか
+[tab]使用出来ませんので、よく考えて追加されると
+[tab]良いでしょうな…
+[wait][clear]
+***************************************/
+    wait(ref_241);
+    b(label_1f0);
+  label_244:
+    ref_244 = msgShow(msg_31);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]召喚されたペルソナで降魔していないものは、
+[tab]通常、カードの姿をとって待機しておりまして
+[tab]そのカードを「ペルソナカード」と申します。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]貴方は、ペルソナカードを複数所持出来ますが、
+[tab]所持できる枚数には限りがございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]所持するカードには、降魔中のペルソナも含まれますので
+[tab]注意が必要ですぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ペルソナの力は、冒険に欠く事のできぬもの。
+[tab]必要に応じて、ペルソナカードを入れ替えるのが
+[tab]宜しいでしょう。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]また、こちらで新たに召喚したペルソナは、
+[tab]私が大切に預かっております。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]お預かりできる数には限りがございますが、
+[tab]新しく召喚したペルソナだけでなく、
+[tab]それまで貴方が所持していたペルソナも預りますぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]お預かりできる最大数のカードをお預かりしている時は
+[tab]新たにペルソナを召喚する事は出来ませんぞ。
+[tab]お忘れ無きよう…
+[wait][clear]
+***************************************/
+    wait(ref_244);
+    b(label_1f0);
+  label_247:
+    ref_247 = msgShow(msg_32);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]私の役目は、新たなペルソナを召喚すること…
+[tab]お持ちのタロットカードを媒体にして、
+[tab]心の奥底に眠るペルソナを召喚する事でございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]タロットカードを多く用えば、レベルの高いペルソナが
+[tab]召喚されるでしょう。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ですが、タロットカードさえ集めれば、
+[tab]全てのペルソナを召喚出来る…というわけでは
+[tab]ありません。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]中には特別な条件が必要な場合もあります。
+[tab]それらの一部は、無意識の奥底に眠っており…
+[tab]召喚する為には、何かしらのきっかけが必要になります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]そのきっかけの１つは、「マテリアルカード」を合わせた
+[tab]召喚になります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]その他にも、きっかけはペルソナの成長などに
+[tab]潜んでおります…
+[tab]ご自身の手で色々と試されるのが宜しいでしょう。
+[wait][clear]
+***************************************/
+    wait(ref_247);
+    b(label_20e);
+  label_24a:
+    ref_24a = msgShow(msg_33);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]ランクが上がりきり、ランクが８となったペルソナは
+[tab]それ以上に育つことはありません。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]非常に強力なペルソナではありますが、
+[tab]そのようなペルソナをこのベルベットルームで
+[tab]無意識の海に帰還いたしますと…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]それまで共に戦ったペルソナの力は解放され、
+[tab]代わりに、戦いの証として、何がしかのアイテムを
+[tab]残していってくれるのでございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]それは、時に武器であり、防具であり、消耗品であり
+[tab]非常に珍しい、ここでしか手に入らない物もございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]どのような不思議な物を手に入れる事が出来るかは
+[tab]ご自分の目でお確かめ下さいませ…
+[wait][clear]
+***************************************/
+    wait(ref_24a);
+    b(label_20e);
+  label_24d:
+    ref_24d = msgShow(msg_34);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]戦闘で合体スキルを多用いたしておりますと
+[tab]稀にペルソナがミューテーション…
+[tab]つまりは「変異」する事がございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]変異が発生する確率はペルソナとの相性が
+[tab]深く関わっておりまして…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]相性が良いペルソナほど変異する確率は
+[tab]高くなっております。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]変異の内容はペルソナのランクで異なりまして、
+[tab]ランクが低い時は、「ランクの２ランクアップ」や
+[tab]「基礎能力強化」などですが…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]高ランクになりますと、「スキルの習得」や
+[tab]ペルソナによっては「別ペルソナへの変身」が
+[tab]可能となります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]なお、ペルソナによっては、私の召喚では呼び出せない
+[tab]アルカナのペルソナに変身する場合もございます。
+[tab]色々試されると良いでしょう。[wait][clear]
+***************************************/
+    wait(ref_24d);
+    b(label_20e);
+  label_250:
+    ref_250 = msgShow(msg_35);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]悪魔は、貴方達と同じで「喜び」や「怒り」など
+[tab]様々な感情を持っておりまして…
+[tab]話しかけることでコンタクトを取る事が出来ます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]悪魔達は気持ちを「言葉」「音」「動作」
+[tab]それから「光」で表現いたしまして、視覚で判断出来る
+[tab]感情の光は次のようになっております。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]まず初めに「喜び」は「緑の光」で表されます。
+[tab]この感情が最大になりますと
+[tab]悪魔と「契約」をする事が出来ますぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]悪魔と「契約」を行いますと、
+[tab]貴方に様々なメリットがございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]それは、悪魔から「珍しいタロットカード」を頂いたり
+[tab]「面白い話」を聞かせて頂けます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ですが、それらは契約中とはいえ、
+[tab]ただでは頂く事は出来ません。
+[tab]ほしい時は、再度コンタクトをお取り下さい。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]次に「怒り」は「赤い光」で表されます。
+[tab]この感情が最大になりますと
+[tab]すぐに悪魔との会話は打ち切られてしまいます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]こうなりますと悪魔はもう聞く耳を持ちません。
+[tab]ヘタをすると、攻撃されてしまいます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]それは「契約」を行っている悪魔でも同じでして、
+[tab]良い事はありません…
+[tab]怒らせない様に気をつけた方がいいですな。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]次に「恐怖」は「青い光」で表されます。
+[tab]この感情が最大になりますと
+[tab]悪魔は怯えて逃げ出してしまいます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]最後に「興味」は「黄色い光」で表されます。
+[tab]この感情を最大に高める事はとても意味がありますぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]私の召喚で必要な媒体であるタロットカードを
+[tab]頂ける場合があるのです。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]強力なペルソナを召喚される場合、
+[tab]数多くのタロットカードが必要となりますので
+[tab]悪魔と頻繁にコンタクトを行い集めると良いでしょう…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]それから…「喜び」「怒り」「恐怖」の３つは
+[tab]「興味」が同時に上がる事がございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]たとえば…「喜び」と「興味」が同時に最大になった場合
+[tab]「契約」を行う事は出来ません。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]「怒り」と「恐怖」も「興味」と同時に最大になった時、
+[tab]普段とは異なる結果になります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]これら４つの感情は、普通３段階で最大になります。
+[tab]私からのアドバイスとしては、普段はなるべく１つの
+[tab]感情を上げる事をお奨めいたします。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]基本的な事はこれくらいですな。
+[tab]この他にも、貴方達に対して悪魔が質問してきたり
+[tab]遭遇直後に話しかけてきたりする場合もございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]まぁそれらは、数多くコンタクトをすれば
+[tab]わかってくるでしょうな…
+[wait][clear]
+***************************************/
+    wait(ref_250);
+    b(label_20e);
+  label_253:
+    ref_253 = msgShow(msg_36);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]それでは、悪魔の「個性」について説明しますかな…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]人間でもそうですが、悪魔にもいろいろな者が
+[tab]おりまして…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]賢い者、短気な者、弱気な者…
+[tab]それぞれ好き嫌いがございます。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]貴方達は、それらを見抜いて
+[tab]悪魔とコンタクトを行うのです。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]悪魔の「個性」は全部で８種類に分類されます。
+[tab]賢い[tab]愚か[tab]陽気[tab]陰気
+[tab]強気[tab]弱気[tab]短気[tab]高慢…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]各悪魔が、この中のいずれか１個、又は複数
+[tab]持っております。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]持っている「個性」の組み合わせによって、
+[tab]コンタクトの時の反応が全然異なりますぞ。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]コンタクトを行った事が無い悪魔の「個性」は
+[tab]知ることは出来ませんが、
+[tab]一度でもコンタクトすれば判るようになります。
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]色々試されてご自分の目でお確かめ下さいませ…
+[wait][clear]
+***************************************/
+    wait(ref_253);
+    b(label_20e);
+  label_256:
+    dialogFree(ref_1d4);
+    ref_257 = bustupFade(ref_1d2, rgb(0,0,0), 10);
+    bustupWait(ref_257);
+    bustupFree(ref_1d2);
+  label_25a:
+}
+
+function HA_SHOP_END_0()
+{
+    ref_25b = bustupLoad(bustup_e0);
+    bustupWait(ref_25b);
+    ref_25d = bustupAlloc(ref_25b, right, rgb(0,0,0));
+    bustupFade(ref_25d, rgb(128,0,0), 30);
+    ref_25f = dialogAlloc();
+    ref_260 = msgShow(msg_37);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]では、更なるタロットを手に入れるまで、
+[tab]しばしのお別れですな。[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_10, 1);
+    wait(ref_260);
+    shopOverlayInit();
+    dialogFree(ref_25f);
+    ref_265 = bustupFade(ref_25d, rgb(0,0,0), 10);
+    bustupWait(ref_265);
+    bustupFree(ref_25d);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_26f);
+    unitRestoreFacing(shopkeeper);
+    controlEnable();
+    unitAnimationPlay(shopkeeper, animation_11, 1);
+    cameraControlDisable();
+    b(label_272);
+  label_26f:
+    bne(var_0, 1, label_272);
+    call(EXITBOX);
+    b(label_272);
+  label_272:
+}
+
+function BERADONNA()
+{
+    controlDisable();
+    unitFacePlayer(npc1);
+    ref_275 = bustupLoad(bustup_e2);
+    bustupWait(ref_275);
+    ref_277 = bustupAlloc(ref_275, right, rgb(0,0,0));
+    bustupFade(ref_277, rgb(128,0,0), 30);
+    ref_279 = dialogAlloc();
+    ref_27a = msgShow(msg_38);
+/***************************************
+[color(yellow)]ベラドンナ[color(white)]
+[tab]人の心は振り子のようなもの～𝅘𝅥𝅮
+[tab]強い想いをぶつけると～𝅘𝅥𝅮[tab]相手の気持ちが揺れ動き～𝅘𝅥𝅮
+[tab]こちらへ想いを返すこともあるというものです～𝅘𝅥𝅮
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_8, 1);
+    wait(ref_27a);
+    dialogFree(ref_279);
+    ref_27e = bustupFade(ref_277, rgb(0,0,0), 10);
+    bustupWait(ref_27e);
+    bustupFree(ref_277);
+    unitRestoreFacing(npc1);
+    controlEnable();
+    unitAnimationPlay(npc1, animation_7, 1);
+    cameraControlDisable();
+}
+
+function NANASI()
+{
+    controlDisable();
+    ref_287 = bustupLoad(bustup_e1);
+    bustupWait(ref_287);
+    ref_289 = bustupAlloc(ref_287, right, rgb(0,0,0));
+    bustupFade(ref_289, rgb(128,0,0), 30);
+    ref_28b = dialogAlloc();
+    ref_28c = msgShow(msg_39);
+/***************************************
+[color(yellow)]ナナシ[color(white)]
+[tab]自分が「感じた」ことを疑う必要はない。
+[tab]目に見えた、耳で聞こえたという出来事に嘘はない。
+[wait][clear][color(yellow)]ナナシ[color(white)]
+[tab]だが、その存在が本物かどうかはわからない。
+[tab]お前が聞いているピアノの音は、
+[tab]この俺が弾いた物という確たる証拠はないだろう？
+[wait][clear]
+***************************************/
+    wait(ref_28c);
+    dialogFree(ref_28b);
+    ref_28f = bustupFade(ref_289, rgb(0,0,0), 10);
+    bustupWait(ref_28f);
+    bustupFree(ref_289);
+    controlEnable();
+    cameraControlDisable();
+    unitAnimationPlay(npc2, animation_0, 1);
+}
+
+function ESI()
+{
+    controlDisable();
+    ref_297 = shopOverlayInit();
+    unitFacePlayer(unit_76);
+    ref_299 = bustupLoad(bustup_e3);
+    bustupWait(ref_299);
+    ref_29b = bustupAlloc(ref_299, right, rgb(0,0,0));
+    bustupFade(ref_29b, rgb(128,0,0), 30);
+    choiceSetResult(2);
+    ref_29e = dialogAlloc();
+    bitGet(var_0, MBIT_BEL_ESI);
+    bne(var_0, 0, label_2a7);
+    ref_2a1 = msgShow(msg_40);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]僕は悪魔絵師。
+[tab]人の内に住まう、神と悪魔を描く絵師。
+[tab]どうぞよろしく。
+[tab][sync][wait][clear]
+***************************************/
+    bitSet(MBIT_BEL_ESI);
+    sync();
+    wait(ref_2a1);
+    wait(ref_297);
+    b(label_2ad);
+  label_2a7:
+    bne(var_0, 1, label_2ad);
+    ref_2a8 = msgShow(msg_41);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]タロットは心の雛形だ。心が人の運命を回す。
+[tab]さて、何か描いて欲しいのかな？
+[choice(4)]タロット作成依頼
+話す
+やめる
+ベルベットルームから出る
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_2a8);
+    wait(ref_297);
+    b(label_2ad);
+  label_2ad:
+    dialogFree(ref_29e);
+    ref_2ae = bustupFade(ref_29b, rgb(0,0,0), 10);
+    bustupWait(ref_2ae);
+    bustupFree(ref_29b);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2b6);
+    li(var_5, 0);
+    b(label_2bf);
+  label_2b6:
+    bne(var_0, 1, label_2b9);
+    li(var_5, 1);
+    b(label_2bf);
+  label_2b9:
+    bne(var_0, 2, label_2bc);
+    li(var_5, 2);
+    b(label_2bf);
+  label_2bc:
+    bne(var_0, 3, label_2bf);
+    li(var_5, 3);
+    b(label_2bf);
+  label_2bf:
+    shopInventory(3, shopInventory_1);
+    ref_2c0 = shopOpen(8);
+    wait(ref_2c0);
+}
+
+function HA_SHOP_RESTART_1()
+{
+    choiceSetResult(2);
+    ref_2c4 = bustupLoad(bustup_e3);
+    bustupWait(ref_2c4);
+    ref_2c6 = bustupAlloc(ref_2c4, left, rgb(0,0,0));
+    bustupFade(ref_2c6, rgb(128,0,0), 30);
+    ref_2c8 = dialogAlloc();
+    ref_2c9 = msgShow(msg_42);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]他に、何かあるかな？
+[choice(4)]タロット作成依頼
+話す
+やめる
+ベルベットルームから出る
+[end_choice][clear]
+***************************************/
+    wait(ref_2c9);
+    dialogFree(ref_2c8);
+    ref_2cc = bustupFade(ref_2c6, rgb(0,0,0), 10);
+    bustupWait(ref_2cc);
+    bustupFree(ref_2c6);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2d4);
+    li(var_5, 0);
+    b(label_2dd);
+  label_2d4:
+    bne(var_0, 1, label_2d7);
+    li(var_5, 1);
+    b(label_2dd);
+  label_2d7:
+    bne(var_0, 2, label_2da);
+    li(var_5, 2);
+    b(label_2dd);
+  label_2da:
+    bne(var_0, 3, label_2dd);
+    li(var_5, 3);
+    b(label_2dd);
+  label_2dd:
+}
+
+function HA_SHOP_TALK_1()
+{
+    ref_2de = bustupLoad(bustup_e3);
+    bustupWait(ref_2de);
+    ref_2e0 = bustupAlloc(ref_2de, right, rgb(0,0,0));
+    bustupFade(ref_2e0, rgb(128,0,0), 30);
+    ref_2e2 = dialogAlloc();
+    choiceSetResult(2);
+    ref_2e4 = msgShow(msg_43);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]さて、何について語ろうか。
+[choice(3)]世間話を聞く
+カード作成について聞く
+[if_all(EBIT_SINARIOFF)]非表示項目
+[end_choice][clear]
+***************************************/
+    wait(ref_2e4);
+    dialogFree(ref_2e2);
+    ref_2e7 = bustupFade(ref_2e0, rgb(0,0,0), 10);
+    bustupWait(ref_2e7);
+    bustupFree(ref_2e0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2ed);
+    b(label_2f4);
+  label_2ed:
+    bne(var_0, 1, label_2f0);
+    b(label_36e);
+    b(label_2f4);
+  label_2f0:
+    bne(var_0, 2, label_2f4);
+    li(var_5, 1000);
+    b(label_3ac);
+    b(label_2f4);
+  label_2f4:
+    bitGet(var_0, LBIT_0004);
+    bne(var_0, 0, label_2f7);
+    b(label_2fa);
+  label_2f7:
+    bne(var_0, 1, label_2fa);
+    b(label_361);
+    b(label_2fa);
+  label_2fa:
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_354);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_347);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_33a);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_32d);
+    bitGet(var_0, EBIT_E001F);
+    bnz(var_0, label_320);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_313);
+    ref_306 = bustupLoad(bustup_e3);
+    bustupWait(ref_306);
+    ref_308 = bustupAlloc(ref_306, right, rgb(0,0,0));
+    bustupFade(ref_308, rgb(128,0,0), 30);
+    ref_30a = dialogAlloc();
+    ref_30b = msgShow(msg_44);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]僕は、己が心情を絵で語る。
+[tab]あまり喋りは得意じゃないんだが…
+[tab]君となら気が合いそうだ。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_30b);
+    dialogFree(ref_30a);
+    ref_30f = bustupFade(ref_308, rgb(0,0,0), 10);
+    bustupWait(ref_30f);
+    bustupFree(ref_308);
+    b(label_3ac);
+  label_313:
+    ref_313 = bustupLoad(bustup_e3);
+    bustupWait(ref_313);
+    ref_315 = bustupAlloc(ref_313, right, rgb(0,0,0));
+    bustupFade(ref_315, rgb(128,0,0), 30);
+    ref_317 = dialogAlloc();
+    ref_318 = msgShow(msg_45);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]僕は時たま考える。
+[tab]現実…いわゆる僕らにとっての世界というやつは、
+[tab]本当に一つしかないのか、否かとね。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_318);
+    dialogFree(ref_317);
+    ref_31c = bustupFade(ref_315, rgb(0,0,0), 10);
+    bustupWait(ref_31c);
+    bustupFree(ref_315);
+    b(label_3ac);
+  label_320:
+    ref_320 = bustupLoad(bustup_e3);
+    bustupWait(ref_320);
+    ref_322 = bustupAlloc(ref_320, right, rgb(0,0,0));
+    bustupFade(ref_322, rgb(128,0,0), 30);
+    ref_324 = dialogAlloc();
+    ref_325 = msgShow(msg_46);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]自分の中には、もう一人別な自分が存在する。
+[tab]その人格は、この僕を見て、何と言うだろう…
+[tab]フフ…きっと、腹を抱えて笑うんだろうな。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_325);
+    dialogFree(ref_324);
+    ref_329 = bustupFade(ref_322, rgb(0,0,0), 10);
+    bustupWait(ref_329);
+    bustupFree(ref_322);
+    b(label_3ac);
+  label_32d:
+    ref_32d = bustupLoad(bustup_e3);
+    bustupWait(ref_32d);
+    ref_32f = bustupAlloc(ref_32d, right, rgb(0,0,0));
+    bustupFade(ref_32f, rgb(128,0,0), 30);
+    ref_331 = dialogAlloc();
+    ref_332 = msgShow(msg_47);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]同じ、普遍的無意識から生じたペルソナであっても
+[tab]扱える者と、扱えない者が存在する。
+[tab]所詮、人の心はままならないか…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_332);
+    dialogFree(ref_331);
+    ref_336 = bustupFade(ref_32f, rgb(0,0,0), 10);
+    bustupWait(ref_336);
+    bustupFree(ref_32f);
+    b(label_3ac);
+  label_33a:
+    ref_33a = bustupLoad(bustup_e3);
+    bustupWait(ref_33a);
+    ref_33c = bustupAlloc(ref_33a, right, rgb(0,0,0));
+    bustupFade(ref_33c, rgb(128,0,0), 30);
+    ref_33e = dialogAlloc();
+    ref_33f = msgShow(msg_48);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]ここにいる連中は死を知らない。
+[tab]僕も、そんな物は、とうに忘れてしまった。
+[tab]いつか、それを後悔する日が来るのだろうか…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_33f);
+    dialogFree(ref_33e);
+    ref_343 = bustupFade(ref_33c, rgb(0,0,0), 10);
+    bustupWait(ref_343);
+    bustupFree(ref_33c);
+    b(label_3ac);
+  label_347:
+    ref_347 = bustupLoad(bustup_e3);
+    bustupWait(ref_347);
+    ref_349 = bustupAlloc(ref_347, right, rgb(0,0,0));
+    bustupFade(ref_349, rgb(128,0,0), 30);
+    ref_34b = dialogAlloc();
+    ref_34c = msgShow(msg_49);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]ここに来て、一番良かったと思えるのは、
+[tab]現世の人々の心が、手に取るように分かる事だ。
+[tab]それが荒んでいく様子も…実に良く分かる。
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_34c);
+    dialogFree(ref_34b);
+    ref_350 = bustupFade(ref_349, rgb(0,0,0), 10);
+    bustupWait(ref_350);
+    bustupFree(ref_349);
+    b(label_3ac);
+  label_354:
+    ref_354 = bustupLoad(bustup_e3);
+    bustupWait(ref_354);
+    ref_356 = bustupAlloc(ref_354, right, rgb(0,0,0));
+    bustupFade(ref_356, rgb(128,0,0), 30);
+    ref_358 = dialogAlloc();
+    ref_359 = msgShow(msg_50);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]現世で何かあったのか？
+[tab]人の心の乱れは、このキャンバスさえ乱すんだ。
+[tab]結局…僕は現世の住人なのかも知れないな…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_359);
+    dialogFree(ref_358);
+    ref_35d = bustupFade(ref_356, rgb(0,0,0), 10);
+    bustupWait(ref_35d);
+    bustupFree(ref_356);
+    b(label_3ac);
+  label_361:
+    ref_361 = bustupLoad(bustup_e3);
+    bustupWait(ref_361);
+    ref_363 = bustupAlloc(ref_361, right, rgb(0,0,0));
+    bustupFade(ref_363, rgb(128,0,0), 30);
+    ref_365 = dialogAlloc();
+    ref_366 = msgShow(msg_51);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]色々と、飛び回っているようだな。
+[tab]…その力でしか解決できないこともあるだろう。
+[wait][clear][color(yellow)]悪魔絵師[color(white)]
+[tab]情けは人の為ならず…その内良い事になって帰ってくるさ。
+[wait][clear]
+***************************************/
+    sync();
+    wait(ref_366);
+    dialogFree(ref_365);
+    ref_36a = bustupFade(ref_363, rgb(0,0,0), 10);
+    bustupWait(ref_36a);
+    bustupFree(ref_363);
+    b(label_3ac);
+  label_36e:
+    choiceSetResult(3);
+    ref_36f = bustupLoad(bustup_e3);
+    bustupWait(ref_36f);
+    ref_371 = bustupAlloc(ref_36f, left, rgb(0,0,0));
+    bustupFade(ref_371, rgb(128,0,0), 30);
+    ref_373 = dialogAlloc();
+    ref_374 = msgShow(msg_52);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]それで、何が聞きたいのかな？
+[choice(3)]フリータロット
+入手するには
+効率の良い使い方
+[end_choice][clear]
+***************************************/
+    wait(ref_374);
+    dialogFree(ref_373);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    unitWait(unit_76);
+    ref_379 = bustupFade(ref_371, rgb(0,0,0), 10);
+    bustupWait(ref_379);
+    bustupFree(ref_371);
+    choiceGetResult(var_3);
+    bne(var_3, 0, label_38c);
+    ref_37e = bustupLoad(bustup_e3);
+    bustupWait(ref_37e);
+    ref_380 = bustupAlloc(ref_37e, right, rgb(0,0,0));
+    bustupFade(ref_380, rgb(128,0,0), 30);
+    ref_382 = dialogAlloc();
+    ref_383 = msgShow(msg_53);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]フリータロットは、何も描かれていない特殊な
+[tab]タロットカードなんだ。
+[wait][clear][color(yellow)]悪魔絵師[color(white)]
+[tab]どんなタロットカードにも変化させることが
+[tab]できる不思議なカードさ。
+[wait][clear][color(yellow)]悪魔絵師[color(white)]
+[tab]僕なら、フリータロットに絵を描き、
+[tab]いろんなタロットカードを作ることができる。
+[wait][clear][color(yellow)]悪魔絵師[color(white)]
+[tab]フリータロットを手に入れたら、
+[tab]僕の所へ持ってくるといい。
+[wait][clear]
+***************************************/
+    wait(ref_383);
+    dialogFree(ref_382);
+    unitAnimationPlay(unit_76, animation_9, 1);
+    ref_387 = bustupFade(ref_380, rgb(0,0,0), 10);
+    bustupWait(ref_387);
+    bustupFree(ref_380);
+    b(label_36e);
+    b(label_3ac);
+  label_38c:
+    bne(var_3, 1, label_39b);
+    ref_38d = bustupLoad(bustup_e3);
+    bustupWait(ref_38d);
+    ref_38f = bustupAlloc(ref_38d, right, rgb(0,0,0));
+    bustupFade(ref_38f, rgb(128,0,0), 30);
+    ref_391 = dialogAlloc();
+    ref_392 = msgShow(msg_54);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]どんな悪魔も、必ずフリータロットを持っている。
+[tab]でも、普通の交渉ではもらえないんだ。
+[tab]フリータロットは、悪魔にとっても貴重なものだからね。
+[wait][clear][color(yellow)]悪魔絵師[color(white)]
+[tab]フリータロットをもらうには、
+[tab]悪魔から特別な信頼を得なければならない。
+[tab]ま、そんなところは人間も悪魔も同じなのさ。
+[wait][clear]
+***************************************/
+    wait(ref_392);
+    dialogFree(ref_391);
+    unitAnimationPlay(unit_76, animation_9, 1);
+    ref_396 = bustupFade(ref_38f, rgb(0,0,0), 10);
+    bustupWait(ref_396);
+    bustupFree(ref_38f);
+    b(label_36e);
+    b(label_3ac);
+  label_39b:
+    bne(var_3, 2, label_3aa);
+    ref_39c = bustupLoad(bustup_e3);
+    bustupWait(ref_39c);
+    ref_39e = bustupAlloc(ref_39c, right, rgb(0,0,0));
+    bustupFade(ref_39e, rgb(128,0,0), 30);
+    ref_3a0 = dialogAlloc();
+    ref_3a1 = msgShow(msg_55);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]ペルソナを召喚するには、同じ種族の悪魔から
+[tab]タロットカードを手に入れればいいのだけど…
+[wait][clear][color(yellow)]悪魔絵師[color(white)]
+[tab]困ったことに、悪魔として出現しない種族の
+[tab]ペルソナもいるんだ。
+[wait][clear][color(yellow)]悪魔絵師[color(white)]
+[tab]こういう特別な種族のペルソナを召喚するには
+[tab]どうしたらいいか？
+[tab]こんな時に役に立つのがフリータロットさ。
+[wait][clear][color(yellow)]悪魔絵師[color(white)]
+[tab]枚数の補助、といった使い方もあるけど、
+[tab]できるだけよく考えて使ってほしい。
+[wait][clear]
+***************************************/
+    wait(ref_3a1);
+    dialogFree(ref_3a0);
+    unitAnimationPlay(unit_76, animation_9, 1);
+    ref_3a5 = bustupFade(ref_39e, rgb(0,0,0), 10);
+    bustupWait(ref_3a5);
+    bustupFree(ref_39e);
+    b(label_36e);
+    b(label_3ac);
+  label_3aa:
+    bne(var_3, 3, label_3ac);
+    b(label_3ac);
+  label_3ac:
+}
+
+function HA_SHOP_END_1()
+{
+    ref_3ad = bustupLoad(bustup_e3);
+    bustupWait(ref_3ad);
+    ref_3af = bustupAlloc(ref_3ad, right, rgb(0,0,0));
+    bustupFade(ref_3af, rgb(128,0,0), 30);
+    ref_3b1 = dialogAlloc();
+    ref_3b2 = msgShow(msg_56);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]僕はいつでもここにいる。
+[tab]また気が向いたら立ち寄るといい。
+[tab]ここでは、時間は意味を成さないからな。[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_3b2);
+    shopOverlayInit();
+    dialogFree(ref_3b1);
+    ref_3b7 = bustupFade(ref_3af, rgb(0,0,0), 10);
+    bustupWait(ref_3b7);
+    bustupFree(ref_3af);
+    shopInventory(3, shopInventory_1);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_3c2);
+    unitRestoreFacing(unit_76);
+    controlEnable();
+    unitAnimationPlay(unit_76, animation_b, 1);
+    cameraControlDisable();
+    b(label_3c5);
+  label_3c2:
+    bne(var_0, 1, label_3c5);
+    call(EXITBOX);
+    b(label_3c5);
+  label_3c5:
+}
+
+function DOORBOX()
+{
+    controlDisable();
+    objAnimRotate(obj_0, 0, -70, 0, 30, 0);
+    sndMusicPlay(sound_3006, 127);
+    objAnimWait(obj_0);
+    call(EXITBOX);
+}
+
+function EXITBOX()
+{
+    bitClear(MBIT_EXITBIT);
+    shopInventory(3, shopInventory_2a9);
+    bne(var_3, 0, label_3d1);
+    b(label_3d4);
+    b(label_3d4);
+  label_3d1:
+    bne(var_3, 1, label_3d4);
+    b(label_3d6);
+    b(label_3d4);
+  label_3d4:
+    mapLoad(last, 255, 255);
+    b(label_3d7);
+  label_3d6:
+    mapLoad(rengedai, 0, 0);
+  label_3d7:
+}
+
+function warp1()
+{
+    call(DOORBOX);
+}
+
+function HA_SHOP_EXPLAIN_0()
+{
+}
+
+function HA_SHOP_EXPLAIN_1()
+{
+}
+
+function ESIKUBI()
+{
+    delayClear();
+    delayWait(100);
+    unitAnimationPlay(unit_76, animation_3, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(unit_76, animation_1, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(unit_76, animation_2, 1);
+    delayClear();
+    delayWait(60);
+    unitFace(unit_76, west);
+    unitAnimationPlay(unit_76, animation_0, 1);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(unit_76, animation_9, 1);
+}
+
+function NANAMODORI()
+{
+    unitAnimationPlay(npc2, animation_3, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc2, animation_0, 1);
+}
+
+function IGOKUBI()
+{
+    delayClear();
+    delayWait(120);
+    unitAnimationPlay(shopkeeper, animation_1, 1);
+    delayClear();
+    delayWait(40);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(shopkeeper, animation_6, 1);
+}
+
+function HIDARI()
+{
+    call(NANASI);
+    unitAnimationPlay(npc2, animation_3, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc2, animation_4, 1);
+}
+
+function MIGI()
+{
+    call(NANASI);
+    unitAnimationPlay(npc2, animation_1, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc2, animation_2, 1);
+}
+
+function DECIDE_PAINT()
+{
+    ref_40b = bustupLoad(bustup_e3);
+    bustupWait(ref_40b);
+    ref_40d = bustupAlloc(ref_40b, left, rgb(0,0,0));
+    bustupFade(ref_40d, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    ref_410 = dialogAlloc();
+    ref_411 = msgShow(msg_57);
+/***************************************
+[color(yellow)]悪魔絵師[color(white)]
+[tab]これで良いかな？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_411);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_418);
+    li(var_7, 1);
+    b(label_41b);
+  label_418:
+    bne(var_0, 1, label_41b);
+    li(var_7, 0);
+    b(label_41b);
+  label_41b:
+    dialogFree(ref_410);
+    ref_41c = bustupFade(ref_40d, rgb(0,0,0), 10);
+    bustupWait(ref_41c);
+    bustupFree(ref_40d);
+}
+
+function DECIDE_PERSONA()
+{
+    ref_420 = bustupLoad(bustup_e0);
+    bustupWait(ref_420);
+    ref_422 = bustupAlloc(ref_420, left, rgb(0,0,0));
+    bustupFade(ref_422, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    ref_425 = dialogAlloc();
+    ref_426 = msgShow(msg_58);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]このペルソナでよろしいですかな？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_426);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_42e);
+    li(var_7, 1);
+    unitAnimationPlay(shopkeeper, animation_e, 1);
+    b(label_431);
+  label_42e:
+    bne(var_0, 1, label_431);
+    li(var_7, 0);
+    b(label_431);
+  label_431:
+    dialogFree(ref_425);
+    ref_432 = bustupFade(ref_422, rgb(0,0,0), 10);
+    bustupWait(ref_432);
+    bustupFree(ref_422);
+}
+
+function DECIDE_PERSONA_NG()
+{
+    ref_436 = bustupLoad(bustup_e0);
+    bustupWait(ref_436);
+    ref_438 = bustupAlloc(ref_436, left, rgb(0,0,0));
+    bustupFade(ref_438, rgb(128,0,0), 30);
+    ref_43a = dialogAlloc();
+    ref_43b = msgShow(msg_59);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]降魔しているペルソナの変異はできませんぞ。
+[wait][clear]
+***************************************/
+    wait(ref_43b);
+    dialogFree(ref_43a);
+    ref_43e = bustupFade(ref_438, rgb(0,0,0), 10);
+    bustupWait(ref_43e);
+    bustupFree(ref_438);
+    li(var_7, 0);
+}
+
+function DECIDE_PERSONA_FAIL()
+{
+    ref_443 = bustupLoad(bustup_e0);
+    bustupWait(ref_443);
+    ref_445 = bustupAlloc(ref_443, left, rgb(0,0,0));
+    bustupFade(ref_445, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    ref_448 = dialogAlloc();
+    ref_449 = msgShow(msg_60);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]このペルソナでよろしいですかな？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_449);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_452);
+    ref_44e = msgShow(msg_61);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]おや、既に同じペルソナがいるようですな。
+[wait][clear]
+***************************************/
+    wait(ref_44e);
+    li(var_7, 0);
+    b(label_455);
+  label_452:
+    bne(var_0, 1, label_455);
+    li(var_7, 0);
+    b(label_455);
+  label_455:
+    dialogFree(ref_448);
+    ref_456 = bustupFade(ref_445, rgb(0,0,0), 10);
+    bustupWait(ref_456);
+    bustupFree(ref_445);
+}
+
+function DECIDE_DELETE()
+{
+    ref_45a = bustupLoad(bustup_e0);
+    bustupWait(ref_45a);
+    ref_45c = bustupAlloc(ref_45a, left, rgb(0,0,0));
+    bustupFade(ref_45c, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    ref_45f = dialogAlloc();
+    ref_460 = msgShow(msg_62);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]このペルソナを本当に消してよろしいですかな？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_460);
+    li(var_1, 0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_467);
+    li(var_7, 1);
+    b(label_46a);
+  label_467:
+    bne(var_0, 1, label_46a);
+    li(var_7, 0);
+    b(label_46a);
+  label_46a:
+    dialogFree(ref_45f);
+    ref_46b = bustupFade(ref_45c, rgb(0,0,0), 10);
+    bustupWait(ref_46b);
+    bustupFree(ref_45c);
+}
+
+function DEL_MES()
+{
+    ref_46f = bustupLoad(bustup_e0);
+    bustupWait(ref_46f);
+    ref_471 = bustupAlloc(ref_46f, left, rgb(0,0,0));
+    bustupFade(ref_471, rgb(128,0,0), 30);
+    ref_473 = dialogAlloc();
+    ref_474 = msgShow(msg_63);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]呼び覚まされたる古き心のカタチ、
+[tab][color(gray_inv)][var(msg_var_0)][color(white)]を解き放つ時が来ましたか…
+[wait][clear][color(yellow)]イゴール[color(white)]
+[tab]ならば共に戦いしその別なる心
+[tab][color(green)][var(msg_var_1)][color(white)]に替えて、
+[tab]あなたに返しましょうかな…
+[wait][clear]
+***************************************/
+    wait(ref_474);
+    dialogFree(ref_473);
+    ref_477 = bustupFade(ref_471, rgb(0,0,0), 10);
+    bustupWait(ref_477);
+    bustupFree(ref_471);
+}
+
+function GET_MES()
+{
+    ref_47b = msgShow(msg_64);
+/***************************************
+[color(green)][tab]舞耶達は、[var(msg_var_1)][var(msg_var_2)]を
+[tab]手に入れた。[wait][clear]
+***************************************/
+    wait(ref_47b);
+}
+
+function SMN_NG_LV()
+{
+    ref_47e = bustupLoad(bustup_e0);
+    bustupWait(ref_47e);
+    ref_480 = bustupAlloc(ref_47e, right, rgb(0,0,0));
+    bustupFade(ref_480, rgb(128,0,0), 30);
+    ref_482 = dialogAlloc();
+    ref_483 = msgShow(msg_65);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]このペルソナを呼び出すには、
+[tab]まだ貴方方のレベルが足りないようですな…
+[wait][clear]
+***************************************/
+    wait(ref_483);
+    dialogFree(ref_482);
+    ref_486 = bustupFade(ref_480, rgb(0,0,0), 10);
+    bustupWait(ref_486);
+    bustupFree(ref_480);
+}
+
+function SMN_NG_PST()
+{
+    ref_48a = bustupLoad(bustup_e0);
+    bustupWait(ref_48a);
+    ref_48c = bustupAlloc(ref_48a, right, rgb(0,0,0));
+    bustupFade(ref_48c, rgb(128,0,0), 30);
+    ref_48e = dialogAlloc();
+    ref_48f = msgShow(msg_66);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]同じペルソナを既にお持ちですぞ。
+[wait][clear]
+***************************************/
+    wait(ref_48f);
+    dialogFree(ref_48e);
+    ref_492 = bustupFade(ref_48c, rgb(0,0,0), 10);
+    bustupWait(ref_492);
+    bustupFree(ref_48c);
+}
+
+function SMN_NG_VST()
+{
+    ref_496 = bustupLoad(bustup_e0);
+    bustupWait(ref_496);
+    ref_498 = bustupAlloc(ref_496, right, rgb(0,0,0));
+    bustupFade(ref_498, rgb(128,0,0), 30);
+    ref_49a = dialogAlloc();
+    ref_49b = msgShow(msg_67);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]同じペルソナをお預かりしておりますぞ。
+[wait][clear]
+***************************************/
+    wait(ref_49b);
+    dialogFree(ref_49a);
+    ref_49e = bustupFade(ref_498, rgb(0,0,0), 10);
+    bustupWait(ref_49e);
+    bustupFree(ref_498);
+}
+
+function SMN_NG_FULL()
+{
+    ref_4a2 = bustupLoad(bustup_e0);
+    bustupWait(ref_4a2);
+    ref_4a4 = bustupAlloc(ref_4a2, right, rgb(0,0,0));
+    bustupFade(ref_4a4, rgb(128,0,0), 30);
+    ref_4a6 = dialogAlloc();
+    ref_4a7 = msgShow(msg_68);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]これ以上ペルソナを預かれませんな。
+[wait][clear]
+***************************************/
+    wait(ref_4a7);
+    dialogFree(ref_4a6);
+    ref_4aa = bustupFade(ref_4a4, rgb(0,0,0), 10);
+    bustupWait(ref_4aa);
+    bustupFree(ref_4a4);
+}
+
+function SMN_NG_TAROT()
+{
+    ref_4ae = bustupLoad(bustup_e0);
+    bustupWait(ref_4ae);
+    ref_4b0 = bustupAlloc(ref_4ae, right, rgb(0,0,0));
+    bustupFade(ref_4b0, rgb(128,0,0), 30);
+    ref_4b2 = dialogAlloc();
+    ref_4b3 = msgShow(msg_69);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]このペルソナを呼び出す為に必要な
+[tab]「タロットカード」が足りませんな。
+[wait][clear]
+***************************************/
+    wait(ref_4b3);
+    dialogFree(ref_4b2);
+    ref_4b6 = bustupFade(ref_4b0, rgb(0,0,0), 10);
+    bustupWait(ref_4b6);
+    bustupFree(ref_4b0);
+}
+
+function SMN_NG_MTRL()
+{
+    ref_4ba = bustupLoad(bustup_e0);
+    bustupWait(ref_4ba);
+    ref_4bc = bustupAlloc(ref_4ba, right, rgb(0,0,0));
+    bustupFade(ref_4bc, rgb(128,0,0), 30);
+    ref_4be = dialogAlloc();
+    ref_4bf = msgShow(msg_70);
+/***************************************
+[color(yellow)]イゴール[color(white)]
+[tab]このペルソナを呼び出す為に必要な
+[tab]「マテリアルカード」が足りませんな。
+[wait][clear]
+***************************************/
+    wait(ref_4bf);
+    dialogFree(ref_4be);
+    ref_4c2 = bustupFade(ref_4bc, rgb(0,0,0), 10);
+    bustupWait(ref_4c2);
+    bustupFree(ref_4bc);
+}

@@ -1,0 +1,6 @@
+
+msg_0:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下手に出りゃ付け上がりやがって！
+[sync][wait]
+[end]

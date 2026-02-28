@@ -1,0 +1,469 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    dngRoomSet(80);
+    dngRoomDraw();
+    ref_4 = spriteLoad(sprite_0);
+    wait(ref_4);
+    ref_6 = spriteLoad(sprite_2);
+    wait(ref_6);
+    ref_8 = spriteLoad(sprite_6);
+    wait(ref_8);
+    ref_a = spriteLoad(sprite_d);
+    wait(ref_a);
+    ref_c = spriteLoad(sprite_13);
+    wait(ref_c);
+    ref_e = spriteLoad(sprite_18);
+    wait(ref_e);
+    bitGet(var_1, EBIT_E1601);
+    bne(var_1, 0, label_15);
+    ref_12 = call(KYOUSEI);
+    wait(ref_12);
+    b(label_19);
+  label_15:
+    bne(var_1, 1, label_19);
+    ref_16 = call(FREE);
+    wait(ref_16);
+    b(label_19);
+  label_19:
+}
+
+function KYOUSEI()
+{
+    bitSet(EBIT_E1601);
+    ref_1b = sndLoad(sound_1200);
+    wait(ref_1b);
+    sndMusicPlay(sound_1200, 90);
+    cameraSet(southwest, 500, 0, -850);
+    ref_1f = cameraZoom(-2048, 10);
+    wait(ref_1f);
+    sndMusicPlay(sound_326f, 127);
+    objAnimTranslate(obj_1, 0, 0, -1000, 10);
+    objAnimWait(obj_1);
+    delayClear();
+    delayWait(10);
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenEffectUnknown();
+    ref_2a = call(DENSHA_DE_GO);
+    wait(ref_2a);
+    delayClear();
+    delayWait(30);
+    cameraZoom(0, 120);
+    delayClear();
+    delayWait(60);
+    call(PAOFUMOVE);
+    delayClear();
+    delayWait(30);
+    call(URARAMOVE);
+    delayClear();
+    delayWait(30);
+    call(KATUYAMOVE);
+    delayClear();
+    delayWait(30);
+    call(TATUYAMOVE);
+    delayClear();
+    delayWait(30);
+    ref_3d = call(MAYAMOVE);
+    wait(ref_3d);
+    unitTriggerSet(ulala, URARA, 255, 1);
+    unitTriggerSet(katsuya, KATUYA, 255, 1);
+    unitTriggerSet(baofu, PAOFU, 255, 1);
+    unitTriggerSet(tatsuya, TATUYA, 255, 1);
+    envTriggerSet(DUNGEON, 14, 2, line, coll_0);
+    envTriggerSet(RETURN, 255, 2, collision_3, coll_1);
+    delayClear();
+    delayWait(60);
+    ref_47 = cameraLookAtUnit(maya, 0, 30);
+    wait(ref_47);
+    unitDespawn(maya, none);
+    playerInit(south);
+    controlDisable();
+    unitIdleOnAll();
+    controlEnable();
+}
+
+function FREE()
+{
+    sndIdGet(var_0);
+    bne(var_0, -1, label_55);
+    ref_51 = sndLoad(sound_1200);
+    wait(ref_51);
+    sndMusicPlay(sound_1200, 90);
+    b(label_60);
+  label_55:
+    bitGet(var_3, EBIT_E1D00);
+    bne(var_3, 0, label_59);
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_5f);
+  label_59:
+    bne(var_3, 1, label_5f);
+    bitClear(EBIT_E1D00);
+    ref_5b = sndLoad(sound_1200);
+    wait(ref_5b);
+    sndMusicPlay(sound_1200, 90);
+    b(label_5f);
+  label_5f:
+    b(label_60);
+  label_60:
+    sndUnkCF(90);
+    unitSpawn(tatsuya, sprite_18, 400, 0, -700, east, none);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    unitSpawn(baofu, sprite_13, 650, 0, -300, north, none);
+    unitAnimationPlay(baofu, animation_a, 1);
+    unitSpawn(katsuya, sprite_d, 830, 0, -570, east, none);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    unitSpawn(ulala, sprite_6, 250, 0, -450, north, none);
+    unitAnimationPlay(ulala, animation_a, 1);
+    unitTriggerSet(ulala, URARA, 255, 1);
+    unitTriggerSet(katsuya, KATUYA, 255, 1);
+    unitTriggerSet(baofu, PAOFU, 255, 1);
+    unitTriggerSet(tatsuya, TATUYA, 255, 1);
+    envTriggerSet(DUNGEON, 14, 2, line, coll_0);
+    envTriggerSet(RETURN, 255, 2, collision_3, coll_1);
+    bitGet(var_0, EBIT_E1500);
+    bne(var_0, 0, label_75);
+    cameraSet(southwest, 500, 0, -850);
+    playerInit(south);
+    controlDisable();
+    b(label_7c);
+  label_75:
+    bne(var_0, 1, label_7c);
+    cameraSetNorth(east);
+    cameraSet(southwest, 100, 0, -700);
+    playerInit(west);
+    controlDisable();
+    bitClear(EBIT_E1500);
+    b(label_7c);
+  label_7c:
+    unitIdleOnAll();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function PAOFU()
+{
+    controlDisable();
+    unitFacePlayer(baofu);
+    unitAnimationHold(baofu, animation_11, -1);
+    ref_87 = bustupLoad(bustup_31);
+    bustupWait(ref_87);
+    ref_89 = bustupAlloc(ref_87, left, rgb(0,0,0));
+    bustupFade(ref_89, rgb(128,0,0), 30);
+    ref_8b = dialogAlloc();
+    ref_8c = msgShow(msg_0);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Time is cruel...
+[tab]It just keeps moving on and on, and before
+[tab]you know it, we all just look like adults.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_8c);
+    unitAnimationStop(baofu);
+    ref_90 = msgShow(msg_1);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Gotta do this, gotta do that.
+[tab]Sooner or later it all gets
+[tab]left behind somewhere...
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_10, 1);
+    sync();
+    wait(ref_90);
+    ref_94 = msgShow(msg_2);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]All the pain and dreams when you were a kid.
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_94);
+    dialogFree(ref_8b);
+    ref_98 = bustupFade(ref_89, rgb(0,0,0), 10);
+    bustupWait(ref_98);
+    bustupFree(ref_89);
+    unitRestoreFacing(baofu);
+    controlEnable();
+}
+
+function KATUYA()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    unitAnimationPlay(katsuya, animation_10, 1);
+    ref_a1 = bustupLoad(bustup_23);
+    bustupWait(ref_a1);
+    ref_a3 = bustupAlloc(ref_a1, left, rgb(0,0,0));
+    bustupFade(ref_a3, rgb(128,0,0), 30);
+    ref_a5 = dialogAlloc();
+    ref_a6 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]As a child I believed adults had strong
+[tab]beliefs and could rule themselves.
+[tab]I wanted to be an adult like that...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_a6);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(katsuya, animation_f, 1);
+    ref_ad = msgShow(msg_4);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]But, as you age, you start to see many things...
+[tab]There are times when you become confused...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_ad);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(katsuya, animation_10, 1);
+    ref_b4 = msgShow(msg_5);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]It’s sick...
+[tab]To feel yourself being defiled...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_b4);
+    dialogFree(ref_a5);
+    ref_b8 = bustupFade(ref_a3, rgb(0,0,0), 10);
+    bustupWait(ref_b8);
+    bustupFree(ref_a3);
+    unitRestoreFacing(katsuya);
+    controlEnable();
+}
+
+function URARA()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    unitAnimationPlay(ulala, animation_10, 1);
+    ref_c1 = bustupLoad(bustup_1a);
+    bustupWait(ref_c1);
+    ref_c3 = bustupAlloc(ref_c1, left, rgb(0,0,0));
+    bustupFade(ref_c3, rgb(128,0,0), 30);
+    ref_c5 = dialogAlloc();
+    ref_c6 = msgShow(msg_6);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Adults, huh...?
+[tab]What are adults, anyway?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_c6);
+    dialogFree(ref_c5);
+    ref_ca = bustupFade(ref_c3, rgb(0,0,0), 10);
+    bustupWait(ref_ca);
+    bustupFree(ref_c3);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function TATUYA()
+{
+    controlDisable();
+    unitFacePlayer(tatsuya);
+    unitAnimationPlay(tatsuya, animation_14, 1);
+    ref_d3 = bustupLoad(bustup_b);
+    bustupWait(ref_d3);
+    ref_d5 = bustupAlloc(ref_d3, left, rgb(0,0,0));
+    bustupFade(ref_d5, rgb(128,0,0), 30);
+    ref_d7 = dialogAlloc();
+    ref_d8 = msgShow(msg_7);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]I guess we have to walk from here...
+[tab]We can’t just go back easily.
+[tab]This is our last chance to turn back...
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_d8);
+    dialogFree(ref_d7);
+    ref_dc = bustupFade(ref_d5, rgb(0,0,0), 10);
+    bustupWait(ref_dc);
+    bustupFree(ref_d5);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    unitRestoreFacing(tatsuya);
+    controlEnable();
+}
+
+function RETURN()
+{
+    controlDisable();
+    unitFacePlayer(tatsuya);
+    ref_e5 = cameraRotateTo(3, 60);
+    wait(ref_e5);
+    ref_e7 = bustupLoad(bustup_b);
+    bustupWait(ref_e7);
+    ref_e9 = bustupAlloc(ref_e7, left, rgb(0,0,0));
+    bustupFade(ref_e9, rgb(128,0,0), 30);
+    ref_eb = dialogAlloc();
+    ref_ec = msgShow(msg_8);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]Maya-nee... are we going back...?
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_ec);
+    dialogFree(ref_eb);
+    ref_f0 = bustupFade(ref_e9, rgb(0,0,0), 10);
+    bustupWait(ref_f0);
+    bustupFree(ref_e9);
+    ref_f3 = bustupLoad(bustup_1);
+    bustupWait(ref_f3);
+    ref_f5 = bustupAlloc(ref_f3, center, rgb(0,0,0));
+    bustupFade(ref_f5, rgb(128,0,0), 30);
+    choiceSetResult(1);
+    op_105(1);
+    ref_f9 = dialogChoiceAlloc();
+    ref_fa = msgShow(msg_9);
+/***************************************
+[tab]Maya-nee... are we going back?
+[choice(2)]Yes. I’m not prepared yet.
+No, no, it’s nothing.
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_fa);
+    dialogFree(ref_f9);
+    ref_fe = bustupFade(ref_f5, rgb(0,0,0), 10);
+    bustupWait(ref_fe);
+    bustupFree(ref_f5);
+    choiceGetResult(var_5);
+    bne(var_5, 0, label_107);
+    bitSet(EBIT_E1D00);
+    bitSet(EBIT_E00A2);
+    mapLoad(narumi, 26, 2);
+    b(label_113);
+  label_107:
+    bne(var_5, 1, label_113);
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    cameraMoveTo(500, 0, -850, 20);
+    unitMove(maya, 500, -850, face_south, medium);
+    unitWait(maya);
+    ref_10d = cameraLookAtUnit(maya, 0, 60);
+    wait(ref_10d);
+    unitDespawn(maya, none);
+    playerInit(south);
+    controlDisable();
+    b(label_113);
+  label_113:
+    unitRestoreFacing(tatsuya);
+    controlEnable();
+}
+
+function DUNGEON()
+{
+    controlDisable();
+    bitSet(EBIT_E1500);
+    bitSet(EBIT_E00A2);
+    cameraSetNorth(east);
+    dngLoad2(subway-0);
+}
+
+function PAOFUMOVE()
+{
+    unitSpawn(baofu, sprite_13, 500, -100, -1200, south, none);
+    unitMove(baofu, 500, -850, face_south, medium);
+    unitWait(baofu);
+    unitMove(baofu, 650, -300, face_south, medium);
+    unitWait(baofu);
+    unitAnimationPlay(baofu, animation_1, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(baofu, east);
+    unitAnimationPlay(baofu, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(baofu, north);
+}
+
+function URARAMOVE()
+{
+    unitSpawn(ulala, sprite_6, 500, -100, -1200, south, none);
+    unitMove(ulala, 500, -850, face_south, medium);
+    unitWait(ulala);
+    unitMove(ulala, 400, -450, face_south, medium);
+    unitWait(ulala);
+    unitMove(ulala, 250, -450, face_east, medium);
+    unitWait(ulala);
+    unitAnimationPlay(ulala, animation_3, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(ulala, north);
+    unitAnimationPlay(ulala, animation_0, 1);
+}
+
+function KATUYAMOVE()
+{
+    unitSpawn(katsuya, sprite_d, 500, -100, -1200, south, none);
+    unitMove(katsuya, 500, -850, face_south, medium);
+    unitWait(katsuya);
+    unitMove(katsuya, 500, -570, face_south, medium);
+    unitWait(katsuya);
+    unitMove(katsuya, 830, -570, face_west, medium);
+    unitWait(katsuya);
+    unitAnimationPlay(katsuya, animation_1, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(katsuya, north);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(katsuya, east);
+}
+
+function TATUYAMOVE()
+{
+    unitSpawn(tatsuya, sprite_18, 500, -100, -1200, south, none);
+    unitMove(tatsuya, 500, -850, face_south, medium);
+    unitWait(tatsuya);
+    unitMove(tatsuya, 400, -700, face_south, medium);
+    unitWait(tatsuya);
+    unitAnimationPlay(tatsuya, animation_1, 1);
+    delayClear();
+    delayWait(7);
+    unitFace(tatsuya, east);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+}
+
+function MAYAMOVE()
+{
+    unitSpawn(maya, sprite_0, 500, -100, -1200, south, none);
+    unitMove(maya, 500, -850, face_south, medium);
+    unitWait(maya);
+    unitAnimationPlay(maya, animation_28, 1);
+    unitWait(maya);
+}
+
+function DENSHA_DE_GO()
+{
+    objAnimTranslate(obj_1, 0, 0, 400, 120);
+    objAnimWait(obj_1);
+    objAnimTranslate(obj_1, 0, 0, 300, 120);
+    objAnimWait(obj_1);
+    objAnimTranslate(obj_1, 0, 0, 200, 120);
+    objAnimWait(obj_1);
+    objAnimTranslate(obj_1, 0, 0, 100, 120);
+    objAnimWait(obj_1);
+}

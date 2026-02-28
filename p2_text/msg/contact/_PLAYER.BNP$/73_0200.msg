@@ -1,0 +1,36 @@
+
+msg_0:
+ [color(green)]舞耶は悪魔に人気の秘密について
+ インタビューした。[color(white)]
+[wait][clear][end]
+
+msg_1:
+ [color(green)]舞耶は悪魔をおだてつつインタビューした。[color(white)]
+[wait][clear][end]
+
+msg_2:
+[play_sound(sndeff_0)][sync] [color(green)]舞耶は悪魔にインタビューを試みた。[color(white)][sync]
+[wait][clear][end]
+
+msg_3:
+ [color(green)]舞耶は怒りを露わにし、
+ 瀕死の[tatsuya]の復讐を誓った。[color(white)]
+[wait][clear][end]
+
+msg_4:
+ [color(green)]舞耶は珍しく憤怒の表情を浮かべ
+ [tatsuya]の復讐を誓った。[color(white)]
+[wait][clear][end]
+
+msg_5:
+ [color(green)]舞耶は激怒し、[tatsuya]を倒した悪魔を睨みつけた。[color(white)]
+[wait][clear][end]
+
+msg_6:
+ [color(green)]舞耶は、自分一人でやると[tatsuya]に言った。[color(white)]
+[wait][clear][end]
+
+msg_7:
+[color(yellow)][tatsuya][color(white)]
+ 舞耶姉…
+[wait][clear][end]

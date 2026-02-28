@@ -1,0 +1,557 @@
+
+msg_0:
+[color(yellow)]うらら[color(white)]
+ エリーちゃんってさぁ、占いも得意なんだよねぇ！
+ ちょっと、あの悪魔占ってみてよ！
+[wait][clear][end]
+
+msg_1:
+[play_sound(sndeff_32)][sync][color(yellow)]エリー[color(white)]
+ Ｏｋａｙ！ よろしいですわ。
+ それでは、Ｈｏｒｏｓｃｏｐｅで占って
+ 差し上げましょう。[sync]
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]パオフゥ[color(white)]
+ ほう…
+ お嬢ちゃんのなら、当たるかも知れねぇな…
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]うらら[color(white)]
+ エリーちゃんの占星術、当たるって噂よ。
+ あの悪魔で、ちょっと手本見せてくんない？
+[wait][clear][end]
+
+msg_4:
+[play_sound(sndeff_32)][sync][color(yellow)]エリー[color(white)]
+ あのＤｅｍｏｎの運勢ですね。
+ わかりましたわ。[sync]
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]パオフゥ[color(white)]
+ 後で俺も占ってもらうか…
+[wait][clear][end]
+
+msg_6:
+[load_sound(sndeff_e)][sync][color(yellow)]うらら[color(white)]
+ エリーちゃん、[play_sound(sndeff_e)][sync]占星術のコツ教えてよ！[sync]
+[wait][clear][end]
+
+msg_7:
+[play_sound(sndeff_32)][sync][color(yellow)]エリー[color(white)]
+ Ｏｋａｙ！ わかりました。
+ お手本に、あの悪魔を占って差し上げますわ。[sync]
+[wait][clear][end]
+
+msg_8:
+[color(yellow)]パオフゥ[color(white)]
+ お嬢ちゃんに占ってもらえるなんざ、
+ お前さん、儲けモンだぜ。
+[wait][clear][end]
+
+msg_9:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＡＲＩＥＳのＹｏｕ…
+ 今年のＹｏｕはとってもＡｇｇｒｅｓｓｉｖｅ！
+ ＲｅｄのＵＮＤＥＲＷＡＲＥがお似合いですわ！
+[wait][clear][end]
+
+msg_10:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＡＲＩＥＳのＹｏｕ…
+ 今年のＹｏｕは「包容力」がＰｏｉｎｔですわ。
+ いつも大らかに…Ｔａｋｅ ｉｔ ｅａｓｙ！
+[wait][clear][end]
+
+msg_11:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＡＲＩＥＳのＹｏｕ…
+ 今年は何かと周囲のことが気になりますが
+ 振り回されずに、Ｇｏ Ｙｏｕｒ ｗａｙ！
+[wait][clear][end]
+
+msg_12:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＡＲＩＥＳのＹｏｕ…
+ 今年のＹｏｕは人間関係が活発ですわ。
+ Ｔａｂｌｅ ｍａｎｎｅｒに気をつけて！
+[wait][clear][end]
+
+msg_13:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＡＲＩＥＳのＹｏｕ…
+ 今年はＩｍａｇｅ ｃｈａｎｇｅの年…
+ 今年中に転職、転校なさることをお勧めしますわ
+[wait][clear][end]
+
+msg_14:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＡＲＩＥＳのＹｏｕ…
+ 今年のＹｏｕは発言に気をつけて！
+ Ｙｏｕの一言が周囲に大きな影響を及ぼします
+[wait][clear][end]
+
+msg_15:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＴＡＵＲＵＳのＹｏｕ…
+ 今年のＹｏｕはとってもＡｃｔｉｖｅ！
+ 会社を起こすなら今年後半がＢｅｓｔですわ！
+[wait][clear][end]
+
+msg_16:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＴＡＵＲＵＳのＹｏｕ…
+ 今年のＹｏｕは明るい返事がＫｅｙになります…
+ 「Ｙｅｓ」「Ｎｏ」は大きな声で！
+[wait][clear][end]
+
+msg_17:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＴＡＵＲＵＳのＹｏｕ…
+ 今年のＹｏｕは優柔不断になりがちですわ…
+ 自分のＯｐｉｎｉｏｎをしっかり持って！
+[wait][clear][end]
+
+msg_18:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＴＡＵＲＵＳのＹｏｕ…
+ 今年のＹｏｕは体調を崩しがち…
+ Ｌｕｃｋｙ ｉｔｅｍは黄色いお野菜ですわ！
+[wait][clear][end]
+
+msg_19:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＴＡＵＲＵＳのＹｏｕ…
+ 今年のＹｏｕはとってもＥｘｃｉｔｉｎｇ！
+ 衝動買いに要注意ですわ！
+[wait][clear][end]
+
+msg_20:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＴＡＵＲＵＳのＹｏｕ…
+ 今年のＹｏｕは結婚運が急上昇！
+ 今年中に結婚されることを強くお勧めしますわ！
+[wait][clear][end]
+
+msg_21:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＧＥＭＩＮＩのＹｏｕ…
+ 今年のＹｏｕには人生の寄り道が必要。
+ 幼い時の夢がようやく叶う年でもありますわ…
+[wait][clear][end]
+
+msg_22:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＧＥＭＩＮＩのＹｏｕ…
+ 今年のＹｏｕは才能に目覚めそう…
+ Ｓｅｍｉｎａｒなどに参加してみては…？
+[wait][clear][end]
+
+msg_23:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＧＥＭＩＮＩのＹｏｕ…
+ 今年のＹｏｕは好奇心、行動力ともに旺盛！
+ ＴｏｕｒやＥｖｅｎｔが目白押しですわ！
+[wait][clear][end]
+
+msg_24:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＧＥＭＩＮＩのＹｏｕ…
+ 今年のＹｏｕはとってもＥｎｅｒｇｅｔｉｃ！
+ ただ、時として周囲の理解が得られないことも…
+[wait][clear][end]
+
+msg_25:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＧＥＭＩＮＩのＹｏｕ…
+ 今年のＹｏｕは何かと周囲に振り回されがち。
+ 人生設計の大きな見直しを迫られそうですわ…
+[wait][clear][end]
+
+msg_26:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＧＥＭＩＮＩのＹｏｕ…
+ 今年のＹｏｕは仕事よりも遊びが中心！
+ 出費の多くなりそうな一年ですわ…
+[wait][clear][end]
+
+msg_27:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＣＡＮＣＥＲのＹｏｕ…
+ 今年のＹｏｕは引っ込み思案になりがちですわ…
+ お友達をなくさないよう、お気をつけになって！
+[wait][clear][end]
+
+msg_28:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＣＡＮＣＥＲのＹｏｕ…
+ 今年のＹｏｕはとってもＣｈａｒｍｉｎｇ！
+ 自然と人が集ってきそうですわ…
+[wait][clear][end]
+
+msg_29:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＣＡＮＣＥＲのＹｏｕ…
+ 今年のＹｏｕは今までの努力がようやく実って
+ なにかと充実しそう…。急な出費には要注意！
+[wait][clear][end]
+
+msg_30:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＣＡＮＣＥＲのＹｏｕ…
+ 今年のＹｏｕは持ち前の繊細さを生かして
+ Ａｒｔなどの分野で活躍しそうですわ！
+[wait][clear][end]
+
+msg_31:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＣＡＮＣＥＲのＹｏｕ…
+ 今年のＹｏｕは素敵な天職にめぐり合えそう…
+ Ｇｏｏｄ ｌｕｃｋ！
+[wait][clear][end]
+
+msg_32:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＣＡＮＣＥＲのＹｏｕ…
+ 今年のＹｏｕは恋人に疑いを持たれがち…
+ 旅先でのＡｖｅｎｔｕｒｅは厳禁ですわ！
+[wait][clear][end]
+
+msg_33:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＬＥＯのＹｏｕ…
+ 今年のＹｏｕは勉強運が急上昇！
+ Ｙｏｇａをするのにも適した一年ですわ…
+[wait][clear][end]
+
+msg_34:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＬＥＯのＹｏｕ…
+ 今年のＹｏｕは精神修養をするとよさそう…
+ 禅宗を回って歩けば、とってもＬｕｃｋｙ！
+[wait][clear][end]
+
+msg_35:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＬＥＯのＹｏｕ…
+ 今年のＹｏｕは常識外れなことにＴｒｙして
+ 周囲のあらぬ誤解を招きそうですわ…
+[wait][clear][end]
+
+msg_36:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＬＥＯのＹｏｕ…
+ 今年のＹｏｕは人生設計が大きく崩れそう。
+ 自分をしっかり見定めれば、道は開けますわ…
+[wait][clear][end]
+
+msg_37:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＬＥＯのＹｏｕ…
+ 今年のＹｏｕは体を鍛えることで魅力がＵＰし
+ 人が集まってきます。仕事より趣味の一年ですわ
+[wait][clear][end]
+
+msg_38:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＬＥＯのＹｏｕ…
+ 今年のＹｏｕは年齢の離れたＵｎｉｑｕｅな
+ 友人ができそう…。行動力の旺盛な一年ですわ。
+[wait][clear][end]
+
+msg_39:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＶＩＲＧＯのＹｏｕ…
+ 今年のＹｏｕはＳｔａｌｋｅｒに要注意！
+ ＮｏならＮｏとハッキリおっしゃって！
+[wait][clear][end]
+
+msg_40:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＶＩＲＧＯのＹｏｕ…
+ 今年のＹｏｕは金銭がらみのＨａｐｐｅｎｉｎｇが
+ 多発しそう！ 銀行は一つになさらないよう…
+[wait][clear][end]
+
+msg_41:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＶＩＲＧＯのＹｏｕ…
+ 今年のＹｏｕは草花や小川のせせらぎなど
+ 自然の物と親密になれそうですわ…
+[wait][clear][end]
+
+msg_42:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＶＩＲＧＯのＹｏｕ…
+ 今年のＹｏｕは海外へ出ることが多くなりそう…
+ 海外赴任や留学など、思わぬＣｈａｎｃｅが！
+[wait][clear][end]
+
+msg_43:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＶＩＲＧＯのＹｏｕ…
+ 今年のＹｏｕは珍しく「一匹狼」を貫きそう…
+ 独立型やＦｒｅｅの仕事がＬｕｃｋｙですわ！
+[wait][clear][end]
+
+msg_44:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＶＩＲＧＯのＹｏｕ…
+ 今年のＹｏｕは「土地」に注意！
+ 土地の売買や引越しなどで悩みそうですわ…
+[wait][clear][end]
+
+msg_45:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＬＩＢＲＡのＹｏｕ…
+ 今年のＹｏｕは外へ外へと世界を広げていきます。
+ 友人を増やせる絶好のＣｈａｎｃｅですわ！
+[wait][clear][end]
+
+msg_46:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＬＩＢＲＡのＹｏｕ…
+ 今年のＹｏｕは、Ｎｅｒｖｏｕｓになりがち…
+ そんな時は、一晩休んでＣｏｏｌ ｄｏｗｎ！
+[wait][clear][end]
+
+msg_47:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＬＩＢＲＡのＹｏｕ…
+ 今年のＹｏｕは病気がちですわ…
+ 一度、大病院で精密検査をなさってください…
+[wait][clear][end]
+
+msg_48:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＬＩＢＲＡのＹｏｕ…
+ 今年のＹｏｕは嫁姑の問題で頭を悩ませそう…
+ ただ、家族が親密になれる年でもありますわ。
+[wait][clear][end]
+
+msg_49:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＬＩＢＲＡのＹｏｕ…
+ 今年のＹｏｕはＢａｌａｎｃｅ感覚が失われそう…
+ 遠慮や自信過剰はＳｏ ｂａｄですわ！
+[wait][clear][end]
+
+msg_50:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＬＩＢＲＡのＹｏｕ…
+ 今年のＹｏｕは今まで抑えていたものが
+ 一気に吹き出そう…。お気をつけになって！
+[wait][clear][end]
+
+msg_51:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＳＣＯＲＰＩＯのＹｏｕ…
+ 今年のＹｏｕは珍しく優柔不断に…
+ Ａｄｖｉｓｅｒに恵まれそうな一年ですわ！
+[wait][clear][end]
+
+msg_52:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＳＣＯＲＰＩＯのＹｏｕ…
+ 今年のＹｏｕは「印鑑」に注意！
+ 自分で分からない時は、専門家に相談なさって！
+[wait][clear][end]
+
+msg_53:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＳＣＯＲＰＩＯのＹｏｕ…
+ 今年のＹｏｕは親戚の方から借金を迫られそう！
+ Ｙｏｕ自身も金運はあまり良くありませんわ…
+[wait][clear][end]
+
+msg_54:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＳＣＯＲＰＩＯのＹｏｕ…
+ 今年のＹｏｕは人間関係に注意！
+ 今年ケンカをした人とは、一生疎遠になります…
+[wait][clear][end]
+
+msg_55:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＳＣＯＲＰＩＯのＹｏｕ…
+ 今年のＹｏｕは今までの怠け癖のツケが回って
+ 後悔することが多くなりそうですわ…
+[wait][clear][end]
+
+msg_56:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＳＣＯＲＰＩＯのＹｏｕ…
+ 今年のＹｏｕは何故かＥｃｏｌｏｇｉｃａｌ！
+ 自然と親しむ絶好のＣｈａｎｃｅですわ！
+[wait][clear][end]
+
+msg_57:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＳＡＧＩＴＴＡＲＩＵＳの
+ Ｙｏｕ。今年のＹｏｕは単独行動が多くなりそう…
+ Ｇｒｅｅｎのお財布がＬｕｃｋｙですわ！
+[wait][clear][end]
+
+msg_58:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＳＡＧＩＴＴＡＲＩＵＳの
+ Ｙｏｕ。今年は今までの疲労がたまって、病気や
+ 事故などが発生しそう…。働きすぎには要注意！
+[wait][clear][end]
+
+msg_59:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＳＡＧＩＴＴＡＲＩＵＳの
+ Ｙｏｕ。今年は新しい語学にＴｒｙしてみることを
+ 強くお勧めしますわ！ Ｇｏｏｄ ｌｕｃｋ！
+[wait][clear][end]
+
+msg_60:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＳＡＧＩＴＴＡＲＩＵＳの
+ Ｙｏｕ。今年は勝負事に出るのは控えた方が
+ よさそうですわ…。投資などは来年に！
+[wait][clear][end]
+
+msg_61:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＳＡＧＩＴＴＡＲＩＵＳの
+ Ｙｏｕ。今年は友人などの誘いを一切断っては
+ いけません。Ｃｈａｎｃｅを逃すことになります
+[wait][clear][end]
+
+msg_62:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＳＡＧＩＴＴＡＲＩＵＳの
+ Ｙｏｕ。今年は自分らしさにこだわりたくなる
+ 一年。それだけに周囲の誤解を招くことも…
+[wait][clear][end]
+
+msg_63:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＣＡＰＲＩＣＯＲＮのＹｏｕ…
+ 今年は出産に適した一年ですわ！
+ Ｌｕｃｋｙ ｉｔｅｍは、効き目の弱い風邪薬！
+[wait][clear][end]
+
+msg_64:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＣＡＰＲＩＣＯＲＮのＹｏｕ…
+ 今年は結婚運がかなり高いですわ。
+ ただ、今年のＹｏｕは何故か慎重派…Ｏｈ！
+[wait][clear][end]
+
+msg_65:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＣＡＰＲＩＣＯＲＮのＹｏｕ…
+ 今年のＹｏｕはとってもＳｅｘｙ！
+ 街でＳｃｏｕｔされそうですわ！
+[wait][clear][end]
+
+msg_66:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＣＡＰＲＩＣＯＲＮのＹｏｕ…
+ 今年のＹｏｕは何故かＰｒｉｄｅが高く
+ 恋のＣｈａｎｃｅを潰してしまいます…Ａｈ！
+[wait][clear][end]
+
+msg_67:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＣＡＰＲＩＣＯＲＮのＹｏｕ…
+ 今年のＹｏｕは空き巣に注意！
+ 犯人はおそらく、顔見知りの人物ですわ…
+[wait][clear][end]
+
+msg_68:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＣＡＰＲＩＣＯＲＮのＹｏｕ…
+ 今年のＹｏｕは見知らぬ人に借金を迫られそう…
+ お気をつけになって！
+[wait][clear][end]
+
+msg_69:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＡＱＵＡＲＩＵＳのＹｏｕ…
+ 今年のＹｏｕは恋愛運がＤｏｗｎ気味！
+ 交際がバレると、仲間内で気まずい雰囲気に…
+[wait][clear][end]
+
+msg_70:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＡＱＵＡＲＩＵＳのＹｏｕ…
+ 今年はＹｏｕにしては珍しく、人づきあいが盛ん！
+ 色んなＥｖｅｎｔに積極的に参加なさって！
+[wait][clear][end]
+
+msg_71:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＡＱＵＡＲＩＵＳのＹｏｕ…
+ 今年のＹｏｕは厳格な人と親しくなることで
+ 道が開けますわ。Ｇｏｏｄ ｌｕｃｋ！
+[wait][clear][end]
+
+msg_72:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＡＱＵＡＲＩＵＳのＹｏｕ…
+ 今年のＹｏｕは集団の中で大きなＰａｒｔを
+ 任されそうですわ。Ｇｏｏｄ ｌｕｃｋ！
+[wait][clear][end]
+
+msg_73:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＡＱＵＡＲＩＵＳのＹｏｕ…
+ 今年のＹｏｕは今まで自分を縛っていたものが
+ 消えて気が緩みがち…。お気をつけになって！
+[wait][clear][end]
+
+msg_74:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＡＱＵＡＲＩＵＳのＹｏｕ…
+ 今年のＹｏｕは恋人と波長が合わなくなりそう…
+ 長距離恋愛の方は、特にお気をつけになって！
+[wait][clear][end]
+
+msg_75:
+[color(yellow)]エリー[color(white)]
+ 朝、東方に生まれたＰＩＳＣＥＳのＹｏｕ…
+ 今年のＹｏｕは無言電話に悩まされがち…
+ あまりひどい時は、Ｐｏｌｉｃｅに相談を！
+[wait][clear][end]
+
+msg_76:
+[color(yellow)]エリー[color(white)]
+ 昼、東方に生まれたＰＩＳＣＥＳのＹｏｕ…
+ 今年のＹｏｕは恋愛面でも打算的になりがち…
+ 恋はＢｕｓｉｎｅｓｓではありませんわ！
+[wait][clear][end]
+
+msg_77:
+[color(yellow)]エリー[color(white)]
+ 夜、東方に生まれたＰＩＳＣＥＳのＹｏｕ…
+ 今年のＹｏｕは目標に対して疑問を抱きそう…
+ 一度Ｃｏｏｌ ｄｏｗｎして考え直してみては？
+[wait][clear][end]
+
+msg_78:
+[color(yellow)]エリー[color(white)]
+ 朝、西方に生まれたＰＩＳＣＥＳのＹｏｕ…
+ 今年のＹｏｕは新規の仕事でしばらく悩みそう…
+ また、Ｐｒｏｐｏｓｅはくれぐれも慎重に！
+[wait][clear][end]
+
+msg_79:
+[color(yellow)]エリー[color(white)]
+ 昼、西方に生まれたＰＩＳＣＥＳのＹｏｕ…
+ 今年のＹｏｕは何かと周囲の注目を浴びます…
+ 言動には、くれぐれもお気をつけになって！
+[wait][clear][end]
+
+msg_80:
+[color(yellow)]エリー[color(white)]
+ 夜、西方に生まれたＰＩＳＣＥＳのＹｏｕ…
+ 今年のＹｏｕは、Ｓｅｘ ａｐｐｅａｌが高く
+ 良くも悪くも異性の注目を浴びそうですわ…
+[wait][clear][end]

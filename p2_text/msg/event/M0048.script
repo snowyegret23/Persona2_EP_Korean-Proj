@@ -1,0 +1,275 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_f);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_6);
+    b(label_8);
+  label_6:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_8);
+  label_8:
+    sndUnkCF(90);
+    envTriggerSet(warp1, 224, 1, line, coll_0);
+    envTriggerSet(warp2, 224, 1, line, coll_1);
+    cameraSetNorth(west);
+    unknownVar1(var_0);
+    bne(var_0, 6, label_10);
+    cameraSet(northeast, 1070, 0, -252);
+    b(label_12);
+  label_10:
+    cameraSet(southeast, 1076, 0, -1360);
+    b(label_12);
+  label_12:
+    ref_12 = spriteLoad(sprite_6);
+    wait(ref_12);
+    unitSpawn(ulala, sprite_6, 779, 0, -1101, east, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+    ref_16 = spriteLoad(sprite_af);
+    wait(ref_16);
+    unitSpawn(npc1, sprite_af, 483, 0, -1099, south, none);
+    unitTriggerSet(npc1, AOI, 255, 1);
+    unitSpawn(npc5, sprite_af, 184, 0, -1102, west, none);
+    unitPalette(npc5, 1);
+    unitTriggerSet(npc5, METUKI, 255, 1);
+    ref_1d = spriteLoad(sprite_b0);
+    wait(ref_1d);
+    unitSpawn(npc2, sprite_b0, 483, 0, -984, north, none);
+    unitTriggerSet(npc2, AOI, 255, 1);
+    ref_21 = spriteLoad(sprite_ad);
+    wait(ref_21);
+    unitSpawn(npc3, sprite_ad, 779, 0, -701, east, none);
+    unitTriggerSet(npc3, KOIKOGARE, 255, 1);
+    ref_25 = spriteLoad(sprite_b1);
+    wait(ref_25);
+    unitSpawn(npc4, sprite_b1, 669, 0, -701, west, none);
+    unitTriggerSet(npc4, KOIKOGARE, 255, 1);
+    ref_29 = spriteLoad(sprite_0);
+    wait(ref_29);
+    ref_2b = spriteLoad(sprite_2);
+    wait(ref_2b);
+    playerInit(east);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    unitFacePlayer(ulala);
+    ref_39 = bustupLoad(bustup_17);
+    bustupWait(ref_39);
+    ref_3b = bustupAlloc(ref_39, left, rgb(0,0,0));
+    bustupFade(ref_3b, rgb(128,0,0), 30);
+    ref_3d = dialogAlloc();
+    ref_3e = msgShow(msg_0);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]ねえマーヤ。あそこの子、
+[tab]ＪＯＫＥＲからカードが届いたんだって。
+
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_3e);
+    ref_41 = msgShow(msg_1);
+/***************************************
+[tab]どうせ誰かのいたずらに決まってるわよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2f, 1);
+    wait(ref_41);
+    ref_44 = bustupFade(ref_3b, rgb(0,0,0), 10);
+    bustupWait(ref_44);
+    bustupFree(ref_3b);
+    ref_47 = bustupLoad(bustup_19);
+    bustupWait(ref_47);
+    ref_49 = bustupAlloc(ref_47, left, rgb(0,0,0));
+    bustupFade(ref_49, rgb(128,0,0), 30);
+    ref_4b = msgShow(msg_2);
+/***************************************
+[color(yellow)]うらら[color(white)]
+[tab]大体、どこの世界に、
+[tab]予告カード送ってから殺しに来る奴がいるのよ。
+[tab]漫画じゃないんだからねぇ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1d, 1);
+    wait(ref_4b);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_3d);
+    ref_50 = bustupFade(ref_49, rgb(0,0,0), 10);
+    bustupWait(ref_50);
+    bustupFree(ref_49);
+    unitRestoreFacing(ulala);
+    controlEnable();
+}
+
+function AOI()
+{
+    controlDisable();
+    unitFaceUnit(npc1, npc2);
+    unitFaceUnit(npc2, npc1);
+    unitAnimationPlay(npc2, animation_0, 1);
+    ref_5a = dialogAlloc();
+    ref_5b = msgShow(msg_3);
+/***************************************
+[color(yellow)]真っ青な女子生徒[color(white)]
+[tab]どうしよう…昨日自宅にカードが届いてたの…
+[tab]噂のＪＯＫＥＲカードよ…
+[tab]届いた人はＪＯＫＥＲに殺されちゃうんでしょ？
+[wait][clear][color(yellow)]真っ青な女子生徒[color(white)]
+[tab]わ…私…どうしたら良いの？
+[tab]いや…死にたくないよぉ…
+[tab]ううっ…ううう…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_25, 1);
+    wait(ref_5b);
+    dialogFree(ref_5a);
+    delayClear();
+    delayWait(30);
+    ref_61 = dialogAlloc();
+    ref_62 = msgShow(msg_4);
+/***************************************
+[color(yellow)]戸惑う女子生徒[color(white)]
+[tab]だ…大丈夫よ！
+[tab]そんなの誰かのいたずらに決まってるじゃない！
+[tab]気にしちゃダメよ！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_62);
+    dialogFree(ref_61);
+    unitAnimationPlay(npc1, animation_0, 1);
+    unitAnimationPlay(npc2, animation_0, 1);
+    controlEnable();
+}
+
+function KOIKOGARE()
+{
+    controlDisable();
+    unitFaceUnit(npc3, npc4);
+    unitFaceUnit(npc4, npc3);
+    bitGet(var_0, LBIT_0000);
+    bnz(var_0, label_7d);
+    ref_6f = dialogAlloc();
+    ref_70 = msgShow(msg_5);
+/***************************************
+[color(yellow)]恋焦がれる男子生徒[color(white)]
+[tab]はぁ…
+[tab]ノリコ先輩…カワイイよなぁ…
+[tab]思いきって告白しようかなオレ…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_6, 1);
+    wait(ref_70);
+    dialogFree(ref_6f);
+    ref_74 = dialogAlloc();
+    ref_75 = msgShow(msg_6);
+/***************************************
+[color(yellow)]現実的な男子生徒[color(white)]
+[tab]あ、あのさぁ…多分ダメだと思うぜ。
+[tab]だってあの先輩、杏奈って人の事しか
+[tab]頭に無いだろ？[tab]他の奴なんか眼中に無いよ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    bitSet(LBIT_0000);
+    wait(ref_75);
+    dialogFree(ref_74);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitAnimationPlay(npc4, animation_0, 1);
+    b(label_89);
+  label_7d:
+    ref_7d = dialogAlloc();
+    ref_7e = msgShow(msg_7);
+/***************************************
+[color(yellow)]恋焦がれる男子生徒[color(white)]
+[tab]だ、だけどノリコ先輩と杏奈先輩は同じ女だぜ？
+[tab]尊敬するって事と、恋愛感情は別だろ？
+[tab]男に興味無いって事は無いんじゃ…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_7e);
+    dialogFree(ref_7d);
+    unitAnimationPlay(npc3, animation_0, 1);
+    ref_83 = dialogAlloc();
+    ref_84 = msgShow(msg_8);
+/***************************************
+[color(yellow)]現実的な男子生徒[color(white)]
+[tab]理屈じゃないぜ？[tab]女心ってヤツは。
+[tab]恋愛も尊敬も友情も、根幹は同じだよ。
+[tab]要はそれらしく言い方を変えてるだけさ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_84);
+    dialogFree(ref_83);
+    unitAnimationPlay(npc4, animation_0, 1);
+  label_89:
+    controlEnable();
+}
+
+function METUKI()
+{
+    controlDisable();
+    bitGet(var_0, LBIT_0001);
+    bnz(var_0, label_96);
+    ref_8e = dialogAlloc();
+    ref_8f = msgShow(msg_9);
+/***************************************
+[color(yellow)]目つきの怖い女子生徒[color(white)]
+[tab]ふふふ、いい気味だわ。
+[tab]私の彼氏にチョッカイ出した罰よ…
+[tab]思う存分、怖がるがいいわ…ふふふ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc5, animation_6, 1);
+    wait(ref_8f);
+    dialogFree(ref_8e);
+    bitSet(LBIT_0001);
+    unitAnimationPlay(npc5, animation_0, 1);
+    b(label_9c);
+  label_96:
+    ref_96 = dialogAlloc();
+    ref_97 = msgShow(msg_10);
+/***************************************
+[color(yellow)]目つきの怖い女子生徒[color(white)]
+[tab]自分の携帯に電話するだけで、
+[tab]殺しを引き受けてくれるＪＯＫＥＲ様…
+[tab]…まさか本当だったなんて…ふふふ。
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc5, animation_6, 1);
+    wait(ref_97);
+    dialogFree(ref_96);
+    unitAnimationPlay(npc5, animation_0, 1);
+  label_9c:
+    controlEnable();
+}
+
+function warp1()
+{
+    controlDisable();
+    objAnimTranslate(obj_4c, 0, 0, 90, 30);
+    sndMusicPlay(sound_308a, 127);
+    objAnimWait(obj_4c);
+    dngLoad2(seven_sisters_high_empty-6);
+}
+
+function warp2()
+{
+    controlDisable();
+    objAnimTranslate(obj_4d, 0, 0, 90, 30);
+    sndMusicPlay(sound_308a, 127);
+    objAnimWait(obj_4d);
+    dngLoad2(seven_sisters_high_empty-7);
+}

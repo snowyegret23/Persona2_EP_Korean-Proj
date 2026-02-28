@@ -1,0 +1,7 @@
+
+msg_0:
+[color(yellow)]Poster[color(white)]
+[tab]We moved!
+[tab]Please follow the directions
+[tab]to go to our new store!
+[wait][clear][end]

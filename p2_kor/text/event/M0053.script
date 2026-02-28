@@ -1,0 +1,2455 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    levelFootstepSet(sfx_f);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_6);
+    b(label_8);
+  label_6:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_8);
+  label_8:
+    sndUnkCF(90);
+    envTriggerSet(DOORBOX, 131, 1, line, coll_c);
+    cameraSet(southeast, 1660, 0, -1580);
+    cameraSetNorth(south);
+    li(var_0, 0);
+    li(var_1, 0);
+    partyMemberCheck(var_0, ulala);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, katsuya);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, baofu);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, nanjo);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, elly);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, tatsuya);
+    add(var_1, var_1, var_0);
+    boutrange(var_1, 0, 4, label_1d);
+    li(var_0, 0);
+    b(label_22);
+  label_1d:
+    ref_1d = dialogAlloc();
+    ref_1e = msgShow(msg_0);
+/***************************************
+More than 4 in your party.
+It’s gonna hang.
+Get Kaneda/Kataoka.
+[wait][clear]
+***************************************/
+    wait(ref_1e);
+    dialogFree(ref_1d);
+    b(label_22);
+  label_22:
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_27);
+    bitGet(var_0, EBIT_E008C);
+    bez(var_0, label_2d);
+    bnz(var_0, label_29);
+  label_27:
+    partyMemberCheck(var_0, tatsuya);
+    bez(var_0, label_2d);
+  label_29:
+    ref_29 = spriteLoad(sprite_18);
+    wait(ref_29);
+    unitSpawn(tatsuya, sprite_18, 1460, 0, -1110, south, none);
+    unitTriggerSet(tatsuya, B_TATU, 255, 1);
+  label_2d:
+    bitGet(var_0, EBIT_E0046);
+    bez(var_0, label_3b);
+    partyMemberCheck(var_0, nanjo);
+    bez(var_0, label_35);
+    ref_31 = spriteLoad(sprite_1f);
+    wait(ref_31);
+    unitSpawn(nanjo, sprite_1f, 1840, 0, -1150, west, none);
+    unitTriggerSet(nanjo, B_NANJ, 255, 1);
+  label_35:
+    partyMemberCheck(var_0, elly);
+    bez(var_0, label_3b);
+    ref_37 = spriteLoad(sprite_23);
+    wait(ref_37);
+    unitSpawn(elly, sprite_23, 1790, 0, -1040, north, none);
+    unitTriggerSet(elly, B_ERI, 255, 1);
+  label_3b:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_43);
+    bitGet(var_0, EBIT_E0038);
+    bez(var_0, label_43);
+    ref_3f = spriteLoad(sprite_6a);
+    wait(ref_3f);
+    unitSpawn(makimura, sprite_6a, 950, 0, -1150, south, none);
+    unitTriggerSet(makimura, SAGIBOX, 255, 1);
+  label_43:
+    partyMemberCheck(var_0, ulala);
+    bez(var_0, label_49);
+    ref_45 = spriteLoad(sprite_6);
+    wait(ref_45);
+    unitSpawn(ulala, sprite_6, 1360, 0, -1740, north, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+  label_49:
+    partyMemberCheck(var_0, katsuya);
+    bez(var_0, label_4f);
+    ref_4b = spriteLoad(sprite_d);
+    wait(ref_4b);
+    unitSpawn(katsuya, sprite_d, 1020, 0, -1290, east, none);
+    unitTriggerSet(katsuya, B_KATUYYY, 255, 1);
+  label_4f:
+    partyMemberCheck(var_0, baofu);
+    bez(var_0, label_55);
+    ref_51 = spriteLoad(sprite_13);
+    wait(ref_51);
+    unitSpawn(baofu, sprite_13, 940, 0, -870, north, none);
+    unitTriggerSet(baofu, B_PAO, 255, 1);
+  label_55:
+    ref_55 = spriteLoad(sprite_71);
+    wait(ref_55);
+    unitSpawn(npc3, sprite_71, 1120, 0, -2310, north, none);
+    unitTriggerSet(npc3, SUGIMOTO, 255, 1);
+    ref_59 = spriteLoad(sprite_b3);
+    wait(ref_59);
+    unitSpawn(npc4, sprite_b3, 1040, 0, -2270, west, none);
+    unitTriggerSet(npc4, SUGIMOTO, 255, 1);
+    ref_5d = spriteLoad(sprite_0);
+    wait(ref_5d);
+    ref_5f = spriteLoad(sprite_2);
+    wait(ref_5f);
+    playerInit(south);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_10c);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_fc);
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_ec);
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_d9);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_c6);
+    bitGet(var_0, EBIT_E0077);
+    bnz(var_0, label_b6);
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_9e);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_8e);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_7e);
+  label_7e:
+    unitFacePlayer(ulala);
+    ref_7f = bustupLoad(bustup_1e);
+    bustupWait(ref_7f);
+    ref_81 = bustupAlloc(ref_7f, left, rgb(0,0,0));
+    bustupFade(ref_81, rgb(128,0,0), 30);
+    ref_83 = dialogAlloc();
+    ref_84 = msgShow(msg_1);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]So this is Kasugayama High School...
+[tab]It’s pretty dull... No wonder it
+[tab]has such a bad reputation.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1d, 1);
+    wait(ref_84);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_83);
+    ref_89 = bustupFade(ref_81, rgb(0,0,0), 10);
+    bustupWait(ref_89);
+    bustupFree(ref_81);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_8e:
+    unitFacePlayer(ulala);
+    ref_8f = bustupLoad(bustup_1e);
+    bustupWait(ref_8f);
+    ref_91 = bustupAlloc(ref_8f, left, rgb(0,0,0));
+    bustupFade(ref_91, rgb(128,0,0), 30);
+    ref_93 = dialogAlloc();
+    ref_94 = msgShow(msg_2);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Those kids really are from Kasu High.
+[tab]Compare that to Nanjo-kun and Elly-chan...
+[tab](sigh)..."The Pillsbury Dull-boy", huh...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1d, 1);
+    wait(ref_94);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_93);
+    ref_99 = bustupFade(ref_91, rgb(0,0,0), 10);
+    bustupWait(ref_99);
+    bustupFree(ref_91);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_9e:
+    unitFacePlayer(ulala);
+    ref_9f = bustupLoad(bustup_17);
+    bustupWait(ref_9f);
+    ref_a1 = bustupAlloc(ref_9f, left, rgb(0,0,0));
+    bustupFade(ref_a1, rgb(128,0,0), 30);
+    ref_a3 = dialogAlloc();
+    bitGet(var_0, MBIT_MEETAKITI);
+    bne(var_0, 0, label_aa);
+    ref_a6 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Are all the students here like that...?
+[tab]Aren’t there any kids with impact here?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_a6);
+    b(label_af);
+  label_aa:
+    bne(var_0, 1, label_af);
+    ref_ab = msgShow(msg_4);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]I just noticed, but Eikichi-kun is from Kasu
+[tab]High too, right? Doesn’t his unique style
+[tab]kind of stick out around here?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_ab);
+    b(label_af);
+  label_af:
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_a3);
+    ref_b1 = bustupFade(ref_a1, rgb(0,0,0), 10);
+    bustupWait(ref_b1);
+    bustupFree(ref_a1);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_b6:
+    unitFacePlayer(ulala);
+    ref_b7 = bustupLoad(bustup_17);
+    bustupWait(ref_b7);
+    ref_b9 = bustupAlloc(ref_b7, left, rgb(0,0,0));
+    bustupFade(ref_b9, rgb(128,0,0), 30);
+    ref_bb = dialogAlloc();
+    ref_bc = msgShow(msg_5);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Hey Ma-ya, don’t you wonder what kind of
+[tab]school life [tatsuya]-kun has been living? 
+[tab]But first, is he even still going to school...?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_bc);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_bb);
+    ref_c1 = bustupFade(ref_b9, rgb(0,0,0), 10);
+    bustupWait(ref_c1);
+    bustupFree(ref_b9);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_c6:
+    unitFacePlayer(ulala);
+    ref_c7 = bustupLoad(bustup_18);
+    bustupWait(ref_c7);
+    ref_c9 = bustupAlloc(ref_c7, left, rgb(0,0,0));
+    bustupFade(ref_c9, rgb(128,0,0), 30);
+    ref_cb = dialogAlloc();
+    ref_cc = msgShow(msg_6);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]When I was in high school, I wanted to be
+[tab]an adult...!
+[tab]Actually, I wanted wine and cigarettes!!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_cc);
+    ref_cf = msgShow(msg_7);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]And here I am, a connoisseur of wine!
+[tab]The pass of time is pretty ironic at times.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_cf);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_cb);
+    ref_d4 = bustupFade(ref_c9, rgb(0,0,0), 10);
+    bustupWait(ref_d4);
+    bustupFree(ref_c9);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_d9:
+    unitFacePlayer(ulala);
+    ref_da = bustupLoad(bustup_1b);
+    bustupWait(ref_da);
+    ref_dc = bustupAlloc(ref_da, left, rgb(0,0,0));
+    bustupFade(ref_dc, rgb(128,0,0), 30);
+    ref_de = dialogAlloc();
+    ref_df = msgShow(msg_8);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Ma-ya, did you hear...?
+[tab]The school’s roof is a portal to another
+[tab]dimension! Did you know that!?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2c, 1);
+    wait(ref_df);
+    ref_e2 = msgShow(msg_9);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]What if a being from another
+[tab]dimension appeared?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2c, 1);
+    wait(ref_e2);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_de);
+    ref_e7 = bustupFade(ref_dc, rgb(0,0,0), 10);
+    bustupWait(ref_e7);
+    bustupFree(ref_dc);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_ec:
+    unitFacePlayer(ulala);
+    ref_ed = bustupLoad(bustup_1f);
+    bustupWait(ref_ed);
+    ref_ef = bustupAlloc(ref_ed, left, rgb(0,0,0));
+    bustupFade(ref_ef, rgb(128,0,0), 30);
+    ref_f1 = dialogAlloc();
+    ref_f2 = msgShow(msg_10);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]...Huh? ..."Tequila Sunrise"?
+[tab]That’s the name of a drink, isn’t it...?
+[tab]Bao really knows alcohol... He has me beat.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1d, 1);
+    wait(ref_f2);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_f1);
+    ref_f7 = bustupFade(ref_ef, rgb(0,0,0), 10);
+    bustupWait(ref_f7);
+    bustupFree(ref_ef);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_fc:
+    unitFacePlayer(ulala);
+    ref_fd = bustupLoad(bustup_18);
+    bustupWait(ref_fd);
+    ref_ff = bustupAlloc(ref_fd, left, rgb(0,0,0));
+    bustupFade(ref_ff, rgb(128,0,0), 30);
+    ref_101 = dialogAlloc();
+    ref_102 = msgShow(msg_11);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Let’s get going, Ma-ya!
+[tab]Don’t worry, I’m with you!!
+[tab]You’re in good hands!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_30, 1);
+    wait(ref_102);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_101);
+    ref_107 = bustupFade(ref_ff, rgb(0,0,0), 10);
+    bustupWait(ref_107);
+    bustupFree(ref_ff);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_10c:
+    unitFacePlayer(ulala);
+    ref_10d = bustupLoad(bustup_18);
+    bustupWait(ref_10d);
+    ref_10f = bustupAlloc(ref_10d, left, rgb(0,0,0));
+    bustupFade(ref_10f, rgb(128,0,0), 30);
+    ref_111 = dialogAlloc();
+    ref_112 = msgShow(msg_12);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]"Nyarlathotep"...
+[tab]The name itself sounds cute...
+[tab]Just kidding... A ha ha ha ha!!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_23, 1);
+    wait(ref_112);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_111);
+    ref_117 = bustupFade(ref_10f, rgb(0,0,0), 10);
+    bustupWait(ref_117);
+    bustupFree(ref_10f);
+    unitRestoreFacing(ulala);
+    b(label_11c);
+  label_11c:
+    controlEnable();
+}
+
+function B_KATUYYY()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_1da);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_1ca);
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_1ba);
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_1aa);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_19a);
+    bitGet(var_0, EBIT_E0077);
+    bnz(var_0, label_18a);
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_174);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_164);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_154);
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_145);
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_135);
+  label_135:
+    unitFacePlayer(katsuya);
+    ref_136 = bustupLoad(bustup_21);
+    bustupWait(ref_136);
+    ref_138 = bustupAlloc(ref_136, left, rgb(0,0,0));
+    bustupFade(ref_138, rgb(128,0,0), 30);
+    ref_13a = dialogAlloc();
+    ref_13b = msgShow(msg_13);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]The guys at the station speak ill of this
+[tab]school, but I think it’s very normal...
+[tab]As far as being a boy’s school, that is.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_13b);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_13a);
+    ref_140 = bustupFade(ref_138, rgb(0,0,0), 10);
+    bustupWait(ref_140);
+    bustupFree(ref_138);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_145:
+    ref_145 = bustupLoad(bustup_21);
+    bustupWait(ref_145);
+    ref_147 = bustupAlloc(ref_145, left, rgb(0,0,0));
+    bustupFade(ref_147, rgb(128,0,0), 30);
+    ref_149 = dialogAlloc();
+    ref_14a = msgShow(msg_14);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]...Hmmmm.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_14a);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_149);
+    ref_14f = bustupFade(ref_147, rgb(0,0,0), 10);
+    bustupWait(ref_14f);
+    bustupFree(ref_147);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_154:
+    unitFacePlayer(katsuya);
+    ref_155 = bustupLoad(bustup_21);
+    bustupWait(ref_155);
+    ref_157 = bustupAlloc(ref_155, left, rgb(0,0,0));
+    bustupFade(ref_157, rgb(128,0,0), 30);
+    ref_159 = dialogAlloc();
+    ref_15a = msgShow(msg_15);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]The students here seem to view Seven
+[tab]Sisters High School as their rivals...
+[tab]Did something happen in the past?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_15a);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_159);
+    ref_15f = bustupFade(ref_157, rgb(0,0,0), 10);
+    bustupWait(ref_15f);
+    bustupFree(ref_157);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_164:
+    unitFacePlayer(katsuya);
+    ref_165 = bustupLoad(bustup_21);
+    bustupWait(ref_165);
+    ref_167 = bustupAlloc(ref_165, left, rgb(0,0,0));
+    bustupFade(ref_167, rgb(128,0,0), 30);
+    ref_169 = dialogAlloc();
+    ref_16a = msgShow(msg_16);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]They’re still maturing. We don’t know
+[tab]how they’ll turn out... Is it okay for
+[tab]Serizawa-kun to be saying those things?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_16a);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_169);
+    ref_16f = bustupFade(ref_167, rgb(0,0,0), 10);
+    bustupWait(ref_16f);
+    bustupFree(ref_167);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_174:
+    ref_174 = bustupLoad(bustup_27);
+    bustupWait(ref_174);
+    ref_176 = bustupAlloc(ref_174, left, rgb(0,0,0));
+    bustupFade(ref_176, rgb(128,0,0), 30);
+    ref_178 = dialogAlloc();
+    bitGet(var_0, MBIT_MEETAKITI);
+    bne(var_0, 0, label_17f);
+    ref_17b = msgShow(msg_17);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]...[tatsuya], when did you start
+[tab]wearing clothes like that...?
+[tab]Only your clothes? Not your uniform too...?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_17b);
+    b(label_184);
+  label_17f:
+    bne(var_0, 1, label_184);
+    ref_180 = msgShow(msg_18);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Mishina-kun’s apparel was incredible,
+[tab]but [tatsuya], when did you start
+[tab]dressing like that?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_180);
+    b(label_184);
+  label_184:
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_178);
+    ref_186 = bustupFade(ref_176, rgb(0,0,0), 10);
+    bustupWait(ref_186);
+    bustupFree(ref_176);
+    b(label_1ea);
+  label_18a:
+    unitFacePlayer(katsuya);
+    ref_18b = bustupLoad(bustup_29);
+    bustupWait(ref_18b);
+    ref_18d = bustupAlloc(ref_18b, left, rgb(0,0,0));
+    bustupFade(ref_18d, rgb(128,0,0), 30);
+    ref_18f = dialogAlloc();
+    ref_190 = msgShow(msg_19);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]...One day, [tatsuya] stopped coming home.
+[tab]Thinking about it now, he may have been
+[tab]fighting by himself from that time on.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_190);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_18f);
+    ref_195 = bustupFade(ref_18d, rgb(0,0,0), 10);
+    bustupWait(ref_195);
+    bustupFree(ref_18d);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_19a:
+    unitFacePlayer(katsuya);
+    ref_19b = bustupLoad(bustup_21);
+    bustupWait(ref_19b);
+    ref_19d = bustupAlloc(ref_19b, left, rgb(0,0,0));
+    bustupFade(ref_19d, rgb(128,0,0), 30);
+    ref_19f = dialogAlloc();
+    ref_1a0 = msgShow(msg_20);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]They say that Kasugayama students are
+[tab]troublemakers, but only a few have ever
+[tab]been in trouble. Mishina-kun’s leadership works.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_1a0);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_19f);
+    ref_1a5 = bustupFade(ref_19d, rgb(0,0,0), 10);
+    bustupWait(ref_1a5);
+    bustupFree(ref_19d);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_1aa:
+    unitFacePlayer(katsuya);
+    ref_1ab = bustupLoad(bustup_21);
+    bustupWait(ref_1ab);
+    ref_1ad = bustupAlloc(ref_1ab, left, rgb(0,0,0));
+    bustupFade(ref_1ad, rgb(128,0,0), 30);
+    ref_1af = dialogAlloc();
+    ref_1b0 = msgShow(msg_21);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I’m sorry, Amano-kun...
+[tab]But it seems that [tatsuya] has someplace
+[tab]in mind. Can you leave him be for now?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_1b0);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_1af);
+    ref_1b5 = bustupFade(ref_1ad, rgb(0,0,0), 10);
+    bustupWait(ref_1b5);
+    bustupFree(ref_1ad);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_1ba:
+    unitFacePlayer(katsuya);
+    ref_1bb = bustupLoad(bustup_21);
+    bustupWait(ref_1bb);
+    ref_1bd = bustupAlloc(ref_1bb, left, rgb(0,0,0));
+    bustupFade(ref_1bd, rgb(128,0,0), 30);
+    ref_1bf = dialogAlloc();
+    ref_1c0 = msgShow(msg_22);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]On the "Other Side" I wasn’t able to help...
+[tab]But not here! As the brother of [tatsuya],
+[tab]as a protector of Justice, I will aid you!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_1c0);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_1bf);
+    ref_1c5 = bustupFade(ref_1bd, rgb(0,0,0), 10);
+    bustupWait(ref_1c5);
+    bustupFree(ref_1bd);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_1ca:
+    unitFacePlayer(katsuya);
+    ref_1cb = bustupLoad(bustup_21);
+    bustupWait(ref_1cb);
+    ref_1cd = bustupAlloc(ref_1cb, left, rgb(0,0,0));
+    bustupFade(ref_1cd, rgb(128,0,0), 30);
+    ref_1cf = dialogAlloc();
+    ref_1d0 = msgShow(msg_23);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]In war, there will always be battles lost.
+[tab]But we cannot lose this battle...
+[tab]Let’s do our best, Amano-kun.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_1d0);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_1cf);
+    ref_1d5 = bustupFade(ref_1cd, rgb(0,0,0), 10);
+    bustupWait(ref_1d5);
+    bustupFree(ref_1cd);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_1da:
+    unitFacePlayer(katsuya);
+    ref_1db = bustupLoad(bustup_21);
+    bustupWait(ref_1db);
+    ref_1dd = bustupAlloc(ref_1db, left, rgb(0,0,0));
+    bustupFade(ref_1dd, rgb(128,0,0), 30);
+    ref_1df = dialogAlloc();
+    ref_1e0 = msgShow(msg_24);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Those are your irreplaceable friends,
+[tab]right? ...Let’s hurry, Amano-kun.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_1e0);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_1df);
+    ref_1e5 = bustupFade(ref_1dd, rgb(0,0,0), 10);
+    bustupWait(ref_1e5);
+    bustupFree(ref_1dd);
+    unitRestoreFacing(katsuya);
+    b(label_1ea);
+  label_1ea:
+    controlEnable();
+}
+
+function B_PAO()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_2e4);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_2d4);
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_2c4);
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_2b4);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_2a4);
+    bitGet(var_0, EBIT_E0077);
+    bnz(var_0, label_294);
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_279);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_269);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_259);
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_213);
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_203);
+  label_203:
+    unitFacePlayer(baofu);
+    ref_204 = bustupLoad(bustup_2d);
+    bustupWait(ref_204);
+    ref_206 = bustupAlloc(ref_204, left, rgb(0,0,0));
+    bustupFade(ref_206, rgb(128,0,0), 30);
+    ref_208 = dialogAlloc();
+    ref_209 = msgShow(msg_25);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]People look at this school in a special
+[tab]way just because it’s all boys. 
+[tab]Then again, it’s the same with all-girl schools.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_209);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_208);
+    ref_20e = bustupFade(ref_206, rgb(0,0,0), 10);
+    bustupWait(ref_20e);
+    bustupFree(ref_206);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_213:
+    ref_213 = cameraRotateTo(5, 45);
+    wait(ref_213);
+    unitFaceUnit(baofu, katsuya);
+    ref_216 = bustupLoad(bustup_31);
+    bustupWait(ref_216);
+    ref_218 = bustupAlloc(ref_216, left, rgb(0,0,0));
+    bustupFade(ref_218, rgb(128,0,0), 30);
+    ref_21a = dialogAlloc();
+    ref_21b = msgShow(msg_26);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Hey [suou]? It’s a bother to
+[tab]walk around dragging this guy...
+[tab]Why don’t we just drop him from here?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_21b);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_21a);
+    ref_220 = bustupFade(ref_218, rgb(0,0,0), 10);
+    bustupWait(ref_220);
+    bustupFree(ref_218);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(makimura, baofu);
+    ref_226 = bustupLoad(bustup_d4);
+    bustupWait(ref_226);
+    ref_228 = bustupAlloc(ref_226, right, rgb(0,0,0));
+    bustupFade(ref_228, rgb(128,0,0), 30);
+    ref_22a = dialogAlloc();
+    ref_22b = msgShow(msg_27);
+/***************************************
+[color(yellow)]Makimura[color(white)]
+[tab]Hey, I don’t know about you, 
+[tab]but he’s a detective.
+[tab]There is no way he can do...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(makimura, animation_19, 1);
+    wait(ref_22b);
+    dialogFree(ref_22a);
+    ref_22f = bustupFade(ref_228, rgb(0,0,0), 10);
+    bustupWait(ref_22f);
+    bustupFree(ref_228);
+    delayClear();
+    delayWait(15);
+    unitFaceUnit(katsuya, baofu);
+    ref_235 = bustupLoad(bustup_21);
+    bustupWait(ref_235);
+    ref_237 = bustupAlloc(ref_235, left, rgb(0,0,0));
+    bustupFade(ref_237, rgb(128,0,0), 30);
+    ref_239 = dialogAlloc();
+    ref_23a = msgShow(msg_28);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I was thinking the same thing...
+[tab]If we just say that the Joker did it,
+[tab]there’s no problem.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_23a);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_239);
+    ref_23f = bustupFade(ref_237, rgb(0,0,0), 10);
+    bustupWait(ref_23f);
+    bustupFree(ref_237);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(makimura, katsuya);
+    ref_245 = bustupLoad(bustup_128);
+    bustupWait(ref_245);
+    ref_247 = bustupAlloc(ref_245, right, rgb(0,0,0));
+    bustupFade(ref_247, rgb(128,0,0), 30);
+    ref_249 = dialogAlloc();
+    ref_24a = msgShow(msg_29);
+/***************************************
+[color(yellow)]Makimura[color(white)]
+[tab]Dammit...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(makimura, animation_25, 1);
+    wait(ref_24a);
+    unitAnimationPlay(makimura, animation_0, 1);
+    dialogFree(ref_249);
+    ref_24f = bustupFade(ref_247, rgb(0,0,0), 10);
+    bustupWait(ref_24f);
+    bustupFree(ref_247);
+    unitRestoreFacing(makimura);
+    unitRestoreFacing(baofu);
+    unitRestoreFacing(katsuya);
+    unitIdleOn(makimura);
+    unitIdleOn(baofu);
+    unitIdleOn(katsuya);
+    b(label_2f4);
+  label_259:
+    unitFacePlayer(baofu);
+    ref_25a = bustupLoad(bustup_2d);
+    bustupWait(ref_25a);
+    ref_25c = bustupAlloc(ref_25a, left, rgb(0,0,0));
+    bustupFade(ref_25c, rgb(128,0,0), 30);
+    ref_25e = dialogAlloc();
+    ref_25f = msgShow(msg_30);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]With two schools in the same district, 
+[tab]of course there’s gonna be rivalry! 
+[tab]...I never heard of anything happening in the past.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    wait(ref_25f);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_25e);
+    ref_264 = bustupFade(ref_25c, rgb(0,0,0), 10);
+    bustupWait(ref_264);
+    bustupFree(ref_25c);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_269:
+    unitFacePlayer(baofu);
+    ref_26a = bustupLoad(bustup_2d);
+    bustupWait(ref_26a);
+    ref_26c = bustupAlloc(ref_26a, left, rgb(0,0,0));
+    bustupFade(ref_26c, rgb(128,0,0), 30);
+    ref_26e = dialogAlloc();
+    ref_26f = msgShow(msg_31);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Either being Kasu High for being dull,
+[tab]or being dull for being Kasu High.
+[tab]Right now, it’s the latter.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_26f);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_26e);
+    ref_274 = bustupFade(ref_26c, rgb(0,0,0), 10);
+    bustupWait(ref_274);
+    bustupFree(ref_26c);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_279:
+    unitFacePlayer(baofu);
+    ref_27a = bustupLoad(bustup_31);
+    bustupWait(ref_27a);
+    ref_27c = bustupAlloc(ref_27a, left, rgb(0,0,0));
+    bustupFade(ref_27c, rgb(128,0,0), 30);
+    ref_27e = dialogAlloc();
+    bitGet(var_0, MBIT_MEETAKITI);
+    bne(var_0, 0, label_285);
+    ref_281 = msgShow(msg_32);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Individuality... Originality... By wearing
+[tab]a uniform, there’s no such thing, y’know?
+[tab]Back then, punkers were original, though.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_281);
+    b(label_28d);
+  label_285:
+    bne(var_0, 1, label_28d);
+    ref_286 = msgShow(msg_33);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Eikichi, huh... Hehe.
+[tab]He’d stick out anywhere...
+[tab]But "sticking out" sounds kind of pitiful.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_30, 1);
+    wait(ref_286);
+    ref_289 = msgShow(msg_34);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Let’s just call it..."originality".
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_289);
+    b(label_28d);
+  label_28d:
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_27e);
+    ref_28f = bustupFade(ref_27c, rgb(0,0,0), 10);
+    bustupWait(ref_28f);
+    bustupFree(ref_27c);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_294:
+    unitFacePlayer(baofu);
+    ref_295 = bustupLoad(bustup_31);
+    bustupWait(ref_295);
+    ref_297 = bustupAlloc(ref_295, left, rgb(0,0,0));
+    bustupFade(ref_297, rgb(128,0,0), 30);
+    ref_299 = dialogAlloc();
+    ref_29a = msgShow(msg_35);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]If there are teenagers risking their lives fighting, 
+[tab]there’re people like that wasting stupid time... 
+[tab]Either way is miserable.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_29a);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_299);
+    ref_29f = bustupFade(ref_297, rgb(0,0,0), 10);
+    bustupWait(ref_29f);
+    bustupFree(ref_297);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_2a4:
+    unitFacePlayer(baofu);
+    ref_2a5 = bustupLoad(bustup_31);
+    bustupWait(ref_2a5);
+    ref_2a7 = bustupAlloc(ref_2a5, left, rgb(0,0,0));
+    bustupFade(ref_2a7, rgb(128,0,0), 30);
+    ref_2a9 = dialogAlloc();
+    ref_2aa = msgShow(msg_36);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Thinking she’s all that with wine...
+[tab]Wine isn’t just any drink, ya know!
+[tab]She should just keep her dreams to herself!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_2aa);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_2a9);
+    ref_2af = bustupFade(ref_2a7, rgb(0,0,0), 10);
+    bustupWait(ref_2af);
+    bustupFree(ref_2a7);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_2b4:
+    unitFacePlayer(baofu);
+    ref_2b5 = bustupLoad(bustup_31);
+    bustupWait(ref_2b5);
+    ref_2b7 = bustupAlloc(ref_2b5, left, rgb(0,0,0));
+    bustupFade(ref_2b7, rgb(128,0,0), 30);
+    ref_2b9 = dialogAlloc();
+    ref_2ba = msgShow(msg_37);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]It’s fine to play it cool, but don’t you
+[tab]think he’s trying to act a bit too mature?
+[tab]You wish he’d be more dependent, huh? Ha.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_2ba);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_2b9);
+    ref_2bf = bustupFade(ref_2b7, rgb(0,0,0), 10);
+    bustupWait(ref_2bf);
+    bustupFree(ref_2b7);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_2c4:
+    unitFacePlayer(baofu);
+    ref_2c5 = bustupLoad(bustup_2d);
+    bustupWait(ref_2c5);
+    ref_2c7 = bustupAlloc(ref_2c5, left, rgb(0,0,0));
+    bustupFade(ref_2c7, rgb(128,0,0), 30);
+    ref_2c9 = dialogAlloc();
+    ref_2ca = msgShow(msg_38);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Two parallel worlds, never to overlap...
+[tab]A boundary, becoming more and more blurred.
+[tab]Hmph, that’s like a "Tequila Sunrise"...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_2ca);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_2c9);
+    ref_2cf = bustupFade(ref_2c7, rgb(0,0,0), 10);
+    bustupWait(ref_2cf);
+    bustupFree(ref_2c7);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_2d4:
+    unitFacePlayer(baofu);
+    ref_2d5 = bustupLoad(bustup_31);
+    bustupWait(ref_2d5);
+    ref_2d7 = bustupAlloc(ref_2d5, left, rgb(0,0,0));
+    bustupFade(ref_2d7, rgb(128,0,0), 30);
+    ref_2d9 = dialogAlloc();
+    ref_2da = msgShow(msg_39);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Hah!? In good hands? With Serizawa?
+[tab]He he he... More like good fists! 
+[tab]Run for your lives!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_30, 1);
+    wait(ref_2da);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_2d9);
+    ref_2df = bustupFade(ref_2d7, rgb(0,0,0), 10);
+    bustupWait(ref_2df);
+    bustupFree(ref_2d7);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_2e4:
+    unitFacePlayer(baofu);
+    ref_2e5 = bustupLoad(bustup_2d);
+    bustupWait(ref_2e5);
+    ref_2e7 = bustupAlloc(ref_2e5, left, rgb(0,0,0));
+    bustupFade(ref_2e7, rgb(128,0,0), 30);
+    ref_2e9 = dialogAlloc();
+    ref_2ea = msgShow(msg_40);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Nyarlathotep...
+[tab]He’s playing with other people’s lives.
+[tab]Who the hell does he think he is...!?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_2ea);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_2e9);
+    ref_2ef = bustupFade(ref_2e7, rgb(0,0,0), 10);
+    bustupWait(ref_2ef);
+    bustupFree(ref_2e7);
+    unitRestoreFacing(baofu);
+    b(label_2f4);
+  label_2f4:
+    controlEnable();
+}
+
+function B_NANJ()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_341);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_331);
+    bitGet(var_0, EBIT_E0077);
+    bnz(var_0, label_321);
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_311);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_301);
+  label_301:
+    unitFacePlayer(nanjo);
+    ref_302 = bustupLoad(bustup_38);
+    bustupWait(ref_302);
+    ref_304 = bustupAlloc(ref_302, left, rgb(0,0,0));
+    bustupFade(ref_304, rgb(128,0,0), 30);
+    ref_306 = dialogAlloc();
+    ref_307 = msgShow(msg_41);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]What are they doing here...?
+[tab]If they waste precious time,
+[tab]they can never become No. 1!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_307);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_306);
+    ref_30c = bustupFade(ref_304, rgb(0,0,0), 10);
+    bustupWait(ref_30c);
+    bustupFree(ref_304);
+    unitRestoreFacing(nanjo);
+    b(label_351);
+  label_311:
+    unitFacePlayer(nanjo);
+    ref_312 = bustupLoad(bustup_36);
+    bustupWait(ref_312);
+    ref_314 = bustupAlloc(ref_312, left, rgb(0,0,0));
+    bustupFade(ref_314, rgb(128,0,0), 30);
+    ref_316 = dialogAlloc();
+    ref_317 = msgShow(msg_42);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]Many students are bound by uniforms.
+[tab]I understand it has educational purposes,
+[tab]but it also prevents individuality...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_317);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_316);
+    ref_31c = bustupFade(ref_314, rgb(0,0,0), 10);
+    bustupWait(ref_31c);
+    bustupFree(ref_314);
+    unitRestoreFacing(nanjo);
+    b(label_351);
+  label_321:
+    unitFacePlayer(nanjo);
+    ref_322 = bustupLoad(bustup_36);
+    bustupWait(ref_322);
+    ref_324 = bustupAlloc(ref_322, left, rgb(0,0,0));
+    bustupFade(ref_324, rgb(128,0,0), 30);
+    ref_326 = dialogAlloc();
+    ref_327 = msgShow(msg_43);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]A student’s duty is to study. 
+[tab]But just remembering words is not studying. 
+[tab]There are too many who do not understand that.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_327);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_326);
+    ref_32c = bustupFade(ref_324, rgb(0,0,0), 10);
+    bustupWait(ref_32c);
+    bustupFree(ref_324);
+    unitRestoreFacing(nanjo);
+    b(label_351);
+  label_331:
+    unitFacePlayer(nanjo);
+    ref_332 = bustupLoad(bustup_3b);
+    bustupWait(ref_332);
+    ref_334 = bustupAlloc(ref_332, left, rgb(0,0,0));
+    bustupFade(ref_334, rgb(128,0,0), 30);
+    ref_336 = dialogAlloc();
+    ref_337 = msgShow(msg_44);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]There are people talking about drinking,
+[tab]but too much is just plain wrong. I wish
+[tab]she would keep her philosophy to herself.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_2d, 1);
+    wait(ref_337);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_336);
+    ref_33c = bustupFade(ref_334, rgb(0,0,0), 10);
+    bustupWait(ref_33c);
+    bustupFree(ref_334);
+    unitRestoreFacing(nanjo);
+    b(label_351);
+  label_341:
+    unitFacePlayer(nanjo);
+    ref_342 = bustupLoad(bustup_36);
+    bustupWait(ref_342);
+    ref_344 = bustupAlloc(ref_342, left, rgb(0,0,0));
+    bustupFade(ref_344, rgb(128,0,0), 30);
+    ref_346 = dialogAlloc();
+    ref_347 = msgShow(msg_45);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]When I was in school, the rooftop was a
+[tab]portal to another dimension...
+[tab]It might be the same for [tatsuya].
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_347);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_346);
+    ref_34c = bustupFade(ref_344, rgb(0,0,0), 10);
+    bustupWait(ref_34c);
+    bustupFree(ref_344);
+    unitRestoreFacing(nanjo);
+    b(label_351);
+  label_351:
+    controlEnable();
+}
+
+function B_ERI()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_3a1);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_391);
+    bitGet(var_0, EBIT_E0077);
+    bnz(var_0, label_381);
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_371);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_35e);
+  label_35e:
+    unitFacePlayer(elly);
+    ref_35f = bustupLoad(bustup_3e);
+    bustupWait(ref_35f);
+    ref_361 = bustupAlloc(ref_35f, left, rgb(0,0,0));
+    bustupFade(ref_361, rgb(128,0,0), 30);
+    ref_363 = dialogAlloc();
+    ref_364 = msgShow(msg_46);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]It’s great getting all excited about
+[tab]trivial things like that.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_364);
+    ref_367 = msgShow(msg_47);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]There are people who will say that it is
+[tab]stupid, but, to the people involved,
+[tab]it must be a very precious moment.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_367);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_363);
+    ref_36c = bustupFade(ref_361, rgb(0,0,0), 10);
+    bustupWait(ref_36c);
+    bustupFree(ref_361);
+    unitRestoreFacing(elly);
+    b(label_3b1);
+  label_371:
+    unitFacePlayer(elly);
+    ref_372 = bustupLoad(bustup_3e);
+    bustupWait(ref_372);
+    ref_374 = bustupAlloc(ref_372, left, rgb(0,0,0));
+    bustupFade(ref_374, rgb(128,0,0), 30);
+    ref_376 = dialogAlloc();
+    ref_377 = msgShow(msg_48);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]The way Kei wears his uniform, you say...?
+[tab]There wasn’t anything peculiar about it...
+[tab]Except the "No. 1" on it...(giggle)...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_30, 1);
+    wait(ref_377);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_376);
+    ref_37c = bustupFade(ref_374, rgb(0,0,0), 10);
+    bustupWait(ref_37c);
+    bustupFree(ref_374);
+    unitRestoreFacing(elly);
+    b(label_3b1);
+  label_381:
+    unitFacePlayer(elly);
+    ref_382 = bustupLoad(bustup_42);
+    bustupWait(ref_382);
+    ref_384 = bustupAlloc(ref_382, left, rgb(0,0,0));
+    bustupFade(ref_384, rgb(128,0,0), 30);
+    ref_386 = dialogAlloc();
+    ref_387 = msgShow(msg_49);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]When I think of my high school days,
+[tab]I think of all my friends...
+[tab]Like that time... And...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_387);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_386);
+    ref_38c = bustupFade(ref_384, rgb(0,0,0), 10);
+    bustupWait(ref_38c);
+    bustupFree(ref_384);
+    unitRestoreFacing(elly);
+    b(label_3b1);
+  label_391:
+    unitFacePlayer(elly);
+    ref_392 = bustupLoad(bustup_3d);
+    bustupWait(ref_392);
+    ref_394 = bustupAlloc(ref_392, left, rgb(0,0,0));
+    bustupFade(ref_394, rgb(128,0,0), 30);
+    ref_396 = dialogAlloc();
+    ref_397 = msgShow(msg_50);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]Wine...?
+[tab]I like it...
+[tab]But I don’t like beer because it’s bitter.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_397);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_396);
+    ref_39c = bustupFade(ref_394, rgb(0,0,0), 10);
+    bustupWait(ref_39c);
+    bustupFree(ref_394);
+    unitRestoreFacing(elly);
+    b(label_3b1);
+  label_3a1:
+    unitFacePlayer(elly);
+    ref_3a2 = bustupLoad(bustup_3d);
+    bustupWait(ref_3a2);
+    ref_3a4 = bustupAlloc(ref_3a2, left, rgb(0,0,0));
+    bustupFade(ref_3a4, rgb(128,0,0), 30);
+    ref_3a6 = dialogAlloc();
+    ref_3a7 = msgShow(msg_51);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]During my high school days, the rooftop
+[tab]was a portal to another dimension...
+[tab]It seems that it is for him, too...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_3a7);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_3a6);
+    ref_3ac = bustupFade(ref_3a4, rgb(0,0,0), 10);
+    bustupWait(ref_3ac);
+    bustupFree(ref_3a4);
+    unitRestoreFacing(elly);
+    b(label_3b1);
+  label_3b1:
+    controlEnable();
+}
+
+function B_TATU()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_3ed);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_3dd);
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_3cd);
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_3bc);
+  label_3bc:
+    unitFacePlayer(tatsuya);
+    ref_3bd = bustupLoad(bustup_12);
+    bustupWait(ref_3bd);
+    ref_3bf = bustupAlloc(ref_3bd, right, rgb(0,0,0));
+    bustupFade(ref_3bf, rgb(128,0,0), 30);
+    bustupFlip(ref_3bf, true);
+    ref_3c2 = dialogAlloc();
+    ref_3c3 = msgShow(msg_52);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]...Leave me alone...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_2d, 1);
+    wait(ref_3c3);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_3c2);
+    ref_3c8 = bustupFade(ref_3bf, rgb(0,0,0), 10);
+    bustupWait(ref_3c8);
+    bustupFree(ref_3bf);
+    unitRestoreFacing(tatsuya);
+    b(label_3fd);
+  label_3cd:
+    unitFacePlayer(tatsuya);
+    ref_3ce = bustupLoad(bustup_10);
+    bustupWait(ref_3ce);
+    ref_3d0 = bustupAlloc(ref_3ce, left, rgb(0,0,0));
+    bustupFade(ref_3d0, rgb(128,0,0), 30);
+    ref_3d2 = dialogAlloc();
+    ref_3d3 = msgShow(msg_53);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]I... didn’t want to drag anyone into this...
+[tab]Especially you... Maya-nee...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    wait(ref_3d3);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_3d2);
+    ref_3d8 = bustupFade(ref_3d0, rgb(0,0,0), 10);
+    bustupWait(ref_3d8);
+    bustupFree(ref_3d0);
+    unitRestoreFacing(tatsuya);
+    b(label_3fd);
+  label_3dd:
+    unitFacePlayer(tatsuya);
+    ref_3de = bustupLoad(bustup_c);
+    bustupWait(ref_3de);
+    ref_3e0 = bustupAlloc(ref_3de, left, rgb(0,0,0));
+    bustupFade(ref_3e0, rgb(128,0,0), 30);
+    ref_3e2 = dialogAlloc();
+    ref_3e3 = msgShow(msg_54);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]...I can’t think of everyone as adults.
+[tab]They’re all just like... my friends on
+[tab]the "Other Side".
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_2d, 1);
+    wait(ref_3e3);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_3e2);
+    ref_3e8 = bustupFade(ref_3e0, rgb(0,0,0), 10);
+    bustupWait(ref_3e8);
+    bustupFree(ref_3e0);
+    unitRestoreFacing(tatsuya);
+    b(label_3fd);
+  label_3ed:
+    unitFacePlayer(tatsuya);
+    ref_3ee = bustupLoad(bustup_b);
+    bustupWait(ref_3ee);
+    ref_3f0 = bustupAlloc(ref_3ee, left, rgb(0,0,0));
+    bustupFade(ref_3f0, rgb(128,0,0), 30);
+    ref_3f2 = dialogAlloc();
+    ref_3f3 = msgShow(msg_55);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]I cannot afford to lose...
+[tab]...To Nyarlathotep... And to myself.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(tatsuya, animation_2d, 1);
+    wait(ref_3f3);
+    unitAnimationPlay(tatsuya, animation_a, 1);
+    dialogFree(ref_3f2);
+    ref_3f8 = bustupFade(ref_3f0, rgb(0,0,0), 10);
+    bustupWait(ref_3f8);
+    bustupFree(ref_3f0);
+    unitRestoreFacing(tatsuya);
+    b(label_3fd);
+  label_3fd:
+    controlEnable();
+}
+
+function SAGIBOX()
+{
+    controlDisable();
+    unitFacePlayer(makimura);
+    ref_401 = bustupLoad(bustup_d4);
+    bustupWait(ref_401);
+    ref_403 = bustupAlloc(ref_401, right, rgb(0,0,0));
+    bustupFade(ref_403, rgb(128,0,0), 30);
+    ref_405 = dialogAlloc();
+    ref_406 = msgShow(msg_56);
+/***************************************
+[color(yellow)]Makimura[color(white)]
+[tab]School roof, huh... I used to cut classes
+[tab]and flirt with the ladies...
+[tab]How nostalgic...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(makimura, animation_27, 1);
+    wait(ref_406);
+    unitAnimationPlay(makimura, animation_0, 1);
+    dialogFree(ref_405);
+    ref_40b = bustupFade(ref_403, rgb(0,0,0), 10);
+    bustupWait(ref_40b);
+    bustupFree(ref_403);
+    unitRestoreFacing(makimura);
+    b(label_410);
+  label_410:
+    controlEnable();
+}
+
+function SUGIMOTO()
+{
+    controlDisable();
+    bitGet(var_0, MBIT_KASUTOP_HATU);
+    bne(var_0, 0, label_417);
+    b(label_546);
+    b(label_41f);
+  label_417:
+    bne(var_0, 1, label_41f);
+    bitGet(var_0, LBIT_0000);
+    bne(var_0, 0, label_41b);
+    b(label_41e);
+  label_41b:
+    bne(var_0, 1, label_41e);
+    b(label_546);
+    b(label_41e);
+  label_41e:
+    b(label_41f);
+  label_41f:
+    bitGet(var_0, MBIT_KE_DEVIL10);
+    bne(var_0, 0, label_422);
+    b(label_43b);
+  label_422:
+    bne(var_0, 1, label_43b);
+    bitGet(var_0, MBIT_KUDAN_OREIGET);
+    bne(var_0, 0, label_438);
+    bitGet(var_0, MBIT_KUDAN_YASUO);
+    bne(var_0, 0, label_429);
+    b(label_57b);
+    b(label_437);
+  label_429:
+    bne(var_0, 1, label_437);
+    bitGet(var_0, LBIT_0001);
+    bne(var_0, 0, label_433);
+    bitGet(var_0, IBIT_RUMOR_KUDAN);
+    bne(var_0, 0, label_42f);
+    b(label_432);
+  label_42f:
+    bne(var_0, 1, label_432);
+    b(label_596);
+    b(label_432);
+  label_432:
+    b(label_436);
+  label_433:
+    bne(var_0, 1, label_436);
+    b(label_57b);
+    b(label_436);
+  label_436:
+    b(label_437);
+  label_437:
+    b(label_43a);
+  label_438:
+    bne(var_0, 1, label_43a);
+    b(label_43a);
+  label_43a:
+    b(label_43b);
+  label_43b:
+    bitGet(var_0, EBIT_E00B8);
+    bnz(var_0, label_528);
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_50b);
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_4e9);
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_4bf);
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_495);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_468);
+    ref_447 = dialogAlloc();
+    ref_448 = msgShow(msg_57);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]Yasuo, I have a question...
+[tab]During the Kasu High Festival, 
+[tab]an ambulance came, right? ...What happened?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_448);
+    dialogFree(ref_447);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc3, npc4);
+    ref_44f = bustupLoad(bustup_d1);
+    bustupWait(ref_44f);
+    ref_451 = bustupAlloc(ref_44f, right, rgb(0,0,0));
+    bustupFade(ref_451, rgb(128,0,0), 30);
+    ref_453 = dialogAlloc();
+    ref_454 = msgShow(msg_58);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]You didn’t know...?
+[tab]A girl from another school
+[tab]collapsed in the Basement Tool Room.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_454);
+    ref_457 = msgShow(msg_59);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]She was dazed and babbled stuff about
+[tab]there being a "Haunted Air Raid Shelter" in
+[tab]the basement and seeing some "monster".
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_457);
+    ref_45a = msgShow(msg_60);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]The rumor spread, and now this
+[tab]school is treated like a haunted house.
+[tab]How troublesome, huh?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_45a);
+    ref_45d = bustupFade(ref_451, rgb(0,0,0), 10);
+    bustupWait(ref_45d);
+    bustupFree(ref_451);
+    dialogFree(ref_453);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    b(label_5c9);
+  label_468:
+    unitFaceUnit(npc3, npc4);
+    unitFaceUnit(npc4, npc3);
+    ref_46a = bustupLoad(bustup_d1);
+    bustupWait(ref_46a);
+    ref_46c = bustupAlloc(ref_46a, right, rgb(0,0,0));
+    bustupFade(ref_46c, rgb(128,0,0), 30);
+    ref_46e = dialogAlloc();
+    ref_46f = msgShow(msg_61);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]If I were Student Body President...
+[tab]I’d make Kasu Festival a... Masquerade!
+[tab]How’s that? ...Isn’t that a good idea?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_46f);
+    ref_472 = bustupFade(ref_46c, rgb(0,0,0), 10);
+    bustupWait(ref_472);
+    bustupFree(ref_46c);
+    dialogFree(ref_46e);
+    delayClear();
+    delayWait(30);
+    ref_478 = dialogAlloc();
+    ref_479 = msgShow(msg_62);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]Hiding your face while dancing with girls...
+[tab]That’s sounds just great!
+[tab]But what are we gonna do for masks?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_479);
+    dialogFree(ref_478);
+    delayClear();
+    delayWait(30);
+    ref_47f = bustupLoad(bustup_d1);
+    bustupWait(ref_47f);
+    ref_481 = bustupAlloc(ref_47f, right, rgb(0,0,0));
+    bustupFade(ref_481, rgb(128,0,0), 30);
+    ref_483 = dialogAlloc();
+    ref_484 = msgShow(msg_63);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]There wouldn’t be many people with their
+[tab]own mask. Masks could be made and passed
+[tab]out as invitations as well...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_484);
+    ref_487 = msgShow(msg_64);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]A day’s quota... say about 5 masks?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_487);
+    ref_48a = bustupFade(ref_481, rgb(0,0,0), 10);
+    bustupWait(ref_48a);
+    bustupFree(ref_481);
+    dialogFree(ref_483);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    b(label_5c9);
+  label_495:
+    ref_495 = bustupLoad(bustup_d1);
+    bustupWait(ref_495);
+    ref_497 = bustupAlloc(ref_495, right, rgb(0,0,0));
+    bustupFade(ref_497, rgb(128,0,0), 30);
+    ref_499 = dialogAlloc();
+    ref_49a = msgShow(msg_65);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]That Leader is missing...
+[tab]Looking like that... he’s pretty popular.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_49a);
+    ref_49d = bustupFade(ref_497, rgb(0,0,0), 10);
+    bustupWait(ref_49d);
+    bustupFree(ref_497);
+    dialogFree(ref_499);
+    unitFaceUnit(npc4, npc3);
+    delayClear();
+    delayWait(30);
+    ref_4a4 = dialogAlloc();
+    ref_4a5 = msgShow(msg_66);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]Well, he stands out... He’s strong, but he
+[tab]is a nice guy who doesn’t pick on the weak...
+[tab]He’s kinda the opposite of you, huh?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_4a5);
+    dialogFree(ref_4a4);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc3, npc4);
+    ref_4ac = bustupLoad(bustup_d1);
+    bustupWait(ref_4ac);
+    ref_4ae = bustupAlloc(ref_4ac, right, rgb(0,0,0));
+    bustupFade(ref_4ae, rgb(128,0,0), 30);
+    ref_4b0 = dialogAlloc();
+    ref_4b1 = msgShow(msg_67);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]Shut the hell up...!
+[tab]I became like this because my body’s weak!
+[tab]If I were healthy, I’d be like that too!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_26, 1);
+    wait(ref_4b1);
+    ref_4b4 = bustupFade(ref_4ae, rgb(0,0,0), 10);
+    bustupWait(ref_4b4);
+    bustupFree(ref_4ae);
+    dialogFree(ref_4b0);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    b(label_5c9);
+  label_4bf:
+    ref_4bf = bustupLoad(bustup_d1);
+    bustupWait(ref_4bf);
+    ref_4c1 = bustupAlloc(ref_4bf, right, rgb(0,0,0));
+    bustupFade(ref_4c1, rgb(128,0,0), 30);
+    ref_4c3 = dialogAlloc();
+    ref_4c4 = msgShow(msg_68);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]The middle girl in Muses is cute...!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_4c4);
+    ref_4c7 = bustupFade(ref_4c1, rgb(0,0,0), 10);
+    bustupWait(ref_4c7);
+    bustupFree(ref_4c1);
+    dialogFree(ref_4c3);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc4, npc3);
+    ref_4ce = dialogAlloc();
+    ref_4cf = msgShow(msg_69);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]Huh!? You don’t know...?
+[tab]That’s Lisa Silverman!
+[tab]She’s that celebrity who goes to Sevens!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_4cf);
+    dialogFree(ref_4ce);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc3, npc4);
+    ref_4d6 = bustupLoad(bustup_d1);
+    bustupWait(ref_4d6);
+    ref_4d8 = bustupAlloc(ref_4d6, right, rgb(0,0,0));
+    bustupFade(ref_4d8, rgb(128,0,0), 30);
+    ref_4da = dialogAlloc();
+    ref_4db = msgShow(msg_70);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]I know that already!!
+[tab](sigh)... If only she was mine...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_26, 1);
+    wait(ref_4db);
+    ref_4de = bustupFade(ref_4d8, rgb(0,0,0), 10);
+    bustupWait(ref_4de);
+    bustupFree(ref_4d8);
+    dialogFree(ref_4da);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    b(label_5c9);
+  label_4e9:
+    unitFaceUnit(npc4, npc3);
+    ref_4ea = dialogAlloc();
+    ref_4eb = msgShow(msg_71);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]Did you watch TV today...?
+[tab]Wang Long fortune telling is saying the
+[tab]pole shift is caused by New World Order?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_4eb);
+    ref_4ee = msgShow(msg_72);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]...What should we do?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_4ee);
+    dialogFree(ref_4ea);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc3, npc4);
+    ref_4f5 = bustupLoad(bustup_d1);
+    bustupWait(ref_4f5);
+    ref_4f7 = bustupAlloc(ref_4f5, right, rgb(0,0,0));
+    bustupFade(ref_4f7, rgb(128,0,0), 30);
+    ref_4f9 = dialogAlloc();
+    ref_4fa = msgShow(msg_73);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]You don’t know anything, do you...?
+[tab]First off, it’s "Did you watch the news on
+[tab]TV today?", not "Did you watch TV?"...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_4fa);
+    ref_4fd = msgShow(msg_74);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]The outside world has nothing to do with us... 
+[tab]Our world consists of just "school".
+[tab]Our worth as humans is decided here...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_4fd);
+    ref_500 = bustupFade(ref_4f7, rgb(0,0,0), 10);
+    bustupWait(ref_500);
+    bustupFree(ref_4f7);
+    dialogFree(ref_4f9);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    b(label_5c9);
+  label_50b:
+    ref_50b = dialogAlloc();
+    ref_50c = msgShow(msg_75);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]Yasuo...!!
+[tab]Look at Narumi!
+[tab]It’s all messed up!?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_50c);
+    dialogFree(ref_50b);
+    delayClear();
+    delayWait(30);
+    ref_512 = bustupLoad(bustup_d1);
+    bustupWait(ref_512);
+    ref_514 = bustupAlloc(ref_512, right, rgb(0,0,0));
+    bustupFade(ref_514, rgb(128,0,0), 30);
+    ref_516 = dialogAlloc();
+    ref_517 = msgShow(msg_76);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]Looking from up here, everything looks so
+[tab]small...(sigh)... If I just realized sooner,
+[tab]my life might’ve been different...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_517);
+    ref_51a = msgShow(msg_77);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]What... do I want to do?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_51a);
+    ref_51d = bustupFade(ref_514, rgb(0,0,0), 10);
+    bustupWait(ref_51d);
+    bustupFree(ref_514);
+    dialogFree(ref_516);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    b(label_5c9);
+  label_528:
+    ref_528 = bustupLoad(bustup_d1);
+    bustupWait(ref_528);
+    ref_52a = bustupAlloc(ref_528, right, rgb(0,0,0));
+    bustupFade(ref_52a, rgb(128,0,0), 30);
+    ref_52c = dialogAlloc();
+    ref_52d = msgShow(msg_78);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]I should’ve run in the Student Body race.
+[tab]Well, no use crying over spilled milk.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_52d);
+    ref_530 = msgShow(msg_79);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]I’ll try to challenge things.
+[tab]No more daydreaming about "What if...?"
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_530);
+    ref_533 = bustupFade(ref_52a, rgb(0,0,0), 10);
+    bustupWait(ref_533);
+    bustupFree(ref_52a);
+    dialogFree(ref_52c);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc4, npc3);
+    ref_53a = dialogAlloc();
+    ref_53b = msgShow(msg_80);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]Yasuo, you look invigorated!
+[tab]Did something happen...?
+[tab]You plan to do something, don’t you!?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_53b);
+    dialogFree(ref_53a);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    b(label_5c9);
+  label_546:
+    ref_546 = bustupLoad(bustup_d1);
+    bustupWait(ref_546);
+    ref_548 = bustupAlloc(ref_546, right, rgb(0,0,0));
+    bustupFade(ref_548, rgb(128,0,0), 30);
+    ref_54a = dialogAlloc();
+    ref_54b = msgShow(msg_81);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]Kasu High Festival didn’t get into
+[tab]full swing. As usual...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_54b);
+    bitGet(var_0, MBIT_KASUTOP_HATU);
+    bnz(var_0, label_553);
+    ref_550 = msgShow(msg_82);
+/***************************************
+[color(yellow)]Yasuo Inoue[color(green)]
+[tab]A typical Kasu High student. He dreams
+[tab]of being in the spotlight as Student Body
+[tab]President, but he’s not going after that.[color(white)]
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_0, 1);
+    wait(ref_550);
+  label_553:
+    ref_553 = msgShow(msg_83);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab](sigh)... If I were President...
+[tab]I’d make it much more flamboyant
+[tab]and invite many more people.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_553);
+    unitAnimationPlay(npc3, animation_0, 1);
+    ref_557 = bustupFade(ref_548, rgb(0,0,0), 10);
+    bustupWait(ref_557);
+    bustupFree(ref_548);
+    dialogFree(ref_54a);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc4, npc3);
+    ref_55e = dialogAlloc();
+    ref_55f = msgShow(msg_84);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]But you haven’t even announced yourself as
+[tab]a candidate. It’s impossible unless you’re
+[tab]a candidate... That’s foolish.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_55f);
+    dialogFree(ref_55e);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc3, npc4);
+    ref_566 = bustupLoad(bustup_d1);
+    bustupWait(ref_566);
+    ref_568 = bustupAlloc(ref_566, right, rgb(0,0,0));
+    bustupFade(ref_568, rgb(128,0,0), 30);
+    ref_56a = dialogAlloc();
+    ref_56b = msgShow(msg_85);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]Don’t call me a fool!
+[tab]I’m a genius!
+[tab]I know that!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_26, 1);
+    wait(ref_56b);
+    ref_56e = bustupFade(ref_568, rgb(0,0,0), 10);
+    bustupWait(ref_56e);
+    bustupFree(ref_568);
+    dialogFree(ref_56a);
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    bitSet(LBIT_0000);
+    bitSet(MBIT_KASUTOP_HATU);
+    b(label_5c9);
+  label_57b:
+    ref_57b = dialogAlloc();
+    ref_57c = msgShow(msg_86);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]So, Kudan can refer to monster in
+[tab]general? I thought they were referring
+[tab]that horrible Kudan.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_57c);
+    ref_57f = msgShow(msg_87);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]Yasuo, they got us pretty good,
+[tab]didn’t they?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_57f);
+    dialogFree(ref_57b);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc3, npc4);
+    ref_586 = bustupLoad(bustup_d1);
+    bustupWait(ref_586);
+    ref_588 = bustupAlloc(ref_586, right, rgb(0,0,0));
+    bustupFade(ref_588, rgb(128,0,0), 30);
+    ref_58a = dialogAlloc();
+    ref_58b = msgShow(msg_88);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]Stating such obvious things...!
+[tab]But that doesn’t mean that Kudan doesn’t
+[tab]exist. Everyone’s talking about it.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_58b);
+    ref_58e = msgShow(msg_89);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]If it did exist, he’d be surprised...
+[wait][clear]
+***************************************/
+    wait(ref_58e);
+    ref_590 = bustupFade(ref_588, rgb(0,0,0), 10);
+    bustupWait(ref_590);
+    bustupFree(ref_588);
+    dialogFree(ref_58a);
+    bitSet(MBIT_KUDAN_YASUO);
+    bitSet(LBIT_0001);
+  label_596:
+    bitGet(var_0, IBIT_RUMOR_KUDAN);
+    bne(var_0, 0, label_599);
+    b(label_5c2);
+  label_599:
+    bne(var_0, 1, label_5c2);
+    delayClear();
+    delayWait(30);
+    unitFacePlayer(npc3);
+    ref_59d = bustupLoad(bustup_d1);
+    bustupWait(ref_59d);
+    ref_59f = bustupAlloc(ref_59d, right, rgb(0,0,0));
+    bustupFade(ref_59f, rgb(128,0,0), 30);
+    ref_5a1 = dialogAlloc();
+    ref_5a2 = msgShow(msg_90);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]Is there anything...!?
+[tab]That’s the head of Kudan!?
+[tab]You’re giving it to me?
+[wait][clear]
+***************************************/
+    delayClear();
+    delayWait(30);
+    unitFacePlayer(npc4);
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_5a2);
+    ref_5a8 = msgShow(msg_91);
+/***************************************
+[color(yellow)]Yasuo[color(white)]
+[tab]Thank you very much!!
+[tab]We can now scare that "conduct guy".
+[tab]Take this as my thanks.
+[wait][clear]
+***************************************/
+    wait(ref_5a8);
+    ref_5aa = bustupFade(ref_59f, rgb(0,0,0), 10);
+    bustupWait(ref_5aa);
+    bustupFree(ref_59f);
+    dialogFree(ref_5a1);
+    delayClear();
+    delayWait(30);
+    ref_5b0 = dialogAlloc();
+    ref_5b1 = msgShow(msg_92);
+/***************************************
+[color(green)]Maya got Persona Gear 3 Pt Set[color(white)].
+[wait][clear]
+***************************************/
+    wait(ref_5b1);
+    dialogFree(ref_5b0);
+    delayClear();
+    delayWait(30);
+    unitFaceUnit(npc4, npc3);
+    ref_5b7 = dialogAlloc();
+    ref_5b8 = msgShow(msg_93);
+/***************************************
+[color(yellow)]Male Student[color(white)]
+[tab]That’s great Yasuo!
+[tab]...But it stinks to high heaven.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_24, 1);
+    wait(ref_5b8);
+    dialogFree(ref_5b7);
+    partyItemAdd(synchronize_gear, 1);
+    partyItemAdd(mutation_gear, 1);
+    partyItemAdd(adjustment_gear, 1);
+    bitClear(IBIT_RUMOR_KUDAN);
+    bitSet(MBIT_KUDAN_OREIGET);
+    b(label_5c2);
+  label_5c2:
+    unitAnimationPlay(npc3, animation_0, 1);
+    unitRestoreFacing(npc3);
+    unitAnimationPlay(npc4, animation_0, 1);
+    unitRestoreFacing(npc4);
+    unitIdleOn(npc3);
+    unitIdleOn(npc4);
+    b(label_5c9);
+  label_5c9:
+    controlEnable();
+}
+
+function MESTEST1()
+{
+}
+
+function MESTEST()
+{
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_5d4);
+    bitSet(EBIT_E0037);
+    ref_5cf = dialogAlloc();
+    ref_5d0 = msgShow(msg_94);
+/***************************************
+EBIT E0037
+"Katsuya Returns!"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_5d0);
+    dialogFree(ref_5cf);
+    b(label_63b);
+  label_5d4:
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_5dc);
+    bitSet(EBIT_E0038);
+    ref_5d7 = dialogAlloc();
+    ref_5d8 = msgShow(msg_95);
+/***************************************
+EBIT E0038
+"Con man apprehended"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_5d8);
+    dialogFree(ref_5d7);
+    b(label_63b);
+  label_5dc:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_5e4);
+    bitSet(EBIT_E003E);
+    ref_5df = dialogAlloc();
+    ref_5e0 = msgShow(msg_96);
+/***************************************
+EBIT E003E
+"Ulala back"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_5e0);
+    dialogFree(ref_5df);
+    b(label_63b);
+  label_5e4:
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_5ec);
+    bitSet(EBIT_E0046);
+    ref_5e7 = dialogAlloc();
+    ref_5e8 = msgShow(msg_97);
+/***************************************
+EBIT E0046
+"Nanjo or Elly admitted"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_5e8);
+    dialogFree(ref_5e7);
+    b(label_63b);
+  label_5ec:
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_5f4);
+    bitSet(EBIT_E006F);
+    ref_5ef = dialogAlloc();
+    ref_5f0 = msgShow(msg_98);
+/***************************************
+EBIT E006F
+"Lab/TV station clear"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_5f0);
+    dialogFree(ref_5ef);
+    b(label_63b);
+  label_5f4:
+    bitGet(var_0, EBIT_E0077);
+    bnz(var_0, label_5fc);
+    bitSet(EBIT_E0077);
+    ref_5f7 = dialogAlloc();
+    ref_5f8 = msgShow(msg_99);
+/***************************************
+EBIT E0077
+Smile Hirasaka clear - Katsuya escape"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_5f8);
+    dialogFree(ref_5f7);
+    b(label_63b);
+  label_5fc:
+    bitGet(var_0, EBIT_E007A);
+    bnz(var_0, label_604);
+    bitSet(EBIT_E007A);
+    ref_5ff = dialogAlloc();
+    ref_600 = msgShow(msg_100);
+/***************************************
+EBIT E007A
+"Concert Hall clear - Katsuya back"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_600);
+    dialogFree(ref_5ff);
+    b(label_63b);
+  label_604:
+    bitGet(var_0, EBIT_E007B);
+    bnz(var_0, label_60c);
+    bitSet(EBIT_E007B);
+    ref_607 = dialogAlloc();
+    ref_608 = msgShow(msg_101);
+/***************************************
+EBIT E007B
+"Tapped Tatsuzou and assassin’s phone"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_608);
+    dialogFree(ref_607);
+    b(label_63b);
+  label_60c:
+    bitGet(var_0, EBIT_E007F);
+    bnz(var_0, label_614);
+    bitSet(EBIT_E007F);
+    ref_60f = dialogAlloc();
+    ref_610 = msgShow(msg_102);
+/***************************************
+EBIT E007F
+"Factory clear - Baofu back"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_610);
+    dialogFree(ref_60f);
+    b(label_63b);
+  label_614:
+    bitGet(var_0, EBIT_E008C);
+    bnz(var_0, label_61c);
+    bitSet(EBIT_E008C);
+    ref_617 = dialogAlloc();
+    ref_618 = msgShow(msg_103);
+/***************************************
+EBIT E008C
+"Ocean Floor Ruins clear"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_618);
+    dialogFree(ref_617);
+    b(label_63b);
+  label_61c:
+    bitGet(var_0, EBIT_E009F);
+    bnz(var_0, label_624);
+    bitSet(EBIT_E009F);
+    ref_61f = dialogAlloc();
+    ref_620 = msgShow(msg_104);
+/***************************************
+EBIT E009F
+"Mt Iwato clear - Nanjo/Elly out, [tatsuya] in
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_620);
+    dialogFree(ref_61f);
+    b(label_63b);
+  label_624:
+    bitGet(var_0, EBIT_E00AF);
+    bnz(var_0, label_62c);
+    bitSet(EBIT_E00AF);
+    ref_627 = dialogAlloc();
+    ref_628 = msgShow(msg_105);
+/***************************************
+EBIT E00AF
+"Ameno Torifune clear"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_628);
+    dialogFree(ref_627);
+    b(label_63b);
+  label_62c:
+    bitGet(var_0, MBIT_KE_DEVIL10);
+    bnz(var_0, label_634);
+    bitSet(MBIT_KE_DEVIL10);
+    ref_62f = dialogAlloc();
+    ref_630 = msgShow(msg_106);
+/***************************************
+MBIT KE DEVIL10
+"Kudan appears rumor BIT"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_630);
+    dialogFree(ref_62f);
+    b(label_63b);
+  label_634:
+    bitGet(var_0, IBIT_RUMOR_KUDAN);
+    bnz(var_0, label_63b);
+    bitSet(IBIT_RUMOR_KUDAN);
+    ref_637 = dialogAlloc();
+    ref_638 = msgShow(msg_107);
+/***************************************
+IBIT RUMOR KUDAN
+"Kudan’s head"
+Bit on!!
+[wait][clear]
+***************************************/
+    wait(ref_638);
+    dialogFree(ref_637);
+  label_63b:
+}
+
+function DOORBOX()
+{
+    controlDisable();
+    sndMusicPlay(sound_3095, 127);
+    objAnimRotate(obj_f, 0, -80, 0, 30, 0);
+    objAnimWait(obj_f);
+    dngLoad2(kasu_high-14);
+}

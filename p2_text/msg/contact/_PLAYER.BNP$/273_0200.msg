@@ -1,0 +1,58 @@
+
+msg_0:
+[color(yellow)]うらら[color(white)]
+ 結婚詐欺はコイツよ、刑事さん！
+ 見た目はちょっと変わってるけど、
+ お尻に蝶の形のアザがあるハズよ！
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]克哉[color(white)]
+ と証人は、言っていますが…
+ どうなんです？
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]南条[color(white)]
+ 結婚詐欺か…
+ 如何にもという面構えだな…
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]うらら[color(white)]
+ こんの詐欺師！！
+ しらばっくれんのもイイ加減にしなっての！
+[wait][clear][end]
+
+msg_4:
+[color(yellow)]克哉[color(white)]
+ どうです…
+ この女性に見覚えがありませんか？
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]南条[color(white)]
+ 問答無用！
+ 婦女子をたぶらかす不貞の輩、
+ 即刻、刀の錆にしてくれるわ！
+[wait][clear][end]
+
+msg_6:
+[color(yellow)]うらら[color(white)]
+ 誰が何と言おうとアンタが結婚詐欺なのよぅ！
+ もうキレた！ 死刑よ死刑！
+ 刑事さんがやんないなら、私がやっちゃる！
+[wait][clear][end]
+
+msg_7:
+[load_sound(sndeff_14)][sync][color(yellow)]克哉[color(white)]
+ 情状酌量って事もある。
+ 吐くなら今のうちじゃないのかな？
+ [play_sound(sndeff_14)][sync]彼女に殺されないうちにね…[sync]
+[wait][clear][end]
+
+msg_8:
+[color(yellow)]南条[color(white)]
+ 潔く切腹しろ。
+ 介錯してやる。
+[wait][clear][end]

@@ -1,0 +1,65 @@
+function START()
+{
+    controlDisable();
+    bitGet(var_0, MBIT_END_NOROI);
+    bez(var_0, label_8);
+    ref_3 = dialogAlloc();
+    ref_4 = msgShow(msg_0);
+/***************************************
+[color(green)]There’s no need to be here.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_4);
+    dialogFree(ref_3);
+    b(label_24);
+  label_8:
+    ref_8 = dialogAlloc();
+    ref_9 = msgShow(msg_1);
+/***************************************
+[color(yellow)]Door Lock[color(white)]
+[tab]This door is locked.
+[tab]Please enter the release code.
+[wait][clear]
+***************************************/
+    wait(ref_9);
+    dialogFree(ref_8);
+    delayClear();
+    delayWait(10);
+    ref_e = textInputInit();
+    textInputPrompt();
+    wait(ref_e);
+    textInputCompare(msg_2, var_0);
+    bne(var_0, 0, label_1a);
+    delayClear();
+    delayWait(10);
+    ref_15 = dialogAlloc();
+    ref_16 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Door Lock[color(white)]
+[tab]The release code is incorrect.
+[tab]Please enter the correct code.
+[wait][clear]
+***************************************/
+    wait(ref_16);
+    dialogFree(ref_15);
+    b(label_24);
+  label_1a:
+    bne(var_0, 1, label_24);
+    delayClear();
+    delayWait(10);
+    sndMusicPlay(sound_12f6, 127);
+    ref_1e = dialogAlloc();
+    ref_1f = msgShow(msg_4);
+/***************************************
+[color(yellow)]Door Lock[color(white)]
+[tab]...Release code has been accepted.
+[tab]Please enter.
+[wait][clear]
+***************************************/
+    wait(ref_1f);
+    dialogFree(ref_1e);
+    bitSet(MBIT_DUN_KYE_01);
+    b(label_24);
+  label_24:
+    controlEnable();
+}

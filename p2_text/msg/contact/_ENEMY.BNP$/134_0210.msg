@@ -1,0 +1,3739 @@
+
+msg_0:
+[end]
+
+msg_1:
+[end]
+
+msg_2:
+[end]
+
+msg_3:
+[end]
+
+msg_4:
+[end]
+
+msg_5:
+[end]
+
+msg_6:
+[end]
+
+msg_7:
+[end]
+
+msg_8:
+[end]
+
+msg_9:
+[end]
+
+msg_10:
+[end]
+
+msg_11:
+[end]
+
+msg_12:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレガ ウヌノ 生業カ…
+ 天職カモ 知レヌナ
+[wait][clear][end]
+
+msg_13:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ニ 興味ガ アルカ
+ 我モ ウヌニ 興味ヲ 覚エタゾ
+[wait][clear][end]
+
+msg_14:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ニ 聞キタイ事ガ アルノカ？
+ 年寄リノ話ニ 耳ヲ 傾ケルトハ
+ 感心ナ 心掛ケダナ
+[wait][clear][end]
+
+msg_15:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ老イボレノ 話ヲ聞イテクレルトハ…
+ 嬉シイ事ダナ…
+[wait][clear][end]
+
+msg_16:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソウカ 我ノ話 聞キタイカ…
+ 我モ マダ ステタモノデハ ナイナ…
+[wait][clear][end]
+
+msg_17:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 戯言ヲ…
+ 我ヲ 愚弄スル 積モリカ！
+[wait][clear][end]
+
+msg_18:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心ニモ無キ事ヲ…
+ 我ニ 食ワレタクナクバ
+ 早々ニ 止メヨ
+[wait][clear][end]
+
+msg_19:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 詰マラヌ興味ハ 身ヲ滅ボスゾ！
+[wait][clear][end]
+
+msg_20:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソ ソノ道具 武器デハ アルマイ…
+[wait][clear][end]
+
+msg_21:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ如キ 輩ハ 油断ナラヌ…
+ 我ニ 近ヅカナイデ 頂キタイ…
+[wait][clear][end]
+
+msg_22:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若キ 卜者ヨ…
+ 占術ハ マサシク 当ルモ八卦当ラヌモ八卦
+ 術ニ 溺レヌ様 気ヲツケル事ダ…
+[wait][clear][end]
+
+msg_23:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌハ 卜者カ…
+ ナルホド 神秘的ナ 力ヲ 感ジル…
+[wait][clear][end]
+
+msg_24:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若キ 卜者ヨ…
+ 占術ハ 神ノ声ヲ 伝エル 業
+ ヨリ清キ 心ガ 必要ダ！
+[wait][clear][end]
+
+msg_25:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレガ 我ガ星ノ宿命カ…
+ 面白イモノダ
+[wait][clear][end]
+
+msg_26:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ 面白イ事ヲ 教エテモラッタ
+ 礼ヲ言ウゾ 若キ 卜者ヨ…
+[wait][clear][end]
+
+msg_27:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ如キ若僧ニ 宿命ナド読メルモノカ！
+ 自惚レルナッ！！
+[wait][clear][end]
+
+msg_28:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ ウヌナドノ 考エガ及バヌ程
+ 永イ永イ時ヲ 生キテキタノダ
+ 今更 星ノ宿命ナド 教ワル必要ハ無イ！
+[wait][clear][end]
+
+msg_29:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 偉ソウニ…
+ 神ノ声ヲ 聞イタトデモ 言ウ積モリカ！
+ 片腹痛イワ！
+[wait][clear][end]
+
+msg_30:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_31:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_32:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_33:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ ウヌノ生業ハ 咎人ヲ 探ス事カ…
+ ナラバ ウヌノ技 篤ト 拝見シヨウ
+[wait][clear][end]
+
+msg_34:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若者ヨ…
+ 咎人ノ 心ノ秘密 聞キ出ス 秘訣
+ 其ハ 技ニアラズ 心ニコソ アル
+[wait][clear][end]
+
+msg_35:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若キ捕吏ヨ…
+ 手柄焦ラバ 鳥ヲ魚ト 見間違エル事モ アル
+ 先ズハ 落チ着ク事ダ
+[wait][clear][end]
+
+msg_36:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハコレハ 楽シキ 余興！
+ ウヌノ 推理劇 楽シマセテ 頂コウ！
+[wait][clear][end]
+
+msg_37:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ 愉快！
+ 無実ノ我ヲ 如何ニ 言イ包メルカ
+ 見物デアルナ！
+[wait][clear][end]
+
+msg_38:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 職務ニ忠実ナル 若者ヨ…
+ ウヌノ 真ッ直グナ 瞳
+ 我ハ 気ニ入ッタゾ！
+[wait][clear][end]
+
+msg_39:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 戯言ヲ…
+ 我ヲ謀ロウトハ 何事ゾ！
+[wait][clear][end]
+
+msg_40:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ 濁リキッタ 忌々シキ ソノ瞳！
+ 我ヲ 咎人ト 映ストハ！
+[wait][clear][end]
+
+msg_41:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 愚策ヲモッテ 我ヲ陥レヨウトハ…
+ ソノ腐ッタ性根 我ガ 正シテクレル！
+[wait][clear][end]
+
+msg_42:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ 知ラヌ…
+ 其ノ時刻 我ハ 女ナドトハ
+ 会ッテオラヌ…
+[wait][clear][end]
+
+msg_43:
+[color(yellow)][var(msg_var_0)][color(white)]
+ シ 知ラヌ 被害者ノ女ナド…
+[wait][clear][end]
+
+msg_44:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 其レガ ウヌガ生業カ…
+ 否定ハ セヌガ ソノ技
+ 正シキ道デ 生カセヌ モノカ？
+[wait][clear][end]
+
+msg_45:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ガ声等 録リテ 如何スル積モリ…
+ ウヌガ真意 ドウシテモ 読メヌ
+[wait][clear][end]
+
+msg_46:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 目的ノ為ニハ 手段選バズカ…
+ ドウシタモノカ…
+[wait][clear][end]
+
+msg_47:
+[color(yellow)][var(msg_var_0)][color(white)]
+ オオ 其レガ 我ガ声カ！
+ 生マレテ 初メテ聞イタワ！
+ 礼ヲ 言ウゾ
+[wait][clear][end]
+
+msg_48:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント 雄雄シキ 我ガ声！
+ 素晴ラシイ！
+[wait][clear][end]
+
+msg_49:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ヲ 脅ソウトハ…
+ ナカナカ 見上ゲタモノ
+ 会エテ 嬉シイゾ！
+[wait][clear][end]
+
+msg_50:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下ラヌ画策！
+ ウヌガ如キ輩 一飲ミニ シテクレルゾ！
+[wait][clear][end]
+
+msg_51:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌガ奸計如キ 掛カル我ト思ウタカ！
+ コノ痴レ者メッ！
+[wait][clear][end]
+
+msg_52:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント卑劣ナ！
+ ウヌノ性根 叩キ直シテクレヨウゾ！
+[wait][clear][end]
+
+msg_53:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 悪魔ヲ 脅ストハ…
+ 末恐ロシキ 人間…
+[wait][clear][end]
+
+msg_54:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何トイウ事…
+ マサカ 人間ニ 脅サレヨウトハ…
+[wait][clear][end]
+
+msg_55:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 実ニ恐ロシキハ 初メテ聞ク我ガ声カナ…
+[wait][clear][end]
+
+msg_56:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若者ヨ
+ 燃エテイルナ…
+[wait][clear][end]
+
+msg_57:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若キ頃ノ 熱キ情熱モ トモスレバ
+ 寄ル年波ニ 冷マサレテシマウ…
+ 常ニ 燃ユル情熱ガ 必要ダ
+[wait][clear][end]
+
+msg_58:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 青年ハ 荒野ヲ目指ス…
+ 語ルダケデナク 先ズ
+ 自ラ歩ミ出ス事モ 必要ダナ
+[wait][clear][end]
+
+msg_59:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ如キ 頼モシキ青年ニ 出会エ
+ 我ハ 神ニ 感謝セネバ ナルマイナ…
+[wait][clear][end]
+
+msg_60:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ情熱 我ニモ伝ワッテクル…
+ 快キ感覚ダナ…
+[wait][clear][end]
+
+msg_61:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 実ニ 痛快ナル意見！
+ 天晴デアル！
+[wait][clear][end]
+
+msg_62:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 口先ダケナラ 何トデモ 言エルワ！
+[wait][clear][end]
+
+msg_63:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 思イ上ガルナ 人間ヨ！
+[wait][clear][end]
+
+msg_64:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ [var(msg_var_0)]！！
+ ウヌニ 教ワル事ナド 何モ 無イワ！
+[wait][clear][end]
+
+msg_65:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 出ない様に個性又は表の変更を要する
+[wait][clear][end]
+
+msg_66:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 出ない様に個性又は表の変更を要する
+[wait][clear][end]
+
+msg_67:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 出ない様に個性又は表の変更を要する
+[wait][clear][end]
+
+msg_68:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間ニトリテ 衣服ハ 文化
+ ウヌハ 文化ノ 担イ手ト イウトコロダナ…
+[wait][clear][end]
+
+msg_69:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間ヨ…
+ ドノ様ナ道モ 高ミヲ望メバ 険シキモノ
+ 精進スルコトダ！
+[wait][clear][end]
+
+msg_70:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ 愉快！
+ 面白キ 余興 礼ヲ言オウ！
+[wait][clear][end]
+
+msg_71:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 美シキ者ヲ見ルハ 目ノ薬
+ 実ニ 良キ物 見ル事ガ出来タ
+[wait][clear][end]
+
+msg_72:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 実ニ 下ラヌ余興！
+[wait][clear][end]
+
+msg_73:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 詰マラヌ事ニ 我ガ時ヲ浪費サセラレ
+ 我ハ 気分ヲ 害シタゾ！
+[wait][clear][end]
+
+msg_74:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 見タ目ノミヲ飾ル 文化ナド 実ニ低俗！
+ ウヌノ如キハ 無用ノ存在ゾ！
+[wait][clear][end]
+
+msg_75:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_76:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_77:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_78:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ瞳ノ輝キ…
+ ウヌニ 大キナ 力ヲ 感ジル…
+[wait][clear][end]
+
+msg_79:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何故 我ヲ見ツメル…
+[wait][clear][end]
+
+msg_80:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ瞳…
+ 気ニナル…
+[wait][clear][end]
+
+msg_81:
+[end]
+
+msg_82:
+[end]
+
+msg_83:
+[end]
+
+msg_84:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何ヲ 見テイル！
+[wait][clear][end]
+
+msg_85:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ヲ 睨ラムトハ…
+ 何様ノ 積モリ！
+[wait][clear][end]
+
+msg_86:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ行為 早々ニ 止メヌナラバ
+ 永遠ニ 瞳 輝キヲ 失ウ事ト ナルゾ
+[wait][clear][end]
+
+msg_87:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ワ 我ニ 恐怖ヲ感ジヌト言ウノカ
+ 何トイウ事ッ！
+[wait][clear][end]
+
+msg_88:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 禍禍シク 輝ク ソノ 瞳…
+ 恐ロシイ…
+[wait][clear][end]
+
+msg_89:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 美シサナド 人ノ主観デ 決マルモノ
+ 一概ニ ドチラガ美シイナドトハ 言エヌ
+ 外見デハナク 内面ヲ磨ク事ダ
+[wait][clear][end]
+
+msg_90:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 美シキ娘達ヨ…
+ ウヌ等ニ 優劣ナド ツケラレヌ
+[wait][clear][end]
+
+msg_91:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 美ノ基準ナド 時ト共ニ 移ロウモノ…
+ 世ノ流レニ トラワレズ 常ニ 心美シキ者コソ
+ 真ニ 美シキ者ダ
+[wait][clear][end]
+
+msg_92:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ニ 判断ヲ委ネルカ…
+ 悪イ気ハ セヌ…
+[wait][clear][end]
+
+msg_93:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ様ナ台詞 久々ニ聞イタ
+ 若キ頃 シバシバ尋ネラレタモノダナ…
+[wait][clear][end]
+
+msg_94:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ 老イボレノ 好ミヲ 知リタイト…
+ 嬉シイ限リデ アルナ
+[wait][clear][end]
+
+msg_95:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 実ニ 低俗ナ争イ！
+ 我ハ 興味スラ無イワ！
+[wait][clear][end]
+
+msg_96:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント醜キ見栄ノ ブツカリ合イ
+ 時間ノ 無駄ダ！
+[wait][clear][end]
+
+msg_97:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下ラヌ争イニ 我ヲ捲キ込ムナ！
+ 我ハ 気分ヲ害シタ！
+[wait][clear][end]
+
+msg_98:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_99:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_100:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_101:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ 言葉 嘘ハ無イ様…
+ ナニ…
+ 目ヲ見レバ 判ル事…
+[wait][clear][end]
+
+msg_102:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間ヨ…
+ 何ガ ウヌ等ヲ ソコマデ
+ 優シク サセルノダ？
+[wait][clear][end]
+
+msg_103:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ我ト対峙シ 恐怖ニ慄ク事無ク
+ アマツサエ 我ノ心配マデシヨウトハ…
+ 見上ゲタモノダナ
+[wait][clear][end]
+
+msg_104:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心優シキ 若者達ヨ…
+ 我ハ 嬉シク思ウゾ
+[wait][clear][end]
+
+msg_105:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ ソノ心ダケデ 充分ダ…
+[wait][clear][end]
+
+msg_106:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ歳ニナルト 悩ミナド 無クナルモノダ…
+ シカシ ソノ気持チハ 有難ク 受ケ取ロウ
+[wait][clear][end]
+
+msg_107:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌ等如キニ 心配サレル程
+ 我ハ 老イボレテ オランワ！
+[wait][clear][end]
+
+msg_108:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ目ノ奥ニ 邪気ガ潜ンデイル！
+ ウヌ等ノ言葉 信ジル訳ニハ イカヌ！
+[wait][clear][end]
+
+msg_109:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_110:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_111:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_112:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ 他人ノ 話ヲ 聞ク事ガ ウヌノ 生業カ
+[wait][clear][end]
+
+msg_113:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ 手ニ持ッテイル道具ハ
+ 一体何デ アロウ…
+[wait][clear][end]
+
+msg_114:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ニ 聞キタキ事アラバ
+ ソノ道具 我ニ 向ケルガ良イ
+[wait][clear][end]
+
+msg_115:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若者ノ言葉ハ 実ニ 清々シイ
+ 気持チノ良イモノダナ…
+[wait][clear][end]
+
+msg_116:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我モ ソレハ 聞キタキ事デ アッタ
+ 代ワリニ 聞イテクレタ事 感謝スル
+[wait][clear][end]
+
+msg_117:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ神聖ナル 決闘ノ場デ…
+ ソレ以上 続ケル様デアラバ
+ 食イ殺シテクレル！
+[wait][clear][end]
+
+msg_118:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌ等 フザケテイルノカ…
+ イイ加減ニセヌノナラ
+ 我ガ 恐ロシサ 思イ知ラセテクレルゾ！
+[wait][clear][end]
+
+msg_119:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 
+[wait][clear][end]
+
+msg_120:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_121:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_122:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ 踊ル事ガ ウヌノ 生業カ
+[wait][clear][end]
+
+msg_123:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナカナカ 激シイ 踊リダナ
+ ウヌノ 内面ノ 現レカ…
+[wait][clear][end]
+
+msg_124:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ激シサノ中ニ 見エ隠レスル
+ 一抹ノ寂シサ…
+ ナカナカ 良ク出来タ 踊リダ！
+[wait][clear][end]
+
+msg_125:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ芸 堪能サセテ モラッタ
+ 楽シイ 一時 有リ難ク 思ウゾ
+[wait][clear][end]
+
+msg_126:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ コレハ！
+ 思ワヌ所デ 面白イ物ヲ 見ル事ガデキタ
+[wait][clear][end]
+
+msg_127:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 真ノ 踊リハ 踊ル本人ノミナラズ
+ 見テイル側ノ 心モ 踊ラセルモノ…
+ 天晴デアッタ！
+[wait][clear][end]
+
+msg_128:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヌヌヌヌヌ…
+ ウヌハ 我ヲ 侮辱シテイルノカ…
+ ユ 許セヌ
+[wait][clear][end]
+
+msg_129:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 生死ヲ賭ケタ 勝負ヲ 愚弄スル気カ！！
+[wait][clear][end]
+
+msg_130:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 一体 何処ダト 心得テイル！！
+[wait][clear][end]
+
+msg_131:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_132:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_133:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_134:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 其ノ真剣ナ 眼差シ…
+ 気ニナルナ…
+[wait][clear][end]
+
+msg_135:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌガ忠告 真摯ニ 受ケ止メヨウ
+[wait][clear][end]
+
+msg_136:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ老イタ 我ガ身
+ 何故ニ 気ニ掛ケルノダ…
+[wait][clear][end]
+
+msg_137:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 年老イテ 身寄リモ無キ 我ノ事
+ 案ジテ クレヨウトハ…
+[wait][clear][end]
+
+msg_138:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント優シキ 言葉…
+ 涙モ心モ 枯レ果テタトイウノニ
+ 心ニ 溢レル コレハ…
+[wait][clear][end]
+
+msg_139:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ言霊ニ 光ヲ 感ズル…
+ 我ノ穢レタ心モ 洗ワレテユク…
+[wait][clear][end]
+
+msg_140:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ瞳 泥沼ノ如ク濁リ
+ 邪悪ナル光ヲ 宿シテイル
+ 企ミハ 何ゾ！
+[wait][clear][end]
+
+msg_141:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_142:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_143:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_144:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 正義トハ…
+ 悠久ノ時スラ コノ我ニ 教エル事無キ 知識…
+ 我モ 其ノ意味 知リタイモノダ…
+[wait][clear][end]
+
+msg_145:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 正義ハ 常ニ 正シキ若者ヲ 導イテ来タ…
+ シカシ 彼等ヲ迷ワセルノモ マタ正義…
+ 確カニ 難問ダナ…
+[wait][clear][end]
+
+msg_146:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 考エヨ 若者ヨ…
+ 其レハ 未ダ 答エ無キ 難問
+ 答エ出サバ 我ニ 聞カセヨ
+[wait][clear][end]
+
+msg_147:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 戯ケメ！
+ 正義トハ 言葉デナク 心ダ
+ 其ノ様ナ 問答 時間ノ 無駄ゾ！
+[wait][clear][end]
+
+msg_148:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 実ニ 下ラヌ人間！
+ 正義ナド 語ルモノデハ ナイ！
+ 行動ガ 全テゾ！
+[wait][clear][end]
+
+msg_149:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 頭バカリノ 正義ナド 役ニ立タヌワ！
+ 心ト 行動デ 示セ コノ戯ケガ！
+[wait][clear][end]
+
+msg_150:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ 何ガ正義カハ 知ラヌガ
+ 我ガ 悪ダトイウ事ハ 知ッテイル…
+ 何時カハ 正義ニ 討タレル 運命ダト…
+[wait][clear][end]
+
+msg_151:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若者ヨ…
+ ウヌハ 正義ヲ 求メル者カ…
+ ヨモヤ 我ヲ 討タント…
+[wait][clear][end]
+
+msg_152:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ 悪魔…
+ 正義ト 対ヲ 成ス者…
+ 我ヲ 討ツカ…
+[wait][clear][end]
+
+msg_153:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 愛スレバコソ 素直ニナレヌ事モアル
+ 其レヲ 理解スルモ マタ 愛ダ…
+[wait][clear][end]
+
+msg_154:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 兄弟ハ 最モ近キ 他人トイウ…
+ 実ハ 最モ 付キ合イ難キ 他人ヤモ知レヌ
+[wait][clear][end]
+
+msg_155:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 子ハ 知ラヌ間ニ 成長シテイルモノ…
+ 詮索セヌ事モ マタ 愛…
+[wait][clear][end]
+
+msg_156:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 美シキ 兄弟愛…
+ 心温マルモノダ…
+[wait][clear][end]
+
+msg_157:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ガ胸ニ 去来スル 懐カシキ 思イ出
+ 今ハ無キ 兄ノ 優シサ…
+[wait][clear][end]
+
+msg_158:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心配スル兄 心配掛ケマイトスル弟…
+ ナント感動的ナ 場面…
+[wait][clear][end]
+
+msg_159:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ様ナ 見苦シイ 茶番 
+ 早々ニ 止メネバ 食ッテシマウゾ！
+[wait][clear][end]
+
+msg_160:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ冗談 マダ 続ケル様デ アレバ
+ ウヌ等ヲ 食イ殺シテ クレルゾ！
+[wait][clear][end]
+
+msg_161:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 一体 何処ダト 心得テイルノダ！！
+[wait][clear][end]
+
+msg_162:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_163:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_164:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_165:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ 人間ト酒トハ 神話ノ時代ヨリノ
+ 友デ アルカラナ…
+[wait][clear][end]
+
+msg_166:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 酒ハ百薬ノ長 マタ 百毒ノ長
+ 薬トナルカ 毒トナルカハ
+ 飲ム者ノ 心掛ケ次第ダ…
+[wait][clear][end]
+
+msg_167:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 酒ニ マツワル 言葉ノ多サ…
+ 其レコソ人間ガ 如何ニ酒ヲ 愛シテイルカノ
+ 証明デ アロウ
+[wait][clear][end]
+
+msg_168:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我モ 酒ヲ好ム者…
+ 同好ノ士トノ 出会イ
+ マタ 格別ノ物ダナ
+[wait][clear][end]
+
+msg_169:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 酒ヲ友トスル者…
+ 其レハ 即チ 我ヲ友トスル者
+ 出会エテ 嬉シイゾ
+[wait][clear][end]
+
+msg_170:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我モ 酒ヲ好ム者…
+ イツノ日カ ウヌト酒ヲ
+ 酌ミ交ワシタイモノヨ…
+[wait][clear][end]
+
+msg_171:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間如キニ 酒ノ真ノ味ナド解ラヌワ！
+[wait][clear][end]
+
+msg_172:
+[color(yellow)][var(msg_var_0)][color(white)]
+ モハヤ 今ノ ウヌ等ニトッテ
+ 酒ノ味ナド 思イ出ニ過ギヌワ！
+[wait][clear][end]
+
+msg_173:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 既ニ コノ世ニハ ウヌ等ガ飲ムベキ酒ナド
+ 一滴モ アラヌワ！
+[wait][clear][end]
+
+msg_174:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_175:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_176:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_177:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソコマデ人間ヲ 熱クサセルトハ…
+ 興味深イ 文化デアルナ
+[wait][clear][end]
+
+msg_178:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 太古ノ昔ヨリ 人間ノ血ニ受ケ継ガレタ
+ 集団ヘノ帰属意識ガ サセルノデ アロウカ？
+ 実ニ 興味深イ…
+[wait][clear][end]
+
+msg_179:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 古来 集団ガ崇メル 「シンボル」ヨリ 力ヲ得ル
+ コレヲ 「トーテミズム」ト言ウ…
+ 野球トハ 現代ノ「トーテム」デ アロウカ？
+[wait][clear][end]
+
+msg_180:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下ラヌ争イニ 我ヲ巻キ込ムデナイ！
+[wait][clear][end]
+
+msg_181:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌガ態度 気ニ入ラヌ！
+[wait][clear][end]
+
+msg_182:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間如キノ風俗ニ 興味ナド無イワ！
+[wait][clear][end]
+
+msg_183:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 出ない様に個性又は表の変更を要する
+[wait][clear][end]
+
+msg_184:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 出ない様に個性又は表の変更を要する
+[wait][clear][end]
+
+msg_185:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 出ない様に個性又は表の変更を要する
+[wait][clear][end]
+
+msg_186:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 大人ニハ大人ノ 子供ニハ子供ノ 見方ガアル
+ アタカモ 別ノ世界ノ 生物ノ如ク…
+ 不思議ナモノダナ…
+[wait][clear][end]
+
+msg_187:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 歳ヲ経ルト 大事ナ物ヲ得 同時ニ 失ッテイク…
+ ソレガ 大人ニ ナルトイウ事ナノカモ知レヌ…
+[wait][clear][end]
+
+msg_188:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 子供ノ大事ナ物 大人ノ守ルベキ物…
+ 徐々ニ 変ワッテ行ク…
+ ドチラガ 真ニ 大切ナノカ…
+[wait][clear][end]
+
+msg_189:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若キ者ト 年老イシ者…
+ 実ニ 面白キ 問答ダナ
+[wait][clear][end]
+
+msg_190:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若キ者ノ言葉 清々シク
+ 年老イシ者ノ言葉ハ 経験ニ 満チテイル…
+ ナカナカ楽シキ 話デアッタゾ
+[wait][clear][end]
+
+msg_191:
+[end]
+
+msg_192:
+[end]
+
+msg_193:
+[end]
+
+msg_194:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ニ 意見ヲ 求メルカ…
+ フム… 如何答エタモノカ…
+[wait][clear][end]
+
+msg_195:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 混乱シタ 現代ノ人間社会…
+ 悪魔タル 我ガ意見モ 必要ト イウ事カ…
+[wait][clear][end]
+
+msg_196:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間ガ 悪魔ニ 意見ヲ 求メル…
+ 世モ 変ワッタモノヨ…
+[wait][clear][end]
+
+msg_197:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌ等ガ如キ 頼モシキ青年達ニ 出会エ
+ 我ハ 神ニ 感謝セネバ ナルマイナ…
+[wait][clear][end]
+
+msg_198:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 行動セヌ者ニ 与エル助言ナド 無イ！
+[wait][clear][end]
+
+msg_199:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌ等如キノ 戯言ニ 関心ナド 無イワ！
+[wait][clear][end]
+
+msg_200:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 聞カレテモ 困ルナ…
+[wait][clear][end]
+
+msg_201:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ 愚カナ 老獣…
+ ウヌ等ノ 役ニハ 立テヌ…
+[wait][clear][end]
+
+msg_202:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ニ 期待シナイデ欲シイ…
+[wait][clear][end]
+
+msg_203:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 皮肉モ 極メレバ 立派ナ文化ト成リ得ル
+ 精進セヨ
+[wait][clear][end]
+
+msg_204:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 皮肉ハ 言ワレル内ガ 花ダナ…
+[wait][clear][end]
+
+msg_205:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間ヨ 面白イ事ヲ 言ウナ
+ 我ハ 怒ラヌ モット 気ノ利イタ
+ 皮肉ヲ 聞カセテミヨ
+[wait][clear][end]
+
+msg_206:
+[end]
+
+msg_207:
+[end]
+
+msg_208:
+[end]
+
+msg_209:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 悪魔ニ 皮肉トハ…
+ 末恐ロシキ 人間…
+[wait][clear][end]
+
+msg_210:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何トイウ事…
+ マサカ 人間ニ 皮肉ラレヨウトハ…
+[wait][clear][end]
+
+msg_211:
+[end]
+
+msg_212:
+[end]
+
+msg_213:
+[end]
+
+msg_214:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 女性ハ 子ヲ産ミ 育テル事ガ生業ダト
+ 思ッテオッタガ…
+ 我ノ 考エ 古カッタノカ…
+[wait][clear][end]
+
+msg_215:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 遠キ昔 古代ギリシャノ都ノ女性モ
+ 同ジ事ヲ 言ッテイタナ…
+ 何時ノ世モ 変ワラヌモノダ…
+[wait][clear][end]
+
+msg_216:
+[end]
+
+msg_217:
+[end]
+
+msg_218:
+[end]
+
+msg_219:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 男女ハ 互イヲ補イ合イテ 一ツト成スモノ
+ イガミ合イ ソノ義 忘ルルナド 言語道断！
+[wait][clear][end]
+
+msg_220:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ 愚カ者ガ！
+ 男トイウ 範疇デ 全テヲ括リ 批評スル
+ ウヌ等 女性ガ 嫌ウ 性的差別ト 同様ダ！
+[wait][clear][end]
+
+msg_221:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我モ 男…
+ 耳ガ 痛イナ…
+[wait][clear][end]
+
+msg_222:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ワ 我ハ タダ…
+[wait][clear][end]
+
+msg_223:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何時マデモ 枯レル事無キ泉…
+ 思イ出トハ ソノ様ナ モノデアロウナ…
+[wait][clear][end]
+
+msg_224:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ世デ 唯一 永久ニ 美シキモノ…
+ ソレハ 恐ラク 思イ出ヲ オイテ
+ 他ニハ 無イノデ アロウ…
+[wait][clear][end]
+
+msg_225:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 思イ出ノ中ノ 幼キ日々…
+ 決シテ 色アセル事ハ 無イ…
+[wait][clear][end]
+
+msg_226:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_227:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_228:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_229:
+[end]
+
+msg_230:
+[end]
+
+msg_231:
+[end]
+
+msg_232:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ヲ 誘惑シヨウトデモ 言ウノカ…
+ 珍シイ 人間ダナ
+[wait][clear][end]
+
+msg_233:
+[color(yellow)][var(msg_var_0)][color(white)]
+ マサカ 本気デハ ナカロウ…
+ 何ガ 目的ナノダ？
+[wait][clear][end]
+
+msg_234:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナカナカ 興味深イ 行動ダナ
+[wait][clear][end]
+
+msg_235:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 冗談ト 解ッテイテモ
+ 嬉シイモノダ
+[wait][clear][end]
+
+msg_236:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウラ若キ 女性ハ 見テイルダケデ
+ 心ガ 和ムワ…
+[wait][clear][end]
+
+msg_237:
+[color(yellow)][var(msg_var_0)][color(white)]
+ エエイ！
+ 人間ノ メス如キニ 興味ハ 無イワ！
+[wait][clear][end]
+
+msg_238:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_239:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_240:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_241:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ドウヤラ 近頃ハ 女性ノ方ガ
+ 積極的ナ様ダナ
+[wait][clear][end]
+
+msg_242:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ様ナ場デサエ 好配ヲ得ル努力ヲ
+ 惜シマヌハ 良キ子孫ヲ残ス為カ？
+ 人間ノ種ノ保存本能ハ 余程強イノデアロウ
+[wait][clear][end]
+
+msg_243:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 生涯連レ添ウ 相手ヲ選ブナラバ
+ 慎重ヲ 期ス事ダナ
+[wait][clear][end]
+
+msg_244:
+[end]
+
+msg_245:
+[end]
+
+msg_246:
+[end]
+
+msg_247:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 神聖ナル 戦イヲ 愚弄スルカ！
+ 好配ヲ 得ル前ニ 食イ殺シテクレルゾ！
+[wait][clear][end]
+
+msg_248:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ我ヲ 前ニ ソノ様ナ駄弁…
+ 侮辱モ 甚ダシイワッ！
+[wait][clear][end]
+
+msg_249:
+[color(yellow)][var(msg_var_0)][color(white)]
+ モシ 意中ノ相手ガ 居ルノナラバ
+ オ喋リハ ソノ程度ニ シテオケ…
+ サモナクバ 永久ニ 結バレヌ事トナルゾ！
+[wait][clear][end]
+
+msg_250:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 女性ガ 男性ヲ 品定メ スルナド…
+ 恐ロシイ世ニ ナッタモノダ…
+[wait][clear][end]
+
+msg_251:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我モ 陰デ 何ヲ言ワレテイル事カ…
+[wait][clear][end]
+
+msg_252:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間ノ酒カ…
+ 確カニ 魅力的ナ誘イデアルナ…
+[wait][clear][end]
+
+msg_253:
+[color(yellow)][var(msg_var_0)][color(white)]
+ マサカ コノ場デ 酒宴トハナ…
+ イヤハヤ 大シタ人間ダ！
+[wait][clear][end]
+
+msg_254:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ老イボレ コレ程嬉シイ誘イハナイ…
+ 礼ヲ言ウゾ…
+[wait][clear][end]
+
+msg_255:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_256:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_257:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_258:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 他人ヨリ 叱責サレル事
+ 久シク無カッタ…
+ 久々ノ感覚デアッタゾ
+[wait][clear][end]
+
+msg_259:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心ト人格ヲ 育ムニ於イテ 最モ重要ナ事
+ 其レハ 他人ノ 意見ニ 耳ヲ 傾ケル事ダ
+[wait][clear][end]
+
+msg_260:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「歯ニ衣着セヌ」トハ 正ニ ウヌ等ノ事
+ 実ニ 痛快デアル！
+[wait][clear][end]
+
+msg_261:
+[end]
+
+msg_262:
+[end]
+
+msg_263:
+[end]
+
+msg_264:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ如キ若僧ニ 説教サレル筋合イハナイ！
+[wait][clear][end]
+
+msg_265:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 悪魔ニ 説教トハ…
+ 恐ロシキ 人間…
+[wait][clear][end]
+
+msg_266:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウグッ…
+ ソ ソレハ モットモ…
+[wait][clear][end]
+
+msg_267:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 不快ニ 感ズル筈ノ 恐怖感ヲ 自ラ 煽ル…
+ 人間ノ 文化トハ 不思議ナモノヨ…
+[wait][clear][end]
+
+msg_268:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 恐ロシキ話 真ノ恐怖ハ 百話ノ後ニ訪レル…
+ 楽シミデアルナ…
+[wait][clear][end]
+
+msg_269:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ語リ口 天晴ナモノ
+ 我モ 興味ヲ ソソラレタ
+[wait][clear][end]
+
+msg_270:
+[end]
+
+msg_271:
+[end]
+
+msg_272:
+[end]
+
+msg_273:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ ソノ様ナ話 苦手ダ…
+[wait][clear][end]
+
+msg_274:
+[end]
+
+msg_275:
+[end]
+
+msg_276:
+[end]
+
+msg_277:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント 勇マシキ人間！
+ 敵ナガラ 天晴 デアルナ
+[wait][clear][end]
+
+msg_278:
+[end]
+
+msg_279:
+[end]
+
+msg_280:
+[end]
+
+msg_281:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 雄雄シク 散ッタ仲間ノ 冥福ヲ祈ル
+ 敵トハ言エ ナカナカ見上ゲタ 人間！
+[wait][clear][end]
+
+msg_282:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ仲間ハ 幸セダナ…
+[wait][clear][end]
+
+msg_283:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ス 済マヌ事ヲ…
+[wait][clear][end]
+
+msg_284:
+[end]
+
+msg_285:
+[end]
+
+msg_286:
+[end]
+
+msg_287:
+[end]
+
+msg_288:
+[end]
+
+msg_289:
+[end]
+
+msg_290:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 憎マレ口ヲ キイテモ
+ 心ノ中ハ 相手ヘノ愛デ満チテイル…
+ 面白イモノダナ 人間ハ…
+[wait][clear][end]
+
+msg_291:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 相手ヲ 思エバ思ウ程 ソノ気持チハ
+ 裏ヲ向イテシマウ…
+ ソコガ 人間ノ心理ノ 面白サダナ…
+[wait][clear][end]
+
+msg_292:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 敵デアッタトハ言エ 雄雄シク散ッタ戦士ニ
+ ナント言ウ 侮辱！
+ 許セヌ…
+[wait][clear][end]
+
+msg_293:
+[end]
+
+msg_294:
+[end]
+
+msg_295:
+[end]
+
+msg_296:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ガ力 漸ク理解シタ様ダナ！
+[wait][clear][end]
+
+msg_297:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 実ニ 気分ガ良イ！
+[wait][clear][end]
+
+msg_298:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我モ 戦ワズニ済ムナラバ
+ ソノ方ガ 良イナ
+[wait][clear][end]
+
+msg_299:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「エステ」ナル 美容ノ術ヲ受タナ…
+ 美シキ者ヲ見ルハ 目ノ保養トナル
+ 美シサニ 更ナル磨キヲカケヨ
+[wait][clear][end]
+
+msg_300:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 美シキ人間ヨ…
+ 常ニ 美ヲ求メ 努力ヲ惜シマヌ者
+ 精進セヨ…
+[wait][clear][end]
+
+msg_301:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 美ノ追求ハ 人間ノ文化ノ歴史ノ一部…
+ 「エステ」ナル業ハ ソノ集大成デ アロウ
+ 美シキ者ヲ 見ル事ガ出来 幸セデ アルナ…
+[wait][clear][end]
+
+msg_302:
+[color(yellow)][var(msg_var_0)][color(white)]
+ シカシ 得テシテ 就キタイ職ト 天職トハ
+ 異ナルモノ…
+[wait][clear][end]
+
+msg_303:
+ ウヌハ ソノ職 元ヨリ就キタイ職デ アッタカ？
+[choice(3)]小さい頃からの夢だったの…
+他にもたくさん夢があったわ…
+本当は、すぐにでも辞めたいんだけど…
+[end_choice][clear][end]
+
+msg_304:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 一ツノ夢ヲ 追イ続ケ 実現スル
+ 素晴ラシイ事ダナ…
+[wait][clear][end]
+
+msg_305:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 他ニモ 沢山カ…
+ 他ノ夢モ 知リタイモノダナ
+[wait][clear][end]
+
+msg_306:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我モ 幼キ頃 多クノ夢ガ アッタ…
+ 思イ出シタゾ 懐カシキ思イ出ダ…
+[wait][clear][end]
+
+msg_307:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナントイウ事ヲ…
+ 我ハ 悲シイゾ…
+[wait][clear][end]
+
+msg_308:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソンナ事デハ 何事モ 大成セヌ！
+[wait][clear][end]
+
+msg_309:
+ 教エテクレヌカ ウヌ等ノ 優シサノ訳ヲ
+[choice(3)]人間、愛が無ければ生きていけないから…
+情けは人の為ならずよ
+ホント騙され易い悪魔ね！
+[end_choice][clear][end]
+
+msg_310:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 愛カ…
+ ナカナカ 美シイ言葉ダナ…
+[wait][clear][end]
+
+msg_311:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ 人間デハ ナイワ！
+[wait][clear][end]
+
+msg_312:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ 情ケナド ソノ様ナモノカモ 知レンナ…
+[wait][clear][end]
+
+msg_313:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 正直ナ 人間ダナ…
+ ナカナカ 面白イ…
+[wait][clear][end]
+
+msg_314:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ヲ 欺クトハ…
+[wait][clear][end]
+
+msg_315:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ヲ 愚弄シタナ！
+ 許サンゾ！
+[wait][clear][end]
+
+msg_316:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 昔アッタ 美女モ 今ハ 醜女…
+ クレオパトラ 楊貴妃 小野小町…
+ 伝説ハ 真実ヲ 誇張スル
+[wait][clear][end]
+
+msg_317:
+ ウヌ等モ 伝説ノ美女ト 呼バレタイカ？
+[choice(3)]是非呼んでもらいたいわ！
+死んでから評価されても意味が無いわね
+そこまで言われると逆にキツイかな…
+[end_choice][clear][end]
+
+msg_318:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良カロウ…
+ 美女ト 呼バレルカハ 知ラヌガ
+ 我ガ ウヌヲ 伝説ニ シテヤロウ…
+[wait][clear][end]
+
+msg_319:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ ソレモ 真理ダナ…
+[wait][clear][end]
+
+msg_320:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナカナカ 謙虚ナ 娘ダナ…
+[wait][clear][end]
+
+msg_321:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 謙虚ヲ装ウノハ 止メテオケ！
+ 片腹痛イワ！
+[wait][clear][end]
+
+msg_322:
+ 真ノ 目的ヲ 言ッテミロ
+[choice(4)]カードが欲しいの
+契約して！
+貴方を殺す事よ
+立ち去って欲しいだけ
+[end_choice][clear][end]
+
+msg_323:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ 目的ハ 「カード」カ…
+[wait][clear][end]
+
+msg_324:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 色仕掛ケデ 我ヲ 落トセルト 思ッタカ！
+ 世ノ中 ソレホド 甘クハ無イワ！
+[wait][clear][end]
+
+msg_325:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何トイウ 人間…
+ 危ウク 騙サレル所デアッタ…
+[wait][clear][end]
+
+msg_326:
+[color(yellow)][var(msg_var_0)][color(white)]
+ クッ…
+ 人間如キニ 殺サレル程
+ 老イボレテ オランワ！
+[wait][clear][end]
+
+msg_327:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ノ事ガ 気ニ入ラヌカ…
+ 悲シキ事ヨ…
+[wait][clear][end]
+
+msg_328:
+ 遠慮ハ スルナ 恐レズニ 聞ケ
+[choice(4)]年齢は？
+家族は？
+趣味は？
+聞きたい事はないわ…
+[end_choice][clear][end]
+
+msg_329:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ 答エテヤリタイノハ ヤマヤマダガ
+ モハヤ 我モ 忘レテ シマッタ…
+[wait][clear][end]
+
+msg_330:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 年齢カ…
+ 我ハ 疾ウニ 忘レテシマッタ…
+ 辛イ 思イ出ト共ニ…
+[wait][clear][end]
+
+msg_331:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 懐カシイ事ヲ 思イ出サセテクレタナ…
+ 妻ト 三匹ノ息子ガイタ
+ モウ 誰モ 生キテハ オラヌガ…
+[wait][clear][end]
+
+msg_332:
+[color(yellow)][var(msg_var_0)][color(white)]
+ モウ 我ニ 家族ト呼ベル者ハ オラヌ…
+ モウ オラヌノダ…
+[wait][clear][end]
+
+msg_333:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ノ 趣味カ…
+ 我ハ 若者ト 話シテイル時ガ 至福ノ時ダ
+ 今 コノ時ノ様ニ…
+[wait][clear][end]
+
+msg_334:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ様ナ事ヲ 言ウナ…
+ 悲シク ナルデハナイカ…
+[wait][clear][end]
+
+msg_335:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心無キ技ハ ヤガテ綻ビヲ 生ズ…
+ 技ニ溺レ ヤガテ真実ヲ 見誤ル…
+[wait][clear][end]
+
+msg_336:
+ 罪無キ者ヲ 罪人ニセヌ様 気ヲツケロ…
+[choice(3)]その忠告、真摯に受け止めよう…
+貴方に言われるまでもない
+僕に限ってそんな事は有り得ない！
+[end_choice][clear][end]
+
+msg_337:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 期待シテイルゾ…
+[wait][clear][end]
+
+msg_338:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナカナカ素直ナ好青年…
+ 我ハ 嬉シイゾ！
+[wait][clear][end]
+
+msg_339:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ 頼モシイ！
+ 将来ガ 楽シミダナ
+[wait][clear][end]
+
+msg_340:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌハ 全ク解ッテ オラヌ！
+[wait][clear][end]
+
+msg_341:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 自分ノ 力量ガ マルデ解ッテオラヌ…
+ 恐ロシイ事ダ…
+[wait][clear][end]
+
+msg_342:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント 自惚レタ男！
+ ウヌガ 間違イヲ 犯ス前ニ
+ 我ガ 食イ殺シテクレルゾ！
+[wait][clear][end]
+
+msg_343:
+[color(yellow)][var(msg_var_0)][color(white)]
+ シカシ 何故ニ ソコマデ
+ コノ老イボレノ 身ヲ気遣ウ…
+[wait][clear][end]
+
+msg_344:
+ 何カ 訳ガ アロウ…
+[choice(3)]死んだ祖父を思い出したからだ
+哀れに思ったからだ
+油断をさせる為だ
+[end_choice][clear][end]
+
+msg_345:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ 我ノ面影 ウヌガ祖父ニ 似テイタカ…
+[wait][clear][end]
+
+msg_346:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 優シキ 人間ダ…
+ ウヌガ祖父ガ 羨マシイナ
+[wait][clear][end]
+
+msg_347:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 哀レニ 思ッテクレルカ…
+ 我ハ ソレダケデモ 嬉シイゾ…
+[wait][clear][end]
+
+msg_348:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 哀レダト…
+ ソノ言イ種 気ニ入ラヌ！
+[wait][clear][end]
+
+msg_349:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ワ 我ハ ウヌガ術中ニ…
+ 迂闊デアッタ…
+[wait][clear][end]
+
+msg_350:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ヲ 欺コウナド 百年早イワ！
+[wait][clear][end]
+
+msg_351:
+ 
+[choice(1)]
+[end_choice][clear][end]
+
+msg_352:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_353:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_354:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_355:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_356:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_357:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_358:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_359:
+[choice(0)][end_choice][clear][end]
+
+msg_360:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_361:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_362:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_363:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_364:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_365:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_366:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 古来 神ノ声ヲ 聞ク者ハ
+ 純潔ナル 乙女ト 決マッテイル…
+[wait][clear][end]
+
+msg_367:
+ ウヌハ 純潔カ？
+[choice(3)]そ、そうよ…
+残念ながら違うのよねぇ
+何を聞くかと思えば、このエロじじい！
+[end_choice][clear][end]
+
+msg_368:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ歳デ 今時 珍シイナ…
+[wait][clear][end]
+
+msg_369:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレハ 良カッタ！
+ ウヌガ耳ニハ 正シキ神ノ声ガ
+ 聞コエル事デアロウ！
+[wait][clear][end]
+
+msg_370:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント言ウ事…
+ 不貞ノ巫女ガ 預言ハ 不吉ノ徴…
+[wait][clear][end]
+
+msg_371:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナントイウ事！
+ 不貞ノ巫女ナドニ 正シキ神ノ声ナド
+ 聞コエヌワッ！
+[wait][clear][end]
+
+msg_372:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「エロジジイ」トハ 言ウモノダナ…
+ ソコマデ率直ニ 言ワレルト
+ 却ッテ 清々シイ気モ スルワ！
+[wait][clear][end]
+
+msg_373:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何タル言イ種！
+ 我ヲ 侮辱スル気カ！
+[wait][clear][end]
+
+msg_374:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 思イ出ス…
+ 我モ 若キ頃 良キ伴侶ニ 恵マレ
+ 幸セデアッタ…
+[wait][clear][end]
+
+msg_375:
+ ソノ妻モ 今ハ無イ…
+[choice(3)]気を落とさないで…
+何をクヨクヨしてんのよ、男でしょ！
+私で良かったら結婚してあげるわよ♥
+[end_choice][clear][end]
+
+msg_376:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 慰メテクレルカ…
+ 優シキ人間ダナ
+[wait][clear][end]
+
+msg_377:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ様ナ 陳腐ナ慰メナド 要ラヌワ！
+[wait][clear][end]
+
+msg_378:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ言葉 生気ニ 溢レテイル！
+ 今ノ一言 我ガ胸ニ 響イタゾ！
+[wait][clear][end]
+
+msg_379:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 其ノ様ナ事 ウヌ如キニ 言ワレズトモ
+ 解ッテオルワ！
+[wait][clear][end]
+
+msg_380:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレハ 本気カ？
+[wait][clear][end]
+
+msg_381:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 嘘ト 判ッテモ 嬉シイモノダ…
+[wait][clear][end]
+
+msg_382:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウム…
+ シカシ ウヌノ 踊リニ見エル 寂シサ
+ 作リ物デハ アルマイ…
+[wait][clear][end]
+
+msg_383:
+ ソノ 寂シサノ所以 聞カセテ クレヌカ？
+[choice(3)]本当に親友って呼べる友達っているのかな…
+私、本当に結婚できるかな…
+別に寂しくなんてないってば！
+[end_choice][clear][end]
+
+msg_384:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若キ頃 誰モガ一度ハ 疑問ニ思ウ事ダナ…
+ 我モ 同ジ悩ミヲ 抱イタ事ガ アル
+ 人間モ 悪魔モ 同ジダト イウ事ダナ
+[wait][clear][end]
+
+msg_385:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナラバ 我ガ 友ト ナロウカ？
+ ナニ 我ハ 構ワヌ…
+ 寧ロ 嬉シイ程ダ！
+[wait][clear][end]
+
+msg_386:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレハ 言ワバ恋ノ悩ミ…
+ 若サ故ダナ…
+ 我ニハ 遠イ昔ノ 思イ出ニ過ギヌガ…
+[wait][clear][end]
+
+msg_387:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 実ニ 下ラヌ悩ミ！
+ ウヌノ悩ミナド 聞カネバ良カッタワ！
+[wait][clear][end]
+
+msg_388:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 強ガリカ…
+ 我ハ 信用デキヌト イウ事ダロウカ…
+[wait][clear][end]
+
+msg_389:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ガ心配 無駄トデモ 言ウカ！
+[wait][clear][end]
+
+msg_390:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ如キ輩 増エル事モ
+ 人ノ世 乱レタル 顕レ
+ コノ様ナ 時代 必ズ英雄ガ 現レル！
+[wait][clear][end]
+
+msg_391:
+ …モシヤ ウヌガ 英雄カ？
+[choice(3)]俺は、ただの盗聴屋さ…
+そうだ、俺が英雄だ！
+英雄なんざ夢物語さ…
+[end_choice][clear][end]
+
+msg_392:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 謙遜スルトハ ナカナカノ者…
+ 我ハ 感心シタゾ！
+[wait][clear][end]
+
+msg_393:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヤハリ タダノ犯罪者カ！
+[wait][clear][end]
+
+msg_394:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヤハリ…
+ 今ハ 犯罪者ニ 身ヲ ヤツシテイテモ
+ ソノ オーラ 只者デナイ事ヲ 示シテイル…
+[wait][clear][end]
+
+msg_395:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ 頼モシイ！
+ ウヌハ ナカナカノ 傑物デアルナ！
+[wait][clear][end]
+
+msg_396:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソウカモ 知レン…
+ 悲シイガ ソレガ 現実カ…
+[wait][clear][end]
+
+msg_397:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント 夢無キ 輩！
+ 夢無キ者ニ 生キテ行ク資格ナド無イ！
+[wait][clear][end]
+
+msg_398:
+[color(yellow)][var(msg_var_0)][color(white)]
+ マタ 神 悪魔モ 同様ニ 酒ヲ 友トスル
+ 我モ 例ニ漏レズ 酒ヲ愛ス者…
+[wait][clear][end]
+
+msg_399:
+ 若者ヨ 何時カ 酒ヲ酌ミ交ワソウゾ！
+[choice(3)]そいつぁ面白ぇ！生きてまた会えたらな
+けっ、誰がてめぇと…酒が不味くなるぜ！
+てめぇの死骸に酒ぇ掛けといてやるぜぇ！
+[end_choice][clear][end]
+
+msg_400:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 相イ期スル 遥カナル 雲漢ニ…
+ 期待シテ 待ッテイルゾ
+[wait][clear][end]
+
+msg_401:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレデ 当分ハ 死ンデハナラヌ
+ 理由ガデキタ…
+ ウヌト 出会エタ事 感謝シヨウ！
+[wait][clear][end]
+
+msg_402:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 寂シイ事ヲ…
+[wait][clear][end]
+
+msg_403:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 死ヲ賭シテ 戦イシ者ノ間ニハ
+ 不思議ト 友情ガ 生マレルモノ…
+ ソノ約束 我モ 乗ロウ！
+[wait][clear][end]
+
+msg_404:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_405:
+[choice(0)][end_choice][clear][end]
+
+msg_406:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_407:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_408:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_409:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_410:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_411:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_412:
+ トコロデ ドノ様ナ酒ヲ 馳走シテクレルノダ？
+[choice(3)]俺の愛するバーボンだぜぇ…
+最高級のドン・ペリだ！
+そこらの水溜りでも舐めてな！
+[end_choice][clear][end]
+
+msg_413:
+[color(yellow)][var(msg_var_0)][color(white)]
+ マサカ 毒ナド 入ッテハ オラヌダロウナ…
+[wait][clear][end]
+
+msg_414:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ様ナ 安酒デ 我ヲ 持テ成ス 積モリカ！
+[wait][clear][end]
+
+msg_415:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 戦場デサエ 己ガ 最高級ノ酒ヲ持参スル…
+ 傑物カ 愚者カ タダノ飲兵衛カ…
+[wait][clear][end]
+
+msg_416:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 最高級トハ 有難キ事！
+[wait][clear][end]
+
+msg_417:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ニ 向カイテ 面白キ事ヲ！
+ 気ニ入ッタゾ！
+[wait][clear][end]
+
+msg_418:
+ トコロデ ソレハ ドノ様ナ モノナノダ？
+[choice(3)]球ぁ投げて棒で打って走るってぇ競技だ
+まぁ平たく言やぁ、戦争みてぇなもんだ
+てめぇ知らねぇのか？無知な奴だぜ…
+[end_choice][clear][end]
+
+msg_419:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何処ガ 面白イノダ？
+ 人間ハ 実ニ 不思議ナ 生物ダナ…
+[wait][clear][end]
+
+msg_420:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 投ゲテ打ッテ走ル…
+ 人間ガ ソレヲ行ッテイル所ヲ想像スルト
+ 可笑シキモノガアル！
+[wait][clear][end]
+
+msg_421:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ 平和ナ 日本デ 戦争トハ…
+[wait][clear][end]
+
+msg_422:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌ等ノ如キ輩ガ 世界ノ平和ヲ 乱スノダ！
+[wait][clear][end]
+
+msg_423:
+
+
+[end]
+
+msg_424:
+ ドウダ ウヌハ 歩ミ出シタカ？
+[choice(2)]ああ、貴様に言われなくともな
+そう言われると自信がないな…
+[end_choice][clear][end]
+
+msg_425:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソ ソレハ 失礼シタ…
+[wait][clear][end]
+
+msg_426:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ 意外ナ返答ダナ…
+ シカシ 時ニハ 冷静ニ 実ナル我ガ身ヲ
+ 振リ返ル事モ 大切ダ！
+[wait][clear][end]
+
+msg_427:
+[end]
+
+msg_428:
+[end]
+
+msg_429:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 古ヨリ 悪魔ハ 忌ミ嫌ワレ
+ 邪ナル者ノ 信仰ノ対象デアッタ
+ 正シキ者ノ目ハ 常ニ神ニ向ケラレテイタ…
+[wait][clear][end]
+
+msg_430:
+ ウヌ等ハ コノ我ノ言葉ヲ信ジ 意見ヲ求メルカ？
+[choice(3)]ああ、信じてやろう
+信じるかどうかは、聞いてからだな
+信じる訳が無かろう…
+[end_choice][clear][end]
+
+msg_431:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 悪魔ノ話ヲ 鵜呑ミニスルカ！
+ ウヌハ ナント愚カナノダ！
+[wait][clear][end]
+
+msg_432:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ賢明ナ若者…
+ ウヌハ 正シク コノ国ヲ
+ 背負ッテ行クヤモ 知レンナ…
+[wait][clear][end]
+
+msg_433:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレハ モットモダナ！
+[wait][clear][end]
+
+msg_434:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヤハリ 悪魔デハ 信用サレヌカ…
+[wait][clear][end]
+
+msg_435:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 己ガ 聞イテオキナガラ…
+ 許セヌ！
+[wait][clear][end]
+
+msg_436:
+ 他ニ 我ニ 言イタキ事ハ アラヌカ？
+[choice(3)]喋りが少々古臭いな…
+貴様…臭いがきついぞ！
+頭の良い振りをするな！
+[end_choice][clear][end]
+
+msg_437:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレハ 鋭イ…
+ 我モ 気ニナッテイタ事ダ！
+ ナカナカ 良イ指摘ダナ
+[wait][clear][end]
+
+msg_438:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレガ 言葉ノ美シサダ！
+ ウヌハ 全ク解ッテオラヌ！
+[wait][clear][end]
+
+msg_439:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソウデアルカ…
+ 気ガ付カナカッタゾ
+ 有難キ 指摘 礼ヲ言オウ
+[wait][clear][end]
+
+msg_440:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 振リナド シテオラヌワ！
+[wait][clear][end]
+
+msg_441:
+ ドウシタ 皮肉ハ 無イノカ？
+[choice(3)]（面白い皮肉）
+（痛烈な皮肉）
+愚か者め
+[end_choice][clear][end]
+
+msg_442:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_443:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_444:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_445:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_446:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_447:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_448:
+[color(yellow)][var(msg_var_0)][color(white)]
+ イヤ…
+ 既ニ 夢掴ム為 精進シテイナケレバナラヌ…
+[wait][clear][end]
+
+msg_449:
+ ウヌハ 夢掴ム為 ドノ様ナ事ニ尽力シテイル？
+[choice(3)]Ｓｔｙｌｅの為にＤｉｅｔですわ！
+読書ですわ！教養も必要ですから…
+花嫁修行を…あの人の為に…
+[end_choice][clear][end]
+
+msg_450:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ 食事ヲ制限シ 理想ノ体型ヲ掴ムカ…
+ 我ニハ 到底 耐エラレンナ…
+[wait][clear][end]
+
+msg_451:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 食事制限トハ 何トイウ荒行！
+ マサカ 徳高キ方デハ…
+ 失礼ツカマツッタ…
+[wait][clear][end]
+
+msg_452:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ 感心ナ…
+ シカシ 本ヨリ得ラレル知識ヨリ 大切ナ物モアル
+ 知識ニ 埋モレヌ様 気ヲ付ケヨ…
+[wait][clear][end]
+
+msg_453:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 読書ナド 趣味ニ過ギヌゾ！
+[wait][clear][end]
+
+msg_454:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 愛シキ君ノ為 花嫁修行トハ
+ ナント直向キナ女性…
+ 良イ話 聞カセテモラッタ！
+[wait][clear][end]
+
+msg_455:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレハ ウヌガ夢トハ 異ナルデハナイカ！
+ ソレガ生業 所詮 腰掛ケニ過ギヌカ！
+[wait][clear][end]
+
+msg_456:
+ ウヌニハ 情熱ヲ 持チ続ケル自信ハ アルカ？
+[choice(2)]Ｏｆ ｃｏｕｒｓｅ！当然ですわ！
+自信なんて…ありませんわ…
+[end_choice][clear][end]
+
+msg_457:
+
+
+[end]
+
+msg_458:
+
+
+[end]
+
+msg_459:
+
+
+[end]
+
+msg_460:
+
+
+[end]
+
+msg_461:
+
+
+[end]
+
+msg_462:
+
+
+[end]
+
+msg_463:
+
+
+[end]
+
+msg_464:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_465:
+[choice(0)][end_choice][clear][end]
+
+msg_466:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_467:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_468:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_469:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_470:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_471:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_472:
+ ウヌ等ハ コノ我ノ言葉ヲ信ジ 意見ヲ求メルカ？
+[choice(3)]Ｏｆ ｃｏｕｒｓｅ！信じますわ！
+信じるかどうかは…聞いてみませんと…
+Ｎｏ！信じるなんて…
+[end_choice][clear][end]
+
+msg_473:
+
+
+[end]
+
+msg_474:
+
+
+[end]
+
+msg_475:
+
+
+[end]
+
+msg_476:
+
+
+[end]
+
+msg_477:
+
+
+[end]
+
+msg_478:
+
+
+[end]
+
+msg_479:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ秘メタル力…
+ ウヌナラバ 望ムモノアラバ 何デモ
+ 手ニスル事 叶ウヤモ 知レヌ…
+[wait][clear][end]
+
+msg_480:
+ ウヌノ 望ムモノハ 何ダ？
+[choice(4)]平和な世界だ…
+世界征服だな
+貴様等のいない世界だ
+平穏な日々…
+[end_choice][clear][end]
+
+msg_481:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヤハリ 我ノ 思ウ通リノ若者…
+[wait][clear][end]
+
+msg_482:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 面白イ事ヲ 言ウナ！
+[wait][clear][end]
+
+msg_483:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ冗談 笑エヌゾ！
+[wait][clear][end]
+
+msg_484:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …確カニ 人間ニトッテ 我々悪魔ハ 忌ムベキ敵
+ ウヌガ意見 悲シイガ 認メネバナラヌノカモ…
+[wait][clear][end]
+
+msg_485:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ ソレモ ヒトツノ 考エ方カ…
+[wait][clear][end]
+
+msg_486:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 平穏ナ日々ダト…
+ 笑ワセルナ！
+[wait][clear][end]
+
+msg_487:
+ ウヌニハ 情熱ヲ 持チ続ケル自信ハ アルカ？
+[choice(2)]当然だ…
+自信は無い…
+[end_choice][clear][end]
+
+msg_488:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 口デハ 「無イ」ト 言ッテハイルガ
+ ソノ瞳ノ奥デ 揺ラメク炎…
+ ウヌノ情熱 並大抵ノ物デハ アルマイ…
+[wait][clear][end]
+
+msg_489:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 先刻ノ剣幕ハ 空威張リカ！
+[wait][clear][end]
+
+msg_490:
+
+
+[end]
+
+msg_491:
+
+
+[end]
+
+msg_492:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ガ心ヲ占メル 美シキ思イ出…
+ 今ハ亡キ 妻トノ日々…
+[wait][clear][end]
+
+msg_493:
+ 既ニ亡キ者ヲ 忘ラレヌハ 愚カデアロウカ？
+[choice(2)]そんな事はない
+愚かだ
+[end_choice][clear][end]
+
+msg_494:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソウカ…
+ ソウ言ッテ モラエルト 有リ難イナ
+[wait][clear][end]
+
+msg_495:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間如キノ 慰メノ言葉ナド
+ 嬉シクモ ナイワ！
+[wait][clear][end]
+
+msg_496:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナカナカ 言ッテクレルワ…
+ 気ニ入ッタゾ…
+[wait][clear][end]
+
+msg_497:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソコマデ ハッキリ言ワズトモ…
+[wait][clear][end]
+
+msg_498:
+
+
+[end]
+
+msg_499:
+
+
+[end]
+
+msg_500:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_501:
+[choice(0)][end_choice][clear][end]
+
+msg_502:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_503:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_504:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_505:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_506:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_507:
+[color(yellow)][var(msg_var_0)][color(white)]
+[wait][clear][end]
+
+msg_508:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 命短キ人ノ子ヨ 我ハ 不思議ニ 思ウ…
+ 我ガ寿命 年老イタトハ言エ 若キ ウヌ等ヨリ
+ 遥カニ 生キ長ラエルデアロウ…
+[wait][clear][end]
+
+msg_509:
+ シカシ 死ノ恐怖ヲ 身近ニ感ズル 何故ナノダ？
+[choice(3)]自ら老いを認めた時に死んだも同然だから
+わからない
+お前の命は、ここで終わるから…
+[end_choice][clear][end]
+
+msg_510:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ ソレモ ヒトツノ 考エ方カ…
+[wait][clear][end]
+
+msg_511:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ 死スルマデニ コノ答エヲ
+ 見ツケラレルノカ…
+[wait][clear][end]
+
+msg_512:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 考エモセズ 答エオッテ！
+ 気ニ入ラヌワ！
+[wait][clear][end]
+
+msg_513:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 面白イ事ヲ言ウナ…
+ ソレハソレデ 良イノカモ知レヌ…
+[wait][clear][end]
+
+msg_514:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 命短キ人ノ子ヨ！
+ 更ニ短キ命ヲ 望ム様ダナ！
+[wait][clear][end]
+
+msg_515:
+ ウヌハ コノ差ヲ ドウ思ウ？
+[choice(3)]一生の価値は長さではない
+不公平だと思う
+お前の命は、今終わるから差は気にしない
+[end_choice][clear][end]
+
+msg_516:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナカナカ良イ事ヲ言ウ！
+[wait][clear][end]
+
+msg_517:
+[color(yellow)][var(msg_var_0)][color(white)]
+ シカシ コノ世ヨリ 不公平ガ無クナル事ハ無イ…
+ コレモ 仕方無キ事カモ 知レヌ…
+[wait][clear][end]
+
+msg_518:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …ヤハリ ウヌノ如キ 頭ノ軽キ輩ノ命ナド
+ 短クテ 当然カモ知レンナ！
+[wait][clear][end]
+
+msg_519:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 永キ時ヲ経テ 漸ク解ル事モアル…
+ 若キ頃ニハ 気付キモ シナイ事…
+ 空ノ色 風ノ香リ 草花ノ歌…
+[wait][clear][end]
+
+msg_520:
+ 悪魔ト人トノ関係… コノママデ良イノダロウカ？
+[choice(3)]もっと親睦を図るべきだ
+もっと憎み合うべきだ
+このままで良い
+[end_choice][clear][end]
+
+msg_521:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 馴レ合イカラ 新タナ方法ハ生マレヌワ！
+[wait][clear][end]
+
+msg_522:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナルホド…
+ ソレモ ヒトツノ 考エ方カ…
+ シカシ…
+[wait][clear][end]
+
+msg_523:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良カロウ…
+ ウヌノ望ミダ 後悔スルナラバ アノ世デ セヨ！
+[wait][clear][end]
+
+msg_524:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 変ワラヌ事…
+ マサカ 人間ガ ソレヲ 望ムトハ…
+[wait][clear][end]
+
+msg_525:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 変化ヲ 望マヌ者ニ 生キテイル価値ナド無イ！
+[wait][clear][end]
+
+msg_526:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ頃 思ウ時ガアル…
+ 森羅万象 普ク意味ヲ 持ッテイルト…
+ シカシ 我等 悪魔ノ意味ヲ 見出セヌ…
+[wait][clear][end]
+
+msg_527:
+ ウヌハ 悪魔ノ意味ヲ 知ッテイルカ？
+[choice(3)]悪魔とは諸悪の象徴
+人間と同じ意味
+わからない
+[end_choice][clear][end]
+
+msg_528:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレハ 人間ノ解釈ニ過ギヌガ…
+ 否定スル事ハ デキヌナ…
+[wait][clear][end]
+
+msg_529:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我等ヲ 愚弄スル積モリカ！
+[wait][clear][end]
+
+msg_530:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 確カニ 我等ハ ウヌ等ヨリ生マレタトモ言エル…
+ ソノ意見 モットモカモ知レンナ…
+[wait][clear][end]
+
+msg_531:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我等ト 人間ハ 同ジダト…
+ 心広キ 人間ダナ…
+[wait][clear][end]
+
+msg_532:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …我ハ 永キ歳月 人間ノ暮ラシヲ 見テキタ…
+ 愚カナル者 強欲ナル者 虚偽満ツル者
+ 邪ナル者…
+[wait][clear][end]
+
+msg_533:
+ ウヌ等人間ハ 存在スベキデナイト思ウノダガ…
+[choice(3)]そんな事はない
+その通りだ
+言ってる事が解らない
+[end_choice][clear][end]
+
+msg_534:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソウダ ソレナノダ！
+ 自ラノ存在ニ対スル 飽クナキ欲望…
+ ソレガ 今ノ我ニ 欠ケテイル物ナノダ！
+[wait][clear][end]
+
+msg_535:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ノ言葉ヲ 否定スルカ…
+ 剛毅ヨノ…
+[wait][clear][end]
+
+msg_536:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナント自虐的ナ…
+ ヤハリ 人間ハ 変ワッテシマッタノカ…
+[wait][clear][end]
+
+msg_537:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレハ 失礼シタ…
+ ウヌニハ 難シ過ギル話デアッタナ
+[wait][clear][end]
+
+msg_538:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヤハリ ウヌノ如キ 頭ノ軽キ輩ニ
+ 存在ニ意義ナド 無イ！
+[wait][clear][end]
+
+msg_539:
+ 人間ヨ… 我ガ腹ノ住人ニナル覚悟 決マッタカ？
+[choice(3)]そんな覚悟を決めるつもりはない
+覚悟を決めた
+言ってる事が解らない
+[end_choice][clear][end]
+
+msg_540:
+[color(yellow)][var(msg_var_0)][color(white)]
+ イイヤ…
+ ウヌノ覚悟ガ出来ヨウガ出来マイガ
+ 我ハ 食ラウ！
+[wait][clear][end]
+
+msg_541:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 考エガ 変ワッタ！
+ ウヌノ如キ 阿呆ハ 食ウヨリ
+ 見テ 楽シムモノダナ
+[wait][clear][end]
+
+msg_542:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …人間ヨ 奢ルナ
+ 食物連鎖 延イテハ 生態系ノ長タルト
+ 自ラ 霊長ト名乗ル輩…
+[wait][clear][end]
+
+msg_543:
+ ウヌ等如キハ 我等ガ餌ゾ！ 解ッタカ！
+[choice(2)]解った
+それは違う
+[end_choice][clear][end]
+
+msg_544:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何故ニ 否定セヌ…
+ 何カ 企ンデイルノカ…
+[wait][clear][end]
+
+msg_545:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナラバ ウヌヲ食ラウゾ…
+ 異存ハ無カロウ！
+[wait][clear][end]
+
+msg_546:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ コレマデ 幾多モノ人間ヲ 見テキタ…
+ シカシ ウヌハ 珍シイ…
+ 未ダニ 少シモ 理解デキヌ…
+[wait][clear][end]
+
+msg_547:
+ ウヌハ 一体 ドノ様ナ人間ナノダ？
+[choice(4)]優しい人間
+残酷な人間
+愚かな人間
+自分でも解らない
+[end_choice][clear][end]
+
+msg_548:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 普通ハ 自分デハ 言ワヌモノダガ…
+ シカシ ウヌナラバ ソレモ 良カロウ
+[wait][clear][end]
+
+msg_549:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ヤハリ ソレガ ウヌノ 本性カ！
+[wait][clear][end]
+
+msg_550:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 愚カナ人間…
+ 自ラヲ 愚カト評スル事ガ デキル者コソ
+ 真ノ賢者カモ 知レヌ…
+[wait][clear][end]
+
+msg_551:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我モ 自分ノ事ガ 一番 解ラヌ…
+ ウヌモ 我ト 同ジダナ…
+[wait][clear][end]
+
+msg_552:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌニ ヤリタイ物ガ アル
+ [color(green)]占札／ＦＯＯＬノ カード[color(white)]ダ
+ コレハ 貴重ナ物 大事ニ スルノダゾ…
+[wait][clear][end]
+
+msg_553:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナカナカ 興味深イ人間…
+ 今少シ 話相手ヲ シテイタイノダガ
+ 我ハ 急用ヲ 思イ出シタ
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 代ワリニ [color(green)][var(msg_var_4)][color(white)]ノカードヲ
+ [color(green)][var(msg_var_5)]枚[color(white)]ヤロウ
+[wait][clear][end]
+
+msg_554:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [color(green)]フリータロット[color(white)]モ [color(green)][var(msg_var_6)]枚[color(white)] ヤロウ
+[wait][clear][end]
+
+msg_555:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …ウヌハ 少々 欲張リ過ギテイル様ダナ
+ モウ カードハ 持テヌ様ダ
+ 今回ハ 諦メル事ダナ
+[wait][clear][end]
+
+msg_556:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 大事ニ 使ウノダゾ…
+[wait][clear][end]
+
+msg_557:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 古ヨリ 悪魔ハ 認メシ者ト [color(green)]契約[color(white)]ヲ交ワスモノ…
+ 我ハ 既ニ ソノ気ダガ…
+[wait][clear][end]
+
+msg_558:
+[color(yellow)][var(msg_var_0)][color(white)]
+ シカシ ウヌノ [color(green)]レベルハ マダ低イ[color(white)]…
+ 残念ダガ 諦メルトシヨウ…
+ ソノ代ワリ…
+[wait][clear][end]
+
+msg_559:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 修行ヲ積ンデ マタ 来ルノダ…
+ ソノ時 約束ヲ 果タソウ…
+ 待ッテイルゾ
+[wait][clear][end]
+
+msg_560:
+ ドウスル [color(green)]契約[color(white)]ヲ 結ブカ？
+[choice(2)]はい
+いいえ
+[end_choice][clear][end]
+
+msg_561:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレデ ウヌト 我ハ 血ノ盟約デ結バレシ者…
+ 次ニ 会ウノガ 楽シミダ…
+[wait][clear][end]
+
+msg_562:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 残念ダナ…
+ シカシ マタ 出会ウ事モアロウ…
+ ソレデハ サラバダ
+[wait][clear][end]
+
+msg_563:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …ウヌハ 少々 欲張リ過ギテイル様ダナ
+ モウ ソレ以上 契約ハ 出来ヌゾ
+ ソレトモ [color(green)]契約破棄[color(white)]デモ スルカ？
+[wait][clear][end]
+
+msg_564:
+ ナラバ [color(green)]破棄[color(white)]スル者ヲ 選ベ
+[choice(4)][pact_demon(0)]
+[pact_demon(1)]
+[pact_demon(2)]
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_565:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …モハヤ コレマデダナ
+ ウヌトノ契約ハ [color(green)]破棄[color(white)]サセテ 頂コウ
+ 我ヲ 怒ラセタ事 後悔スルガ 良イ！
+[wait][clear][end]
+
+msg_566:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウ ウヌノ如キ 人間ト 契約シテイタノデハ
+ 我ガ心臓ガ 持タヌ…
+ コノ契約 [color(green)]破棄[color(white)]サセテ 頂キタイ…
+[wait][clear][end]
+
+msg_567:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ 年老イタ獣…
+ 出来レバ モウ少シ 生キテイタイカラナ…
+ 危ウキ者ニハ 近寄ラヌ事ニシヨウ…
+[wait][clear][end]
+
+msg_568:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ヲ 怒ラセタ事 後悔スルガ 良イ！
+[wait][clear][end]
+
+msg_569:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 我ハ 年老イタ獣…
+ 出来レバ モウ少シ 生キテイタイカラナ…
+ ウヌニハ 逆ラワヌ事トシヨウ…
+[wait][clear][end]
+
+msg_570:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナカナカ 楽シメタ…
+ 礼ト言ッテハ 何ナノダガ…
+[wait][clear][end]
+
+msg_571:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [color(green)][var(msg_var_1)][color(white)]ヲ ヤロウ
+ 大事ニ シロ
+[wait][clear][end]
+
+msg_572:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [color(green)]￥[var(msg_var_2)][color(white)] ヤロウ
+ 金ハ 幾ラアッテモ 困ラヌデアロウ…
+[wait][clear][end]
+
+msg_573:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌノ[color(green)]傷ヲ癒シテ[color(white)]ヤロウ
+ コレカラモ ウヌノ 戦イハ
+ 続クノデ アロウカラナ…
+[wait][clear][end]
+
+msg_574:
+[color(yellow)][var(msg_var_0)][color(white)]
+ デハ 死ヌデ ナイゾ…
+[wait][clear][end]
+
+msg_575:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ コノ裏道ノ何処カニ 「武将ノ祠」ナルモノガアル
+ 探シテミルノモ 良イダロウ…
+[wait][clear][end]
+
+msg_576:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ ココノ床 所々ガ 汚レテイルガ
+ 「キヨヒメ」ナラバ 綺麗にシテクレルダロウ
+[wait][clear][end]
+
+msg_577:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ 「Ｂ２ルート」ハ 宝ノ山トイウ話…
+ 我ニハ 興味ナド 無イガ…
+[wait][clear][end]
+
+msg_578:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ 「Ｂ３ルート」ハ 宝ノ山トイウ話…
+ 我ニハ 興味ナド 無イガ…
+[wait][clear][end]
+
+msg_579:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ 「ラスプーチン」ガ「配電盤ノ鍵」ヲ 持ッテイル
+ 奴メ 何ニ 使ウ気カ 知ラヌガ…
+[wait][clear][end]
+
+msg_580:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ 鏡ニハ 右左ガ 逆ニ映ル…
+ コノ話 ウヌニハ 理解デキルナ…
+[wait][clear][end]
+
+msg_581:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ ココノ最モ 深キ所ニ 謎ノ「宝物庫」ガアル
+ 入リ口ガ無ク 誰モ入ッタ事ガ 無イノダガ…
+[wait][clear][end]
+
+msg_582:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ 「宝物庫」ニ 入リタクバ
+ 「リヴァイアサン」ニ 頼ムガ良イ…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 奴ナラバ ソノ力デ 宝物庫ノ壁スラ
+ 壊スデアロウカラナ
+[wait][clear][end]
+
+msg_583:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ 動カヌ 「機械橋」 翼ヲ持ツ「セケル」ナラバ
+ 動カセルヤモ 知レヌ…
+[wait][clear][end]
+
+msg_584:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ ウヌ等ガ 難儀シテイル 三年Ｂ組ノ火
+ 「ジャックフロスト」ナラバ 消セルヤモ…
+[wait][clear][end]
+
+msg_585:
+[end]
+
+msg_586:
+[end]
+
+msg_587:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノ日本刀[color(white)]ニハ [color(orange)]秘メタル力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_588:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノ日本刀[color(white)]ニハ [color(orange)]未知ノ力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_589:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノハンドガン[color(white)]ニハ [color(orange)]秘メタル力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_590:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノハンドガン[color(white)]ニハ [color(orange)]未知ノ力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_591:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノコイン[color(white)]ニハ [color(orange)]秘メタル力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_592:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノコイン[color(white)]ニハ [color(orange)]未知ノ力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_593:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノグラブ[color(white)]ニハ [color(orange)]秘メタル力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_594:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノグラブ[color(white)]ニハ [color(orange)]未知ノ力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_595:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノレイピア[color(white)]ニハ [color(orange)]秘メタル力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_596:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ [color(orange)]伝説ノレイピア[color(white)]ニハ [color(orange)]未知ノ力ガ宿ル[color(white)]ト言ウ…
+ アクマデ 噂ダガ…
+[wait][clear][end]
+
+msg_597:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 更ニ [color(orange)]強イ[color(white)]ト言ウ話ダ…
+ 一度 確カメテミタイモノダナ…
+[wait][clear][end]
+
+msg_598:
+[color(yellow)][var(msg_var_0)][color(white)]
+ シカシ [color(orange)]弱イ[color(white)]ト言ウ話ダ…
+ ドウデモ 良イ事ダガ…
+[wait][clear][end]
+
+msg_599:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソノ力 然程デモナイガ
+ [color(orange)]異ナル秘法ト共ニ 相乗効果ヲ現ス[color(white)]ト言ウ話…
+ 一度 確カメテミタイモノダナ…
+[wait][clear][end]
+
+msg_600:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ ジャックランタン トイウ悪魔ハ
+ [color(orange)]ダイナミックアギラオ[color(white)]トイウ魔法ヲ使ウラシイ…
+[wait][clear][end]
+
+msg_601:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ ジャックフロスト トイウ悪魔ハ
+ [color(orange)]アトミックブフーラ[color(white)]トイウ魔法ヲ使ウラシイ…
+[wait][clear][end]
+
+msg_602:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ スチュパリデス トイウ悪魔ハ
+ [color(orange)]デンジャラスガルーラ[color(white)]トイウ魔法ヲ使ウラシイ…
+[wait][clear][end]
+
+msg_603:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ バルバトス トイウ悪魔ハ
+ [color(orange)]グレイトマグナス[color(white)]トイウ魔法ヲ使ウラシイ…
+[wait][clear][end]
+
+msg_604:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ アンクウ トイウ悪魔ハ
+ [color(orange)]ハイパージオンガ[color(white)]トイウ魔法ヲ使ウラシイ…
+[wait][clear][end]
+
+msg_605:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ カナロア トイウ悪魔ハ
+ [color(orange)]ワンダフルアクエス[color(white)]トイウ魔法ヲ使ウラシイ…
+[wait][clear][end]
+
+msg_606:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ デメテール トイウ悪魔ハ
+ [color(orange)]ウルトラフレイラ[color(white)]トイウ魔法ヲ使ウラシイ…
+[wait][clear][end]
+
+msg_607:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良イ事ヲ 教エテヤロウ…
+ サキュバス トイウ悪魔ハ
+ [color(orange)]超メギド[color(white)]トイウ魔法ヲ使ウラシイ…
+[wait][clear][end]
+
+msg_608:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何カ 気ノ利イタ話デモ シテヤリタイガ…
+ 今ハ 何モ無イナ
+ 済マヌ…
+[wait][clear][end]
+
+msg_609:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウヌト 我トハ 血ノ盟約ヲ交ワシタ仲…
+ 今コソ 約束ヲ果タス時…
+[wait][clear][end]
+
+msg_610:
+ 我ハ 何ヲスレバ 良イ？
+[choice(4)]アイテムが欲しい
+お金が欲しい
+情報が欲しい
+[if(CBIT_HEAR_RUMOR)]噂を流して欲しい
+[end_choice][clear][end]
+
+msg_611:
+ 我ハ 何ヲスレバ 良イ？
+[choice(5)]アイテムが欲しい
+お金が欲しい
+情報が欲しい
+[if(CBIT_HEAR_RUMOR)]噂を流して欲しい
+[if(CBIT_HEAR_HANEBASI)][if_not(DBIT_CHIKA_HASI)]橋を架けて欲しい
+[end_choice][clear][end]
+
+msg_612:
+ ドノ様ナ 噂ダ？
+[choice(3)][if(CBIT_HEAR_WEPON)]伝説の武器関連
+[if(CBIT_HEAR_MAGIC)]魔法関連
+特に無い
+[end_choice][clear][end]
+
+msg_613:
+ ドノ様ナ 噂ダ？
+[choice(4)][if(CBIT_HEAR_WEPON)]伝説の武器関連
+[if(CBIT_HEAR_MAGIC)]魔法関連
+[if(CBIT_HEAR_MAP1)]このダンジョンの噂
+特に無い
+[end_choice][clear][end]
+
+msg_614:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレハ 既ニ 噂ト ナッテイル
+ 他ノモノニシロ
+[wait][clear][end]
+
+msg_615:
+ ドノ様ナ 武器ダ？
+[choice(6)][if(CBIT_HEAR_SWD)]伝説の日本刀
+[if(CBIT_HEAR_GUN)]伝説のハンドガン
+[if(CBIT_HEAR_GTR)]伝説のコイン
+[if(CBIT_HEAR_FST)]伝説のグラブ
+[if(CBIT_HEAR_FLW)]伝説のレイピア
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_616:
+ 誰ノ魔法ダ？
+[choice(6)][if(CBIT_HEAR_AGI)]ジャックランタン
+[if(CBIT_HEAR_BUF)]ジャックフロスト
+[if(CBIT_HEAR_GAR)]スチュパリデス
+[if(CBIT_HEAR_MAG)]バルバトス
+[if(CBIT_RESERVE_Ff)]他の悪魔
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_617:
+ 誰ノ魔法ダ？
+[choice(6)][if(CBIT_HEAR_JIO)]アンクウ
+[if(CBIT_HEAR_AQU)]カナロア
+[if(CBIT_HEAR_FRA)]デメテール
+[if(CBIT_HEAR_MEG)]サキュバス
+[if(CBIT_RESERVE_Fe)]他の悪魔
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_618:
+
+
+
+
+
+
+[end]
+
+msg_619:
+ 日本刀ガ ドウシタノダ？
+[choice(4)][if(CBIT_HEAR_SWD_G)][if_not(IBIT_SWD_LGND_G)]実は最強？
+[if(CBIT_HEAR_SWD_L)][if_not(IBIT_SWD_LGND_S)]隠された力がある
+[if_not(IBIT_SWD_LGND_N)]やっぱり普通
+[if_not(IBIT_SWD_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_620:
+ ハンドガンガ ドウシタノダ？
+[choice(4)][if(CBIT_HEAR_GUN_G)][if_not(IBIT_GUN_LGND_G)]実は最強？
+[if(CBIT_HEAR_GUN_L)][if_not(IBIT_GUN_LGND_S)]隠された力がある
+[if_not(IBIT_GUN_LGND_N)]やっぱり普通
+[if_not(IBIT_GUN_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_621:
+ コインガ ドウシタノダ？
+[choice(4)][if(CBIT_HEAR_GTR_G)][if_not(IBIT_CON_LGND_G)]実は最強？
+[if(CBIT_HEAR_GTR_L)][if_not(IBIT_CON_LGND_S)]隠された力がある
+[if_not(IBIT_CON_LGND_N)]やっぱり普通
+[if_not(IBIT_CON_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_622:
+ グラブガ ドウシタノダ？
+[choice(4)][if(CBIT_HEAR_FST_G)][if_not(IBIT_FST_LGND_G)]実は最強？
+[if(CBIT_HEAR_FST_L)][if_not(IBIT_FST_LGND_S)]隠された力がある
+[if_not(IBIT_FST_LGND_N)]やっぱり普通
+[if_not(IBIT_FST_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_623:
+ レイピアガ ドウシタノダ？
+[choice(4)][if(CBIT_HEAR_FLW_G)][if_not(IBIT_NSW_LGND_G)]実は最強？
+[if(CBIT_HEAR_FLW_L)][if_not(IBIT_NSW_LGND_S)]隠された力がある
+[if_not(IBIT_NSW_LGND_N)]やっぱり普通
+[if_not(IBIT_NSW_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_624:
+ ジャックランタンガ ドウシタノダ？
+[choice(6)][if(CBIT_HEAR_AGI_L)][if_not(BBIT_D_AGIRAO_L)]Ｄアギラオは強い
+[if(CBIT_HEAR_AGI_M)][if_not(CBIT_HEAR_AGI_S)]ダイナミックアギラオを使う
+[if(CBIT_HEAR_AGI_S)][if_not(BBIT_D_AGIRAO_M)]Ｄアギラオは普通
+[if(CBIT_HEAR_AGI_S)][if_not(BBIT_D_AGIRAO_S)]Ｄアギラオは弱い
+[if(CBIT_HEAR_AGI_C)][if_not(BBIT_D_AGIRAO_C)]Ｄアギラオは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_625:
+ ジャックフロストガ ドウシタノダ？
+[choice(6)][if(CBIT_HEAR_BUF_L)][if_not(BBIT_A_BUFURA_L)]Ａブフーラは強い
+[if(CBIT_HEAR_BUF_M)][if_not(CBIT_HEAR_BUF_S)]アトミックブフーラを使う
+[if(CBIT_HEAR_BUF_S)][if_not(BBIT_A_BUFURA_M)]Ａブフーラは普通
+[if(CBIT_HEAR_BUF_S)][if_not(BBIT_A_BUFURA_S)]Ａブフーラは弱い
+[if(CBIT_HEAR_BUF_C)][if_not(BBIT_A_BUFURA_C)]Ａブフーラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_626:
+ スチュパリデスガ ドウシタノダ？
+[choice(6)][if(CBIT_HEAR_GAR_L)][if_not(BBIT_D_GARURA_L)]Ｄガルーラは強い
+[if(CBIT_HEAR_GAR_M)][if_not(CBIT_HEAR_GAR_S)]デンジャラスガルーラを使う
+[if(CBIT_HEAR_GAR_S)][if_not(BBIT_D_GARURA_M)]Ｄガルーラは普通
+[if(CBIT_HEAR_GAR_S)][if_not(BBIT_D_GARURA_S)]Ｄガルーラは弱い
+[if(CBIT_HEAR_GAR_C)][if_not(BBIT_D_GARURA_C)]Ｄガルーラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_627:
+ バルバトスガ ドウシタノダ？
+[choice(6)][if(CBIT_HEAR_MAG_L)][if_not(BBIT_G_MAGNAS_L)]Ｇマグナスは強い
+[if(CBIT_HEAR_MAG_M)][if_not(CBIT_HEAR_MAG_S)]グレイトマグナスを使う
+[if(CBIT_HEAR_MAG_S)][if_not(BBIT_G_MAGNAS_M)]Ｇマグナスは普通
+[if(CBIT_HEAR_MAG_S)][if_not(BBIT_G_MAGNAS_S)]Ｇマグナスは弱い
+[if(CBIT_HEAR_MAG_C)][if_not(BBIT_G_MAGNAS_C)]Ｇマグナスは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_628:
+ アンクウガ ドウシタノダ？
+[choice(6)][if(CBIT_HEAR_JIO_L)][if_not(BBIT_H_JIONGA_L)]Ｈジオンガは強い
+[if(CBIT_HEAR_JIO_M)][if_not(CBIT_HEAR_JIO_S)]ハイパージオンガを使う
+[if(CBIT_HEAR_JIO_S)][if_not(BBIT_H_JIONGA_M)]Ｈジオンガは普通
+[if(CBIT_HEAR_JIO_S)][if_not(BBIT_H_JIONGA_S)]Ｈジオンガは弱い
+[if(CBIT_HEAR_JIO_C)][if_not(BBIT_H_JIONGA_C)]Ｈジオンガは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_629:
+ カナロアガ ドウシタノダ？
+[choice(6)][if(CBIT_HEAR_AQU_L)][if_not(BBIT_W_AQUES_L)]Ｗアクエスは強い
+[if(CBIT_HEAR_AQU_M)][if_not(CBIT_HEAR_AQU_S)]ワンダフルアクエスを使う
+[if(CBIT_HEAR_AQU_S)][if_not(BBIT_W_AQUES_M)]Ｗアクエスは普通
+[if(CBIT_HEAR_AQU_S)][if_not(BBIT_W_AQUES_S)]Ｗアクエスは弱い
+[if(CBIT_HEAR_AQU_C)][if_not(BBIT_W_AQUES_C)]Ｗアクエスは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_630:
+ デメテールガ ドウシタノダ？
+[choice(6)][if(CBIT_HEAR_FRA_L)][if_not(BBIT_U_FRAIRA_L)]Ｕフレイラは強い
+[if(CBIT_HEAR_FRA_M)][if_not(CBIT_HEAR_FRA_S)]ウルトラフレイラを使う
+[if(CBIT_HEAR_FRA_S)][if_not(BBIT_U_FRAIRA_M)]Ｕフレイラは普通
+[if(CBIT_HEAR_FRA_S)][if_not(BBIT_U_FRAIRA_S)]Ｕフレイラは弱い
+[if(CBIT_HEAR_FRA_C)][if_not(BBIT_U_FRAIRA_C)]Ｕフレイラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_631:
+ サキュバスガ ドウシタノダ？
+[choice(6)][if(CBIT_HEAR_MEG_L)][if_not(BBIT_C_MEGIDO_L)]超メギドは強い
+[if(CBIT_HEAR_MEG_M)][if_not(CBIT_HEAR_MEG_S)]超メギドを使う
+[if(CBIT_HEAR_MEG_S)][if_not(BBIT_C_MEGIDO_M)]超メギドは普通
+[if(CBIT_HEAR_MEG_S)][if_not(BBIT_C_MEGIDO_S)]超メギドは弱い
+[if(CBIT_HEAR_MEG_C)][if_not(BBIT_C_MEGIDO_C)]超メギドは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_632:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 了解シタ…
+ 今ヨリ 我ハ 噂ヲ広メニ行ク…
+ 期待シテイロ…
+[wait][clear][end]
+
+msg_633:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 噂ハ 無イノカ…
+ ナラバ 仕方ナイ
+ マタ 次ノ機会ダナ
+[wait][clear][end]
+
+msg_634:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 仕方ナカロウ…
+ ウヌノ[color(orange)]日本刀[color(white)] [color(orange)]ナマクラ[color(white)]ト
+ 皆ニ 言ッテオコウ
+[wait][clear][end]
+
+msg_635:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 仕方ナカロウ…
+ ウヌノ[color(orange)]ハンドガン[color(white)] [color(orange)]玩具ニ等シイ[color(white)]ト
+ 皆ニ 言ッテオコウ
+[wait][clear][end]
+
+msg_636:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 仕方ナカロウ…
+ ウヌノ[color(orange)]コイン[color(white)] [color(orange)]ガラクタ[color(white)]ト
+ 皆ニ 言ッテオコウ
+[wait][clear][end]
+
+msg_637:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 仕方ナカロウ…
+ ウヌノ[color(orange)]グラブ[color(white)] [color(orange)]使イ物ニナラヌ[color(white)]ト
+ 皆ニ 言ッテオコウ
+[wait][clear][end]
+
+msg_638:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 仕方ナカロウ…
+ ウヌノ[color(orange)]レイピア[color(white)] [color(orange)]役立タズ[color(white)]ト
+ 皆ニ 言ッテオコウ
+[wait][clear][end]
+
+msg_639:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 皆ニ 言ッテオコウ…
+ ウヌノ ペルソナ [color(orange)]ジャックランタン[color(white)] ノ使ウ
+ [color(orange)]ダイナミックアギラオ[color(white)]ハ [color(orange)]役立タズ[color(white)]ト…
+[wait][clear][end]
+
+msg_640:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 皆ニ 言ッテオコウ…
+ ウヌノ ペルソナ [color(orange)]ジャックフロスト[color(white)] ノ使ウ
+ [color(orange)]アトミックブフーラ[color(white)]ハ [color(orange)]役立タズ[color(white)]ト…
+[wait][clear][end]
+
+msg_641:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 皆ニ 言ッテオコウ…
+ ウヌノ ペルソナ [color(orange)]スチュパリデス[color(white)] ノ使ウ
+ [color(orange)]デンジャラスガルーラ[color(white)]ハ [color(orange)]役立タズ[color(white)]ト…
+[wait][clear][end]
+
+msg_642:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 皆ニ 言ッテオコウ…
+ ウヌノ ペルソナ [color(orange)]バルバトス[color(white)] ノ使ウ
+ [color(orange)]グレイトマグナス[color(white)]ハ [color(orange)]役立タズ[color(white)]ト…
+[wait][clear][end]
+
+msg_643:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 皆ニ 言ッテオコウ…
+ ウヌノ ペルソナ [color(orange)]アンクウ[color(white)] ノ使ウ
+ [color(orange)]ハイパージオンガ[color(white)]ハ [color(orange)]役立タズ[color(white)]ト…
+[wait][clear][end]
+
+msg_644:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 皆ニ 言ッテオコウ…
+ ウヌノ ペルソナ [color(orange)]カナロア[color(white)] ノ使ウ
+ [color(orange)]ワンダフルアクエス[color(white)]ハ [color(orange)]役立タズ[color(white)]ト…
+[wait][clear][end]
+
+msg_645:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 皆ニ 言ッテオコウ…
+ ウヌノ ペルソナ [color(orange)]デメテール[color(white)] ノ使ウ
+ [color(orange)]ウルトラフレイラ[color(white)]ハ [color(orange)]役立タズ[color(white)]ト…
+[wait][clear][end]
+
+msg_646:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々 卑怯カモ知レヌガ 皆ニ 言ッテオコウ…
+ ウヌノ ペルソナ [color(orange)]サキュバス[color(white)] ノ使ウ
+ [color(orange)]超メギド[color(white)]ハ [color(orange)]役立タズ[color(white)]ト…
+[wait][clear][end]
+
+msg_647:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コレモ 悪魔ノ平和ノ為…
+ ヤムヲエマイ…
+[wait][clear][end]
+
+msg_648:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソレシキナラバ 容易キ事…
+ 了解シタ
+[wait][clear][end]
+
+msg_649:
+[color(yellow)][var(msg_var_0)][color(white)]
+ コノ様ナ場所デ 人間ト出会ウトハ…
+ コレモ運命カ？
+[wait][clear][end]
+
+msg_650:
+[color(green)]選択肢ジャンプの挙動エラーです[color(white)]
+[end]

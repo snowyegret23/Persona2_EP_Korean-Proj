@@ -1,0 +1,628 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    bitSet(EBIT_NOSAVE_B);
+    envTriggerSet(warp1, 131, 2, line, coll_0);
+    envTriggerSet(warp2, 56, 2, line, coll_1);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_8);
+    b(label_a);
+  label_8:
+    sndVolumeFadeTo(var_0, 0, 60);
+    b(label_a);
+  label_a:
+    bitGet(var_0, EBIT_CHARENGE_REOR);
+    bne(var_0, 0, label_12);
+    ref_c = spriteLoad(sprite_3f);
+    wait(ref_c);
+    unitSpawn(npc1, sprite_3f, 1397, 0, -1407, north, none);
+    unitAnimationPlay(npc1, animation_6, 1);
+    unitTriggerSet(npc1, REOBOX, 255, 1);
+    b(label_14);
+  label_12:
+    bne(var_0, 1, label_14);
+    b(label_14);
+  label_14:
+    bitGet(var_0, EBIT_CHARENGE_REOSTR);
+    bne(var_0, 0, label_18);
+    call(KYOUSEI);
+    b(label_1b);
+  label_18:
+    bne(var_0, 1, label_1b);
+    call(FREE);
+    b(label_1b);
+  label_1b:
+}
+
+function KYOUSEI()
+{
+    cameraSet(southeast, 1413, 0, -2277);
+    ref_1d = spriteLoad(sprite_0);
+    wait(ref_1d);
+    unitFace(npc1, south);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitSpawn(maya, sprite_0, 1410, 0, -2287, south, fade);
+    unitMove(maya, 1410, -2155, face_south, fast);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    unitAnimationHold(maya, animation_21, 60);
+    unitWait(maya);
+    unitAnimationPlay(maya, animation_0, 1);
+    ref_2d = cameraMoveTo(1444, 0, -1533, 60);
+    wait(ref_2d);
+    ref_2f = cameraRotateTo(1, 30);
+    wait(ref_2f);
+    unitMove(maya, 1403, -1633, face_south, medium);
+    unitWait(maya);
+    delayClear();
+    delayWait(60);
+    ref_35 = dialogAlloc();
+    ref_36 = msgShow(msg_0);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]静けき夜…巷は眠る…
+[tab]この家に…我が恋人は…かつて住み居たりし…
+[tab]ハァ…我が心もまた空なり……おや？
+[wait][clear]
+***************************************/
+    wait(ref_36);
+    dialogFree(ref_35);
+    unitAnimationPlay(npc1, animation_12, 1);
+    unitWait(npc1);
+    unitFace_2(npc1, north);
+    unitAnimationPlay(npc1, animation_0, 1);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(npc1, animation_a, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc1, animation_2d, 1);
+    ref_43 = dialogAlloc();
+    ref_44 = msgShow(msg_1);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]あなたは…？
+[tab]どこのどなたかは存じませんが…
+[tab]教えていただけませんか？
+[wait][clear][color(yellow)]刀を持った男[color(white)]
+[tab]ここはどこですか？
+[tab]わたしは…誰なのでしょう…
+[tab]なぜ刀など持っているのか…
+[wait][clear]
+***************************************/
+    wait(ref_44);
+    dialogFree(ref_43);
+    unitAnimationPlay(npc1, animation_16, 1);
+    ref_48 = dialogAlloc();
+    ref_49 = msgShow(msg_2);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]…何も思い出せないのです…
+[tab]故あってここに来たと思うのですが…
+[tab]何も思い出せません…どうして…
+[wait][clear]
+***************************************/
+    wait(ref_49);
+    dialogFree(ref_48);
+    bitSet(EBIT_CHARENGE_REOSTR);
+    ref_4d = cameraLookAtUnit(maya, 0, 60);
+    wait(ref_4d);
+    ref_4f = spriteLoad(sprite_2);
+    wait(ref_4f);
+    unitDespawn(maya, none);
+    playerInit(south);
+}
+
+function FREE()
+{
+    ref_54 = spriteLoad(sprite_0);
+    wait(ref_54);
+    ref_56 = spriteLoad(sprite_2);
+    wait(ref_56);
+    unknownVar1(var_0);
+    bne(var_0, 6157, label_5f);
+    cameraSetNorth(north);
+    cameraSet(southeast, 1411, 0, -2159);
+    playerInit(south);
+    controlDisable();
+    b(label_64);
+  label_5f:
+    cameraSetNorth(south);
+    cameraSet(northeast, 1408, 0, -642);
+    playerInit(north);
+    controlDisable();
+    b(label_64);
+  label_64:
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function REOBOX()
+{
+    controlDisable();
+    unitFacePlayer(npc1);
+    li(var_1, 0);
+    bitGet(var_0, EBIT_CHARENGE_REO1);
+    bne(var_0, 0, label_71);
+    b(label_74);
+  label_71:
+    bne(var_0, 1, label_74);
+    add(var_1, var_1, 1);
+    b(label_74);
+  label_74:
+    bitGet(var_0, EBIT_CHARENGE_REO2);
+    bne(var_0, 0, label_77);
+    b(label_7a);
+  label_77:
+    bne(var_0, 1, label_7a);
+    add(var_1, var_1, 1);
+    b(label_7a);
+  label_7a:
+    bitGet(var_0, EBIT_CHARENGE_REO3);
+    bne(var_0, 0, label_7d);
+    b(label_80);
+  label_7d:
+    bne(var_0, 1, label_80);
+    add(var_1, var_1, 1);
+    b(label_80);
+  label_80:
+    bne(var_1, 0, label_88);
+    ref_81 = dialogAlloc();
+    ref_82 = msgShow(msg_3);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]何かきっかけがあれば、
+[tab]記憶も戻るかも知れません…
+[tab]…記憶がないというのは…寂しいものですね…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_6, 1);
+    wait(ref_82);
+    unitAnimationPlay(npc1, animation_16, 1);
+    dialogFree(ref_81);
+    b(label_94);
+  label_88:
+    bne(var_1, 1, label_8e);
+    ref_89 = dialogAlloc();
+    ref_8a = msgShow(msg_4);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]少し思い出してきた…
+[tab]私は、ここでするべきことがあったんだ。
+[tab]しかし、それが何だったのか…
+[wait][clear]
+***************************************/
+    wait(ref_8a);
+    dialogFree(ref_89);
+    b(label_94);
+  label_8e:
+    bne(var_1, 2, label_94);
+    ref_8f = dialogAlloc();
+    ref_90 = msgShow(msg_5);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]あと少しだ…
+[tab]あと少しで俺は全てを思い出す…
+[tab]そうすれば…
+[wait][clear]
+***************************************/
+    wait(ref_90);
+    dialogFree(ref_8f);
+    b(label_94);
+  label_94:
+    bitGet(var_0, IBIT_EX_OMOIDE_1);
+    bne(var_0, 0, label_97);
+    b(label_9f);
+  label_97:
+    bne(var_0, 1, label_9f);
+    bitGet(var_0, EBIT_CHARENGE_REO1);
+    bne(var_0, 0, label_9c);
+    b(label_b6);
+    b(label_9e);
+  label_9c:
+    bne(var_0, 1, label_9e);
+    b(label_9e);
+  label_9e:
+    b(label_9f);
+  label_9f:
+    bitGet(var_0, IBIT_EX_OMOIDE_2);
+    bne(var_0, 0, label_a2);
+    b(label_aa);
+  label_a2:
+    bne(var_0, 1, label_aa);
+    bitGet(var_0, EBIT_CHARENGE_REO2);
+    bne(var_0, 0, label_a7);
+    b(label_d1);
+    b(label_a9);
+  label_a7:
+    bne(var_0, 1, label_a9);
+    b(label_a9);
+  label_a9:
+    b(label_aa);
+  label_aa:
+    bitGet(var_0, IBIT_EX_OMOIDE_3);
+    bne(var_0, 0, label_ad);
+    b(label_b5);
+  label_ad:
+    bne(var_0, 1, label_b5);
+    bitGet(var_0, EBIT_CHARENGE_REO3);
+    bne(var_0, 0, label_b2);
+    b(label_ec);
+    b(label_b4);
+  label_b2:
+    bne(var_0, 1, label_b4);
+    b(label_b4);
+  label_b4:
+    b(label_b5);
+  label_b5:
+    b(label_1a0);
+  label_b6:
+    choiceSetResult(1);
+    msgVar_Key(msgvar_0, in_rakech);
+    ref_b8 = bustupLoad(bustup_1);
+    bustupWait(ref_b8);
+    ref_ba = bustupAlloc(ref_b8, center, rgb(0,0,0));
+    bustupFade(ref_ba, rgb(128,0,0), 30);
+    ref_bc = dialogChoiceAlloc();
+    ref_bd = msgShow(msg_6);
+/***************************************
+[tab][color(green)][var(msg_var_0)][color(white)]を見せますか？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_bd);
+    dialogFree(ref_bc);
+    ref_c0 = bustupFade(ref_ba, rgb(0,0,0), 10);
+    bustupWait(ref_c0);
+    bustupFree(ref_ba);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_ce);
+    ref_c5 = dialogAlloc();
+    ref_c6 = msgShow(msg_7);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]ん？[tab]それは…
+[tab][color(green)][var(msg_var_0)][color(white)]！？
+[tab]そ、そうだ…それは確かに私のもの…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_2d, 1);
+    wait(ref_c6);
+    bitSet(EBIT_CHARENGE_REO1);
+    bitClear(IBIT_EX_OMOIDE_1);
+    dialogFree(ref_c5);
+    b(label_106);
+    b(label_d1);
+  label_ce:
+    bne(var_0, 1, label_d1);
+    b(label_1a0);
+    b(label_d1);
+  label_d1:
+    choiceSetResult(1);
+    msgVar_Key(msgvar_0, black_lighter);
+    ref_d3 = bustupLoad(bustup_1);
+    bustupWait(ref_d3);
+    ref_d5 = bustupAlloc(ref_d3, center, rgb(0,0,0));
+    bustupFade(ref_d5, rgb(128,0,0), 30);
+    ref_d7 = dialogChoiceAlloc();
+    ref_d8 = msgShow(msg_8);
+/***************************************
+[tab][color(green)][var(msg_var_0)][color(white)]を見せますか？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_d8);
+    dialogFree(ref_d7);
+    ref_db = bustupFade(ref_d5, rgb(0,0,0), 10);
+    bustupWait(ref_db);
+    bustupFree(ref_d5);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_e9);
+    ref_e0 = dialogAlloc();
+    ref_e1 = msgShow(msg_9);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]そ、それは…[color(green)][var(msg_var_0)][color(white)]？
+[tab]知ってる…それは確かに私の物だ…
+[tab]思い出してきた…思い出してきたぞ…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_2d, 1);
+    wait(ref_e1);
+    bitSet(EBIT_CHARENGE_REO2);
+    bitClear(IBIT_EX_OMOIDE_2);
+    dialogFree(ref_e0);
+    b(label_106);
+    b(label_ec);
+  label_e9:
+    bne(var_0, 1, label_ec);
+    b(label_1a0);
+    b(label_ec);
+  label_ec:
+    choiceSetResult(1);
+    msgVar_Key(msgvar_0, knife);
+    ref_ee = bustupLoad(bustup_1);
+    bustupWait(ref_ee);
+    ref_f0 = bustupAlloc(ref_ee, center, rgb(0,0,0));
+    bustupFade(ref_f0, rgb(128,0,0), 30);
+    ref_f2 = dialogChoiceAlloc();
+    ref_f3 = msgShow(msg_10);
+/***************************************
+[tab][color(green)][var(msg_var_0)][color(white)]を見せますか？
+[choice(2)]はい
+いいえ
+[end_choice][clear]
+***************************************/
+    wait(ref_f3);
+    dialogFree(ref_f2);
+    ref_f6 = bustupFade(ref_f0, rgb(0,0,0), 10);
+    bustupWait(ref_f6);
+    bustupFree(ref_f0);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_103);
+    ref_fb = dialogAlloc();
+    ref_fc = msgShow(msg_11);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]はっ！？
+[tab]そ…その[color(green)][var(msg_var_0)][color(white)]は…
+[tab]た、たしかに私の物…思い出してきた…
+[wait][clear]
+***************************************/
+    wait(ref_fc);
+    dialogFree(ref_fb);
+    bitSet(EBIT_CHARENGE_REO3);
+    bitClear(IBIT_EX_OMOIDE_3);
+    b(label_106);
+    b(label_106);
+  label_103:
+    bne(var_0, 1, label_106);
+    b(label_1a0);
+    b(label_106);
+  label_106:
+    li(var_1, 0);
+    bitGet(var_0, EBIT_CHARENGE_REO1);
+    bne(var_0, 0, label_10a);
+    b(label_10d);
+  label_10a:
+    bne(var_0, 1, label_10d);
+    add(var_1, var_1, 1);
+    b(label_10d);
+  label_10d:
+    bitGet(var_0, EBIT_CHARENGE_REO2);
+    bne(var_0, 0, label_110);
+    b(label_113);
+  label_110:
+    bne(var_0, 1, label_113);
+    add(var_1, var_1, 1);
+    b(label_113);
+  label_113:
+    bitGet(var_0, EBIT_CHARENGE_REO3);
+    bne(var_0, 0, label_116);
+    b(label_119);
+  label_116:
+    bne(var_0, 1, label_119);
+    add(var_1, var_1, 1);
+    b(label_119);
+  label_119:
+    bne(var_1, 1, label_121);
+    ref_11a = dialogAlloc();
+    ref_11b = msgShow(msg_12);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]す、少しだが…
+[tab]何かを思い出せそうです…
+[tab]ぐぐ…ぐぐぅ…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_16, 1);
+    wait(ref_11b);
+    dialogFree(ref_11a);
+    b(label_1a0);
+    b(label_12c);
+  label_121:
+    bne(var_1, 2, label_129);
+    ref_122 = dialogAlloc();
+    ref_123 = msgShow(msg_13);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]しかし私は誰だ…
+[tab]まだそれが思い出せない…
+[tab]俺は誰だ…ぐぐぐぅ…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_16, 1);
+    wait(ref_123);
+    dialogFree(ref_122);
+    b(label_1a0);
+    b(label_12c);
+  label_129:
+    bne(var_1, 3, label_12c);
+    b(label_12c);
+    b(label_12c);
+  label_12c:
+    unitAnimationPlay(npc1, animation_1b, 1);
+    delayClear();
+    delayWait(60);
+    ref_12f = dialogAlloc();
+    ref_130 = msgShow(msg_14);
+/***************************************
+[color(yellow)]刀を持った男[color(white)]
+[tab]ぐぐぐぐぐ…
+[tab]ぐうぉおおおおお！！！！！
+[wait][clear]
+***************************************/
+    unitAnimationHold(npc1, animation_1c, -1);
+    wait(ref_130);
+    dialogFree(ref_12f);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    cameraMoveTo(1447, 0, -1283, 1);
+    cameraRotateTo(3, 1);
+    unitAnimationStop(npc1);
+    unitFace(npc1, south);
+    unitAnimationPlay(npc1, animation_23, 1);
+    unitFace(npc1, south);
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    unitSpawn(maya, sprite_0, 1437, 0, -1225, north, none);
+    unitAnimationHold(maya, animation_21, -1);
+    delayClear();
+    delayWait(60);
+    ref_146 = sndLoad(sound_3017);
+    wait(ref_146);
+    sndMusicPlay(sound_3017, 127);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    ref_14e = bustupLoad(bustup_4a);
+    bustupWait(ref_14e);
+    ref_150 = bustupAlloc(ref_14e, right, rgb(0,0,0));
+    bustupFade(ref_150, rgb(128,0,0), 30);
+    ref_152 = dialogAlloc();
+    ref_153 = msgShow(msg_15);
+/***************************************
+[color(yellow)]須藤[tab]竜也[color(white)]
+[tab]ヒャッハァーーーッ！！！
+[tab]思い出したぜ！！[tab]全てを思い出した！！
+[tab]俺が誰で、何をすべきなのか！！
+[wait][clear]
+***************************************/
+    wait(ref_153);
+    unitAnimationStop(maya);
+    unitAnimationPlay(maya, animation_0, 1);
+    dialogFree(ref_152);
+    ref_158 = bustupFade(ref_150, rgb(0,0,0), 10);
+    bustupWait(ref_158);
+    bustupFree(ref_150);
+    unitAnimationPlay(npc1, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(npc1, animation_1c, 1);
+    unitWait(npc1);
+    delayClear();
+    delayWait(30);
+    ref_162 = bustupLoad(bustup_4a);
+    bustupWait(ref_162);
+    ref_164 = bustupAlloc(ref_162, right, rgb(0,0,0));
+    bustupFade(ref_164, rgb(128,0,0), 30);
+    ref_166 = dialogAlloc();
+    ref_167 = msgShow(msg_16);
+/***************************************
+[color(yellow)]須藤[tab]竜也[color(white)]
+[tab]聞こえて来たぜぇ、電波がよぉ！！
+[tab]電波電波電波電波電波電波電波電波電波電波！！
+[tab]電波が俺にこう言うんだぁ…
+[wait][clear]
+***************************************/
+    wait(ref_167);
+    dialogFree(ref_166);
+    ref_16a = bustupFade(ref_164, rgb(0,0,0), 10);
+    bustupWait(ref_16a);
+    bustupFree(ref_164);
+    unitAnimationHold(npc1, animation_1f, -1);
+    delayClear();
+    delayWait(30);
+    ref_170 = bustupLoad(bustup_4a);
+    bustupWait(ref_170);
+    ref_172 = bustupAlloc(ref_170, right, rgb(0,0,0));
+    bustupFade(ref_172, rgb(128,0,0), 30);
+    ref_174 = dialogAlloc();
+    ref_175 = msgShow(msg_17);
+/***************************************
+[color(yellow)]須藤[tab]竜也[color(white)]
+[tab]この世の全てを焼き尽くせってなぁ。
+[tab]ヒャーッハハハハァー！！
+[tab]全てを灰にしてやるぜーっ！[tab]ヒャッハーッ！！
+[wait][clear]
+***************************************/
+    unitAnimationStop(npc1);
+    unitAnimationPlay(npc1, animation_23, 1);
+    wait(ref_175);
+    dialogFree(ref_174);
+    ref_17a = bustupFade(ref_172, rgb(0,0,0), 10);
+    bustupWait(ref_17a);
+    bustupFree(ref_172);
+    unitAnimationPlay(npc1, animation_0, 1);
+    unitWait(npc1);
+    unitAnimationPlay(npc1, animation_12, 1);
+    unitWait(npc1);
+    unitFace_2(npc1, north);
+    cameraFollow(npc1);
+    unitMove(npc1, 1408, -2202, face_north, fast);
+    unitWait(npc1);
+    unitMove(npc1, 1432, -2293, fade, fast);
+    sndVolumeFadeTo(sound_3017, 0, 60);
+    delayClear();
+    delayWait(60);
+    envTriggerClear(line, coll_1);
+    objVisible(obj_1, false);
+    objVisible(obj_2, false);
+    objVisible(obj_3, false);
+    objVisible(obj_4, false);
+    objVisible(obj_12, false);
+    bitSet(EBIT_CHARENGE_REOR);
+    ref_190 = cameraLookAtUnit(maya, 0, 60);
+    wait(ref_190);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_29, 1);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    cameraSetNorth(north);
+    bitSet(MBIT_EXE_TOBI);
+    bitSet(EBIT_NOSAVE_B);
+    timerSet(2400, event_8f);
+    delayClear();
+    delayWait(60);
+    dngLoad2(ex_sevens2-7);
+    b(label_1a2);
+  label_1a0:
+    controlEnable();
+    unitRestoreFacing(npc1);
+  label_1a2:
+}
+
+function warp1()
+{
+    controlDisable();
+    cameraSetNorth(north);
+    bitGet(var_0, EBIT_CHARENGE_REOR);
+    bne(var_0, 0, label_1a9);
+    dngLoad2(ex_sevens1-13);
+    b(label_1af);
+  label_1a9:
+    bne(var_0, 1, label_1af);
+    bitSet(MBIT_EXE_TOBI);
+    bitSet(EBIT_NOSAVE_B);
+    timerSet(2400, event_8f);
+    dngLoad2(ex_sevens2-7);
+    b(label_1af);
+  label_1af:
+}
+
+function warp2()
+{
+    cameraSetNorth(south);
+    controlDisable();
+    dngLoad2(ex2c-25);
+}

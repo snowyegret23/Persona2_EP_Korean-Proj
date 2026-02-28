@@ -1,0 +1,838 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    sndIdGet(var_0);
+    bne(var_0, -1, label_5);
+    b(label_7);
+  label_5:
+    sndVolumeFadeTo(var_0, 90, 60);
+    b(label_7);
+  label_7:
+    sndUnkCF(90);
+    ref_8 = spriteLoad(sprite_0);
+    wait(ref_8);
+    ref_a = spriteLoad(sprite_2);
+    wait(ref_a);
+    ref_c = spriteLoad(sprite_d);
+    wait(ref_c);
+    ref_e = spriteLoad(sprite_e);
+    wait(ref_e);
+    ref_10 = spriteLoad(sprite_13);
+    wait(ref_10);
+    ref_12 = spriteLoad(sprite_6a);
+    wait(ref_12);
+    ref_14 = spriteLoad(sprite_d0);
+    wait(ref_14);
+    cameraSetNorth(south);
+    cameraSet(southwest, 400, 0, -950);
+    unitSpawn(katsuya, sprite_d, 500, 0, -800, north, none);
+    unitFace(katsuya, south);
+    unitSpawn(baofu, sprite_13, 360, 0, -715, north, none);
+    unitFace(baofu, west);
+    unitSpawn(makimura, sprite_6a, 680, 0, -875, north, none);
+    unitFace(makimura, south);
+    bitGet(var_8, EBIT_TAIHO);
+    bne(var_8, 0, label_24);
+    unitSpawn(enemy1, sprite_d0, 40, 0, -259, north, none);
+    unitFace(enemy1, north);
+    unitTriggerSet(enemy1, ENEMY1, 255, 1);
+    b(label_26);
+  label_24:
+    bne(var_8, 1, label_26);
+    b(label_26);
+  label_26:
+    unitTriggerSet(katsuya, KATUYA, 255, 1);
+    unitTriggerSet(baofu, PAOFU, 255, 1);
+    unitTriggerSet(makimura, SAGI, 255, 1);
+    envTriggerSet(EXIT, 131, 1, line, coll_9);
+    playerInit(south);
+    controlDisable();
+    unitIdleOn(katsuya);
+    unitIdleOn(baofu);
+    unitIdleOn(makimura);
+    li(var_0, 0);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function KATUYA()
+{
+    controlDisable();
+    unitFacePlayer(katsuya);
+    bitGet(var_1, EBIT_GETKEY2);
+    bnz(var_1, label_4e);
+    ref_3b = bustupLoad(bustup_28);
+    bustupWait(ref_3b);
+    ref_3d = bustupAlloc(ref_3b, left, rgb(0,0,0));
+    bustupFade(ref_3d, rgb(128,0,0), 30);
+    ref_3f = dialogAlloc();
+    ref_40 = msgShow(msg_0);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]その…奥は君が見てきてくれないかな？
+[tab]ここは女性の更衣室だからして…その…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_40);
+    dialogFree(ref_3f);
+    ref_47 = bustupFade(ref_3d, rgb(0,0,0), 10);
+    bustupWait(ref_47);
+    bustupFree(ref_3d);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+    unitRestoreFacing(katsuya);
+    b(label_fa);
+  label_4e:
+    bitGet(var_1, EBIT_TAIHO);
+    bnz(var_1, label_e8);
+    ref_50 = bustupLoad(bustup_21);
+    bustupWait(ref_50);
+    ref_52 = bustupAlloc(ref_50, left, rgb(0,0,0));
+    bustupFade(ref_52, rgb(128,0,0), 30);
+    ref_54 = dialogAlloc();
+    ref_55 = msgShow(msg_1);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]鍵を借りた？
+[tab]ああ、ありがとう。
+[tab]やっぱり女性がいたか…読み通りだ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_55);
+    dialogFree(ref_54);
+    ref_5c = bustupFade(ref_52, rgb(0,0,0), 10);
+    bustupWait(ref_5c);
+    bustupFree(ref_52);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+    ref_61 = bustupLoad(bustup_2);
+    bustupWait(ref_61);
+    ref_63 = bustupAlloc(ref_61, center, rgb(0,0,0));
+    bustupFade(ref_63, rgb(128,0,0), 30);
+    ref_65 = dialogChoiceAlloc();
+    ref_66 = msgShow(msg_2);
+/***************************************
+[tab]やっぱり女性がいたか…読み通りだ。
+[choice(2)]う～ん…まぁ、いいか。
+ブブー、正解は下着泥棒さん。
+[end_choice][clear]
+***************************************/
+    sync();
+    wait(ref_66);
+    dialogFree(ref_65);
+    ref_6a = bustupFade(ref_63, rgb(0,0,0), 10);
+    bustupWait(ref_6a);
+    bustupFree(ref_63);
+    choiceGetResult(var_2);
+    bne(var_2, 0, label_72);
+    bitSet(EBIT_TAIHO);
+    unitRestoreFacing(katsuya);
+    b(label_e7);
+  label_72:
+    bne(var_2, 1, label_e7);
+    unitAnimationHold(katsuya, animation_21, -1);
+    delayClear();
+    delayWait(90);
+    unitAnimationStop(katsuya);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+    ref_79 = cameraRotateTo(7, 60);
+    cameraMoveTo(450, 0, -700, 30);
+    playerConvertToUnit(maya, sprite_0, east);
+    playerHide();
+    call(MAYANIGE);
+    unitFace(maya, south);
+    delayClear();
+    delayWait(10);
+    unitFace(maya, south);
+    unitMove(katsuya, 500, -255, face_south, fast);
+    delayClear();
+    delayWait(10);
+    unitFace(maya, south);
+    unitAnimationPlay(baofu, animation_1, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(7);
+    objVisible(obj_6, false);
+    objAnimWait(obj_6);
+    unitAnimationPlay(baofu, animation_2, 1);
+    unitWait(baofu);
+    unitWait(katsuya);
+    unitMove(katsuya, 83, -255, face_east, fast);
+    unitWait(katsuya);
+    wait(ref_79);
+    delayClear();
+    delayWait(30);
+    ref_94 = dialogAlloc();
+    ref_95 = msgShow(msg_3);
+/***************************************
+[color(yellow)]克哉の声[color(white)]
+[tab]警察だ！！
+[tab]ここで何してる！？
+[tab]な、なんだこのポケットの中身は！？
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_95);
+    ref_98 = msgShow(msg_4);
+/***************************************
+[color(yellow)]下着ドロの声[color(white)]
+[tab]あ～れ～！
+[sync][wait][clear]
+***************************************/
+    sndMusicPlay(sound_312e, 127);
+    ref_9a = call(JISIN);
+    wait(ref_9a);
+    sync();
+    wait(ref_98);
+    ref_9e = msgShow(msg_5);
+/***************************************
+[color(yellow)]克哉の声[color(white)]
+[tab]確保だ確保ー！！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_9e);
+    dialogFree(ref_94);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(baofu, animation_1, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(15);
+    unitAnimationPlay(baofu, animation_1d, 1);
+    unitWait(baofu);
+    unitAnimationPlay(maya, animation_23, 1);
+    delayClear();
+    delayWait(90);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitWait(maya);
+    delayClear();
+    delayWait(60);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    unitDespawn(enemy1, none);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitWait(baofu);
+    unitSpawn(katsuya, sprite_d, 505, 0, -159, north, none);
+    unitWait(katsuya);
+    unitSpawn(maya, sprite_0, 505, 0, -311, south, none);
+    unitWait(maya);
+    ref_c2 = cameraMoveTo(505, 0, -311, 10);
+    wait(ref_c2);
+    unitDespawn(maya, none);
+    playerInit(south);
+    controlDisable();
+    objVisible(obj_6, true);
+    objAnimWait(obj_6);
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    screenEffectUnknown();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(30);
+    ref_d1 = bustupLoad(bustup_21);
+    bustupWait(ref_d1);
+    ref_d3 = bustupAlloc(ref_d1, left, rgb(0,0,0));
+    bustupFade(ref_d3, rgb(128,0,0), 30);
+    ref_d5 = dialogAlloc();
+    ref_d6 = msgShow(msg_6);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]被疑者逮捕に御協力、感謝します。
+[sync][wait][clear]
+***************************************/
+    unitSpriteClear(katsuya);
+    unitSpriteSet(katsuya, sprite_e);
+    unitAnimationHold(katsuya, animation_6, 90);
+    unitWait(katsuya);
+    unitSpriteClear(katsuya);
+    unitSpriteSet(katsuya, sprite_d);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+    sync();
+    wait(ref_d6);
+    dialogFree(ref_d5);
+    ref_e2 = bustupFade(ref_d3, rgb(0,0,0), 10);
+    bustupWait(ref_e2);
+    bustupFree(ref_d3);
+    bitSet(EBIT_TAIHO);
+    b(label_e7);
+  label_e7:
+    b(label_fa);
+  label_e8:
+    ref_e8 = bustupLoad(bustup_21);
+    bustupWait(ref_e8);
+    ref_ea = bustupAlloc(ref_e8, left, rgb(0,0,0));
+    bustupFade(ref_ea, rgb(128,0,0), 30);
+    ref_ec = dialogAlloc();
+    ref_ed = msgShow(msg_7);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]さ、早く芹沢君の所へ行こう。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    delayClear();
+    delayWait(30);
+    sync();
+    wait(ref_ed);
+    dialogFree(ref_ec);
+    ref_f4 = bustupFade(ref_ea, rgb(0,0,0), 10);
+    bustupWait(ref_f4);
+    bustupFree(ref_ea);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    unitWait(katsuya);
+    unitRestoreFacing(katsuya);
+  label_fa:
+    controlEnable();
+}
+
+function PAOFU()
+{
+    controlDisable();
+    unitFacePlayer(baofu);
+    bitGet(var_3, EBIT_GETKEY2);
+    bne(var_3, 0, label_115);
+    ref_100 = bustupLoad(bustup_2c);
+    bustupWait(ref_100);
+    ref_102 = bustupAlloc(ref_100, left, rgb(0,0,0));
+    bustupFade(ref_102, rgb(128,0,0), 30);
+    ref_104 = dialogAlloc();
+    ref_105 = msgShow(msg_8);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]高い金払って、こんな所通うヤツの気が知れんぜ…
+[tab]俺か？[tab]間に合ってるよ…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    unitWait(baofu);
+    delayClear();
+    delayWait(10);
+    unitAnimationPlay(baofu, animation_14, 1);
+    unitWait(baofu);
+    sync();
+    wait(ref_105);
+    dialogFree(ref_104);
+    ref_10f = bustupFade(ref_102, rgb(0,0,0), 10);
+    bustupWait(ref_10f);
+    bustupFree(ref_102);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitWait(baofu);
+    b(label_12b);
+  label_115:
+    bne(var_3, 1, label_12b);
+    ref_116 = bustupLoad(bustup_2c);
+    bustupWait(ref_116);
+    ref_118 = bustupAlloc(ref_116, left, rgb(0,0,0));
+    bustupFade(ref_118, rgb(128,0,0), 30);
+    ref_11a = dialogAlloc();
+    ref_11b = msgShow(msg_9);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]竜蔵の息子は、
+[tab]竜蔵が野郎をＪＯＫＥＲにしたって言ったな…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_11b);
+    ref_121 = msgShow(msg_10);
+/***************************************
+[color(yellow)]パオフゥ[color(white)]
+[tab]まさか、ＪＯＫＥＲを増やす事まで、
+[tab]計画とやらに入ってるんじゃあるまいな…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_121);
+    dialogFree(ref_11a);
+    ref_125 = bustupFade(ref_118, rgb(0,0,0), 10);
+    bustupWait(ref_125);
+    bustupFree(ref_118);
+    unitAnimationPlay(baofu, animation_0, 1);
+    unitWait(baofu);
+    b(label_12b);
+  label_12b:
+    unitRestoreFacing(baofu);
+    controlEnable();
+}
+
+function ENEMY1()
+{
+    controlDisable();
+    li(var_0, 1);
+    unitFacePlayer(enemy1);
+    bitGet(var_3, EBIT_GETKEY2);
+    bne(var_3, 0, label_1a0);
+    ref_133 = dialogAlloc();
+    ref_134 = msgShow(msg_11);
+/***************************************
+[color(yellow)]挙動不審な男性スタッフ[color(white)]
+[tab]わわ！？
+[tab]俺は下着なんて漁ってない！
+[tab]本当だ！
+[sync][wait][clear]
+***************************************/
+    unitAnimationHold(enemy1, animation_1b, -1);
+    delayClear();
+    delayWait(30);
+    unitAnimationStop(enemy1);
+    unitAnimationPlay(enemy1, animation_1, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_2, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_1, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_3, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_4, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_3, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_1, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_2, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_1, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_3, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_4, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(3);
+    unitAnimationPlay(enemy1, animation_3, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(2);
+    sync();
+    wait(ref_134);
+    ref_17b = msgShow(msg_12);
+/***************************************
+[color(yellow)]挙動不審な男性スタッフ[color(white)]
+[tab]え？
+[tab]ボクシングジムの鍵を探してる？
+[tab]あ、ああ、俺が持ってるけど…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(enemy1, animation_24, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_17b);
+    ref_181 = msgShow(msg_13);
+/***************************************
+[color(yellow)]挙動不審な男性スタッフ[color(white)]
+[tab]これ貸すから、この事は内緒にしてくれ。
+[tab]頼んだよ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(enemy1, animation_c, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(45);
+    unitAnimationPlay(enemy1, animation_6, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(enemy1, animation_6, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    sync();
+    wait(ref_181);
+    dialogFree(ref_133);
+    msgVarSet(msgvar_0, 4102);
+    ref_198 = dialogAlloc();
+    ref_199 = msgShow(msg_14);
+/***************************************
+[color(green)][tab]舞耶達は、
+[tab][item_with_type(item_ffff)]を手に入れた。[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_199);
+    dialogFree(ref_198);
+    bitSet(EBIT_GETKEY2);
+    bitSet(IBIT_BOXGYM_KEY);
+    unitRestoreFacing(enemy1);
+    b(label_1ce);
+  label_1a0:
+    bne(var_3, 1, label_1ce);
+    ref_1a1 = dialogAlloc();
+    ref_1a2 = msgShow(msg_15);
+/***************************************
+[color(yellow)]挙動不審な男性スタッフ[color(white)]
+[tab]や、やあ。
+[tab]さっきの事、頼んだよ。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(enemy1, animation_c, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(enemy1, animation_c, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(enemy1, animation_c, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(enemy1, animation_6, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(enemy1, animation_6, 1);
+    unitWait(enemy1);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+    sync();
+    wait(ref_1a2);
+    dialogFree(ref_1a1);
+    unitRestoreFacing(enemy1);
+    b(label_1ce);
+  label_1ce:
+    controlEnable();
+}
+
+function SAGI()
+{
+    controlDisable();
+    unitFacePlayer(makimura);
+    bitGet(var_3, EBIT_GETKEY2);
+    bne(var_3, 0, label_1e6);
+    ref_1d4 = bustupLoad(bustup_128);
+    bustupWait(ref_1d4);
+    ref_1d6 = bustupAlloc(ref_1d4, right, rgb(0,0,0));
+    bustupFade(ref_1d6, rgb(128,0,0), 30);
+    ref_1d8 = dialogAlloc();
+    ref_1d9 = msgShow(msg_16);
+/***************************************
+[color(yellow)]牧村[color(white)]
+[tab]ああ、ここには誰もいないね。
+[tab]早く出た方がいいな、うん。
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(makimura, animation_24, 1);
+    delayClear();
+    delayWait(60);
+    sync();
+    wait(ref_1d9);
+    dialogFree(ref_1d8);
+    ref_1e0 = bustupFade(ref_1d6, rgb(0,0,0), 10);
+    bustupWait(ref_1e0);
+    bustupFree(ref_1d6);
+    unitAnimationPlay(makimura, animation_0, 1);
+    unitWait(makimura);
+    b(label_212);
+  label_1e6:
+    bne(var_3, 1, label_212);
+    ref_1e7 = bustupLoad(bustup_128);
+    bustupWait(ref_1e7);
+    ref_1e9 = bustupAlloc(ref_1e7, right, rgb(0,0,0));
+    bustupFade(ref_1e9, rgb(128,0,0), 30);
+    ref_1eb = dialogAlloc();
+    ref_1ec = msgShow(msg_17);
+/***************************************
+[color(yellow)]牧村[color(white)]
+[tab]おい、待ってくれ。
+[tab]ほ、本当に大丈夫なんだろうな…？
+[tab]安全は保証してくれるんだよな！？[tab]な？
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(makimura, animation_c, 1);
+    unitWait(makimura);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(makimura, animation_0, 1);
+    unitWait(makimura);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(makimura, animation_c, 1);
+    unitWait(makimura);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(makimura, animation_0, 1);
+    unitWait(makimura);
+    delayClear();
+    delayWait(5);
+    unitAnimationPlay(makimura, animation_2, 1);
+    unitWait(makimura);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(makimura, animation_0, 1);
+    unitWait(makimura);
+    delayClear();
+    delayWait(7);
+    unitAnimationPlay(makimura, animation_4, 1);
+    unitWait(makimura);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(makimura, animation_0, 1);
+    unitWait(makimura);
+    sync();
+    wait(ref_1ec);
+    dialogFree(ref_1eb);
+    ref_20e = bustupFade(ref_1e9, rgb(0,0,0), 10);
+    bustupWait(ref_20e);
+    bustupFree(ref_1e9);
+    b(label_212);
+  label_212:
+    unitRestoreFacing(makimura);
+    controlEnable();
+}
+
+function SITAGIDORO()
+{
+  label_215:
+    unitAnimationPlay(enemy1, animation_0, 1);
+    bnz(var_0, label_258);
+    unitWait(enemy1);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    unitAnimationPlay(enemy1, animation_b, 1);
+    bnz(var_0, label_258);
+    unitWait(enemy1);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    unitAnimationPlay(enemy1, animation_14, 1);
+    bnz(var_0, label_258);
+    unitWait(enemy1);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    delayClear();
+    delayWait(10);
+    bnz(var_0, label_258);
+    b(label_215);
+  label_258:
+    unitAnimationPlay(enemy1, animation_0, 1);
+    unitWait(enemy1);
+}
+
+function EXIT()
+{
+    controlDisable();
+    sndMusicPlay(sound_312d, 127);
+    objAnimRotate(obj_10, 0, 80, 0, 60, 0);
+    sndMusicPlay(sound_312d, 127);
+    objAnimRotate(obj_11, 0, -80, 0, 60, 0);
+    objAnimWait(obj_10);
+    objAnimWait(obj_11);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 6, false);
+    screenFadeOuter(rgb(255,255,255), 6, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    dngLoad2(gold-7);
+}
+
+function JISIN()
+{
+    li(var_4, 0);
+  label_26b:
+    ref_26b = cameraMoveTo(442, 0, -692, 2);
+    wait(ref_26b);
+    ref_26d = cameraMoveTo(458, 0, -708, 2);
+    wait(ref_26d);
+    ref_26f = cameraMoveTo(443, 0, -693, 2);
+    wait(ref_26f);
+    ref_271 = cameraMoveTo(457, 0, -707, 2);
+    wait(ref_271);
+    ref_273 = cameraMoveTo(444, 0, -694, 2);
+    wait(ref_273);
+    ref_275 = cameraMoveTo(456, 0, -706, 2);
+    wait(ref_275);
+    ref_277 = cameraMoveTo(445, 0, -695, 2);
+    wait(ref_277);
+    ref_279 = cameraMoveTo(455, 0, -705, 2);
+    wait(ref_279);
+    ref_27b = cameraMoveTo(446, 0, -696, 2);
+    wait(ref_27b);
+    ref_27d = cameraMoveTo(454, 0, -704, 2);
+    wait(ref_27d);
+    ref_27f = cameraMoveTo(447, 0, -697, 2);
+    wait(ref_27f);
+    ref_281 = cameraMoveTo(453, 0, -703, 2);
+    wait(ref_281);
+    ref_283 = cameraMoveTo(448, 0, -698, 2);
+    wait(ref_283);
+    ref_285 = cameraMoveTo(452, 0, -702, 2);
+    wait(ref_285);
+    ref_287 = cameraMoveTo(449, 0, -699, 2);
+    wait(ref_287);
+    ref_289 = cameraMoveTo(451, 0, -701, 2);
+    wait(ref_289);
+    ref_28b = cameraMoveTo(450, 0, -700, 2);
+    wait(ref_28b);
+    add(var_4, var_4, 1);
+    beq(var_4, 2, label_290);
+    b(label_26b);
+  label_290:
+}
+
+function MAYANIGE()
+{
+    unitLocation(maya, var_5, var_6, var_7);
+    binrange(var_5, 0, 500, label_294);
+    b(label_296);
+  label_294:
+    binrange(var_7, -1000, -800, label_298);
+    b(label_29b);
+  label_296:
+    binrange(var_7, -1000, -800, label_29e);
+    b(label_2a1);
+  label_298:
+    unitMove(maya, 430, -870, face_south, reverse);
+    unitWait(katsuya);
+    b(label_2a3);
+  label_29b:
+    unitMove(maya, 430, -730, face_west, reverse);
+    unitWait(katsuya);
+    b(label_2a3);
+  label_29e:
+    unitMove(maya, 570, -870, face_east, reverse);
+    unitWait(katsuya);
+    b(label_2a3);
+  label_2a1:
+    unitMove(maya, 570, -730, face_west, reverse);
+    unitWait(katsuya);
+  label_2a3:
+    unitFace(maya, south);
+    unitWait(maya);
+}

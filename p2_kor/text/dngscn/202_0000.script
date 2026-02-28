@@ -1,0 +1,118 @@
+function START()
+{
+    controlDisable();
+    countGet(var_0, mifune);
+    bne(var_0, 100, label_9);
+    ref_3 = dialogAlloc();
+    ref_4 = msgShow(msg_0);
+/***************************************
+[color(green)]The offering box seems full.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_4);
+    dialogFree(ref_3);
+    b(label_49);
+    b(label_e);
+  label_9:
+    ref_9 = dialogAlloc();
+    ref_a = msgShow(msg_1);
+/***************************************
+[color(yellow)]Old Shrine[color(white)]
+[tab][color(green)]There is an offering box.
+[tab]Will you make an offering?[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_a);
+    dialogFree(ref_9);
+    b(label_e);
+  label_e:
+    shopCurrencyType(8, -110, 150);
+    shopCurrencyDisplay(13, 150, false);
+    delayClear();
+    delayWait(10);
+    choiceSetResult(1);
+    op_105(1);
+    ref_14 = bustupLoad(bustup_1);
+    bustupWait(ref_14);
+    ref_16 = bustupAlloc(ref_14, center, rgb(0,0,0));
+    bustupFade(ref_16, rgb(128,0,0), 30);
+    ref_18 = dialogChoiceAlloc();
+    ref_19 = msgShow(msg_2);
+/***************************************
+[tab][color(green)]Will you offer ¥100?[color(white)]
+[choice(2)]Why not?
+Rather not.
+[end_choice][clear]
+***************************************/
+    wait(ref_19);
+    dialogFree(ref_18);
+    ref_1c = bustupFade(ref_16, rgb(0,0,0), 10);
+    bustupWait(ref_1c);
+    bustupFree(ref_16);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_23);
+    b(label_26);
+    b(label_26);
+  label_23:
+    bne(var_0, 1, label_26);
+    b(label_49);
+    b(label_26);
+  label_26:
+    partyMoneyGet(var_0);
+    boutrange(var_0, 0, 99, label_2a);
+    b(label_2c);
+    b(label_2c);
+  label_2a:
+    b(label_33);
+    b(label_2c);
+  label_2c:
+    delayClear();
+    delayWait(10);
+    ref_2e = dialogAlloc();
+    ref_2f = msgShow(msg_3);
+/***************************************
+[color(green)]You don’t have enough money.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_2f);
+    dialogFree(ref_2e);
+    b(label_49);
+  label_33:
+    partyMoneyAdd(-100);
+    countGet(var_0, mifune);
+    add(var_0, var_0, 1);
+    countSet(mifune, var_0);
+    bne(var_0, 100, label_41);
+    delayClear();
+    delayWait(10);
+    sndMusicPlay(sound_1036, 127);
+    ref_3b = dialogAlloc();
+    ref_3c = msgShow(msg_4);
+/***************************************
+[color(green)]Maya dropped ¥100 in the box.
+The offering box seems full.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_3c);
+    dialogFree(ref_3b);
+    bitSet(EBIT_GETKASIN);
+    b(label_49);
+  label_41:
+    delayClear();
+    delayWait(10);
+    sndMusicPlay(sound_1036, 127);
+    ref_44 = dialogAlloc();
+    ref_45 = msgShow(msg_5);
+/***************************************
+[color(green)]Maya dropped ¥100 in the box.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_45);
+    dialogFree(ref_44);
+    b(label_49);
+  label_49:
+    shopCurrencyDisplay(-110, 150, true);
+    delayClear();
+    delayWait(10);
+    controlEnable();
+}

@@ -1,0 +1,1 @@
+npx tsx cli/mod.ts "../Persona 2 - Batsu - Eternal Punishment (Japan).iso" "../p2_kor" -o "../p2_build" --iso_output "../p2_build/P2EP_Modded.iso"

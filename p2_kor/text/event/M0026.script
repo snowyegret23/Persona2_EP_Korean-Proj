@@ -1,0 +1,2949 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    sndMusicPlay(sound_3058, 127);
+    bitGet(var_0, MBIT_KE_ETEESTHE);
+    bne(var_0, 0, label_6);
+    b(label_1a);
+  label_6:
+    bne(var_0, 1, label_1a);
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bne(var_0, 0, label_a);
+    b(label_19);
+  label_a:
+    bne(var_0, 1, label_19);
+    bitGet(var_0, MBIT_ETEHENNISHU);
+    bitGet(var_1, MBIT_ETEHENNISHU_2);
+    add(var_1, var_1, var_0);
+    bne(var_1, 0, label_16);
+    rand(var_0, 1);
+    bne(var_0, 0, label_13);
+    bitSet(MBIT_ETEHENNISHU_2);
+    b(label_15);
+  label_13:
+    bitSet(MBIT_ETEHENNISHU);
+    b(label_15);
+  label_15:
+    b(label_18);
+  label_16:
+    bne(var_1, 1, label_18);
+    b(label_18);
+  label_18:
+    b(label_19);
+  label_19:
+    b(label_1a);
+  label_1a:
+    envTriggerSet(DOORBOX, 131, 1, line, coll_10);
+    bitGet(var_0, MBIT_ETE_HATURAITEN);
+    bne(var_0, 0, label_1f);
+    cameraSet(southeast, 600, 0, -1390);
+    b(label_22);
+  label_1f:
+    bne(var_0, 1, label_22);
+    cameraSet(northwest, 550, 0, -350);
+    b(label_22);
+  label_22:
+    li(var_0, 0);
+    li(var_1, 0);
+    partyMemberCheck(var_0, ulala);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, katsuya);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, baofu);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, nanjo);
+    add(var_1, var_1, var_0);
+    partyMemberCheck(var_0, elly);
+    add(var_1, var_1, var_0);
+    boutrange(var_1, 0, 4, label_31);
+    li(var_0, 0);
+    b(label_36);
+  label_31:
+    ref_31 = dialogAlloc();
+    ref_32 = msgShow(msg_0);
+/***************************************
+There is more than 4 members in the party.
+[tab]It will hang at this rate.
+[tab]Please inform Kaneda and Kataoka.
+[wait][clear]
+***************************************/
+    wait(ref_32);
+    dialogFree(ref_31);
+    b(label_36);
+  label_36:
+    bitGet(var_0, EBIT_E0046);
+    bez(var_0, label_44);
+    partyMemberCheck(var_0, nanjo);
+    bez(var_0, label_3e);
+    ref_3a = spriteLoad(sprite_1f);
+    wait(ref_3a);
+    unitSpawn(nanjo, sprite_1f, 90, 0, -370, west, none);
+    unitTriggerSet(nanjo, B_NANJ, 255, 1);
+  label_3e:
+    partyMemberCheck(var_0, elly);
+    bez(var_0, label_44);
+    ref_40 = spriteLoad(sprite_23);
+    wait(ref_40);
+    unitSpawn(elly, sprite_23, 920, 0, -150, south, none);
+    unitTriggerSet(elly, B_ERI, 255, 1);
+  label_44:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_4c);
+    bitGet(var_0, EBIT_E0038);
+    bez(var_0, label_4c);
+    ref_48 = spriteLoad(sprite_6a);
+    wait(ref_48);
+    unitSpawn(makimura, sprite_6a, 850, 0, -1160, east, none);
+    unitTriggerSet(makimura, SAGIBOX, 255, 1);
+  label_4c:
+    partyMemberCheck(var_0, ulala);
+    bez(var_0, label_52);
+    ref_4e = spriteLoad(sprite_6);
+    wait(ref_4e);
+    unitSpawn(ulala, sprite_6, 630, 0, -1060, south, none);
+    unitTriggerSet(ulala, B_URARATI, 255, 1);
+  label_52:
+    partyMemberCheck(var_0, katsuya);
+    bez(var_0, label_58);
+    ref_54 = spriteLoad(sprite_d);
+    wait(ref_54);
+    unitSpawn(katsuya, sprite_d, 250, 0, -1260, east, none);
+    unitTriggerSet(katsuya, B_KATUYYY, 255, 1);
+  label_58:
+    partyMemberCheck(var_0, baofu);
+    bez(var_0, label_5e);
+    ref_5a = spriteLoad(sprite_13);
+    wait(ref_5a);
+    unitSpawn(baofu, sprite_13, 1130, 0, -1050, west, none);
+    unitTriggerSet(baofu, B_PAO, 255, 1);
+  label_5e:
+    ref_5e = spriteLoad(sprite_9a);
+    wait(ref_5e);
+    unitSpawn(shopkeeper, sprite_9a, 542, 0, -120, north, none);
+    unitTriggerSet(shopkeeper, SHOP, 255, 1);
+    envTriggerSet(SHOP, 255, 1, collision_2, coll_2);
+    ref_63 = spriteLoad(sprite_be);
+    wait(ref_63);
+    unitSpawn(npc1, sprite_be, 1140, 0, -590, east, none);
+    unitPalette(npc1, 1);
+    unitTriggerSet(npc1, MAN1, 255, 1);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_6f);
+    ref_6a = spriteLoad(sprite_cb);
+    wait(ref_6a);
+    unitSpawn(npc2, sprite_cb, 740, 0, -660, north, none);
+    unitPalette(npc2, 2);
+    unitTriggerSet(npc2, MA2, 255, 1);
+  label_6f:
+    ref_6f = spriteLoad(sprite_d9);
+    wait(ref_6f);
+    unitSpawn(npc3, sprite_d9, 180, 0, -700, north, none);
+    unitPalette(npc3, 1);
+    unitTriggerSet(npc3, MAN3, 255, 1);
+    ref_74 = spriteLoad(sprite_0);
+    wait(ref_74);
+    ref_76 = spriteLoad(sprite_2);
+    wait(ref_76);
+    playerInit(south);
+    controlDisable();
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+}
+
+function B_URARATI()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_dd);
+    bitGet(var_0, EBIT_E0044);
+    bnz(var_0, label_cd);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_bd);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_ad);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_9d);
+    unitFacePlayer(ulala);
+    ref_8e = bustupLoad(bustup_1d);
+    bustupWait(ref_8e);
+    ref_90 = bustupAlloc(ref_8e, left, rgb(0,0,0));
+    bustupFade(ref_90, rgb(128,0,0), 30);
+    ref_92 = dialogAlloc();
+    ref_93 = msgShow(msg_1);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]...I’ve never seen a dead body before...
+[tab]I’m speechless...
+[tab]To think if I knew the person... Eew!!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2e, 1);
+    wait(ref_93);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_92);
+    ref_98 = bustupFade(ref_90, rgb(0,0,0), 10);
+    bustupWait(ref_98);
+    bustupFree(ref_90);
+    unitRestoreFacing(ulala);
+    b(label_ed);
+  label_9d:
+    unitFacePlayer(ulala);
+    ref_9e = bustupLoad(bustup_18);
+    bustupWait(ref_9e);
+    ref_a0 = bustupAlloc(ref_9e, left, rgb(0,0,0));
+    bustupFade(ref_a0, rgb(128,0,0), 30);
+    ref_a2 = dialogAlloc();
+    ref_a3 = msgShow(msg_2);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Hey Ma-ya! An ether treatment.
+[tab]Ahahahaha! That’s so fishy, isn’t it?
+[tab]You want to give it a try?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_23, 1);
+    wait(ref_a3);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_a2);
+    ref_a8 = bustupFade(ref_a0, rgb(0,0,0), 10);
+    bustupWait(ref_a8);
+    bustupFree(ref_a0);
+    unitRestoreFacing(ulala);
+    b(label_ed);
+  label_ad:
+    unitFacePlayer(ulala);
+    ref_ae = bustupLoad(bustup_17);
+    bustupWait(ref_ae);
+    ref_b0 = bustupAlloc(ref_ae, left, rgb(0,0,0));
+    bustupFade(ref_b0, rgb(128,0,0), 30);
+    ref_b2 = dialogAlloc();
+    ref_b3 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]It’s about the inside of a person, inside!
+[tab]Men and women are both about the inside!
+[tab]This is the lesson of the day!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1a, 1);
+    wait(ref_b3);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_b2);
+    ref_b8 = bustupFade(ref_b0, rgb(0,0,0), 10);
+    bustupWait(ref_b8);
+    bustupFree(ref_b0);
+    unitRestoreFacing(ulala);
+    b(label_ed);
+  label_bd:
+    unitFacePlayer(ulala);
+    ref_be = bustupLoad(bustup_17);
+    bustupWait(ref_be);
+    ref_c0 = bustupAlloc(ref_be, left, rgb(0,0,0));
+    bustupFade(ref_c0, rgb(128,0,0), 30);
+    ref_c2 = dialogAlloc();
+    ref_c3 = msgShow(msg_4);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Anna-chan and [tatsuya]-kun seemed very close.
+[tab]Looks like they used to go to clubs together.
+[tab]What do you think of that?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_2d, 1);
+    wait(ref_c3);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_c2);
+    ref_c8 = bustupFade(ref_c0, rgb(0,0,0), 10);
+    bustupWait(ref_c8);
+    bustupFree(ref_c0);
+    unitRestoreFacing(ulala);
+    b(label_ed);
+  label_cd:
+    unitFacePlayer(ulala);
+    ref_ce = bustupLoad(bustup_17);
+    bustupWait(ref_ce);
+    ref_d0 = bustupAlloc(ref_ce, left, rgb(0,0,0));
+    bustupFade(ref_d0, rgb(128,0,0), 30);
+    ref_d2 = dialogAlloc();
+    ref_d3 = msgShow(msg_5);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]That Sneak person said something important
+[tab]to [suou]-san, didn’t he? ...Something about
+[tab]ending up just like his dad. What was that?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1a, 1);
+    wait(ref_d3);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_d2);
+    ref_d8 = bustupFade(ref_d0, rgb(0,0,0), 10);
+    bustupWait(ref_d8);
+    bustupFree(ref_d0);
+    unitRestoreFacing(ulala);
+    b(label_ed);
+  label_dd:
+    unitFacePlayer(ulala);
+    ref_de = bustupLoad(bustup_1f);
+    bustupWait(ref_de);
+    ref_e0 = bustupAlloc(ref_de, left, rgb(0,0,0));
+    bustupFade(ref_e0, rgb(128,0,0), 30);
+    ref_e2 = dialogAlloc();
+    ref_e3 = msgShow(msg_6);
+/***************************************
+[color(yellow)]Ulala[color(white)]
+[tab]Huh, you’ve been stalked before? 
+[tab]A middle-aged... naked man... running around... 
+[tab]at night? ...Ma-ya, that’s called "streaking".
+[wait][clear]
+***************************************/
+    unitAnimationPlay(ulala, animation_1d, 1);
+    wait(ref_e3);
+    unitAnimationPlay(ulala, animation_a, 1);
+    dialogFree(ref_e2);
+    ref_e8 = bustupFade(ref_e0, rgb(0,0,0), 10);
+    bustupWait(ref_e8);
+    bustupFree(ref_e0);
+    unitRestoreFacing(ulala);
+    b(label_ed);
+  label_ed:
+    controlEnable();
+}
+
+function B_KATUYYY()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_16c);
+    bitGet(var_0, EBIT_E0044);
+    bnz(var_0, label_15e);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_14e);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_13e);
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_12e);
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_11e);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_10e);
+    unitFacePlayer(katsuya);
+    ref_ff = bustupLoad(bustup_21);
+    bustupWait(ref_ff);
+    ref_101 = bustupAlloc(ref_ff, left, rgb(0,0,0));
+    bustupFade(ref_101, rgb(128,0,0), 30);
+    ref_103 = dialogAlloc();
+    ref_104 = msgShow(msg_7);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Police work is nothing flashy. Many people
+[tab]confuse it with TV dramas. ...Do you think
+[tab]a murder case occurs every week?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_104);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_103);
+    ref_109 = bustupFade(ref_101, rgb(0,0,0), 10);
+    bustupWait(ref_109);
+    bustupFree(ref_101);
+    unitRestoreFacing(katsuya);
+    b(label_17c);
+  label_10e:
+    unitFacePlayer(katsuya);
+    ref_10f = bustupLoad(bustup_21);
+    bustupWait(ref_10f);
+    ref_111 = bustupAlloc(ref_10f, left, rgb(0,0,0));
+    bustupFade(ref_111, rgb(128,0,0), 30);
+    ref_113 = dialogAlloc();
+    ref_114 = msgShow(msg_8);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]As Serizawa-kun says, it does seem abnormal... 
+[tab]Could they have been running business illegally?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_114);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_113);
+    ref_119 = bustupFade(ref_111, rgb(0,0,0), 10);
+    bustupWait(ref_119);
+    bustupFree(ref_111);
+    unitRestoreFacing(katsuya);
+    b(label_17c);
+  label_11e:
+    unitFacePlayer(katsuya);
+    ref_11f = bustupLoad(bustup_27);
+    bustupWait(ref_11f);
+    ref_121 = bustupAlloc(ref_11f, left, rgb(0,0,0));
+    bustupFade(ref_121, rgb(128,0,0), 30);
+    ref_123 = dialogAlloc();
+    ref_124 = msgShow(msg_9);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]I had a feeling there was something behind
+[tab]Serizawa-kun’s bright personality...
+[tab]I hope she does not make any mistakes.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_124);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_123);
+    ref_129 = bustupFade(ref_121, rgb(0,0,0), 10);
+    bustupWait(ref_129);
+    bustupFree(ref_121);
+    unitRestoreFacing(katsuya);
+    b(label_17c);
+  label_12e:
+    unitFacePlayer(katsuya);
+    ref_12f = bustupLoad(bustup_21);
+    bustupWait(ref_12f);
+    ref_131 = bustupAlloc(ref_12f, left, rgb(0,0,0));
+    bustupFade(ref_131, rgb(128,0,0), 30);
+    ref_133 = dialogAlloc();
+    ref_134 = msgShow(msg_10);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Maybe not beauty spa, but men wear make-up
+[tab]nowadays too. I even trim my eye brows...
+[tab]Baofu’s a rather "old-fashioned" guy.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_134);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_133);
+    ref_139 = bustupFade(ref_131, rgb(0,0,0), 10);
+    bustupWait(ref_139);
+    bustupFree(ref_131);
+    unitRestoreFacing(katsuya);
+    b(label_17c);
+  label_13e:
+    unitFacePlayer(katsuya);
+    ref_13f = bustupLoad(bustup_21);
+    bustupWait(ref_13f);
+    ref_141 = bustupAlloc(ref_13f, left, rgb(0,0,0));
+    bustupFade(ref_141, rgb(128,0,0), 30);
+    ref_143 = dialogAlloc();
+    ref_144 = msgShow(msg_11);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]How touching... Serizawa-kun... I guess she
+[tab]can think of it as a costly bride training...
+[tab]No, I’m not thinking of forgiving a criminal.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_144);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_143);
+    ref_149 = bustupFade(ref_141, rgb(0,0,0), 10);
+    bustupWait(ref_149);
+    bustupFree(ref_141);
+    unitRestoreFacing(katsuya);
+    b(label_17c);
+  label_14e:
+    unitFacePlayer(katsuya);
+    ref_14f = bustupLoad(bustup_27);
+    bustupWait(ref_14f);
+    ref_151 = bustupAlloc(ref_14f, left, rgb(0,0,0));
+    bustupFade(ref_151, rgb(128,0,0), 30);
+    ref_153 = dialogAlloc();
+    ref_154 = msgShow(msg_12);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab][tatsuya] was going in and out of that club...
+[tab]I thought I understood about my brother,
+[tab]but I actually... knew nothing.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_2d, 1);
+    wait(ref_154);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_153);
+    ref_159 = bustupFade(ref_151, rgb(0,0,0), 10);
+    bustupWait(ref_159);
+    bustupFree(ref_151);
+    unitRestoreFacing(katsuya);
+    b(label_17c);
+  label_15e:
+    ref_15e = bustupLoad(bustup_26);
+    bustupWait(ref_15e);
+    ref_160 = bustupAlloc(ref_15e, left, rgb(0,0,0));
+    bustupFade(ref_160, rgb(128,0,0), 30);
+    ref_162 = dialogAlloc();
+    ref_163 = msgShow(msg_13);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Father was...
+[tab]...My father was...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_6, 1);
+    wait(ref_163);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_162);
+    ref_168 = bustupFade(ref_160, rgb(0,0,0), 10);
+    bustupWait(ref_168);
+    bustupFree(ref_160);
+    b(label_17c);
+  label_16c:
+    unitFacePlayer(katsuya);
+    ref_16d = bustupLoad(bustup_21);
+    bustupWait(ref_16d);
+    ref_16f = bustupAlloc(ref_16d, left, rgb(0,0,0));
+    bustupFade(ref_16f, rgb(128,0,0), 30);
+    ref_171 = dialogAlloc();
+    ref_172 = msgShow(msg_14);
+/***************************************
+[color(yellow)]Katsuya[color(white)]
+[tab]Not many women can handle stalkers alone,
+[tab]like Kirishima-kun can. The law must crack
+[tab]down on them, or else there’ll be more victims.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(katsuya, animation_1a, 1);
+    wait(ref_172);
+    unitAnimationPlay(katsuya, animation_a, 1);
+    dialogFree(ref_171);
+    ref_177 = bustupFade(ref_16f, rgb(0,0,0), 10);
+    bustupWait(ref_177);
+    bustupFree(ref_16f);
+    unitRestoreFacing(katsuya);
+    b(label_17c);
+  label_17c:
+    controlEnable();
+}
+
+function B_PAO()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_200);
+    bitGet(var_0, EBIT_E0044);
+    bnz(var_0, label_1ed);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_1dd);
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_1cd);
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_1bd);
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_1ad);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_19d);
+    unitFacePlayer(baofu);
+    ref_18e = bustupLoad(bustup_31);
+    bustupWait(ref_18e);
+    ref_190 = bustupAlloc(ref_18e, left, rgb(0,0,0));
+    bustupFade(ref_190, rgb(128,0,0), 30);
+    ref_192 = dialogAlloc();
+    ref_193 = msgShow(msg_15);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]If you ask me, beauty spas are suspicious.
+[tab]All they’re doing is soothing customer’s
+[tab]complexes... It’s the same as drinking.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_193);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_192);
+    ref_198 = bustupFade(ref_190, rgb(0,0,0), 10);
+    bustupWait(ref_198);
+    bustupFree(ref_190);
+    unitRestoreFacing(baofu);
+    b(label_210);
+  label_19d:
+    unitFacePlayer(baofu);
+    ref_19e = bustupLoad(bustup_31);
+    bustupWait(ref_19e);
+    ref_1a0 = bustupAlloc(ref_19e, left, rgb(0,0,0));
+    bustupFade(ref_1a0, rgb(128,0,0), 30);
+    ref_1a2 = dialogAlloc();
+    ref_1a3 = msgShow(msg_16);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab][suou]! HEY, [suou]!!
+[tab]...Amano, it doesn’t look like [suou] is here!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_1a3);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1a2);
+    ref_1a8 = bustupFade(ref_1a0, rgb(0,0,0), 10);
+    bustupWait(ref_1a8);
+    bustupFree(ref_1a0);
+    unitRestoreFacing(baofu);
+    b(label_210);
+  label_1ad:
+    unitFacePlayer(baofu);
+    ref_1ae = bustupLoad(bustup_2d);
+    bustupWait(ref_1ae);
+    ref_1b0 = bustupAlloc(ref_1ae, left, rgb(0,0,0));
+    bustupFade(ref_1b0, rgb(128,0,0), 30);
+    ref_1b2 = dialogAlloc();
+    ref_1b3 = msgShow(msg_17);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Even Serizawa would have a shady side.
+[tab]Getting caught up in a marriage scam is a
+[tab]part of it. Nowadays, everyone has problems.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_1b3);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1b2);
+    ref_1b8 = bustupFade(ref_1b0, rgb(0,0,0), 10);
+    bustupWait(ref_1b8);
+    bustupFree(ref_1b0);
+    unitRestoreFacing(baofu);
+    b(label_210);
+  label_1bd:
+    unitFacePlayer(baofu);
+    ref_1be = bustupLoad(bustup_30);
+    bustupWait(ref_1be);
+    ref_1c0 = bustupAlloc(ref_1be, left, rgb(0,0,0));
+    bustupFade(ref_1c0, rgb(128,0,0), 30);
+    ref_1c2 = dialogAlloc();
+    ref_1c3 = msgShow(msg_18);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]They didn’t have beauty spa for men when I
+[tab]was young. You even needed guts just to buy
+[tab]men’s cologne. ...What happened to manliness?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_1c3);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1c2);
+    ref_1c8 = bustupFade(ref_1c0, rgb(0,0,0), 10);
+    bustupWait(ref_1c8);
+    bustupFree(ref_1c0);
+    unitRestoreFacing(baofu);
+    b(label_210);
+  label_1cd:
+    unitFacePlayer(baofu);
+    ref_1ce = bustupLoad(bustup_2d);
+    bustupWait(ref_1ce);
+    ref_1d0 = bustupAlloc(ref_1ce, left, rgb(0,0,0));
+    bustupFade(ref_1d0, rgb(128,0,0), 30);
+    ref_1d2 = dialogAlloc();
+    ref_1d3 = msgShow(msg_19);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]People all grow from getting hurt.
+[tab]If it taught you a lesson, at least you
+[tab]got something out of it.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2d, 1);
+    wait(ref_1d3);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1d2);
+    ref_1d8 = bustupFade(ref_1d0, rgb(0,0,0), 10);
+    bustupWait(ref_1d8);
+    bustupFree(ref_1d0);
+    unitRestoreFacing(baofu);
+    b(label_210);
+  label_1dd:
+    unitFacePlayer(baofu);
+    ref_1de = bustupLoad(bustup_2d);
+    bustupWait(ref_1de);
+    ref_1e0 = bustupAlloc(ref_1de, left, rgb(0,0,0));
+    bustupFade(ref_1e0, rgb(128,0,0), 30);
+    ref_1e2 = dialogAlloc();
+    ref_1e3 = msgShow(msg_20);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]The older brother’s love isn’t reaching the younger. 
+[tab]Maybe that love is just the elder’s ego? 
+[tab]It’s important to see both ends...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1a, 1);
+    wait(ref_1e3);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1e2);
+    ref_1e8 = bustupFade(ref_1e0, rgb(0,0,0), 10);
+    bustupWait(ref_1e8);
+    bustupFree(ref_1e0);
+    unitRestoreFacing(baofu);
+    b(label_210);
+  label_1ed:
+    unitFaceUnit(baofu, katsuya);
+    ref_1ee = bustupLoad(bustup_2e);
+    bustupWait(ref_1ee);
+    ref_1f0 = bustupAlloc(ref_1ee, left, rgb(0,0,0));
+    bustupFade(ref_1f0, rgb(128,0,0), 30);
+    ref_1f2 = dialogAlloc();
+    ref_1f3 = msgShow(msg_21);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab][suou]!
+[tab]Talking to people about it won’t
+[tab]solve it, right?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2f, 1);
+    wait(ref_1f3);
+    ref_1f6 = msgShow(msg_22);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]Or, do you just want to tell someone to make
+[tab]yourself feel better? In that case, you’re not
+[tab]taking life seriously at all!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_2f, 1);
+    wait(ref_1f6);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_1f2);
+    ref_1fb = bustupFade(ref_1f0, rgb(0,0,0), 10);
+    bustupWait(ref_1fb);
+    bustupFree(ref_1f0);
+    unitRestoreFacing(baofu);
+    b(label_210);
+  label_200:
+    unitFacePlayer(baofu);
+    ref_201 = bustupLoad(bustup_31);
+    bustupWait(ref_201);
+    ref_203 = bustupAlloc(ref_201, left, rgb(0,0,0));
+    bustupFade(ref_203, rgb(128,0,0), 30);
+    ref_205 = dialogAlloc();
+    ref_206 = msgShow(msg_23);
+/***************************************
+[color(yellow)]Baofu[color(white)]
+[tab]It’s too bad for that stalker to target
+[tab]a Persona user... I guess if he had known,
+[tab]he wouldn’t have in the first place.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(baofu, animation_1d, 1);
+    wait(ref_206);
+    unitAnimationPlay(baofu, animation_a, 1);
+    dialogFree(ref_205);
+    ref_20b = bustupFade(ref_203, rgb(0,0,0), 10);
+    bustupWait(ref_20b);
+    bustupFree(ref_203);
+    unitRestoreFacing(baofu);
+    b(label_210);
+  label_210:
+    controlEnable();
+}
+
+function B_NANJ()
+{
+    controlDisable();
+    unitFacePlayer(nanjo);
+    ref_214 = bustupLoad(bustup_36);
+    bustupWait(ref_214);
+    ref_216 = bustupAlloc(ref_214, left, rgb(0,0,0));
+    bustupFade(ref_216, rgb(128,0,0), 30);
+    ref_218 = dialogAlloc();
+    ref_219 = msgShow(msg_24);
+/***************************************
+[color(yellow)]Nanjo[color(white)]
+[tab]I heard that Kirishima was stalked before,
+[tab]but what is the motivation for stalkers?
+[tab]Just the thrill of chasing after women?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(nanjo, animation_1a, 1);
+    wait(ref_219);
+    unitAnimationPlay(nanjo, animation_a, 1);
+    dialogFree(ref_218);
+    ref_21e = bustupFade(ref_216, rgb(0,0,0), 10);
+    bustupWait(ref_21e);
+    bustupFree(ref_216);
+    unitRestoreFacing(nanjo);
+    controlEnable();
+}
+
+function B_ERI()
+{
+    controlDisable();
+    unitFacePlayer(elly);
+    ref_226 = bustupLoad(bustup_3d);
+    bustupWait(ref_226);
+    ref_228 = bustupAlloc(ref_226, left, rgb(0,0,0));
+    bustupFade(ref_228, rgb(128,0,0), 30);
+    ref_22a = dialogAlloc();
+    ref_22b = msgShow(msg_25);
+/***************************************
+[color(yellow)]Elly[color(white)]
+[tab]I ran into a stalker the other day. I did
+[tab]report it to the police, but... Unless
+[tab]the law is enforced, it is useless.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(elly, animation_2d, 1);
+    wait(ref_22b);
+    unitAnimationPlay(elly, animation_a, 1);
+    dialogFree(ref_22a);
+    ref_230 = bustupFade(ref_228, rgb(0,0,0), 10);
+    bustupWait(ref_230);
+    bustupFree(ref_228);
+    unitRestoreFacing(elly);
+    controlEnable();
+}
+
+function B_TATU()
+{
+}
+
+function MAN1()
+{
+    controlDisable();
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bne(var_0, 0, label_23b);
+    b(label_243);
+  label_23b:
+    bne(var_0, 1, label_243);
+    bitGet(var_0, MBIT_ETEHENNI_MIHA);
+    bne(var_0, 0, label_240);
+    b(label_287);
+    b(label_242);
+  label_240:
+    bne(var_0, 1, label_242);
+    b(label_242);
+  label_242:
+    b(label_243);
+  label_243:
+    bitGet(var_0, MBIT_KE_ETEESTHE);
+    bne(var_0, 0, label_246);
+    b(label_24e);
+  label_246:
+    bne(var_0, 1, label_24e);
+    bitGet(var_0, MBIT_ETEESTHE_MIHA);
+    bne(var_0, 0, label_24b);
+    b(label_27d);
+    b(label_24d);
+  label_24b:
+    bne(var_0, 1, label_24d);
+    b(label_24d);
+  label_24d:
+    b(label_24e);
+  label_24e:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_274);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_266);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_25d);
+    unitFacePlayer(npc1);
+    ref_255 = dialogAlloc();
+    ref_256 = msgShow(msg_26);
+/***************************************
+[color(yellow)]Young Woman[color(white)]
+[tab]"Luck is at the recently-rumored store", huh...
+[tab]According to Wang Long, this is the lucky place! 
+[tab]But... What’s "ether aesthetics"?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_19, 1);
+    wait(ref_256);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_255);
+    unitRestoreFacing(npc1);
+    b(label_291);
+  label_25d:
+    unitFacePlayer(npc1);
+    ref_25e = dialogAlloc();
+    ref_25f = msgShow(msg_27);
+/***************************************
+[color(yellow)]Young Woman[color(white)]
+[tab]This beauty spa isn’t just for beauty.
+[tab]They treat wounds and improve your health.
+[tab]Amazing! I’m glad I trusted Wang Long.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_27, 1);
+    wait(ref_25f);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_25e);
+    unitRestoreFacing(npc1);
+    b(label_291);
+  label_266:
+    unitFacePlayer(npc1);
+    ref_267 = dialogAlloc();
+    ref_268 = msgShow(msg_28);
+/***************************************
+[color(yellow)]Young Woman[color(white)]
+[tab]What’s up with that scary lady?
+[tab]Why is she so mad?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_19, 1);
+    wait(ref_268);
+    unitFaceUnit(npc2, npc1);
+    ref_26c = msgShow(msg_29);
+/***************************************
+[color(yellow)]Young Woman[color(white)]
+[tab]...Wh-What the... She’s staring at me.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_24, 1);
+    wait(ref_26c);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_267);
+    unitRestoreFacing(npc2);
+    unitRestoreFacing(npc1);
+    b(label_291);
+  label_274:
+    unitFacePlayer(npc1);
+    ref_275 = dialogAlloc();
+    ref_276 = msgShow(msg_30);
+/***************************************
+[color(yellow)]Young Woman[color(white)]
+[tab]That lady that was there, could it be...
+[tab]She did the Joker curse? She was about
+[tab]to turn into a killer! Scary!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_24, 1);
+    wait(ref_276);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_275);
+    unitRestoreFacing(npc1);
+    b(label_291);
+  label_27d:
+    unitFacePlayer(npc1);
+    ref_27e = dialogAlloc();
+    ref_27f = msgShow(msg_31);
+/***************************************
+[color(yellow)]Young Woman[color(white)]
+[tab]I’m so glad "ether aesthetics" are powered
+[tab]up more than ever! But what does it mean
+[tab]for "demon-like" enemies?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_27, 1);
+    wait(ref_27f);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_27e);
+    unitRestoreFacing(npc1);
+    bitSet(MBIT_ETEESTHE_MIHA);
+    b(label_291);
+  label_287:
+    unitFacePlayer(npc1);
+    ref_288 = dialogAlloc();
+    ref_289 = msgShow(msg_32);
+/***************************************
+[color(yellow)]Young Woman[color(white)]
+[tab]This store changed to make itself
+[tab]different from other stores... It seemed
+[tab]different enough the way it was, huh?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc1, animation_27, 1);
+    wait(ref_289);
+    unitAnimationPlay(npc1, animation_0, 1);
+    dialogFree(ref_288);
+    unitRestoreFacing(npc1);
+    bitSet(MBIT_ETEHENNI_MIHA);
+    b(label_291);
+  label_291:
+    controlEnable();
+}
+
+function MA2()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_2ae);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_2a5);
+    unitFacePlayer(npc2);
+    ref_299 = dialogAlloc();
+    ref_29a = msgShow(msg_33);
+/***************************************
+[color(yellow)]Model[color(white)]
+[tab]I work as a model, but it’s a very
+[tab]competitive world... It’s more like a battle...
+[tab]You can’t get by on just looks.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_29a);
+    unitAnimationPlay(npc2, animation_0, 1);
+    ref_29e = msgShow(msg_34);
+/***************************************
+[color(yellow)]Model[color(white)]
+[tab]Ahh, if the lively dragon didn’t move, I’d been... 
+[tab]Wang Long is too accurate! That’s it...
+[tab]The end justifies the means! I’m gonna do it!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_26, 1);
+    wait(ref_29e);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_299);
+    unitRestoreFacing(npc2);
+    b(label_2b6);
+  label_2a5:
+    unitFacePlayer(npc2);
+    ref_2a6 = dialogAlloc();
+    ref_2a7 = msgShow(msg_35);
+/***************************************
+[color(yellow)]Model[color(white)]
+[tab]Huh? Why am I at a beauty spa?
+[tab]To become beautiful, of course! I will do
+[tab]anything to become a supermodel!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_24, 1);
+    wait(ref_2a7);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_2a6);
+    unitRestoreFacing(npc2);
+    b(label_2b6);
+  label_2ae:
+    unitFacePlayer(npc2);
+    ref_2af = dialogAlloc();
+    ref_2b0 = msgShow(msg_36);
+/***************************************
+[color(yellow)]Model[color(white)]
+[tab]Gaaaa! Why can’t it be done!?
+[tab]It’s easy to fix a nose, is it not!?
+[tab]Wasn’t "ether aesthetics" almighty!?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc2, animation_26, 1);
+    wait(ref_2b0);
+    unitAnimationPlay(npc2, animation_0, 1);
+    dialogFree(ref_2af);
+    unitRestoreFacing(npc2);
+  label_2b6:
+    controlEnable();
+}
+
+function MAN3()
+{
+    controlDisable();
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_2ed);
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_2e4);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_2d7);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_2ce);
+    unitFacePlayer(npc3);
+    ref_2c2 = dialogAlloc();
+    ref_2c3 = msgShow(msg_37);
+/***************************************
+[color(yellow)]Middle-Aged Woman[color(white)]
+[tab]Lately, there are women who start to shine
+[tab]after the age of thirty, don’t you think?
+[tab]Like that actress, Junko Kurosu.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_2c3);
+    unitAnimationPlay(npc3, animation_0, 1);
+    ref_2c7 = msgShow(msg_38);
+/***************************************
+[color(yellow)]Middle-Aged Woman[color(white)]
+[tab]Nothing good comes from blaming everything
+[tab]on your age. I decided to give it a shot
+[tab]by coming here.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_2c7);
+    unitAnimationPlay(npc3, animation_0, 1);
+    dialogFree(ref_2c2);
+    unitRestoreFacing(npc3);
+    b(label_2f7);
+  label_2ce:
+    unitFacePlayer(npc3);
+    ref_2cf = dialogAlloc();
+    ref_2d0 = msgShow(msg_39);
+/***************************************
+[color(yellow)]Middle-Aged Woman[color(white)]
+[tab]A first rate actress and a good mother...
+[tab](sigh) How does she do it?
+[tab]Kurosu-san... She’s an incredible person.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_2d0);
+    unitAnimationPlay(npc3, animation_0, 1);
+    dialogFree(ref_2cf);
+    unitRestoreFacing(npc3);
+    b(label_2f7);
+  label_2d7:
+    unitFacePlayer(npc3);
+    ref_2d8 = dialogAlloc();
+    ref_2d9 = msgShow(msg_40);
+/***************************************
+[color(yellow)]Middle-Aged Woman[color(white)]
+[tab]Will you listen? I wanted to escape from
+[tab]everyday life to find a new identity...
+[tab]I moved here to become my ideal person.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_25, 1);
+    wait(ref_2d9);
+    unitAnimationPlay(npc3, animation_0, 1);
+    ref_2dd = msgShow(msg_41);
+/***************************************
+[color(yellow)]Middle-Aged Woman[color(white)]
+[tab]I was hasty, thinking if I didn’t act fast,
+[tab]then the time would just fly by... Is that
+[tab]foolish of me? But you understand, don’t you?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_2dd);
+    unitAnimationPlay(npc3, animation_0, 1);
+    dialogFree(ref_2d8);
+    unitRestoreFacing(npc3);
+    b(label_2f7);
+  label_2e4:
+    unitFacePlayer(npc3);
+    ref_2e5 = dialogAlloc();
+    ref_2e6 = msgShow(msg_42);
+/***************************************
+[color(yellow)]Middle-Aged Woman[color(white)]
+[tab]What is the motive for people in using the
+[tab]Joker curse? What changes by its use?
+[tab]I too... No, I must live more positively!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc3, animation_24, 1);
+    wait(ref_2e6);
+    unitAnimationPlay(npc3, animation_0, 1);
+    dialogFree(ref_2e5);
+    unitRestoreFacing(npc3);
+    b(label_2f7);
+  label_2ed:
+    unitFacePlayer(npc3);
+    ref_2ee = dialogAlloc();
+    ref_2ef = msgShow(msg_43);
+/***************************************
+[color(yellow)]Middle-Aged Woman[color(white)]
+[tab]Ahh, I was a fool only caring about myself.
+[tab]Everything is for a world without Kegare.
+[wait][clear]
+***************************************/
+    wait(ref_2ef);
+    unitAnimationHold(npc3, animation_13, -1);
+    ref_2f2 = msgShow(msg_44);
+/***************************************
+[color(yellow)]Middle-Aged Woman[color(white)]
+[tab]...Let’s think positive!
+[wait][clear]
+***************************************/
+    wait(ref_2f2);
+    unitAnimationPlay(npc3, animation_0, 1);
+    dialogFree(ref_2ee);
+    unitRestoreFacing(npc3);
+  label_2f7:
+    controlEnable();
+}
+
+function SAGIBOX()
+{
+    controlDisable();
+    unitFacePlayer(makimura);
+    ref_2fb = bustupLoad(bustup_d4);
+    bustupWait(ref_2fb);
+    ref_2fd = bustupAlloc(ref_2fb, right, rgb(0,0,0));
+    bustupFade(ref_2fd, rgb(128,0,0), 30);
+    ref_2ff = dialogAlloc();
+    ref_300 = msgShow(msg_45);
+/***************************************
+[color(yellow)]Makimura[color(white)]
+[tab]Beauty spa... Nice. Making women in this
+[tab]world as beautiful as possible...
+[tab]Of course I use the ones for men.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(makimura, animation_27, 1);
+    wait(ref_300);
+    unitAnimationPlay(makimura, animation_0, 1);
+    dialogFree(ref_2ff);
+    ref_305 = bustupFade(ref_2fd, rgb(0,0,0), 10);
+    bustupWait(ref_305);
+    bustupFree(ref_2fd);
+    unitRestoreFacing(makimura);
+    controlEnable();
+}
+
+function SHOP()
+{
+    controlDisable();
+    ref_30c = shopOverlayInit();
+    unitFacePlayer(shopkeeper);
+    bitGet(var_0, MBIT_AIS_30);
+    bne(var_0, 0, label_330);
+    bitGet(var_0, MBIT_KE_ETEESTHE);
+    bne(var_0, 0, label_314);
+    b(label_352);
+    b(label_32f);
+  label_314:
+    bne(var_0, 1, label_32f);
+    bitGet(var_0, MBIT_ETE_HATUUWASAGO);
+    bne(var_0, 0, label_319);
+    b(label_376);
+    b(label_32e);
+  label_319:
+    bne(var_0, 1, label_32e);
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bne(var_0, 0, label_31e);
+    b(label_352);
+    b(label_32d);
+  label_31e:
+    bne(var_0, 1, label_32d);
+    bitGet(var_0, MBIT_ETE_HATUHENIGO);
+    bne(var_0, 0, label_329);
+    bitGet(var_0, MBIT_ETEHENNISHU);
+    bne(var_0, 0, label_325);
+    b(label_3c7);
+    b(label_328);
+  label_325:
+    bne(var_0, 1, label_328);
+    b(label_39f);
+    b(label_328);
+  label_328:
+    b(label_32c);
+  label_329:
+    bne(var_0, 1, label_32c);
+    b(label_352);
+    b(label_32c);
+  label_32c:
+    b(label_32d);
+  label_32d:
+    b(label_32e);
+  label_32e:
+    b(label_32f);
+  label_32f:
+    b(label_352);
+  label_330:
+    bne(var_0, 1, label_352);
+    bitGet(var_0, MBIT_KE_ETEESTHE);
+    bne(var_0, 0, label_335);
+    b(label_362);
+    b(label_351);
+  label_335:
+    bne(var_0, 1, label_351);
+    bitGet(var_0, MBIT_ETE_HATUUWASAGO);
+    bne(var_0, 0, label_33b);
+    bitSet(MBIT_ETE_HATUUWASAGO);
+    b(label_38b);
+    b(label_350);
+  label_33b:
+    bne(var_0, 1, label_350);
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bne(var_0, 0, label_340);
+    b(label_362);
+    b(label_34f);
+  label_340:
+    bne(var_0, 1, label_34f);
+    bitGet(var_0, MBIT_ETE_HATUHENIGO);
+    bne(var_0, 0, label_34b);
+    bitGet(var_0, MBIT_ETEHENNISHU);
+    bne(var_0, 0, label_347);
+    b(label_3db);
+    b(label_34a);
+  label_347:
+    bne(var_0, 1, label_34a);
+    b(label_3b3);
+    b(label_34a);
+  label_34a:
+    b(label_34e);
+  label_34b:
+    bne(var_0, 1, label_34e);
+    b(label_362);
+    b(label_34e);
+  label_34e:
+    b(label_34f);
+  label_34f:
+    b(label_350);
+  label_350:
+    b(label_351);
+  label_351:
+    b(label_352);
+  label_352:
+    ref_352 = bustupLoad(bustup_f9);
+    bustupWait(ref_352);
+    ref_354 = bustupAlloc(ref_352, right, rgb(0,0,0));
+    bustupFade(ref_354, rgb(128,0,0), 30);
+    ref_356 = dialogAlloc();
+    ref_357 = msgShow(msg_46);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Welcome to Etheria♥
+
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_357);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_356);
+    ref_35c = bustupFade(ref_354, rgb(0,0,0), 10);
+    bustupWait(ref_35c);
+    bustupFree(ref_354);
+    wait(ref_30c);
+    shopRate(100);
+    b(label_3ef);
+  label_362:
+    ref_362 = bustupLoad(bustup_f9);
+    bustupWait(ref_362);
+    ref_364 = bustupAlloc(ref_362, right, rgb(0,0,0));
+    bustupFade(ref_364, rgb(128,0,0), 30);
+    ref_366 = dialogAlloc();
+    ref_367 = msgShow(msg_47);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Welcome to Etheria♥
+[tab]You’re from that magazine place, right?
+[tab]...You are! That’s great!!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_367);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_36b = msgShow(msg_48);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Today, I want to give a special discount.
+[tab]No special reason, I just want you to get
+[tab]beautiful at this spa♥
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_36b);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_366);
+    ref_370 = bustupFade(ref_364, rgb(0,0,0), 10);
+    bustupWait(ref_370);
+    bustupFree(ref_364);
+    wait(ref_30c);
+    shopRate(80);
+    b(label_3ef);
+  label_376:
+    ref_376 = bustupLoad(bustup_f9);
+    bustupWait(ref_376);
+    ref_378 = bustupAlloc(ref_376, right, rgb(0,0,0));
+    bustupFade(ref_378, rgb(128,0,0), 30);
+    ref_37a = dialogAlloc();
+    ref_37b = msgShow(msg_49);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Welcome to Etheria♥
+[tab]We started some new treatments this week.
+[tab]Please give one a try.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_37b);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_37f = msgShow(msg_50);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]We have special results only available from
+[tab]this spa! Every treatment brings out your
+[tab]charm. No demon will be a match for you!!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_37f);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_37a);
+    ref_384 = bustupFade(ref_378, rgb(0,0,0), 10);
+    bustupWait(ref_384);
+    bustupFree(ref_378);
+    wait(ref_30c);
+    shopRate(100);
+    bitSet(MBIT_ETE_HATUUWASAGO);
+    b(label_3ef);
+  label_38b:
+    ref_38b = bustupLoad(bustup_f9);
+    bustupWait(ref_38b);
+    ref_38d = bustupAlloc(ref_38b, right, rgb(0,0,0));
+    bustupFade(ref_38d, rgb(128,0,0), 30);
+    ref_38f = dialogAlloc();
+    ref_390 = msgShow(msg_51);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Welcome to Etheria♥ We started some new
+[tab]treatments this week. Of course they have
+[tab]special results, exclusive to this spa!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_390);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_394 = msgShow(msg_52);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Every treatment brings out your charm.
+[tab]No demon will be a match for you!!
+[tab]...I’ll cut you a deal!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_394);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_38f);
+    ref_399 = bustupFade(ref_38d, rgb(0,0,0), 10);
+    bustupWait(ref_399);
+    bustupFree(ref_38d);
+    wait(ref_30c);
+    shopRate(80);
+    b(label_3ef);
+  label_39f:
+    ref_39f = bustupLoad(bustup_f9);
+    bustupWait(ref_39f);
+    ref_3a1 = bustupAlloc(ref_39f, right, rgb(0,0,0));
+    bustupFade(ref_3a1, rgb(128,0,0), 30);
+    ref_3a3 = dialogAlloc();
+    ref_3a4 = msgShow(msg_53);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Welcome to Etheria♥
+[tab]Thank you for choosing us.
+[tab]You’ve come at a very good time.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3a4);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_3a8 = msgShow(msg_54);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Today, ether aesthetics is powered up!!
+[tab]The prices? ...Do not worry!
+[tab]The prices are... the same as always!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3a8);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_3a3);
+    ref_3ad = bustupFade(ref_3a1, rgb(0,0,0), 10);
+    bustupWait(ref_3ad);
+    bustupFree(ref_3a1);
+    wait(ref_30c);
+    shopRate(100);
+    b(label_3ef);
+  label_3b3:
+    ref_3b3 = bustupLoad(bustup_f9);
+    bustupWait(ref_3b3);
+    ref_3b5 = bustupAlloc(ref_3b3, right, rgb(0,0,0));
+    bustupFade(ref_3b5, rgb(128,0,0), 30);
+    ref_3b7 = dialogAlloc();
+    ref_3b8 = msgShow(msg_55);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Welcome to Etheria♥
+[tab]Thank you for choosing us.
+[tab]You’ve come at a very good time.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3b8);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_3bc = msgShow(msg_56);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Today, ether aesthetics is powered up!!
+[tab]Of course, the prices are no different!
+[tab]...I’ll cut you a deal!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3bc);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_3b7);
+    ref_3c1 = bustupFade(ref_3b5, rgb(0,0,0), 10);
+    bustupWait(ref_3c1);
+    bustupFree(ref_3b5);
+    wait(ref_30c);
+    shopRate(80);
+    b(label_3ef);
+  label_3c7:
+    ref_3c7 = bustupLoad(bustup_f9);
+    bustupWait(ref_3c7);
+    ref_3c9 = bustupAlloc(ref_3c7, right, rgb(0,0,0));
+    bustupFade(ref_3c9, rgb(128,0,0), 30);
+    ref_3cb = dialogAlloc();
+    ref_3cc = msgShow(msg_57);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Welcome to Etheria♥
+[tab]Thank you for choosing us.
+[tab]You’ve come at a very good time.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3cc);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_3d0 = msgShow(msg_58);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Today, ether aesthetics is powered up!!
+[tab]The treatments are enhanced further.
+[tab]But, we stopped the men’s line. Sorry♥
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3d0);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_3cb);
+    ref_3d5 = bustupFade(ref_3c9, rgb(0,0,0), 10);
+    bustupWait(ref_3d5);
+    bustupFree(ref_3c9);
+    wait(ref_30c);
+    shopRate(100);
+    b(label_3ef);
+  label_3db:
+    ref_3db = bustupLoad(bustup_f9);
+    bustupWait(ref_3db);
+    ref_3dd = bustupAlloc(ref_3db, right, rgb(0,0,0));
+    bustupFade(ref_3dd, rgb(128,0,0), 30);
+    ref_3df = dialogAlloc();
+    ref_3e0 = msgShow(msg_59);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Welcome to Etheria♥
+[tab]Thank you for choosing us.
+[tab]You’ve come at a very good time.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3e0);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_3e4 = msgShow(msg_60);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Today, ether aesthetics is powered up! 
+[tab]The treatments are enhanced. I’ll cut you a
+[tab]deal, but no more men’s line. Sorry♥
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3e4);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_3df);
+    ref_3e9 = bustupFade(ref_3dd, rgb(0,0,0), 10);
+    bustupWait(ref_3e9);
+    bustupFree(ref_3dd);
+    wait(ref_30c);
+    shopRate(80);
+    b(label_3ef);
+  label_3ef:
+    bitGet(var_0, MBIT_KE_ETEESTHE);
+    bne(var_0, 0, label_41e);
+    choiceSetResult(2);
+    op_105(3);
+    ref_3f3 = bustupLoad(bustup_f9);
+    bustupWait(ref_3f3);
+    ref_3f5 = bustupAlloc(ref_3f3, right, rgb(0,0,0));
+    bustupFade(ref_3f5, rgb(128,0,0), 30);
+    ref_3f7 = dialogAlloc();
+    ref_3f8 = msgShow(msg_61);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]What can we do for you today?
+[choice(4)]Heal
+Talk to the esthetician
+Never mind
+Leave
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_3f8);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_400);
+    li(var_5, 0);
+    b(label_416);
+  label_400:
+    bne(var_0, 1, label_410);
+    choiceSetResult(2);
+    op_105(3);
+    ref_403 = msgShow(msg_62);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Ask away.
+[choice(2)]Make small talk
+Ask about treatments
+[end_choice][clear]
+***************************************/
+    wait(ref_403);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_409);
+    li(var_5, 1);
+    b(label_40f);
+  label_409:
+    bne(var_0, 1, label_40c);
+    li(var_5, 2000);
+    b(label_40f);
+  label_40c:
+    bne(var_0, 2, label_40f);
+    li(var_5, 1000);
+    b(label_40f);
+  label_40f:
+    b(label_416);
+  label_410:
+    bne(var_0, 2, label_413);
+    li(var_5, 2);
+    b(label_416);
+  label_413:
+    bne(var_0, 3, label_416);
+    li(var_5, 3);
+    b(label_416);
+  label_416:
+    dialogFree(ref_3f7);
+    ref_417 = bustupFade(ref_3f5, rgb(0,0,0), 10);
+    bustupWait(ref_417);
+    bustupFree(ref_3f5);
+    shopInventory(5, shopInventory_0);
+    ref_41b = shopOpen(11);
+    wait(ref_41b);
+    b(label_463);
+  label_41e:
+    bne(var_0, 1, label_463);
+    choiceSetResult(3);
+    op_105(3);
+    ref_421 = bustupLoad(bustup_f9);
+    bustupWait(ref_421);
+    ref_423 = bustupAlloc(ref_421, right, rgb(0,0,0));
+    bustupFade(ref_423, rgb(128,0,0), 30);
+    ref_425 = dialogAlloc();
+    ref_426 = msgShow(msg_63);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]What can we do for you today?
+[choice(5)]Heal
+Treatment
+Talk to the esthetician
+Never mind
+Leave
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_426);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_42e);
+    li(var_5, 0);
+    b(label_448);
+  label_42e:
+    bne(var_0, 1, label_431);
+    li(var_5, 1);
+    b(label_448);
+  label_431:
+    bne(var_0, 2, label_441);
+    choiceSetResult(2);
+    op_105(2);
+    ref_434 = msgShow(msg_64);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Ask away.
+[choice(2)]Make small talk
+Ask about treatments
+[end_choice][clear]
+***************************************/
+    wait(ref_434);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_43a);
+    li(var_5, 2);
+    b(label_440);
+  label_43a:
+    bne(var_0, 1, label_43d);
+    li(var_5, 2000);
+    b(label_440);
+  label_43d:
+    bne(var_0, 2, label_440);
+    li(var_5, 1000);
+    b(label_440);
+  label_440:
+    b(label_448);
+  label_441:
+    bne(var_0, 3, label_444);
+    li(var_5, 3);
+    b(label_448);
+  label_444:
+    bne(var_0, 4, label_448);
+    bitSet(MBIT_EXITBIT);
+    li(var_5, 4);
+    b(label_448);
+  label_448:
+    dialogFree(ref_425);
+    ref_449 = bustupFade(ref_423, rgb(0,0,0), 10);
+    bustupWait(ref_449);
+    bustupFree(ref_423);
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bne(var_0, 0, label_453);
+    shopInventory(5, shopInventory_0);
+    shopInventory(23, shopInventory_2);
+    ref_450 = shopOpen(14);
+    wait(ref_450);
+    b(label_462);
+  label_453:
+    bne(var_0, 1, label_462);
+    bitGet(var_0, MBIT_ETEHENNISHU);
+    bne(var_0, 0, label_45b);
+    shopInventory(5, shopInventory_0);
+    shopInventory(23, shopInventory_3);
+    ref_458 = shopOpen(14);
+    wait(ref_458);
+    b(label_461);
+  label_45b:
+    bne(var_0, 1, label_461);
+    shopInventory(5, shopInventory_0);
+    shopInventory(23, shopInventory_2);
+    ref_45e = shopOpen(14);
+    wait(ref_45e);
+    b(label_461);
+  label_461:
+    b(label_462);
+  label_462:
+    b(label_463);
+  label_463:
+}
+
+function HA_SHOP_RESTART_0()
+{
+    bitGet(var_0, MBIT_KE_ETEESTHE);
+    bne(var_0, 0, label_490);
+    choiceSetResult(2);
+    op_105(3);
+    ref_468 = bustupLoad(bustup_f9);
+    bustupWait(ref_468);
+    ref_46a = bustupAlloc(ref_468, right, rgb(0,0,0));
+    bustupFade(ref_46a, rgb(128,0,0), 30);
+    ref_46c = dialogAlloc();
+    ref_46d = msgShow(msg_65);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Fusing the names "ether" and "materia"...
+[tab]That is "Etheria". Isn’t it wonderful?
+[tab]...Can I help you with anything else?
+[choice(4)]Heal
+Talk to the esthetician
+Never mind
+Leave
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_46d);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_475);
+    li(var_5, 0);
+    b(label_48b);
+  label_475:
+    bne(var_0, 1, label_485);
+    choiceSetResult(2);
+    op_105(2);
+    ref_478 = msgShow(msg_66);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Ask away.
+[choice(2)]Make small talk
+Ask about treatments
+[end_choice][clear]
+***************************************/
+    wait(ref_478);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_47e);
+    li(var_5, 1);
+    b(label_484);
+  label_47e:
+    bne(var_0, 1, label_481);
+    li(var_5, 2000);
+    b(label_484);
+  label_481:
+    bne(var_0, 2, label_484);
+    li(var_5, 1000);
+    b(label_484);
+  label_484:
+    b(label_48b);
+  label_485:
+    bne(var_0, 2, label_488);
+    li(var_5, 2);
+    b(label_48b);
+  label_488:
+    bne(var_0, 3, label_48b);
+    li(var_5, 3);
+    b(label_48b);
+  label_48b:
+    dialogFree(ref_46c);
+    ref_48c = bustupFade(ref_46a, rgb(0,0,0), 10);
+    bustupWait(ref_48c);
+    bustupFree(ref_46a);
+    b(label_4bf);
+  label_490:
+    bne(var_0, 1, label_4bf);
+    choiceSetResult(3);
+    op_105(3);
+    ref_493 = bustupLoad(bustup_f9);
+    bustupWait(ref_493);
+    ref_495 = bustupAlloc(ref_493, right, rgb(0,0,0));
+    bustupFade(ref_495, rgb(128,0,0), 30);
+    ref_497 = dialogAlloc();
+    ref_498 = msgShow(msg_67);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Fusing the names "ether" and "materia"...
+[tab]That is "Etheria". Isn’t it wonderful?
+[tab]...Can I help you with anything else?
+[choice(5)]Heal
+Treatment
+Talk to the esthetician
+Never mind
+Leave
+[end_choice][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_498);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_4a0);
+    li(var_5, 0);
+    b(label_4ba);
+  label_4a0:
+    bne(var_0, 1, label_4a3);
+    li(var_5, 1);
+    b(label_4ba);
+  label_4a3:
+    bne(var_0, 2, label_4b3);
+    choiceSetResult(2);
+    op_105(2);
+    ref_4a6 = msgShow(msg_68);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Ask away.
+[choice(2)]Make small talk
+Ask about treatments
+[end_choice][clear]
+***************************************/
+    wait(ref_4a6);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_4ac);
+    li(var_5, 2);
+    b(label_4b2);
+  label_4ac:
+    bne(var_0, 1, label_4af);
+    li(var_5, 2000);
+    b(label_4b2);
+  label_4af:
+    bne(var_0, 2, label_4b2);
+    li(var_5, 1000);
+    b(label_4b2);
+  label_4b2:
+    b(label_4ba);
+  label_4b3:
+    bne(var_0, 3, label_4b6);
+    li(var_5, 3);
+    b(label_4ba);
+  label_4b6:
+    bne(var_0, 4, label_4ba);
+    bitSet(MBIT_EXITBIT);
+    li(var_5, 4);
+    b(label_4ba);
+  label_4ba:
+    dialogFree(ref_497);
+    ref_4bb = bustupFade(ref_495, rgb(0,0,0), 10);
+    bustupWait(ref_4bb);
+    bustupFree(ref_495);
+    b(label_4bf);
+  label_4bf:
+}
+
+function HA_SHOP_TALK_0()
+{
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bne(var_0, 0, label_4c3);
+    b(label_4d1);
+  label_4c3:
+    bne(var_0, 1, label_4d1);
+    bitGet(var_0, MBIT_ETE_HATUHENIGO);
+    bne(var_0, 0, label_4ce);
+    bitGet(var_0, MBIT_ETEHENNISHU);
+    bne(var_0, 0, label_4ca);
+    b(label_513);
+    b(label_4cd);
+  label_4ca:
+    bne(var_0, 1, label_4cd);
+    b(label_521);
+    b(label_4cd);
+  label_4cd:
+    b(label_4d0);
+  label_4ce:
+    bne(var_0, 1, label_4d0);
+    b(label_4d0);
+  label_4d0:
+    b(label_4d1);
+  label_4d1:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_505);
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_4f7);
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_4e9);
+    ref_4d7 = bustupLoad(bustup_f9);
+    bustupWait(ref_4d7);
+    ref_4d9 = bustupAlloc(ref_4d7, right, rgb(0,0,0));
+    bustupFade(ref_4d9, rgb(128,0,0), 30);
+    ref_4db = dialogAlloc();
+    ref_4dc = msgShow(msg_69);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]We work on ether, which is the life source,
+[tab]and activate the beauty process of the body.
+[tab]That’s why it is so effective.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_4dc);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    ref_4e0 = msgShow(msg_70);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]We even combine it with alchemy to treat not
+[tab]only beauty, but wounds and illness as well!
+[tab]That’s right, it’ll fix anything!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_4e0);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_4db);
+    ref_4e5 = bustupFade(ref_4d9, rgb(0,0,0), 10);
+    bustupWait(ref_4e5);
+    bustupFree(ref_4d9);
+    b(label_52f);
+  label_4e9:
+    ref_4e9 = bustupLoad(bustup_f9);
+    bustupWait(ref_4e9);
+    ref_4eb = bustupAlloc(ref_4e9, right, rgb(0,0,0));
+    bustupFade(ref_4eb, rgb(128,0,0), 30);
+    ref_4ed = dialogAlloc();
+    ref_4ee = msgShow(msg_71);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Are you doubting the effects?  
+[tab]Everyone does at first. But the rumors are true... 
+[tab]The curing methods have already been proven.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_4ee);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_4ed);
+    ref_4f3 = bustupFade(ref_4eb, rgb(0,0,0), 10);
+    bustupWait(ref_4f3);
+    bustupFree(ref_4eb);
+    b(label_52f);
+  label_4f7:
+    ref_4f7 = bustupLoad(bustup_f9);
+    bustupWait(ref_4f7);
+    ref_4f9 = bustupAlloc(ref_4f7, right, rgb(0,0,0));
+    bustupFade(ref_4f9, rgb(128,0,0), 30);
+    ref_4fb = dialogAlloc();
+    ref_4fc = msgShow(msg_72);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Some customers misunderstand. They ask us
+[tab]to fix their nose, or make them taller...
+[tab]They’re mixing up beauty with surgery.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_19, 1);
+    wait(ref_4fc);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_4fb);
+    ref_501 = bustupFade(ref_4f9, rgb(0,0,0), 10);
+    bustupWait(ref_501);
+    bustupFree(ref_4f9);
+    b(label_52f);
+  label_505:
+    ref_505 = bustupLoad(bustup_f9);
+    bustupWait(ref_505);
+    ref_507 = bustupAlloc(ref_505, right, rgb(0,0,0));
+    bustupFade(ref_507, rgb(128,0,0), 30);
+    ref_509 = dialogAlloc();
+    ref_50a = msgShow(msg_73);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Word of mouth is incredible. With a little
+[tab]bit, business picks up so much... And now,
+[tab]we can heal wounds and illness as well.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_50a);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_509);
+    ref_50f = bustupFade(ref_507, rgb(0,0,0), 10);
+    bustupWait(ref_50f);
+    bustupFree(ref_507);
+    b(label_52f);
+  label_513:
+    ref_513 = bustupLoad(bustup_f9);
+    bustupWait(ref_513);
+    ref_515 = bustupAlloc(ref_513, right, rgb(0,0,0));
+    bustupFade(ref_515, rgb(128,0,0), 30);
+    ref_517 = dialogAlloc();
+    ref_518 = msgShow(msg_74);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Lately, there’s a lot of competition in this
+[tab]industry. So we specialized in just women
+[tab]to distinguish ourselves... Was it wrong?
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_19, 1);
+    wait(ref_518);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_517);
+    ref_51d = bustupFade(ref_515, rgb(0,0,0), 10);
+    bustupWait(ref_51d);
+    bustupFree(ref_515);
+    b(label_52f);
+  label_521:
+    ref_521 = bustupLoad(bustup_f9);
+    bustupWait(ref_521);
+    ref_523 = bustupAlloc(ref_521, right, rgb(0,0,0));
+    bustupFade(ref_523, rgb(128,0,0), 30);
+    ref_525 = dialogAlloc();
+    ref_526 = msgShow(msg_75);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Competition in this industry is toughening.
+[tab]We try our best to be different... We still
+[tab]have low prices compared to other stores.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_526);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_525);
+    ref_52b = bustupFade(ref_523, rgb(0,0,0), 10);
+    bustupWait(ref_52b);
+    bustupFree(ref_523);
+    b(label_52f);
+  label_52f:
+}
+
+function HA_SHOP_END_0()
+{
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bne(var_0, 0, label_533);
+    b(label_540);
+  label_533:
+    bne(var_0, 1, label_540);
+    bitSet(MBIT_ETE_HATUHENIGO);
+    bitGet(var_0, MBIT_ETEHENNISHU);
+    bne(var_0, 0, label_53d);
+    bitGet(var_0, LBIT_0003);
+    bne(var_0, 0, label_53a);
+    b(label_53c);
+  label_53a:
+    bne(var_0, 1, label_53c);
+    b(label_53c);
+  label_53c:
+    b(label_53f);
+  label_53d:
+    bne(var_0, 1, label_53f);
+    b(label_53f);
+  label_53f:
+    b(label_540);
+  label_540:
+    ref_540 = bustupLoad(bustup_f9);
+    bustupWait(ref_540);
+    ref_542 = bustupAlloc(ref_540, right, rgb(0,0,0));
+    bustupFade(ref_542, rgb(128,0,0), 30);
+    ref_544 = dialogAlloc();
+    ref_545 = msgShow(msg_76);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]If you ever get ill, don’t wait to stop
+[tab]by. You too can gain beauty and health
+[tab]from ether aesthetics.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_545);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    shopOverlayInit();
+    dialogFree(ref_544);
+    ref_54b = bustupFade(ref_542, rgb(0,0,0), 10);
+    bustupWait(ref_54b);
+    bustupFree(ref_542);
+    delayClear();
+    delayWait(10);
+    bitSet(MBIT_ETE_HATURAITEN);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_556);
+    unitRestoreFacing(shopkeeper);
+    controlEnable();
+    b(label_559);
+  label_556:
+    bne(var_0, 1, label_559);
+    call(GOOUT);
+    b(label_559);
+  label_559:
+}
+
+function HA_SHOP_HEAL_0()
+{
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bne(var_0, 0, label_55d);
+    b(label_569);
+  label_55d:
+    bne(var_0, 1, label_569);
+    bitGet(var_0, MBIT_ETEHENNISHU);
+    bne(var_0, 0, label_566);
+    bitGet(var_0, LBIT_0003);
+    bne(var_0, 0, label_563);
+    b(label_565);
+  label_563:
+    bne(var_0, 1, label_565);
+    b(label_565);
+  label_565:
+    b(label_568);
+  label_566:
+    bne(var_0, 1, label_568);
+    b(label_568);
+  label_568:
+    b(label_569);
+  label_569:
+    ref_569 = call(KAIFUKUSURUBEKI);
+    wait(ref_569);
+    bitGet(var_1, LBIT_0000);
+    bne(var_1, 0, label_57c);
+    ref_56d = bustupLoad(bustup_f9);
+    bustupWait(ref_56d);
+    ref_56f = bustupAlloc(ref_56d, right, rgb(0,0,0));
+    bustupFade(ref_56f, rgb(128,0,0), 30);
+    ref_571 = dialogAlloc();
+    ref_572 = msgShow(msg_77);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Hmm...? But everyone looks so
+[tab]healthy. I don’t see why
+[tab]you would want to get treatment...
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_572);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_571);
+    ref_577 = bustupFade(ref_56f, rgb(0,0,0), 10);
+    bustupWait(ref_577);
+    bustupFree(ref_56f);
+    b(label_60c);
+    b(label_5af);
+  label_57c:
+    bne(var_1, 1, label_5af);
+    ref_57d = bustupLoad(bustup_f9);
+    bustupWait(ref_57d);
+    ref_57f = bustupAlloc(ref_57d, right, rgb(0,0,0));
+    bustupFade(ref_57f, rgb(128,0,0), 30);
+    ref_581 = dialogAlloc();
+    bitGet(var_0, MBIT_AIS_30);
+    bne(var_0, 0, label_589);
+    shopInventory(3, shopInventory_-bb8);
+    ref_585 = msgShow(msg_78);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]I understand.
+[tab]Hmm... Let’s see...
+[tab]It’ll be ¥3000 for everyone.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_585);
+    b(label_58f);
+  label_589:
+    bne(var_0, 1, label_58f);
+    shopInventory(3, shopInventory_-5dc);
+    ref_58b = msgShow(msg_79);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]I understand.
+[tab]Hmm... Let’s see... Okay! I’ll make it
+[tab]¥1,500. Of course, for everyone♥
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_58b);
+    b(label_58f);
+  label_58f:
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_581);
+    ref_591 = bustupFade(ref_57f, rgb(0,0,0), 10);
+    bustupWait(ref_591);
+    bustupFree(ref_57f);
+    choiceSetResult(1);
+    op_105(1);
+    ref_596 = bustupLoad(bustup_1);
+    bustupWait(ref_596);
+    ref_598 = bustupAlloc(ref_596, center, rgb(0,0,0));
+    bustupFade(ref_598, rgb(128,0,0), 30);
+    ref_59a = dialogChoiceAlloc();
+    shopCurrencyType(8, -110, 150);
+    shopCurrencyDisplay(13, 150, false);
+    ref_59d = msgShow(msg_80);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Is this good?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_59d);
+    dialogFree(ref_59a);
+    ref_5a0 = bustupFade(ref_598, rgb(0,0,0), 10);
+    bustupWait(ref_5a0);
+    bustupFree(ref_598);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_5a7);
+    b(label_5af);
+    b(label_5ae);
+  label_5a7:
+    bne(var_0, 1, label_5ae);
+    shopCurrencyDisplay(-110, 150, true);
+    delayClear();
+    delayWait(30);
+    bitSet(LBIT_0001);
+    b(label_60c);
+    b(label_5ae);
+  label_5ae:
+    b(label_5af);
+  label_5af:
+    bitGet(var_0, MBIT_AIS_30);
+    bne(var_0, 0, label_5ba);
+    partyMoneyGet(var_2);
+    boutrange(var_2, 0, 2999, label_5b5);
+    b(label_5fe);
+    b(label_5b9);
+  label_5b5:
+    partyMoneyAdd(-3000);
+    ref_5b6 = call(KAIFUKUMESS);
+    wait(ref_5b6);
+    b(label_5b9);
+  label_5b9:
+    b(label_5c4);
+  label_5ba:
+    bne(var_0, 1, label_5c4);
+    partyMoneyGet(var_2);
+    boutrange(var_2, 0, 1499, label_5bf);
+    b(label_5fe);
+    b(label_5c3);
+  label_5bf:
+    partyMoneyAdd(-1500);
+    ref_5c0 = call(KAIFUKUMESS);
+    wait(ref_5c0);
+    b(label_5c3);
+  label_5c3:
+    b(label_5c4);
+  label_5c4:
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), add);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    sndMusicPlay(sound_3, 127);
+    partyHealthRestore(maya);
+    partySPRestore(maya);
+    partyStatusClear(maya);
+    partyMemberCheck(var_3, ulala);
+    bez(var_3, label_5d3);
+    partyHealthRestore(ulala);
+    partySPRestore(ulala);
+    partyStatusClear(ulala);
+  label_5d3:
+    partyMemberCheck(var_3, katsuya);
+    bez(var_3, label_5d8);
+    partyHealthRestore(katsuya);
+    partySPRestore(katsuya);
+    partyStatusClear(katsuya);
+  label_5d8:
+    partyMemberCheck(var_3, baofu);
+    bez(var_3, label_5dd);
+    partyHealthRestore(baofu);
+    partySPRestore(baofu);
+    partyStatusClear(baofu);
+  label_5dd:
+    partyMemberCheck(var_3, nanjo);
+    bez(var_3, label_5e2);
+    partyHealthRestore(nanjo);
+    partySPRestore(nanjo);
+    partyStatusClear(nanjo);
+  label_5e2:
+    partyMemberCheck(var_3, elly);
+    bez(var_3, label_5e7);
+    partyHealthRestore(elly);
+    partySPRestore(elly);
+    partyStatusClear(elly);
+  label_5e7:
+    partyMemberCheck(var_3, tatsuya);
+    bez(var_3, label_5ec);
+    partyHealthRestore(tatsuya);
+    partySPRestore(tatsuya);
+    partyStatusClear(tatsuya);
+  label_5ec:
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), add);
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenEffectUnknown();
+    delayClear();
+    delayWait(40);
+    ref_5f2 = bustupLoad(bustup_1);
+    bustupWait(ref_5f2);
+    ref_5f4 = bustupAlloc(ref_5f2, center, rgb(0,0,0));
+    bustupFade(ref_5f4, rgb(128,0,0), 30);
+    ref_5f6 = dialogAlloc();
+    ref_5f7 = msgShow(msg_81);
+/***************************************
+[color(green)]Maya and the party got healed.[color(white)][wait][clear]
+***************************************/
+    wait(ref_5f7);
+    dialogFree(ref_5f6);
+    ref_5fa = bustupFade(ref_5f4, rgb(0,0,0), 10);
+    bustupWait(ref_5fa);
+    bustupFree(ref_5f4);
+    b(label_60c);
+  label_5fe:
+    ref_5fe = bustupLoad(bustup_f9);
+    bustupWait(ref_5fe);
+    ref_600 = bustupAlloc(ref_5fe, right, rgb(0,0,0));
+    bustupFade(ref_600, rgb(128,0,0), 30);
+    ref_602 = dialogAlloc();
+    ref_603 = msgShow(msg_82);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Oh, my! It looks like you don’t
+[tab]have enough money...
+[tab]I mean, this is business. Sorry♥
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_21, 1);
+    wait(ref_603);
+    shopCurrencyDisplay(-110, 150, true);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_602);
+    ref_609 = bustupFade(ref_600, rgb(0,0,0), 10);
+    bustupWait(ref_609);
+    bustupFree(ref_600);
+  label_60c:
+    delayClear();
+    delayWait(30);
+    ref_60e = bustupLoad(bustup_f9);
+    bustupWait(ref_60e);
+    ref_610 = bustupAlloc(ref_60e, right, rgb(0,0,0));
+    bustupFade(ref_610, rgb(128,0,0), 30);
+    ref_612 = dialogAlloc();
+    bitGet(var_0, LBIT_0001);
+    bne(var_0, 0, label_616);
+    b(label_61d);
+  label_616:
+    bne(var_0, 1, label_61d);
+    bitClear(LBIT_0001);
+    ref_618 = msgShow(msg_83);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Huh? ...Why?
+[tab]You don’t trust ether aesthetics?
+[tab]Believers will be saved. No, really.
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_19, 1);
+    wait(ref_618);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    b(label_61d);
+  label_61d:
+    dialogFree(ref_612);
+    ref_61e = bustupFade(ref_610, rgb(0,0,0), 10);
+    bustupWait(ref_61e);
+    bustupFree(ref_610);
+}
+
+function KAIFUKUMESS()
+{
+    ref_622 = bustupLoad(bustup_f9);
+    bustupWait(ref_622);
+    ref_624 = bustupAlloc(ref_622, right, rgb(0,0,0));
+    bustupFade(ref_624, rgb(128,0,0), 30);
+    ref_626 = dialogAlloc();
+    ref_627 = msgShow(msg_84);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Okay! Now, relax...[delay(15)]
+[tab]This is our original treatment!
+[tab]"ether aesthetics"!
+[wait][clear]
+***************************************/
+    unitAnimationPlay(shopkeeper, animation_19, 1);
+    unitWait(shopkeeper);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    unitWait(shopkeeper);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(shopkeeper, animation_6, 1);
+    unitWait(shopkeeper);
+    delayClear();
+    delayWait(20);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    wait(ref_627);
+    shopCurrencyDisplay(-110, 150, true);
+    unitAnimationPlay(shopkeeper, animation_0, 1);
+    dialogFree(ref_626);
+    ref_639 = bustupFade(ref_624, rgb(0,0,0), 10);
+    bustupWait(ref_639);
+    bustupFree(ref_624);
+}
+
+function KAIFUKUSURUBEKI()
+{
+    partyStatusHas(var_0, maya, poison);
+    bnz(var_0, label_69f);
+    partyStatusHas(var_0, maya, possesion);
+    bnz(var_0, label_69f);
+    partyInfoGet(var_4, maya, maxHealth);
+    partyInfoGet(var_5, maya, health);
+    beq(var_4, var_5, label_645);
+    b(label_69f);
+  label_645:
+    partyInfoGet(var_4, maya, maxSP);
+    partyInfoGet(var_5, maya, sp);
+    beq(var_4, var_5, label_649);
+    b(label_69f);
+  label_649:
+    partyMemberCheck(var_4, ulala);
+    bez(var_4, label_657);
+    partyStatusHas(var_0, ulala, poison);
+    bnz(var_0, label_69f);
+    partyStatusHas(var_0, ulala, possesion);
+    bnz(var_0, label_69f);
+    partyInfoGet(var_4, ulala, maxHealth);
+    partyInfoGet(var_5, ulala, health);
+    beq(var_4, var_5, label_653);
+    b(label_69f);
+  label_653:
+    partyInfoGet(var_4, ulala, maxSP);
+    partyInfoGet(var_5, ulala, sp);
+    beq(var_4, var_5, label_657);
+    b(label_69f);
+  label_657:
+    partyMemberCheck(var_4, katsuya);
+    bez(var_4, label_665);
+    partyStatusHas(var_0, katsuya, poison);
+    bnz(var_0, label_69f);
+    partyStatusHas(var_0, katsuya, possesion);
+    bnz(var_0, label_69f);
+    partyInfoGet(var_4, katsuya, maxHealth);
+    partyInfoGet(var_5, katsuya, health);
+    beq(var_4, var_5, label_661);
+    b(label_69f);
+  label_661:
+    partyInfoGet(var_4, katsuya, maxSP);
+    partyInfoGet(var_5, katsuya, sp);
+    beq(var_4, var_5, label_665);
+    b(label_69f);
+  label_665:
+    partyMemberCheck(var_4, baofu);
+    bez(var_4, label_673);
+    partyStatusHas(var_0, baofu, poison);
+    bnz(var_0, label_69f);
+    partyStatusHas(var_0, baofu, possesion);
+    bnz(var_0, label_69f);
+    partyInfoGet(var_4, baofu, maxHealth);
+    partyInfoGet(var_5, baofu, health);
+    beq(var_4, var_5, label_66f);
+    b(label_69f);
+  label_66f:
+    partyInfoGet(var_4, baofu, maxSP);
+    partyInfoGet(var_5, baofu, sp);
+    beq(var_4, var_5, label_673);
+    b(label_69f);
+  label_673:
+    partyMemberCheck(var_4, nanjo);
+    bez(var_4, label_681);
+    partyStatusHas(var_0, nanjo, poison);
+    bnz(var_0, label_69f);
+    partyStatusHas(var_0, nanjo, possesion);
+    bnz(var_0, label_69f);
+    partyInfoGet(var_4, nanjo, maxHealth);
+    partyInfoGet(var_5, nanjo, health);
+    beq(var_4, var_5, label_67d);
+    b(label_69f);
+  label_67d:
+    partyInfoGet(var_4, nanjo, maxSP);
+    partyInfoGet(var_5, nanjo, sp);
+    beq(var_4, var_5, label_681);
+    b(label_69f);
+  label_681:
+    partyMemberCheck(var_4, elly);
+    bez(var_4, label_68f);
+    partyStatusHas(var_0, elly, poison);
+    bnz(var_0, label_69f);
+    partyStatusHas(var_0, elly, possesion);
+    bnz(var_0, label_69f);
+    partyInfoGet(var_4, elly, maxHealth);
+    partyInfoGet(var_5, elly, health);
+    beq(var_4, var_5, label_68b);
+    b(label_69f);
+  label_68b:
+    partyInfoGet(var_4, elly, maxSP);
+    partyInfoGet(var_5, elly, sp);
+    beq(var_4, var_5, label_68f);
+    b(label_69f);
+  label_68f:
+    partyMemberCheck(var_4, tatsuya);
+    bez(var_4, label_69d);
+    partyStatusHas(var_0, tatsuya, poison);
+    bnz(var_0, label_69f);
+    partyStatusHas(var_0, tatsuya, possesion);
+    bnz(var_0, label_69f);
+    partyInfoGet(var_4, tatsuya, maxHealth);
+    partyInfoGet(var_5, tatsuya, health);
+    beq(var_4, var_5, label_699);
+    b(label_69f);
+  label_699:
+    partyInfoGet(var_4, tatsuya, maxSP);
+    partyInfoGet(var_5, tatsuya, sp);
+    beq(var_4, var_5, label_69d);
+    b(label_69f);
+  label_69d:
+    bitClear(LBIT_0000);
+    b(label_6a1);
+  label_69f:
+    bitSet(LBIT_0000);
+    b(label_6a1);
+  label_6a1:
+}
+
+function WOOD2()
+{
+    bitGet(var_0, MBIT_KE_ETEESTHE);
+    bnz(var_0, label_6aa);
+    bitSet(MBIT_KE_ETEESTHE);
+    ref_6a5 = dialogAlloc();
+    ref_6a6 = msgShow(msg_85);
+/***************************************
+噂によりエステ開始
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6a6);
+    dialogFree(ref_6a5);
+    b(label_6b1);
+  label_6aa:
+    bitGet(var_0, MBIT_KE_ETEHENNI);
+    bnz(var_0, label_6b1);
+    bitSet(MBIT_KE_ETEHENNI);
+    ref_6ad = dialogAlloc();
+    ref_6ae = msgShow(msg_86);
+/***************************************
+変異噂の
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6ae);
+    dialogFree(ref_6ad);
+  label_6b1:
+}
+
+function WOOD()
+{
+    bitGet(var_0, MBIT_AIS_30);
+    bnz(var_0, label_6ba);
+    bitSet(MBIT_AIS_30);
+    ref_6b5 = dialogAlloc();
+    ref_6b6 = msgShow(msg_87);
+/***************************************
+MBIT[tab]AIS[tab]65
+相性占いの
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6b6);
+    dialogFree(ref_6b5);
+    b(label_70a);
+  label_6ba:
+    bitGet(var_0, EBIT_E0015);
+    bnz(var_0, label_6c2);
+    bitSet(EBIT_E0015);
+    ref_6bd = dialogAlloc();
+    ref_6be = msgShow(msg_88);
+/***************************************
+EBIT[tab]E0015
+7姉妹学園クリア
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6be);
+    dialogFree(ref_6bd);
+    b(label_70a);
+  label_6c2:
+    bitGet(var_0, EBIT_E0018);
+    bnz(var_0, label_6ca);
+    bitSet(EBIT_E0018);
+    ref_6c5 = dialogAlloc();
+    ref_6c6 = msgShow(msg_89);
+/***************************************
+EBIT[tab]E0018
+バー終了・Baofu初参加
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6c6);
+    dialogFree(ref_6c5);
+    b(label_70a);
+  label_6ca:
+    bitGet(var_0, EBIT_E0033);
+    bnz(var_0, label_6d2);
+    bitSet(EBIT_E0033);
+    ref_6cd = dialogAlloc();
+    ref_6ce = msgShow(msg_90);
+/***************************************
+EBIT[tab]E0033
+「Baofu編入」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6ce);
+    dialogFree(ref_6cd);
+    b(label_70a);
+  label_6d2:
+    bitGet(var_0, EBIT_E0037);
+    bnz(var_0, label_6da);
+    bitSet(EBIT_E0037);
+    ref_6d5 = dialogAlloc();
+    ref_6d6 = msgShow(msg_91);
+/***************************************
+EBIT[tab]E0037
+警察署[half_tab]受付、終了
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6d6);
+    dialogFree(ref_6d5);
+    b(label_70a);
+  label_6da:
+    bitGet(var_0, EBIT_E0038);
+    bnz(var_0, label_6e2);
+    bitSet(EBIT_E0038);
+    ref_6dd = dialogAlloc();
+    ref_6de = msgShow(msg_92);
+/***************************************
+EBIT[tab]E0038
+「詐欺男を確保」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6de);
+    dialogFree(ref_6dd);
+    b(label_70a);
+  label_6e2:
+    bitGet(var_0, EBIT_E003E);
+    bnz(var_0, label_6ea);
+    bitSet(EBIT_E003E);
+    ref_6e5 = dialogAlloc();
+    ref_6e6 = msgShow(msg_93);
+/***************************************
+EBIT[tab]E003E
+「ゴールドクリア」「Ulala編入」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6e6);
+    dialogFree(ref_6e5);
+    b(label_70a);
+  label_6ea:
+    bitGet(var_0, EBIT_E0043);
+    bnz(var_0, label_6f2);
+    bitSet(EBIT_E0043);
+    ref_6ed = dialogAlloc();
+    ref_6ee = msgShow(msg_94);
+/***************************************
+EBIT[tab]E0043
+「クラブクリア」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6ee);
+    dialogFree(ref_6ed);
+    b(label_70a);
+  label_6f2:
+    bitGet(var_0, EBIT_E0044);
+    bnz(var_0, label_6fa);
+    bitSet(EBIT_E0044);
+    ref_6f5 = dialogAlloc();
+    ref_6f6 = msgShow(msg_95);
+/***************************************
+EBIT[tab]E0044
+「青葉公園クリア」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6f6);
+    dialogFree(ref_6f5);
+    b(label_70a);
+  label_6fa:
+    bitGet(var_0, EBIT_E0046);
+    bnz(var_0, label_702);
+    bitSet(EBIT_E0046);
+    ref_6fd = dialogAlloc();
+    ref_6fe = msgShow(msg_96);
+/***************************************
+EBIT[tab]E0046
+「南条orエリー編入」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_6fe);
+    dialogFree(ref_6fd);
+    b(label_70a);
+  label_702:
+    bitGet(var_0, EBIT_E006F);
+    bnz(var_0, label_70a);
+    bitSet(EBIT_E006F);
+    ref_705 = dialogAlloc();
+    ref_706 = msgShow(msg_97);
+/***************************************
+EBIT[tab]E006F
+「研究施設・TV局クリア」
+びっとお~んッ!!
+[wait][clear]
+***************************************/
+    wait(ref_706);
+    dialogFree(ref_705);
+    b(label_70a);
+  label_70a:
+}
+
+function DOORBOX()
+{
+    controlDisable();
+    sndMusicPlay(sound_3076, 127);
+    objAnimRotate(obj_17, 0, 70, 0, 30, 0);
+    objAnimRotate(obj_16, 0, -70, 0, 30, 0);
+    objAnimWait(obj_16);
+    objAnimWait(obj_17);
+    call(GOOUT);
+}
+
+function warp1()
+{
+    call(DOORBOX);
+}
+
+function GOOUT()
+{
+    bitClear(MBIT_EXITBIT);
+    mapLoad(rengedai, 0, 0);
+}
+
+function HA_SHOP_EXPLAIN_0()
+{
+    choiceSetResult(2);
+    op_105(7);
+    ref_71a = dialogChoiceAlloc();
+    ref_71b = msgShow(msg_98);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Ask away.
+[choice(3)][if_all(MBIT_KE_ETEESTHE)]Ask about treatment
+Ask about healing
+Nothing
+[end_choice][clear]
+***************************************/
+    wait(ref_71b);
+    dialogFree(ref_71a);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_725);
+    ref_720 = dialogAlloc();
+    ref_721 = msgShow(msg_99);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Okay! I’ll explain our special treatments.
+[wait][clear][color(yellow)]Esthetician[color(white)]
+[tab]If you request the esthetic "Treatment"
+[tab]your charm will increase.
+[wait][clear][color(yellow)]Esthetician[color(white)]
+[tab]As a result you will be more popular
+[tab]with certain types.
+[wait][clear][color(yellow)]Esthetician[color(white)]
+[tab]Like being more appealing to old people or youths.
+[tab]Isn’t it amazing?
+[wait][clear][color(yellow)]Esthetician[color(white)]
+[tab]It even works with non-humans!
+[wait][clear]
+***************************************/
+    wait(ref_721);
+    dialogFree(ref_720);
+    b(label_72d);
+  label_725:
+    bne(var_0, 1, label_72b);
+    ref_726 = dialogAlloc();
+    ref_727 = msgShow(msg_100);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]Okay! I’ll give you the general outline of
+[tab]how we operate.
+[wait][clear][color(yellow)]Esthetician[color(white)]
+[tab]If you request us to "Heal" you, you can
+[tab]recover HP, SP, and be cured of any status
+[tab]ailments such as poison.
+[wait][clear][color(yellow)]Esthetician[color(white)]
+[tab]There is a cost involved, but our methods
+[tab]affect all of you at once. Believe me, in
+[tab]the long run, you’ll save money.
+[wait][clear]
+***************************************/
+    wait(ref_727);
+    dialogFree(ref_726);
+    b(label_72d);
+  label_72b:
+    bne(var_0, 2, label_72d);
+    b(label_72d);
+  label_72d:
+}
+
+function OTOKOOUT()
+{
+    partyMemberCheck(var_0, katsuya);
+    bne(var_0, 0, label_731);
+    b(label_735);
+  label_731:
+    bne(var_0, 1, label_735);
+    partyMemberRemove(katsuya);
+    bitSet(LBIT_0010);
+    b(label_735);
+  label_735:
+    partyMemberCheck(var_0, baofu);
+    bne(var_0, 0, label_738);
+    b(label_73c);
+  label_738:
+    bne(var_0, 1, label_73c);
+    partyMemberRemove(baofu);
+    bitSet(LBIT_0011);
+    b(label_73c);
+  label_73c:
+    partyMemberCheck(var_0, tatsuya);
+    bne(var_0, 0, label_73f);
+    b(label_743);
+  label_73f:
+    bne(var_0, 1, label_743);
+    partyMemberRemove(tatsuya);
+    bitSet(LBIT_0012);
+    b(label_743);
+  label_743:
+    partyMemberCheck(var_0, nanjo);
+    bne(var_0, 0, label_746);
+    b(label_74a);
+  label_746:
+    bne(var_0, 1, label_74a);
+    partyMemberRemove(nanjo);
+    bitSet(LBIT_0013);
+    b(label_74a);
+  label_74a:
+}
+
+function OTOKOHUKKI()
+{
+    bitGet(var_0, LBIT_0010);
+    bne(var_0, 0, label_74e);
+    b(label_752);
+  label_74e:
+    bne(var_0, 1, label_752);
+    partyMemberAdd(katsuya);
+    bitClear(LBIT_0010);
+    b(label_752);
+  label_752:
+    bitGet(var_0, LBIT_0011);
+    bne(var_0, 0, label_755);
+    b(label_759);
+  label_755:
+    bne(var_0, 1, label_759);
+    partyMemberAdd(baofu);
+    bitClear(LBIT_0011);
+    b(label_759);
+  label_759:
+    bitGet(var_0, LBIT_0012);
+    bne(var_0, 0, label_75c);
+    b(label_760);
+  label_75c:
+    bne(var_0, 1, label_760);
+    partyMemberAdd(tatsuya);
+    bitClear(LBIT_0012);
+    b(label_760);
+  label_760:
+    bitGet(var_0, LBIT_0013);
+    bne(var_0, 0, label_763);
+    b(label_767);
+  label_763:
+    bne(var_0, 1, label_767);
+    partyMemberAdd(nanjo);
+    bitClear(LBIT_0013);
+    b(label_767);
+  label_767:
+}
+
+function DECIDE_EAT()
+{
+    choiceSetResult(1);
+    op_105(1);
+    msgVar_Number(msgvar_0, var_6);
+    unitFacePlayer(shopkeeper);
+    ref_76c = bustupLoad(bustup_f9);
+    bustupWait(ref_76c);
+    ref_76e = bustupAlloc(ref_76c, left, rgb(0,0,0));
+    bustupFade(ref_76e, rgb(128,0,0), 30);
+    ref_770 = dialogAlloc();
+    choiceSetResult(1);
+    op_105(1);
+    ref_773 = msgShow(msg_101);
+/***************************************
+[color(yellow)]Esthetician[color(white)]
+[tab]That will be ¥[var(msg_var_0)] for the whole group. 
+[tab]Do you accept?
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_773);
+    choiceGetResult(var_7);
+    bne(var_7, 0, label_77a);
+    sndMusicPlay(sound_3077, 127);
+    li(var_7, 1);
+    b(label_77d);
+  label_77a:
+    bne(var_7, 1, label_77d);
+    li(var_7, 0);
+    b(label_77d);
+  label_77d:
+    wait(ref_773);
+    dialogFree(ref_770);
+    ref_77f = bustupFade(ref_76e, rgb(0,0,0), 10);
+    bustupWait(ref_77f);
+    bustupFree(ref_76e);
+    li(var_5, 20);
+}

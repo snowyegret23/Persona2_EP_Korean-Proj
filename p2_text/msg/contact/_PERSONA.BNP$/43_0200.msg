@@ -1,0 +1,84 @@
+
+msg_0:
+[color(yellow)]セト[color(white)]
+ 日々我に殺されし、哀れなる蛇[var(msg_var_0)]よ…
+[wait][clear][end]
+
+msg_1:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ウグッ…
+ セト…
+ 今日モ 我ヲ 殺ス 積モリカ…
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]セト[color(white)]
+ 今日は、見逃してやろう…
+ その代わり、我が守護せしこの者に
+ 恵みを与えよ。
+[wait][clear][end]
+
+msg_3:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ググッ…
+ ソウイウ事ナラバ 仕方ガ無イ
+ 承知シタ…
+[wait][clear][end]
+
+msg_4:
+ 人間ヨ 我ハ 如何スレバ 良イ？
+[choice(2)]契約して欲しい
+カードが欲しい
+[end_choice][clear][end]
+
+msg_5:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ソウダナ…
+ ウヌニハ 我ガ「カード」デモ ヤロウ…
+[wait][clear][end]
+
+msg_6:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 血ノ 盟約結ビシ 人間ヨ…
+ マタ イズレ 会ウ日マデ…
+[wait][clear][end]
+
+msg_7:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …ウヌハ 少々 欲張リ過ギテイル様ダナ
+ モウ ソレ以上 契約ハ 出来ヌゾ
+ ソレトモ [color(green)]契約破棄[color(white)]デモ スルカ？
+[wait][clear][end]
+
+msg_8:
+ ナラバ [color(green)]破棄[color(white)]スル者ヲ 選ベ？
+[choice(4)][pact_demon(0)]
+[pact_demon(1)]
+[pact_demon(2)]
+契約しない
+[end_choice][clear][end]
+
+msg_9:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナラバ [color(green)][var(msg_var_4)][color(white)]ノカードヲ
+ [color(green)][var(msg_var_5)]枚[color(white)]ヤロウ
+ ヨク 考エテ 使エ…
+[wait][clear][end]
+
+msg_10:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …ウヌハ 少々 欲張リ過ギテイル様ダナ
+ モウ カードハ 持テヌ様ダ
+ 今回ハ 諦メル事ダナ
+[wait][clear][end]
+
+msg_11:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ナラバ ウヌノ[color(green)]傷ヲ癒シテ[color(white)]ヤロウ
+ コレカラモ ウヌノ 戦イハ
+ 続クノデ アロウカラナ…
+[wait][clear][end]
+
+msg_12:
+[color(green)]選択肢ジャンプの挙動エラーです[color(white)]
+[end]

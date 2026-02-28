@@ -1,0 +1,622 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    sndIdGet(var_a);
+    bne(var_a, -1, label_5);
+    b(label_7);
+  label_5:
+    sndVolumeFadeOff(var_a, 60);
+    b(label_7);
+  label_7:
+    sndMusicPlay(sound_303e, 127);
+    sndMusicPlay(sound_3107, 127);
+    levelFootstepSet(sfx_19);
+    cameraSet(southwest, 950, 0, -670);
+    ref_b = spriteLoad(sprite_0);
+    wait(ref_b);
+    ref_d = spriteLoad(sprite_6);
+    wait(ref_d);
+    ref_f = spriteLoad(sprite_d);
+    wait(ref_f);
+    ref_11 = spriteLoad(sprite_e);
+    wait(ref_11);
+    ref_13 = spriteLoad(sprite_13);
+    wait(ref_13);
+    ref_15 = spriteLoad(sprite_18);
+    wait(ref_15);
+    ref_17 = spriteLoad(sprite_19);
+    wait(ref_17);
+    ref_19 = spriteLoad(sprite_2e);
+    wait(ref_19);
+    ref_1b = spriteLoad(sprite_b4);
+    wait(ref_1b);
+    ref_1d = spriteLoad(sprite_b6);
+    wait(ref_1d);
+    ref_1f = spriteLoad(sprite_d3);
+    wait(ref_1f);
+    unitSpawn(maya, sprite_0, 980, 0, -870, south, none);
+    unitSpawn(ulala, sprite_6, 1050, 0, -540, south, none);
+    unitSpawn(katsuya, sprite_d, 840, 0, -600, south, none);
+    unitSpawn(baofu, sprite_13, 1170, 0, -680, west, none);
+    unitSpawn(tatsuya, sprite_18, 870, 0, -800, north, none);
+    unitSpawn(jun, sprite_2e, 1750, 0, -765, east, none);
+    unitSpawn(npc1, sprite_b4, 1050, -30, -430, north, none);
+    unitSpawn(npc2, sprite_b4, 950, -50, -300, north, none);
+    unitSpawn(unit_58, sprite_d3, 840, 0, -500, north, none);
+    unitAnimationPlay(maya, animation_0, 1);
+    unitAnimationPlay(ulala, animation_36, 1);
+    unitAnimationHold(katsuya, animation_11, -1);
+    unitAnimationPlay(baofu, animation_40, 1);
+    unitAnimationPlay(tatsuya, animation_1a, 1);
+    unitAnimationHold(npc1, animation_10, -1);
+    unitAnimationHold(npc2, animation_10, -1);
+    objVisible(obj_11, false);
+    objVisible(obj_10, false);
+    objVisible(obj_1f, false);
+    objVisible(obj_2, false);
+    screenShake(1);
+    ref_36 = todLoad(tod_1e);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 4, true);
+    screenFadeOuter(rgb(0,0,0), 4, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    ref_3c = efctAuraLoad();
+    wait(ref_3c);
+    delayClear();
+    delayWait(30);
+    unitMove(jun, 1280, -765, face_east, fast);
+    ref_41 = bustupLoad(bustup_10f);
+    bustupWait(ref_41);
+    ref_43 = bustupAlloc(ref_41, right, rgb(0,0,0));
+    bustupFade(ref_43, rgb(128,0,0), 30);
+    ref_45 = dialogAlloc();
+    ref_46 = msgShow(msg_0);
+/***************************************
+[color(yellow)]淳[color(white)]
+[tab]た、大変だ、高度がグングン落ちてる！
+
+***************************************/
+    unitAnimationPlay(maya, animation_4, 1);
+    unitAnimationPlay(ulala, animation_35, 1);
+    unitAnimationPlay(katsuya, animation_4, 1);
+    unitAnimationPlay(baofu, animation_3c, 1);
+    unitAnimationPlay(tatsuya, animation_2, 1);
+    unitAnimationPlay(unit_58, animation_2, 1);
+    unitAnimationStop(npc1);
+    unitAnimationPlay(npc1, animation_2, 1);
+    unitAnimationStop(npc2);
+    unitAnimationPlay(npc2, animation_2, 1);
+    wait(ref_46);
+    unitWait(jun);
+    unitAnimationPlay(jun, animation_1f, 1);
+    ref_54 = msgShow(msg_1);
+/***************************************
+[tab]墜落しちゃうよ！！
+[sync][wait][clear]
+***************************************/
+    call(MAYA_ODOROKU);
+    call(URARA_ODOROKU);
+    call(KATUYA_ODOROKU);
+    call(PAOFU_ODOROKU);
+    call(NPC_ODOROKU);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    sync();
+    wait(ref_54);
+    dialogFree(ref_45);
+    ref_5e = bustupFade(ref_43, rgb(0,0,0), 10);
+    bustupWait(ref_5e);
+    bustupFree(ref_43);
+    unitMove(tatsuya, 990, -1330, face_north, fast);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_2, 1);
+    unitAnimationStop(katsuya);
+    unitAnimationPlay(katsuya, animation_2, 1);
+    unitAnimationPlay(ulala, animation_2, 1);
+    unitAnimationPlay(baofu, animation_2, 1);
+    unitAnimationPlay(jun, animation_3, 1);
+    ref_6a = cameraMoveTo(1000, 0, -1250, 60);
+    wait(ref_6a);
+    unitDespawn(npc1, none);
+    unitDespawn(npc2, none);
+    unitDespawn(unit_58, none);
+    sndMusicPlay(sound_3108, 127);
+    unitAura(tatsuya, true);
+    call(MAYA_IDO);
+    call(URARA_IDO);
+    call(KATUYA_IDO);
+    call(PAOFU_IDO);
+    call(JUN_IDO);
+    delayClear();
+    delayWait(30);
+    wait(ref_36);
+    todRun(tod_1e, 1);
+    unitSpriteClear(tatsuya);
+    unitSpriteSet(tatsuya, sprite_19);
+    unitAnimationPlay(tatsuya, animation_12, 1);
+    call(TOBIRA);
+    waitFunc(TOBIRA);
+    delayClear();
+    delayWait(30);
+    unitAura(tatsuya, false);
+    delayClear();
+    delayWait(30);
+    unitSpriteClear(tatsuya);
+    unitSpriteSet(tatsuya, sprite_18);
+    unitMove(tatsuya, 990, -1280, face_north, reverse);
+    unitMove(katsuya, 1050, -1330, face_east, medium);
+    unitWait(tatsuya);
+    unitWait(katsuya);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(katsuya, animation_1f, 1);
+    ref_8d = bustupLoad(bustup_23);
+    bustupWait(ref_8d);
+    ref_8f = bustupAlloc(ref_8d, left, rgb(0,0,0));
+    bustupFade(ref_8f, rgb(128,0,0), 30);
+    ref_91 = dialogAlloc();
+    ref_92 = msgShow(msg_2);
+/***************************************
+[color(yellow)]克哉[color(white)]
+[tab]おい[tatsuya]、何をする気…
+
+***************************************/
+    wait(ref_92);
+    unitSpriteClear(tatsuya);
+    unitSpriteSet(tatsuya, sprite_19);
+    unitAnimationHold(tatsuya, animation_13, -1);
+    delayClear();
+    delayWait(20);
+    unitFace_2(katsuya, north);
+    unitMove3d(katsuya, 1050, 0, var_7ffffaba, 1, 0);
+    unitWait(katsuya);
+    unitSpriteClear(katsuya);
+    unitSpriteSet(katsuya, sprite_e);
+    unitAnimationPlay(katsuya, animation_2, 1);
+    unitShadowRadius(katsuya, 0);
+    call(KATUYA_RAKKA);
+    ref_a1 = bustupFade(ref_8f, rgb(0,0,0), 10);
+    bustupWait(ref_a1);
+    bustupFree(ref_8f);
+    ref_a4 = bustupLoad(bustup_124);
+    bustupWait(ref_a4);
+    ref_a6 = bustupAlloc(ref_a4, left, rgb(0,0,0));
+    bustupFade(ref_a6, rgb(128,0,0), 30);
+    ref_a8 = msgShow(msg_3);
+/***************************************
+[tab]だぁぁぁぁぁ…！？
+[sync][wait][clear]
+***************************************/
+    call(MAYA_ODOROKU2);
+    call(URARA_ODOROKU2);
+    call(PAOFU_ODOROKU2);
+    call(JUN_ODOROKU2);
+    sync();
+    wait(ref_a8);
+    dialogFree(ref_91);
+    ref_b0 = bustupFade(ref_a6, rgb(0,0,0), 10);
+    bustupWait(ref_b0);
+    bustupFree(ref_a6);
+    unitAnimationStop(tatsuya);
+    delayClear();
+    delayWait(30);
+    unitSpriteClear(tatsuya);
+    unitSpriteSet(tatsuya, sprite_18);
+    unitAnimationPlay(tatsuya, animation_12, 1);
+    unitWait(tatsuya);
+    delayClear();
+    delayWait(30);
+    unitFace_2(tatsuya, south);
+    unitAnimationPlay(tatsuya, animation_1f, 1);
+    delayClear();
+    delayWait(30);
+    ref_c0 = bustupLoad(bustup_d);
+    bustupWait(ref_c0);
+    ref_c2 = bustupAlloc(ref_c0, right, rgb(0,0,0));
+    bustupFade(ref_c2, rgb(128,0,0), 30);
+    bustupFlip(ref_c2, true);
+    ref_c5 = dialogAlloc();
+    ref_c6 = msgShow(msg_4);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]死にたくなければ、全員飛び降りろ…！
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_c6);
+    dialogFree(ref_c5);
+    ref_ca = bustupFade(ref_c2, rgb(0,0,0), 10);
+    bustupWait(ref_ca);
+    bustupFree(ref_c2);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 4, false);
+    screenFadeOuter(rgb(255,255,255), 4, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    sndVolumeFadeOff(sound_303e, 120);
+    unitDespawn(ulala, none);
+    unitDespawn(baofu, none);
+    unitSpawn(maya, sprite_0, 730, 0, -1300, west, none);
+    unitSpawn(tatsuya, sprite_18, 990, 0, -1150, north, none);
+    unitSpawn(jun, sprite_2e, 990, 0, -1250, north, none);
+    unitAnimationPlay(maya, animation_a, 1);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    unitAnimationPlay(jun, animation_0, 1);
+    delayClear();
+    delayWait(120);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 4, true);
+    screenFadeOuter(rgb(0,0,0), 4, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    delayClear();
+    delayWait(60);
+    unitMove(jun, 990, -1330, face_north, slow);
+    unitWait(jun);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(jun, animation_12, 1);
+    ref_ea = bustupLoad(bustup_10e);
+    bustupWait(ref_ea);
+    ref_ec = bustupAlloc(ref_ea, right, rgb(0,0,0));
+    bustupFade(ref_ec, rgb(128,0,0), 30);
+    ref_ee = dialogAlloc();
+    ref_ef = bustupLoad(bustup_108);
+    bustupWait(ref_ef);
+    ref_f1 = bustupAlloc(ref_ef, left, rgb(0,0,0));
+    bustupFade(ref_f1, rgb(128,0,0), 30);
+    ref_f3 = msgShow(msg_5);
+/***************************************
+[color(yellow)]淳[color(white)]
+[tab]あの…
+
+***************************************/
+    wait(ref_f3);
+    unitWait(jun);
+    unitFace_2(jun, south);
+    unitAnimationPlay(jun, animation_14, 1);
+    ref_f8 = msgShow(msg_6);
+/***************************************
+[tab]これ、僕の宝物なんだけど…
+[tab]助けてくれたお礼に、受け取ってくれないかな？
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_f8);
+    ref_fb = msgShow(msg_7);
+/***************************************
+[color(yellow)]淳[color(white)]
+[tab]君に…あげなきゃいけない。
+[tab]そんな気がするんだ…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_fb);
+    ref_fe = bustupFade(ref_ec, rgb(0,0,0), 10);
+    bustupWait(ref_fe);
+    bustupFree(ref_ec);
+    dialogFree(ref_ee);
+    ref_102 = bustupFade(ref_f1, rgb(0,0,0), 10);
+    bustupWait(ref_102);
+    bustupFree(ref_f1);
+    unitMove(tatsuya, 990, -1250, face_north, slow);
+    unitWait(tatsuya);
+    delayClear();
+    delayWait(60);
+    ref_109 = bustupLoad(bustup_10);
+    bustupWait(ref_109);
+    ref_10b = bustupAlloc(ref_109, right, rgb(0,0,0));
+    bustupFade(ref_10b, rgb(128,0,0), 30);
+    bustupFlip(ref_10b, true);
+    ref_10e = dialogAlloc();
+    ref_10f = msgShow(msg_8);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]………[delay(60)]
+
+***************************************/
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(tatsuya, animation_29, 1);
+    unitWait(tatsuya);
+    wait(ref_10f);
+    unitAnimationPlay(tatsuya, animation_1, 1);
+    ref_116 = msgShow(msg_9);
+/***************************************
+[tab]悪いが、俺には返せるものがない…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_116);
+    dialogFree(ref_10e);
+    ref_11a = bustupFade(ref_10b, rgb(0,0,0), 10);
+    bustupWait(ref_11a);
+    bustupFree(ref_10b);
+    unitAnimationPlay(jun, animation_29, 1);
+    unitWait(jun);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    delayClear();
+    delayWait(60);
+    ref_122 = spriteLoad(sprite_19);
+    wait(ref_122);
+    ref_124 = spriteLoad(sprite_104);
+    wait(ref_124);
+    unitSpriteClear(tatsuya);
+    unitSpriteSet(tatsuya, sprite_19);
+    unitAnimationPlay(tatsuya, animation_21, 1);
+    unitSpriteClear(jun);
+    unitSpriteSet(jun, sprite_104);
+    sndMusicPlay(sound_3109, 127);
+    unitAnimationPlay(jun, animation_1, 1);
+    unitShadowRadius(jun, 0);
+    unitDepthOffset(jun, 10);
+    unitMove3d(jun, 990, 0, var_7ffffa88, 10, 0);
+    unitWait(jun);
+    unitMove3d(jun, 690, 300, var_7ffff9c0, 10, 1);
+    unitWait(jun);
+    delayClear();
+    delayWait(60);
+    unitSpriteClear(tatsuya);
+    unitSpriteSet(tatsuya, sprite_18);
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    ref_138 = spriteLoad(sprite_1);
+    wait(ref_138);
+    delayClear();
+    delayWait(90);
+    unitAnimationPlay(tatsuya, animation_4, 1);
+    delayClear();
+    delayWait(30);
+    unitMove(maya, 990, -1330, face_north, slow);
+    unitWait(maya);
+    unitAnimationPlay(tatsuya, animation_6, 1);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(maya, animation_12, 1);
+    unitWait(maya);
+    delayClear();
+    delayWait(30);
+    unitFace_2(maya, south);
+    unitAnimationPlay(maya, animation_1f, 1);
+    delayClear();
+    delayWait(60);
+    unitAnimationPlay(tatsuya, animation_1, 1);
+    delayClear();
+    delayWait(60);
+    ref_14f = bustupLoad(bustup_10);
+    bustupWait(ref_14f);
+    ref_151 = bustupAlloc(ref_14f, right, rgb(0,0,0));
+    bustupFade(ref_151, rgb(128,0,0), 30);
+    bustupFlip(ref_151, true);
+    ref_154 = dialogAlloc();
+    ref_155 = msgShow(msg_10);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]今ならまだ間に合う…[delay(30)]
+[tab]何も聞くな…何も、見るな…
+
+***************************************/
+    wait(ref_155);
+    unitAnimationPlay(maya, animation_29, 1);
+    unitWait(maya);
+    ref_159 = msgShow(msg_11);
+/***************************************
+[tab]そうすれば、今までの日常に戻れる…
+[sync][wait][clear]
+***************************************/
+    unitAnimationPlay(maya, animation_29, 1);
+    sync();
+    wait(ref_159);
+    dialogFree(ref_154);
+    ref_15e = bustupFade(ref_151, rgb(0,0,0), 10);
+    bustupWait(ref_15e);
+    bustupFree(ref_151);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(tatsuya, animation_0, 1);
+    ref_164 = bustupLoad(bustup_10);
+    bustupWait(ref_164);
+    ref_166 = bustupAlloc(ref_164, right, rgb(0,0,0));
+    bustupFade(ref_166, rgb(128,0,0), 30);
+    bustupFlip(ref_166, true);
+    ref_169 = dialogAlloc();
+    ref_16a = msgShow(msg_12);
+/***************************************
+[color(yellow)][tatsuya][color(white)]
+[tab]さよなら…だ…
+[sync][wait][clear]
+***************************************/
+    sync();
+    wait(ref_16a);
+    dialogFree(ref_169);
+    ref_16e = bustupFade(ref_166, rgb(0,0,0), 10);
+    bustupWait(ref_16e);
+    bustupFree(ref_166);
+    unitAnimationPlay(maya, animation_29, 1);
+    unitWait(maya);
+    unitAnimationPlay(maya, animation_1f, 1);
+    delayClear();
+    delayWait(30);
+    unitSpriteClear(tatsuya);
+    unitSpriteSet(tatsuya, sprite_19);
+    unitAnimationPlay(tatsuya, animation_21, 1);
+    unitSpriteClear(maya);
+    unitSpriteSet(maya, sprite_1);
+    sndMusicPlay(sound_3109, 127);
+    unitAnimationPlay(maya, animation_2, 1);
+    unitShadowRadius(maya, 0);
+    unitDepthOffset(maya, 10);
+    unitMove3d(maya, 990, 0, var_7ffffa88, 10, 0);
+    unitWait(maya);
+    unitMove3d(maya, 690, 300, var_7ffff9c0, 10, 1);
+    unitWait(maya);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 4, false);
+    screenFadeOuter(rgb(255,255,255), 4, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    sndVolumeFadeOff(sound_3107, 120);
+    cutsceneFollowupEvent(event_8c);
+    cutscenePlay(cutscene_5, 0);
+}
+
+function MAYA_ODOROKU()
+{
+    unitFace_2(maya, west);
+    unitAnimationHold(maya, animation_21, 60);
+    unitWait(ulala);
+}
+
+function URARA_ODOROKU()
+{
+    unitFace_2(ulala, west);
+    unitAnimationHold(ulala, animation_22, 60);
+    unitWait(ulala);
+    unitAnimationPlay(ulala, animation_1f, 1);
+}
+
+function KATUYA_ODOROKU()
+{
+    unitFace_2(katsuya, west);
+    unitAnimationHold(katsuya, animation_21, 60);
+    unitWait(katsuya);
+}
+
+function PAOFU_ODOROKU()
+{
+    unitFace_2(baofu, west);
+    unitAnimationPlay(baofu, animation_1d, 1);
+}
+
+function NPC_ODOROKU()
+{
+    unitAnimationHold(npc1, animation_10, -1);
+    unitAnimationHold(npc2, animation_10, -1);
+    unitFace_2(unit_58, west);
+    unitAnimationHold(unit_58, animation_10, -1);
+}
+
+function MAYA_IDO()
+{
+    unitFace_2(maya, north);
+    unitAnimationPlay(maya, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitMove(maya, 900, -1150, face_north, fast);
+    unitWait(maya);
+    unitAnimationPlay(maya, animation_a, 1);
+}
+
+function URARA_IDO()
+{
+    unitFace_2(ulala, north);
+    unitAnimationPlay(ulala, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitMove(ulala, 1050, -900, face_north, fast);
+    unitWait(ulala);
+    unitAnimationPlay(ulala, animation_a, 1);
+}
+
+function KATUYA_IDO()
+{
+    unitFace_2(katsuya, north);
+    unitAnimationPlay(katsuya, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitMove(katsuya, 980, -1220, face_north, fast);
+    unitWait(katsuya);
+    unitAnimationPlay(katsuya, animation_a, 1);
+}
+
+function PAOFU_IDO()
+{
+    unitFace_2(baofu, north);
+    unitAnimationPlay(baofu, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitMove(baofu, 1120, -1000, face_north, fast);
+    unitWait(baofu);
+    unitAnimationPlay(baofu, animation_a, 1);
+}
+
+function JUN_IDO()
+{
+    unitFace_2(jun, north);
+    unitAnimationPlay(jun, animation_0, 1);
+    delayClear();
+    delayWait(30);
+    unitMove(jun, 1280, -1130, face_north, fast);
+    unitWait(jun);
+    unitAnimationPlay(jun, animation_3, 1);
+}
+
+function TOBIRA()
+{
+    objAnimTranslate(obj_1b, 5, 0, 0, 10);
+    objAnimTranslate(obj_1c, -5, 0, 0, 10);
+    objAnimWait(obj_1b);
+    objAnimWait(obj_1c);
+    delayClear();
+    delayWait(10);
+    objAnimTranslate(obj_1b, -5, 0, 0, 10);
+    objAnimTranslate(obj_1c, 5, 0, 0, 10);
+    objAnimWait(obj_1b);
+    objAnimWait(obj_1c);
+    delayClear();
+    delayWait(10);
+    objAnimTranslate(obj_1b, 5, 0, 0, 10);
+    objAnimTranslate(obj_1c, -5, 0, 0, 10);
+    objAnimWait(obj_1b);
+    objAnimWait(obj_1c);
+    delayClear();
+    delayWait(10);
+    objAnimTranslate(obj_1b, -5, 0, 0, 10);
+    objAnimTranslate(obj_1c, 5, 0, 0, 10);
+    objAnimWait(obj_1b);
+    objAnimWait(obj_1c);
+    delayClear();
+    delayWait(10);
+    objAnimTranslate(obj_1b, 200, 0, 0, 30);
+    objAnimTranslate(obj_1c, -200, 0, 0, 30);
+    objAnimWait(obj_1b);
+    objAnimWait(obj_1c);
+}
+
+function KATUYA_RAKKA()
+{
+    unitMove3d(katsuya, 1050, 0, var_7ffffa88, 10, 0);
+    unitWait(katsuya);
+    unitMove3d(katsuya, 750, 300, var_7ffff9c0, 10, 1);
+    unitWait(katsuya);
+}
+
+function MAYA_ODOROKU2()
+{
+    unitAnimationHold(maya, animation_21, 60);
+    unitWait(maya);
+}
+
+function URARA_ODOROKU2()
+{
+    unitAnimationHold(ulala, animation_22, 60);
+    unitWait(ulala);
+    unitAnimationPlay(ulala, animation_1f, 1);
+}
+
+function PAOFU_ODOROKU2()
+{
+    unitAnimationHold(baofu, animation_22, 60);
+    unitWait(baofu);
+    unitAnimationHold(baofu, animation_11, -1);
+}
+
+function JUN_ODOROKU2()
+{
+    unitAnimationHold(jun, animation_21, 60);
+    unitWait(jun);
+    unitAnimationPlay(jun, animation_3, 1);
+}

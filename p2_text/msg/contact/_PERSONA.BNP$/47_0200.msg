@@ -1,0 +1,141 @@
+
+msg_0:
+[color(yellow)]シャックス[color(white)]
+ これはこれは[var(msg_var_0)]様…
+ 本日もご機嫌麗しゅう…
+[wait][clear][end]
+
+msg_1:
+[color(yellow)][var(msg_var_0)][color(white)]
+ シャックス卿…
+ 貴方の言葉は、どれをとっても嘘の香りが漂う…
+ それよりも、久しく顔を見せませんでしたねぇ…
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]シャックス[color(white)]
+ これは申し訳ございません、[var(msg_var_0)]様！
+ いやいや、この人間めに召還されまして
+ 私も難儀していた所なのですよ…
+[wait][clear][end]
+
+msg_3:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 言い訳は良いですよ…
+ 他にも未だ二名程顔を見ていない者が
+ いますからね…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ それは、さておき…
+ 貴方を召還している、その人間…
+ 役に立ちそうですか？
+[wait][clear][end]
+
+msg_4:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 言い訳は良いですよ…
+ 他にも未だ一名程顔を見ていない者が
+ いますからね…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ それは、さておき…
+ 貴方を召還している、その人間…
+ 役に立ちそうですか？
+[wait][clear][end]
+
+msg_5:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 言い訳は良いですよ…
+ まさか貴方まで、その人間に召還されていたとは…
+ くっ…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 気に入りましたよ、その人間…
+ 良いでしょう…
+[wait][clear][end]
+
+msg_6:
+[color(yellow)]シャックス[color(white)]
+ それはもう、私程の大悪魔を召還できるのですから
+ 実力の程は推して知るべしでしょう！
+[wait][clear][end]
+
+msg_7:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 頼りにしてますよ、嘘吐き公爵殿…
+ 永年耐え忍んできた、この屈辱を晴らす為
+ 我が手足となる人間を必要としていますからね…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ シャックス卿…
+ その人間の事、宜しく頼みますよ。
+ 私は未だ会わなければならない方がおりますので
+[wait][clear][end]
+
+msg_8:
+[color(yellow)]シャックス[color(white)]
+ かしこまりました、[var(msg_var_0)]様…
+[wait][clear][end]
+
+msg_9:
+[color(yellow)]シャックス[color(white)]
+ これはこれは[var(msg_var_0)]様！
+ またもお会いできますとは
+ 至福の限りでございます！
+[wait][clear][end]
+
+msg_10:
+[color(yellow)][var(msg_var_0)][color(white)]
+ また貴方ですか…
+ 貴方の顔は、もう見飽きましたよ…
+ 私は今、バルバトスさんを探しているのです。
+[wait][clear][end]
+
+msg_11:
+[color(yellow)]シャックス[color(white)]
+ ほぉ、バルバトス卿ですか？
+ まこと残念ながら、先日急な病にて
+ お亡くなりになられたと…
+[wait][clear][end]
+
+msg_12:
+[color(yellow)][var(msg_var_0)][color(white)]
+ また貴方ですか…
+ 貴方の顔は、もう見飽きましたよ…
+ 私は今、アドラメルクさんを探しているのです。
+[wait][clear][end]
+
+msg_13:
+[color(yellow)]シャックス[color(white)]
+ ほぉ、アドラメルク卿ですか？
+ まこと残念ながら、先日急な病にて
+ お亡くなりになられたと…
+[wait][clear][end]
+
+msg_14:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方の嘘は聞き飽きましたよ…
+ 見かけたら私が探していた旨
+ 伝えておいて下さいよ…
+[wait][clear][end]
+
+msg_15:
+[color(yellow)]シャックス[color(white)]
+ かしこまりました、[var(msg_var_0)]様…
+[wait][clear][end]
+
+msg_16:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方には、シャックス卿などより
+ 私をペルソナとして使って頂いた方が
+ 宜しいでしょう…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ それが貴方の運命です… 逃れられないね…
+ くっくっくっくっ…
+ 貴方は、私の力に必ず魅せられるのですよ。
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ これをベルベットルームにお持ちなさい…
+ [color(orange)]素札／贖罪の黒山羊[color(white)]です。
+ 必ず私を呼び出すのですよ…
+[wait][clear][end]
+
+msg_17:
+[color(green)]選択肢ジャンプの挙動エラーです[color(white)]
+[end]

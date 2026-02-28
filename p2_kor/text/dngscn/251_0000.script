@@ -1,0 +1,47 @@
+function START()
+{
+    controlDisable();
+    bitGet(var_0, IBIT_LV1_KEY);
+    bnz(var_0, label_8);
+    ref_3 = dialogAlloc();
+    ref_4 = msgShow(msg_0);
+/***************************************
+[color(yellow)]Local Security[color(white)]
+[tab]...Error!
+[tab]Lv. 1 Card is required to enter.
+[tab]Cannot authorize entry without a card.
+[wait][clear]
+***************************************/
+    wait(ref_4);
+    dialogFree(ref_3);
+    b(label_1c);
+  label_8:
+    ref_8 = dialogAlloc();
+    ref_9 = msgShow(msg_1);
+/***************************************
+[color(yellow)]Local Security[color(white)]
+[tab]...Lv. 1 Card ...Confirmed.
+[tab]Permission granted to enter.
+[wait][clear]
+***************************************/
+    wait(ref_9);
+    dialogFree(ref_8);
+    screenEffectInit();
+    screenFade(160, 120, rgb(0,0,0), rgb(0,0,0), sub);
+    screenFadeInner(rgb(255,255,255), 8, false);
+    screenFadeOuter(rgb(255,255,255), 8, false);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    bitSet(DBIT_KEN_GET_A);
+    bitClear(DBIT_KEN_SHATA);
+    delayClear();
+    delayWait(60);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    b(label_1c);
+  label_1c:
+    controlEnable();
+}

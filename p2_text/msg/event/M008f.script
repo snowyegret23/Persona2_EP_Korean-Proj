@@ -1,0 +1,106 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 1, true);
+    screenFadeOuter(rgb(0,0,0), 1, true);
+    cameraSet(north, 432, 0, -497);
+    ref_6 = dialogAlloc();
+    ref_7 = msgShow(msg_0);
+/***************************************
+[tab]追加シナリオ用デバッグイベント[wait][clear]
+***************************************/
+    ref_8 = spriteLoad(sprite_0);
+    wait(ref_8);
+    ref_a = spriteLoad(sprite_2);
+    wait(ref_a);
+    sync();
+    wait(ref_7);
+    ref_e = msgShow(msg_1);
+/***************************************
+[tab]任意のシナリオから開始することができます。
+[wait][clear]
+***************************************/
+    playerInit(northwest);
+    controlDisable();
+    wait(ref_e);
+    dialogFree(ref_6);
+    ref_13 = spriteLoad(sprite_140);
+    wait(ref_13);
+    unitSpawn(npc1, sprite_140, 602, 0, 0, east, none);
+    unitTriggerSet(npc1, EVENTSELECT, 255, 1);
+    ref_17 = spriteLoad(sprite_120);
+    wait(ref_17);
+    unitSpawn(npc2, sprite_120, 802, 0, 0, south, none);
+    controlEnable();
+}
+
+function EVENTSELECT()
+{
+    controlDisable();
+    ref_1d = dialogChoiceAlloc();
+    ref_1e = msgShow(msg_2);
+/***************************************
+[color(green)][tab]シナリオセレクト[color(white)]
+[choice(9)]シナリオ１[tab]はじめから
+シナリオ１[tab]チャプター２
+シナリオ１[tab]チャプター３
+シナリオ２[tab]はじめから
+シナリオ２[tab]チャプター２
+シナリオ２[tab]チャプター３
+シナリオ３[tab]はじめから
+シナリオ３[tab]チャプター２
+シナリオ３[tab]チャプター３
+[end_choice][clear]
+***************************************/
+    wait(ref_1e);
+    dialogFree(ref_1d);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_26);
+    bitSet(bit_c63);
+    eventFileLoad(E, 229);
+    b(label_46);
+  label_26:
+    bne(var_0, 1, label_2b);
+    bitSet(bit_c63);
+    bitSet(bit_c6d);
+    dngLoad(zodiac4, 2, 3, 27, 1);
+    b(label_46);
+  label_2b:
+    bne(var_0, 2, label_30);
+    bitSet(bit_c63);
+    bitSet(bit_c6e);
+    eventFileLoad(E, 237);
+    b(label_46);
+  label_30:
+    bne(var_0, 3, label_34);
+    bitSet(bit_c67);
+    eventFileLoad(E, 242);
+    b(label_46);
+  label_34:
+    bne(var_0, 4, label_38);
+    bitSet(bit_c67);
+    eventFileLoad(E, 244);
+    b(label_46);
+  label_38:
+    bne(var_0, 5, label_3c);
+    bitSet(bit_c67);
+    eventFileLoad(E, 261);
+    b(label_46);
+  label_3c:
+    bne(var_0, 6, label_3f);
+    eventFileLoad(E, 266);
+    b(label_46);
+  label_3f:
+    bne(var_0, 7, label_42);
+    eventFileLoad(E, 234);
+    b(label_46);
+  label_42:
+    bne(var_0, 8, label_46);
+    bitSet(bit_c67);
+    eventFileLoad(E, 254);
+    b(label_46);
+  label_46:
+    controlEnable();
+}

@@ -1,0 +1,475 @@
+
+msg_0:
+[color(yellow)]エリー[color(white)]
+ 先ずは、私の番ですわね。
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]うらら[color(white)]
+ 先ずは、私の番ね。
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]パオフゥ[color(white)]
+ 先ずは、俺からだな。
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]エリー[color(white)]
+ 次は、私の番ですわね。
+[wait][clear][end]
+
+msg_4:
+[color(yellow)]うらら[color(white)]
+ 次は、私の番ね。
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]パオフゥ[color(white)]
+ 次は、俺の番だ。
+[wait][clear][end]
+
+msg_6:
+[load_sound(sndeff_28)][sync][color(yellow)]エリー[color(white)]
+ [play_sound(sndeff_28)][sync]私の番ですわね。[sync]
+[load_sound(sndeff_3d)][sync][wait][clear][end]
+
+msg_7:
+[color(yellow)]うらら[color(white)]
+ 私の番ね。
+[wait][clear][end]
+
+msg_8:
+[color(yellow)]パオフゥ[color(white)]
+ 俺の番だ。
+[wait][clear][end]
+
+msg_9:
+[color(yellow)]うらら[color(white)]
+ この前、自販機でコーラを買ったんだけど
+ コーラが出るとき、な～んか音が変だったの。
+ ガタンッじゃなくて、ボスンッみたいな…
+[wait][clear][color(yellow)]うらら[color(white)]
+ 取り出し口に手を突っ込んだら、変な触感が…
+ なんかこう…、大量の髪の毛、みたいな…
+ コーラ置いて速攻で逃げちゃったわ！
+[wait][clear][end]
+
+msg_10:
+[color(yellow)]パオフゥ[color(white)]
+ 俺が前住んでたマンションじゃ
+ 妙なことが日常茶飯事だったぜ…
+ 突然皿が割れたりコンロの火がついたり…
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ 霊媒士を呼んで見てもらうと、ただ一言。
+ 「この部屋の写真を撮ってごらんなさい。
+  面白いものが写りますよ…血痕とか、ね…」
+[wait][clear][end]
+
+msg_11:
+[color(yellow)]エリー[color(white)]
+ Ｗ大学の法学部には、壁が真っ黒に塗られた
+ ＲＥＳＴ ＲＯＯＭあるそうですわ…
+[wait][clear][color(yellow)]エリー[color(white)]
+ なんでも十年前…
+ 司法試験の勉強に行き詰まった学生が
+ そこで首吊り自殺したのだとか…
+[wait][clear][color(yellow)]エリー[color(white)]
+ 今でも黒い壁の表面に、彼の遺書が…
+ 呪いの言葉が…赤い文字で
+ 夜な夜な浮かび上がるそうですわ…
+[wait][clear][end]
+
+msg_12:
+[color(yellow)]うらら[color(white)]
+ ロックシンガーのＹさんが
+ 某ホールで大きなライブをやったのね。
+ 超満員で、すっごい盛り上がりだったらしいわ。
+[wait][clear][color(yellow)]うらら[color(white)]
+ ライブも無事に終わってＹさんが自宅に戻ると、
+ 出迎えてくれた奥さんの様子が、どーもおかしい…
+ 「そ、そこに立ってて！ まだ入らないでっ！」
+[wait][clear][color(yellow)]うらら[color(white)]
+ 奥さんはすっごい霊感の強い人で、
+ Ｙさんの背後にファンの生霊が見えたんだって…
+[wait][clear][end]
+
+msg_13:
+[color(yellow)]パオフゥ[color(white)]
+ 終電を逃した会社員のＭ。タクシーでも拾おうかと
+ 周りを見ると、白い着物の女が駅から出てきた…
+ 「方向が同じなら途中までご一緒しませんか？」
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ 女は通夜が行われている家の前で降りた。
+ 帰って家族にその話をすると「通夜に白い着物で
+ 行くわけないでしょ。白い着物っていったら…」
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ 通夜や葬式で白い着物、つまり白装束を
+ 着るのは一人しかいねぇ。
+ そう……死人だ。
+[wait][clear][end]
+
+msg_14:
+[color(yellow)]エリー[color(white)]
+ ある晩、Ｍｒ．ＷがＢＥＤに入ると
+ すぐ金縛りにかかってしまいました。
+ 「こういう時は天井でも見て…天…えっ！？」
+[wait][clear][color(yellow)]エリー[color(white)]
+ 仰向けに寝ていたはずの彼の目に
+ 飛びこんできたのは天井ではなく…
+ なんと、彼自身が寝ている姿だったんですの！
+[wait][clear][end]
+
+msg_15:
+[color(yellow)]うらら[color(white)]
+ ゲームメーカーのＡ社では、悪魔祓いの
+ ときに使う「生贄用」のアルバイトを
+ 常時募集してるとか、してないとか…
+[wait][clear][end]
+
+msg_16:
+[color(yellow)]パオフゥ[color(white)]
+ この間世界新記録を出した
+ マラソンランナーのＵ。
+ この男には、こんな裏話があるんだ…
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ Ｕは序盤からずっと先頭を走っていた。
+ が、Ｕには更に先を走る選手が見えていたと言う。
+ Ｕはその選手を追って、２着でゴール…
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ その瞬間、１着の選手が消えちまったんだそうだ。
+ Ｕの話じゃその選手……先月事故で亡くした
+ 親父さんに、後姿がソックリだったとか…
+[wait][clear][end]
+
+msg_17:
+[color(yellow)]エリー[color(white)]
+ ＵＦＯを見たことは、おありかしら？
+ 私が見たＵＦＯは、ＰＹＲＡＭＩＤや
+ 前方後円墳の形をしていました…
+[wait][clear][color(yellow)]エリー[color(white)]
+ ＵＦＯって、昔はもっと身近なものだったのかも
+ しれない…私、そう思えてならないんですの。
+[wait][clear][end]
+
+msg_18:
+[color(yellow)]うらら[color(white)]
+ マーヤの部屋が急にキレイになってたから
+ 「こりゃ雹が降るわ！」って冷やかしたら
+ 彼女…部屋を片付けた覚えはないって言うの。
+[wait][clear][color(yellow)]うらら[color(white)]
+ それから何日か後、
+ 営業の途中で近くまで来たから
+ 私、家に寄ったのね。そ・し・た・ら…
+[wait][clear][color(yellow)]うらら[color(white)]
+ 小さなお爺さんが部屋を片付けてた。
+ ペットボトルくらいの大きさの…
+ ハダカのお爺さんがあぁぁ～～～っ！！
+[wait][clear][end]
+
+msg_19:
+[color(yellow)]パオフゥ[color(white)]
+ 病院では普通、５０３号室の隣は
+ ５０４じゃなくて、５０５号室になってる。
+ ま、「死」を避けるってヤツだな…
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ ところがＨ病院では、この「５０４号室」が
+ 夜な夜な現われるらしいんだ。
+ 当直の看護婦は必ず見るんだが…
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ 怖くて誰も
+ 中を覗いたことはないんだとよ…
+[wait][clear][end]
+
+msg_20:
+[color(yellow)]エリー[color(white)]
+ Ｍｓ．Ｅは国際線のＳｔｅｗａｒｄｅｓｓ。
+ 彼女の乗った飛行機がＨＯＮＧＫＯＮＧの
+ 上空を通過した…その時！！
+[wait][clear][color(yellow)]エリー[color(white)]
+ 乗客が窓の外を指さして大声で叫んでいるので
+ 彼女が覗いてみると、な、なんと主翼の上に…
+ 老人があぐらをかいて座っていたそうですわ！
+[wait][clear][end]
+
+msg_21:
+[color(yellow)]うらら[color(white)]
+ 防空壕って、入ったことある？
+ 高校ン時、友達がジョークで入ったら
+ ホントに出て来れなくなっちゃって…
+[wait][clear][color(yellow)]うらら[color(white)]
+ なんでも「アブナイヨ…マダ…出チャダメ…」
+ っていう女の子の声が聞えてきて、突然金縛りに
+ かかったんだとか…ひぇ～っ！！
+[wait][clear][end]
+
+msg_22:
+[color(yellow)]パオフゥ[color(white)]
+ 殺人事件の裁判とかやってると
+ 傍聴席に時々現れるんだそうだ…
+ 怨めしい表情をした被害者の亡霊が、な…
+[wait][clear][end]
+
+msg_23:
+[color(yellow)]エリー[color(white)]
+ 復讐のＴＥＤＤＹＢＥＡＲって、ご存知かしら？
+ なんでも、ＲＵＳＳＩＡのさる豪邸が強盗によって
+ 放火されたとき、そこのお嬢さまが…
+[wait][clear][color(yellow)]エリー[color(white)]
+ ＴＥＤＤＹＢＥＡＲを助けようとして、自分は焼け
+ 死んだそうです。ＴＥＤＤＹは犯人を追って、毎晩
+ ＭＯＳＣＯＷの街を徘徊しているのだとか…
+[wait][clear][end]
+
+msg_24:
+[color(yellow)]うらら[color(white)]
+ この前、電車の中で音楽聴いてたら
+ 突然「ピ～」って鳴って音楽止まっちゃったの。
+ 見ると「一時停止」になってる…
+[wait][clear][color(yellow)]うらら[color(white)]
+ また「再生」にして聴いていると
+ また「ピ～」…で「一時停止」。
+ だれかの悪戯かなって思って顔上げたら…
+[wait][clear][color(yellow)]うらら[color(white)]
+ 腕が…
+ 肘から下だけの、宙に浮いた白い腕が…
+ リモコンを握り締めてたのぉぉぉ～～っ！！
+[wait][clear][end]
+
+msg_25:
+[color(yellow)]パオフゥ[color(white)]
+ 日本海の入り江には、引き潮の時だけ姿を現す
+ 小さな洞窟みてぇな場所があちこちにあるんだ。
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ …で、そういう場所ってなぁ、潮の流れの関係で
+ 色んなモノが流れ着くらしい。
+ ゴミとか、釣り竿とか、船体の一部とか………
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ ふやけちまった水死体とか、な…
+[wait][clear][end]
+
+msg_26:
+[color(yellow)]エリー[color(white)]
+ 深夜零時にＲＡＤＩＯをつけて周波数を９９９に
+ 合わせると、霊界の様子が聞けるそうですわ…
+ みなさんも一度お試しになってみて！！
+[wait][clear][end]
+
+msg_27:
+[color(yellow)]うらら[color(white)]
+ Ｙ君の趣味は観葉植物。毎晩、全ての鉢植えに
+ 水をやってから寝るのが彼の習慣だったんだけど…
+ ある日、ひとつだけ水をやり忘れてたのね…
+[wait][clear][color(yellow)]うらら[color(white)]
+ 夜中に手首に痛みを感じて目を覚ますと
+ な、なんと……ドラセナの木がＹ君の手首に
+ 齧りついて、血を吸ってたんだって～っ！！
+[wait][clear][end]
+
+msg_28:
+[color(yellow)]パオフゥ[color(white)]
+ Ｍはよく仲間と釣りに行くそうだ。
+ この間も天候の優れない中、仲間を無理やり
+ 連れ添って沖まで出たんだそうだ。
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ …で、そこで見ちまったんだとよ。
+ 幽霊船を、な…
+ しかも、その幽霊船の船首の方では…
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ 若い男女が折り重なって
+ 両手を真横に伸ばしてやがったとか…
+[wait][clear][end]
+
+msg_29:
+[color(yellow)]エリー[color(white)]
+ 呪いのお財布ってご存知かしら？
+ なんでも、そのお財布にお金を入れておけば
+ お金がどんどん増えて、その代わりに…
+[wait][clear][color(yellow)]エリー[color(white)]
+ 寿命がだんだん縮んでいくんですって！
+[wait][clear][color(yellow)]エリー[color(white)]
+ Ｂｕｔ，寿命が縮んだかどうかなんて
+ 誰にも分からないので、みなさんけっこう
+ 普通に使ってらっしゃるようですわ。
+[wait][clear][end]
+
+msg_30:
+[color(yellow)]うらら[color(white)]
+ この前マーヤと街を歩いてたら
+ 突然ビルが、ビョ～～～～～ンって曲がって、
+ ３倍くらいの大きさになったの。
+[wait][clear][color(yellow)]うらら[color(white)]
+ これって絶対「大入道」とか「のびあがり」って
+ いうやつよ！ ただ…、一緒にいたマーヤには
+ 何にも見えなかったみたいだけどさぁ…
+[wait][clear][end]
+
+msg_31:
+[color(yellow)]パオフゥ[color(white)]
+ もう随分前の話だ…
+ ある時１１０番に女の声で通報があった。
+ 消え入るような声で「は、はやく来て…」
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ 警官が現場に駆けつけた時には、女は既に
+ 事切れていた。「死後数分だろう…」
+ その場にいた警官たちは誰もがそう思った。
+[wait][clear][color(yellow)]パオフゥ[color(white)]
+ が、司法解剖の結果、女は通報の
+ ３日前に殺されていたことが判明。
+ 遺体が自分で居場所を通報したってのかねぇ…？
+[wait][clear][end]
+
+msg_32:
+[color(yellow)]エリー[color(white)]
+ Ｍｒ．Ｈはある日、自宅の床の間に
+ 鹿の剥製を飾ったそうです。本物の皮を使った、
+ 首から上だけのＲＥＡＬな剥製…
+[wait][clear][color(yellow)]エリー[color(white)]
+ その日からですわ…
+ 床の間から、夜な夜な草を食むような
+ 音がするようになったのは…！！
+[wait][clear][end]
+
+msg_33:
+[color(yellow)]うらら[color(white)]
+ ある日、Ｔさんが公園のベンチで
+ お弁当を食べてたら…バサッ！！って
+ 何か黒い物が落ちてきたんだって…
+[wait][clear][color(yellow)]うらら[color(white)]
+ 彼女はビックリして顔を上げたけど、
+ 目の前には誰もいない…
+ 落ちてきたのは女性の物らしい、長い髪の毛…
+[wait][clear][color(yellow)]うらら[color(white)]
+ 実はねぇ…彼女が座ってたベンチって
+ ３年前、女子大生が首吊り自殺した時に
+ 「踏み台」として使ったものだったんだって…
+[wait][clear][end]
+
+msg_34:
+[color(yellow)]？？？[color(white)]
+ 知ってたぁ？
+ 怖い話って霊を呼び寄せるって…
+[wait][clear][color(yellow)]？？？[color(white)]
+ 私の知ってる子も百物語をやってたんだけど
+ 百話終わった時、最初は８人だったのに
+ 終わってみると、５人になってたんだって…
+[wait][clear][color(yellow)]？？？[color(white)]
+ ふふふ…
+[wait][clear][end]
+
+msg_35:
+[color(yellow)]うらら[color(white)]
+ だ、誰、今の…
+ もしかして１０１話目じゃ？
+[wait][clear][end]
+
+msg_36:
+[color(yellow)]エリー[color(white)]
+ 私のＷａｌｋｉｎｇ、堪能して頂けました？
+[wait][clear][end]
+
+msg_37:
+[load_sound(sndeff_25)][sync][color(yellow)]エリー[color(white)]
+ [play_sound(sndeff_25)][sync]Ｏｈ！ Ｅｌｅｇａｎｔですわ！[sync]
+[wait][clear][end]
+
+msg_38:
+[color(yellow)]エリー[color(white)]
+ パリコレでも通用すると思いません？
+[wait][clear][end]
+
+msg_39:
+[color(yellow)]うらら[color(white)]
+ エリーちゃんもさ、
+ ストーカーなんて散々だったねぇ…
+[wait][clear][end]
+
+msg_40:
+[color(yellow)]エリー[color(white)]
+ まったくですわ…
+ Ｍｓ．Ｕｒａｒａの結婚詐欺といい
+ 私、男性不信になってしまいそうですわ…
+[wait][clear][end]
+
+msg_41:
+[color(yellow)]うらら[color(white)]
+ まったく男ってのは、どいつもこいつも…
+ そこのアンタも、そう思うでしょ！
+[wait][clear][end]
+
+msg_42:
+[color(yellow)]うらら[color(white)]
+ 結婚詐欺にストーカーでしょ？
+ ドメスティック・バイオレンスにセクハラ…
+ いつだって女は、男に泣かされてきたのよ！
+[wait][clear][end]
+
+msg_43:
+[load_sound(sndeff_29)][sync][color(yellow)]エリー[color(white)]
+ [play_sound(sndeff_29)][sync]その通りですわ！[sync]
+[wait][clear][end]
+
+msg_44:
+[color(yellow)]うらら[color(white)]
+ ちょっと、そこのアンタは、どう思ってるワケ？
+[wait][clear][end]
+
+msg_45:
+[color(yellow)]うらら[color(white)]
+ 男って一体何様？
+ 子供も産めないクセして偉そうに…
+ 結婚詐欺する暇あったら産んでみろっての！
+[wait][clear][end]
+
+msg_46:
+[color(yellow)]エリー[color(white)]
+ ま、まぁ、そこまでは言いませんけど
+ Ｍｓ．Ｕｒａｒａの言い分にも一理ありますわ。
+[wait][clear][end]
+
+msg_47:
+[color(yellow)]うらら[color(white)]
+ そうでしょ、ね、そうでしょ！
+ ほら、そこのアンタも何か言いなさいよ！
+[wait][clear][end]
+
+msg_48:
+[load_sound(sndeff_34)][sync][sync]
+[end]
+
+msg_49:
+[play_sound(sndeff_34)][sync]
+[end]
+
+msg_50:
+[load_sound(sndeff_3d)][sync][sync]
+[end]
+
+msg_51:
+[play_sound(sndeff_3d)][sync]
+[end]
+
+msg_52:
+[color(yellow)]エリー[color(white)]
+ Ｍｓ．Ｕｒａｒａ、Ｍｒ．Ｂａｏｆｕ！
+ ここは、私の出番ですわ！
+ お二人は下がってらして！
+[wait][clear][end]
+
+msg_53:
+[color(yellow)]うらら[color(white)]
+ じゃ、じゃあ頼んだわ…
+[wait][clear][end]
+
+msg_54:
+[color(yellow)]エリー[color(white)]
+ Ｍｓ．Ｕｒａｒａと女同士のお話がありますの。
+ Ｍｒ．Ｂａｏｆｕは少々、ご遠慮して
+ 頂けません？
+[wait][clear][end]
+
+msg_55:
+[color(yellow)]パオフゥ[color(white)]
+ そうか？
+ じゃあ、頼んだぜぇ…
+[wait][clear][end]

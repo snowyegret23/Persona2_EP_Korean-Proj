@@ -1,0 +1,24 @@
+
+msg_0:
+[color(yellow)]アムルタート[color(white)]
+ 見つけましたわ！
+ 人々を暴力へと駆り立てる悪魔[var(msg_var_0)]！
+ まさか、その身を女に変じていようとは…
+[wait][clear][color(yellow)]アムルタート[color(white)]
+ スプンタ・マンユの命により
+ あなたを滅ぼします！
+[wait][clear][end]
+
+msg_1:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふふふ… スプンタ・マンユ六天使だからって
+ 私をナメてもらっては困りますわよ。
+ 滅ぶのは、どちらかしら？
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]アムルタート[color(white)]
+ わたくしは、不滅の天使…
+ あなた如きの力で滅ぼす事など出来ません！
+ さぁ、覚悟しなさい！
+[wait][clear][end]

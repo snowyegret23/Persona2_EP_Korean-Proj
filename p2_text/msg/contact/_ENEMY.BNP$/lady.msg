@@ -1,0 +1,3637 @@
+
+msg_0:
+[end]
+
+msg_1:
+[end]
+
+msg_2:
+[end]
+
+msg_3:
+[end]
+
+msg_4:
+[end]
+
+msg_5:
+[end]
+
+msg_6:
+[end]
+
+msg_7:
+[end]
+
+msg_8:
+[end]
+
+msg_9:
+[end]
+
+msg_10:
+[end]
+
+msg_11:
+[end]
+
+msg_12:
+[color(yellow)][var(msg_var_0)][color(white)]
+ この私の事を知りたいと…
+ しかし貴女程度が私を理解できるのですか？
+ 疑問ですねぇ…
+[wait][clear][end]
+
+msg_13:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私の話を聞きたいのですか…
+ しかし私の話は難しいですよ。
+ 何しろ非常に頭が良いもので…
+[wait][clear][end]
+
+msg_14:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 難しいですねぇ…
+ いやはや、私の話は総じてレベルが高いので
+ 貴女に適当な話題探しが大変なのですよ…
+[wait][clear][end]
+
+msg_15:
+[end]
+
+msg_16:
+[end]
+
+msg_17:
+[end]
+
+msg_18:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下賎な身分の分際で馴れ馴れしいわ！
+[wait][clear][end]
+
+msg_19:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くだらぬ事をベラベラと…
+ 舌根っこ引き抜いてくれるぞ！
+[wait][clear][end]
+
+msg_20:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あぁ… 何の冗談だぁ…
+ まったく笑えぬわ！
+[wait][clear][end]
+
+msg_21:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、何を企んでいるのです…
+[wait][clear][end]
+
+msg_22:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、なんと答えれば良いやら…
+[wait][clear][end]
+
+msg_23:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こういう状況は苦手なもので…
+[wait][clear][end]
+
+msg_24:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 占いとは…
+ か弱い人間の生涯は、それだけ未来への恐怖に
+ 彩られているという事なのでしょう…
+[wait][clear][end]
+
+msg_25:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 決まりきった人生など退屈だとお思いの筈なのに
+ 決まりきった未来を占おうとは…
+ 人間は、実に不思議なものですね…
+[wait][clear][end]
+
+msg_26:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 遥か昔から様々な占いを見てきましたが
+ 一つとして当たるものを見た事がありません…
+ さて、貴女の占いは、どうなのでしょうかね？
+[wait][clear][end]
+
+msg_27:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 悪魔である私を占うとは…
+ 顔に似合わず、とぼけた方だ…
+[wait][clear][end]
+
+msg_28:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私も占いは、お手の物ですよ。
+ なにせ悪魔ですからね…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_29:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 人間の占いで悪魔である私を占おうとは…
+ 脳細胞が５、６個足りないのでは？
+[wait][clear][end]
+
+msg_30:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間如きに悪魔が占えるかっ！
+ 思いあがるなっ！
+[wait][clear][end]
+
+msg_31:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様如きの当てずっぽうの占いなど
+ 誰が信じるかっ！
+[wait][clear][end]
+
+msg_32:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 時間の無駄だっ！
+[wait][clear][end]
+
+msg_33:
+[end]
+
+msg_34:
+[end]
+
+msg_35:
+[end]
+
+msg_36:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ… 貴方、刑事とかいう職業の様ですね。
+ 貴方の立場、さしずめ「岡っ引き」
+ とでもいったところでしょうか…
+[wait][clear][end]
+
+msg_37:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 知恵比べになりそうですね？ 良いでしょう…
+ 久し振りに脳細胞を一つ余分に
+ 動かしてみますか…
+[wait][clear][end]
+
+msg_38:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ… 私をお疑いに…
+ 貴方の推理、是非お伺いしたいものですねぇ…
+[wait][clear][end]
+
+msg_39:
+[color(yellow)][var(msg_var_0)][color(white)]
+ どうぞ、お調べ下さい。
+ なんでしたら全裸になって差し上げますよ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_40:
+[color(yellow)][var(msg_var_0)][color(white)]
+ いい大人が警察ごっこですか？
+ どうやら脳の発育が上手くない様ですね。
+ くっくっくっくっ…
+
+[end]
+
+msg_41:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ どうやら彼は、夢の続きでも
+ ご覧になってる様ですねぇ…
+[wait][clear][end]
+
+msg_42:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴ッ様ぁっ、何を根拠に！
+ それ以上侮辱する積もりならば
+ 生かしておかぬぞ！
+[wait][clear][end]
+
+msg_43:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何の冗談だっ！
+ 詰まらぬ事をいうと捨て置かんぞ！
+[wait][clear][end]
+
+msg_44:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それ以上、下らぬ余興を続けるならば
+ 私を侮辱した罪で、私自ら処刑してくれるぞっ！
+[wait][clear][end]
+
+msg_45:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私が、そんな…
+ 身に覚えなどありません…
+ そんな女…
+[wait][clear][end]
+
+msg_46:
+[color(yellow)][var(msg_var_0)][color(white)]
+ お、女の事など存じません…
+[wait][clear][end]
+
+msg_47:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ なかなか良く録れてますねぇ…
+ 私の声は何時聞いても惚れ惚れします。
+[wait][clear][end]
+
+msg_48:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ、私の声ですか…
+ 記念にとっておいてください。
+ なぁに、料金なんて頂きませんよ。
+[wait][clear][end]
+
+msg_49:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 貴方、なかなか堂に入った脅しっぷり…
+ 次は、どの様な手で来るのか楽しみですね。
+[wait][clear][end]
+
+msg_50:
+
+
+
+
+
+[end]
+
+msg_51:
+
+
+
+
+
+[end]
+
+msg_52:
+
+
+
+
+
+[end]
+
+msg_53:
+[color(yellow)][var(msg_var_0)][color(white)]
+ この私を脅すとは…
+ 命の保証はせぬぞっ！
+[wait][clear][end]
+
+msg_54:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その様なテープ…
+ 貴様もろとも塵と化してくれるわっ！
+[wait][clear][end]
+
+msg_55:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、何がお望みなのでしょうか…
+[wait][clear][end]
+
+msg_56:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私にどうしろと…
+[wait][clear][end]
+
+msg_57:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ま、まさか録られていたとは…
+[wait][clear][end]
+
+msg_58:
+[color(yellow)][var(msg_var_0)][color(white)]
+ これは、新しい発見！
+ 胡麻粒程の脳で、そこまで考えていようとは！
+ これは、もはや神秘ですよ！
+[wait][clear][end]
+
+msg_59:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 随分すらすらと難しい言葉が出てきますね。
+ かなり練習したのではありませんか？
+[wait][clear][end]
+
+msg_60:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 自分の所有物でもないのに心配とは…
+ 貴方、かなり苦労性ですねぇ…
+[wait][clear][end]
+
+msg_61:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 本でもお書きになったら如何です？
+ 最も読むべき人は読まないでしょうが…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_62:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 日本に明日が訪れれば良いですねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_63:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 日本が将来どうなろうと
+ 私の知った事ではないわっ！
+[wait][clear][end]
+
+msg_64:
+[color(yellow)][var(msg_var_0)][color(white)]
+ では、ここに貴方の日本を汚す悪魔がいます…
+ 口ばかり動かさずかかって来たらどうだっ！
+[wait][clear][end]
+
+msg_65:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、その様な事を言われましても…
+[wait][clear][end]
+
+msg_66:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 難しい事は、ちょっと…
+[wait][clear][end]
+
+msg_67:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 花の命は実に短い…
+ 早めに次の一手を考えておいた方が
+ 宜しいですよ…
+[wait][clear][end]
+
+msg_68:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 歩くだけで金になるとは…
+ 実に羨ましい商売ですねぇ。
+[wait][clear][end]
+
+msg_69:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ、珍しいお仕事をなされている様で…
+ しかし、人間の美的感覚には
+ 甚だ疑問を感じますねぇ…
+[wait][clear][end]
+
+msg_70:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なかなか軽やかな足取り…
+ 頭の軽さが絶妙に表現されていますねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_71:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良かったですね、売るものがあって…
+ しかし期間限定商品の様ですが…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_72:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 詰まらぬものを見せるなっ！
+ 目が腐るわ！
+[wait][clear][end]
+
+msg_73:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間のメス如きに興味はないわっ！
+[wait][clear][end]
+
+msg_74:
+[end]
+
+msg_75:
+[end]
+
+msg_76:
+[end]
+
+msg_77:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふっ、私に男色の気はありませんよ。
+[wait][clear][end]
+
+msg_78:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その眼…
+ 気になりますね。
+[wait][clear][end]
+
+msg_79:
+[color(yellow)][var(msg_var_0)][color(white)]
+ これはこれは！
+ どうやら私が、お気に入りのようだ！
+[wait][clear][end]
+
+msg_80:
+[end]
+
+msg_81:
+[end]
+
+msg_82:
+[end]
+
+msg_83:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様の眼、気に入らん！
+ 止めないのなら、えぐらせてもらうぞっ！
+[wait][clear][end]
+
+msg_84:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 言いたい事があるのなら、口で言えっ！
+ それとも、その口は、飾り物かっ！！
+[wait][clear][end]
+
+msg_85:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何を見ているっ！
+[wait][clear][end]
+
+msg_86:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私に、その様な趣味は…
+[wait][clear][end]
+
+msg_87:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、何か、お気に障る事でも…
+[wait][clear][end]
+
+msg_88:
+[color(yellow)][var(msg_var_0)][color(white)]
+ これは、なかなか難しい質問ですね。
+ …ふむ、実に難しい。
+[wait][clear][end]
+
+msg_89:
+[color(yellow)][var(msg_var_0)][color(white)]
+ これは、難問ですね…
+ 貴女方の外見に差を見出す事は、
+ 河原の石の価値に差を見出すと同程度ですから…
+[wait][clear][end]
+
+msg_90:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間の競争心は、この様な場面でも
+ 否応なく発揮されるのですね…
+ 実に興味深い。
+[wait][clear][end]
+
+msg_91:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 私にアピールしているのですか？
+ そんな事をなさらなくとも頂く積もりでしたよ。
+[wait][clear][end]
+
+msg_92:
+[color(yellow)][var(msg_var_0)][color(white)]
+ スライム曰く、とろけ具合が今一つですね…
+ もう少し、とろけてから出直して来て下さい。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_93:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ もてる男は辛いとでもいったところですか…
+[wait][clear][end]
+
+msg_94:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下らぬ事を…
+ そんなものどちらでも良いわっ！
+[wait][clear][end]
+
+msg_95:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様らなど、同じジャガイモ程にしか見えんわ！
+[wait][clear][end]
+
+msg_96:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間のメスなど、端から興味は無いわ！
+[wait][clear][end]
+
+msg_97:
+[end]
+
+msg_98:
+[end]
+
+msg_99:
+[end]
+
+msg_100:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おやおや、なんともご親切な方ですねぇ…
+ 頭の中に親切虫でも飼ってらっしゃるんですか？
+[wait][clear][end]
+
+msg_101:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心配というものは、他人にしている様で
+ その実、自分にしているものなのですよ…
+[wait][clear][end]
+
+msg_102:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おお！ これは珍しい…
+ 自分の命を脅かす敵を心配するとは…
+ 余りの緊張に脳味噌が沸騰しているのでは？
+[wait][clear][end]
+
+msg_103:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心配ですか？ そうですねぇ…
+ 強いて言えば貴女方の食し方くらいですね。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_104:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私を心配している貴女の顔はマリア様の様ですね…
+ その何も考えていない様な間抜け面がね。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_105:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良く出来た人情芝居でしたよ…
+ これなら、お年寄りの涙を十分誘えますよ。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_106:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴ッ様ぁぁ…
+ 人の子の分際で思い上がるなぁッ！
+[wait][clear][end]
+
+msg_107:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 臭すぎて反吐がでるわっ！
+[wait][clear][end]
+
+msg_108:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 出しゃばるなぁっ！
+[wait][clear][end]
+
+msg_109:
+[end]
+
+msg_110:
+[end]
+
+msg_111:
+[end]
+
+msg_112:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 人間の会話には、その様な道具が必要なのですか。
+ なんとも不便な…
+[wait][clear][end]
+
+msg_113:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人の話を聞くのは良い事ですね。
+ 但し相手は、よく選ばなければ…
+[wait][clear][end]
+
+msg_114:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私には、どの様な質問をして頂けるのでしょうか？
+ 非常に楽しみですね…
+[wait][clear][end]
+
+msg_115:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 下らないやり取りですねぇ。
+ しかし私の笑いは十分とれましたよ。
+[wait][clear][end]
+
+msg_116:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 幼稚な会話ですねぇ。
+ 実に微笑ましい…
+[wait][clear][end]
+
+msg_117:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 真剣な会話をしているお積もりですか？
+ 私には、漫才でもしている様に見えますよ。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_118:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私を無視するとは、良い度胸ですねぇ…
+ こぉの、下等生物がぁっ！
+[wait][clear][end]
+
+msg_119:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私を無視するとは、一体何の冗談だっ！
+[wait][clear][end]
+
+msg_120:
+[end]
+
+msg_121:
+[end]
+
+msg_122:
+[end]
+
+msg_123:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ、突然踊り出すとは、気でも違いましたか？
+ お気の毒に…
+[wait][clear][end]
+
+msg_124:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 実に興味深いのですが見てない事にして下さい。
+ 「踊る阿呆に見る阿呆」…
+ 阿呆は、貴方だけで充分ですからね。
+[wait][clear][end]
+
+msg_125:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふむ、なるほど！
+ 言葉を上手く使えない分
+ 体で表現しているという訳ですね。
+[wait][clear][end]
+
+msg_126:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 頭が軽い分、踊るのも楽そうですね。
+[wait][clear][end]
+
+msg_127:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それは、お遊戯かなにかですか？
+ 無邪気ですねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_128:
+[color(yellow)][var(msg_var_0)][color(white)]
+ まだまだ色気が足りませんねぇ…
+ 宜しければ、私が教えて差し上げましょうか？
+ 手取り足取り… くっくっくっくっ…
+[wait][clear][end]
+
+msg_129:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何を浮かれているっ！
+ 踊りたくば、あの世で思う存分
+ 踊らせてくれるわっ！
+[wait][clear][end]
+
+msg_130:
+[color(yellow)][var(msg_var_0)][color(white)]
+ この私を前にして、踊りなど…
+ 戯れも、程々にしておけっ！
+[wait][clear][end]
+
+msg_131:
+[end]
+
+msg_132:
+[end]
+
+msg_133:
+[end]
+
+msg_134:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 説得ですか？
+ 非力な貴方達の最後の手段という訳ですね。
+[wait][clear][end]
+
+msg_135:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私と争いたくないと…
+ 確かに私に恐れを為すのは仕方ない事ですねぇ…
+ 考えてみましょう。
+[wait][clear][end]
+
+msg_136:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なかなか真に迫った演技ですねぇ…
+[wait][clear][end]
+
+msg_137:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 知ってますよ…
+ 実は、漏らしそうな程恐ろしいのでしょう？
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_138:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おやおや、声が少し震えてらっしゃる。
+ 良いのですよ、泣き叫んでも…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_139:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心にも無い事を言うと
+ 童話の人形の様に鼻が伸びますよ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_140:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様等の口車などに誰が乗るか！
+[wait][clear][end]
+
+msg_141:
+[color(yellow)][var(msg_var_0)][color(white)]
+ この私を説得しようなど、１０億年早いわっ！
+[wait][clear][end]
+
+msg_142:
+[end]
+
+msg_143:
+[end]
+
+msg_144:
+[end]
+
+msg_145:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 熱いですね…
+ あまりに熱すぎて、融けてしまわないかと
+ 心配してしまいましたよ。
+[wait][clear][end]
+
+msg_146:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々聞き入ってしまいましたよ…
+ 「正義」などという概念
+ 私達には、ありませんからね。
+[wait][clear][end]
+
+msg_147:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 架空のものについて、そこまで拘れるとは…
+ 人間とは、実に興味深い生き物ですね。
+[wait][clear][end]
+
+msg_148:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私がお教えしましょう。
+ 正義とは、神が書いたフィクションですよ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_149:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おやおや、正義の意味を知りたいのですか？
+ まるで虹を食べたいとねだる子供の様ですね…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_150:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「正義」だとぉ… 虫酸が走るわっ！
+ その言葉、二度と口にするなよ！
+[wait][clear][end]
+
+msg_151:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私を前にして、正義を語るなど
+ 馬鹿にしているとしか思えんなっ！
+[wait][clear][end]
+
+msg_152:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなに知りたくば
+ 私の正義を教えてくれるぞっ！
+[wait][clear][end]
+
+msg_153:
+[end]
+
+msg_154:
+[end]
+
+msg_155:
+[end]
+
+msg_156:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 兄は、叱って威厳を保ち
+ 弟は、逆らって自我を保つ…
+ なるほど、よく出来ている。
+[wait][clear][end]
+
+msg_157:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そう言えば、私の弟も反抗的でしたねぇ…
+ 思い出しましたよ。
+ 私の場合は、殺してしまいましたが…
+[wait][clear][end]
+
+msg_158:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間は、細胞分裂で増えるのですか？
+ いや、あまりに兄弟が似てらしたもので…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_159:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ お涙頂戴というやつですか？
+ いやぁ、臭いですねぇ…
+[wait][clear][end]
+
+msg_160:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 兄の威厳、丸潰れですねぇ…
+[wait][clear][end]
+
+msg_161:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下らぬ人情話…
+ 涙より先に怒りが溢れてきたわっ！
+[wait][clear][end]
+
+msg_162:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 弟より我が身を心配したらどうだっ！
+[wait][clear][end]
+
+msg_163:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 戦いの場で、弟の心配とはっ！
+ 貴ッ様ぁ、ふざけるなっ！
+[wait][clear][end]
+
+msg_164:
+[end]
+
+msg_165:
+[end]
+
+msg_166:
+[end]
+
+msg_167:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ お酒に関してなかなか知識がおありの様子…
+ ただの飲兵衛と言えなくも無いですがね…
+[wait][clear][end]
+
+msg_168:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間は、何にでも意味をつけたがりますね…
+ 酒に意味や名言を結びつける事に
+ 一体何の意味があるのやら…
+[wait][clear][end]
+
+msg_169:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私共の世界にも美味しいお酒がありますよ…
+ まぁ、貴方達の舌がその味をお分かりになるかは
+ 判りませんが…
+[wait][clear][end]
+
+msg_170:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その酒の知識… 貴方の頭には
+ 脳の代わりに酒が詰まってるのでは？
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_171:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 以前にも人間から酒の薀蓄を聞かされた事が…
+ 五千年程前でしたか… 進歩がありませんねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_172:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おやおや、手が震えていますよ…
+ 冗談ですよ、冗談！
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_173:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それほど酒が好きならば
+ 死出の旅路の祝い酒
+ たっぷりと呑ませてくれるぞっ！
+[wait][clear][end]
+
+msg_174:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間の不味い酒の話など聞く気はないわっ！
+[wait][clear][end]
+
+msg_175:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ここで、気が済むまで話すが良い…
+ 地獄に酒は呑めぬからなっ！
+[wait][clear][end]
+
+msg_176:
+[end]
+
+msg_177:
+[end]
+
+msg_178:
+[end]
+
+msg_179:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 自らの境遇を、別の集団の性質に
+ 投影しているのでしょう…
+ 下等生物の心理は実に解りやすいですねぇ…
+[wait][clear][end]
+
+msg_180:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それは集団への帰属意識でしょう…
+ トーテミズムにも通じた一種の宗教観ですか？
+ 実に原始的ですねぇ…
+[wait][clear][end]
+
+msg_181:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 他人事を我が事の如く争うとは…
+ 人間というのは、何処まで苦労性なのでしょうか…
+[wait][clear][end]
+
+msg_182:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私に命令する気かっ！
+[wait][clear][end]
+
+msg_183:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 口の利き方をわきまえろっ！
+[wait][clear][end]
+
+msg_184:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様等如きの下らぬ争いに
+ 興味などないわっ！
+[wait][clear][end]
+
+msg_185:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私がですか？
+ 滅相も無い…
+[wait][clear][end]
+
+msg_186:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、なんと乱暴な口の利き方…
+ あまり関わり合いにならない方が
+ 良いかも知れません… 
+[wait][clear][end]
+
+msg_187:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、その様な話には疎いもので…
+[wait][clear][end]
+
+msg_188:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間は、愚かに生まれ愚かに死んでしまいますから
+ その様な大人と子供の意見の違いもあるのですね。
+ 賢く生まれた私には判りかねますがね…
+[wait][clear][end]
+
+msg_189:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若い人間は、無駄に燃えているものですね…
+ 私は、燃え尽きて、やる気のなくなった人間の方が
+ 好きですが…
+[wait][clear][end]
+
+msg_190:
+[end]
+
+msg_191:
+[end]
+
+msg_192:
+[end]
+
+msg_193:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 私に意見を求めるとは…
+ 思っていたより賢明な方の様ですねぇ。
+[wait][clear][end]
+
+msg_194:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 悪魔である私に意見を求めるとは…
+ いやはや、変わった人間ですねぇ…
+[wait][clear][end]
+
+msg_195:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 最善の打開策はなぁ…
+ 下らぬ人間共を抹殺する事だっ！
+[wait][clear][end]
+
+msg_196:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様等人間の営みなどに
+ 興味の欠片もないわっ！
+[wait][clear][end]
+
+msg_197:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ、なかなかの皮肉…
+ 私と貴方達には、何処か相通ずものが
+ ありますねぇ…
+[wait][clear][end]
+
+msg_198:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 皮肉を愛する心は、私共悪魔の専売特許…
+ もしや、貴方達も悪魔なのでは？
+[wait][clear][end]
+
+msg_199:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 上手い皮肉は、私の心を和ませます…
+ なかなかツボを押さえていますね。
+[wait][clear][end]
+
+msg_200:
+[end]
+
+msg_201:
+[end]
+
+msg_202:
+[end]
+
+msg_203:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 皮肉は私の専売特許だっ！
+[wait][clear][end]
+
+msg_204:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、なんと上手い皮肉…
+ これは、負けを認めざるを得ないか…
+[wait][clear][end]
+
+msg_205:
+[color(yellow)][var(msg_var_0)][color(white)]
+ こ、この私に皮肉とは…
+ 完敗です…
+[wait][clear][end]
+
+msg_206:
+[color(yellow)][var(msg_var_0)][color(white)]
+ み、見事な皮肉…
+ 恐れ入りました…
+[wait][clear][end]
+
+msg_207:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 女性の社会進出に男性が障害だとでも…
+ 女性は上手い逃げ口上を発見しましたねぇ。
+[wait][clear][end]
+
+msg_208:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 男性は、うだつが上がらねば妻の所為とし
+ 女性は、社会進出の障害を男性の所為とする。
+ なかなか興味深い構造ですねぇ…
+[wait][clear][end]
+
+msg_209:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間界では、男性と女性が戦争でも
+ 始めそうな勢いですねぇ…
+ 実に興味をそそられますよ。
+[wait][clear][end]
+
+msg_210:
+[end]
+
+msg_211:
+[end]
+
+msg_212:
+[end]
+
+msg_213:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんな貴方達に良い男性をご紹介して
+ 差し上げましょう…
+ ほぉら、貴方達の目の前に…
+[wait][clear][end]
+
+msg_214:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間の男性なんか、相手になさらずとも
+ 私で宜しければ…
+[wait][clear][end]
+
+msg_215:
+[end]
+
+msg_216:
+[end]
+
+msg_217:
+[end]
+
+msg_218:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 過去を思い出す事で感動を得る。
+ 変わった遊びですねぇ…
+[wait][clear][end]
+
+msg_219:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 思い出という奴ですか？
+ 人間の一生は短いですからねぇ…
+ 私共には、とてもとても…
+[wait][clear][end]
+
+msg_220:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 思い出話がお好きでしたら
+ 私の思い出話をお聞かせしましょうか？
+ 少々お時間が掛かりますがね…
+[wait][clear][end]
+
+msg_221:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 思い出だと… 実に下らぬ…
+ その下らぬ思い出だけを持って
+ 地獄に落ちるが良い！
+[wait][clear][end]
+
+msg_222:
+[end]
+
+msg_223:
+[end]
+
+msg_224:
+[end]
+
+msg_225:
+[end]
+
+msg_226:
+[end]
+
+msg_227:
+[end]
+
+msg_228:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほう…
+ 色仕掛けとは、面白い。
+ 私も嫌いな方ではありませんからね。
+[wait][clear][end]
+
+msg_229:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 本当に良いのですか？
+ 夜の私は獣ですよ。
+[wait][clear][end]
+
+msg_230:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なかなかの色気ではありませんか。
+ 流石は、熟れた果実…
+[wait][clear][end]
+
+msg_231:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下等生物が何の積もりだっ！
+[wait][clear][end]
+
+msg_232:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ええいっ、気色悪いっ！
+ 食欲も失せるわっ！
+[wait][clear][end]
+
+msg_233:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴ッ様等ぁ…
+ 図に乗るなっ！
+[wait][clear][end]
+
+msg_234:
+
+
+
+[end]
+
+msg_235:
+
+
+
+[end]
+
+msg_236:
+
+
+
+[end]
+
+msg_237:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 男選びとは、なかなか高尚な趣味ですね…
+[wait][clear][end]
+
+msg_238:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あまり理想が高過ぎると行き遅れになりますよ。
+ お気を付けになられた方が宜しいかと…
+[wait][clear][end]
+
+msg_239:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 命短き人間にとって、配偶者選びは
+ よほど重要な事の様ですね。
+ 私なら厭きたら、すぐに替えてしまいますが…
+[wait][clear][end]
+
+msg_240:
+
+
+
+
+
+[end]
+
+msg_241:
+
+
+
+
+
+[end]
+
+msg_242:
+
+
+
+
+
+[end]
+
+msg_243:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間の配偶者選びなどに興味は無いわっ！
+[wait][clear][end]
+
+msg_244:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 戦いの場において色恋の話など…
+ 貴様等、生きて帰れる積もりかっ！
+[wait][clear][end]
+
+msg_245:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 女性主導なのですか…
+ 人間でなくて良かった…
+[wait][clear][end]
+
+msg_246:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間の女性は恐ろしい…
+[wait][clear][end]
+
+msg_247:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おや？
+ 余りの恐怖に耐えきれず
+ お酒に走った様ですね…
+[wait][clear][end]
+
+msg_248:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おやおや、宴会ですか？
+ この様な所で、なんと脳天気な…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_249:
+[color(yellow)][var(msg_var_0)][color(white)]
+ この様な場所でもお酒とは、まるでアルちゅ…
+ おっといけません… これは差別語でしたね。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_250:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 誰が貴様等のマズ酒など口にするかっ！
+[wait][clear][end]
+
+msg_251:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何の魂胆だっ！
+[wait][clear][end]
+
+msg_252:
+[end]
+
+msg_253:
+[end]
+
+msg_254:
+[end]
+
+msg_255:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 私の事をよくご存知で…
+ さては、ストーカーでは？
+[wait][clear][end]
+
+msg_256:
+[end]
+
+msg_257:
+[end]
+
+msg_258:
+[end]
+
+msg_259:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 恐ろしいという感情を快感と
+ 感じているのでしょうか？
+ 人間とは自虐的な生き物ですね…
+[wait][clear][end]
+
+msg_260:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 知ってますか？
+ その心が私共を生み出したとも言えるのです…
+ 貴方達には、ある意味で感謝しなくては…
+[wait][clear][end]
+
+msg_261:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなに怖い話が聞きたいのでしたら
+ 私がして差し上げても宜しいですよ…
+[wait][clear][end]
+
+msg_262:
+[end]
+
+msg_263:
+[end]
+
+msg_264:
+[end]
+
+msg_265:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 目の前に悪魔がいるというのに怪談ですか…
+ 馬鹿にするのも程々にしろよっ！
+[wait][clear][end]
+
+msg_266:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そういう話は苦手なもので…
+[wait][clear][end]
+
+msg_267:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方達は知らな過ぎるのです…
+ 何が起きても私は知りませんよ…
+[wait][clear][end]
+
+msg_268:
+[end]
+
+msg_269:
+[end]
+
+msg_270:
+[end]
+
+msg_271:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ なんとも勇ましい…
+ おお、怖い怖い。
+[wait][clear][end]
+
+msg_272:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その方が、それほど大事な方ならば
+ 金庫にでもしまっておいたら良かったのでは？
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_273:
+[end]
+
+msg_274:
+[end]
+
+msg_275:
+[end]
+
+msg_276:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ いくら心を込めたところで
+ 亡くなった方には聞こえませんよ…
+[wait][clear][end]
+
+msg_277:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 亡くなった方に語り掛けるとは…
+ 貴方、霊媒士か何かですか？
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_278:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 少々罪悪感が…
+[wait][clear][end]
+
+msg_279:
+[color(yellow)][var(msg_var_0)][color(white)]
+ も、申し訳ありません…
+[wait][clear][end]
+
+msg_280:
+[end]
+
+msg_281:
+[end]
+
+msg_282:
+[end]
+
+msg_283:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 死者に話しかけるとは…
+ 気味の悪い…
+[wait][clear][end]
+
+msg_284:
+[end]
+
+msg_285:
+[end]
+
+msg_286:
+[end]
+
+msg_287:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 心にもない事を言って格好をつけている積もりか！
+ 反吐が出るわ！
+[wait][clear][end]
+
+msg_288:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 逝った戦友に何という事を…
+ 人間には、なりたくないものです…
+[wait][clear][end]
+
+msg_289:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私も死んだら何と言われるか…
+[wait][clear][end]
+
+msg_290:
+[end]
+
+msg_291:
+[end]
+
+msg_292:
+[end]
+
+msg_293:
+[color(yellow)][var(msg_var_0)][color(white)]
+ おやおや、お気をつけにならないと
+ お漏らししてしまいますよ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_294:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ やはり、所詮は貴方も…
+[wait][clear][end]
+
+msg_295:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様の様な人間には、悪魔の私も反吐が出るわっ！
+[wait][clear][end]
+
+msg_296:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 誰が許すなどと言うかっ！
+[wait][clear][end]
+
+msg_297:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴女、流行のエステに行きましたね…
+ 上手く化けたものです。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_298:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私に会う為に態々エステに行ったのですか？
+ それは、身に余る光栄ですねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_299:
+[color(yellow)][var(msg_var_0)][color(white)]
+ エステティックは魔法でも掛けてくれるのですか？
+ いやはや、とんでもない術ですねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_300:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 男の分際でエステなど…
+ 貴様には血化粧がお似合いだっ！
+[wait][clear][end]
+
+msg_301:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様如きがエステなど行ったところで
+ 気色が悪いだけだっ！
+[wait][clear][end]
+
+msg_302:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 男がエステだとぉ…
+ 出なおして来いっ！
+[wait][clear][end]
+
+msg_303:
+[color(yellow)][var(msg_var_0)][color(white)]
+ まぁ、いいでしょう…
+ 何でも、お聞き下さい。
+ しかし高尚な話題でお願いしますよ。
+[wait][clear][end]
+
+msg_304:
+ 何をお知りになりたいのですか？
+[choice(3)]悪魔の世界について教えて下さい
+宗教とは一体何だと思いますか？
+では、先ず年齢からお願いします
+[end_choice][clear][end]
+
+msg_305:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ… 面白い質問ですね。
+ でも、答える必要は、無いでしょう。
+ 何故なら貴女の住む世界がそうなのですから…
+[wait][clear][end]
+
+msg_306:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良いですよ、教えて差し上げますとも…
+ では、貴女を地獄へご招待しましょう！
+[wait][clear][end]
+
+msg_307:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 宗教とは、無知に不可知の性質を説明するもの…
+ つまり、阿呆に唱える説法の事ですよ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_308:
+[color(yellow)][var(msg_var_0)][color(white)]
+ い、意外と難しい事を聞きますね…
+[wait][clear][end]
+
+msg_309:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴女にとって、それが高尚な話題なのですね。
+ 知能の程度が知れますねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_310:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 詰まらぬ事を聞くなと言っただろうがっ！
+[wait][clear][end]
+
+msg_311:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうそう、味噌を沸騰させてはいけませんよ…
+ 大事な味噌汁が台無しになってしまいますから。
+ 知ってましたか？
+[wait][clear][end]
+
+msg_312:
+ 何故、お味噌汁を沸騰させてはいけないのか？
+[choice(3)]具に火が通り過ぎてしまうからよ！
+味噌の風味が飛んでしまうからよね
+アラ！知らなかったわ…
+[end_choice][clear][end]
+
+msg_313:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ どうやら貴女の具も
+ 火が通り過ぎている様で…
+[wait][clear][end]
+
+msg_314:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それは、私が食べる時に火傷すると
+ いけないからだっ！
+[wait][clear][end]
+
+msg_315:
+[color(yellow)][var(msg_var_0)][color(white)]
+ よくご存知で…
+ 実は、なかなか物知りなのかも知れませんね…
+[wait][clear][end]
+
+msg_316:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 正解です…
+ しかし今の、どんなもんだと言わんばかりの顔…
+ 気に入らんなぁ！
+[wait][clear][end]
+
+msg_317:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ どうやら元より沸騰していた様ですね。
+[wait][clear][end]
+
+msg_318:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴ッ様あぁ！
+ 真面目に答えんかぁ！
+[wait][clear][end]
+
+msg_319:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なかなかの難問に、この私も答えに
+ 詰まってしまいましたよ…
+ 人間の見た目など、殆ど差がありませんからね…
+[wait][clear][end]
+
+msg_320:
+ 赤い髪の貴女、他にアピールする事は無いですか？
+[choice(3)]こう見えても他人の世話は得意だね
+お化粧なら任せて！
+そう言われると特に無いわ…
+[end_choice][clear][end]
+
+msg_321:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 他人の世話ですか…
+ しかし自分の世話は見ているのですかね…
+[wait][clear][end]
+
+msg_322:
+[color(yellow)][var(msg_var_0)][color(white)]
+ つまり言い換えると「おせっかい」って事ですね…
+ 気づかない内に迷惑がられてるんじゃないですか？
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_323:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人は必要に迫られると何事も
+ 上手くなるものですからね…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_324:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ひょっとして、本当の顔ではないのですか…
+ ある意味恐ろしいですね…
+[wait][clear][end]
+
+msg_325:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 「美人は言わねど隠れなし」と言いますが
+ 貴女の様な方は、隠れてしまいますからね…
+[wait][clear][end]
+
+msg_326:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なんと詰まらぬ女だ！
+[wait][clear][end]
+
+msg_327:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 女性は、ある年齢に達すると若い時にはない
+ 独特の色気がつきますからね…ん？
+ 赤い髪の貴女、今嫌な顔をしませんでしたか？
+[wait][clear][end]
+
+msg_328:
+ まさか、自分は未だ若いとでも言いたいのですか？
+[choice(3)]失礼な！私は未だ２４歳よ！
+そりゃ、もう２４歳だけどさぁ…
+心はまだまだ１６歳よ♥
+[end_choice][clear][end]
+
+msg_329:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ ２４歳は、まだ若いと…
+ ２００年くらい生きるお積もりですか？
+[wait][clear][end]
+
+msg_330:
+[color(yellow)][var(msg_var_0)][color(white)]
+ し、失礼しました…
+ 怒らせる積もりなど…
+[wait][clear][end]
+
+msg_331:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ よくご存知ではないですか…
+[wait][clear][end]
+
+msg_332:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なんだぁ、その不服そうな言い方は！
+ 気に入らんなぁ！
+[wait][clear][end]
+
+msg_333:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 心で年齢が変わると…
+ 人間には、不思議な能力があるのですね。
+[wait][clear][end]
+
+msg_334:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ あぁ、いや失礼…
+ 余りに無理がおありなので、つい…
+[wait][clear][end]
+
+msg_335:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その様な若者の話を聞くより
+ 私の話の方が何十倍も役に立つと言うのに…
+[wait][clear][end]
+
+msg_336:
+ 何故、私に話を聞かなかったのですか？
+[choice(3)]メインは後の方が良いと思ったもので…
+今回は若者の意見を聞きたかったの
+貴方の話なんて聞く気はないわ！
+[end_choice][clear][end]
+
+msg_337:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 私がメインですか？
+ それを先に言って下されば…
+[wait][clear][end]
+
+msg_338:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あまり嘘は得意でない様ですね…
+ 私は誤魔化しが嫌いでしてねぇ…
+[wait][clear][end]
+
+msg_339:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 若者でなく、馬鹿者の間違いでは？
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_340:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私が若者ではないと！
+ 失礼な人間だ！
+[wait][clear][end]
+
+msg_341:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、そうですか…
+ 失礼しました…
+[wait][clear][end]
+
+msg_342:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なんだとぉ！
+ 聞く気がないのならば
+ 何も聞けなくしてくれるぞ！
+[wait][clear][end]
+
+msg_343:
+[color(yellow)][var(msg_var_0)][color(white)]
+ しかし、頂けませんねぇ…
+ 命乞いならば命乞いらしく
+ 謙虚な態度で臨まなければ…
+[wait][clear][end]
+
+msg_344:
+ もう一度やり直しても良いですよ…
+[choice(3)]…この場は見逃してくれないか
+断じて命乞いなんかではない
+調子に乗るな！
+[end_choice][clear][end]
+
+msg_345:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ、これは、意外な…
+ まさか、言った通り命乞いをするとは
+ 思いませんでしたよ。
+[wait][clear][end]
+
+msg_346:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なかなか堂に入ってるではありませんか！
+ いやはや、ここまで命乞いの上手い方も珍しい。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_347:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 度胸だけは、認めて差し上げましょう。
+[wait][clear][end]
+
+msg_348:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴ッ様ぁ！
+ 口のきき方に気をつけろよぉ！
+[wait][clear][end]
+
+msg_349:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、そんなにお怒りにならなくても…
+[wait][clear][end]
+
+msg_350:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あぁ失礼、私的な話でしたね…
+ しかし、貴方はよく我慢なさってらっしゃる。
+ 私ならば既に弟さんを殺しているところですよ…
+[wait][clear][end]
+
+msg_351:
+ 本当は、貴方もそうしたいのでは？
+[choice(3)]貴様ぁ、馬鹿な事を言うな！
+ま、まさか…
+そうかも知れん…
+[end_choice][clear][end]
+
+msg_352:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんなに迷うくらいならば
+ いっそ殺してしまえば良いではないですか？
+ 何を迷う事があるのです？
+[wait][clear][end]
+
+msg_353:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 完全には否定できない様ですねぇ…
+ 所詮人間も悪魔と大差ないと言うことですよ。
+[wait][clear][end]
+
+msg_354:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ ほぉら、悪の心が芽生えてきた…
+ 人間の善性など、すぐに消え去るものですよ。
+[wait][clear][end]
+
+msg_355:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうかも知れんだとぉ…
+ 煮えきらん答えだな！
+[wait][clear][end]
+
+msg_356:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あっ！
+ いや、待って下さい…
+[wait][clear][end]
+
+msg_357:
+ 貴方の耳の穴から脳味噌が…
+[choice(2)]驚いた振りをする
+相手にしない
+[end_choice][clear][end]
+
+msg_358:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 見え透いた嘘というのは、実に面白い！
+ 逆に貴方の本当の気持ちが見え見えですよ。
+[wait][clear][end]
+
+msg_359:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴っ様ぁ！
+ その演技、わざとらしいわっ！
+[wait][clear][end]
+
+msg_360:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私の言葉を無視するとは…
+ 貴方、なかなか度胸がありますね…
+[wait][clear][end]
+
+msg_361:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、何か、お気に障る事でも…
+[wait][clear][end]
+
+msg_362:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうそう、実は私も占いの心得が少々ありましてね
+ 先程、当たる占いを見た事が無いと言いましたが
+ 私の占いは、別格です。
+[wait][clear][end]
+
+msg_363:
+ どうです？ 何か占って差し上げましょうか？
+[choice(4)]じゃあ恋愛運…
+貴方との相性を
+寿命とか…
+別にいいわ！
+[end_choice][clear][end]
+
+msg_364:
+[color(yellow)][var(msg_var_0)][color(white)]
+ あぁ、それでしたら、占いより先に
+ 鏡を見る事をお勧めしますよ。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_365:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なんと下らぬ注文！
+ 私は、その様に下卑たものは占わんわっ！
+[wait][clear][end]
+
+msg_366:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 私を喜ばせて助かろうとでも…
+ 苦肉の策という訳ですか？
+[wait][clear][end]
+
+msg_367:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様との相性など占いたくもないわっ！
+[wait][clear][end]
+
+msg_368:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それは…
+ 私の気分次第でしょう！
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_369:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 占う必要など無いのではありませんか？
+ なぜなら…
+ 貴様等は、ここで死ぬのだからなっ！
+[wait][clear][end]
+
+msg_370:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なかなか解かっているではないか…
+ 占いなど必要ないものな…
+ ここで死ぬ貴様にはっ！
+[wait][clear][end]
+
+msg_371:
+[color(yellow)][var(msg_var_0)][color(white)]
+ まぁ、近頃は、男女の別に関わらず
+ 晩婚の方が多いそうですね…
+[wait][clear][end]
+
+msg_372:
+ ちなみに貴女は、お幾つぐらいにとお考えですか？
+[choice(3)]ソロソロしたいんだけど…
+まぁ３０までに出来りゃ良いかな
+結婚なんてするもんか！
+[end_choice][clear][end]
+
+msg_373:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ、そろそろですか？
+ もちろん、お相手がいらっしゃるのですね。
+ まさか、いないという事はないでしょう？
+[wait][clear][end]
+
+msg_374:
+[color(yellow)][var(msg_var_0)][color(white)]
+ では、ここで誰かと結婚しておきなさい…
+ でないと、結婚できませんよ…なぜなら…
+ 貴様等は、ここで死ぬのだからなっ！
+[wait][clear][end]
+
+msg_375:
+[color(yellow)][var(msg_var_0)][color(white)]
+ これは、意外！ まだ３０歳でなかったとは！
+ 私は、てっきり結構なお歳かと…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_376:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 希望を持つ事は、良い事ですよ…
+ でも、その夢は叶いません。なぜなら…
+ 貴様等は、ここで死ぬのだからなっ！
+[wait][clear][end]
+
+msg_377:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「するもんか」…ですか？
+ 「できるもんか」の間違いでしょう！
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_378:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、何か悪い事でも聞きましたか…
+[wait][clear][end]
+
+msg_379:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうそう、アホウドリが絶滅の危機だそうですよ。
+ 百年も前は、随分といたものですが…
+ 阿呆な人間は、ますます増えているというのに…
+[wait][clear][end]
+
+msg_380:
+ 貴方、アホウドリ激減の理由、ご存知ですか？
+[choice(3)]人間が乱獲したからだって聞いたけど…
+知ったこっちゃないわよ！
+アホウドリが阿呆だからじゃない？
+[end_choice][clear][end]
+
+msg_381:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ、なかなか良くご存知で…
+ これは、ただの阿呆ではありませんでしたね。
+[wait][clear][end]
+
+msg_382:
+[color(yellow)][var(msg_var_0)][color(white)]
+ まぁ、乱獲の事は、私もとやかく言えませんね…
+ なにしろ、これから貴様等を乱獲するのだからな！
+[wait][clear][end]
+
+msg_383:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんな貴方にこの言葉をプレゼントしましょう…
+ 「目糞鼻糞を笑う」まさしく貴方にピッタリです！
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_384:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方の理論だと阿呆は絶滅しても良いと…
+ ならば、貴様等も絶滅しておくかっ！
+[wait][clear][end]
+
+msg_385:
+ ところで要件は何でしたかねぇ…
+[choice(3)]このテープ、公にしても良いんだぜぇ…
+俺も惚れ惚れしてたところだ…
+いや、何でもねぇ…
+[end_choice][clear][end]
+
+msg_386:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 多くの人間が私の声に酔いしれるという訳ですね…
+ なんと素晴らしき事でしょう！
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_387:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方にも解かって頂けましたか！
+ いやいや、貴方とは気が合いそうです…
+[wait][clear][end]
+
+msg_388:
+
+
+[end]
+
+msg_389:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ああっ、何でもない事はないだろうが！
+[wait][clear][end]
+
+msg_390:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 先程から貴方の仲間内だけでお話をしていますが
+ 私も混ぜて頂きたいものですねぇ…
+[wait][clear][end]
+
+msg_391:
+ 一体私には、どの様なお酒が合うのですか？
+[choice(3)]ソルティドッグ…塩っぺぇ奴って意味だ
+皮肉屋のてめぇにゃスティンガーが似合うな
+てめぇに酒呑む資格はねぇな
+[end_choice][clear][end]
+
+msg_392:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 皮肉のお積もりですか？
+ これは、また幼稚な皮肉ですねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_393:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 塩っぱいだとぉ！
+ 愚弄するなっ！
+[wait][clear][end]
+
+msg_394:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ お顔に似合わずなかなか洒落た事を言いますねぇ…
+[wait][clear][end]
+
+msg_395:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 上手く皮肉った積もりか…
+ 下らぬわっ！
+[wait][clear][end]
+
+msg_396:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ならば私も…
+ 貴様に生きている資格はないっ！
+[wait][clear][end]
+
+msg_397:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …貴方、そう長髪の貴方ですよ…
+ 今、「下等生物だと、この野郎ぉ…」
+ と思いましたね…
+[wait][clear][end]
+
+msg_398:
+ どうです、良い読みでしょう！
+[choice(2)]そ、その通りだ…
+俺は、そんな事思っちゃいねぇ！
+[end_choice][clear][end]
+
+msg_399:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ…
+ 適当に言ったのですが
+ 案外当たるものですねぇ…
+[wait][clear][end]
+
+msg_400:
+[color(yellow)][var(msg_var_0)][color(white)]
+ やはり下等生物なのですね…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_401:
+[color(yellow)][var(msg_var_0)][color(white)]
+ い、いや、そんなにお怒りになるとは…
+[wait][clear][end]
+
+msg_402:
+[color(yellow)][var(msg_var_0)][color(white)]
+ さて、胡麻粒脳の人間にお聞きしたい。
+ 人間は、自分の見えぬ世界で神と悪魔が
+ 戦争をしているというイメージを持っています。
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ それは、ある意味間違いでもあり
+ 正解でもあるのです。
+[wait][clear][end]
+
+msg_403:
+ 貴方は、この言葉の意味が解かりますか？
+[choice(3)]本来、神と悪魔は同一という事だな…
+戦っているのは人間の心の中という事だな…
+俺には理解できない…
+[end_choice][clear][end]
+
+msg_404:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ、なかなか鋭い…
+ 少々違う様ですが、なかなか良い所を
+ ついてますよ。
+[wait][clear][end]
+
+msg_405:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方は、私共と神が同一であると…
+ ならば私を崇めたらどうです？
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_406:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうそう、何時も貴方の耳元で天使と悪魔が…
+ そうして貴方は何時も誘惑に負けるのです。
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_407:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴様等の心如き狭い場所で戦争などできるかっ！
+[wait][clear][end]
+
+msg_408:
+[color(yellow)][var(msg_var_0)][color(white)]
+ やはり、胡麻粒…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_409:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それすら理解できぬ者が
+ 偉そうな事をぬかすなっ！
+[wait][clear][end]
+
+msg_410:
+[color(yellow)][var(msg_var_0)][color(white)]
+ いやいや、人気者は辛いですね…
+[wait][clear][end]
+
+msg_411:
+ 他には、どの様な事をご存知なのです？
+[choice(3)][var(msg_var_0)]という名だな！
+貴様の女関係を全部だ！
+貴様の事など知らん！
+[end_choice][clear][end]
+
+msg_412:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その通りです、なかなか良い名でしょう！
+ 貴方に差し上げましょうか… 冗談ですよ！
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_413:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それしきの事、知っていて当然だっ！
+[wait][clear][end]
+
+msg_414:
+[color(yellow)][var(msg_var_0)][color(white)]
+ これは、凄い！
+ ざっと見積もっても十万はいますよ！
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_415:
+[color(yellow)][var(msg_var_0)][color(white)]
+ では、自己紹介をしなくては…
+ 私の名は[var(msg_var_0)]…
+ 以後お見知りおきを…
+[wait][clear][end]
+
+msg_416:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なにぃ！
+ 私の事を知らんだとぉ！
+[wait][clear][end]
+
+msg_417:
+ どうです？ 聞きたいですか、怖い話を…
+[choice(2)]Ｙｅｓ！聞きたいですわ！
+Ｎｏ！聞きたくないですわ！
+[end_choice][clear][end]
+
+msg_418:
+[color(yellow)][var(msg_var_0)][color(white)]
+ やはり、辞めておきましょう…
+ ここで漏らされても困りますからねぇ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_419:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それでは、お話しましょう…
+ いや、お話するまでもないでしょうか…
+ 貴方達の恐るべき未来をっ！
+[wait][clear][end]
+
+msg_420:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 解かっています、本当は聞きたいのでしょう…
+ しかし、つい聞きたくないと言ってしまう。
+ 不思議ですねぇ、人間は…
+[wait][clear][end]
+
+msg_421:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 私の申し出を断るとは…
+ 貴様、何様の積もりだっ！
+[wait][clear][end]
+
+msg_422:
+ どうです？ お相手しましょうか？
+[choice(2)]Ｎｏ！遠慮いたしますわ…
+私で宜しければ…
+[end_choice][clear][end]
+
+msg_423:
+[color(yellow)][var(msg_var_0)][color(white)]
+ じょ、冗談ですよ…
+ まさか本気にされるとは…
+[wait][clear][end]
+
+msg_424:
+ 何故そんなに私を見つめるのですか？
+[choice(3)]好きだから
+気に入らないから
+特に意味はない
+[end_choice][clear][end]
+
+msg_425:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ これはこれは…
+ 身に余る光栄ですよ！
+[wait][clear][end]
+
+msg_426:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私に、その様な趣味は…
+[wait][clear][end]
+
+msg_427:
+[color(yellow)][var(msg_var_0)][color(white)]
+ まさか、そこまで言うとは…
+ 貴方、なかなか度胸がありますね…
+[wait][clear][end]
+
+msg_428:
+[color(yellow)][var(msg_var_0)][color(white)]
+ よくもぬけぬけと！
+[wait][clear][end]
+
+msg_429:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 正直に言っても良いのですよ
+ 私に恋したと…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_430:
+[color(yellow)][var(msg_var_0)][color(white)]
+ どうやら貴様の特技は
+ 人を不快にさせる事の様だな！
+[wait][clear][end]
+
+msg_431:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 恐らく、貴方は、その女性に気に入られたい
+ 一心で、頑張ってらっしゃるのでしょうが…
+ その女性が本当は、どうお思いかご存知ですか？
+[wait][clear][end]
+
+msg_432:
+ ご存知無いのでしたら、私の口から…
+[choice(3)]そんな事は関係ない…
+や、止めろ、それ以上言うな！
+何も言わず睨み付ける
+[end_choice][clear][end]
+
+msg_433:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何を格好付けているのです？
+ 虫酸が走るわっ！
+[wait][clear][end]
+
+msg_434:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 何をうろたえているのです？
+ 結構、無様ですよ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_435:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ところで貴方…
+ ここで一つ心理テストでもいかがです？
+ なぁに、私の質問に答えれば良いだけですよ…
+[wait][clear][end]
+
+msg_436:
+ 貴方は動物です。 一体何ですか？
+[choice(4)]犬
+猫
+ナマケモノ
+人間
+[end_choice][clear][end]
+
+msg_437:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 犬畜生などとは、実に貴方らしい…
+[wait][clear][end]
+
+msg_438:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …強いものに尾を振る、あの態度！
+ 犬は、私の忌み嫌う動物の一つなのです！
+[wait][clear][end]
+
+msg_439:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 良い答えですね…
+ 決して人に迎合しない自信家…
+ 私は、そういう生き方が好きなのですよ。
+[wait][clear][end]
+
+msg_440:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 気ままで自分勝手…
+ 貴方、嫌われ者なのではありませんか？
+[wait][clear][end]
+
+msg_441:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ これほどまでに自分を把握している方も珍しい！
+[wait][clear][end]
+
+msg_442:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …その様に謙虚に答えれば私が喜ぶとでも？
+ 実に腹立たしい！
+[wait][clear][end]
+
+msg_443:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ そうでした…
+ 人間も犬猫同様、下等な動物達の一員でしたね…
+[wait][clear][end]
+
+msg_444:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっ、つまらぬ答え！
+ 折角、私がかまって差し上げたのに…
+ なんと愚かな人間なのだ！
+[wait][clear][end]
+
+msg_445:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ところで一つ心理テストでもいかがですか？
+ いいですか？ 貴方が歩く先に、険しい道、遠回り
+ だが平坦な道、全く知らない真っ暗な道…
+[wait][clear][end]
+
+msg_446:
+ 三本の道があります。 どうします？
+[choice(4)]険しい近道を行く
+平坦な回り道を行く
+知らない道を行く
+引き返す
+[end_choice][clear][end]
+
+msg_447:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なるほど…
+ 見かけによらず、度胸がすわってらっしゃる…
+[wait][clear][end]
+
+msg_448:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ せっかちな方ですね…
+ あまり急ぐと怪我をしますよ。
+[wait][clear][end]
+
+msg_449:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 臆病な貴方らしい答えですね。
+[wait][clear][end]
+
+msg_450:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 「急がば回れ」と言う訳ですか？
+ 私は嫌いなのですよ、そういう考え方！
+[wait][clear][end]
+
+msg_451:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なるほど…
+ 見かけによらず、度胸がすわってらっしゃる…
+[wait][clear][end]
+
+msg_452:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その先には、悪魔がいました、そう、私です！
+ 貴方は、悪魔に殺されてしまいます…
+ 心の準備は良いですか！
+[wait][clear][end]
+
+msg_453:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そう、私は三本から選べとは言っていません。
+ 貴方は、なかなか賢明な方の様ですね。
+[wait][clear][end]
+
+msg_454:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ そうそう、道は３つだけではありません！
+ 見かけによらず、頭の回転が速いようですね！
+[wait][clear][end]
+
+msg_455:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その先には、悪魔がいました、そう、私です！
+ その悪魔は、貴方との[color(green)]契約を破棄する[color(white)]事を
+ 望んでいます。
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 運が悪かったと諦めて下さい…
+ それでは…
+[wait][clear][end]
+
+msg_456:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ところで貴方に一つ質問したい事があります。
+ ここ二千年の間、私の見る限りでは
+ 人間に少しの進化も見られません…
+[wait][clear][end]
+
+msg_457:
+ 人間の進化は、どうなっているのでしょうか？
+[choice(3)]人間は既に進化の最終段階に達している
+肉体的でなく、文化的精神的に進化している
+むしろ退化している
+[end_choice][clear][end]
+
+msg_458:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ それが最終段階とは、何ともお粗末な！
+[wait][clear][end]
+
+msg_459:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 思い上がるな！
+[wait][clear][end]
+
+msg_460:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なるほど…
+ それも進化の採りうる選択肢の
+ 一つかも知れませんね…
+[wait][clear][end]
+
+msg_461:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 文化的精神的ですか…
+ 私には、それすら進化してない様に見えますが…
+[wait][clear][end]
+
+msg_462:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ まさか自分で言ってしまうとは…
+[wait][clear][end]
+
+msg_463:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …その様に謙虚に答えれば私が喜ぶとでも？
+ 実に腹立たしい！
+[wait][clear][end]
+
+msg_464:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ところで貴方に一つ質問したい事があります。
+[wait][clear][end]
+
+msg_465:
+ 今、貴方の目には何が映っているのですか？
+[choice(3)]愚かな悪魔
+平和な未来
+愛する人
+[end_choice][clear][end]
+
+msg_466:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、何か、お気に障る事でも…
+[wait][clear][end]
+
+msg_467:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴っ様ぁ！
+ 冗談は、顔だけにしておけよ！
+ さもないと顔も冗談ではなくなるぞっ！
+[wait][clear][end]
+
+msg_468:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ おめでたい方ですね…
+[wait][clear][end]
+
+msg_469:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その様な、甘い話…
+ 虫酸が走るわ！
+[wait][clear][end]
+
+msg_470:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なるほど…
+ 私に一目惚れと言う訳ですね…
+ 解りますよ、その気持ち…
+[wait][clear][end]
+
+msg_471:
+[color(yellow)][var(msg_var_0)][color(white)]
+ …その様に謙虚に答えれば私が喜ぶとでも？
+ 実に腹立たしい！
+[wait][clear][end]
+
+msg_472:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっ…
+ 実に腹立たしい…
+[wait][clear][end]
+
+msg_473:
+ 貴様、一体、何様の積もりだ！
+[choice(4)]人間様
+神様
+俺様
+殿様
+[end_choice][clear][end]
+
+msg_474:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 人間ならば仕方が無い…
+ 頭が悪くて当然ですからね。
+[wait][clear][end]
+
+msg_475:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 人間如きに「様」を付けるな！
+ 反吐が出るわ！
+[wait][clear][end]
+
+msg_476:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 開き直りも、そこまで行くと気分が良いですね！
+[wait][clear][end]
+
+msg_477:
+[color(yellow)][var(msg_var_0)][color(white)]
+ その様な、つまらぬ嘘を吐くのなら
+ 舌根っこを引っこ抜くぞ！
+[wait][clear][end]
+
+msg_478:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ これは、また、ありがちなお答え…
+ 知能の程度が知れますね…
+[wait][clear][end]
+
+msg_479:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴っ様ぁ！
+ 冗談は、顔だけにしておけよ！
+ さもないと顔も冗談ではなくなるぞっ！
+[wait][clear][end]
+
+msg_480:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 開き直りも、そこまで行くと気分が良いですね！
+[wait][clear][end]
+
+msg_481:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ これは、これは、お殿様でしたか…
+ それなれば、頭が悪くても許して差し上げねば…
+[wait][clear][end]
+
+msg_482:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ………これは、お見苦しい所を
+ お見せしてしまいましたね。
+ 柄にもなく、取り乱してしまいまして…
+[wait][clear][end]
+
+msg_483:
+ 私の事、軽蔑なさったのでは？
+[choice(2)]誰にでもある事だ
+大いに軽蔑に値する
+[end_choice][clear][end]
+
+msg_484:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方は、なかなかに度量が大きい…
+ 気に入りましたよ…
+[wait][clear][end]
+
+msg_485:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 誰にでもだとぉ、貴様ぁ…
+ 私と人間を一緒にするな！
+[wait][clear][end]
+
+msg_486:
+[color(yellow)][var(msg_var_0)][color(white)]
+ な、なんと…
+[wait][clear][end]
+
+msg_487:
+[color(yellow)][var(msg_var_0)][color(white)]
+ だから何だと言うのだ…
+ 貴様ぁ、調子に乗るなよ！
+[wait][clear][end]
+
+msg_488:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふっ… いいでしょう…
+ そんなに死にたければ、私が、この手で
+ 引導を渡して差し上げましょう。
+[wait][clear][end]
+
+msg_489:
+ どの様な死に方を望むのですか？
+[choice(3)]思う存分戦って死ぬ
+気づかない間に死んでいる
+殺されるのは嫌
+[end_choice][clear][end]
+
+msg_490:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は、平和主義者ですので…
+[wait][clear][end]
+
+msg_491:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ あまり無理を言うものではありませんよ！
+[wait][clear][end]
+
+msg_492:
+[color(yellow)][var(msg_var_0)][color(white)]
+ この、大戯けがぁ！
+[wait][clear][end]
+
+msg_493:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 今更なにを！
+[wait][clear][end]
+
+msg_494:
+[color(yellow)][var(msg_var_0)][color(white)]
+ しかし… これは、計算外でしたね。
+ まさか、貴方に興味を抱いてしまうとは…
+ これまでに出会った人間の中で最も理解し難い…
+[wait][clear][end]
+
+msg_495:
+ 貴方は、一体どの様な人間なのですか？
+[choice(3)]優しい人間
+残酷な人間
+愚かな人間
+[end_choice][clear][end]
+
+msg_496:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 下らぬ…
+ その様な冗談ばかり言う積もりならば
+ 貴様に真の残酷さというものを見せてくれるぞ！
+[wait][clear][end]
+
+msg_497:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 愚か者ですか？
+ 実に貴方は、良く解ってらっしゃる
+ 見直しましたよ、愚か者さん…
+[wait][clear][end]
+
+msg_498:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんな貴方には、これでも差し上げましょう…
+ [color(green)]占札／ＦＯＯＬのカード[color(white)]です！
+ いやぁ、お似合いですねぇ…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 貴重品ですので無くさない様にお願いしますよ…
+ それこそ、まさしく愚か者ですからね。
+ それでは…
+[wait][clear][end]
+
+msg_499:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方、なかなか興味深い素材ですね。
+ 見ていてあきませんよ。
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 暇つぶしをさせて頂いたお礼です。
+ [color(green)][var(msg_var_4)][color(white)]のカード、[color(green)][var(msg_var_5)]枚[color(white)]
+ 差し上げましょう！
+[wait][clear][end]
+
+msg_500:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それから貴方には[color(green)]フリータロット[color(white)]も[color(green)][var(msg_var_6)]枚[color(white)]
+ 差し上げましょう…
+[wait][clear][end]
+
+msg_501:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふっ！
+ 貴方は、実についていない！
+ 私のカードを持ちきれない様ですね。
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 誠に残念ですが、また出会う事もあるでしょう。
+ その時、また私がカードを差し上げるとは
+ 限りませんがね…
+[wait][clear][end]
+
+msg_502:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くれぐれも私のカードで遊ばない様に…
+[wait][clear][end]
+
+msg_503:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 実に気分が良い！
+ 宜しい！ 貴方と[color(green)]契約[color(white)]して差し上げましょう！
+[wait][clear][end]
+
+msg_504:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ん？ これは、いけませんねぇ…
+ 口は、達者でも[color(green)]実力が無ければ[color(white)]契約は…
+ 代わりと言ってはなんですが…
+[wait][clear][end]
+
+msg_505:
+[color(yellow)][var(msg_var_0)][color(white)]
+ もう少し経験を積んでから、いらして下さい…
+ と言っても、変な経験は積まなくても良いですよ…
+ くっくっくっくっ…
+[wait][clear][end]
+
+msg_506:
+ 私と[color(green)]契約[color(white)]してみますか？
+[choice(2)]はい
+いいえ
+[end_choice][clear][end]
+
+msg_507:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方は実に運が良い！
+ この私の支援が受けられるのですから…
+ 次の出会いを楽しみにしていて下さい。
+[wait][clear][end]
+
+msg_508:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴方は、実に惜しい事をしました…
+ この私の支援を断るとは…
+[wait][clear][end]
+
+msg_509:
+[color(yellow)][var(msg_var_0)][color(white)]
+ これはこれは！
+ 貴方、契約し過ぎですよ…
+ 仕方ありませんねぇ…
+[wait][clear][end]
+
+msg_510:
+ どれか[color(green)]契約破棄[color(white)]しなさい。
+[choice(4)][pact_demon(0)]
+[pact_demon(1)]
+[pact_demon(2)]
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_511:
+[color(yellow)][var(msg_var_0)][color(white)]
+ フン！
+ 貴様となど契約するのではなかったわ！
+ 貴様との[color(green)]契約もこれまで[color(white)]だ！
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 次に出会ったら八つ裂きにしてくれる！
+[wait][clear][end]
+
+msg_512:
+[color(yellow)][var(msg_var_0)][color(white)]
+ も、申し訳ありませんが
+ 貴方との[color(green)]契約、取り止めさせて頂きます…[color(white)]
+[wait][clear][end]
+
+msg_513:
+[color(yellow)][var(msg_var_0)][color(white)]
+ に、逃げるのではありませんよ…
+ 用事がありますので、お先に…
+[wait][clear][end]
+
+msg_514:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 貴っ様ぁ！
+ 八つ裂きにしてくれる！
+[wait][clear][end]
+
+msg_515:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は、貴方について行きます…
+[wait][clear][end]
+
+msg_516:
+[color(yellow)][var(msg_var_0)][color(white)]
+ くっくっくっくっ…
+ 実に気分が良い！ 宜しい！
+ 貴方に少し助力して差し上げましょう…
+[wait][clear][end]
+
+msg_517:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうですね…
+ [color(green)][var(msg_var_1)][color(white)]を差し上げましょう…
+ なぁに、ほんの気持ちですよ。
+[wait][clear][end]
+
+msg_518:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうですね…
+ [color(green)]￥[var(msg_var_2)][color(white)]差し上げましょう…
+ なぁに、ほんの気持ちですよ。
+[wait][clear][end]
+
+msg_519:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうですね…
+ でしたら、貴方を[color(green)]癒して[color(white)]差し上げましょう。
+ 死なない程度に生きて下さい。
+[wait][clear][end]
+
+msg_520:
+[color(yellow)][var(msg_var_0)][color(white)]
+ それでは生きていれば、また…
+[wait][clear][end]
+
+msg_521:
+
+
+
+
+
+[end]
+
+msg_522:
+
+
+
+
+
+[end]
+
+msg_523:
+
+
+
+
+
+[end]
+
+msg_524:
+
+
+
+
+
+[end]
+
+msg_525:
+
+
+
+
+
+[end]
+
+msg_526:
+
+
+
+
+
+[end]
+
+msg_527:
+
+
+
+
+
+[end]
+
+msg_528:
+
+
+
+
+
+[end]
+
+msg_529:
+
+
+
+
+
+
+
+
+
+[end]
+
+msg_530:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そうそう、良い事を教えて差し上げましょう！
+ このモナドマンダラの何処かに
+ 私の同胞「アジ・ダハーカ」が棲んでいます…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ 私、実は、彼の臭いが大嫌いなのですよ。
+ …で大きな声では言えませんが
+ 彼は、「ファリードゥーン」が苦手らしいですよ
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ あぁ、私が言った事は、くれぐれも内密に…
+[wait][clear][end]
+
+msg_531:
+[end]
+
+msg_532:
+[end]
+
+msg_533:
+
+
+
+
+
+[end]
+
+msg_534:
+
+
+
+
+
+[end]
+
+msg_535:
+
+
+
+
+
+[end]
+
+msg_536:
+
+
+
+
+
+[end]
+
+msg_537:
+
+
+
+
+
+[end]
+
+msg_538:
+
+
+
+
+
+[end]
+
+msg_539:
+
+
+
+
+
+[end]
+
+msg_540:
+
+
+
+
+
+[end]
+
+msg_541:
+
+
+
+
+
+[end]
+
+msg_542:
+
+
+
+
+
+[end]
+
+msg_543:
+[color(yellow)][var(msg_var_0)][color(white)]
+ しかも、それがまた[color(orange)]強い[color(white)]という評判なのです。
+[wait][clear][end]
+
+msg_544:
+[color(yellow)][var(msg_var_0)][color(white)]
+ しかし、[color(orange)]大変弱い[color(white)]という評判です。
+ まぁ、当然の事ですが…
+[wait][clear][end]
+
+msg_545:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 更に[color(orange)]ある種の魔法と同時に使うと更なる力を得る[color(white)]
+ と言う話ですよ…
+ しかし、こしゃくな…
+[wait][clear][end]
+
+msg_546:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ジャックランタンと言う悪魔を知っていますか？
+ こしゃくにも、[color(orange)]ダイナミックアギラオ[color(white)]などという
+ 魔法を使えると言う噂なのですよ。
+[wait][clear][end]
+
+msg_547:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ジャックフロストと言う悪魔を知っていますか？
+ こしゃくにも、[color(orange)]アトミックブフーラ[color(white)]などという
+ 魔法を使えると言う噂なのですよ。
+[wait][clear][end]
+
+msg_548:
+[color(yellow)][var(msg_var_0)][color(white)]
+ スチュパリデスと言う悪魔を知っていますか？
+ こしゃくにも、[color(orange)]デンジャラスガルーラ[color(white)]などという
+ 魔法を使えると言う噂なのですよ。
+[wait][clear][end]
+
+msg_549:
+[color(yellow)][var(msg_var_0)][color(white)]
+ バルバトスと言う悪魔を知っていますか？
+ こしゃくにも、[color(orange)]グレイトマグナス[color(white)]などという
+ 魔法を使えると言う噂なのですよ。
+[wait][clear][end]
+
+msg_550:
+[color(yellow)][var(msg_var_0)][color(white)]
+ アンクウと言う悪魔を知っていますか？
+ こしゃくにも、[color(orange)]ハイパージオンガ[color(white)]などという
+ 魔法を使えると言う噂なのですよ。
+[wait][clear][end]
+
+msg_551:
+[color(yellow)][var(msg_var_0)][color(white)]
+ カナロアと言う悪魔を知っていますか？
+ こしゃくにも、[color(orange)]ワンダフルアクエス[color(white)]などという
+ 魔法を使えると言う噂なのですよ。
+[wait][clear][end]
+
+msg_552:
+[color(yellow)][var(msg_var_0)][color(white)]
+ デメテールと言う悪魔を知っていますか？
+ こしゃくにも、[color(orange)]ウルトラフレイラ[color(white)]などという
+ 魔法を使えると言う噂なのですよ。
+[wait][clear][end]
+
+msg_553:
+[color(yellow)][var(msg_var_0)][color(white)]
+ サキュバスと言う悪魔を知っていますか？
+ こしゃくにも、[color(orange)]超メギド[color(white)]などという
+ 魔法を使えると言う噂なのですよ。
+[wait][clear][end]
+
+msg_554:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 困りましたねぇ…なに、何時もならば
+ どんな情報でも持っているのですが…
+ 今日に限っては、全くなのですよ…
+[wait][clear][end]
+
+msg_555:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ほぉ！ どうやら貴方と私は既に契約済み…
+ これは、約束を果たさねばならない様ですね。
+[wait][clear][end]
+
+msg_556:
+ 私に、何か頼み事などありますか？
+[choice(4)]アイテムが欲しい
+お金が欲しい
+情報が欲しい
+[if(CBIT_HEAR_RUMOR)]噂を流して欲しい
+[end_choice][clear][end]
+
+msg_557:
+ 私に、何か頼み事などありますか？
+[choice(5)]アイテムが欲しい
+お金が欲しい
+情報が欲しい
+[if(CBIT_HEAR_RUMOR)]噂を流して欲しい
+[if(CBIT_HEAR_HAIDENBAN)][if_not(VBIT_DOOR_BTL_9)]配電盤の鍵が欲しい
+[end_choice][clear][end]
+
+msg_558:
+ どの様な噂を流しましょうか？
+[choice(3)][if(CBIT_HEAR_WEPON)]伝説の武器関連
+[if(CBIT_HEAR_MAGIC)]魔法関連
+特に無い
+[end_choice][clear][end]
+
+msg_559:
+ どの様な噂を流しましょうか？
+[choice(4)][if(CBIT_HEAR_WEPON)]伝説の武器関連
+[if(CBIT_HEAR_MAGIC)]魔法関連
+[if(CBIT_HEAR_MAP1)]このダンジョンの噂
+特に無い
+[end_choice][clear][end]
+
+msg_560:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ん？ それは、既に知られた噂ですよ。
+[wait][clear][end]
+
+msg_561:
+ ほぉ… それは、どの様な武器です？
+[choice(6)][if(CBIT_HEAR_SWD)]伝説の日本刀
+[if(CBIT_HEAR_GUN)]伝説のハンドガン
+[if(CBIT_HEAR_GTR)]伝説のコイン
+[if(CBIT_HEAR_FST)]伝説のグラブ
+[if(CBIT_HEAR_FLW)]伝説のレイピア
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_562:
+ ほぉ… それは、どなたの魔法ですか？
+[choice(6)][if(CBIT_HEAR_AGI)]ジャックランタン
+[if(CBIT_HEAR_BUF)]ジャックフロスト
+[if(CBIT_HEAR_GAR)]スチュパリデス
+[if(CBIT_HEAR_MAG)]バルバトス
+[if(CBIT_RESERVE_Ff)]他の悪魔
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_563:
+ ほぉ… それは、どなたの魔法ですか？
+[choice(6)][if(CBIT_HEAR_JIO)]アンクウ
+[if(CBIT_HEAR_AQU)]カナロア
+[if(CBIT_HEAR_FRA)]デメテール
+[if(CBIT_HEAR_MEG)]サキュバス
+[if(CBIT_RESERVE_Fe)]他の悪魔
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_564:
+
+
+
+
+
+
+[end]
+
+msg_565:
+ 伝説の日本刀… で、どの様な噂なのです？
+[choice(4)][if(CBIT_HEAR_SWD_G)][if_not(IBIT_SWD_LGND_G)]実は最強？
+[if(CBIT_HEAR_SWD_L)][if_not(IBIT_SWD_LGND_S)]隠された力がある
+[if_not(IBIT_SWD_LGND_N)]やっぱり普通
+[if_not(IBIT_SWD_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_566:
+ 伝説のハンドガン… で、どの様な噂なのです？
+[choice(4)][if(CBIT_HEAR_GUN_G)][if_not(IBIT_GUN_LGND_G)]実は最強？
+[if(CBIT_HEAR_GUN_L)][if_not(IBIT_GUN_LGND_S)]隠された力がある
+[if_not(IBIT_GUN_LGND_N)]やっぱり普通
+[if_not(IBIT_GUN_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_567:
+ 伝説のコイン… で、どの様な噂なのです？
+[choice(4)][if(CBIT_HEAR_GTR_G)][if_not(IBIT_CON_LGND_G)]実は最強？
+[if(CBIT_HEAR_GTR_L)][if_not(IBIT_CON_LGND_S)]隠された力がある
+[if_not(IBIT_CON_LGND_N)]やっぱり普通
+[if_not(IBIT_CON_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_568:
+ 伝説のグラブ… で、どの様な噂なのです？
+[choice(4)][if(CBIT_HEAR_FST_G)][if_not(IBIT_FST_LGND_G)]実は最強？
+[if(CBIT_HEAR_FST_L)][if_not(IBIT_FST_LGND_S)]隠された力がある
+[if_not(IBIT_FST_LGND_N)]やっぱり普通
+[if_not(IBIT_FST_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_569:
+ 伝説のレイピア… で、どの様な噂なのです？
+[choice(4)][if(CBIT_HEAR_FLW_G)][if_not(IBIT_NSW_LGND_G)]実は最強？
+[if(CBIT_HEAR_FLW_L)][if_not(IBIT_NSW_LGND_S)]隠された力がある
+[if_not(IBIT_NSW_LGND_N)]やっぱり普通
+[if_not(IBIT_NSW_LGND_B)]やっぱりやめる
+[end_choice][clear][end]
+
+msg_570:
+ ジャックランタン… で、どの様な噂なのです？
+[choice(6)][if(CBIT_HEAR_AGI_L)][if_not(BBIT_D_AGIRAO_L)]Ｄアギラオは強い
+[if(CBIT_HEAR_AGI_M)][if_not(CBIT_HEAR_AGI_S)]ダイナミックアギラオを使う
+[if(CBIT_HEAR_AGI_S)][if_not(BBIT_D_AGIRAO_M)]Ｄアギラオは普通
+[if(CBIT_HEAR_AGI_S)][if_not(BBIT_D_AGIRAO_S)]Ｄアギラオは弱い
+[if(CBIT_HEAR_AGI_C)][if_not(BBIT_D_AGIRAO_C)]Ｄアギラオは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_571:
+ ジャックフロスト… で、どの様な噂なのです？
+[choice(6)][if(CBIT_HEAR_BUF_L)][if_not(BBIT_A_BUFURA_L)]Ａブフーラは強い
+[if(CBIT_HEAR_BUF_M)][if_not(CBIT_HEAR_BUF_S)]アトミックブフーラを使う
+[if(CBIT_HEAR_BUF_S)][if_not(BBIT_A_BUFURA_M)]Ａブフーラは普通
+[if(CBIT_HEAR_BUF_S)][if_not(BBIT_A_BUFURA_S)]Ａブフーラは弱い
+[if(CBIT_HEAR_BUF_C)][if_not(BBIT_A_BUFURA_C)]Ａブフーラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_572:
+ スチュパリデス… で、どの様な噂なのです？
+[choice(6)][if(CBIT_HEAR_GAR_L)][if_not(BBIT_D_GARURA_L)]Ｄガルーラは強い
+[if(CBIT_HEAR_GAR_M)][if_not(CBIT_HEAR_GAR_S)]デンジャラスガルーラを使う
+[if(CBIT_HEAR_GAR_S)][if_not(BBIT_D_GARURA_M)]Ｄガルーラは普通
+[if(CBIT_HEAR_GAR_S)][if_not(BBIT_D_GARURA_S)]Ｄガルーラは弱い
+[if(CBIT_HEAR_GAR_C)][if_not(BBIT_D_GARURA_C)]Ｄガルーラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_573:
+ バルバトス… で、どの様な噂なのです？
+[choice(6)][if(CBIT_HEAR_MAG_L)][if_not(BBIT_G_MAGNAS_L)]Ｇマグナスは強い
+[if(CBIT_HEAR_MAG_M)][if_not(CBIT_HEAR_MAG_S)]グレイトマグナスを使う
+[if(CBIT_HEAR_MAG_S)][if_not(BBIT_G_MAGNAS_M)]Ｇマグナスは普通
+[if(CBIT_HEAR_MAG_S)][if_not(BBIT_G_MAGNAS_S)]Ｇマグナスは弱い
+[if(CBIT_HEAR_MAG_C)][if_not(BBIT_G_MAGNAS_C)]Ｇマグナスは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_574:
+ アンクウ… で、どの様な噂なのです？
+[choice(6)][if(CBIT_HEAR_JIO_L)][if_not(BBIT_H_JIONGA_L)]Ｈジオンガは強い
+[if(CBIT_HEAR_JIO_M)][if_not(CBIT_HEAR_JIO_S)]ハイパージオンガを使う
+[if(CBIT_HEAR_JIO_S)][if_not(BBIT_H_JIONGA_M)]Ｈジオンガは普通
+[if(CBIT_HEAR_JIO_S)][if_not(BBIT_H_JIONGA_S)]Ｈジオンガは弱い
+[if(CBIT_HEAR_JIO_C)][if_not(BBIT_H_JIONGA_C)]Ｈジオンガは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_575:
+ カナロア… で、どの様な噂なのです？
+[choice(6)][if(CBIT_HEAR_AQU_L)][if_not(BBIT_W_AQUES_L)]Ｗアクエスは強い
+[if(CBIT_HEAR_AQU_M)][if_not(CBIT_HEAR_AQU_S)]ワンダフルアクエスを使う
+[if(CBIT_HEAR_AQU_S)][if_not(BBIT_W_AQUES_M)]Ｗアクエスは普通
+[if(CBIT_HEAR_AQU_S)][if_not(BBIT_W_AQUES_S)]Ｗアクエスは弱い
+[if(CBIT_HEAR_AQU_C)][if_not(BBIT_W_AQUES_C)]Ｗアクエスは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_576:
+ デメテール… で、どの様な噂なのです？
+[choice(6)][if(CBIT_HEAR_FRA_L)][if_not(BBIT_U_FRAIRA_L)]Ｕフレイラは強い
+[if(CBIT_HEAR_FRA_M)][if_not(CBIT_HEAR_FRA_S)]ウルトラフレイラを使う
+[if(CBIT_HEAR_FRA_S)][if_not(BBIT_U_FRAIRA_M)]Ｕフレイラは普通
+[if(CBIT_HEAR_FRA_S)][if_not(BBIT_U_FRAIRA_S)]Ｕフレイラは弱い
+[if(CBIT_HEAR_FRA_C)][if_not(BBIT_U_FRAIRA_C)]Ｕフレイラは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_577:
+ サキュバス… で、どの様な噂なのです？
+[choice(6)][if(CBIT_HEAR_MEG_L)][if_not(BBIT_C_MEGIDO_L)]超メギドは強い
+[if(CBIT_HEAR_MEG_M)][if_not(CBIT_HEAR_MEG_S)]超メギドを使う
+[if(CBIT_HEAR_MEG_S)][if_not(BBIT_C_MEGIDO_M)]超メギドは普通
+[if(CBIT_HEAR_MEG_S)][if_not(BBIT_C_MEGIDO_S)]超メギドは弱い
+[if(CBIT_HEAR_MEG_C)][if_not(BBIT_C_MEGIDO_C)]超メギドは合体する
+やっぱりやめる
+[end_choice][clear][end]
+
+msg_578:
+[color(yellow)][var(msg_var_0)][color(white)]
+ なるほど…
+ これは、面白い事になりそうですね…
+ 早速、噂を広めに行きましょう！
+[wait][clear][end]
+
+msg_579:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 知ってましたか？
+ その本人は、貴方の目の前にいるのですよ！
+[wait][clear][end]
+
+msg_580:
+[color(yellow)][var(msg_var_0)][color(white)]
+ 非常に残念ですが、貴方との契約もここで…
+ なんて冗談ですよ！
+ また、何かあれば、私をお探し下さい。
+[wait][clear][end]
+
+msg_581:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方の[color(orange)]日本刀[color(white)]は、[color(orange)]なまくら[color(white)]だと…
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_582:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方の[color(orange)]ハンドガン[color(white)]など、[color(orange)]おもちゃ[color(white)]だと…
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_583:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方の[color(orange)]コイン[color(white)]は、[color(orange)]錆びている[color(white)]と…
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_584:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方の[color(orange)]グラブ[color(white)]は、[color(orange)]ヘタレ[color(white)]だと…
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_585:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方の[color(orange)]レイピア[color(white)]は、[color(orange)]なまくら[color(white)]だと…
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_586:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方のペルソナ、[color(orange)]ジャックランタン[color(white)]の使用する
+ [color(orange)]ダイナミックアギラオ[color(white)]は[color(orange)]役に立たないと[color(white)]と…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_587:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方のペルソナ、[color(orange)]ジャックフロスト[color(white)]の使用する
+ [color(orange)]アトミックブフーラ[color(white)]は[color(orange)]役に立たないと[color(white)]と…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_588:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方のペルソナ、[color(orange)]スチュパリデス[color(white)]の使用する
+ [color(orange)]デンジャラスガルーラ[color(white)]は[color(orange)]役に立たないと[color(white)]と…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_589:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方のペルソナ、[color(orange)]バルバトス[color(white)]の使用する
+ [color(orange)]グレイトマグナス[color(white)]は[color(orange)]役に立たないと[color(white)]と…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_590:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方のペルソナ、[color(orange)]アンクウ[color(white)]の使用する
+ [color(orange)]ハイパージオンガ[color(white)]は[color(orange)]役に立たないと[color(white)]と…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_591:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方のペルソナ、[color(orange)]カナロア[color(white)]の使用する
+ [color(orange)]ワンダフルアクエス[color(white)]は[color(orange)]役に立たないと[color(white)]と…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_592:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方のペルソナ、[color(orange)]デメテール[color(white)]の使用する
+ [color(orange)]ウルトラフレイラ[color(white)]は[color(orange)]役に立たないと[color(white)]と…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_593:
+[color(yellow)][var(msg_var_0)][color(white)]
+ わ、私は知っています…
+ 貴方のペルソナ、[color(orange)]サキュバス[color(white)]の使用する
+ [color(orange)]超メギド[color(white)]は[color(orange)]役に立たないと[color(white)]と…
+[wait][clear][color(yellow)][var(msg_var_0)][color(white)]
+ この噂、広めさせて頂きます…
+[wait][clear][end]
+
+msg_594:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そんな物で宜しいのですか？
+ でしたら喜んで差し上げますよ…
+ なぁに、ただの拾い物ですからね…
+[wait][clear][end]
+
+msg_595:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふっ… 人間ですか？
+ よくもまぁ、こんな所へ…
+ まぁ、良い暇つぶしではありますがね…
+[wait][clear][end]
+
+msg_596:
+[color(green)]選択肢ジャンプの挙動エラーです[color(white)]
+[end]

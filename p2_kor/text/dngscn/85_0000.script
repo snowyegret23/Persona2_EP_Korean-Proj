@@ -1,0 +1,75 @@
+function START()
+{
+    controlDisable();
+    ref_1 = dialogAlloc();
+    ref_2 = msgShow(msg_0);
+/***************************************
+[color(green)]This is locked.
+It is a 4 digit dial type lock.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_2);
+    dialogFree(ref_1);
+    delayClear();
+    delayWait(10);
+    ref_7 = bustupLoad(bustup_1);
+    bustupWait(ref_7);
+    ref_9 = bustupAlloc(ref_7, center, rgb(0,0,0));
+    bustupFade(ref_9, rgb(128,0,0), 30);
+    ref_b = dialogChoiceAlloc();
+    ref_c = msgShow(msg_1);
+/***************************************
+[color(green)]Will you spin the dial?[color(white)]
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_c);
+    dialogFree(ref_b);
+    ref_f = bustupFade(ref_9, rgb(0,0,0), 10);
+    bustupWait(ref_f);
+    bustupFree(ref_9);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_2d);
+    delayClear();
+    delayWait(10);
+    ref_16 = textInputInit();
+    textInputPrompt();
+    wait(ref_16);
+    textInputCompare(msg_2, var_0);
+    bne(var_0, 0, label_22);
+    delayClear();
+    delayWait(10);
+    ref_1d = dialogAlloc();
+    ref_1e = msgShow(msg_3);
+/***************************************
+[color(green)]The lock won’t come off. 
+It is not the right combination.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_1e);
+    dialogFree(ref_1d);
+    b(label_2c);
+  label_22:
+    bne(var_0, 1, label_2c);
+    delayClear();
+    delayWait(10);
+    sndMusicPlay(sound_1576, 127);
+    ref_26 = dialogAlloc();
+    ref_27 = msgShow(msg_4);
+/***************************************
+[color(green)]The lock came off.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_27);
+    dialogFree(ref_26);
+    bitSet(MBIT_DUN_BUKUU01);
+    b(label_2c);
+  label_2c:
+    b(label_2f);
+  label_2d:
+    bne(var_0, 1, label_2f);
+    b(label_2f);
+  label_2f:
+    controlEnable();
+}

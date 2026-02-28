@@ -1,0 +1,10 @@
+
+msg_0:
+[color(green)]舞耶達は、[var(msg_var_0)]のカードを５０枚
+手に入れた。[color(white)]
+[wait][clear][end]
+
+msg_1:
+[color(green)]舞耶達は、機根のトラペゾヘドロンを手に入れ、
+機根の塔を後にした。[color(white)]
+[sync][wait][clear][end]

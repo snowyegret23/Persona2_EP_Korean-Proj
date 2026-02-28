@@ -1,0 +1,60 @@
+function START()
+{
+    controlDisable();
+    choiceSetResult(1);
+    op_105(1);
+    ref_3 = bustupLoad(bustup_1);
+    bustupWait(ref_3);
+    ref_5 = bustupAlloc(ref_3, center, rgb(0,0,0));
+    bustupFade(ref_5, rgb(128,0,0), 30);
+    ref_7 = dialogChoiceAlloc();
+    ref_8 = msgShow(msg_0);
+/***************************************
+[color(green)]Will you touch it?[color(white)]
+[choice(2)]Yes
+No
+[end_choice][clear]
+***************************************/
+    wait(ref_8);
+    dialogFree(ref_7);
+    ref_b = bustupFade(ref_5, rgb(0,0,0), 10);
+    bustupWait(ref_b);
+    bustupFree(ref_5);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_24);
+    bitGet(var_0, VBIT_NYARUDOOR_6);
+    bne(var_0, 0, label_1b);
+    delayClear();
+    delayWait(10);
+    bitSet(VBIT_NYARUDOOR_6);
+    sndMusicPlay(sound_1536, 127);
+    ref_16 = dialogAlloc();
+    ref_17 = msgShow(msg_1);
+/***************************************
+[color(green)]A door to the Rest Area was opened.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_17);
+    dialogFree(ref_16);
+    b(label_23);
+  label_1b:
+    bne(var_0, 1, label_23);
+    delayClear();
+    delayWait(10);
+    ref_1e = dialogAlloc();
+    ref_1f = msgShow(msg_2);
+/***************************************
+[color(green)]Nothing happened.[color(white)]
+[wait][clear]
+***************************************/
+    wait(ref_1f);
+    dialogFree(ref_1e);
+    b(label_23);
+  label_23:
+    b(label_26);
+  label_24:
+    bne(var_0, 1, label_26);
+    b(label_26);
+  label_26:
+    controlEnable();
+}

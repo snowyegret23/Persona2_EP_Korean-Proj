@@ -1,0 +1,117 @@
+
+msg_0:
+[color(yellow)]克哉[color(white)]
+ [var(msg_var_0)]さん…
+ まずは、君の同時刻におけるアリバイを
+ 聞かせてもらいたいな…
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]パオフゥ[color(white)]
+ ぬるいぜ…
+ こう言う輩にゃ、こうするのが一番なんだよ！
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]克哉[color(white)]
+ ほう…それは妙だな…
+ 君は今、犯人しか知らない事を口にした。
+ 気がついたかな…
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]パオフゥ[color(white)]
+ 回りくどいぜ…
+ 見てな…こいつが俺のやり方だ！
+[wait][clear][end]
+
+msg_4:
+[load_sound(sndeff_10)][sync][color(yellow)]克哉[color(white)]
+ 先程君は、こう言わなかったかな？
+ 「そんな女は知らない」と。
+ 妙だね…[play_sound(sndeff_10)][sync]女性とは一言も言っていないんだが…[sync]
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]パオフゥ[color(white)]
+ やるねぇ…
+ だがよ、もっとてっとり早くいこうや。
+ よぉく見ときな！
+[wait][clear][end]
+
+msg_6:
+[color(yellow)]克哉[color(white)]
+ 貴様…よくもパオフゥをっ！
+ 貴様だけは、絶対に許さん！！
+[wait][clear][end]
+
+msg_7:
+[color(yellow)]克哉[color(white)]
+ 傷害罪だ！！
+ 法の裁きを受けろ！！
+[wait][clear][end]
+
+msg_8:
+[color(yellow)]克哉[color(white)]
+ 僕の目の前で、やってくれたな…
+ 覚悟はできてるだろうな！？
+[wait][clear][end]
+
+msg_9:
+[color(yellow)]克哉[color(white)]
+ パオフゥ…
+ 君の死は無駄にはしない…被疑者は必ずこの手で…
+[wait][clear][end]
+
+msg_10:
+[color(yellow)]克哉[color(white)]
+ パオフゥ…
+ 二階級特進だ…
+ 勇敢だったぞ
+[wait][clear][end]
+
+msg_11:
+[color(yellow)]克哉[color(white)]
+ 君の志は、僕が継ごう…
+ それが、僕にできるせめてもの弔いだ…
+[wait][clear][end]
+
+msg_12:
+[color(yellow)]克哉[color(white)]
+ 不様だぞ、パオフゥ！
+ このままでは犬死にだ！
+[wait][clear][end]
+
+msg_13:
+[color(yellow)]克哉[color(white)]
+ 勇気と無謀の差を知りたまえ。
+ そして、学習することだ。
+ 二度と同じ過ちを犯さないためにな…
+[wait][clear][end]
+
+msg_14:
+[color(yellow)]克哉[color(white)]
+ もう少し己の実力をわきまえて行動すべきだ。
+ これでは、先が思いやられる…
+[wait][clear][end]
+
+msg_15:
+[color(yellow)]克哉[color(white)]
+ 貴様の様な奴と組むつもりはない…
+ ここは、僕一人でやらせてもらおう。
+[wait][clear][end]
+
+msg_16:
+[color(yellow)]パオフゥ[color(white)]
+ そりゃあ、願ってもねぇ…
+ 俺も面倒臭ぇのはごめんだからな。
+ せぇぜぇ一人で頑張れや。
+[wait][clear][end]
+
+msg_17:
+[load_sound(sndeff_35)][sync][sync]
+[end]
+
+msg_18:
+[play_sound(sndeff_35)][sync][sync]
+[end]

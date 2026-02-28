@@ -1,0 +1,6 @@
+
+msg_0:
+[color(yellow)]Katsuya[color(white)]
+[tab][tatsuya]’s still alive...
+[tab]We must hurry...
+[sync][wait][clear][end]

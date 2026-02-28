@@ -1,0 +1,48 @@
+
+msg_0:
+[color(yellow)]ペルソナ [var(msg_var_0)][color(white)]
+ ふっ、誰かと思えば、[var(msg_var_0)]ではないか…
+ と言う私も[var(msg_var_0)]だが…
+ ところで貴様の供のホルン隊はどうした？
+[wait][clear][end]
+
+msg_1:
+[color(yellow)][var(msg_var_0)][color(white)]
+ そ、そんな事どうでもいいじゃないか！
+ だいたい、お前も供を連れていない様だが
+ どうしたというのだ？
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]ペルソナ [var(msg_var_0)][color(white)]
+ 良く見ろ！ ここに人間の供がいるじゃないか！
+ あぁ、そうそう、貴様のカードをこいつに
+ やってくれないか？
+[wait][clear][end]
+
+msg_3:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ふん！ そんな物なら幾らでもくれてやる！
+ ………？ と思ったが、今は持ち合わせが
+ あまりないな。
+[wait][clear][end]
+
+msg_4:
+[color(yellow)][var(msg_var_0)][color(white)]
+ [color(green)][var(msg_var_4)][var(msg_var_5)]枚[color(white)]だ！
+ 大切に使え！
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]ペルソナ [var(msg_var_0)][color(white)]
+ ちっ、しけた奴だ！
+ まぁいい、今度一緒に狩りにでも行くとしよう。
+ 忘れず準備をしておけよ！
+[wait][clear][end]
+
+msg_6:
+[color(yellow)][var(msg_var_0)][color(white)]
+ ん？ 人間！ カードを持ち過ぎではないか！
+ それでは、カードをやれんな。
+ [color(green)][var(msg_var_1)][color(white)]をやる、これで我慢しろ。
+[wait][clear][end]

@@ -1,0 +1,224 @@
+function START()
+{
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), add);
+    levelFootstepSet(sfx_15);
+    bitClear(EBIT_NOSAVE_B);
+    sndMusicPlay(sound_3054, 127);
+    call(MODERU);
+    ref_6 = spriteLoad(sprite_94);
+    wait(ref_6);
+    unitSpawn(npc4, sprite_94, 1068, 0, -172, east, none);
+    unitPalette(npc4, 3);
+    cameraSet(northeast, 977, 0, 89);
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), add);
+    screenFadeInner(rgb(0,0,0), 8, true);
+    screenFadeOuter(rgb(0,0,0), 8, true);
+    screenEffectUnknown();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    ref_11 = spriteLoad(sprite_0);
+    wait(ref_11);
+    objAnimTranslate(obj_1b, -80, 0, 0, 20);
+    sndMusicPlay(sound_3098, 127);
+    objAnimTranslate(obj_1c, 80, 0, 0, 20);
+    objAnimWait(obj_1b);
+    objAnimWait(obj_1c);
+    delayClear();
+    delayWait(30);
+    unitSpawn(maya, sprite_0, 976, 0, 172, south, none);
+    cameraFollow(maya);
+    unitJumpTo(maya, 843, 0, -189, 18, 0);
+    unitFace(maya, south);
+    unitAnimationPlay(maya, animation_47, 1);
+    unitFace(maya, south);
+    delayClear();
+    delayWait(36);
+    unitAnimationPlay(npc4, animation_3, 1);
+    call(SINDOU);
+    unitFace(maya, south);
+    unitMove(maya, 817, -285, loop, medium);
+    call(DOOREND);
+    unitFace(maya, south);
+    unitAnimationPlay(maya, animation_48, 1);
+    unitFace(maya, south);
+    unitWait(maya);
+    delayClear();
+    delayWait(60);
+    ref_2d = dialogAlloc();
+    ref_2e = msgShow(msg_0);
+/***************************************
+[color(yellow)]係員[color(white)]
+[tab]ターイムアーップ、デース！！
+[tab]あう～残念でしたお客サン。
+[tab]あともう少しのところデーしたのに…
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_6, 1);
+    wait(ref_2e);
+    bitGet(var_0, MBIT_MUCHARER_1);
+    bne(var_0, 0, label_34);
+    b(label_3c);
+  label_34:
+    bne(var_0, 1, label_3c);
+    bitGet(var_0, IBIT_RUMOR_KIBA);
+    bne(var_0, 0, label_38);
+    b(label_3b);
+  label_38:
+    bne(var_0, 1, label_3b);
+    b(label_48);
+    b(label_3b);
+  label_3b:
+    b(label_3c);
+  label_3c:
+    bitGet(var_0, MBIT_MUCHARER_2);
+    bne(var_0, 0, label_3f);
+    b(label_47);
+  label_3f:
+    bne(var_0, 1, label_47);
+    bitGet(var_0, IBIT_RUMOR_TAXIH);
+    bne(var_0, 0, label_43);
+    b(label_46);
+  label_43:
+    bne(var_0, 1, label_46);
+    b(label_48);
+    b(label_46);
+  label_46:
+    b(label_47);
+  label_47:
+    b(label_4b);
+  label_48:
+    ref_48 = msgShow(msg_1);
+/***************************************
+[color(yellow)]係員[color(white)]
+[tab]だけどルールは絶対デース！！
+[tab]ゲットされたアイテムは
+[tab]全て没収させていただくのデース！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_21, 1);
+    wait(ref_48);
+  label_4b:
+    ref_4b = msgShow(msg_2);
+/***************************************
+[color(yellow)]係員[color(white)]
+[tab]でもきっと次こそはクリアできます！
+[tab]自分を信じて、頑張ってほしいデース！！
+[tab]頑張れ、頑張れ、お客サン！！
+[wait][clear]
+***************************************/
+    unitAnimationPlay(npc4, animation_21, 1);
+    wait(ref_4b);
+    unitAnimationPlay(npc4, animation_0, 1);
+    dialogFree(ref_2d);
+    unitAnimationPlay(maya, animation_3c, 1);
+    delayClear();
+    delayWait(30);
+    unitAnimationPlay(maya, animation_3f, 1);
+    delayClear();
+    delayWait(6);
+    unitAnimationPlay(maya, animation_40, 1);
+    delayClear();
+    delayWait(30);
+    bitGet(var_0, IBIT_RUMOR_KIBA);
+    bne(var_0, 0, label_5d);
+    bitClear(MBIT_MUCHARER_1);
+    b(label_66);
+  label_5d:
+    bne(var_0, 1, label_66);
+    bitGet(var_0, MBIT_MUCHARER_1);
+    bne(var_0, 0, label_61);
+    b(label_65);
+  label_61:
+    bne(var_0, 1, label_65);
+    bitClear(MBIT_MUCHARER_1);
+    bitClear(IBIT_RUMOR_KIBA);
+    b(label_65);
+  label_65:
+    b(label_66);
+  label_66:
+    bitGet(var_0, IBIT_RUMOR_TAXIH);
+    bne(var_0, 0, label_6c);
+    bitClear(MBIT_MUCHARER_2);
+    bitClear(MBIT_DUN_KYE_01);
+    bitClear(MBIT_END_NOROI);
+    b(label_77);
+  label_6c:
+    bne(var_0, 1, label_77);
+    bitGet(var_0, MBIT_MUCHARER_2);
+    bne(var_0, 0, label_70);
+    b(label_76);
+  label_70:
+    bne(var_0, 1, label_76);
+    bitClear(MBIT_MUCHARER_2);
+    bitClear(MBIT_DUN_KYE_01);
+    bitClear(IBIT_RUMOR_TAXIH);
+    bitClear(MBIT_END_NOROI);
+    b(label_76);
+  label_76:
+    b(label_77);
+  label_77:
+    bitClear(MBIT_DUN_KOMARITRI);
+    bitClear(MBIT_BTLMUU);
+    bitClear(MBIT_DUM_MUSENVIDE);
+    bitClear(MBIT_MUU_ENDEVTON);
+    bitSet(MBIT_MUZANNEN);
+    enableSaving(true);
+    bitGet(var_0, EBIT_E0077);
+    bne(var_0, 0, label_81);
+    eventLoad(event_e8);
+    b(label_84);
+  label_81:
+    bne(var_0, 1, label_84);
+    eventLoad(event_e9);
+    b(label_84);
+  label_84:
+}
+
+function DOOREND()
+{
+    objAnimTranslate(obj_1b, 80, 0, 0, 60);
+    objAnimTranslate(obj_1c, -80, 0, 0, 60);
+}
+
+function SINDOU()
+{
+    ref_88 = cameraZoom(128, 2);
+    wait(ref_88);
+    ref_8a = cameraZoom(-128, 4);
+    wait(ref_8a);
+    ref_8c = cameraZoom(0, 2);
+    wait(ref_8c);
+}
+
+function MODERU()
+{
+  label_8f:
+    objAnimRotate(obj_4, 0, 0, 360, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 360, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 360, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 360, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 270, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 180, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 90, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 45, 60, 0);
+    objAnimWait(obj_4);
+    delayClear();
+    delayWait(240);
+    objAnimRotate(obj_4, 0, 0, 45, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 90, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 180, 60, 0);
+    objAnimWait(obj_4);
+    objAnimRotate(obj_4, 0, 0, 270, 60, 0);
+    objAnimWait(obj_4);
+    b(label_8f);
+}

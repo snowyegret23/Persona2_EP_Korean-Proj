@@ -1,0 +1,605 @@
+function START()
+{
+    op_107();
+    screenEffectInit();
+    screenFade(160, 120, rgb(255,255,255), rgb(255,255,255), sub);
+    bitGet(var_0, MBIT_SUN_BEL03);
+    bnz(var_0, label_a);
+    bitGet(var_0, MBIT_SUN_BEL02);
+    bnz(var_0, label_f);
+    bitGet(var_0, MBIT_SUN_BEL01);
+    bnz(var_0, label_12);
+    b(label_15);
+  label_a:
+    bitClear(MBIT_SUN_BEL03);
+    bitClear(MBIT_SUN_BEL02);
+    bitClear(MBIT_SUN_BEL01);
+    sndMusicPlay(sound_3003, 127);
+    b(label_17);
+  label_f:
+    bitSet(MBIT_SUN_BEL03);
+    sndMusicPlay(sound_3002, 127);
+    b(label_17);
+  label_12:
+    bitSet(MBIT_SUN_BEL02);
+    sndMusicPlay(sound_3001, 127);
+    b(label_17);
+  label_15:
+    bitSet(MBIT_SUN_BEL01);
+    sndMusicPlay(sound_3000, 127);
+  label_17:
+    objVisible(obj_29, false);
+    objVisible(obj_2a, false);
+    ref_19 = todLoad(tod_e);
+    wait(ref_19);
+    todRun(tod_e, 1);
+    envTriggerSet(DOORBOX, 14, 1, line, coll_20);
+    ref_1d = spriteLoad(sprite_a4);
+    wait(ref_1d);
+    unitSpawn(shopkeeper, sprite_a4, 1088, -60, -968, north, none);
+    unitTriggerSet(shopkeeper, IGORU, 255, 1);
+    ref_21 = spriteLoad(sprite_a6);
+    wait(ref_21);
+    unitSpawn(npc1, sprite_a6, 1269, -60, -695, north, none);
+    unitTriggerSet(npc1, BERADONNA, 255, 1);
+    ref_25 = spriteLoad(sprite_a5);
+    wait(ref_25);
+    unitSpawn(npc2, sprite_a5, 1028, -60, -740, north, none);
+    unitTriggerSet(npc2, NANASI, 255, 1);
+    ref_29 = spriteLoad(sprite_a7);
+    wait(ref_29);
+    unitSpawn(npc3, sprite_a7, 750, -60, -1250, north, none);
+    unitTriggerSet(npc3, ESI, 255, 1);
+    cameraSet(northwest, 111, 0, -996);
+    call(FREEBOX);
+}
+
+function KYOUSEIBOX()
+{
+}
+
+function FREEBOX()
+{
+    call(BITSYOURI);
+    ref_32 = spriteLoad(sprite_2);
+    wait(ref_32);
+    ref_34 = spriteLoad(sprite_0);
+    wait(ref_34);
+    playerInit(west);
+    unitAnimationPlay(shopkeeper, animation_11, 1);
+    unitAnimationPlay(npc2, animation_0, 1);
+    unitAnimationPlay(npc1, animation_7, 1);
+    unitAnimationPlay(npc3, animation_b, 1);
+    screenEffectUnknown();
+    screenFadeInner(rgb(0,0,0), 6, true);
+    screenFadeOuter(rgb(0,0,0), 6, true);
+    unitIdleOnAll();
+    screenFadeWait(inner);
+    screenFadeWait(outer);
+    controlEnable();
+    cameraControlDisable();
+}
+
+function BITSYOURI()
+{
+    bitSet(MBIT_KI_MONSYOU);
+    bitSet(MBIT_KI_SIRAMAN);
+    bitSet(MBIT_HI_SIRAMAN);
+    bitSet(MBIT_KE_SIRAMAN);
+    bitSet(MBIT_MI_SIRAMAN);
+    bitSet(MBIT_KI_GYPSTART);
+    bitSet(MBIT_HI_GYPSTART);
+    bitSet(MBIT_KE_GYPSTART);
+    bitSet(MBIT_MI_GYPSTART);
+    bitSet(MBIT_KE_SIRAMAN);
+    bitSet(EBIT_E0043);
+    bitSet(MBIT_KE_GYPSTART);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E006F);
+}
+
+function SET_SHOP_PARAM()
+{
+    shopInventory(9, shopInventory_2);
+    shopInventory(10, shopInventory_1);
+    shopInventory(12, shopInventory_4);
+    shopInventory(23, shopInventory_2);
+    shopInventory(22, shopInventory_0);
+    shopInventory(13, shopInventory_0);
+    shopInventory(21, shopInventory_0);
+    shopInventory(5, shopInventory_0);
+    shopInventory(6, shopInventory_0);
+    shopInventory(7, shopInventory_0);
+    shopInventory(3, shopInventory_0);
+    shopInventory(4, shopInventory_0);
+    shopInventory(2, shopInventory_0);
+    shopInventory(8, shopInventory_0);
+    shopInventory(8, shopInventory_0);
+}
+
+function IGORU()
+{
+    controlDisable();
+    unitFacePlayer(shopkeeper);
+    ref_65 = bustupLoad(bustup_e0);
+    bustupWait(ref_65);
+    ref_67 = bustupAlloc(ref_65, right, rgb(0,0,0));
+    bustupFade(ref_67, rgb(128,0,0), 30);
+    ref_69 = dialogAlloc();
+    ref_6a = msgShow(msg_0);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Welcome to the Velvet Room.
+[wait][clear]
+***************************************/
+    ref_6b = shopOverlayInit();
+    wait(ref_6a);
+    dialogFree(ref_69);
+    ref_6e = bustupFade(ref_67, rgb(0,0,0), 10);
+    bustupWait(ref_6e);
+    bustupFree(ref_67);
+    wait(ref_6b);
+    ref_72 = call(SET_SHOP_PARAM);
+    wait(ref_72);
+    shopRate(100);
+    ref_75 = shopOpen(0);
+    wait(ref_75);
+}
+
+function HA_SHOP_RESTART_0()
+{
+    ref_78 = bustupLoad(bustup_e0);
+    bustupWait(ref_78);
+    ref_7a = bustupAlloc(ref_78, right, rgb(0,0,0));
+    bustupFade(ref_7a, rgb(128,0,0), 30);
+    ref_7c = dialogAlloc();
+    ref_7d = msgShow(msg_1);
+/***************************************
+[color(yellow)]Igor[color(white)]
+[tab]Is there anything else?
+[wait][clear]
+***************************************/
+    wait(ref_7d);
+    dialogFree(ref_7c);
+    ref_80 = bustupFade(ref_7a, rgb(0,0,0), 10);
+    bustupWait(ref_80);
+    bustupFree(ref_7a);
+}
+
+function HA_SHOP_TALK_0()
+{
+    ref_84 = bustupLoad(bustup_e0);
+    bustupWait(ref_84);
+    ref_86 = bustupAlloc(ref_84, right, rgb(0,0,0));
+    bustupFade(ref_86, rgb(128,0,0), 30);
+    ref_88 = dialogAlloc();
+    ref_89 = msgShow(msg_2);
+/***************************************
+[color(yellow)]Igor[color(white)]
+Conversation data
+[wait][clear]
+***************************************/
+    wait(ref_89);
+    dialogFree(ref_88);
+    ref_8c = bustupFade(ref_86, rgb(0,0,0), 10);
+    bustupWait(ref_8c);
+    bustupFree(ref_86);
+}
+
+function HA_SHOP_END_0()
+{
+    ref_90 = bustupLoad(bustup_e0);
+    bustupWait(ref_90);
+    ref_92 = bustupAlloc(ref_90, right, rgb(0,0,0));
+    bustupFade(ref_92, rgb(128,0,0), 30);
+    ref_94 = dialogAlloc();
+    ref_95 = msgShow(msg_3);
+/***************************************
+[color(yellow)]Igor[color(white)]
+Farewell message[wait][clear]
+***************************************/
+    wait(ref_95);
+    dialogFree(ref_94);
+    ref_98 = bustupFade(ref_92, rgb(0,0,0), 10);
+    bustupWait(ref_98);
+    bustupFree(ref_92);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_a1);
+    unitAnimationPlay(shopkeeper, animation_11, 1);
+    controlEnable();
+    cameraControlDisable();
+    b(label_a4);
+  label_a1:
+    bne(var_0, 1, label_a4);
+    call(EXITBOX);
+    b(label_a4);
+  label_a4:
+}
+
+function ESI()
+{
+    controlDisable();
+    unitFacePlayer(npc3);
+    ref_a7 = bustupLoad(bustup_e3);
+    bustupWait(ref_a7);
+    ref_a9 = bustupAlloc(ref_a7, right, rgb(0,0,0));
+    bustupFade(ref_a9, rgb(128,0,0), 30);
+    ref_ab = dialogAlloc();
+    ref_ac = msgShow(msg_4);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+[tab]Tarot cards are models of the heart.
+[tab]The heart controls a person’s fate.
+[tab]Do you want me to paint something?[wait][clear]
+***************************************/
+    ref_ad = shopOverlayInit();
+    wait(ref_ac);
+    wait(ref_ad);
+    dialogFree(ref_ab);
+    ref_b1 = bustupFade(ref_a9, rgb(0,0,0), 10);
+    bustupWait(ref_b1);
+    bustupFree(ref_a9);
+    ref_b4 = call(SET_SHOP_PARAM);
+    wait(ref_b4);
+    shopInventory(3, shopInventory_1);
+    shopInventory(4, shopInventory_1);
+    shopInventory(2, shopInventory_1);
+    shopInventory(8, shopInventory_1);
+    ref_ba = shopOpen(0);
+    wait(ref_ba);
+}
+
+function HA_SHOP_TALK_1()
+{
+    ref_bd = bustupLoad(bustup_e3);
+    bustupWait(ref_bd);
+    ref_bf = bustupAlloc(ref_bd, right, rgb(0,0,0));
+    bustupFade(ref_bf, rgb(128,0,0), 30);
+    ref_c1 = dialogAlloc();
+    ref_c2 = msgShow(msg_5);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+Conversation data
+[wait][clear]
+***************************************/
+    wait(ref_c2);
+    dialogFree(ref_c1);
+    ref_c5 = bustupFade(ref_bf, rgb(0,0,0), 10);
+    bustupWait(ref_c5);
+    bustupFree(ref_bf);
+}
+
+function HA_SHOP_END_1()
+{
+    ref_c9 = bustupLoad(bustup_e3);
+    bustupWait(ref_c9);
+    ref_cb = bustupAlloc(ref_c9, right, rgb(0,0,0));
+    bustupFade(ref_cb, rgb(128,0,0), 30);
+    ref_cd = dialogAlloc();
+    ref_ce = msgShow(msg_6);
+/***************************************
+[color(yellow)]Demon Painter[color(white)]
+Farewell message[wait][clear]
+***************************************/
+    wait(ref_ce);
+    dialogFree(ref_cd);
+    ref_d1 = bustupFade(ref_cb, rgb(0,0,0), 10);
+    bustupWait(ref_d1);
+    bustupFree(ref_cb);
+    shopInventory(3, shopInventory_0);
+    shopInventory(4, shopInventory_0);
+    shopInventory(2, shopInventory_0);
+    shopInventory(8, shopInventory_0);
+    bitGet(var_0, MBIT_EXITBIT);
+    bne(var_0, 0, label_df);
+    unitRestoreFacing(npc3);
+    controlEnable();
+    unitAnimationPlay(npc3, animation_b, 1);
+    cameraControlDisable();
+    b(label_e2);
+  label_df:
+    bne(var_0, 1, label_e2);
+    call(EXITBOX);
+    b(label_e2);
+  label_e2:
+}
+
+function DOORBOX()
+{
+    controlDisable();
+    objAnimRotate(obj_0, 0, -70, 0, 30, 0);
+    objAnimWait(obj_0);
+    call(EXITBOX);
+}
+
+function EXITBOX()
+{
+    bitClear(MBIT_EXITBIT);
+    mapLoad(rengedai, 0, 0);
+}
+
+function HA_SHOP_EXPLAIN_0()
+{
+    choiceSetResult(3);
+    op_105(7);
+    ref_ed = dialogChoiceAlloc();
+    ref_ee = msgShow(msg_7);
+/***************************************
+Which explanation will you read?
+[choice(4)]Summoning basics
+Invoking / Returning
+[if_all(VBIT_MUTATION_ON)]Mutation
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_ee);
+    dialogFree(ref_ed);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_f8);
+    ref_f3 = dialogAlloc();
+    ref_f4 = msgShow(msg_8);
+/***************************************
+Under construction
+[wait][clear]
+***************************************/
+    wait(ref_f4);
+    dialogFree(ref_f3);
+    b(label_106);
+  label_f8:
+    bne(var_0, 1, label_fe);
+    ref_f9 = dialogAlloc();
+    ref_fa = msgShow(msg_9);
+/***************************************
+Under construction
+[wait][clear]
+***************************************/
+    wait(ref_fa);
+    dialogFree(ref_f9);
+    b(label_106);
+  label_fe:
+    bne(var_0, 2, label_104);
+    ref_ff = dialogAlloc();
+    ref_100 = msgShow(msg_10);
+/***************************************
+Under construction
+[wait][clear]
+***************************************/
+    wait(ref_100);
+    dialogFree(ref_ff);
+    b(label_106);
+  label_104:
+    bne(var_0, 3, label_106);
+    b(label_106);
+  label_106:
+}
+
+function HA_SHOP_EXPLAIN_1()
+{
+    choiceSetResult(2);
+    op_105(7);
+    ref_109 = dialogChoiceAlloc();
+    ref_10a = msgShow(msg_11);
+/***************************************
+Which explanation will you read?
+[choice(3)]Request
+Free Tarot
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_10a);
+    dialogFree(ref_109);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_114);
+    ref_10f = dialogAlloc();
+    ref_110 = msgShow(msg_12);
+/***************************************
+Under construction
+[wait][clear]
+***************************************/
+    wait(ref_110);
+    dialogFree(ref_10f);
+    b(label_120);
+  label_114:
+    bne(var_0, 1, label_11a);
+    ref_115 = dialogAlloc();
+    ref_116 = msgShow(msg_13);
+/***************************************
+Under construction
+[wait][clear]
+***************************************/
+    wait(ref_116);
+    dialogFree(ref_115);
+    b(label_120);
+  label_11a:
+    bne(var_0, 2, label_120);
+    ref_11b = dialogAlloc();
+    ref_11c = msgShow(msg_14);
+/***************************************
+Under construction
+[wait][clear]
+***************************************/
+    wait(ref_11c);
+    dialogFree(ref_11b);
+    b(label_120);
+  label_120:
+}
+
+function BERADONNA()
+{
+    controlDisable();
+    choiceSetResult(4);
+    op_105(4);
+    ref_124 = dialogAlloc();
+    ref_125 = msgShow(msg_15);
+/***************************************
+Turn BITS on and off
+[choice(5)]Hear all rumors
+Hear some rumors
+尋ね人表示
+Money
+Quit
+[end_choice][clear]
+***************************************/
+    wait(ref_125);
+    dialogFree(ref_124);
+    choiceGetResult(var_0);
+    bne(var_0, 0, label_166);
+    bitSet(MBIT_KI_MONSYOU);
+    bitSet(MBIT_KI_JIKANSELL);
+    bitSet(MBIT_KI_JIKANDUP);
+    bitSet(MBIT_KI_KAORIAROMA);
+    bitSet(MBIT_KI_KAORIHENNI);
+    bitSet(MBIT_KI_SIRAMAN);
+    bitSet(MBIT_KI_SIRAHENNI);
+    bitSet(MBIT_KI_TOAARM);
+    bitSet(MBIT_KI_TOADEF);
+    bitSet(MBIT_KI_TONYITEM);
+    bitSet(MBIT_KI_TONYACCE);
+    bitSet(MBIT_KI_MUSLOT);
+    bitSet(MBIT_KI_MUBJ);
+    bitSet(MBIT_KI_MUPOKER);
+    bitSet(MBIT_KI_GIGACD1);
+    bitSet(MBIT_KI_GIGACD2);
+    bitSet(MBIT_KI_BARARM);
+    bitSet(MBIT_KI_BARHENNI);
+    bitSet(MBIT_KI_ROSADEF);
+    bitSet(MBIT_KI_ROSAHENNI);
+    bitSet(MBIT_KI_ETEESTHE);
+    bitSet(MBIT_KI_ETEHENNI);
+    bitSet(MBIT_KI_GYPAISHO1);
+    bitSet(MBIT_KI_GYPAISHO2);
+    bitSet(MBIT_KI_CLEARM);
+    bitSet(MBIT_KI_CLEDEF);
+    bitSet(MBIT_KI_CLEAOBA);
+    bitSet(MBIT_KI_JEWDEVE);
+    bitSet(MBIT_KI_JEWKOUNAN);
+    bitSet(MBIT_KI_SKYMAP);
+    bitSet(MBIT_KI_TRISHOKUJI);
+    bitSet(MBIT_KI_TRIKAISIN);
+    bitSet(MBIT_KI_BATOLUBUKI);
+    bitSet(MBIT_KI_BATOLUBOUGU);
+    bitSet(MBIT_KI_BATOLUAKUSE);
+    bitSet(MBIT_KI_MAGICKITEM);
+    bitSet(MBIT_KI_MAGICKCADE);
+    bitSet(MBIT_KI_PELPELBUKI);
+    bitSet(MBIT_KI_PELPELBOUGU);
+    bitSet(MBIT_KI_PELPELAKUSE);
+    bitSet(MBIT_KI_PELPELITEM);
+    bitSet(MBIT_KI_PELPELCADE);
+    bitSet(MBIT_KI_DEVIL1);
+    bitSet(MBIT_KI_DEVIL2);
+    bitSet(MBIT_KI_DEVIL3);
+    bitSet(MBIT_KI_DEVIL4);
+    bitSet(MBIT_KI_DEVIL5);
+    bitSet(MBIT_KI_DEVIL6);
+    bitSet(MBIT_KI_DEVIL7);
+    bitSet(MBIT_KI_DEVIL8);
+    bitSet(MBIT_KI_DEVIL9);
+    bitSet(MBIT_KI_DEVIL10);
+    bitSet(MBIT_KI_DENNSETU);
+    bitSet(MBIT_KI_NorETOUJO);
+    bitSet(MBIT_KI_HANAKOTOBA);
+    bitSet(MBIT_KI_TATUNOSIN);
+    bitSet(MBIT_KI_MAIHIME);
+    bitSet(MBIT_KI_ZODI2F);
+    bitSet(MBIT_KI_GYPSTART);
+    b(label_1a9);
+  label_166:
+    bne(var_0, 1, label_18d);
+    bitSet(MBIT_KI_MONSYOU);
+    bitSet(MBIT_KI_KAORIAROMA);
+    bitSet(MBIT_KI_KAORIHENNI);
+    bitSet(MBIT_KI_SIRAMAN);
+    bitSet(MBIT_KI_SIRAHENNI);
+    bitSet(MBIT_KI_TONYITEM);
+    bitSet(MBIT_KI_TONYACCE);
+    bitSet(MBIT_KI_MUBJ);
+    bitSet(MBIT_KI_GIGACD1);
+    bitSet(MBIT_KI_GIGACD2);
+    bitSet(MBIT_KI_BARARM);
+    bitSet(MBIT_KI_ROSADEF);
+    bitSet(MBIT_KI_ROSAHENNI);
+    bitSet(MBIT_KI_ETEESTHE);
+    bitSet(MBIT_KI_GYPAISHO1);
+    bitSet(MBIT_KI_GYPAISHO2);
+    bitSet(MBIT_KI_JEWDEVE);
+    bitSet(MBIT_KI_JEWKOUNAN);
+    bitSet(MBIT_KI_TRISHOKUJI);
+    bitSet(MBIT_KI_TRIKAISIN);
+    bitSet(MBIT_KI_BATOLUBUKI);
+    bitSet(MBIT_KI_BATOLUBOUGU);
+    bitSet(MBIT_KI_MAGICKITEM);
+    bitSet(MBIT_KI_MAGICKCADE);
+    bitSet(MBIT_KI_PELPELAKUSE);
+    bitSet(MBIT_KI_PELPELITEM);
+    bitSet(MBIT_KI_PELPELCADE);
+    bitSet(MBIT_KI_DEVIL1);
+    bitSet(MBIT_KI_DEVIL2);
+    bitSet(MBIT_KI_DEVIL3);
+    bitSet(MBIT_KI_DEVIL4);
+    bitSet(MBIT_KI_DEVIL6);
+    bitSet(MBIT_KI_DEVIL7);
+    bitSet(MBIT_KI_DEVIL8);
+    bitSet(MBIT_KI_HANAKOTOBA);
+    bitSet(MBIT_KI_TATUNOSIN);
+    bitSet(MBIT_KI_GYPSTART);
+    b(label_1a9);
+  label_18d:
+    bne(var_0, 2, label_1a4);
+    bitSet(MBIT_KE_SIRAMAN);
+    bitSet(MBIT_KE_SIRAMAN);
+    bitSet(MBIT_KE_SIRAMAN);
+    bitSet(MBIT_KE_SIRAMAN);
+    bitSet(MBIT_KE_SIRAMAN);
+    bitSet(EBIT_E0043);
+    bitSet(MBIT_KE_GYPSTART);
+    bitSet(EBIT_E0046);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E006F);
+    bitSet(EBIT_E0077);
+    bitSet(EBIT_E007B);
+    bitSet(EBIT_E007B);
+    bitSet(MBIT_NEKO_SAGASI);
+    bitSet(EBIT_E009F);
+    bitSet(EBIT_E009F);
+    bitSet(EBIT_E009F);
+    bitSet(EBIT_E00AF);
+    bitSet(EBIT_E00AF);
+    bitSet(MBIT_bukishoku_irai);
+    b(label_1a9);
+  label_1a4:
+    bne(var_0, 3, label_1a7);
+    partyMoneyAdd(99999999);
+    b(label_1a9);
+  label_1a7:
+    bne(var_0, 4, label_1a9);
+    b(label_1a9);
+  label_1a9:
+    controlEnable();
+    unitAnimationPlay(npc1, animation_7, 1);
+    cameraControlDisable();
+}
+
+function NANASI()
+{
+    controlDisable();
+    ref_1ae = bustupLoad(bustup_e1);
+    bustupWait(ref_1ae);
+    ref_1b0 = bustupAlloc(ref_1ae, right, rgb(0,0,0));
+    bustupFade(ref_1b0, rgb(128,0,0), 30);
+    ref_1b2 = dialogAlloc();
+    ref_1b3 = msgShow(msg_16);
+/***************************************
+Conversation data
+[wait][clear]
+***************************************/
+    wait(ref_1b3);
+    dialogFree(ref_1b2);
+    ref_1b6 = bustupFade(ref_1b0, rgb(0,0,0), 10);
+    bustupWait(ref_1b6);
+    bustupFree(ref_1b0);
+    controlEnable();
+    unitAnimationPlay(npc2, animation_0, 1);
+    cameraControlDisable();
+}

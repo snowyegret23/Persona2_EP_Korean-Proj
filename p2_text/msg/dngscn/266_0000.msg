@@ -1,0 +1,8 @@
+
+msg_0:
+この部屋にもう用は無いみょ。
+[wait][clear][end]
+
+msg_1:
+ＶＩＰフロアの鍵を使った。
+[wait][clear][end]

@@ -1,0 +1,30 @@
+
+msg_0:
+[color(yellow)]エリー[color(white)]
+ 先ずは、私の番ですわね。
+[wait][clear][end]
+
+msg_1:
+[color(yellow)]うらら[color(white)]
+ 先ずは、私の番ね。
+[wait][clear][end]
+
+msg_2:
+[color(yellow)]パオフゥ[color(white)]
+ 先ずは、俺の番だな。
+[wait][clear][end]
+
+msg_3:
+[color(yellow)]エリー[color(white)]
+ 次は、私の番ですわね。
+[wait][clear][end]
+
+msg_4:
+[color(yellow)]うらら[color(white)]
+ 次は、私の番ね。
+[wait][clear][end]
+
+msg_5:
+[color(yellow)]パオフゥ[color(white)]
+ 次は、俺の番だな。
+[wait][clear][end]
